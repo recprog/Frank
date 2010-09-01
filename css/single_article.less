@@ -1,0 +1,145 @@
+@color_accent: 		#ff1e00;
+@color_highlight: 	#fefafa;
+@color_light: 		#f0eceb;
+@color_midtone: 	#5d504f;
+@color_dark: 		#3d302f;
+@color_off_black: 	#050000;
+
+.reset-dimensions {
+	margin:0;
+	padding:0;
+}
+
+.show-bounds {
+	background-color: rgba(255, 255, 0, .5);
+}
+
+.opacity(@level:1) {
+	opacity:@level;
+}
+
+#content.post
+{
+	position: relative;
+	margin-top: 20px;
+	.entry {
+		overflow:hidden;
+	}
+	#content_primary {
+		.article_header {
+			h2 	{
+				font-size: 22px;
+				padding-top: 1px;
+				margin: 0;
+			}
+			h3 {
+				font-size: 11px;
+				padding-top: 4px;
+				margin: 0;
+			}
+		}
+		.post {
+			margin-bottom: 15px;
+			p {
+				font-size: 14px;
+			}
+			ul {
+				font-size: 14px;
+			}
+		}
+	}
+	#content_secondary {
+		position: absolute;
+		right: 0px;
+		top: 0px;
+		overflow:hidden;
+		background-color: rgba(240,236,235,.95);
+		border-left: 0 solid #b5aaa9;
+		z-index:100;
+		.container {
+			position: relative;
+			left: 0;
+			float: right;
+		}
+		h3 {
+			margin-bottom: 0;
+			padding-bottom: 3px;
+		}
+		h3:first-child {
+			margin-top: 0 !important;
+		}
+		dl
+		{
+			margin-top: 0;
+			padding-top: 0;
+			dt {
+				margin-top: 0;
+			}
+			dd {
+				ul {
+					margin-bottom: 0;
+					li {
+						font-size: 12px;
+					}
+				}
+			}
+			ul {
+				margin-top: 0;
+				padding-top: 0;
+			}
+		}
+	}
+}
+
+#content.post {
+	#content_primary {
+		h1 {
+			font-size:32px;
+			line-height:40px;
+			margin-top:-6px;
+			padding-bottom:0;
+			margin-bottom:0;
+			.iconic {
+				color:@color_midtone;
+				padding-right:15px;
+			}
+		}
+		
+		h2 {
+			font-size:11px;
+		}
+		#excerpt {
+			padding-top:9px;
+			padding-bottom:6px;
+			p {
+				padding-top:0;
+				font-size:20px;
+				line-height:40px;
+				font-style:italic;
+			}
+		}
+		
+		section {
+			margin-bottom:15px;
+			p {
+				font-size:14px;
+				font-family:Palatino, serif;
+			}
+		}
+		footer {
+			/*margin-top:20px;*/
+			margin:0;
+			padding:0;
+			p {
+				font-size:14px !important;
+				/*padding-top:0 !important;*/
+			}
+		}
+	}
+	#content_secondary {
+		.opacity(.5);
+		.container {
+			padding-top:20px;
+		}
+	}
+}

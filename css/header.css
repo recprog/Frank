@@ -1,0 +1,128 @@
+.reset-dimensions {
+  margin: 0;
+  padding: 0;
+}
+.show-bounds {
+  background-color: rgba(255, 255, 0, 0.5);
+}
+#page_header {
+  height: 15px;
+  position: relative;
+  background: #5d504f;
+}
+#page_header h1 {
+  margin: 0;
+  padding: 0;
+  margin-left: -20px;
+}
+#page_header h1 a {
+  text-decoration: none;
+  color: #000;
+  text-indent: -9999px;
+  width: 140px;
+  height: 15px;
+  display: block;
+  background: #170d0e;
+  border: none !important;
+}
+#page_header h1 a:hover {
+  background: #ff1e00;
+}
+#page_header hgroup {
+  margin-top: 0px;
+  float: left;
+}
+#page_header nav {
+  margin-left: 20px;
+  width: 820px;
+  float: left;
+}
+#page_header nav .menu ul {
+  float: left;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: block;
+  width: 630px;
+}
+#page_header nav .menu ul li {
+  float: left;
+  margin-right: 20px;
+  background: none;
+  padding: 0;
+}
+#page_header nav .menu ul li a {
+  display: block;
+  text-decoration: none;
+  font-weight: bold;
+  width: 46px;
+  height: 15px;
+  color: #fefafa;
+  font-size: 11px;
+  padding-left: 4px;
+  padding-top: 0px;
+}
+#page_header nav .menu ul li a:hover {
+  background: #5d504f;
+  color: #fefafa;
+}
+#page_header nav .menu ul li.rss a {
+  background: #ff1e00;
+  color: #fefafa !important;
+}
+#page_header nav .menu ul li.rss a:hover {
+  color: #fefafa !important;
+}
+#page_header nav .menu ul li.last {
+  margin-right: 0;
+}
+#page_header nav #follow {
+  position: absolute;
+  right: 0;
+}
+#page_header nav #follow #follow_header {
+  background: #ff1e00;
+  padding-left: 4px;
+  display: block;
+  color: #fefafa !important;
+}
+#page_header #search {
+  margin-right: -20px;
+  float: right;
+  position: relative;
+  background: #3d302f;
+}
+#page_header #search #s {
+  width: 194px;
+}
+#page_header #search #search_form {
+  position: absolute;
+  width: 200px;
+  height: 15px;
+  padding: 5px;
+  right: 0px;
+  background: rgba(93, 80, 79, 0.9);
+  display: none;
+}
+#page_header #search #search_button {
+  background: url(images/icons/magnifying_glass_alt_12x12.png) no-repeat center center;
+  display: block;
+  width: 20px;
+  height: 15px;
+  text-indent: -99999px;
+}
+#page_header #search #search_button:hover {
+  background: #5d504f url(images/icons/magnifying_glass_alt_12x12.png) no-repeat center center;
+}
+#page_header #search.active #search_button {
+  background: #5d504f url(images/icons/magnifying_glass_alt_12x12.png) no-repeat center center;
+}
+#promo #promo_about p, #promo #promo_new p, #promo #promo_follow p {
+  font-size: 12px;
+  color: #463938;
+  line-height: 15px;
+  margin-top: 0;
+}
+#promo #promo_about p {
+  font-weight: bold;
+}

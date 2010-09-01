@@ -1,0 +1,177 @@
+window.onload = checkCompatibility;
+	
+		function checkCompatibility()
+		{
+			
+			if((BrowserDetect.browser=='Explorer'&&BrowserDetect.version<7)||(BrowserDetect.browser=='Safari'&&BrowserDetect.version<2))
+			{
+
+			var h = document.getElementsByTagName('html');
+			h[0].style.overflow="hidden";
+		var b = document.getElementById('page');
+
+		var elem = '<div id="compatibility_cloak"></div><div id="compatibility_warning"><h2>Whoa, whoa. OK, intervention time.</h2><p>So I dig that you are into the whole retro browser thing, but you may be rocking it a little <em>too</em> old school. Why not try out something a little 21st century.</p></div>'
+		
+		var eDIV = document.createElement("div");
+		eDIV.setAttribute("id","compatibility_warning");
+		
+		var eH2 = document.createElement("h2");
+		eH2.appendChild(document.createTextNode("Whoa, whoa. OK, intervention time."));
+		eDIV.appendChild(eH2);
+		var eP = document.createElement("p");
+		eP.appendChild(document.createTextNode("So I dig that you are into the whole retro browser thing, but you may be rocking it a little too old school. Why not try out something a little 21st century."));
+		eDIV.appendChild(eP);
+		
+		
+		var eA = document.createElement("a");
+		eA.setAttribute('href', 'http://www.getfirefox.com');
+		eA.appendChild(document.createTextNode("Upgrade now"));
+		eDIV.appendChild(eA);
+		
+		b.appendChild(eDIV);
+		
+		
+		eDIV = document.createElement("div");
+		eDIV.setAttribute("id","compatibility_cloak");
+		
+		
+		var yWithScroll = window.innerHeight + window.scrollMaxY;
+		var xWithScroll = window.innerWidth + window.scrollMaxX;
+		
+		if (window.innerHeight && window.scrollMaxY) {// Firefox
+		yWithScroll = window.innerHeight + window.scrollMaxY;
+		xWithScroll = window.innerWidth + window.scrollMaxX;
+	} else if (document.body.scrollHeight > document.body.offsetHeight){ // all but Explorer Mac
+		yWithScroll = document.body.scrollHeight;
+		xWithScroll = document.body.scrollWidth;
+	} else { // works in Explorer 6 Strict, Mozilla (not FF) and Safari
+		yWithScroll = document.body.offsetHeight;
+		xWithScroll = document.body.offsetWidth;
+  	}
+
+		
+		
+		
+		var htmlheight = document.body.parentNode.scrollHeight;  
+		htmlHeight=document.body.parentNode.clientHeight;
+		htmlHeight = (document.height !== undefined) ? document.height : document.body.offsetHeight;
+ 
+eDIV.style.height = yWithScroll + "px";
+		
+		b.appendChild(eDIV);
+		}
+		}
+		
+		
+		
+var BrowserDetect = {
+	init: function () {
+		this.browser = this.searchString(this.dataBrowser) || "An unknown browser";
+		this.version = this.searchVersion(navigator.userAgent)
+			|| this.searchVersion(navigator.appVersion)
+			|| "an unknown version";
+		this.OS = this.searchString(this.dataOS) || "an unknown OS";
+	},
+	searchString: function (data) {
+		for (var i=0;i<data.length;i++)	{
+			var dataString = data[i].string;
+			var dataProp = data[i].prop;
+			this.versionSearchString = data[i].versionSearch || data[i].identity;
+			if (dataString) {
+				if (dataString.indexOf(data[i].subString) != -1)
+					return data[i].identity;
+			}
+			else if (dataProp)
+				return data[i].identity;
+		}
+	},
+	searchVersion: function (dataString) {
+		var index = dataString.indexOf(this.versionSearchString);
+		if (index == -1) return;
+		return parseFloat(dataString.substring(index+this.versionSearchString.length+1));
+	},
+	dataBrowser: [
+		{
+			string: navigator.userAgent,
+			subString: "Chrome",
+			identity: "Chrome"
+		},
+		{ 	string: navigator.userAgent,
+			subString: "OmniWeb",
+			versionSearch: "OmniWeb/",
+			identity: "OmniWeb"
+		},
+		{
+			string: navigator.vendor,
+			subString: "Apple",
+			identity: "Safari",
+			versionSearch: "Version"
+		},
+		{
+			prop: window.opera,
+			identity: "Opera"
+		},
+		{
+			string: navigator.vendor,
+			subString: "iCab",
+			identity: "iCab"
+		},
+		{
+			string: navigator.vendor,
+			subString: "KDE",
+			identity: "Konqueror"
+		},
+		{
+			string: navigator.userAgent,
+			subString: "Firefox",
+			identity: "Firefox"
+		},
+		{
+			string: navigator.vendor,
+			subString: "Camino",
+			identity: "Camino"
+		},
+		{		// for newer Netscapes (6+)
+			string: navigator.userAgent,
+			subString: "Netscape",
+			identity: "Netscape"
+		},
+		{
+			string: navigator.userAgent,
+			subString: "MSIE",
+			identity: "Explorer",
+			versionSearch: "MSIE"
+		},
+		{
+			string: navigator.userAgent,
+			subString: "Gecko",
+			identity: "Mozilla",
+			versionSearch: "rv"
+		},
+		{ 		// for older Netscapes (4-)
+			string: navigator.userAgent,
+			subString: "Mozilla",
+			identity: "Netscape",
+			versionSearch: "Mozilla"
+		}
+	],
+	dataOS : [
+		{
+			string: navigator.platform,
+			subString: "Win",
+			identity: "Windows"
+		},
+		{
+			string: navigator.platform,
+			subString: "Mac",
+			identity: "Mac"
+		},
+		{
+			string: navigator.platform,
+			subString: "Linux",
+			identity: "Linux"
+		}
+	]
+
+};
+BrowserDetect.init();

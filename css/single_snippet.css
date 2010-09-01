@@ -1,0 +1,63 @@
+#content.snippet .article_header {
+  margin-bottom: 0;
+  width: 100%;
+  /*tweak for clearfix*/
+
+}
+#content.snippet .article_header .date {
+  float: right;
+  margin: 0;
+  margin-top: 30px;
+  line-height: 10px;
+  padding: 0;
+  font-size: 12px;
+}
+#content.snippet h2 {
+  padding-top: 0px;
+  margin-left: 70px;
+  margin-bottom: 0;
+  width: 40px;
+  height: 40px;
+  float: left;
+}
+#content.snippet h2 a {
+  display: block;
+  background-image: url(images/icons/rss_40x40_drk.png);
+  background-repeat: no-repeat;
+  width: 40px;
+  height: 40px;
+  text-indent: -9999px;
+  border: 0;
+}
+#content.snippet .entry {
+  padding-bottom: 20px;
+  background: url(images/snippet_content_divider.png) no-repeat 0 7px;
+  padding-top: 40px;
+}
+#content.snippet .follow {
+  font-size: 14px;
+  font-style: italic;
+  padding-top: 4px;
+}
+#content.snippet.delicious h2 a {
+  background-image: url(images/icons/delicious_40x40.png);
+}
+#content.snippet.delicious .entry .link {
+  padding-top: 2px;
+  font-size: 22px;
+}
+#content.snippet.delicious .entry p {
+  font-size: 16px;
+  padding-top: 4px;
+}
+#content.snippet.twitter h2 a {
+  background-image: url(images/icons/twitter_40x40_drk.png);
+}
+#content.snippet.twitter .entry p {
+  font-size: 22px;
+  padding: 0;
+  margin: 0;
+  margin-bottom: -7px;
+  margin-top: -8px;
+  line-height: 40px;
+}

@@ -1,0 +1,119 @@
+.reset-dimensions {
+  margin: 0;
+  padding: 0;
+}
+.show-bounds {
+  background-color: rgba(255, 255, 0, 0.5);
+}
+#content.post {
+  position: relative;
+  margin-top: 20px;
+}
+#content.post .entry {
+  overflow: hidden;
+}
+#content.post #content_primary .article_header h2 {
+  font-size: 22px;
+  padding-top: 1px;
+  margin: 0;
+}
+#content.post #content_primary .article_header h3 {
+  font-size: 11px;
+  padding-top: 4px;
+  margin: 0;
+}
+#content.post #content_primary .post {
+  margin-bottom: 15px;
+}
+#content.post #content_primary .post p {
+  font-size: 14px;
+}
+#content.post #content_primary .post ul {
+  font-size: 14px;
+}
+#content.post #content_secondary {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  overflow: hidden;
+  background-color: rgba(240, 236, 235, 0.95);
+  border-left: 0 solid #b5aaa9;
+  z-index: 100;
+}
+#content.post #content_secondary .container {
+  position: relative;
+  left: 0;
+  float: right;
+}
+#content.post #content_secondary h3 {
+  margin-bottom: 0;
+  padding-bottom: 3px;
+}
+#content.post #content_secondary h3:first-child {
+  margin-top: 0 !important;
+}
+#content.post #content_secondary dl {
+  margin-top: 0;
+  padding-top: 0;
+}
+#content.post #content_secondary dl dt {
+  margin-top: 0;
+}
+#content.post #content_secondary dl dd ul {
+  margin-bottom: 0;
+}
+#content.post #content_secondary dl dd ul li {
+  font-size: 12px;
+}
+#content.post #content_secondary dl ul {
+  margin-top: 0;
+  padding-top: 0;
+}
+#content.post #content_primary h1 {
+  font-size: 32px;
+  line-height: 40px;
+  margin-top: -6px;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+#content.post #content_primary h1 .iconic {
+  color: #5d504f;
+  padding-right: 15px;
+}
+#content.post #content_primary h2 {
+  font-size: 11px;
+}
+#content.post #content_primary #excerpt {
+  padding-top: 9px;
+  padding-bottom: 6px;
+}
+#content.post #content_primary #excerpt p {
+  padding-top: 0;
+  font-size: 20px;
+  line-height: 40px;
+  font-style: italic;
+}
+#content.post #content_primary section {
+  margin-bottom: 15px;
+}
+#content.post #content_primary section p {
+  font-size: 14px;
+  font-family: Palatino, serif;
+}
+#content.post #content_primary footer {
+  /*margin-top:20px;*/
+
+  margin: 0;
+  padding: 0;
+}
+#content.post #content_primary footer p {
+  font-size: 14px !important;
+  /*padding-top:0 !important;*/
+
+}
+#content.post #content_secondary {
+  opacity: 0.5;
+}
+#content.post #content_secondary .container {
+  padding-top: 20px;
+}

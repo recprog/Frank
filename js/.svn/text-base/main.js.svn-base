@@ -1,0 +1,41 @@
+function openSidebar()
+{
+	jQuery('#content.post #content_secondary').animate({width: 420, borderWidth: "1px" }, {queue:false, duration:600, easing:'easeInOutCubic'} )
+}
+
+function closeSidebar()
+{
+	jQuery('#content.post #content_secondary').animate({width: 190, borderLeftWidth: "0" }, {queue:false, duration:600, easing:'easeInOutCubic'} );
+}
+
+function openCommentTextArea()
+{
+	jQuery('#content.post #comment').animate({height: 195}, {queue:false, duration:600, easing:'easeInOutCubic'} )
+}
+
+function closeCommentTextArea()
+{
+	jQuery('#content.post #comment').animate({height: 95}, {queue:false, duration:600, easing:'easeInOutCubic'} );
+}
+
+jQuery().ready(function()
+{
+	jQuery("#content.home #content_primary hr:last, #content.home #content_secondary hr:last, #content.home #content_tertiary hr:last, #content.results #content_primary hr:last").addClass("hidden");
+	jQuery("#content .post:last").addClass("last");
+	jQuery("table tr th:first-child, table tr td:first-child").addClass("first");
+	jQuery("table tr th:last-child, table tr td:last-child").addClass("last");
+	
+	
+	var h1 = jQuery('#content.post #content_secondary').height();
+	var h2 = jQuery('#content.post #content_primary').height();
+	var h3 = (h1>h2)?h1:h2;
+	
+	if(h1>h2) jQuery('#content.post #content_primary').css('padding-bottom', Math.floor((h1-h2)/20)*20);
+	jQuery('#content.post #content_secondary').css('height', h3);
+	
+	jQuery("label").inFieldLabels();
+	
+	jQuery("#content.post #content_secondary").hoverIntent(openSidebar, closeSidebar);
+	jQuery('#content.post #comment').focus(function() { openCommentTextArea(); });
+	jQuery('#content.post #comment').blur(function() { closeCommentTextArea(); });
+});

@@ -1,0 +1,59 @@
+.reset-dimensions {
+  margin: 0;
+  padding: 0;
+}
+.show-bounds {
+  background-color: rgba(255, 255, 0, 0.5);
+}
+#content.home hgroup.content_header h2 {
+  font-size: 16px;
+  margin-top: 9px;
+}
+#content.home hgroup.content_header h3 {
+  font-size: 12px;
+}
+#content.home .post header .metadata {
+  display: none;
+}
+#content.home #content_primary {
+  margin-bottom: 30px;
+}
+#content.home #content_primary .post section {
+  margin-top: 0;
+}
+#content.home #content_primary .post section p {
+  font-style: italic;
+  font-size: 45px !important;
+  line-height: 60px;
+}
+#content.home #content_secondary, #content.home #content_tertiary {
+  margin-top: 15px;
+}
+#content.home #content_secondary .post, #content.home #content_tertiary .post {
+  padding-bottom: 5px;
+  float: left;
+  margin-right: 20px;
+}
+#content.home #content_secondary .post header h1, #content.home #content_tertiary .post header h1 {
+  font-size: 13px;
+  line-height: 15px;
+  margin-bottom: 13px;
+  font-weight: bold;
+}
+#content.home #content_secondary .post header h1 a, #content.home #content_tertiary .post header h1 a {
+  text-decoration: none;
+}
+#content.home #content_secondary .post p, #content.home #content_tertiary .post p {
+  font-size: 11px;
+}
+#content.home #content_secondary .post .permalink, #content.home #content_tertiary .post .permalink {
+  font-size: 10px;
+  display: block;
+}
+#content.home #content_secondary .post:nth-child(4n), #content.home #content_tertiary .post:nth-child(4n) {
+  margin-right: 0;
+}
+/*Temp rules*/
+#content.home .post img {
+  max-width: 190px;
+}
