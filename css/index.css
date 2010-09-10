@@ -5,46 +5,65 @@
 .show-bounds {
   background-color: rgba(255, 255, 0, 0.5);
 }
+#content.home .metadata {
+  margin: 10px 0 10px 0;
+}
 #content.home hgroup.content_header h2 {
-  font-size: 16px;
-  margin-top: 9px;
+  font-size: 15px;
+  margin: 9px 0 10px 0;
 }
 #content.home hgroup.content_header h3 {
-  font-size: 12px;
-}
-#content.home .post header .metadata {
-  display: none;
+  font-size: 11px;
+  line-height: 15px;
+  font-style: italic;
+  margin: 0;
+  padding: 0;
 }
 #content.home #content_primary {
   margin-bottom: 30px;
 }
 #content.home #content_primary .post section {
-  margin-top: 0;
+  margin: 0 0 15px 0;
 }
 #content.home #content_primary .post section p {
   font-style: italic;
-  font-size: 45px !important;
-  line-height: 60px;
+  font-size: 38px !important;
+  line-height: 45px;
+  padding-bottom: 5px;
 }
 #content.home #content_secondary, #content.home #content_tertiary {
   margin-top: 15px;
 }
+#content.home #content_secondary .post.active .metadata, #content.home #content_tertiary .post.active .metadata {
+  opacity: 1;
+}
 #content.home #content_secondary .post, #content.home #content_tertiary .post {
-  padding-bottom: 5px;
+  position: relative;
   float: left;
   margin-right: 20px;
 }
+#content.home #content_secondary .post header, #content.home #content_tertiary .post header {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 5px;
+}
 #content.home #content_secondary .post header h1, #content.home #content_tertiary .post header h1 {
+  margin: 0;
+  padding: 0;
+  padding-top: 10px;
   font-size: 13px;
-  line-height: 15px;
-  margin-bottom: 13px;
+  line-height: 30px;
   font-weight: bold;
 }
 #content.home #content_secondary .post header h1 a, #content.home #content_tertiary .post header h1 a {
   text-decoration: none;
 }
-#content.home #content_secondary .post p, #content.home #content_tertiary .post p {
+#content.home #content_secondary .post .metadata, #content.home #content_tertiary .post .metadata {
+  opacity: 0;
+}
+#content.home #content_secondary .post section p, #content.home #content_tertiary .post section p {
   font-size: 11px;
+  padding-bottom: 0;
 }
 #content.home #content_secondary .post .permalink, #content.home #content_tertiary .post .permalink {
   font-size: 10px;

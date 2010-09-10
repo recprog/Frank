@@ -7,6 +7,14 @@ var workReq;
 
 jQuery(document).ready(function() {
 	
+	
+	jQuery('#content.home #content_secondary .post').mouseenter(function(){
+		jQuery(this).toggleClass('active', true);
+	})
+	jQuery('#content.home #content_secondary .post').mouseleave(function(){
+		jQuery(this).toggleClass('active', false);
+	})
+		
 	jQuery('#follow').mouseenter(function(){
 		if(jQuery(this).find('#follow_list').length) {
 			expand(300);

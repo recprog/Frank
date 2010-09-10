@@ -5,8 +5,10 @@
 .show-bounds {
   background-color: rgba(255, 255, 0, 0.5);
 }
+#page_header h1 a {
+  text-indent: -9999px;
+}
 nav .menu .page-item-2 a:before {
-  content: 'Yo dude' !important;
   color: #c00 !important;
 }
 #follow_list {
@@ -84,4 +86,11 @@ nav .menu .page-item-2 a:before {
 }
 #work_pullout.expanded {
   height: 300px;
+}
+nav .menu ul li {
+  margin-right: 20px !important;
+}
+nav .menu ul li a {
+  width: 46px;
+  padding-left: 4px;
 }

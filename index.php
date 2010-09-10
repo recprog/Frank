@@ -23,14 +23,14 @@
 				<article <?php post_class(); ?>>
 					<header>
 						<h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
-						<ul class='metadata clear'>
-							<li class='time'><time datetime="<?php the_time('Y-m-d'); ?>" pubdate><?php the_time('Y-j-n g:ia'); ?></time></li>											
-							<li class='comments last'><?php comments_popup_link('No comments', '1 comment', '% comments'); ?></li>
-						</ul>
 					</header>
 					<section>
 						<?php the_excerpt(); ?>
 					</section>
+					<ul class='metadata clear'>
+						<li class='time iconic clock'><time datetime="<?php the_time('Y-m-d'); ?>" pubdate><?php the_time('Y-j-n'); ?></time></li>											
+						<li class='comments iconic comment last'><?php comments_popup_link('No comments', '1 comment', '% comments'); ?></li>
+					</ul>
 				</article>
 			<?php endwhile; else : ?>
 				<div class="post no-posts">
@@ -68,17 +68,31 @@
 					$getlength = strlen($thetitle);
 					$thelength = 25;
 					echo substr($thetitle, 0, $thelength);
+					
 					if ($getlength > $thelength) echo "...";
 					?>
 					</a></h1>
-					<ul class='metadata clear'>
-						<li class='time'><time datetime="<?php the_time('Y-m-d'); ?>" pubdate><?php the_time('Y-j-n g:ia'); ?></time></li>											
-						<li class='comments last'><?php comments_popup_link('No comments', '1 comment', '% comments'); ?></li>
-					</ul>
 				</header>
 				<section>
-					<?php echo content(20); ?>
+					<?php 
+						$content = content(20);
+						$content = apply_filters('the_content', $content);
+						
+						$imgpath='';
+						$pattern = '/\< *[img][^\>]*[src] *= *[\"\']{0,1}([^\"\'\ >]*)/i';
+						$replacement = '<img src="' . $imgpath . '/php/phpthumb/phpThumb.php?src=' . '$1' . '&w=260&h=180&zc=1&q=80"';
+						
+						/*temporary*/
+						$replacement = '<img src="/php/image.php/'.get_the_ID().'.png?width=260&amp;height=180&amp;cropratio=1:1&amp;image='.'$1'.'"';
+						
+						$pagecontent = preg_replace($pattern, $replacement, $content);
+						echo $pagecontent;					
+					?>
 				</section>
+				<ul class='metadata clear'>
+					<li class='time iconic clock'><time datetime="<?php the_time('Y-m-d'); ?>" pubdate><?php the_time('Y-j-n'); ?></time></li>											
+					<li class='comments iconic comment last'><?php comments_popup_link('0', '1', '%'); ?></li>
+				</ul>
 			</article>
 		<?php endforeach; else : ?>
 			<div class="post no-posts">
@@ -118,14 +132,29 @@
 					if ($getlength > $thelength) echo "...";
 					?>
 					</a></h1>
-					<ul class='metadata clear'>
-						<li class='time'><time datetime="<?php the_time('Y-m-d'); ?>" pubdate><?php the_time('Y-j-n g:ia'); ?></time></li>											
-						<li class='comments'><?php comments_popup_link('No comments', '1 comment', '% comments'); ?></li>
-					</ul>
 				</header>
 				<section>
-					<?php echo content(20); ?>
+					<?php
+					
+					$content = content(20);
+					$content = apply_filters('the_content', $content);
+					
+					$imgpath='';
+					$pattern = '/\< *[img][^\>]*[src] *= *[\"\']{0,1}([^\"\'\ >]*)/i';
+					$replacement = '<img src="' . $imgpath . '/php/phpthumb/phpThumb.php?src=' . '$1' . '&w=260&h=180&zc=1&q=80"';
+					
+					/*temporary*/
+					$replacement = '<img src="/php/image.php/p'.get_the_ID().'.png?width=260&amp;height=180&amp;cropratio=1:1&amp;image='.'$1'.'"';
+					
+					$pagecontent = preg_replace($pattern, $replacement, $content);
+					echo $pagecontent;
+					
+					?>
 				</section>
+				<ul class='metadata clear'>
+					<li class='time iconic clock'><time datetime="<?php the_time('Y-m-d'); ?>" pubdate><?php the_time('Y-j-n'); ?></time></li>											
+					<li class='comments iconic comment last'><?php comments_popup_link('0', '1', '%'); ?></li>
+				</ul>
 			</article>
 		<?php endforeach; else : ?>
 			<div class="post no-posts">

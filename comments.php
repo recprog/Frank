@@ -13,7 +13,7 @@
 ?>
 <!-- Start editing here. -->
 <?php if ($comments) : ?>
-	<ul id="comments">
+	<ul id="comments" class='incomplete'>
 	<?php foreach ($comments as $comment) : ?>
 		<li class="comment clearfix">
 			<div class="gravatar span-1"><?php echo get_avatar( $comment, 50 ); ?></div>
@@ -23,7 +23,7 @@
 				<small><?php comment_date('j.m.Y') ?> <?php comment_time() ?></small>
 			</div>
 			<div class="content span-8 last">
-				<?php if ($comment->comment_approved == '0') : echo "<em>Your comment is awaiting moderation.</em>"; endif; ?>
+				<?php if ($comment->comment_approved == '0') : echo "<span id='comment_moderation'>Your comment is awaiting moderation.</span>"; endif; ?>
 				<?php comment_text() ?>	
 			</div>
 		</li>
@@ -34,7 +34,7 @@
 	<?php else : // this is displayed if there are no comments so far ?>
 
 		<?php if ('open' == $post->comment_status) : ?>
-			<h3 id="no_comments" class="typeface-js">Be the first to leave a comment. Don't be shy.</h3>
+			<h3 id="no_comments">Be the first to leave a comment. Don't be shy.</h3>
 		<?php else : ?>
 		<p class="no_comments">Comments are closed.</p>
 	<?php endif; ?>

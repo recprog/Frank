@@ -116,15 +116,15 @@ This plugin interface allows you to control how your content is laid out on the 
 
 <tr>
 	<td>
-		<?php _e("Title:", 'mt_trans_domain' ); ?> <br />	
+		<?php _e("Caption:", 'mt_trans_domain' ); ?> <br />	
 		<input type="text" name="caption_primary" value="<?php echo get_option('fs_caption_primary'); ?>" size="20">
 	</td>
 	<td>
-		<?php _e("Title:", 'mt_trans_domain' ); ?> <br />	
+		<?php _e("Caption:", 'mt_trans_domain' ); ?> <br />	
 		<input type="text" name="caption_secondary" value="<?php echo get_option('fs_caption_secondary'); ?>" size="20">
 	</td>
 	<td>
-		<?php _e("Title:", 'mt_trans_domain' ); ?> <br />	
+		<?php _e("Caption:", 'mt_trans_domain' ); ?> <br />	
 		<input type="text" name="caption_tertiary" value="<?php echo get_option('fs_caption_tertiary'); ?>" size="20">
 	</td>
 </tr>
@@ -292,16 +292,43 @@ function tertiaryColumnCaption() {
  */
 
 //automatic_feed_links();
-
+if ( function_exists('register_sidebar') )
+	register_sidebar(array(
+	'name' => 'Sub Header',
+	'before_widget' => '<div id="%1$s" class="widget %2$s">',
+	'after_widget' => '</div>',
+	'before_title' => '<h3 class="widgettitle">',
+	'after_title' => '</h3>',
+	));
 
 if ( function_exists('register_sidebar') ) {
 	register_sidebar(array(
-		'before_widget' => '<li id="%1$s" class="widget %2$s">',
-		'after_widget' => '</li>',
+		'name' => 'Article Sidebar: Column 1',
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget' => '</div>',
 		'before_title' => '<h3 class="widgettitle">',
 		'after_title' => '</h3>',
 	));
 }
+
+if ( function_exists('register_sidebar') ) {
+	register_sidebar(array(
+		'name' => 'Article Sidebar: Column 2',
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget' => '</div>',
+		'before_title' => '<h3 class="widgettitle">',
+		'after_title' => '</h3>',
+	));
+}
+
+if ( function_exists('register_sidebar') )
+	register_sidebar(array(
+	'name' => 'Footer',
+	'before_widget' => '<div id="%1$s" class="widget %2$s">',
+	'after_widget' => '</div>',
+	'before_title' => '<h3 class="widgettitle">',
+	'after_title' => '</h3>',
+	));
 
 function myFilter($query) {  
 if ($query->is_feed) {  

@@ -1,6 +1,9 @@
-.reset-dimensions {
+-webkit-font-smoothing: antialiased;.reset-dimensions {
   margin: 0;
   padding: 0;
+}
+.incomplete {
+  background-color: rgba(255, 0, 255, 0);
 }
 .show-bounds {
   background-color: rgba(255, 255, 0, 0.5);
@@ -34,12 +37,18 @@ th {
 body {
   font-size: 62.5%;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  background-color: #f0eceb;
+  background-color: #fefafa;
   color: #050000;
   height: 100%;
   margin: 0;
   padding: 0;
   line-height: 15px;
+}
+#page_bottom {
+  background: #5d504f;
+}
+#page_heel {
+  background: #050000;
 }
 a {
   color: #5d504f;
@@ -202,7 +211,7 @@ dl dt, dl dd {
 }
 dl dt {
   font-weight: bold;
-  margin-top: 20px;
+  margin-top: 15px;
 }
 dl dt:first-child {
   margin: 0;
@@ -247,31 +256,7 @@ hr {
 }
 /* @end */
 .pagination {
-  padding-top: 0px;
-  margin-top: 20px;
-  margin-bottom: 5px;
-  margin-left: -20px;
-  width: 280px;
-  display: block;
-}
-.pagination .next a, .pagination .previous a {
-  display: block;
-  width: 100%;
-  background: #000;
-}
-.pagination .next a {
-  padding-right: 0;
-  margin-right: 0;
-}
-.pagination .previous a {
-  padding-left: 20px;
-  padding-right: 0;
-}
-.pagination a {
-  font-size: 12px;
-  font-weight: bold;
-  color: #fff;
-  text-decoration: none;
+  background-color: rgba(255, 0, 255, 0);
 }
 .post header {
   margin-bottom: 10px;
@@ -280,32 +265,23 @@ hr {
   text-decoration: none;
 }
 .post .callout {
-  font-size: 15px;
-  line-height: 15px;
-  display: block;
-  padding-top: 5px;
-  font-weight: bold;
+  background-color: rgba(255, 0, 255, 0);
 }
 .post p .callout {
   padding-top: 0;
 }
 .post ul.metadata {
-  list-style: none;
   margin: 0;
   padding: 0;
+  padding-top: 5px;
+  list-style: none;
 }
 .post ul.metadata li {
-  float: left;
-  margin-right: 20px;
-  background: none;
-  padding: 0;
   margin: 0;
-}
-.post ul.metadata li.time {
-  padding-left: 20px;
-}
-.post ul.metadata li.comments {
-  padding-left: 20px;
+  padding: 0;
+  float: left;
+  background: none;
+  margin-right: 20px;
 }
 .post ul.metadata li.last {
   margin-right: 0;
@@ -329,4 +305,8 @@ hr {
   background: #5d504f none;
   color: #fefafa;
   /* Firefox */
+}
+.time.iconic time, .comments.iconic a {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  padding-left: 5px;
 }

@@ -5,11 +5,19 @@
 @color_dark: 		#3d302f;
 @color_off_black: 	#050000;
 
+
+@sans:'Helvetica Neue',Helvetica,Arial,sans-serif;
+@serif:serif;
+
 @row-height:		15px;
 
 .reset-dimensions {
 	margin:0;
 	padding:0;
+}
+
+.incomplete {
+	background-color: rgba(255,0,255,0);
 }
 
 .show-bounds {
@@ -41,11 +49,19 @@ th { border-bottom: 1px solid; font-weight:bold; }
 body {
 	font-size: 62.5%;
 	font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
-	background-color: #f0eceb;
+	background-color: #fefafa;
 	color: #050000;
 	height: 100%;
 	.reset-dimensions;
 	line-height: 15px;
+}
+
+#page_bottom {
+	background:@color_midtone;
+}
+
+#page_heel {
+	background:@color_off_black;
 }
 
 a {
@@ -143,14 +159,14 @@ ul li {
 }
 
 dl {
-	margin: 15px 0;
+	margin: @row-height 0;
 	padding-top: 5px;
 	dt, dd {
 		font-size: 12px;
 	}
 	dt {
 		font-weight: bold;
-		margin-top: 20px;
+		margin-top: @row-height;
 	}
 	dt:first-child {
 		margin:0
@@ -202,31 +218,7 @@ hr {
 
 .pagination 
 {
-	padding-top: 0px;
-	margin-top: 20px;
-	margin-bottom: 5px;
-	margin-left: -20px;
-	width: 280px;
-	display: block;
-	.next a, .previous a {
-		display: block;
-		width: 100%;
-		background: #000;
-	}
-	.next a {
-		padding-right: 0;
-		margin-right: 0;
-	}
-	.previous a {
-		padding-left: 20px;
-		padding-right: 0;
-	}
-	a {
-		font-size: 12px;
-		font-weight: bold;
-		color: #fff;
-		text-decoration: none;
-	}
+	.incomplete;
 }
 
 .post {
@@ -237,31 +229,20 @@ hr {
 		}
 	}
 	.callout {
-		font-size: 15px;
-		line-height: 15px;
-		display: block;
-		padding-top: 5px;
-		font-weight: bold;
+		.incomplete;
 	}
 	p .callout {
 		padding-top:0;
 	}
 	ul.metadata {
+		.reset-dimensions;
+		padding-top:5px;
 		list-style:none;
-		margin:0;
-		padding:0;
 		li {
+			.reset-dimensions;
 			float:left;
-			margin-right:20px;
 			background:none;
-			padding:0;
-			margin:0;
-		}
-		li.time {
-			padding-left:20px
-		}
-		li.comments {
-			padding-left:20px;
+			margin-right:20px;
 		}
 		li.last {
 			margin-right:0;
@@ -283,3 +264,7 @@ hr {
 
 ::selection			{ background: #5d504f none repeat; color:#fefafa; /* Safari and Opera */ }
 ::-moz-selection  { background: #5d504f none; color:#fefafa; /* Firefox */ }
+
+-webkit-font-smoothing: antialiased;
+
+.time.iconic time, .comments.iconic a { font-family:@sans; padding-left:5px }

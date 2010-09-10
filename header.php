@@ -26,7 +26,7 @@
 	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/hacks.css" type="text/css" media="screen, projection" />
 	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/srd.css" type="text/css" media="screen, projection" />
 	
-	<!--><link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/mobile.css" type="text/css" media="handheld" />
+	<!--<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/mobile.css" type="text/css" media="handheld" />
 	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/print.css" type="text/css" media="print" />-->
 	
 	<!--[if IE]>
@@ -35,36 +35,27 @@
 	
 	<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="<?php bloginfo('rss2_url'); ?>" />
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
-	
-	<?php #wp_enqueue_script('jquery'); ?>
-	<?php #wp_enqueue_script('jquery-color-local', get_bloginfo('template_url') . '/js/lib/jquery.color.js'); ?>
-	<?php #wp_enqueue_script('jquery-ui-custom', get_bloginfo('template_url') . '/js/lib/jquery-ui-1.7.2.custom.min.js'); ?>
-	<?php #wp_enqueue_script('jquery-easing', get_bloginfo('template_url') . '/js/lib/jquery.easing.1.3.js'); ?>
-	<?php #wp_enqueue_script('jquery-dimensions', get_bloginfo('template_url') . '/js/lib/jquery.dimensions.js'); ?>
-	<?php #wp_enqueue_script('jquery-colorbox', get_bloginfo('template_url') . '/js/lib/jquery.colorbox.min.js'); ?>
-	<?php #wp_enqueue_script('jquery-hoverintent', get_bloginfo('template_url') . '/js/lib/jquery.hoverIntent.minified.js'); ?>
-	<?php #wp_enqueue_script('jquery-infieldlabel', get_bloginfo('template_url') . '/js/lib/jquery.infieldlabel.min.js'); ?>
-	<?php #wp_enqueue_script('jquery-swfobject', get_bloginfo('template_url') . '/js/lib/jquery.swfobject.min.js'); ?>
-	<?php #wp_enqueue_script('franklinstreet-main', get_bloginfo('template_url') . '/js/main.js'); ?>
-	<?php #wp_enqueue_script('franklinstreet-browserbouncer', get_bloginfo('template_url') . '/js/browser-bouncer.js'); ?>
-	
-	
+		
 	<script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js'></script>
+	<?php wp_enqueue_script('jquery-main', get_bloginfo('template_url') . '/js/main.js'); ?>
 	<?php wp_enqueue_script('jquery-srd', get_bloginfo('template_url') . '/js/srd.js'); ?>
+	<!--[if lte IE 8]>
+	<script src="<?php bloginfo('template_url'); ?>/js/html5.js" type="text/javascript"></script>
+	<![endif]-->
 	
 	<?php wp_head(); ?>
 </head>
 <body id="page">
-<div class='wrapper clear'>
+<div id="page_top" class='wrapper clear'>
 	<header id="page_header" class="span-14 last clear">
 		<hgroup>
-			<h1 id="title"><a href="<?php bloginfo('url'); ?>"></a></h1>
+			<h1 id="title"><a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a></h1>
 		</hgroup>
 		<nav>
 			<?php $args = array(
 			    'sort_column' => 'menu_order',
 			    'menu_class'  => 'menu',
-			    'include'     => '2, 119, 143',
+			    'include'     => null,
 			    'exclude'     => null,
 			    'echo'        => true,
 			    'show_home'   => false,
@@ -77,14 +68,7 @@
 				</div>
 		</nav>
 	</header>
-	<div id='promo' class='clear'>
-		<div id='promo_about' class='span-5'>
-			<p><?php bloginfo('description'); ?></p>
-		</div>
-		<div id='promo_new' class='span-3 prefix-3'>
-			<p>Meet <a href='/projects/iconic/'>Iconic</a>. A minimal, yet unique icon set that's 100% free.</p>
-		</div>
-		<div id='promo_follow' class='span-3 last'>
-			<p>Something else</p>
-		</div>	
+	<div id='sub_header' class='clear'>
+		<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Sub Header") ) : ?>
+		<?php endif; ?>
 	</div>

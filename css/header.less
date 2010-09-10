@@ -31,15 +31,17 @@
 		margin-left: -20px; 
 		a {
 			text-decoration: none;	
-			color: #000;
-			text-indent: -9999px;
-			width: 140px;
+			color: @color_highlight;
+			font-size:11px;
+			line-height:@row-height;
+			width: 120px;
 			height:@row-height;
 			display: block;
+			font-weight:bold;
+			padding-left:20px;
 			background: #170d0e;
-			border:none !important
 		}
-		a:hover { background: #ff1e00; }
+		a:hover { background: @color_accent; }
 	}
 	hgroup {
 		margin-top: 0px; 
@@ -55,20 +57,25 @@
 			.reset-dimensions;
 			display:block;
 			width:630px;
+			ul {
+				display:none;
+			}
+			
+			li:before {
+				content:'';
+			}
 			li {
 				float: left;
-				margin-right: 20px;
+				margin-right: 30px;
 				background: none;
 				padding: 0;
 				a {
 					display: block;
 					text-decoration: none;
 					font-weight: bold;
-					width: 46px;
 					height:(@row-height);
 					color: #fefafa;
 					font-size: 11px;
-					padding-left: 4px;
 					padding-top: 0px;
 				}
 				a:hover {
@@ -134,18 +141,25 @@
 	}
 }
 
-#promo {
-	#promo_about, #promo_new, #promo_follow {
-		p {
-			font-size:12px;
-			color:#463938;
-			line-height:@row-height;
-			margin-top:0;
-		}
+#sub_header {
+	p {
+		font-size:12px;
+		color:@color_midtone;
+		line-height:@row-height;
+		margin-top:0;
 	}
-	#promo_about {
-		p {
-			font-weight:bold;
-		}
+	.widget {
+		float:left;
+		margin-right:20px;
+		width:190px;
+		margin-bottom:20px;
 	}
+	.widget:nth-child(4n+1) {
+		width:330px;
+		clear:left;
+	}
+	.widget:nth-child(4n) {
+		margin-right:0;
+	}
+	
 }

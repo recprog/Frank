@@ -1,23 +1,4 @@
-#content.results {
-  /*
-	hr {
-		margin-top: -1px;
-		margin-bottom: 20px;
-	}
-	*/
-
-}
-#content.results .post {
-  margin-bottom: 15px;
-}
-#content.results a.more-link {
-  margin-bottom: 20px;
-}
-#content.results .article_header h3 {
-  margin-bottom: 0;
-}
-#content.results .article_header h4 {
-  font-size: 12px;
-  margin-top: 0;
-  margin-bottom: 0;
-}
+#content.results{}#content.results .post{margin-bottom:15px;}
+#content.results a.more-link{margin-bottom:20px;}
+#content.results .article_header h3{margin-bottom:0;}
+#content.results .article_header h4{font-size:12px;margin-top:0;margin-bottom:0;}

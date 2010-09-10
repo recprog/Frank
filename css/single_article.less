@@ -5,6 +5,12 @@
 @color_dark: 		#3d302f;
 @color_off_black: 	#050000;
 
+@sans:'Helvetica Neue',Helvetica,Arial,sans-serif;
+@serif:serif;
+@row-height:		15px;
+@column-width:		50px;
+@gutter-width:		20px;
+
 .reset-dimensions {
 	margin:0;
 	padding:0;
@@ -21,40 +27,16 @@
 #content.post
 {
 	position: relative;
-	margin-top: 20px;
-	.entry {
-		overflow:hidden;
-	}
-	#content_primary {
-		.article_header {
-			h2 	{
-				font-size: 22px;
-				padding-top: 1px;
-				margin: 0;
-			}
-			h3 {
-				font-size: 11px;
-				padding-top: 4px;
-				margin: 0;
-			}
-		}
-		.post {
-			margin-bottom: 15px;
-			p {
-				font-size: 14px;
-			}
-			ul {
-				font-size: 14px;
-			}
-		}
-	}
+	margin-top: @row-height;
 	#content_secondary {
+		.opacity(.5);
 		position: absolute;
 		right: 0px;
 		top: 0px;
 		overflow:hidden;
-		background-color: rgba(240,236,235,.95);
-		border-left: 0 solid #b5aaa9;
+		height:100%;
+		border: 1px solid @color_highlight;
+		border-right:0;
 		z-index:100;
 		.container {
 			position: relative;
@@ -68,26 +50,16 @@
 		h3:first-child {
 			margin-top: 0 !important;
 		}
-		dl
-		{
-			margin-top: 0;
-			padding-top: 0;
-			dt {
-				margin-top: 0;
-			}
-			dd {
-				ul {
-					margin-bottom: 0;
-					li {
-						font-size: 12px;
-					}
-				}
-			}
-			ul {
-				margin-top: 0;
-				padding-top: 0;
-			}
+		.container {
+			padding-top:@row-height;
 		}
+	}
+	#content_secondary:hover {
+		.opacity(1);
+		width:420px;
+		background: rgba(254,250,250,.94);
+		border:1px solid @color_light;
+		border-right:0;
 	}
 }
 
@@ -109,37 +81,29 @@
 			font-size:11px;
 		}
 		#excerpt {
-			padding-top:9px;
-			padding-bottom:6px;
 			p {
 				padding-top:0;
 				font-size:20px;
-				line-height:40px;
+				line-height:@row-height*2;
 				font-style:italic;
+				margin-bottom:(@row-height*2);
 			}
 		}
 		
 		section {
 			margin-bottom:15px;
 			p {
-				font-size:14px;
-				font-family:Palatino, serif;
+				font-size:17px;
+				font-family:@serif;
+				line-height:30px;
 			}
 		}
 		footer {
-			/*margin-top:20px;*/
-			margin:0;
-			padding:0;
+			.reset-dimensions;
+			margin-top:(@row-height*2);
 			p {
 				font-size:14px !important;
-				/*padding-top:0 !important;*/
 			}
-		}
-	}
-	#content_secondary {
-		.opacity(.5);
-		.container {
-			padding-top:20px;
 		}
 	}
 }
