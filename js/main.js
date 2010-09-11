@@ -10,12 +10,12 @@ jQuery(document).ready(function() {
 	});
 	
 	jQuery(this).scroll(function() {
-		
 		updateStickyFooter();
 	});
 });
 
 function updateStickyFooter() {
+	bottomY=getBottomY();
 	var scrT = jQuery(this).scrollTop();
 	var winH = jQuery(window).height();
 	var fH = jQuery('#sticky_footer').height();

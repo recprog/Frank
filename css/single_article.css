@@ -5,6 +5,9 @@
 .show-bounds {
   background-color: rgba(255, 255, 0, 0.5);
 }
+.incomplete {
+  background-color: rgba(255, 0, 255, 0.5);
+}
 #content.post {
   position: relative;
   margin-top: 15px;
@@ -15,8 +18,8 @@
   right: 0px;
   top: 0px;
   overflow: hidden;
-  height: 100%;
-  border: 1px solid #fefafa;
+  height: auto;
+  border-left: 1px solid #fefafa;
   border-right: 0;
   z-index: 100;
 }
@@ -38,9 +41,9 @@
 #content.post #content_secondary:hover {
   opacity: 1;
   width: 420px;
+  height: 100%;
   background: rgba(254, 250, 250, 0.94);
-  border: 1px solid #f0eceb;
-  border-right: 0;
+  border-left: 1px solid #5d504f;
 }
 #content.post #content_primary h1 {
   font-size: 32px;
@@ -58,7 +61,7 @@
 }
 #content.post #content_primary #excerpt p {
   padding-top: 0;
-  font-size: 20px;
+  font-size: 22px;
   line-height: 30px;
   font-style: italic;
   margin-bottom: 30px;
@@ -78,4 +81,29 @@
 }
 #content.post #content_primary footer p {
   font-size: 14px !important;
+}
+#post_footer .widget {
+  float: left;
+  margin-right: 20px;
+  width: 190px;
+  margin-bottom: 20px;
+}
+#post_footer .widget:nth-child(3n+1) {
+  width: 330px;
+  clear: left;
+}
+#post_footer .widget:nth-child(3n) {
+  margin-right: 0;
+}
+/*ie hacks - need to define first and last divs to apply special rules. ie7 may need equal height hack*/
+#post_footer .item-0, #page_footer .item-4 {
+  background: #c00;
+  clear: left;
+  width: 330px;
+  background-color: rgba(255, 0, 255, 0.5);
+}
+#post_footer .item-3, #page_footer .item-7 {
+  background: #0c0;
+  margin-right: 0;
+  background-color: rgba(255, 0, 255, 0.5);
 }

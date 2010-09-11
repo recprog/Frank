@@ -20,15 +20,12 @@
 					<?php the_content(); ?>
 				</section>
 				<footer>
-					<?php wp_link_pages(); ?>
-					<div class='clear'>
-						<div class='span-5'>
-							Messaging to subscribe to RSS and/or follow on Twitter
-						    First Timer module?							
-						</div>
-						<div class='span-6 last'>
-							Share this link? or Rate this link
-						</div>
+					<div class='pagination'>
+						<?php wp_link_pages(); ?>
+					</div>
+					<div id='post_footer'>
+						<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Post Footer") ) : ?>
+						<?php endif; ?>
 					</div>
 				</footer>
 			</article>

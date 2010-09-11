@@ -1,17 +1,17 @@
 #follow_list {
-	-webkit-transition: all .3s cubic-bezier(0.02, 0, 0.18, 1.0); 
-	-moz-transition: all .3s cubic-bezier(0.02, 0, 0.18, 1.0); 
-	-o-transition: all .3s cubic-bezier(0.02, 0, 0.18, 1.0); 
+  -webkit-transition: all 0.3s cubic-bezier(0.02, 0, 0.18, 1);
+  -moz-transition: all 0.3s cubic-bezier(0.02, 0, 0.18, 1);
+  -o-transition: all 0.3s cubic-bezier(0.02, 0, 0.18, 1);
 }
-
 #content.post #content_secondary {
-	-webkit-transition: all .5s cubic-bezier(0.02, 0, 0.18, 1.0); 
-	-moz-transition: all .5s cubic-bezier(0.02, 0, 0.18, 1.0); 
-	-o-transition: all .5s cubic-bezier(0.02, 0, 0.18, 1.0); 
+  -webkit-transition-property: width, border-left, opacity;
+  -webkit-transition-duration: .5s;
+  -webkit-transition-timing-function: cubic-bezier(0.02, 0, 0.18, 1);
+  -moz-transition: all 0.5s cubic-bezier(0.02, 0, 0.18, 1);
+  -o-transition: all 0.5s cubic-bezier(0.02, 0, 0.18, 1);
 }
-
 #sticky_footer {
-	-webkit-transition: all .5s cubic-bezier(0.02, 0, 0.18, 1.0); 
-	-moz-transition: all .5s cubic-bezier(0.02, 0, 0.18, 1.0); 
-	-o-transition: all .5s cubic-bezier(0.02, 0, 0.18, 1.0); 
+  -webkit-transition: all 0.5s cubic-bezier(0.02, 0, 0.18, 1);
+  -moz-transition: all 0.5s cubic-bezier(0.02, 0, 0.18, 1);
+  -o-transition: all 0.5s cubic-bezier(0.02, 0, 0.18, 1);
 }

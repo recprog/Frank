@@ -24,6 +24,11 @@
 	opacity:@level;
 }
 
+.incomplete {
+	background-color: rgba(255,0,255,.5);
+}
+
+
 #content.post
 {
 	position: relative;
@@ -34,8 +39,8 @@
 		right: 0px;
 		top: 0px;
 		overflow:hidden;
-		height:100%;
-		border: 1px solid @color_highlight;
+		height:auto;
+		border-left: 1px solid @color_highlight;
 		border-right:0;
 		z-index:100;
 		.container {
@@ -57,9 +62,9 @@
 	#content_secondary:hover {
 		.opacity(1);
 		width:420px;
+		height:100%;
 		background: rgba(254,250,250,.94);
-		border:1px solid @color_light;
-		border-right:0;
+		border-left:1px solid @color_midtone;
 	}
 }
 
@@ -83,7 +88,7 @@
 		#excerpt {
 			p {
 				padding-top:0;
-				font-size:20px;
+				font-size:22px;
 				line-height:@row-height*2;
 				font-style:italic;
 				margin-bottom:(@row-height*2);
@@ -106,4 +111,35 @@
 			}
 		}
 	}
+}
+
+#post_footer .widget {
+	float:left;
+	margin-right:20px;
+	width:190px;
+	margin-bottom:20px;
+}
+
+#post_footer .widget:nth-child(3n+1) {
+	width:330px;
+	clear:left;
+}
+
+#post_footer .widget:nth-child(3n) {
+	margin-right:0;
+}
+
+/*ie hacks - need to define first and last divs to apply special rules. ie7 may need equal height hack*/
+
+#post_footer .item-0, #page_footer .item-4 {
+	background:#c00;
+	clear:left;
+	width:330px;
+	.incomplete;
+}
+
+#post_footer .item-3, #page_footer .item-7 {
+	background:#0c0;
+	margin-right:0;
+	.incomplete;
 }

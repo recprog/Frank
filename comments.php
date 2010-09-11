@@ -15,16 +15,13 @@
 <?php if ($comments) : ?>
 	<ul id="comments" class='incomplete'>
 	<?php foreach ($comments as $comment) : ?>
-		<li class="comment clearfix">
-			<div class="gravatar span-1"><?php echo get_avatar( $comment, 50 ); ?></div>
-			<div class="metadata span-2">
-				<h4><?php comment_author_link() ?></h4>
-				<h5><?php edit_comment_link('edit'); ?></h5>
-				<small><?php comment_date('j.m.Y') ?> <?php comment_time() ?></small>
-			</div>
-			<div class="content span-8 last">
-				<?php if ($comment->comment_approved == '0') : echo "<span id='comment_moderation'>Your comment is awaiting moderation.</span>"; endif; ?>
+		<li class="comment span-11 last clear">
+			<div class="gravatar span-1"><?php echo get_avatar( $comment, 45 ); ?></div>
+			<div class="content span-10 last">
+				<div class='copy'><?php if ($comment->comment_approved == '0') : echo "<span id='comment_moderation'>Your comment is awaiting moderation.</span>"; endif; ?>
 				<?php comment_text() ?>	
+				</div>
+				<div class='metadata'><small><?php comment_author_link() ?> at <?php comment_date('j.m.Y') ?> <?php comment_time() ?> <span class='edit'><?php edit_comment_link('edit'); ?></span></small></div>
 			</div>
 		</li>
 		<?php $oddcomment = ( empty( $oddcomment ) ) ? 'class="alt" ' : ''; ?>

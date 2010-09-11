@@ -1,17 +1,140 @@
-#comments_container{margin-top:40px;}#comments_container blockquote{margin-right:0;font-size:14px;}
-#comments_container #comments{margin-top:0;padding-top:0;margin-bottom:15px;}#comments_container #comments p{font-size:12px !important;}
-#comments_container #comments .metadata{overflow:hidden;}#comments_container #comments .metadata h4{font-size:14px;margin:0;padding-top:4px;}
-#comments_container #comments .metadata h5{font-size:11px;padding-top:1px;margin:0;}
-#comments_container #comments .metadata small{font-size:11px;padding-top:5px;margin-bottom:0;}
-#comments_container #comments .gravatar img{margin-top:9px;background:url(images/placeholder_50x50.gif) no-repeat;}
-#comments_container #comments li{background:none;margin:20px 0 ;padding:0 0 14px 0;border-bottom:1px solid #b5aaa9;}
-#comments_container #comments li:first-child{margin-top:0px;}
-#comments_container #comments li:last-child{padding-bottom:0;border:0;}
-#comments_container #comments p:last-child{margin-bottom:0;}
-#comments_container #no_comments{font-size:30px;line-height:40px;padding-top:10px;margin-bottom:30px;color:#5d504f;}
-#comments_container #commentform dl{position:relative !important;padding-top:0;margin-top:0;}#comments_container #commentform dl dt{margin-top:20px;padding:0;}#comments_container #commentform dl dt label{position:absolute !important;left:4px !important;margin:0 !important;padding:0;}
-#comments_container #commentform dl dt:first-child{margin:0;}
-#comments_container #commentform dl dd{margin:0;padding:0;margin-top:-1px;line-height:1;}#comments_container #commentform dl dd input.textinput{margin:0;line-height:1.2;font-size:12px !important;padding:2px;height:15px;width:184px;}
-#comments_container #commentform textarea{border:1px solid #000;margin:0;font-size:12px !important;line-height:1.2 !important;height:95px;padding:2px 4px;width:530px;}#comments_container #commentform textarea .loggedin{width:740px;}
-#comments_container #commentform #submit{display:block;clear:both;height:20px;margin-top:20px;font-weight:bold;}#comments_container #commentform #submit .loggedin{margin-left:0;}
-#comment_form{margin-top:20px;}#comment_form p.loggedin{font-size:12px !important;margin-bottom:15px;}
+.reset-dimensions {
+  margin: 0;
+  padding: 0;
+}
+.incomplete {
+  background-color: rgba(255, 0, 255, 0);
+}
+.show-bounds {
+  background-color: rgba(255, 255, 0, 0.5);
+}
+#comments_container {
+  margin-top: 45px;
+}
+#comments_container h2 {
+  font-size: 22px !important;
+  margin-bottom: 0;
+}
+#comments_container h3 {
+  font-size: 14px !important;
+  margin-top: 0;
+  font-style: italic;
+}
+#comments_container #comments {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 15px;
+}
+#comments_container #comments p {
+  font-size: 12px !important;
+  line-height: 15px !important;
+}
+#comments_container #comments .metadata {
+  margin-bottom: 5px;
+  font-size: 11px;
+  margin-top: 15px;
+}
+#comments_container #comments .copy {
+  margin-top: 4px;
+}
+#comments_container #comments li {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 15px;
+}
+#comments_container #comments .metadata {
+  overflow: hidden;
+}
+#comments_container #comments .metadata h4 {
+  font-size: 14px;
+  margin: 0;
+  padding-top: 4px;
+}
+#comments_container #comments .metadata h5 {
+  font-size: 11px;
+  padding-top: 1px;
+  margin: 0;
+}
+#comments_container #comments .metadata small {
+  font-size: 11px;
+  padding-top: 5px;
+  margin-bottom: 0;
+}
+#comments_container #comments .gravatar img {
+  margin-top: 9px;
+  background: url(images/placeholder_50x50.gif) no-repeat;
+}
+#comments_container #comments li {
+  background: none;
+  margin: 20px 0 ;
+  padding: 0 0 14px 0;
+  border-bottom: 1px solid #b5aaa9;
+}
+#comments_container #comments li:first-child {
+  margin-top: 0px;
+}
+#comments_container #comments li:last-child {
+  padding-bottom: 0;
+  border: 0;
+}
+#comments_container #comments p:last-child {
+  margin-bottom: 0;
+}
+#comments_container #no_comments {
+  font-size: 30px;
+  line-height: 40px;
+  padding-top: 10px;
+  margin-bottom: 30px;
+  color: #5d504f;
+}
+#comments_container #commentform dl {
+  position: relative !important;
+  padding-top: 0;
+  margin-top: 0;
+}
+#comments_container #commentform dl dt {
+  margin-top: 20px;
+  padding: 0;
+}
+#comments_container #commentform dl dt label {
+  position: absolute !important;
+  left: 4px !important;
+  margin: 0 !important;
+  padding: 0;
+}
+#comments_container #commentform dl dt:first-child {
+  margin: 0;
+}
+#comments_container #commentform dl dd {
+  margin: 0;
+  padding: 0;
+  margin-top: -1px;
+  line-height: 1;
+}
+#comments_container #commentform dl dd input.textinput {
+  margin: 0;
+  line-height: 1.2;
+  font-size: 12px !important;
+  padding: 2px;
+  height: 15px;
+  width: 184px;
+}
+#comments_container #commentform textarea {
+  border: 1px solid #000;
+  margin: 0;
+  font-size: 12px !important;
+  line-height: 1.2 !important;
+  height: 95px;
+  padding: 2px 4px;
+  width: 530px;
+}
+#comments_container #commentform textarea .loggedin {
+  width: 740px;
+}
+#comment_form {
+  margin-top: 20px;
+}
+#comment_form p.loggedin {
+  font-size: 12px !important;
+  margin-bottom: 15px;
+}
