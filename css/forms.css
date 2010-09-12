@@ -1,24 +1,26 @@
-textarea {
-  font-size: 12px;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+.reset-dimensions {
+  margin: 0;
+  padding: 0;
 }
-input.textinput, #s, textarea {
+.show-bounds {
+  background-color: rgba(255, 255, 0, 0.5);
+}
+.incomplete {
+  background-color: rgba(255, 0, 255, 0.5);
+}
+input[type=text], textarea {
+  font-size: 12px;
   border: 1px solid #5d504f;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: #5d504f;
 }
-form input.button {
-  margin: 0;
-  cursor: pointer;
-}
-input[type=text] {
-	border: 1px solid #5d504f;
-}
-
 input[type=submit] {
-	border:0;
-	border-right: 1px solid #5d504f !important;
-	border-bottom: 1px solid #5d504f !important;
-	padding:4px 10px 6px 10px !important;
-	background:none !important;
+  font-size: 12px;
+  font-weight: bold;
+  background: none;
+  border: 0;
+  border-bottom: 1px solid #5d504f;
+  border-right: 1px solid #5d504f;
+  padding: 4px 10px 6px 10px;
+  cursor: pointer;
 }

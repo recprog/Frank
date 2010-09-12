@@ -12,39 +12,6 @@
   position: relative;
   margin-top: 15px;
 }
-#content.post #content_secondary {
-  opacity: 0.5;
-  position: absolute;
-  right: 0px;
-  top: 0px;
-  overflow: hidden;
-  height: auto;
-  border-left: 1px solid #fefafa;
-  border-right: 0;
-  z-index: 100;
-}
-#content.post #content_secondary .container {
-  position: relative;
-  left: 0;
-  float: right;
-}
-#content.post #content_secondary h3 {
-  margin-bottom: 0;
-  padding-bottom: 3px;
-}
-#content.post #content_secondary h3:first-child {
-  margin-top: 0 !important;
-}
-#content.post #content_secondary .container {
-  padding-top: 15px;
-}
-#content.post #content_secondary:hover {
-  opacity: 1;
-  width: 420px;
-  height: 100%;
-  background: rgba(254, 250, 250, 0.94);
-  border-left: 1px solid #5d504f;
-}
 #content.post #content_primary h1 {
   font-size: 32px;
   line-height: 40px;
@@ -82,28 +49,16 @@
 #content.post #content_primary footer p {
   font-size: 14px !important;
 }
-#post_footer .widget {
+#content.post #post_footer .widget {
   float: left;
   margin-right: 20px;
   width: 190px;
   margin-bottom: 20px;
 }
-#post_footer .widget:nth-child(3n+1) {
+#content.post #post_footer .widget:nth-child(3n+1) {
   width: 330px;
   clear: left;
 }
-#post_footer .widget:nth-child(3n) {
+#content.post #post_footer .widget:nth-child(3n) {
   margin-right: 0;
-}
-/*ie hacks - need to define first and last divs to apply special rules. ie7 may need equal height hack*/
-#post_footer .item-0, #page_footer .item-4 {
-  background: #c00;
-  clear: left;
-  width: 330px;
-  background-color: rgba(255, 0, 255, 0.5);
-}
-#post_footer .item-3, #page_footer .item-7 {
-  background: #0c0;
-  margin-right: 0;
-  background-color: rgba(255, 0, 255, 0.5);
 }

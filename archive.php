@@ -55,28 +55,7 @@
 
 		<?php endif; ?>
 	</div>
-	<div id="content_secondary" class='span-3 last'>
-		<h3>Highlighted Content</h3>
-		<ul>
-			<?php related_posts(); ?>
-		</ul>
-		<h3>Recent Posts</h3>
-		<ul>
-		<?php 
-		
-		$offset = (is_home())?5:0;
-		
-		if (function_exists("getPrimaryColumnCategories")) $qry=getPrimaryColumnCategories();				
-		query_posts($qry.'&offset='.$offset.'&showposts='.max(0, getPrimaryColumnPostCount()-$counter));
-		if(have_posts()) : while(have_posts()) : the_post();
-		$category = get_the_category(); 
-		?>
-			<li class="<?php print $category[0]->category_nicename; ?>"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
-		<?php endwhile; else : ?>
-			<li>No Posts</li>
-		<?php endif; ?>
-		</ul>
-	</div>
+	<?php get_sidebar(); ?>
 </div>
 
 <?php get_footer(); ?>

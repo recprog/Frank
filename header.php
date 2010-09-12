@@ -20,6 +20,7 @@
 	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/header.css" type="text/css" media="screen, projection" />
 	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/index.css" type="text/css" media="screen, projection" />
 	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/single_article.css" type="text/css" media="screen, projection" />
+	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/sidebar.css" type="text/css" media="screen, projection" />
 	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/comments.css" type="text/css" media="screen, projection" />
 	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/footer.css" type="text/css" media="screen, projection" />
 	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/forms.css" type="text/css" media="screen, projection" />
@@ -28,11 +29,14 @@
 	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/hacks.css" type="text/css" media="screen, projection" />
 	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/srd.css" type="text/css" media="screen, projection" />
 	
-	<!--<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/mobile.css" type="text/css" media="handheld" />
-	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/print.css" type="text/css" media="print" />-->
+	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>css/mobile.css" type="text/css" media="handheld" />
+	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>css/print.css" type="text/css" media="print" />
 	
 	<!--[if IE]>
-	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/ie.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/ie.css" type="text/css" media="screen" />
+	<![endif]-->
+	<!--[if IE 7]>
+	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/ie7.css" type="text/css" media="screen" />
 	<![endif]-->
 	
 	<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="<?php bloginfo('rss2_url'); ?>" />
@@ -72,5 +76,6 @@
 	</header>
 	<div id='sub_header' class='clear'>
 		<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Sub Header") ) : ?>
+			<p><?php bloginfo('description'); ?>
 		<?php endif; ?>
 	</div>

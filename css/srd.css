@@ -8,10 +8,7 @@
 #page_header h1 a {
   text-indent: -9999px;
 }
-nav .menu .page-item-2 a:before {
-  color: #c00 !important;
-}
-#follow_list {
+#page_header nav #follow_list {
   background: rgba(255, 30, 0, 0.8);
   position: absolute;
   z-index: 999999;
@@ -20,10 +17,10 @@ nav .menu .page-item-2 a:before {
   top: 15px;
   overflow: hidden;
 }
-#follow_list.expanded {
+#page_header nav #follow_list.expanded {
   height: 150px;
 }
-#work_pullout {
+#page_header nav #work_pullout {
   height: 0;
   width: 960px !important;
   position: absolute;
@@ -39,7 +36,7 @@ nav .menu .page-item-2 a:before {
   overflow: hidden;
   z-index: 999999;
 }
-#work_pullout a {
+#page_header nav #work_pullout a {
   width: auto;
   padding: 0;
   display: inline;
@@ -47,31 +44,31 @@ nav .menu .page-item-2 a:before {
   font-weight: inherit;
   text-decoration: underline;
 }
-#work_pullout a:hover {
+#page_header nav #work_pullout a:hover {
   background: none;
 }
-#work_pullout h4 {
+#page_header nav #work_pullout h4 {
   padding-left: 3px;
   font-size: 15px;
 }
-#work_pullout li {
+#page_header nav #work_pullout li {
   padding: 0;
   margin-left: 0;
   float: left;
 }
-#work_pullout li.intro h4 {
+#page_header nav #work_pullout li.intro h4 {
   padding-left: 24px;
 }
-#work_pullout li.intro .more {
+#page_header nav #work_pullout li.intro .more {
   display: block;
   font-weight: bold;
   font-size: 11px;
   padding-top: 1px;
 }
-#work_pullout li.showcase a {
+#page_header nav #work_pullout li.showcase a {
   text-decoration: none;
 }
-#work_pullout li.showcase h4 {
+#page_header nav #work_pullout li.showcase h4 {
   font-size: 13px;
   background: rgba(93, 80, 79, 0.85);
   position: absolute;
@@ -80,17 +77,59 @@ nav .menu .page-item-2 a:before {
   width: 187px;
   margin: 0;
 }
-#work_pullout li.showcase img {
+#page_header nav #work_pullout li.showcase img {
   padding: 3px;
   margin: -3px 0 -3px 0;
 }
-#work_pullout.expanded {
+#page_header nav #work_pullout.expanded {
   height: 300px;
 }
-nav .menu ul li {
+#page_header nav nav .menu ul li {
   margin-right: 20px !important;
 }
-nav .menu ul li a {
+#page_header nav nav .menu ul li a {
   width: 46px;
   padding-left: 4px;
+}
+#page_footer #cat_navigation {
+  text-indent: 0;
+}
+#page_footer #cat_navigation a.head {
+  display: block;
+  font-weight: bold;
+  margin: 0px;
+  padding: 0px;
+  text-indent: 14px;
+  text-decoration: none;
+}
+#page_footer #cat_navigation li {
+  font-weight: bold;
+  font-size: 12px;
+  list-style: none outside none;
+  display: block !important;
+  background: none;
+  padding-left: 0;
+}
+#page_footer #cat_navigation li a {
+  outline-style: none;
+  display: block;
+}
+#page_footer #cat_navigation li:first-child {
+  padding-top: 0;
+}
+#page_footer #cat_navigation ul {
+  margin-top: 0;
+  padding-top: 0;
+}
+#page_footer #cat_navigation li li {
+  font-weight: normal;
+  font-size: 11px;
+  padding-top: 0;
+}
+#page_footer #cat_navigation li li a {
+  display: block;
+  padding-left: 5px;
+}
+#page_footer #cat_navigation li li:first-child {
+  margin: 0;
 }

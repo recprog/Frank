@@ -9,7 +9,7 @@
   background-color: rgba(255, 0, 255, 0.5);
 }
 #page_footer {
-  padding-top: 40px;
+  padding-top: 30px;
   padding-bottom: 60px;
   color: #f0eceb;
 }
@@ -22,47 +22,18 @@
 #page_footer .recent_comments dd {
   font-size: 11px;
 }
-#page_footer #cat_navigation {
-  text-indent: 0;
+#page_footer .widget {
+  float: left;
+  margin-right: 20px;
+  width: 190px;
+  margin-bottom: 20px;
 }
-#page_footer #cat_navigation a.head {
-  display: block;
-  font-weight: bold;
-  margin: 0px;
-  padding: 0px;
-  text-indent: 14px;
-  text-decoration: none;
+#page_footer .widget:nth-child(4n+1) {
+  width: 330px;
+  clear: left;
 }
-#page_footer #cat_navigation li {
-  font-weight: bold;
-  font-size: 12px;
-  list-style: none outside none;
-  display: block !important;
-  background: none;
-  padding-left: 0;
-}
-#page_footer #cat_navigation li a {
-  outline-style: none;
-  display: block;
-}
-#page_footer #cat_navigation li:first-child {
-  padding-top: 0;
-}
-#page_footer #cat_navigation ul {
-  margin-top: 0;
-  padding-top: 0;
-}
-#page_footer #cat_navigation li li {
-  font-weight: normal;
-  font-size: 11px;
-  padding-top: 0;
-}
-#page_footer #cat_navigation li li a {
-  display: block;
-  padding-left: 5px;
-}
-#page_footer #cat_navigation li li:first-child {
-  margin: 0;
+#page_footer .widget:nth-child(4n) {
+  margin-right: 0;
 }
 #page_heel {
   padding: 15px 0;
@@ -81,28 +52,5 @@
 }
 #sticky_footer.light {
   background-color: rgba(254, 250, 250, 0.75);
-}
-#page_footer .widget {
-  float: left;
-  margin-right: 20px;
-  width: 190px;
-  margin-bottom: 20px;
-}
-#page_footer .widget:nth-child(4n+1) {
-  width: 330px;
-  clear: left;
-}
-#page_footer .widget:nth-child(4n) {
-  margin-right: 0;
-}
-/*ie hacks - need to define first and last divs to apply special rules. ie7 may need equal height hack*/
-#page_footer .item-0, #page_footer .item-4 {
-  background: #c00;
-  clear: left;
-  width: 330px;
-}
-#page_footer .item-3, #page_footer .item-7 {
-  background: #0c0;
-  margin-right: 0;
 }
 /* @end */

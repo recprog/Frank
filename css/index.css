@@ -65,10 +65,6 @@
   font-size: 11px;
   padding-bottom: 0;
 }
-#content.home #content_secondary .post .permalink, #content.home #content_tertiary .post .permalink {
-  font-size: 10px;
-  display: block;
-}
 #content.home #content_secondary .post:nth-child(4n), #content.home #content_tertiary .post:nth-child(4n) {
   margin-right: 0;
 }

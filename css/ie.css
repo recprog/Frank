@@ -1,51 +1,37 @@
-#content.post #content_secondary .container
-{	
-	margin-left:-210px;
+.reset-dimensions {
+  margin: 0;
+  padding: 0;
 }
-
-#sticky_footer {
-	background:transparent;
-	background-image: url(images/sticky_footer_background_ie.png);
+.incomplete {
+  background-color: rgba(255, 0, 255, 0.5);
 }
-
-#content.post #content_secondary {
-	background:transparent;
-	background-image: url(images/siderail_background_ie.png);
+.show-bounds {
+  background-color: rgba(255, 255, 0, 0.5);
 }
-
-#sticky_footer .top,
-#sticky_footer .subscribe {
-	background:transparent;
-	background-image: url(images/column_highlight_background_ie.png);
+#page_footer .item-0, #page_footer .item-4 {
+  background: #c00;
+  clear: left;
+  width: 330px;
 }
-
-.highlighter {
-	filter:alpha(opacity=15);
+#page_footer .item-3, #page_footer .item-7 {
+  background: #0c0;
+  margin-right: 0;
 }
-
-#header #search #search_form {
-	background: url(images/bg_5d504f_opacity90.png);
+#sub_header .item-0, #sub_header .item-4 {
+  width: 330px;
+  clear: left;
 }
-
-#header #work_pullout {
-	background: url(images/bg_5d504f_opacity95.png);
+#sub_header .item-3, #sub_header .item-7 {
+  margin-right: 0;
 }
-
-#header #work_pullout li.showcase h4 {
-	bottom:3px;
-	margin:0;
-	background: url(images/bg_5d504f_opacity90.png);
+#post_footer .item-0, #post_footer .item-4 {
+  background: #c00;
+  clear: left;
+  width: 330px;
+  background-color: rgba(255, 0, 255, 0.5);
 }
-
-#sticky_footer .top {
-	background: url(images/bg_5d504f_opacity90.png);
-}
-
-/*individual pages*/
-#projects #projects_list span a {
-	background: url(images/bg_5d504f_opacity90.png);
-}
-	
-.clear {
- display:inline-block;
+#post_footer .item-3, #post_footer .item-7 {
+  background: #0c0;
+  margin-right: 0;
+  background-color: rgba(255, 0, 255, 0.5);
 }

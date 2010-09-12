@@ -1,22 +1,65 @@
+@color_accent: 		#ff1e00;
+@color_highlight: 	#fefafa;
+@color_light: 		#f0eceb;
+@color_midtone: 	#5d504f;
+@color_dark: 		#3d302f;
+@color_off_black: 	#050000;
+
+@sans:'Helvetica Neue',Helvetica,Arial,sans-serif;
+@serif:serif;
+@row-height:		15px;
+@column-width:		50px;
+@gutter-width:		20px;
+
+.reset-dimensions {
+	margin:0;
+	padding:0;
+}
+
+.show-bounds {
+	background-color: rgba(255, 255, 0, .5);
+}
+
+.opacity(@level:1) {
+	opacity:@level;
+}
+
+.incomplete {
+	background-color: rgba(255,0,255,.5);
+}
+
 #sidebar {
+	.opacity(.5);
+	position: absolute;
+	right: 0px;
+	top: 0px;
+	overflow:hidden;
+	height:auto;
+	border-left: 1px solid @color_highlight;
+	border-right:0;
+	z-index:100;
+	.container {
+		position: relative;
+		left: 0;
+		float: right;
+	}
 	h3 {
-		margin-bottom:0;
-		padding-bottom:2px;
+		margin-bottom: 0;
+		padding-bottom: 3px;
 	}
 	h3:first-child {
-		margin-top:0;
+		margin-top: 0 !important;
 	}
-	li {
-		padding-left:0;
-		background:none;
-		margin-bottom:15px;
-		li {
-			padding-left: 8px;
-			background: url(images/icons/tick_4x4_drk.png) no-repeat 0 9px;
-			margin-bottom:0;
-		}
+	.container {
+		padding-top:@row-height;
 	}
-	
+}
+#sidebar:hover {
+	.opacity(1);
+	width:420px;
+	height:100%;
+	background: rgba(254,250,250,.94);
+	border-left:1px solid @color_midtone;
 }
 
 #wp-calendar {

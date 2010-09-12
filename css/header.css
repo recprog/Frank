@@ -72,13 +72,6 @@
   background: #5d504f;
   color: #fefafa;
 }
-#page_header nav .menu ul li.rss a {
-  background: #ff1e00;
-  color: #fefafa !important;
-}
-#page_header nav .menu ul li.rss a:hover {
-  color: #fefafa !important;
-}
 #page_header nav .menu ul li.last {
   margin-right: 0;
 }
@@ -91,37 +84,9 @@
   padding-left: 4px;
   display: block;
   color: #fefafa !important;
-}
-#page_header #search {
-  margin-right: -20px;
-  float: right;
-  position: relative;
-  background: #3d302f;
-}
-#page_header #search #s {
-  width: 194px;
-}
-#page_header #search #search_form {
-  position: absolute;
-  width: 200px;
-  height: 15px;
-  padding: 5px;
-  right: 0px;
-  background: rgba(93, 80, 79, 0.9);
-  display: none;
-}
-#page_header #search #search_button {
-  background: url(images/icons/magnifying_glass_alt_12x12.png) no-repeat center center;
-  display: block;
-  width: 20px;
-  height: 15px;
-  text-indent: -99999px;
-}
-#page_header #search #search_button:hover {
-  background: #5d504f url(images/icons/magnifying_glass_alt_12x12.png) no-repeat center center;
-}
-#page_header #search.active #search_button {
-  background: #5d504f url(images/icons/magnifying_glass_alt_12x12.png) no-repeat center center;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 11px;
 }
 #sub_header p {
   font-size: 12px;

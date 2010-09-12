@@ -83,61 +83,23 @@
 					color: #fefafa;
 				}
 			}
-			li.rss a {
-				background: #ff1e00;
-				color: #fefafa !important;
-			}
-			li.rss a:hover {
-				color: #fefafa !important;
-			}
 			li.last {
 				margin-right: 0;
 			}
 		}
-			#follow {
-				position:absolute;
-				right:0;
-				#follow_header {
-					background:#ff1e00;
-					padding-left:4px;
-					display:block;
-					color:#fefafa !important;
-				}
-			}	
-	}
-	#search {
-		margin-right: -20px;
-		float: right;
-		position: relative;
-		background: #3d302f;
-		#s {
-			width: 194px;
-		}
-		#search_form {
-			position: absolute;
-			width: 200px;
-			height: @row-height;
-			padding: 5px;
-			right: 0px;
-			background: rgba(93,80,79,.9);
-			display: none;
-		}
-		#search_button {
-			background: url(images/icons/magnifying_glass_alt_12x12.png) no-repeat center center;
-			display: block;
-			width: 20px;
-			height: @row-height;
-			text-indent: -99999px;
-
-		}
-		#search_button:hover {
-			background: #5d504f url(images/icons/magnifying_glass_alt_12x12.png) no-repeat center center;
-		}
-	}
-	#search.active {
-		#search_button {
-			background: #5d504f url(images/icons/magnifying_glass_alt_12x12.png) no-repeat center center;
-		}
+		#follow {
+			position:absolute;
+			right:0;
+			#follow_header {
+				background:#ff1e00;
+				padding-left:4px;
+				display:block;
+				color:#fefafa !important;
+				text-decoration: none;
+				font-weight: bold;
+				font-size: 11px;
+			}
+		}	
 	}
 }
 
@@ -160,6 +122,5 @@
 	}
 	.widget:nth-child(4n) {
 		margin-right:0;
-	}
-	
+	}	
 }

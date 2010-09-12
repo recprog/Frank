@@ -66,7 +66,7 @@
 }
 #comments_container #comments li {
   background: none;
-  margin: 20px 0 ;
+  margin: 30px 0;
   padding: 0 0 14px 0;
   border-bottom: 1px solid #b5aaa9;
 }
@@ -81,8 +81,8 @@
   margin-bottom: 0;
 }
 #comments_container #no_comments {
-  font-size: 30px;
-  line-height: 40px;
+  font-size: 26px;
+  line-height: 30px;
   padding-top: 10px;
   margin-bottom: 30px;
   color: #5d504f;
@@ -93,7 +93,7 @@
   margin-top: 0;
 }
 #comments_container #commentform dl dt {
-  margin-top: 20px;
+  margin-top: 15px;
   padding: 0;
 }
 #comments_container #commentform dl dt label {
@@ -131,10 +131,10 @@
 #comments_container #commentform textarea .loggedin {
   width: 740px;
 }
-#comment_form {
+#comments_container #comment_form {
   margin-top: 20px;
 }
-#comment_form p.loggedin {
+#comments_container #comment_form p.loggedin {
   font-size: 12px !important;
   margin-bottom: 15px;
 }

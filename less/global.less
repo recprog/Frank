@@ -128,8 +128,6 @@ pre,code,tt {
 em { font-style: italic; }
 
 ul, ol {
-	list-style: none;
-	margin: 15px 0;
 	padding-top: 5px;
 	ul, ol {
 		margin:0;
@@ -145,14 +143,6 @@ ol {
 	list-style:decimal;
 	li {
 		margin-left:20px;
-	}
-}
-
-ul li {
-	padding-left: 8px;
-	background: url(images/icons/tick_4x4_drk.png) no-repeat 0 9px;
-	li {
-		margin-left:4px;
 	}
 }
 
@@ -179,25 +169,13 @@ hr {
 	background-color: #b5aaa9;
 }
 
+/* @group abstract classes */
+
 .hidden { display: none; }
 .crop { overflow: hidden; }
-
-/* @group Wordpress */
-
-.aligncenter {
-   display: block;
-   margin-left: auto;
-   margin-right: auto;
-}
-
-.alignleft {
-   float: left !important;
-}
-
-.alignright {
-   float: right !important;
-}
-
+.aligncenter { display: block; margin-left: auto; margin-right: auto; }
+.alignleft { float: left !important; }
+.alignright { float: right !important; }
 .wp-caption {
 	text-align: center;
 	img {
@@ -218,6 +196,8 @@ hr {
 {
 	.incomplete;
 }
+
+#content { margin: (@row-height)-5 0 (@row-height*2) 0;	 }
 
 .post {
 	header {
@@ -254,10 +234,6 @@ hr {
 	font-size:80px;
 	padding-top:0;
 	line-height:60px;
-}
-
-#content {
-	margin: (@row-height)-5 0 (@row-height*2) 0;	
 }
 
 ::selection			{ background: #5d504f none repeat; color:#fefafa; /* Safari and Opera */ }

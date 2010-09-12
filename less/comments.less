@@ -42,7 +42,7 @@
 	}
 	#comments {
 		.reset-dimensions;
-		margin-bottom: 15px;
+		margin-bottom:(@row-height);
 		p {
 			font-size: 12px !important;
 			line-height:@row-height !important;
@@ -50,7 +50,7 @@
 		.metadata {
 			margin-bottom:5px;
 			font-size:11px;
-			margin-top:15px;
+			margin-top:(@row-height);
 		}
 		.copy {
 			margin-top:4px;
@@ -83,7 +83,7 @@
 		}
 		li {
 			background: none;
-			margin: 20px 0 ;
+			margin: (@row-height*2) 0;
 			padding: 0 0 14px 0;
 			border-bottom: 1px solid #b5aaa9;
 		}
@@ -99,10 +99,10 @@
 		}
 	}
 	#no_comments {
-		font-size: 30px;
-		line-height: 40px;
+		font-size: 26px;
+		line-height: (@row-height*2);
 		padding-top: 10px;
-		margin-bottom: 30px;
+		margin-bottom: (@row-height*2);
 		color: #5d504f;
 	}
 	#commentform {
@@ -111,7 +111,7 @@
 			padding-top: 0; 
 			margin-top: 0;
 			dt {
-				margin-top: 20px;
+				margin-top: (@row-height);
 				padding: 0;
 				label { 
 					position:absolute !important; 
@@ -133,7 +133,7 @@
 					line-height: 1.2;
 					font-size: 12px !important;
 					padding: 2px;
-					height: 15px;
+					height: (@row-height);
 					width: 184px;
 				}
 			}
@@ -152,12 +152,12 @@
 		}
 		
 	}
-}
-
-#comment_form {
-	margin-top:20px;
-	p.loggedin {
-		font-size: 12px !important;
-		margin-bottom: 15px;
+	#comment_form {
+		margin-top:20px;
+		p.loggedin {
+			font-size: 12px !important;
+			margin-bottom: 15px;
+		}
 	}
 }
+
