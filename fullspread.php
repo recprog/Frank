@@ -12,7 +12,7 @@ Template Name: Full-spread Template
 	<div id="content_primary">
 		<?php if(have_posts()) : while(have_posts()) : the_post(); ?>
 		
-		<div class="post" id="<?php the_ID(); ?>">
+		<div class="post" id="p<?php the_ID(); ?>">
 			<div class="article_header">
 			<h2><?php the_title(); ?></h2>
 			</div>

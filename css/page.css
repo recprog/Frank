@@ -1,1 +1,10 @@
-#content.page h2{font-size:24px;}
+.reset-dimensions {
+  margin: 0;
+  padding: 0;
+}
+.incomplete {
+  background-color: rgba(255, 0, 255, 0);
+}
+.show-bounds {
+  background-color: rgba(255, 255, 0, 0.5);
+}

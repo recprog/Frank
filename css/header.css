@@ -2,6 +2,9 @@
   margin: 0;
   padding: 0;
 }
+.incomplete {
+  background-color: rgba(255, 0, 255, 0);
+}
 .show-bounds {
   background-color: rgba(255, 255, 0, 0.5);
 }
@@ -25,7 +28,7 @@
   display: block;
   font-weight: bold;
   padding-left: 20px;
-  background: #170d0e;
+  background: #3d302f;
 }
 #page_header h1 a:hover {
   background: #ff1e00;
