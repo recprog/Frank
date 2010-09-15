@@ -14,7 +14,8 @@
 </div>
 <div id="page_heel">
 	<div class="wrapper clear">
-		Copyright information
+		<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Heel") ) : ?>
+		<?php endif; ?>
 	</div>
 </div>
 <div id="sticky_footer">

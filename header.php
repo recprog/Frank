@@ -29,8 +29,8 @@
 	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/hacks.css" type="text/css" media="screen, projection" />
 	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/srd.css" type="text/css" media="screen, projection" />
 	
-	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>css/mobile.css" type="text/css" media="handheld" />
-	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>css/print.css" type="text/css" media="print" />
+	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/mobile.css" type="text/css" media="handheld" />
+	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/print.css" type="text/css" media="print" />
 	
 	<!--[if IE]>
 	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/ie.css" type="text/css" media="screen" />
@@ -59,16 +59,62 @@
 		</hgroup>
 		<nav>
 			<?php $args = array(
-			    'sort_column' => 'menu_order',
-			    'menu_class'  => 'menu',
-			    'include'     => null,
-			    'exclude'     => null,
-			    'echo'        => true,
-			    'show_home'   => false,
-			    'link_before' => null,
-			    'link_after'  =>  null);
+			    'depth'        => 1,
+			    'show_date'    => null,
+			    'date_format'  => get_option('date_format'),
+			    'child_of'     => 0,
+			    'exclude'      => null,
+			    'include'      => null,
+			    'title_li'     => null,
+			    'echo'         => 1,
+			    'authors'      => null,
+			    'sort_column'  => 'menu_order, post_title',
+			    'link_before'  => null,
+			    'link_after'   => null,
+			    'exclude_tree' => null,
+				'number'	   => 3);
 			
-				wp_page_menu( $args ); ?> 
+				 ?>
+				<div class='menu'>
+					<ul>
+						<?php wp_list_pages( $args ); ?>
+						<li><a href='#'>Pages</a></li>
+						<li class='last'><a href='#'>Topics</a>
+							
+							<!--TODO: Print this out via AJAX using Wordpress's XML-RPC interface -->
+							
+							<ul>
+								<?php $args = array(
+								    'show_option_all'    => NULL,
+								    'orderby'            => 'name',
+								    'order'              => 'ASC',
+								    'show_last_update'   => 0,
+								    'style'              => 'list',
+								    'show_count'         => 0,
+								    'hide_empty'         => 1,
+								    'use_desc_for_title' => 1,
+								    'child_of'           => 0,
+								    'feed'               => NULL,
+								    'feed_type'          => NULL,
+								    'feed_image'         => NULL,
+								    'exclude'            => NULL,
+								    'exclude_tree'       => NULL,
+								    'include'            => NULL,
+								    'hierarchical'       => true,
+								    'title_li'           => __( 'Categories' ),
+								    'number'             => NULL,
+								    'echo'               => 1,
+								    'depth'              => 0,
+								    'current_category'   => 0,
+								    'pad_counts'         => 0,
+								    'taxonomy'           => 'category',
+								    'walker'             => 'Walker_Category' ); ?>
+								
+									<?php wp_list_categories( $args ); ?> 
+							</ul>
+						</li>
+					</ul>
+				</div> 
 				<div id='follow' class='span-3 last'>
 					<a id='follow_header' href='/follow'><?php bloginfo('name'); ?></a>
 				</div>
@@ -78,4 +124,5 @@
 		<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Sub Header") ) : ?>
 			<p><?php bloginfo('description'); ?>
 		<?php endif; ?>
+		<?php echo get_num_queries(); ?> queries in <?php timer_stop(1); ?> seconds.
 	</div>

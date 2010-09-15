@@ -1,65 +1,13 @@
-.reset-dimensions {
-  margin: 0;
-  padding: 0;
-}
-.incomplete {
-  background-color: rgba(255, 0, 255, 0);
-}
-.show-bounds {
-  background-color: rgba(255, 255, 0, 0.5);
-}
-#sidebar {
-  opacity: 0.5;
-  position: absolute;
-  right: 0px;
-  top: 0px;
-  overflow: hidden;
-  height: auto;
-  border-left: 1px solid #fefafa;
-  border-right: 0;
-  z-index: 100;
-}
-#sidebar .container {
-  position: relative;
-  left: 0;
-  float: right;
-}
-#sidebar h3 {
-  margin-bottom: 0;
-  padding-bottom: 3px;
-}
-#sidebar h3:first-child {
-  margin-top: 0 !important;
-}
-#sidebar .container {
-  padding-top: 15px;
-}
-#sidebar:hover {
-  opacity: 1;
-  width: 420px;
-  height: 100%;
-  background: rgba(254, 250, 250, 0.94);
-  border-left: 1px solid #5d504f;
-}
-#wp-calendar {
-  margin-top: 0;
-  margin-bottom: 0;
-}
-#wp-calendar th, #wp-calendar td {
-  padding: 0 8px;
-}
-#wp-calendar th:first-child, #wp-calendar td:first-child {
-  padding-left: 0;
-}
-#wp-calendar th.last, #wp-calendar td.last {
-  padding-right: 0;
-}
-#wp-calendar caption {
-  font-style: italic;
-  font-size: 11px;
-  padding: 0;
-  padding-top: 1px;
-}
-#wp-calendar #today {
-  font-weight: bold;
-}
+.reset-dimensions{margin:0;padding:0;}
+.incomplete{background-color:rgba(255, 0, 255, 0);}
+.show-bounds{background-color:rgba(255, 255, 0, 0.5);}
+#sidebar{opacity:0.5;position:absolute;right:0px;top:0px;overflow:hidden;height:auto;border-left:1px solid #fefafa;border-right:0;z-index:100;}#sidebar .container{position:relative;left:0;float:right;}
+#sidebar h3{margin-bottom:0;padding-bottom:3px;}
+#sidebar h3:first-child{margin-top:0 !important;}
+#sidebar .container{padding-top:15px;}
+#sidebar:hover{opacity:1;width:420px;height:100%;background:rgba(254, 250, 250, 0.94);border-left:1px solid #5d504f;}
+#wp-calendar{margin-top:0;margin-bottom:0;}#wp-calendar th,#wp-calendar td{padding:0 8px;}
+#wp-calendar th:first-child,#wp-calendar td:first-child{padding-left:0;}
+#wp-calendar th.last,#wp-calendar td.last{padding-right:0;}
+#wp-calendar caption{font-style:italic;font-size:11px;padding:0;padding-top:1px;}
+#wp-calendar #today{font-weight:bold;}

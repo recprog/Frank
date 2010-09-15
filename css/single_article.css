@@ -1,64 +1,12 @@
-.reset-dimensions {
-  margin: 0;
-  padding: 0;
-}
-.incomplete {
-  background-color: rgba(255, 0, 255, 0);
-}
-.show-bounds {
-  background-color: rgba(255, 255, 0, 0.5);
-}
-#content.post {
-  position: relative;
-  margin-top: 15px;
-}
-#content.post #content_primary h1 {
-  font-size: 32px;
-  line-height: 40px;
-  margin-top: -6px;
-  padding-bottom: 0;
-  margin-bottom: 0;
-}
-#content.post #content_primary h1 .iconic {
-  color: #5d504f;
-  padding-right: 15px;
-}
-#content.post #content_primary h2 {
-  font-size: 11px;
-}
-#content.post #content_primary #excerpt p {
-  padding-top: 0;
-  font-size: 22px;
-  line-height: 30px;
-  font-style: italic;
-  margin-bottom: 30px;
-}
-#content.post #content_primary section {
-  margin-bottom: 15px;
-}
-#content.post #content_primary section p {
-  font-size: 17px;
-  font-family: serif;
-  line-height: 30px;
-}
-#content.post #content_primary footer {
-  margin: 0;
-  padding: 0;
-  margin-top: 30px;
-}
-#content.post #content_primary footer p {
-  font-size: 14px !important;
-}
-#content.post #post_footer .widget {
-  float: left;
-  margin-right: 20px;
-  width: 190px;
-  margin-bottom: 20px;
-}
-#content.post #post_footer .widget:nth-child(3n+1) {
-  width: 330px;
-  clear: left;
-}
-#content.post #post_footer .widget:nth-child(3n) {
-  margin-right: 0;
-}
+.reset-dimensions{margin:0;padding:0;}
+.incomplete{background-color:rgba(255, 0, 255, 0);}
+.show-bounds{background-color:rgba(255, 255, 0, 0.5);}
+#content.post{position:relative;margin-top:15px;}
+#content.post #content_primary h1{font-size:32px;line-height:40px;margin-top:-6px;padding-bottom:0;margin-bottom:0;}#content.post #content_primary h1 .iconic{color:#5d504f;padding-right:15px;}
+#content.post #content_primary h2{font-size:11px;}
+#content.post #content_primary #excerpt p{padding-top:0;font-size:22px;line-height:30px;font-style:italic;margin-bottom:30px;}
+#content.post #content_primary section{margin-bottom:15px;}#content.post #content_primary section p{font-size:17px;font-family:serif;line-height:30px;}
+#content.post #content_primary footer{margin:0;padding:0;margin-top:30px;}#content.post #content_primary footer p{font-size:14px !important;}
+#content.post #post_footer .widget{float:left;margin-right:20px;width:190px;margin-bottom:20px;}
+#content.post #post_footer .widget:nth-child(3n+1){width:330px;clear:left;}
+#content.post #post_footer .widget:nth-child(3n){margin-right:0;}
