@@ -9,7 +9,7 @@
 
 		h2 {
 			font-size:15px;
-			margin:9px 0 10px 0;
+			margin:10px 0 9px 0;
 		}
 		h3 {
 			font-size:11px;
@@ -26,7 +26,7 @@
 	}
 	
 	#content_primary {
-		margin-bottom:(@row-height*2);
+		margin-bottom:(@row-height);
 		hgroup {
 			
 		}
@@ -39,14 +39,25 @@
 				
 				}
 			}
+			header {
+				.reset-dimensions;
+				h1 {
+					margin-bottom:0;
+				}
+			}
 			section {
-				margin:0 0 @row-height 0;
+				margin:-15px 0 @row-height+2 0;
 				p {
 					font-style:italic;
 					font-size:38px !important;
 					line-height:(@row-height*3);
+					padding-top:2px;
 					padding-bottom:5px;
 				}
+			}
+			ul.metadata {
+				padding:0;
+				margin-top:20px;
 			}
 		}
 	}
@@ -67,7 +78,7 @@
 				margin-bottom:5px;
 				h1 {
 					.reset-dimensions;
-					padding-top:10px;
+					margin-top:10px;
 					font-size: 13px;
 					line-height:(@row-height*2);
 					font-weight:bold;
@@ -75,7 +86,7 @@
 				}
 			}
 			.metadata {
-				.opacity(0);
+				.opacity(1);
 			}
 			section p {
 				font-size: 11px;

@@ -21,9 +21,11 @@
 			if(have_posts()) : while(have_posts()) : the_post();
 			?>			
 				<article <?php post_class(); ?>>
+					<?php if(showPrimaryColumnTitles()) : ?>
 					<header>
 						<h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
 					</header>
+					<?php endif; ?>
 					<section>
 						<?php the_excerpt(); ?>
 					</section>
@@ -61,6 +63,7 @@
 		if(count($posts)>0) : foreach ($posts as $post) : start_wp(); 
 		?>
 			<article <?php post_class('span-3'); ?>>
+				<?php if(showSecondaryColumnTitles()) : ?>
 				<header>
 					<h1><a href="<?php the_permalink() ?>">
 					<?php
@@ -73,6 +76,7 @@
 					?>
 					</a></h1>
 				</header>
+				<?php endif; ?>
 				<section>
 					<?php 
 						$content = content(20);
@@ -119,9 +123,11 @@
 		$ter_posts_count=getTertiaryColumnPostCount();
 		
 		$posts = get_posts('caller_get_posts=1&category='.getTertiaryColumnCategories().'&numberposts='.$ter_posts_count.'&offset=0'); 
+				
 		if(count($posts)>0) : foreach ($posts as $post) : start_wp(); 
 		?>
 			<article <?php post_class('span-3'); ?>>
+				<?php if(showTertiaryColumnTitles()) : ?>
 				<header>
 					<h1><a href="<?php the_permalink() ?>">
 					<?php
@@ -133,6 +139,7 @@
 					?>
 					</a></h1>
 				</header>
+				<?php endif; ?>
 				<section>
 					<?php
 					

@@ -1,14 +1,89 @@
-.reset-dimensions{margin:0;padding:0;}
-.incomplete{background-color:rgba(255, 0, 255, 0);}
-.show-bounds{background-color:rgba(255, 255, 0, 0.5);}
-#content.home .metadata{margin:10px 0 10px 0;}
-#content.home hgroup.content_header h2{font-size:15px;margin:9px 0 10px 0;}
-#content.home hgroup.content_header h3{font-size:11px;line-height:15px;font-style:italic;margin:0;padding:0;}
-#content.home #content_primary{margin-bottom:30px;}
-#content.home #content_primary .post section{margin:0 0 15px 0;}#content.home #content_primary .post section p{font-style:italic;font-size:38px !important;line-height:45px;padding-bottom:5px;}
-#content.home #content_secondary,#content.home #content_tertiary{margin-top:15px;}#content.home #content_secondary .post.active .metadata,#content.home #content_tertiary .post.active .metadata{opacity:1;}
-#content.home #content_secondary .post,#content.home #content_tertiary .post{position:relative;float:left;margin-right:20px;}#content.home #content_secondary .post header,#content.home #content_tertiary .post header{margin:0;padding:0;margin-bottom:5px;}#content.home #content_secondary .post header h1,#content.home #content_tertiary .post header h1{margin:0;padding:0;padding-top:10px;font-size:13px;line-height:30px;font-weight:bold;}#content.home #content_secondary .post header h1 a,#content.home #content_tertiary .post header h1 a{text-decoration:none;}
-#content.home #content_secondary .post .metadata,#content.home #content_tertiary .post .metadata{opacity:0;}
-#content.home #content_secondary .post section p,#content.home #content_tertiary .post section p{font-size:11px;padding-bottom:0;}
-#content.home #content_secondary .post:nth-child(4n),#content.home #content_tertiary .post:nth-child(4n){margin-right:0;}
-#content.home .post img{max-width:190px;}
+.reset-dimensions {
+  margin: 0;
+  padding: 0;
+}
+.incomplete {
+  background-color: rgba(255, 0, 255, 0);
+}
+.show-bounds {
+  background-color: rgba(255, 255, 0, 0.5);
+}
+#content.home .metadata {
+  margin: 10px 0 10px 0;
+}
+#content.home hgroup.content_header h2 {
+  font-size: 15px;
+  margin: 10px 0 9px 0;
+}
+#content.home hgroup.content_header h3 {
+  font-size: 11px;
+  line-height: 15px;
+  font-style: italic;
+  margin: 0;
+  padding: 0;
+}
+#content.home #content_primary {
+  margin-bottom: 15px;
+}
+#content.home #content_primary .post header {
+  margin: 0;
+  padding: 0;
+}
+#content.home #content_primary .post header h1 {
+  margin-bottom: 0;
+}
+#content.home #content_primary .post section {
+  margin: -15px 0 17px 0;
+}
+#content.home #content_primary .post section p {
+  font-style: italic;
+  font-size: 38px !important;
+  line-height: 45px;
+  padding-top: 2px;
+  padding-bottom: 5px;
+}
+#content.home #content_primary .post ul.metadata {
+  padding: 0;
+  margin-top: 20px;
+}
+#content.home #content_secondary, #content.home #content_tertiary {
+  margin-top: 15px;
+}
+#content.home #content_secondary .post.active .metadata, #content.home #content_tertiary .post.active .metadata {
+  opacity: 1;
+}
+#content.home #content_secondary .post, #content.home #content_tertiary .post {
+  position: relative;
+  float: left;
+  margin-right: 20px;
+}
+#content.home #content_secondary .post header, #content.home #content_tertiary .post header {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 5px;
+}
+#content.home #content_secondary .post header h1, #content.home #content_tertiary .post header h1 {
+  margin: 0;
+  padding: 0;
+  margin-top: 10px;
+  font-size: 13px;
+  line-height: 30px;
+  font-weight: bold;
+}
+#content.home #content_secondary .post header h1 a, #content.home #content_tertiary .post header h1 a {
+  text-decoration: none;
+}
+#content.home #content_secondary .post .metadata, #content.home #content_tertiary .post .metadata {
+  opacity: 1;
+}
+#content.home #content_secondary .post section p, #content.home #content_tertiary .post section p {
+  font-size: 11px;
+  padding-bottom: 0;
+}
+#content.home #content_secondary .post:nth-child(4n), #content.home #content_tertiary .post:nth-child(4n) {
+  margin-right: 0;
+}
+/*Temp rules*/
+#content.home .post img {
+  max-width: 190px;
+}

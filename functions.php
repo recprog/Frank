@@ -16,9 +16,16 @@ if(!get_option('caption_secondary')) update_option( 'caption_secondary', 'Second
 if(!get_option('caption_tertiary')) update_option( 'caption_tertiary', 'Tertiary Column Caption' );
 
 add_action('admin_menu', 'fs_plugin_menu');
+add_action('init', 'fs_init');
 
 function fs_plugin_menu() {
   add_options_page('Franklin Street Options', 'Franklin Street', 8, 'franklin-street', 'fs_options_page');
+}
+
+function fs_init() {
+	add_option('fs_show_title_primary', 'show_title');
+	add_option('fs_show_title_secondary', 'show_title');
+	add_option('fs_show_title_tertiary', 'show_title');
 }
 
 function fs_options_page() {
@@ -44,6 +51,10 @@ function fs_options_page() {
 		$caption_primary = $_POST['caption_primary'];
 		$caption_secondary = $_POST['caption_secondary'];
 		$caption_tertiary = $_POST['caption_tertiary'];
+		
+		$show_title_primary = $_POST['show_title_primary'];
+		$show_title_secondary = $_POST['show_title_secondary'];
+		$show_title_tertiary = $_POST['show_title_tertiary'];
 
 		$options = array();
 		
@@ -64,6 +75,9 @@ function fs_options_page() {
 		update_option( 'fs_caption_primary', $caption_primary );
 		update_option( 'fs_caption_secondary', $caption_secondary );
 		update_option( 'fs_caption_tertiary', $caption_tertiary );
+		update_option( 'fs_show_title_primary', $show_title_primary );
+		update_option( 'fs_show_title_secondary', $show_title_secondary );
+		update_option( 'fs_show_title_tertiary', $show_title_tertiary );
 		update_option( $opt_name, $options );
 
 ?>
@@ -141,6 +155,18 @@ This plugin interface allows you to control how your content is laid out on the 
 	<td>
 		<?php _e("Number of Posts to show:", 'mt_trans_domain' ); ?> <br />	
 		<input type="text" name="posts_tertiary" value="<?php echo get_option('fs_posts_tertiary'); ?>" size="20">
+	</td>
+</tr>
+
+<tr>
+	<td>
+		<input type="checkbox" name="show_title_primary" value="show_title" <?php if(get_option('fs_show_title_primary')=='show_title') echo 'checked="checked"'; ?> /> <?php _e("Display Post Title", 'mt_trans_domain' ); ?>
+	</td>
+	<td>
+		<input type="checkbox" name="show_title_secondary" value="show_title" <?php if(get_option('fs_show_title_secondary')=='show_title') echo 'checked="checked"'; ?> /> <?php _e("Display Post Title", 'mt_trans_domain' ); ?>
+	</td>
+	<td>
+		<input type="checkbox" name="show_title_tertiary" value="show_title" <?php if(get_option('fs_show_title_tertiary')=='show_title') echo 'checked="checked"'; ?> /> <?php _e("Display Post Title", 'mt_trans_domain' ); ?>
 	</td>
 </tr>
 
@@ -283,6 +309,18 @@ function secondaryColumnCaption() {
 
 function tertiaryColumnCaption() {
 	echo get_option('fs_caption_tertiary');
+}
+
+function showPrimaryColumnTitles() {
+	return (get_option('fs_show_title_primary')=='show_title')?true:false;
+}
+
+function showSecondaryColumnTitles() {
+	return (get_option('fs_show_title_secondary')=='show_title')?true:false;
+}
+
+function showTertiaryColumnTitles() {
+	return (get_option('fs_show_title_tertiary')=='show_title')?true:false;
 }
 
 
