@@ -35,7 +35,20 @@
 					<h2><span class=' iconic chat'></span> The Discussion</h2>
 					<h3><?php comments_number('No Comments', 'One Comment', '% Comments' );?> on &#8220;<?php the_title(); ?>&#8221;</h3>
 				</hgroup>
-				<?php comments_template(); ?>
+				<?php #comments_template(); ?>
+				
+				
+				<script type="text/javascript">
+					jQuery(document).ready(function(){
+					jQuery.ajaxSetup({cache:false});
+					jQuery("*").click(function(){
+						$("#comments_container").html("loading...");
+						$("#comments_container").load("<?php bloginfo('template_directory'); ?>/comment_wrapper.php",{id:0});
+						return false;
+					});
+				});
+				</script>
+				
 			</div>
 		</div>
 	<?php get_sidebar(); ?>	

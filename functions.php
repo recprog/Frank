@@ -490,7 +490,41 @@ function excerpt_read_more($post) {
 	return '<a href="'. get_permalink($post->ID) . '">' . 'Read the Rest...' . '</a>';
 }
 
+/**
+* Find and close unclosed xml tags
+**/
+function close_tags($text) {
+    $patt_open    = "%((?<!</)(?<=<)[\s]*[^/!>\s]+(?=>|[\s]+[^>]*[^/]>)(?!/>))%";
+    $patt_close    = "%((?<=</)([^>]+)(?=>))%";
+    if (preg_match_all($patt_open,$text,$matches))
+    {
+        $m_open = $matches[1];
+        if(!empty($m_open))
+        {
+            preg_match_all($patt_close,$text,$matches2);
+            $m_close = $matches2[1];
+            if (count($m_open) > count($m_close))
+            {
+                $m_open = array_reverse($m_open);
+                foreach ($m_close as $tag) $c_tags[$tag]++;
+                foreach ($m_open as $k => $tag)    if ($c_tags[$tag]--<=0) $text.='</'.$tag.'>';
+            }
+        }
+    }
+    return $text;
+}
+/*
 function content($limit) {
+	
+	
+  	$content=get_the_content();
+	$contentTemp=$content;
+
+  	$contentTemp = strip_tags($contentTemp, '');
+
+	$delta = strlen($content)-strlen($contentTemp);
+	echo $delta;
+
   $content = explode(' ', get_the_content(), $limit);
   
   if (count($content)>=$limit-3) {
@@ -503,7 +537,119 @@ function content($limit) {
   $content = preg_replace('/\[.+\]/','', $content);
   $content = apply_filters('the_content', $content); 
   $content = str_replace(']]>', ']]&gt;', $content);
-  return $content;
+  return close_tags($content);
+}
+*/
+
+function content($maxLength)
+{
+	$html=get_the_content(); //new
+    $printedLength = 0;
+    $position = 0;
+    $tags = array();
+
+	$content=''; //new
+
+    while ($printedLength < $maxLength && preg_match('{</?([a-z]+)[^>]*>|&#?[a-zA-Z0-9]+;}', $html, $match, PREG_OFFSET_CAPTURE, $position))
+    {
+        list($tag, $tagPosition) = $match[0];
+
+        // Print text leading up to the tag.
+        $str = substr($html, $position, $tagPosition - $position);
+        if ($printedLength + strlen($str) > $maxLength)
+        {
+            //print(substr($str, 0, $maxLength - $printedLength));
+			$content.=substr($str, 0, $maxLength - $printedLength);
+            $printedLength = $maxLength;
+            break;
+        }
+
+        //print($str);
+		$content.=$str;
+        $printedLength += strlen($str);
+
+        if ($tag[0] == '&')
+        {
+            // Handle the entity.
+            //print($tag);
+			$content.=$tag;
+            $printedLength++;
+        }
+        else
+        {
+            // Handle the tag.
+            $tagName = $match[1][0];
+            if ($tag[1] == '/')
+            {
+                // This is a closing tag.
+
+                $openingTag = array_pop($tags);
+                assert($openingTag == $tagName); // check that tags are properly nested.
+
+                //print($tag);
+				$content.=$tag;
+            }
+            else if ($tag[strlen($tag) - 2] == '/')
+            {
+                // Self-closing tag.
+                //print($tag);
+				$content.=$tag;
+            }
+            else
+            {
+                // Opening tag.
+                //print($tag);
+				$content.=$tag;
+                $tags[] = $tagName;
+            }
+        }
+
+        // Continue after the tag.
+        $position = $tagPosition + strlen($tag);
+    }
+
+    // Print any remaining text.
+    if ($printedLength < $maxLength && $position < strlen($html))
+        //print(substr($html, $position, $maxLength - $printedLength));
+		$content.=substr($html, $position, $maxLength - $printedLength);
+
+    // Close any open tags.
+    while (!empty($tags))
+        //printf('</%s>', array_pop($tags));
+		$content.='</'.array_pop($tags).'>';
+
+	$content = apply_filters('the_content', $content); 
+	return $content;
 }
 
+
+/*
+function content($num) {
+	$link = get_permalink();
+	$ending = get_option('wl_content_ending');
+	$theContent = get_the_content();
+	$output = preg_replace('/<img[^>]+./','', $theContent);
+	$limit = $num+1;
+	$content = explode(' ', $output, $limit);
+	array_pop($content);
+	$content = implode(" ",$content).$ending;
+	$imgBeg = strpos($theContent, '<img');
+	$post = substr($theContent, $imgBeg);
+	$imgEnd = strpos($post, '>');
+	$postOutput = substr($post, 0, $imgEnd+1);
+	$result = preg_match('/width="([0-9]*)" height="([0-9]*)"/', $postOutput, $matches);
+	if ($result) {
+		$pagestring = $matches[0];
+		$postOutput = str_replace($pagestring, "", $postOutput);
+	}
+	if(stristr($postOutput,'<img src=')) { return $postOutput." ".$content; } else {
+		return $content;
+	}
+	$readmore = get_option('wl_readmore_link');
+	if($readmore!="") {
+		$readmore = '<p class="readmore"><a href="'.$link.'">'.$readmore.'</a></p>';
+		return $readmore;
+	}
+}
+*/
 ?>
