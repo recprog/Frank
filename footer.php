@@ -19,7 +19,7 @@
 	</div>
 </div>
 <div id="sticky_footer">
-	This will be the first-timer module. 
+	This will be the first-timer module.  <?php echo get_num_queries(); ?> queries in <?php timer_stop(1); ?> seconds.
 </div>
 <?php wp_footer(); ?>
 </body>

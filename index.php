@@ -54,8 +54,6 @@
 		<?php 
 		add_filter('excerpt_length', 'secondary_excerpt_length');
 		add_filter('excerpt_more', 'excerpt_read_more');
-		query_posts('caller_get_posts=1&cat='.getSecondaryColumnCategories().'&showposts='.getSecondaryColumnPostCount());
-		
 		$sec_posts_count=getSecondaryColumnPostCount();
 		
 		$posts = get_posts('caller_get_posts=1&category='.getSecondaryColumnCategories().'&numberposts='.$sec_posts_count.'&offset=0'); 
@@ -121,10 +119,7 @@
 		<div class='contents span-12 last'>	
 		<?php 
 		
-		query_posts('caller_get_posts=1&cat='.getTertiaryColumnCategories().'&showposts='.getTertiaryColumnPostCount());
-		
 		$ter_posts_count=getTertiaryColumnPostCount();
-		
 		$posts = get_posts('caller_get_posts=1&category='.getTertiaryColumnCategories().'&numberposts='.$ter_posts_count.'&offset=0'); 
 				
 		if(count($posts)>0) : foreach ($posts as $post) : start_wp(); 

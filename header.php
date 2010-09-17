@@ -94,5 +94,4 @@
 		<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Sub Header") ) : ?>
 			<p><?php bloginfo('description'); ?></p>
 		<?php endif; ?>
-		<?php echo get_num_queries(); ?> queries in <?php timer_stop(1); ?> seconds.
 	</div>
