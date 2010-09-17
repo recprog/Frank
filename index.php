@@ -41,7 +41,6 @@
 					</header>
 				</div>
 			<?php endif; ?>
-			<?php wp_reset_query(); ?>
 		</div>
 	</div>
 	<div id="content_secondary" class='span-14 last clear'>
@@ -80,41 +79,10 @@
 				<section>
 					<?php 
 						$content = content(80);
-						
 						$content = apply_filters('the_content', $content);
 						
-						/*
-						preg_match_all('/<img[^>]+>/i',$content, $result); 
-						//print_r($result);
-						
-						$img = array();
-						foreach( $result as $img_tag)
-						{
-							print_r('img'.$img_tag);
-						    preg_match_all('/(alt|title|src)=("[^"]*")/i',$img_tag, $img[$img_tag]);
-						}
-						
-						//print_r($img);
-						*/
-						
-						$doc=new DOMDocument();
-						$doc->loadHTML($content);
-						$xml=simplexml_import_dom($doc); // just to make xpath more simple
-						$images=$xml->xpath('//img');
-						foreach ($images as $img) {
-						    //echo $img['src'] . ' ' . $img['alt'] . ' ' . $img['title'];
-							$img['src']='foo';
-						}
-						
-						
-						$imgpath='';
-						//$pattern = '/\< *[img][^\>]*src *= *[\"\']{0,1}([^\"\'\ >]*)/i';
 						$pattern = '/\< *[img][^\>]* src *= *[\"\']{0,1}([^\"\'\ >]*)/i';
 						$replacement = '<img src="/php/phpthumb/phpThumb.php?src=' . '$1' . '&w=190&h=150&zc=1&q=80"';
-						//$replacement = '<img ' . '$1' . ' ';
-						
-						/*temporary*/
-						//$replacement = '<img src="/php/image.php/p'.get_the_ID().'.png?width=260&amp;height=180&amp;cropratio=1:1&amp;image='.'$1'.'"';
 						
 						$pagecontent = preg_replace($pattern, $replacement, $content);
 						
@@ -125,8 +93,6 @@
 						$pattern = '/width *= *[\"\']?[^\"\'\ >]*/';
 						$replacement = 'width="190"';
 						$pagecontent = preg_replace($pattern, $replacement, $pagecontent);
-						
-						
 						
 						echo $pagecontent;					
 					?>
@@ -143,7 +109,6 @@
 				</header>
 			</div>
 		<?php endif; ?>
-		<?php wp_reset_query(); ?>
 		</div>
 	</div>
 	<div id="content_tertiary" class='span-14 clear last'>
@@ -208,7 +173,6 @@
 				</header>
 			</div>
 		<?php endif; ?>
-		<?php wp_reset_query(); ?>
 		</div>
 	</div>
 </div>
