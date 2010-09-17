@@ -12,7 +12,7 @@
 				<header>
 					<hgroup>
 						<h1><span class='iconic document'></span><?php the_title(); ?></h1>
-						<h2><span class=' iconic clock'></span> Posted on <?php the_time('j.m.y') ?> at <?php the_time('g:i a'); ?></h2>
+						<h2><span class=' iconic clock'></span> Posted on <?php the_time('j.m.y, g:i a'); ?></h2>
 					</hgroup>
 				</header>
 				<div id='excerpt'><?php the_excerpt(); ?></div>
@@ -35,15 +35,14 @@
 					<h2><span class=' iconic chat'></span> The Discussion</h2>
 					<h3><?php comments_number('No Comments', 'One Comment', '% Comments' );?> on &#8220;<?php the_title(); ?>&#8221;</h3>
 				</hgroup>
-				<?php #comments_template(); ?>
-				
+				<div id="comments_ajax"></div>
 				
 				<script type="text/javascript">
 					jQuery(document).ready(function(){
-					jQuery.ajaxSetup({cache:false});
+					jQuery.ajaxSetup({cache:true});
 					jQuery("*").click(function(){
-						$("#comments_container").html("loading...");
-						$("#comments_container").load("<?php bloginfo('template_directory'); ?>/comment_wrapper.php",{id:0});
+						jQuery("#comments_ajax").html("loading...");
+						jQuery("#comments_ajax").load("/?page_id=<?php echo get_option('fs_comment_template_id'); ?>",{id:<?php echo get_option('fs_comment_template_id'); ?>});
 						return false;
 					});
 				});

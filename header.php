@@ -41,7 +41,7 @@
 	
 	<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="<?php bloginfo('rss2_url'); ?>" />
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
-		
+			
 	<script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js'></script>
 	<?php wp_enqueue_script('jquery-main', get_bloginfo('template_url') . '/js/main.js'); ?>
 	<?php wp_enqueue_script('jquery-srd', get_bloginfo('template_url') . '/js/srd.js'); ?>
@@ -82,36 +82,6 @@
 						<li class='last'><a href='#'>Topics</a>
 							
 							<!--TODO: Print this out via AJAX using Wordpress's XML-RPC interface -->
-							
-							<ul>
-								<?php $args = array(
-								    'show_option_all'    => NULL,
-								    'orderby'            => 'name',
-								    'order'              => 'ASC',
-								    'show_last_update'   => 0,
-								    'style'              => 'list',
-								    'show_count'         => 0,
-								    'hide_empty'         => 1,
-								    'use_desc_for_title' => 1,
-								    'child_of'           => 0,
-								    'feed'               => NULL,
-								    'feed_type'          => NULL,
-								    'feed_image'         => NULL,
-								    'exclude'            => NULL,
-								    'exclude_tree'       => NULL,
-								    'include'            => NULL,
-								    'hierarchical'       => true,
-								    'title_li'           => __( 'Categories' ),
-								    'number'             => NULL,
-								    'echo'               => 1,
-								    'depth'              => 0,
-								    'current_category'   => 0,
-								    'pad_counts'         => 0,
-								    'taxonomy'           => 'category',
-								    'walker'             => 'Walker_Category' ); ?>
-								
-									<?php wp_list_categories( $args ); ?> 
-							</ul>
 						</li>
 					</ul>
 				</div> 
@@ -122,7 +92,7 @@
 	</header>
 	<div id='sub_header' class='clear'>
 		<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Sub Header") ) : ?>
-			<p><?php bloginfo('description'); ?>
+			<p><?php bloginfo('description'); ?></p>
 		<?php endif; ?>
 		<?php echo get_num_queries(); ?> queries in <?php timer_stop(1); ?> seconds.
 	</div>
