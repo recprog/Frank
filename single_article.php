@@ -32,7 +32,7 @@
 			<?php endwhile; ?>
 			<div id="comments_container" class='clearfix'>
 				<hgroup>
-					<h2><span class=' iconic chat'></span> The Discussion</h2>
+					<h2 rel="<?php the_ID(); ?>"><span class=' iconic chat'></span> The Discussion</h2>
 					<h3><?php comments_number('No Comments', 'One Comment', '% Comments' );?> on &#8220;<?php the_title(); ?>&#8221;</h3>
 				</hgroup>
 				<div id="comments_ajax"></div>
@@ -41,8 +41,10 @@
 					jQuery(document).ready(function(){
 					jQuery.ajaxSetup({cache:true});
 					jQuery("*").click(function(){
+						var post_id = jQuery(this).attr("rel");
+						
 						jQuery("#comments_ajax").html("loading...");
-						jQuery("#comments_ajax").load("/?page_id=<?php echo get_option('fs_comment_template_id'); ?>",{id:<?php echo get_option('fs_comment_template_id'); ?>});
+						jQuery("#comments_ajax").load("/?page_id=<?php echo get_option('fs_comment_template_id'); ?>",{id:post_id});
 						return false;
 					});
 				});

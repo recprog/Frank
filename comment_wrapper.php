@@ -11,5 +11,9 @@ http://www.emanueleferonato.com/2010/04/01/loading-wordpress-posts-with-ajax-and
 */
 ?>
 
+<?php
+	$post = $_POST['id'];
+	echo $post;
+?>
 
 <?php comments_template(); ?>

@@ -58,35 +58,11 @@
 			<h1 id="title"><a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a></h1>
 		</hgroup>
 		<nav>
-			<?php $args = array(
-			    'depth'        => 1,
-			    'show_date'    => null,
-			    'date_format'  => get_option('date_format'),
-			    'child_of'     => 0,
-			    'exclude'      => null,
-			    'include'      => null,
-			    'title_li'     => null,
-			    'echo'         => 1,
-			    'authors'      => null,
-			    'sort_column'  => 'menu_order, post_title',
-			    'link_before'  => null,
-			    'link_after'   => null,
-			    'exclude_tree' => null,
-				'number'	   => 3);
-			
-				 ?>
 				<div class='menu'>
-					<ul>
-						<?php wp_list_pages( $args ); ?>
-						<li><a href='#'>Pages</a></li>
-						<li class='last'><a href='#'>Topics</a>
-							
-							<!--TODO: Print this out via AJAX using Wordpress's XML-RPC interface -->
-						</li>
-					</ul>
+					<?php wp_nav_menu( array( 'container_class' => 'menu-header' , 'theme_location' => 'primary' ) ); ?>	
 				</div> 
 				<div id='follow' class='span-3 last'>
-					<a id='follow_header' href='/follow'><?php bloginfo('name'); ?></a>
+					<a id='follow_header' href='#'><?php bloginfo('name'); ?></a>
 				</div>
 		</nav>
 	</header>

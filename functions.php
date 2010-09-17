@@ -3,61 +3,51 @@
 Description: A helper plugin for the Franklin Street Wordpress Theme to make setup and alterations easier for the three-column 
 */
 
-if(!get_option('posts_primary')) update_option( 'posts_primary', 10 );
-if(!get_option('posts_secondary')) update_option( 'posts_secondary', 10 );
-if(!get_option('posts_tertiary')) update_option( 'posts_tertiary', 10 );
+if(!get_option('fs_posts_primary')) update_option( 'posts_primary', 10 );
+if(!get_option('fs_posts_secondary')) update_option( 'posts_secondary', 10 );
+if(!get_option('fs_posts_tertiary')) update_option( 'posts_tertiary', 10 );
 
-if(!get_option('title_primary')) update_option( 'title_primary', 'Primary Column' );
-if(!get_option('title_secondary')) update_option( 'title_secondary', 'Secondary Column' );
-if(!get_option('title_tertiary')) update_option( 'title_tertiary', 'Tertiary Column' );
+if(!get_option('fs_title_primary')) update_option( 'title_primary', 'Primary Column' );
+if(!get_option('fs_title_secondary')) update_option( 'title_secondary', 'Secondary Column' );
+if(!get_option('fs_title_tertiary')) update_option( 'title_tertiary', 'Tertiary Column' );
 
-if(!get_option('caption_primary')) update_option( 'caption_primary', 'Primary Column Caption' );
-if(!get_option('caption_secondary')) update_option( 'caption_secondary', 'Secondary Column Caption' );
-if(!get_option('caption_tertiary')) update_option( 'caption_tertiary', 'Tertiary Column Caption' );
+if(!get_option('fs_caption_primary')) update_option( 'caption_primary', 'Primary Column Caption' );
+if(!get_option('fs_caption_secondary')) update_option( 'caption_secondary', 'Secondary Column Caption' );
+if(!get_option('fs_caption_tertiary')) update_option( 'caption_tertiary', 'Tertiary Column Caption' );
+
+if(!get_option('fs_show_title_primary')) update_option( 'fs_show_title_primary', 'show_title' );
+if(!get_option('fs_show_title_secondary')) update_option( 'fs_show_title_secondary', 'show_title' );
+if(!get_option('fs_show_title_tertiary')) update_option( 'fs_show_title_tertiary', 'show_title' );
+
+if(!get_option('fs_comment_template_id'))
+{
+	$args = array(
+	'post_title' => 'Comments',
+	'post_content' => '',		
+	'post_status' => 'publish', 
+	'post_type' => 'page',
+	'post_author' => 0,
+	'ping_status' => get_option('default_ping_status'), 
+	'post_parent' => 0,
+	'menu_order' => 0,
+	'to_ping' =>  '',
+	'pinged' => '',
+	'post_password' => '',
+	'guid' => '',
+	'post_content_filtered' => '',
+	'post_excerpt' => '',
+	'import_id' => 0);
+
+	$comment_id = wp_insert_post( $args );
+	update_option( 'fs_comment_template_id', $comment_id );
+	update_post_meta($comment_id, "_wp_page_template", "comment_wrapper.php");
+}
 
 add_action('admin_menu', 'fs_plugin_menu');
-add_action('after_setup_theme', 'fs_init');
+//add_action('after_setup_theme', 'fs_init');
 
 function fs_plugin_menu() {
   add_options_page('Franklin Street Options', 'Franklin Street', 8, 'franklin-street', 'fs_options_page');
-}
-
-function fs_init() {
-	add_option('fs_show_title_primary', 'show_title');
-	add_option('fs_show_title_secondary', 'show_title');
-	add_option('fs_show_title_tertiary', 'show_title');
-	
-	//$theme = get_theme(get_current_theme());
-	
-	//echo get_option('fs_comment_template_id');
-	
-	$pid = get_option('fs_comment_template_id');
-	$po = get_post($pid, ARRAY_A);
-	if(!$po||$po['post_status']!='publish')
-	{
-		$args = array(
-		'post_title' => 'Comments',
-		'post_content' => '',		
-		'post_status' => 'publish', 
-		'post_type' => 'page',
-		'post_author' => 0,
-		'ping_status' => get_option('default_ping_status'), 
-		'post_parent' => 0,
-		'menu_order' => 0,
-		'to_ping' =>  '',
-		'pinged' => '',
-		'post_password' => '',
-		'guid' => '',
-		'post_content_filtered' => '',
-		'post_excerpt' => '',
-		'import_id' => 0);
-
-		$comment_id = wp_insert_post( $args );
-		update_option( 'fs_comment_template_id', $comment_id );
-		update_post_meta($comment_id, "_wp_page_template", "comment_wrapper.php");
-	}
-	
-	
 }
 
 function fs_options_page() {
@@ -545,33 +535,6 @@ function close_tags($text) {
     }
     return $text;
 }
-/*
-function content($limit) {
-	
-	
-  	$content=get_the_content();
-	$contentTemp=$content;
-
-  	$contentTemp = strip_tags($contentTemp, '');
-
-	$delta = strlen($content)-strlen($contentTemp);
-	echo $delta;
-
-  $content = explode(' ', get_the_content(), $limit);
-  
-  if (count($content)>=$limit-3) {
-    array_pop($content);
-    $content = implode(" ",$content).'... <a href="'. get_permalink($post->ID) . '">' . 'Read the Rest' . '</a>';
-  } else {
-    $content = implode(" ",$content);
-  }	
-
-  $content = preg_replace('/\[.+\]/','', $content);
-  $content = apply_filters('the_content', $content); 
-  $content = str_replace(']]>', ']]&gt;', $content);
-  return close_tags($content);
-}
-*/
 
 function content($maxLength)
 {
@@ -653,35 +616,4 @@ function content($maxLength)
 	$content = apply_filters('the_content', $content); 
 	return $content;
 }
-
-
-/*
-function content($num) {
-	$link = get_permalink();
-	$ending = get_option('wl_content_ending');
-	$theContent = get_the_content();
-	$output = preg_replace('/<img[^>]+./','', $theContent);
-	$limit = $num+1;
-	$content = explode(' ', $output, $limit);
-	array_pop($content);
-	$content = implode(" ",$content).$ending;
-	$imgBeg = strpos($theContent, '<img');
-	$post = substr($theContent, $imgBeg);
-	$imgEnd = strpos($post, '>');
-	$postOutput = substr($post, 0, $imgEnd+1);
-	$result = preg_match('/width="([0-9]*)" height="([0-9]*)"/', $postOutput, $matches);
-	if ($result) {
-		$pagestring = $matches[0];
-		$postOutput = str_replace($pagestring, "", $postOutput);
-	}
-	if(stristr($postOutput,'<img src=')) { return $postOutput." ".$content; } else {
-		return $content;
-	}
-	$readmore = get_option('wl_readmore_link');
-	if($readmore!="") {
-		$readmore = '<p class="readmore"><a href="'.$link.'">'.$readmore.'</a></p>';
-		return $readmore;
-	}
-}
-*/
 ?>

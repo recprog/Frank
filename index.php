@@ -17,8 +17,8 @@
 			<?php 				
 			add_filter('excerpt_length', 'primary_excerpt_length');
 			$pri_posts_count=getPrimaryColumnPostCount();
-			query_posts(array( 'cat' => getPrimaryColumnCategories(),  'showposts' => max(0, $pri_posts_count) ));
-			if(have_posts()) : while(have_posts()) : the_post();
+			$posts = query_posts(array( 'cat' => getPrimaryColumnCategories(),  'showposts' => max(0, $pri_posts_count) ));
+			if(count($posts)>0) : foreach ($posts as $post) : start_wp(); 
 			?>			
 				<article <?php post_class(); ?>>
 					<?php if(showPrimaryColumnTitles()) : ?>
@@ -34,7 +34,7 @@
 						<li class='comments iconic comment last'><?php comments_popup_link('No comments', '1 comment', '% comments'); ?></li>
 					</ul>
 				</article>
-			<?php endwhile; else : ?>
+			<?php endforeach; else : ?>
 				<div class="post no-posts">
 					<header>
 						<h1>No Posts Yet</h1>
