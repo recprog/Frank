@@ -16,7 +16,7 @@ if(!get_option('caption_secondary')) update_option( 'caption_secondary', 'Second
 if(!get_option('caption_tertiary')) update_option( 'caption_tertiary', 'Tertiary Column Caption' );
 
 add_action('admin_menu', 'fs_plugin_menu');
-add_action('init', 'fs_init');
+add_action('after_setup_theme', 'fs_init');
 
 function fs_plugin_menu() {
   add_options_page('Franklin Street Options', 'Franklin Street', 8, 'franklin-street', 'fs_options_page');
@@ -26,6 +26,38 @@ function fs_init() {
 	add_option('fs_show_title_primary', 'show_title');
 	add_option('fs_show_title_secondary', 'show_title');
 	add_option('fs_show_title_tertiary', 'show_title');
+	
+	//$theme = get_theme(get_current_theme());
+	
+	//echo get_option('fs_comment_template_id');
+	
+	$pid = get_option('fs_comment_template_id');
+	$po = get_post($pid, ARRAY_A);
+	if(!$po||$po['post_status']!='publish')
+	{
+		$args = array(
+		'post_title' => 'Comments',
+		'post_content' => '',		
+		'post_status' => 'publish', 
+		'post_type' => 'page',
+		'post_author' => 0,
+		'ping_status' => get_option('default_ping_status'), 
+		'post_parent' => 0,
+		'menu_order' => 0,
+		'to_ping' =>  '',
+		'pinged' => '',
+		'post_password' => '',
+		'guid' => '',
+		'post_content_filtered' => '',
+		'post_excerpt' => '',
+		'import_id' => 0);
+
+		$comment_id = wp_insert_post( $args );
+		update_option( 'fs_comment_template_id', $comment_id );
+		update_post_meta($comment_id, "_wp_page_template", "comment_wrapper.php");
+	}
+	
+	
 }
 
 function fs_options_page() {
