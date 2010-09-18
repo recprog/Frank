@@ -39,12 +39,12 @@
 				
 				<script type="text/javascript">
 					jQuery(document).ready(function(){
-					jQuery.ajaxSetup({cache:true});
+					jQuery.ajaxSetup({cache:false, type: "POST", dataType:"html"});
 					jQuery("*").click(function(){
 						var post_id = jQuery(this).attr("rel");
 						
 						jQuery("#comments_ajax").html("loading...");
-						jQuery("#comments_ajax").load("/?page_id=<?php echo get_option('fs_comment_template_id'); ?>",{id:post_id});
+						jQuery("#comments_ajax").load("<?php bloginfo('url'); ?>/?page_id=<?php echo get_option('fs_comment_template_id'); ?>",{id:post_id});
 						return false;
 					});
 				});
