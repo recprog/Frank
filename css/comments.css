@@ -3,6 +3,7 @@
 .show-bounds{background-color:rgba(255, 255, 0, 0.5);}
 #comments_container{margin-top:45px;}#comments_container h2{font-size:22px !important;margin-bottom:0;}
 #comments_container h3{font-size:14px !important;margin-top:0;font-style:italic;}
+#comments_container #comments_ajax{overflow:hidden;height:0;}
 #comments_container #comments{margin:0;padding:0;margin-bottom:15px;}#comments_container #comments p{font-size:12px !important;line-height:15px !important;}
 #comments_container #comments .metadata{margin-bottom:5px;font-size:11px;margin-top:15px;}
 #comments_container #comments .copy{margin-top:4px;}

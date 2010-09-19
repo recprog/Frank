@@ -12,6 +12,26 @@ jQuery(document).ready(function() {
 	jQuery(this).scroll(function() {
 		updateStickyFooter();
 	});
+	
+	
+	jQuery("#content.post #comments_toggle").click(function(){
+		var post_id = jQuery(this).attr("rel");
+		var url = jQuery(this).attr("rev");
+
+		jQuery.ajax({
+		  url: url,
+		  type: "POST",
+		  cache: true,
+		  data: ({id : post_id}),
+		  success: function(data) {
+		    jQuery("#content.post #comments_ajax").html(data);
+			var h = jQuery("#content.post #comments_content").height();
+			jQuery("#content.post #comments_ajax").css('height', h);
+		  }
+		});
+		return false;
+	});
+	
 });
 
 function updateStickyFooter() {

@@ -8,7 +8,7 @@ Template Name: Full-spread Template
 */
 ?>
 <?php get_header(); ?>
-<div id="content" class="page fullspread clearfix">
+<div id="content" class="page fullspread clear">
 	<div id="content_primary">
 		<?php if(have_posts()) : while(have_posts()) : the_post(); ?>
 		

@@ -11,6 +11,7 @@
 	$oddcomment = 'class="alt" ';
 ?>
 <!-- Start editing here. -->
+<div id='comments_content'>
 <?php if ($comments) : ?>
 	<ul id="comments" class='incomplete'>
 	<?php foreach ($comments as $comment) : ?>
@@ -80,3 +81,4 @@
 		</form>	
 </div>
 	<?php endif; endif; ?>
+</div>

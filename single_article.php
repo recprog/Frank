@@ -23,33 +23,20 @@
 					<div class='pagination'>
 						<?php wp_link_pages(); ?>
 					</div>
-					<div id='post_footer'>
+					<div id='post_footer' class='clear'>
 						<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Post Footer") ) : ?>
 						<?php endif; ?>
 					</div>
 				</footer>
 			</article>
 			<?php endwhile; ?>
-			<div id="comments_container" class='clearfix'>
+			<div id="comments_container" class='clear'>
 				<hgroup>
-					<h2 rel="<?php the_ID(); ?>"><span class=' iconic chat'></span> The Discussion</h2>
+					<h2><span class=' iconic chat'></span> The Discussion</h2>
 					<h3><?php comments_number('No Comments', 'One Comment', '% Comments' );?> on &#8220;<?php the_title(); ?>&#8221;</h3>
+					<a href='#comments' rel="<?php the_ID(); ?>" rev="<?php bloginfo('url'); ?>/?page_id=<?php echo get_option('fs_comment_template_id'); ?>" id="comments_toggle">Show comments</a>
 				</hgroup>
-				<div id="comments_ajax"></div>
-				
-				<script type="text/javascript">
-					jQuery(document).ready(function(){
-					jQuery.ajaxSetup({cache:false, type: "POST", dataType:"html"});
-					jQuery("*").click(function(){
-						var post_id = jQuery(this).attr("rel");
-						
-						jQuery("#comments_ajax").html("loading...");
-						jQuery("#comments_ajax").load("<?php bloginfo('url'); ?>/?page_id=<?php echo get_option('fs_comment_template_id'); ?>",{id:post_id});
-						return false;
-					});
-				});
-				</script>
-				
+				<div id="comments_ajax" class='clear'></div>				
 			</div>
 		</div>
 	<?php get_sidebar(); ?>	
