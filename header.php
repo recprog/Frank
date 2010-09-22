@@ -57,13 +57,15 @@
 		<hgroup>
 			<h1 id="title"><a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a></h1>
 		</hgroup>
-		<nav>
-				<div class='menu'>
-					<?php wp_nav_menu( array( 'container_class' => 'menu-header' , 'theme_location' => 'primary' ) ); ?>	
-				</div> 
-				<div id='follow' class='span-3 last'>
-					<a id='follow_header' href='#'><?php bloginfo('name'); ?></a>
-				</div>
+		<nav class='clear'>
+			<div class='menu clear'>
+				<?php wp_nav_menu( array( 'container_class' => 'menu-header' , 'theme_location' => 'primary' ) ); ?>	
+			</div> 
+			<!--
+			<div id='follow' class='span-3 last'>
+				<a id='follow_header' href='#'><?php bloginfo('name'); ?></a>
+			</div>
+			-->
 		</nav>
 	</header>
 	<div id='sub_header' class='clear'>

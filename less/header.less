@@ -2,40 +2,29 @@
 
 
 #page_header { 
-	height:@row-height;
 	position: relative;
-	background:@color_midtone;
-	h1 {  
-		.reset-dimensions;
-		margin-left: -20px; 
+	h1 {
+		font-size:16px;
+		margin-bottom:5px;
 		a {
-			text-decoration: none;	
-			color: @color_highlight;
-			font-size:11px;
-			line-height:@row-height;
-			width: 120px;
-			height:@row-height;
-			display: block;
-			font-weight:bold;
-			padding-left:20px;
-			background: @color_dark;
+			text-decoration:none;
 		}
-		a:hover { background: @color_accent; }
 	}
+	
 	hgroup {
 		margin-top: 0px; 
-		float: left;
+		
 	}
 	nav {
-		margin-left:20px;
-		width:820px;
-		float:left;
+		display:block;
+		padding-bottom:5px;
+		border-bottom:1px dotted @color_midtone;
+		margin-bottom:5px;
 		.menu ul {
 			float: left;
 			list-style: none;
 			.reset-dimensions;
 			display:block;
-			width:630px;
 			ul {
 				display:none;
 			}
@@ -51,15 +40,14 @@
 				a {
 					display: block;
 					text-decoration: none;
-					font-weight: bold;
 					height:(@row-height);
-					color: #fefafa;
+					color: @color_off_black;
 					font-size: 11px;
-					padding-top: 0px;
+					padding-top:0;
+					
 				}
 				a:hover {
-					background: #5d504f;
-					color: #fefafa;
+					color:@color_midtone;
 				}
 			}
 			li.last {

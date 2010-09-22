@@ -46,6 +46,13 @@ if(!get_option('fs_comment_template_id'))
 add_action('admin_menu', 'fs_plugin_menu');
 //add_action('after_setup_theme', 'fs_init');
 
+
+add_action( 'init', 'fs_register_menus' );
+
+function fs_register_menus() {
+  register_nav_menus(array('primary' => __( 'Primary Navigation' )));
+}
+
 function fs_plugin_menu() {
   add_options_page('Franklin Street Options', 'Franklin Street', 8, 'franklin-street', 'fs_options_page');
 }

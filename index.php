@@ -10,13 +10,14 @@
 		<div class='nav span-2'>
 			<hgroup class='content_header'>
 				<h2><?php if (function_exists("primaryColumnTitle")) primaryColumnTitle(); ?></h2>
-				<h3><?php if (function_exists("primaryColumnCaption")) primaryColumnCaption(); ?> (<a href='/category/articles/'>more...</a>)</h3> 
+				<h3><?php if (function_exists("primaryColumnCaption")) primaryColumnCaption(); ?> (<a href='<?php bloginfo('url'); ?>?cat=<?php echo getPrimaryColumnCategories(); ?>'>more...</a>)</h3> 
 			</hgroup>
 		</div>
 		<div class='contents span-12 last'>	
 			<?php 				
 			add_filter('excerpt_length', 'primary_excerpt_length');
 			$pri_posts_count=getPrimaryColumnPostCount();
+			
 			$posts = query_posts(array( 'cat' => getPrimaryColumnCategories(),  'showposts' => max(0, $pri_posts_count) ));
 			if(count($posts)>0) : foreach ($posts as $post) : start_wp(); 
 			?>			
@@ -47,7 +48,7 @@
 		<div class='nav span-2'>
 			<hgroup class='content_header'>
 				<h2><?php if (function_exists("secondaryColumnTitle")) secondaryColumnTitle(); ?></h2>
-				<h3><?php if (function_exists("secondaryColumnCaption")) secondaryColumnCaption(); ?> (<a href='/category/stream/'>more...</a>)</h3>
+				<h3><?php if (function_exists("secondaryColumnCaption")) secondaryColumnCaption(); ?> (<a href='<?php bloginfo('url'); ?>?cat=<?php echo getSecondaryColumnCategories(); ?>'>more...</a>)</h3>
 			</hgroup>
 		</div>
 		<div class='contents span-12 last'>	
@@ -113,7 +114,7 @@
 		<div class="nav span-2">
 			<hgroup class='content_header'>
 				<h2><?php if (function_exists("tertiaryColumnTitle")) tertiaryColumnTitle(); ?></h2>
-				<h3><?php if (function_exists("tertiaryColumnCaption")) tertiaryColumnCaption(); ?> (<a href='/category/snippets/'>more...</a>)</h3>
+				<h3><?php if (function_exists("tertiaryColumnCaption")) tertiaryColumnCaption(); ?> (<a href='<?php bloginfo('url'); ?>?cat=<?php echo getTertiaryColumnCategories(); ?>'>more...</a>)</h3>
 			</hgroup>
 		</div>
 		<div class='contents span-12 last'>	

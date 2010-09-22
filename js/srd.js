@@ -15,7 +15,7 @@ jQuery(document).ready(function() {
 		jQuery(this).toggleClass('active', false);
 	})
 		
-	jQuery('#follow').mouseenter(function(){
+	jQuery('#menu-item-217').mouseenter(function(){
 		if(jQuery(this).find('#follow_list').length) {
 			expand(300);
 			return;
@@ -39,8 +39,8 @@ jQuery(document).ready(function() {
 		})		
 	});
 		
-		jQuery('#follow').mouseleave(function(){
-			if(jQuery('#follow').find('#follow_list').length&&followReq) followReq.abort();
+		jQuery('#menu-item-217').mouseleave(function(){
+			if(jQuery('#menu-item-217').find('#follow_list').length&&followReq) followReq.abort();
 			jQuery('#follow_list').toggleClass('expanded', false);
 			
 		});

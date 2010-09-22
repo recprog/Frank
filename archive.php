@@ -5,10 +5,10 @@
  */
 ?>
 <?php get_header(); ?>
-<div id="content" class="results clearfix">
+<div id="content" class="results clear">
 	<div id="content_primary" class='span-11'>
 	<?php if(have_posts()) : ?>
-	<div class="header">
+	<header>
 	<?php $post = $posts[0]; // Hack. Set $post so that the_date() works. ?>
 	<?php /* If this is a category archive */ if (is_category()) { ?>
 	<h2 class="pagetitle">Archive for the &#8216;<?php single_cat_title(); ?>&#8217; Category</h2>
@@ -26,18 +26,17 @@
 	<h2 class="pagetitle">Blog Archives</h2>
 	<?php } ?>
 	<small>Click on one of the items below to go to the post</small>
-	</div>
+	</header>
 		<?php while(have_posts()) : the_post(); ?>
-		<div <?php post_class(); ?> id="<?php the_ID(); ?>">
-			<div class="article_header">
-				<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-				<h4>Posted on <?php the_time('j F, Y'); ?> at <?php the_time('g:ia'); ?> with <?php comments_popup_link('no comments', '1 comment &#187;', '% comments'); ?></h4>
-			</div>
-			<div class="entry">
+		<article <?php post_class(); ?> id="<?php the_ID(); ?>">
+			<header>
+				<h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
+				<h2>Posted on <?php the_time('j F, Y'); ?> at <?php the_time('g:ia'); ?> with <?php comments_popup_link('no comments', '1 comment &#187;', '% comments'); ?></h2>
+			</header>
+			<section class="entry">
 				<?php the_content('Read the rest of this post...'); ?>
-			</div>
-		</div> <!-- .post -->
-		<hr />
+			</section>
+		</article> <!-- .post -->
 		<?php endwhile; ?>
 		<div class="pagination clearfix">
 			<div class="span-2 next"><?php next_posts_link( '<span class="nav-meta">&laquo;</span> Older Entries' ); ?></div>
@@ -52,7 +51,7 @@
 			
 			<?php include(TEMPLATEPATH.'/searchform.php'); ?>
 	 		<!-- .post -->
-
+		</div>
 		<?php endif; ?>
 	</div>
 	<?php get_sidebar(); ?>
