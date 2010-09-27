@@ -7,11 +7,9 @@
 <?php get_header(); ?>
 <div id="content" class="home clear">
 	<div id="content_primary" class='span-14 last clear'>
-		<div class='nav span-2'>
-			<hgroup class='content_header'>
-				<h2><?php if (function_exists("primaryColumnTitle")) primaryColumnTitle(); ?></h2>
-				<h3><?php if (function_exists("primaryColumnCaption")) primaryColumnCaption(); ?> (<a href='<?php bloginfo('url'); ?>?cat=<?php echo getPrimaryColumnCategories(); ?>'>more...</a>)</h3> 
-			</hgroup>
+		<div class='nav content-header span-2'>
+			<span class='label'><?php if (function_exists("primaryColumnTitle")) primaryColumnTitle(); ?></span>
+			<span class='caption'><?php if (function_exists("primaryColumnCaption")) primaryColumnCaption(); ?> (<a href='<?php bloginfo('url'); ?>?cat=<?php echo getPrimaryColumnCategories(); ?>'>more...</a>)</span> 
 		</div>
 		<div class='contents span-12 last'>	
 			<?php 				
@@ -30,10 +28,12 @@
 					<section>
 						<?php the_excerpt(); ?>
 					</section>
-					<ul class='metadata clear'>
-						<li class='time iconic clock'><time datetime="<?php the_time('Y-m-d'); ?>" pubdate><?php the_time('Y-j-n'); ?></time></li>											
-						<li class='comments iconic comment last'><?php comments_popup_link('No comments', '1 comment', '% comments'); ?></li>
-					</ul>
+					<footer>
+						<ul class='metadata clear'>
+							<li class='time iconic clock'><time datetime="<?php the_time('Y-m-d'); ?>" pubdate><?php the_time('Y-j-n'); ?></time></li>											
+							<li class='comments iconic comment last'><?php comments_popup_link('No comments', '1 comment', '% comments'); ?></li>
+						</ul>
+					</footer>
 				</article>
 			<?php endforeach; else : ?>
 				<div class="post no-posts">
@@ -45,11 +45,9 @@
 		</div>
 	</div>
 	<div id="content_secondary" class='span-14 last clear'>
-		<div class='nav span-2'>
-			<hgroup class='content_header'>
-				<h2><?php if (function_exists("secondaryColumnTitle")) secondaryColumnTitle(); ?></h2>
-				<h3><?php if (function_exists("secondaryColumnCaption")) secondaryColumnCaption(); ?> (<a href='<?php bloginfo('url'); ?>?cat=<?php echo getSecondaryColumnCategories(); ?>'>more...</a>)</h3>
-			</hgroup>
+		<div class='nav content-header span-2'>
+			<span class='label'><?php if (function_exists("secondaryColumnTitle")) secondaryColumnTitle(); ?></span>
+			<span class='caption'><?php if (function_exists("secondaryColumnCaption")) secondaryColumnCaption(); ?> (<a href='<?php bloginfo('url'); ?>?cat=<?php echo getSecondaryColumnCategories(); ?>'>more...</a>)</span>
 		</div>
 		<div class='contents span-12 last'>	
 		<?php 
@@ -96,10 +94,12 @@
 						echo $pagecontent;					
 					?>
 				</section>
-				<ul class='metadata clear'>
-					<li class='time iconic clock'><time datetime="<?php the_time('Y-m-d'); ?>" pubdate><?php the_time('Y-j-n'); ?></time></li>											
-					<li class='comments iconic comment last'><?php comments_popup_link('0', '1', '%'); ?></li>
-				</ul>
+				<footer>
+					<ul class='metadata clear'>
+						<li class='time iconic clock'><time datetime="<?php the_time('Y-m-d'); ?>" pubdate><?php the_time('Y-j-n'); ?></time></li>											
+						<li class='comments iconic comment last'><?php comments_popup_link('No comments', '1 comment', '% comments'); ?></li>
+					</ul>
+				</footer>
 			</article>
 		<?php endforeach; else : ?>
 			<div class="post no-posts">
@@ -111,11 +111,9 @@
 		</div>
 	</div>
 	<div id="content_tertiary" class='span-14 clear last'>
-		<div class="nav span-2">
-			<hgroup class='content_header'>
-				<h2><?php if (function_exists("tertiaryColumnTitle")) tertiaryColumnTitle(); ?></h2>
-				<h3><?php if (function_exists("tertiaryColumnCaption")) tertiaryColumnCaption(); ?> (<a href='<?php bloginfo('url'); ?>?cat=<?php echo getTertiaryColumnCategories(); ?>'>more...</a>)</h3>
-			</hgroup>
+		<div class="content-header nav span-2">
+			<span class='label'><?php if (function_exists("tertiaryColumnTitle")) tertiaryColumnTitle(); ?></span>
+			<span class='caption'><?php if (function_exists("tertiaryColumnCaption")) tertiaryColumnCaption(); ?> (<a href='<?php bloginfo('url'); ?>?cat=<?php echo getTertiaryColumnCategories(); ?>'>more...</a>)</span>
 		</div>
 		<div class='contents span-12 last'>	
 		<?php 
@@ -141,26 +139,31 @@
 				<?php endif; ?>
 				<section>
 					<?php
+						$content = content(80);
+						$content = apply_filters('the_content', $content);
 					
-					$content = content(80);
-					$content = apply_filters('the_content', $content);
+						$pattern = '/\< *[img][^\>]* src *= *[\"\']{0,1}([^\"\'\ >]*)/i';
+						$replacement = '<img src="/php/phpthumb/phpThumb.php?src=' . '$1' . '&w=190&h=150&zc=1&q=80"';
 					
-					$imgpath='';
-					$pattern = '/\< *[img][^\>]*[src] *= *[\"\']{0,1}([^\"\'\ >]*)/i';
-					$replacement = '<img src="' . $imgpath . '/php/phpthumb/phpThumb.php?src=' . '$1' . '&w=260&h=180&zc=1&q=80"';
+						$pagecontent = preg_replace($pattern, $replacement, $content);
 					
-					/*temporary*/
-					//$replacement = '<img src="/php/image.php/p'.get_the_ID().'.png?width=260&amp;height=180&amp;cropratio=1:1&amp;image='.'$1'.'"';
+						$pattern = '/height *= *[\"\']?[^\"\'\ >]*/';
+						$replacement = 'height="150"';
+						$pagecontent = preg_replace($pattern, $replacement, $pagecontent);
 					
-					$pagecontent = preg_replace($pattern, $replacement, $content);
-					echo $pagecontent;
+						$pattern = '/width *= *[\"\']?[^\"\'\ >]*/';
+						$replacement = 'width="190"';
+						$pagecontent = preg_replace($pattern, $replacement, $pagecontent);
 					
+						echo $pagecontent;
 					?>
 				</section>
-				<ul class='metadata clear'>
-					<li class='time iconic clock'><time datetime="<?php the_time('Y-m-d'); ?>" pubdate><?php the_time('Y-j-n'); ?></time></li>											
-					<li class='comments iconic comment last'><?php comments_popup_link('0', '1', '%'); ?></li>
-				</ul>
+				<footer>
+					<ul class='metadata clear'>
+						<li class='time iconic clock'><time datetime="<?php the_time('Y-m-d'); ?>" pubdate><?php the_time('Y-j-n'); ?></time></li>											
+						<li class='comments iconic comment last'><?php comments_popup_link('No comments', '1 comment', '% comments'); ?></li>
+					</ul>
+				</footer>
 			</article>
 		<?php endforeach; else : ?>
 			<div class="post no-posts">

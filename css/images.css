@@ -1,13 +1,4 @@
-#content.home #content_primary .article_header,#content.post .article_header,#content.results .article_header{padding-left:60px;background:url(images/icons/articles_opinion_40x40_drk.png) no-repeat;}
-#content.home #content_primary .category-design .article_header,#content.post .category-design .article_header,#content.results .category-design .article_header{background-image:url(images/icons/design_40x40_drk.png);}
-#content.home #content_primary .category-current-events .article_header,#content.post .category-current-events .article_header,#content.results .category-current-events .article_header{background-image:url(images/icons/current_events_40x40_drk.png);}
-#content.home #content_primary .category-art-ideas .article_header,#content.post .category-art-ideas .article_header,#content.results .category-art-ideas .article_header{background-image:url(images/icons/art_ideas_40x40_drk.png);}
-#content.home #content_primary .category-art-ideas .article_header,#content.post .category-art-ideas .article_header,#content.results .category-art-ideas .article_header{background-image:url(images/icons/art_ideas_40x40_drk.png);}
-#content.home #content_primary .category-design-technology .article_header,#content.post .category-design-technology .article_header,#content.results .category-design-technology .article_header{background-image:url(images/icons/design_technology_40x40_drk.png);}
-#content.home #content_primary .category-opinion .article_header,#content.post .category-opinion .article_header,#content.results .category-opinion .article_header{background-image:url(images/icons/opinion_40x40_drk.png);}
-#content.home #content_primary .category-technology .article_header,#content.post .category-technology .article_header,#content.results .category-technology .article_header{background-image:url(images/icons/technology_40x40_drk.png);}
-#content.results .category-twitter .article_header{background-image:url(images/icons/twitter_40x40_drk.png);}
-#content.results .category-tumblr .article_header{background-image:url(images/icons/tumblr_40x40_drk.png);}
-#content.results .category-google-reader .article_header{background-image:url(images/icons/rss_40x40_drk.png);}
-#content.results .category-flickr .article_header{background-image:url(images/icons/flickr_40x40_drk.png);}
-#content.results .category-delicious .article_header{background-image:url(images/icons/delicious_40x40.png);}
+.reset-dimensions{margin:0;padding:0;}
+.incomplete{background-color:rgba(255, 0, 255, 0);}
+.show-bounds{background-color:rgba(255, 255, 0, 0.5);}
+.gravatar img{margin-top:9px;background:url(images/placeholder_50x50.gif) no-repeat;}

@@ -1,3 +1,7 @@
 .reset-dimensions{margin:0;padding:0;}
 .incomplete{background-color:rgba(255, 0, 255, 0);}
 .show-bounds{background-color:rgba(255, 255, 0, 0.5);}
+#content.archive header{margin-bottom:30px;}
+#content.archive article header h1{font-size:22px;}
+#content.archive .post{margin-bottom:30px;}
+#content.archive .post:last-child{margin-bottom:15px;}

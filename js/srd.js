@@ -8,10 +8,10 @@ var workReq;
 jQuery(document).ready(function() {
 	
 	
-	jQuery('#content.home #content_secondary .post').mouseenter(function(){
+	jQuery('#content.home #content_secondary .post, #content.home #content_tertiary .post').mouseenter(function(){
 		jQuery(this).toggleClass('active', true);
 	})
-	jQuery('#content.home #content_secondary .post').mouseleave(function(){
+	jQuery('#content.home #content_secondary .post, #content.home #content_tertiary .post').mouseleave(function(){
 		jQuery(this).toggleClass('active', false);
 	})
 		

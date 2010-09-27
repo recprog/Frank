@@ -1,29 +1,9 @@
 @import "variables";
 
-
-#content.post
-{
+#content.single {
 	position: relative;
 	margin-top: @row-height;
-}
-
-#content.post {
 	#content_primary {
-		h1 {
-			font-size:32px;
-			line-height:40px;
-			margin-top:-6px;
-			padding-bottom:0;
-			margin-bottom:0;
-			.iconic {
-				color:@color_midtone;
-				padding-right:15px;
-			}
-		}
-		
-		h2 {
-			font-size:11px;
-		}
 		#excerpt {
 			p {
 				padding-top:0;
@@ -31,15 +11,6 @@
 				line-height:@row-height*2;
 				font-style:italic;
 				margin-bottom:(@row-height*2);
-			}
-		}
-		
-		section {
-			margin-bottom:15px;
-			p {
-				font-size:17px;
-				font-family:@serif;
-				line-height:30px;
 			}
 		}
 		footer {

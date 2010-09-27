@@ -51,7 +51,9 @@
 		<p>You must be <a href="<?php echo get_option('siteurl'); ?>/wp-login.php?redirect_to=<?php echo urlencode(get_permalink()); ?>">logged in</a> to post a comment.</p>
 
 		<?php else : ?>
-		
+		<header>
+			<h1>Leave Your Own Comment</h1>
+		</header>
 		<form action="<?php echo get_option('siteurl'); ?>/wp-comments-post.php" method="post" id="commentform">
 			<?php if ( !$user_ID ) : ?>	
 			<div class='span-3'>				

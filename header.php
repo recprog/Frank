@@ -17,18 +17,19 @@
 	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/reset.css" type="text/css" media="screen, projection" />
 	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/grid.css" type="text/css" media="screen, projection" />
 	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/global.css" type="text/css" media="screen, projection" />
+	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/forms.css" type="text/css" media="screen, projection" />
+	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/widgets.css" type="text/css" media="screen, projection" />
+	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/iconic.css" type="text/css" media="screen, projection" />
+	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/transitions.css" type="text/css" media="screen, projection" />
 	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/header.css" type="text/css" media="screen, projection" />
 	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/index.css" type="text/css" media="screen, projection" />
 	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/single_article.css" type="text/css" media="screen, projection" />
+	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/archive.css" type="text/css" media="screen, projection" />
 	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/sidebar.css" type="text/css" media="screen, projection" />
 	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/comments.css" type="text/css" media="screen, projection" />
 	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/footer.css" type="text/css" media="screen, projection" />
-	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/forms.css" type="text/css" media="screen, projection" />
-	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/iconic.css" type="text/css" media="screen, projection" />
-	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/transitions.css" type="text/css" media="screen, projection" />
 	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/hacks.css" type="text/css" media="screen, projection" />
 	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/srd.css" type="text/css" media="screen, projection" />
-	
 	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/mobile.css" type="text/css" media="handheld" />
 	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/print.css" type="text/css" media="print" />
 	
@@ -59,13 +60,8 @@
 		</hgroup>
 		<nav class='clear'>
 			<div class='menu clear'>
-				<?php wp_nav_menu( array( 'container_class' => 'menu-header' , 'theme_location' => 'primary' ) ); ?>	
+				<?php wp_nav_menu( array('theme_location' => 'primary', 'container' => '' ) ); ?>	
 			</div> 
-			<!--
-			<div id='follow' class='span-3 last'>
-				<a id='follow_header' href='#'><?php bloginfo('name'); ?></a>
-			</div>
-			-->
 		</nav>
 	</header>
 	<div id='sub_header' class='clear'>

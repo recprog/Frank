@@ -21,8 +21,8 @@ th { border-bottom: 1px solid; font-weight:bold; }
 body {
 	font-size: 62.5%;
 	font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
-	background-color: #fefafa;
-	color: #050000;
+	background-color: @color_highlight;
+	color: @color_off_black;
 	height: 100%;
 	.reset-dimensions;
 	line-height: 15px;
@@ -37,30 +37,36 @@ body {
 }
 
 a {
-	color: #5d504f;
+	color: @color_midtone;
 	text-decoration:underline;
 	img { border: none; }
 }
-a.external { text-decoration: none; border-bottom: 1px dotted #5d504f; }
-a:hover { color: #7f7271; }
-a.external:hover { text-decoration: none; border-bottom: 1px dotted #7f7271; }
+a.external { text-decoration: none; border-bottom: 1px dotted @color_midtone; }
+a:hover { color: @color_dark; }
+a.external:hover { text-decoration: none; border-bottom: 1px dotted @color_dark; }
 a:visited { }
 
 h1, h2, h3, h4, h5, h6 { margin: (@row-height)-5 0 (@row-height) 0; line-height:(@row-height*2) }
 h1:first-child, h2:first-child, h3:first-child, h4:first-child, h5:first-child, h6:first-child { margin-top: 0; }
-h1 { font-size: 24px; padding-top: 6px; margin-bottom: @row-height; }
+h1 { font-size: 28px; padding-top: 6px; margin-bottom: @row-height; }
 h2 { font-size: 21px; padding-top: 0px; margin-bottom: @row-height; }
 h3 { font-size: 18px; padding-top: 0px; margin-bottom: @row-height; }
 h4 { font-size: 16px; padding-top: 0px; margin-bottom: @row-height; }
 h5 { font-size: 14px; padding-top: 0px; margin-bottom: @row-height; }
 h6 { font-size: 12px; padding-top: 0px; margin: @row-height 0; }
 
+header {
+	h2 {
+		font-size:13px;
+	}
+}
+
 blockquote {
-	margin: 15px 0px;
+	margin: @row-height 0px;
 	padding: 0;
 	font-size: 17px;
-	line-height: 30px;
-	color:#5d504f;
+	line-height: @row-height*2;
+	color:@color_midtone;
 	blockquote {
 		margin-top:0;
 	}
@@ -164,11 +170,6 @@ hr {
 
 /* @end */
 
-.pagination 
-{
-	.incomplete;
-}
-
 #content { margin: (@row-height)-5 0 (@row-height*2) 0;	position:relative; }
 
 .post {
@@ -179,14 +180,13 @@ hr {
 		}
 	}
 	.callout {
-		.incomplete;
+		
 	}
 	p .callout {
 		padding-top:0;
 	}
-	ul.metadata {
+	.metadata {
 		.reset-dimensions;
-		padding-top:5px;
 		list-style:none;
 		li {
 			.reset-dimensions;
@@ -200,16 +200,43 @@ hr {
 	}
 }
 
-#foutohfour_title {
-	margin-top:0;
-	margin-bottom:20px;
-	font-size:80px;
-	padding-top:0;
-	line-height:60px;
+#content.single, #content.page, #content.archive {
+	article {
+		header {
+			margin-bottom:15px;
+			h1 {
+				font-size:28px;
+				line-height:@row-height*2;
+				margin-top:-6px;
+				padding-bottom:0;
+				margin-bottom:0;
+				.iconic {
+					color:@color_midtone;
+					padding-right:15px;
+				}
+			}
+
+			h2 {
+				font-size:11px;
+			}
+		}
+		section {
+			margin-bottom:15px;
+			p {
+				font-size:17px;
+				font-family:@serif;
+				line-height:30px;
+			}
+		}
+	}
 }
 
-::selection			{ background: #5d504f none repeat; color:#fefafa; /* Safari and Opera */ }
-::-moz-selection  { background: #5d504f none; color:#fefafa; /* Firefox */ }
+.pagination {
+	margin:@row-height 0;
+}
+
+::selection			{ background: @color_midtone none repeat; color:@color_highlight; /* Safari and Opera */ }
+::-moz-selection  { background: @color_midtone none; color:@color_highlight; /* Firefox */ }
 
 -webkit-font-smoothing: antialiased;
 

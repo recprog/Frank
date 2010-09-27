@@ -14,7 +14,8 @@ jQuery(document).ready(function() {
 	});
 	
 	
-	jQuery("#content.post #comments_toggle").click(function(){
+	jQuery("#content.single #comments_toggle").click(function(){
+		console.log('toggle');
 		var post_id = jQuery(this).attr("rel");
 		var url = jQuery(this).attr("rev");
 
@@ -24,9 +25,9 @@ jQuery(document).ready(function() {
 		  cache: true,
 		  data: ({id : post_id}),
 		  success: function(data) {
-		    jQuery("#content.post #comments_ajax").html(data);
-			var h = jQuery("#content.post #comments_content").height();
-			jQuery("#content.post #comments_ajax").css('height', h);
+		    jQuery("#content.single #comments_ajax").html(data);
+			var h = jQuery("#content.single #comments_content").height();
+			jQuery("#content.single #comments_ajax").css('height', h);
 		  }
 		});
 		return false;
