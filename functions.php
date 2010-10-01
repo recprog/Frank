@@ -81,9 +81,10 @@ function fs_options_page() {
 		$caption_secondary = $_POST['caption_secondary'];
 		$caption_tertiary = $_POST['caption_tertiary'];
 		
-		$show_title_primary = $_POST['show_title_primary'];
-		$show_title_secondary = $_POST['show_title_secondary'];
-		$show_title_tertiary = $_POST['show_title_tertiary'];
+		$show_title_primary = ($_POST['show_title_primary']=='show_title')?'show_title':'hide_title';
+		$show_title_secondary = ($_POST['show_title_secondary']=='show_title')?'show_title':'hide_title';
+		$show_title_tertiary = ($_POST['show_title_tertiary']=='show_title')?'show_title':'hide_title';
+
 
 		$options = array();
 		
@@ -189,13 +190,13 @@ This plugin interface allows you to control how your content is laid out on the 
 
 <tr>
 	<td>
-		<input type="checkbox" name="show_title_primary" value="show_title" <?php if(get_option('fs_show_title_primary')=='show_title') echo 'checked="checked"'; ?> /> <?php _e("Display Post Title", 'mt_trans_domain' ); ?>
+		<input type="checkbox" name="show_title_primary" value="show_title" <?php if(get_option('fs_show_title_primary')=='show_title') echo 'checked="checked"'; ?> /> <?php _e("Display Primary Post Title", 'mt_trans_domain' ); ?>
 	</td>
 	<td>
-		<input type="checkbox" name="show_title_secondary" value="show_title" <?php if(get_option('fs_show_title_secondary')=='show_title') echo 'checked="checked"'; ?> /> <?php _e("Display Post Title", 'mt_trans_domain' ); ?>
+		<input type="checkbox" name="show_title_secondary" value="show_title" <?php if(get_option('fs_show_title_secondary')=='show_title') echo 'checked="checked"'; ?> /> <?php _e("Display Secondary Post Title", 'mt_trans_domain' ); ?>
 	</td>
 	<td>
-		<input type="checkbox" name="show_title_tertiary" value="show_title" <?php if(get_option('fs_show_title_tertiary')=='show_title') echo 'checked="checked"'; ?> /> <?php _e("Display Post Title", 'mt_trans_domain' ); ?>
+		<input type="checkbox" name="show_title_tertiary" value="show_title" <?php if(get_option('fs_show_title_tertiary')=='show_title') echo 'checked="checked"'; ?> /> <?php _e("Display Tertiary Post Title", 'mt_trans_domain' ); ?>
 	</td>
 </tr>
 
@@ -560,9 +561,13 @@ function content($maxLength)
     $tags = array();
 
 	$content=''; //new
-
+	$count=0;
+	
+	$matches = preg_match_all('{</?([a-z]+)[^>]*>|&#?[a-zA-Z0-9]+;}', $html, $match, PREG_OFFSET_CAPTURE, $position);
+	
     while ($printedLength < $maxLength && preg_match('{</?([a-z]+)[^>]*>|&#?[a-zA-Z0-9]+;}', $html, $match, PREG_OFFSET_CAPTURE, $position))
     {
+		$count++;
         list($tag, $tagPosition) = $match[0];
 
         // Print text leading up to the tag.
@@ -571,6 +576,7 @@ function content($maxLength)
         {
             //print(substr($str, 0, $maxLength - $printedLength));
 			$content.=substr($str, 0, $maxLength - $printedLength);
+			$content.='...';
             $printedLength = $maxLength;
             break;
         }
@@ -598,6 +604,7 @@ function content($maxLength)
                 assert($openingTag == $tagName); // check that tags are properly nested.
 
                 //print($tag);
+				if($matches-2==$count&&$printedLength >= $maxLength) $content.='...';
 				$content.=$tag;
             }
             else if ($tag[strlen($tag) - 2] == '/')
