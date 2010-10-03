@@ -1,6 +1,7 @@
 .reset-dimensions{margin:0;padding:0;}
 .incomplete{background-color:rgba(255, 0, 255, 0);}
 .show-bounds{background-color:rgba(255, 255, 0, 0.5);}
+#sub_header #text-3 p{font-size:12px;line-height:15px;}
 #wp-calendar{margin-top:0;margin-bottom:0;}#wp-calendar th,#wp-calendar td{padding:0 8px;}
 #wp-calendar th:first-child,#wp-calendar td:first-child{padding-left:0;}
 #wp-calendar th.last,#wp-calendar td.last{padding-right:0;}

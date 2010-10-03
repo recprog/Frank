@@ -2,10 +2,20 @@
 
 #comments_container
 {
-	margin-top:(@row-height*2);	
+	border-top:1px dotted @color_midtone;
+	margin-top:(@row-height);
+	padding-top:@row-height;	
 	#comments_ajax	{
 		overflow:hidden;
 		height:0;
+	}
+	header {
+		h1 {
+			margin-bottom:0;
+		}
+		h2 {
+			margin-top:0;
+		}
 	}
 	
 	#comments {

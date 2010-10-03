@@ -8,7 +8,7 @@
 #page_header nav .menu ul li{margin:0;padding:0;float:left;margin-right:30px;background:none;}#page_header nav .menu ul li a{display:block;text-decoration:none;height:15px;color:#050000;font-size:11px;padding-top:0;}
 #page_header nav .menu ul li a:hover{color:#5d504f;}
 #page_header nav .menu ul li.last{margin-right:0;}
-#sub_header{border-bottom:1px dotted #5d504f;}#sub_header p{font-size:12px;color:#5d504f;line-height:15px;margin-top:0;}
+#sub_header{margin-top:5px;border-bottom:1px dotted #5d504f;}#sub_header p{font-size:11px;color:#5d504f;line-height:15px;margin-top:0;}
 #sub_header .widget{float:left;margin-right:20px;width:190px;margin-bottom:15px;}
 #sub_header .widget:nth-child(4n+1){width:330px;clear:left;}
 #sub_header .widget:nth-child(4n){margin-right:0;}

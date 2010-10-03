@@ -9,7 +9,7 @@
 	<div id="content_primary" class='span-14 last clear'>
 		<div class='nav content-header span-2'>
 			<span class='label'><?php if (function_exists("primaryColumnTitle")) primaryColumnTitle(); ?></span>
-			<span class='caption'><?php if (function_exists("primaryColumnCaption")) primaryColumnCaption(); ?> (<a href='<?php bloginfo('url'); ?>?cat=<?php echo getPrimaryColumnCategories(); ?>'>more...</a>)</span> 
+			<span class='caption'><?php if (function_exists("primaryColumnCaption")) primaryColumnCaption(); ?></span> <span class='more'><a href='<?php bloginfo('url'); ?>?cat=<?php echo getPrimaryColumnCategories(); ?>'>See more...</a></span> 
 			
 		</div>
 		<div class='contents span-12 last'>	
@@ -50,7 +50,7 @@
 	<div id="content_secondary" class='span-14 last clear'>
 		<div class='nav content-header span-2'>
 			<span class='label'><?php if (function_exists("secondaryColumnTitle")) secondaryColumnTitle(); ?></span>
-			<span class='caption'><?php if (function_exists("secondaryColumnCaption")) secondaryColumnCaption(); ?> (<a href='<?php bloginfo('url'); ?>?cat=<?php echo getSecondaryColumnCategories(); ?>'>more...</a>)</span>
+			<span class='caption'><?php if (function_exists("secondaryColumnCaption")) secondaryColumnCaption(); ?></span> <span class='more'><a href='<?php bloginfo('url'); ?>?cat=<?php echo getSecondaryColumnCategories(); ?>'>See more...</a></span>
 		</div>
 		<div class='contents span-12 last'>	
 		<?php 
@@ -118,7 +118,7 @@
 	<div id="content_tertiary" class='span-14 clear last'>
 		<div class="content-header nav span-2">
 			<span class='label'><?php if (function_exists("tertiaryColumnTitle")) tertiaryColumnTitle(); ?></span>
-			<span class='caption'><?php if (function_exists("tertiaryColumnCaption")) tertiaryColumnCaption(); ?> (<a href='<?php bloginfo('url'); ?>?cat=<?php echo getTertiaryColumnCategories(); ?>'>more...</a>)</span>
+			<span class='caption'><?php if (function_exists("tertiaryColumnCaption")) tertiaryColumnCaption(); ?></span> <span class='more'><a href='<?php bloginfo('url'); ?>?cat=<?php echo getTertiaryColumnCategories(); ?>'>See more...</a></span>
 		</div>
 		<div class='contents span-12 last'>	
 		<?php 

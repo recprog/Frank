@@ -1,7 +1,6 @@
 -webkit-font-smoothing:antialiased;.reset-dimensions{margin:0;padding:0;}
 .incomplete{background-color:rgba(255, 0, 255, 0);}
 .show-bounds{background-color:rgba(255, 255, 0, 0.5);}
-#ad{margin-top:5px;}
 img{-ms-interpolation-mode:bicubic;}
 p img:first-child{margin-top:-5px;margin-bottom:5px;}
 table{border-collapse:separate;border-spacing:0;font-size:12px;margin:20px 0;}
@@ -56,7 +55,7 @@ hr{height:1px;border:0;margin:15px 0;padding:0;background-color:#b5aaa9;}
 .post p .callout{padding-top:0;}
 .post .metadata{margin:0;padding:0;margin-top:15px;color:#5d504f;list-style:none;}.post .metadata li{margin:0;padding:0;float:left;background:none;margin-right:20px;}
 .post .metadata li.last{margin-right:0;}
-#content.single article header,#content.page article header,#content.archive article header{margin-bottom:15px;}#content.single article header h1,#content.page article header h1,#content.archive article header h1{font-size:28px;line-height:30px;margin-top:-6px;padding-bottom:0;margin-bottom:0;}#content.single article header h1 .iconic,#content.page article header h1 .iconic,#content.archive article header h1 .iconic{color:#5d504f;padding-right:15px;}
+#content.single article header,#content.page article header,#content.archive article header{margin-bottom:15px;}#content.single article header h1,#content.page article header h1,#content.archive article header h1{font-size:28px;line-height:30px;margin-top:-6px;padding-bottom:0;margin-bottom:0;}#content.single article header h1 .iconic,#content.page article header h1 .iconic,#content.archive article header h1 .iconic{color:#5d504f;padding-right:10px;}
 #content.single article header h2,#content.page article header h2,#content.archive article header h2{margin-top:0;font-size:11px;}
 #content.single article section,#content.page article section,#content.archive article section{margin-bottom:15px;}#content.single article section p,#content.page article section p,#content.archive article section p{font-size:17px;font-family:'adobe-garamond-pro-1','adobe-garamond-pro-2',serif;line-height:30px;}
 .pagination{margin:15px 0;}

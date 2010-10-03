@@ -24,6 +24,7 @@
 #page_header nav #work_pullout.expanded{height:300px;}
 #page_header nav nav .menu ul li{margin-right:20px !important;}#page_header nav nav .menu ul li a{width:46px;padding-left:4px;}
 #page_header #sub_header .widget{margin-bottom:0;}
+#content.single #post_footer .widget{margin-bottom:0;}
 #page_footer #cat_navigation{text-indent:0;}#page_footer #cat_navigation a.head{display:block;font-weight:bold;margin:0px;padding:0px;text-indent:14px;text-decoration:none;}
 #page_footer #cat_navigation li{font-weight:bold;font-size:12px;list-style:none outside none;display:block !important;background:none;padding-left:0;}#page_footer #cat_navigation li a{outline-style:none;display:block;}
 #page_footer #cat_navigation li:first-child{padding-top:0;}

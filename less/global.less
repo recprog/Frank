@@ -1,7 +1,7 @@
 @import "variables";
 
 #ad {
-	margin-top:5px;
+	
 }
 
 img { -ms-interpolation-mode: bicubic; }
@@ -29,7 +29,7 @@ body {
 	color: @color_off_black;
 	height: 100%;
 	.reset-dimensions;
-	line-height: 15px;
+	line-height: @row-height;
 }
 
 #page_bottom {
@@ -104,7 +104,7 @@ p:last-child { margin-bottom: 0; }
 
 pre,code,tt {
 	font: 10px 'andale mono','monotype.com','lucida console',monospace;
-	line-height: 15px;
+	line-height: @row-height;
 }
 
 em { font-style: italic; }
@@ -211,7 +211,7 @@ hr {
 #content.single, #content.page, #content.archive {
 	article {
 		header {
-			margin-bottom:15px;
+			margin-bottom:@row-height;
 			h1 {
 				font-size:28px;
 				line-height:@row-height*2;
@@ -220,7 +220,7 @@ hr {
 				margin-bottom:0;
 				.iconic {
 					color:@color_midtone;
-					padding-right:15px;
+					padding-right:10px;
 				}
 			}
 

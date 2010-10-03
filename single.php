@@ -12,7 +12,7 @@
 			<header>
 					<h1><span class='iconic document'></span><?php the_title(); ?></h1>
 					<ul class='metadata clear'>
-						<li class='time iconic clock'><time datetime="<?php the_time('Y-m-d'); ?>" pubdate><?php the_time('j.m.y, g:i a'); ?></time></li>											
+						<li class='time iconic clock'><time datetime="<?php the_time('Y-m-d'); ?>" pubdate><?php the_time('Y-j-n, g:i a'); ?></time></li>											
 						<li class='comments iconic comment last'><?php comments_popup_link('No comments', '1 comment', '% comments'); ?></li>
 					</ul>
 			</header>
@@ -34,8 +34,7 @@
 		<div id="comments_container" class='clear'>
 			<header>
 				<h1><span class=' iconic chat'></span> The Discussion</h1>
-				<h2><?php comments_number('No Comments', 'One Comment', '% Comments' );?> on &#8220;<?php the_title(); ?>&#8221;</h2>
-				<a href='#comments' rel="<?php the_ID(); ?>" rev="<?php bloginfo('url'); ?>/?page_id=<?php echo get_option('fs_comment_template_id'); ?>" id="comments_toggle">Show comments</a>
+				<h2><?php comments_number('No Comments', 'One Comment', '% Comments' );?> on &#8220;<?php the_title(); ?>&#8221; <span class='comments_toggle'><a href='#comments' rel="<?php the_ID(); ?>" rev="<?php bloginfo('url'); ?>/?page_id=<?php echo get_option('fs_comment_template_id'); ?>" id="comments_toggle">Show comments</a></span></h2>
 			</header>
 			<div id="comments_ajax" class='clear'></div>				
 		</div>
