@@ -67,10 +67,10 @@
 		#menu-item-217 {
 			position:relative;
 			float:right;
-			background:@color_accent;
 			margin-right:0;
 			a {
 				display:block;
+				background:@color_accent;
 				color:@color_highlight !important;
 				text-decoration: none;
 				font-weight: bold;
@@ -84,17 +84,43 @@
 			z-index:999999;
 			right:0;
 			height:0;
+			padding-left:20px;
 			top:@row-height;
 			overflow:hidden;
 			ul {
+				margin-top:@row-height;
 				display:block;
-			}
-			a {
-
+				li {
+					width:auto;
+					.reset-dimensions;
+					display:block;
+					float:none;
+					margin-bottom:@row-height;
+					a {
+						
+						/*temporary*/
+						background: url(http://placehold.it/50x50) no-repeat;
+						
+						padding-left:70px;
+						display:block;
+						height:auto;
+						width:auto;
+						.header {
+							font-size:22px;
+							line-height:@row-height*2;
+							font-weight:normal;
+						}
+						.description {
+							display:block;
+							font-weight:@normal;
+						}
+					}
+				}
 			}
 		}
+		
 		#follow_list.expanded {
-			height:150px;
+			height:140px;
 		}
 
 		#work_pullout {
@@ -177,6 +203,11 @@
 					}
 				}
 			}	
+		}
+	}
+	#sub_header {
+		.widget {
+			margin-bottom:0;
 		}
 	}
 }

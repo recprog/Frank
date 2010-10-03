@@ -30,17 +30,18 @@
 		<?php while(have_posts()) : the_post(); ?>
 		<article <?php post_class(); ?> id="<?php the_ID(); ?>">
 			<header>
-				<hgroup>
-					<h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
-					<h2>Posted on <?php the_time('j F, Y'); ?> at <?php the_time('g:ia'); ?> with <?php comments_popup_link('no comments', '1 comment &#187;', '% comments'); ?></h2>
-				</hgroup>
+					<h1><span class='iconic document'></span><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
+					<ul class='metadata clear'>
+						<li class='time iconic clock'><time datetime="<?php the_time('Y-m-d'); ?>" pubdate><?php the_time('j.m.y, g:i a'); ?></time></li>											
+						<li class='comments iconic comment last'><?php comments_popup_link('No comments', '1 comment', '% comments'); ?></li>
+					</ul>
 			</header>
 			<section class="entry">
 				<?php the_content('Read the rest of this post...'); ?>
 			</section>
 		</article> <!-- .post -->
 		<?php endwhile; ?>
-		<div class="pagination clearfix">
+		<div class="pagination clear">
 			<div class="span-2 next"><?php next_posts_link( '<span class="nav-meta">&laquo;</span> Older Entries' ); ?></div>
 			<div class="span-2 last previous"><?php previous_posts_link( 'Newer Entries <span class="nav-meta">&raquo;</span>' ); ?></div>
 		</div>

@@ -1,8 +1,8 @@
 .reset-dimensions{margin:0;padding:0;}
 .incomplete{background-color:rgba(255, 0, 255, 0);}
 .show-bounds{background-color:rgba(255, 255, 0, 0.5);}
-#page_footer{padding-top:30px;padding-bottom:60px;color:#f0eceb;}#page_footer a{color:#fefafa;}
-#page_footer h3{color:#f0eceb;}
+#page_footer{padding-top:30px;padding-bottom:30px;color:#f0eceb;}#page_footer a{color:#fefafa;}
+#page_footer h3{font-weight:bold;font-size:13px;margin-bottom:5px;line-height:15px;color:#f0eceb;}
 #page_footer .recent_comments dd{font-size:11px;}
 #page_footer .widget{float:left;margin-right:20px;width:190px;margin-bottom:30px;}
 #page_footer .widget:nth-child(4n+1){width:330px;clear:left;}

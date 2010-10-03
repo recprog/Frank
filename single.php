@@ -10,10 +10,11 @@
 		<?php while(have_posts()) : the_post(); ?>
 		<article <?php post_class(); ?>>
 			<header>
-				<hgroup>
 					<h1><span class='iconic document'></span><?php the_title(); ?></h1>
-					<h2><span class=' iconic clock'></span> Posted on <?php the_time('j.m.y, g:i a'); ?></h2>
-				</hgroup>
+					<ul class='metadata clear'>
+						<li class='time iconic clock'><time datetime="<?php the_time('Y-m-d'); ?>" pubdate><?php the_time('j.m.y, g:i a'); ?></time></li>											
+						<li class='comments iconic comment last'><?php comments_popup_link('No comments', '1 comment', '% comments'); ?></li>
+					</ul>
 			</header>
 			<div id='excerpt'><?php the_excerpt(); ?></div>
 			<section>

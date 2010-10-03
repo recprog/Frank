@@ -1,5 +1,9 @@
 @import "variables";
 
+#ad {
+	margin-top:5px;
+}
+
 img { -ms-interpolation-mode: bicubic; }
 p img:first-child {
 	margin-top: -5px;
@@ -20,7 +24,7 @@ th { border-bottom: 1px solid; font-weight:bold; }
 
 body {
 	font-size: 62.5%;
-	font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+	font-family:@sans;
 	background-color: @color_highlight;
 	color: @color_off_black;
 	height: 100%;
@@ -106,14 +110,16 @@ pre,code,tt {
 em { font-style: italic; }
 
 ul, ol {
+	list-style: square;
+	margin-left:15px;
 	padding-top: 5px;
 	ul, ol {
-		margin:0;
 		padding-top:0;
 	}
 	li {
 		margin: 0;
 		font-size: 12px;
+		margin-bottom:5px;
 	}
 }
 
@@ -187,6 +193,8 @@ hr {
 	}
 	.metadata {
 		.reset-dimensions;
+		margin-top:@row-height;
+		color:@color_midtone;
 		list-style:none;
 		li {
 			.reset-dimensions;
@@ -217,6 +225,7 @@ hr {
 			}
 
 			h2 {
+				margin-top:0;
 				font-size:11px;
 			}
 		}

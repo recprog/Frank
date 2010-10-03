@@ -23,7 +23,9 @@
 	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/transitions.css" type="text/css" media="screen, projection" />
 	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/header.css" type="text/css" media="screen, projection" />
 	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/index.css" type="text/css" media="screen, projection" />
-	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/single_article.css" type="text/css" media="screen, projection" />
+	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/single.css" type="text/css" media="screen, projection" />
+	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/single_snippet.css" type="text/css" media="screen, projection" />
+	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/single_lifework.css" type="text/css" media="screen, projection" />
 	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/archive.css" type="text/css" media="screen, projection" />
 	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/sidebar.css" type="text/css" media="screen, projection" />
 	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/comments.css" type="text/css" media="screen, projection" />

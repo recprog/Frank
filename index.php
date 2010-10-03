@@ -10,6 +10,7 @@
 		<div class='nav content-header span-2'>
 			<span class='label'><?php if (function_exists("primaryColumnTitle")) primaryColumnTitle(); ?></span>
 			<span class='caption'><?php if (function_exists("primaryColumnCaption")) primaryColumnCaption(); ?> (<a href='<?php bloginfo('url'); ?>?cat=<?php echo getPrimaryColumnCategories(); ?>'>more...</a>)</span> 
+			
 		</div>
 		<div class='contents span-12 last'>	
 			<?php 				
@@ -20,7 +21,7 @@
 			if(count($posts)>0) : foreach ($posts as $post) : start_wp(); 
 			?>			
 				<article <?php post_class(); ?>>
-					<?php if(showPrimaryColumnTitles()) : ?>
+					<?php if(showPrimaryColumnHeader()) : ?>
 					<header>
 						<h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
 					</header>
@@ -28,12 +29,14 @@
 					<section>
 						<?php the_excerpt(); ?>
 					</section>
+					<?php if(showPrimaryColumnFooter()) : ?>
 					<footer>
 						<ul class='metadata clear'>
 							<li class='time iconic clock'><time datetime="<?php the_time('Y-m-d'); ?>" pubdate><?php the_time('Y-j-n'); ?></time></li>											
 							<li class='comments iconic comment last'><?php comments_popup_link('No comments', '1 comment', '% comments'); ?></li>
 						</ul>
 					</footer>
+					<?php endif; ?>
 				</article>
 			<?php endforeach; else : ?>
 				<div class="post no-posts">
@@ -59,7 +62,7 @@
 		if(count($posts)>0) : foreach ($posts as $post) : start_wp(); 
 		?>
 			<article <?php post_class('span-3'); ?>>
-				<?php if(showSecondaryColumnTitles()) : ?>
+				<?php if(showSecondaryColumnHeader()) : ?>
 				<header>
 					<h1><a href="<?php the_permalink() ?>">
 					<?php
@@ -94,12 +97,14 @@
 						echo $pagecontent;					
 					?>
 				</section>
+				<?php if(showSecondaryColumnFooter()) : ?>
 				<footer>
 					<ul class='metadata clear'>
 						<li class='time iconic clock'><time datetime="<?php the_time('Y-m-d'); ?>" pubdate><?php the_time('Y-j-n'); ?></time></li>											
 						<li class='comments iconic comment last'><?php comments_popup_link('No comments', '1 comment', '% comments'); ?></li>
 					</ul>
 				</footer>
+				<?php endif; ?>
 			</article>
 		<?php endforeach; else : ?>
 			<div class="post no-posts">
@@ -124,7 +129,7 @@
 		if(count($posts)>0) : foreach ($posts as $post) : start_wp(); 
 		?>
 			<article <?php post_class('span-3'); ?>>
-				<?php if(showTertiaryColumnTitles()) : ?>
+				<?php if(showTertiaryColumnHeader()) : ?>
 				<header>
 					<h1><a href="<?php the_permalink() ?>">
 					<?php
@@ -158,12 +163,14 @@
 						echo $pagecontent;
 					?>
 				</section>
+				<?php if(showTertiaryColumnFooter()) : ?>
 				<footer>
 					<ul class='metadata clear'>
 						<li class='time iconic clock'><time datetime="<?php the_time('Y-m-d'); ?>" pubdate><?php the_time('Y-j-n'); ?></time></li>											
 						<li class='comments iconic comment last'><?php comments_popup_link('No comments', '1 comment', '% comments'); ?></li>
 					</ul>
 				</footer>
+				<?php endif; ?>
 			</article>
 		<?php endforeach; else : ?>
 			<div class="post no-posts">

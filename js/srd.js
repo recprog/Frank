@@ -4,10 +4,12 @@
 var followReq;
 var workReq;
 
+var followTimeout;
+var workTimeout;
+
 
 jQuery(document).ready(function() {
-	
-	
+		
 	jQuery('#content.home #content_secondary .post, #content.home #content_tertiary .post').mouseenter(function(){
 		jQuery(this).toggleClass('active', true);
 	})
@@ -16,6 +18,7 @@ jQuery(document).ready(function() {
 	})
 		
 	jQuery('#menu-item-217').mouseenter(function(){
+		clearTimeout(followTimeout);
 		if(jQuery(this).find('#follow_list').length) {
 			expand(300);
 			return;
@@ -31,8 +34,9 @@ jQuery(document).ready(function() {
 				jQuery(xml).find('account').each(function(){
 					var id = jQuery(this).attr('id');
 					var name = jQuery(this).find('name').text();
+					var description = jQuery(this).find('description').text();
 					var url = jQuery(this).find('url').text();
-					jQuery('<li class="items" id="link_'+id+'"></li>').html('<a href="'+url+'">'+name+'</a>').appendTo('#follow_list ul');
+					jQuery('<li class="items" id="link_'+id+'"></li>').html('<a href="'+url+'"><span class="header">'+name+'</span> <span class="description">'+description+'</span></a>').appendTo('#follow_list ul');
 				});
 				expand(Math.max(0, 300-(d.getTime()-start)))
 			}
@@ -40,6 +44,7 @@ jQuery(document).ready(function() {
 	});
 		
 		jQuery('#menu-item-217').mouseleave(function(){
+			clearTimeout(followTimeout);
 			if(jQuery('#menu-item-217').find('#follow_list').length&&followReq) followReq.abort();
 			jQuery('#follow_list').toggleClass('expanded', false);
 			
@@ -47,6 +52,7 @@ jQuery(document).ready(function() {
 		
 		
 		jQuery('nav .page-item-119').mouseenter(function(){
+			clearTimeout(workTimeout);
 			if(jQuery(this).find('#work_pullout').length) {
 				expand2(300);
 				return;
@@ -72,6 +78,7 @@ jQuery(document).ready(function() {
 		});
 
 			jQuery('nav .page-item-119').mouseleave(function(){
+				clearTimeout(workTimeout);
 				if(jQuery('nav .page-item-119').find('#work_pullout').length&&workReq) workReq.abort();
 				jQuery('#work_pullout').toggleClass('expanded', false);
 
@@ -90,9 +97,9 @@ jQuery(document).ready(function() {
 
 
 function expand(time) {
-	setTimeout("jQuery('#follow_list').toggleClass('expanded', true);", time);
+	followTimeout = setTimeout("jQuery('#follow_list').toggleClass('expanded', true);", time);
 }
 
 function expand2(time) {
-	setTimeout("jQuery('#work_pullout').toggleClass('expanded', true);", time);
+	workTimeout = setTimeout("jQuery('#work_pullout').toggleClass('expanded', true);", time);
 }

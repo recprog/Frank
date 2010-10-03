@@ -15,9 +15,13 @@ if(!get_option('fs_caption_primary')) update_option( 'caption_primary', 'Primary
 if(!get_option('fs_caption_secondary')) update_option( 'caption_secondary', 'Secondary Column Caption' );
 if(!get_option('fs_caption_tertiary')) update_option( 'caption_tertiary', 'Tertiary Column Caption' );
 
-if(!get_option('fs_show_title_primary')) update_option( 'fs_show_title_primary', 'show_title' );
-if(!get_option('fs_show_title_secondary')) update_option( 'fs_show_title_secondary', 'show_title' );
-if(!get_option('fs_show_title_tertiary')) update_option( 'fs_show_title_tertiary', 'show_title' );
+if(!get_option('fs_show_header_primary')) update_option( 'fs_show_header_primary', 'show_header' );
+if(!get_option('fs_show_header_secondary')) update_option( 'fs_show_header_secondary', 'show_header' );
+if(!get_option('fs_show_header_tertiary')) update_option( 'fs_show_header_tertiary', 'show_header' );
+
+if(!get_option('fs_show_footer_primary')) update_option( 'fs_show_footer_primary', 'show_footer' );
+if(!get_option('fs_show_footer_secondary')) update_option( 'fs_show_footer_secondary', 'show_footer' );
+if(!get_option('fs_show_footer_tertiary')) update_option( 'fs_show_footer_tertiary', 'show_footer' );
 
 if(!get_option('fs_comment_template_id'))
 {
@@ -81,9 +85,13 @@ function fs_options_page() {
 		$caption_secondary = $_POST['caption_secondary'];
 		$caption_tertiary = $_POST['caption_tertiary'];
 		
-		$show_title_primary = ($_POST['show_title_primary']=='show_title')?'show_title':'hide_title';
-		$show_title_secondary = ($_POST['show_title_secondary']=='show_title')?'show_title':'hide_title';
-		$show_title_tertiary = ($_POST['show_title_tertiary']=='show_title')?'show_title':'hide_title';
+		$show_header_primary = ($_POST['show_header_primary']=='show_header')?'show_header':'hide_header';
+		$show_header_secondary = ($_POST['show_header_secondary']=='show_header')?'show_header':'hide_header';
+		$show_header_tertiary = ($_POST['show_header_tertiary']=='show_header')?'show_header':'hide_header';
+		
+		$show_footer_primary = ($_POST['show_footer_primary']=='show_footer')?'show_footer':'hide_footer';
+		$show_footer_secondary = ($_POST['show_footer_secondary']=='show_footer')?'show_footer':'hide_footer';
+		$show_footer_tertiary = ($_POST['show_footer_tertiary']=='show_footer')?'show_footer':'hide_footer';
 
 
 		$options = array();
@@ -105,9 +113,12 @@ function fs_options_page() {
 		update_option( 'fs_caption_primary', $caption_primary );
 		update_option( 'fs_caption_secondary', $caption_secondary );
 		update_option( 'fs_caption_tertiary', $caption_tertiary );
-		update_option( 'fs_show_title_primary', $show_title_primary );
-		update_option( 'fs_show_title_secondary', $show_title_secondary );
-		update_option( 'fs_show_title_tertiary', $show_title_tertiary );
+		update_option( 'fs_show_header_primary', $show_header_primary );
+		update_option( 'fs_show_header_secondary', $show_header_secondary );
+		update_option( 'fs_show_header_tertiary', $show_header_tertiary );
+		update_option( 'fs_show_footer_primary', $show_footer_primary );
+		update_option( 'fs_show_footer_secondary', $show_footer_secondary );
+		update_option( 'fs_show_footer_tertiary', $show_footer_tertiary );
 		update_option( $opt_name, $options );
 
 ?>
@@ -190,13 +201,25 @@ This plugin interface allows you to control how your content is laid out on the 
 
 <tr>
 	<td>
-		<input type="checkbox" name="show_title_primary" value="show_title" <?php if(get_option('fs_show_title_primary')=='show_title') echo 'checked="checked"'; ?> /> <?php _e("Display Primary Post Title", 'mt_trans_domain' ); ?>
+		<input type="checkbox" name="show_header_primary" value="show_header" <?php if(get_option('fs_show_header_primary')=='show_header') echo 'checked="checked"'; ?> /> <?php _e("Display Primary Post Header", 'mt_trans_domain' ); ?>
 	</td>
 	<td>
-		<input type="checkbox" name="show_title_secondary" value="show_title" <?php if(get_option('fs_show_title_secondary')=='show_title') echo 'checked="checked"'; ?> /> <?php _e("Display Secondary Post Title", 'mt_trans_domain' ); ?>
+		<input type="checkbox" name="show_header_secondary" value="show_header" <?php if(get_option('fs_show_header_secondary')=='show_header') echo 'checked="checked"'; ?> /> <?php _e("Display Secondary Post Header", 'mt_trans_domain' ); ?>
 	</td>
 	<td>
-		<input type="checkbox" name="show_title_tertiary" value="show_title" <?php if(get_option('fs_show_title_tertiary')=='show_title') echo 'checked="checked"'; ?> /> <?php _e("Display Tertiary Post Title", 'mt_trans_domain' ); ?>
+		<input type="checkbox" name="show_header_tertiary" value="show_header" <?php if(get_option('fs_show_header_tertiary')=='show_header') echo 'checked="checked"'; ?> /> <?php _e("Display Tertiary Post Header", 'mt_trans_domain' ); ?>
+	</td>
+</tr>
+
+<tr>
+	<td>
+		<input type="checkbox" name="show_footer_primary" value="show_footer" <?php if(get_option('fs_show_footer_primary')=='show_footer') echo 'checked="checked"'; ?> /> <?php _e("Display Primary Post Footer", 'mt_trans_domain' ); ?>
+	</td>
+	<td>
+		<input type="checkbox" name="show_footer_secondary" value="show_footer" <?php if(get_option('fs_show_footer_secondary')=='show_footer') echo 'checked="checked"'; ?> /> <?php _e("Display Secondary Post Footer", 'mt_trans_domain' ); ?>
+	</td>
+	<td>
+		<input type="checkbox" name="show_footer_tertiary" value="show_footer" <?php if(get_option('fs_show_footer_tertiary')=='show_footer') echo 'checked="checked"'; ?> /> <?php _e("Display Tertiary Post Footer", 'mt_trans_domain' ); ?>
 	</td>
 </tr>
 
@@ -341,16 +364,28 @@ function tertiaryColumnCaption() {
 	echo get_option('fs_caption_tertiary');
 }
 
-function showPrimaryColumnTitles() {
-	return (get_option('fs_show_title_primary')=='show_title')?true:false;
+function showPrimaryColumnHeader() {
+	return (get_option('fs_show_header_primary')=='show_header')?true:false;
 }
 
-function showSecondaryColumnTitles() {
-	return (get_option('fs_show_title_secondary')=='show_title')?true:false;
+function showSecondaryColumnHeader() {
+	return (get_option('fs_show_header_secondary')=='show_header')?true:false;
 }
 
-function showTertiaryColumnTitles() {
-	return (get_option('fs_show_title_tertiary')=='show_title')?true:false;
+function showTertiaryColumnHeader() {
+	return (get_option('fs_show_header_tertiary')=='show_header')?true:false;
+}
+
+function showPrimaryColumnFooter() {
+	return (get_option('fs_show_footer_primary')=='show_footer')?true:false;
+}
+
+function showSecondaryColumnFooter() {
+	return (get_option('fs_show_footer_secondary')=='show_footer')?true:false;
+}
+
+function showTertiaryColumnFooter() {
+	return (get_option('fs_show_footer_tertiary')=='show_footer')?true:false;
 }
 
 
