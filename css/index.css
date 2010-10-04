@@ -7,7 +7,7 @@
 #content.home .content-header .more{display:block;margin-top:15px;font-weight:700;}
 #content.home #content_primary{margin-bottom:15px;}#content.home #content_primary .post header h1{font-size:19px;margin-bottom:0;}
 #content.home #content_primary .post section{margin:0 0 17px 0;}#content.home #content_primary .post section p{font-style:italic;font-size:38px !important;line-height:45px;padding-top:2px;padding-bottom:5px;}
-#content.home #content_secondary,#content.home #content_tertiary{margin-top:15px;}#content.home #content_secondary .post.active .metadata,#content.home #content_tertiary .post.active .metadata{opacity:1;}
+#content.home #content_secondary,#content.home #content_tertiary{margin-top:30px;}#content.home #content_secondary .post.active .metadata,#content.home #content_tertiary .post.active .metadata{opacity:1;}
 #content.home #content_secondary .post,#content.home #content_tertiary .post{margin-top:5px;position:relative;float:left;margin-right:20px;}#content.home #content_secondary .post header,#content.home #content_tertiary .post header{margin:0;padding:0;}#content.home #content_secondary .post header h1,#content.home #content_tertiary .post header h1{margin:0;padding:0;font-size:13px;line-height:30px;font-weight:bold;}#content.home #content_secondary .post header h1 a,#content.home #content_tertiary .post header h1 a{text-decoration:none;}
 #content.home #content_secondary .post .metadata,#content.home #content_tertiary .post .metadata{opacity:0;}
 #content.home #content_secondary .post section,#content.home #content_tertiary .post section{margin-top:5px;}#content.home #content_secondary .post section p,#content.home #content_tertiary .post section p{font-size:11px;padding-bottom:0;}
