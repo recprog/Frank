@@ -13,3 +13,4 @@
 #content.home #content_secondary .post .metadata,#content.home #content_tertiary .post .metadata{opacity:0;}
 #content.home #content_secondary .post section,#content.home #content_tertiary .post section{margin-top:5px;font-family:'ff-meta-serif-web-pro-1','ff-meta-serif-web-pro-2',Georgia,"Times New Roman",Times,serif;font-size:13px;}#content.home #content_secondary .post section p,#content.home #content_tertiary .post section p{padding-bottom:0;}
 #content.home #content_secondary .post:nth-child(4n),#content.home #content_tertiary .post:nth-child(4n){margin-right:0;}
+#content.home #content_secondary img{-moz-box-shadow:0px 2px 7px #9e8886;-webkit-box-shadow:0px 2px 7px #9e8886;box-shadow:0px 2px 7px #9e8886;}

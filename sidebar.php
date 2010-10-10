@@ -4,9 +4,9 @@
  * @subpackage Franklin_Street
  */
 ?>
-	<aside id="sidebar" class='span-3 last' role="complementary">
+	<aside id="sidebar" class='span-3 clear last' role="complementary">
 		
-		<div class="container span-6 last">
+		<div class="container span-6 clear last">
 			<div class='span-3'>
 				<?php if ( !function_exists('dynamic_sidebar')
 				|| !dynamic_sidebar('Article Sidebar: Column 2') ) : ?>

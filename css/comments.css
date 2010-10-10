@@ -1,7 +1,7 @@
 .reset-dimensions{margin:0;padding:0;}
 .incomplete{background-color:rgba(255, 0, 255, 0);}
 .show-bounds{background-color:rgba(255, 255, 0, 0.5);}
-#comments_container{border-top:1px dotted #5d504f;margin-top:15px;padding-top:15px;}#comments_container #comments_ajax{overflow:hidden;height:0;}
+#comments_container{border-top:3px double #f0eceb;margin-top:15px;padding-top:15px;}#comments_container #comments_ajax{overflow:hidden;height:0;}
 #comments_container header h1{margin-bottom:0;}
 #comments_container header h2{margin-top:0;}
 #comments_container #comments{margin:0;padding:0;margin-bottom:15px;}#comments_container #comments .metadata{margin-bottom:5px;font-size:11px;margin-top:15px;}

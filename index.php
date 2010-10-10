@@ -82,12 +82,12 @@
 						$content = apply_filters('the_content', $content);
 						
 						$pattern = '/\< *[img][^\>]* src *= *[\"\']{0,1}([^\"\'\ >]*)/i';
-						$replacement = '<img src="/php/phpthumb/phpThumb.php?src=' . '$1' . '&w=190&h=150&zc=1&q=80"';
+						$replacement = '<img src="/php/phpthumb/phpThumb.php?src=' . '$1' . '&w=190&h=120&zc=1&q=80"';
 						
 						$pagecontent = preg_replace($pattern, $replacement, $content);
 						
 						$pattern = '/height *= *[\"\']?[^\"\'\ >]*/';
-						$replacement = 'height="150"';
+						$replacement = 'height="120"';
 						$pagecontent = preg_replace($pattern, $replacement, $pagecontent);
 						
 						$pattern = '/width *= *[\"\']?[^\"\'\ >]*/';
@@ -148,12 +148,12 @@
 						$content = apply_filters('the_content', $content);
 					
 						$pattern = '/\< *[img][^\>]* src *= *[\"\']{0,1}([^\"\'\ >]*)/i';
-						$replacement = '<img src="/php/phpthumb/phpThumb.php?src=' . '$1' . '&w=190&h=150&zc=1&q=80"';
+						$replacement = '<img src="/php/phpthumb/phpThumb.php?src=' . '$1' . '&w=190&h=120&zc=1&q=80"';
 					
 						$pagecontent = preg_replace($pattern, $replacement, $content);
 					
 						$pattern = '/height *= *[\"\']?[^\"\'\ >]*/';
-						$replacement = 'height="150"';
+						$replacement = 'height="120"';
 						$pagecontent = preg_replace($pattern, $replacement, $pagecontent);
 					
 						$pattern = '/width *= *[\"\']?[^\"\'\ >]*/';

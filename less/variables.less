@@ -24,6 +24,8 @@
 @column-width:		50px;
 @gutter-width:		20px;
 
+@border-break: 3px double @color_light;
+
 .reset-dimensions {
 	margin:0;
 	padding:0;
@@ -45,3 +47,8 @@
 	width:(@columns*@column-width)+(((@columns)-1)*@gutter-width);
 }
 
+.drop-shadow(@x:0px, @y:0px, @blur:3px, @color:#000) {
+	-moz-box-shadow: @x @y @blur @color;
+	-webkit-box-shadow: @x @y @blur @color;
+	box-shadow: @x @y @blur @color;
+}
