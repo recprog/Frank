@@ -45,7 +45,7 @@
 	<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="<?php bloginfo('rss2_url'); ?>" />
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 			
-	<script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js'></script>
+	<?php wp_enqueue_script('jquery'); ?>
 	<?php wp_enqueue_script('jquery-main', get_bloginfo('template_url') . '/js/main.js'); ?>
 	<?php wp_enqueue_script('jquery-srd', get_bloginfo('template_url') . '/js/srd.js'); ?>
 	<!--[if lte IE 8]>
@@ -55,7 +55,8 @@
 	<?php wp_head(); ?>
 </head>
 <body id="page">
-<div id="page_top" class='wrapper clear'>
+<div id="page_top">
+<div class='wrapper clear'>
 	<header id="page_header" class="span-14 last clear">
 		<hgroup>
 			<h1 id="title"><a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a></h1>
@@ -65,6 +66,12 @@
 				<?php wp_nav_menu( array('theme_location' => 'primary', 'container' => '' ) ); ?>	
 			</div> 
 		</nav>
+		<div id='search'>
+			<div id='search_button'><span class='iconic magnifying-glass'></span> <span class='label'>Search</span></div>
+			<div id='search_form'>
+				<?php get_search_form(); ?>
+			</div>
+		</div>
 	</header>
 	<div id='sub_header' class='clear'>
 		<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Sub Header") ) : ?>

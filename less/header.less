@@ -14,6 +14,52 @@
 	hgroup {
 		margin-top: 0px; 
 	}
+	
+	#search {
+		float:right;
+		margin-right:-20px;
+		position:relative;
+		#search_button {
+			position:relative;
+			background:@color_midtone;
+			width:20px;
+			height:15px;
+			color:@color_highlight;
+			cursor:pointer;
+			padding:0;
+			
+			.iconic {
+				font-size:17px;
+				position:absolute;
+				top:2px;
+				left:4px;
+			}
+			.label {
+				display:none;
+			}
+		}
+		#search_form {
+			position: absolute;
+			width: 210px;
+			height: 0;
+			right: 0px;
+			background: rgba(93,80,79,.9);
+			display:block;
+			overflow:hidden;
+		}
+		#s {
+			margin:5px;
+			width: 195px;
+		}
+	}
+	
+	#search.active {
+		#search_form {
+			display:block;
+			height: 30px;
+		}
+	}
+	
 	nav {
 		display:block;
 		padding-bottom:5px;
@@ -58,7 +104,7 @@
 
 #sub_header {
 	margin-top:5px;
-	border-bottom:1px dotted @color_midtone;
+	border-bottom:3px double @color_light;
 	p {
 		font-size:11px;
 		color:@color_midtone;

@@ -2,6 +2,11 @@ var bottomY;
 
 jQuery(document).ready(function() {
 	
+	jQuery("a[href^='http:']").not("[href*='" + window.location.host + "']").each(function (i) {
+		jQuery(this).attr('target','_blank');
+		jQuery(this).addClass('external')
+	});
+	
 	bottomY=getBottomY();
 	updateStickyFooter();
 	
@@ -13,9 +18,17 @@ jQuery(document).ready(function() {
 		updateStickyFooter();
 	});
 	
-	
+	jQuery('body').click(function() {
+		jQuery('#search').removeClass('active');
+	 });
+		
+	jQuery('#search').click(function(event) {
+		event.preventDefault();
+		jQuery('#search').addClass('active');
+		event.stopPropagation();
+	});	
+		
 	jQuery("#content.single #comments_toggle").click(function(){
-		console.log('toggle');
 		var post_id = jQuery(this).attr("rel");
 		var url = jQuery(this).attr("rev");
 

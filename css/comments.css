@@ -4,9 +4,9 @@
 #comments_container{border-top:1px dotted #5d504f;margin-top:15px;padding-top:15px;}#comments_container #comments_ajax{overflow:hidden;height:0;}
 #comments_container header h1{margin-bottom:0;}
 #comments_container header h2{margin-top:0;}
-#comments_container #comments{margin:0;padding:0;margin-bottom:15px;}#comments_container #comments p{font-size:12px !important;line-height:15px !important;}
-#comments_container #comments .metadata{margin-bottom:5px;font-size:11px;margin-top:15px;}
-#comments_container #comments .copy{margin-top:4px;}
+#comments_container #comments{margin:0;padding:0;margin-bottom:15px;}#comments_container #comments .metadata{margin-bottom:5px;font-size:11px;margin-top:15px;}
+#comments_container #comments .copy{margin-top:2px;font-family:'ff-meta-serif-web-pro-1','ff-meta-serif-web-pro-2',Georgia,"Times New Roman",Times,serif;}#comments_container #comments .copy p{font-size:12px;line-height:15px;}
+#comments_container #comments .copy blockquote,#comments_container #comments .copy blockquote p{font-size:13px;}
 #comments_container #comments li{margin:0;padding:0;margin-bottom:15px;}
 #comments_container #comments .metadata small{font-size:11px;padding-top:5px;margin-bottom:0;}
 #comments_container #comments li{background:none;margin:0;padding:30px 0;border-bottom:1px solid #f0eceb;}

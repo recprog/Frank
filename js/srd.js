@@ -51,13 +51,13 @@ jQuery(document).ready(function() {
 		});
 		
 		
-		jQuery('nav .page-item-119').mouseenter(function(){
+		jQuery('#menu-item-214').mouseenter(function(){
 			clearTimeout(workTimeout);
 			if(jQuery(this).find('#work_pullout').length) {
 				expand2(300);
 				return;
 			}
-			jQuery('<ul id="work_pullout"><li class="span-5 intro"><h4><a href="/projects">Work &amp; Projects</a></h4><p>I keep myself busy on many different design &amp; technology projects &ndash; here are a few worth noting. <a class="more" href="/projects">See All Work &amp; Projects&hellip;</a></p></li></ul>').appendTo(this);
+			jQuery('<ul id="work_pullout"><li class="span-5 intro"><h4><span class="iconic heart"></span> <a href="/projects">Work &amp; Projects</a></h4><p>I keep myself busy on many different design &amp; technology projects &ndash; here are a few worth noting. <a class="more" href="/projects">See All Work &amp; Projects&hellip;</a></p></li></ul>').appendTo(this);
 			var d = new Date();
 			var start = d.getTime();
 			workReq = jQuery.ajax({
@@ -72,14 +72,15 @@ jQuery(document).ready(function() {
 						var url = jQuery(this).find('url').text();
 						jQuery('<li class="span-3 showcase" id="project_'+id+'"></li>').html('<h4><a href="'+url+'">'+name+'</a></h4><a href="'+url+'"><img src="'+image+'" alt="'+name+'" /></a>').appendTo('#work_pullout');
 					})
+					jQuery('#work_pullout li:last').addClass('last');
 					expand2(Math.max(0, 300-(d.getTime()-start)));
 				}
 			})
 		});
 
-			jQuery('nav .page-item-119').mouseleave(function(){
+			jQuery('#menu-item-214').mouseleave(function(){
 				clearTimeout(workTimeout);
-				if(jQuery('nav .page-item-119').find('#work_pullout').length&&workReq) workReq.abort();
+				if(jQuery('#menu-item-214').find('#work_pullout').length&&workReq) workReq.abort();
 				jQuery('#work_pullout').toggleClass('expanded', false);
 
 			});
@@ -88,7 +89,7 @@ jQuery(document).ready(function() {
 		jQuery(document).ajaxComplete(function(e, xhr, settings) {
 			
 		  if (settings.url == '/wordpress/data/follow.xml') {
-		    console.log(e, xhr);
+		    //console.log(e, xhr);
 		  }
 		});
 		

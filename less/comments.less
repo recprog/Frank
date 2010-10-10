@@ -21,17 +21,21 @@
 	#comments {
 		.reset-dimensions;
 		margin-bottom:(@row-height);
-		p {
-			font-size: 12px !important;
-			line-height:@row-height !important;
-		}
 		.metadata {
 			margin-bottom:5px;
 			font-size:11px;
 			margin-top:(@row-height);
 		}
 		.copy {
-			margin-top:4px;
+			margin-top:2px;
+			font-family:@serif;
+			p {
+				font-size: 12px;
+				line-height:@row-height;
+			}
+			blockquote, blockquote p {
+				font-size:13px;
+			}
 		}
 		li {
 			.reset-dimensions;

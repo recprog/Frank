@@ -7,7 +7,8 @@ table{border-collapse:separate;border-spacing:0;font-size:12px;margin:20px 0;}
 table,td,th{vertical-align:middle;}
 th,td{text-align:left;font-weight:normal;padding:0 5px;}
 th{border-bottom:1px solid;font-weight:bold;}
-body{font-size:62.5%;font-family:'ff-dagny-web-pro-1','ff-dagny-web-pro-2',sans-serif;background-color:#fefafa;color:#050000;height:100%;margin:0;padding:0;line-height:15px;}
+body{font-size:62.5%;font-family:'ff-dagny-web-pro-1','ff-dagny-web-pro-2','Helvetica Neue',Arial,Helvetica,Geneva,sans-serif;background-color:#050000;color:#050000;height:100%;margin:0;padding:0;line-height:15px;padding-bottom:60px;}
+#page_top{background:#fefafa;}
 #page_bottom{background:#5d504f;}
 #page_heel{background:#050000;}
 a{color:#5d504f;text-decoration:underline;}a img{border:none;}
@@ -24,7 +25,7 @@ h5{font-size:14px;padding-top:0px;margin-bottom:15px;}
 h6{font-size:12px;padding-top:0px;margin:15px 0;}
 header h2{font-size:13px;}
 blockquote{margin:15px 0px;padding:0;font-size:17px;line-height:30px;color:#5d504f;}blockquote blockquote{margin-top:0;}
-blockquote p{font-size:17px !important;line-height:30px !important;}
+blockquote p{font-size:17px;line-height:30px;}
 blockquote cite{font-size:12px;}
 blockquote cite:before{content:"— ";}
 blockquote:before,blockquote:after,q:before,q:after{content:"";}
@@ -57,8 +58,8 @@ hr{height:1px;border:0;margin:15px 0;padding:0;background-color:#b5aaa9;}
 .post .metadata li.last{margin-right:0;}
 #content.single article header,#content.page article header,#content.archive article header{margin-bottom:15px;}#content.single article header h1,#content.page article header h1,#content.archive article header h1{font-size:28px;line-height:30px;margin-top:-6px;padding-bottom:0;margin-bottom:0;}#content.single article header h1 .iconic,#content.page article header h1 .iconic,#content.archive article header h1 .iconic{color:#5d504f;padding-right:10px;}
 #content.single article header h2,#content.page article header h2,#content.archive article header h2{margin-top:0;font-size:11px;}
-#content.single article section,#content.page article section,#content.archive article section{margin-bottom:15px;}#content.single article section p,#content.page article section p,#content.archive article section p{font-size:17px;font-family:'adobe-garamond-pro-1','adobe-garamond-pro-2',serif;line-height:30px;}
+#content.single article section,#content.page article section,#content.archive article section{margin-bottom:15px;}#content.single article section p,#content.page article section p,#content.archive article section p{font-size:17px;font-family:'ff-meta-serif-web-pro-1','ff-meta-serif-web-pro-2',Georgia,"Times New Roman",Times,serif;line-height:30px;}
 .pagination{margin:15px 0;}
 ::selection{background:#5d504f none repeat;color:#fefafa;}
 ::-moz-selection{background:#5d504f none;color:#fefafa;}
-.time.iconic time,.comments.iconic a{font-family:'ff-dagny-web-pro-1','ff-dagny-web-pro-2',sans-serif;padding-left:5px;}
+.time.iconic time,.comments.iconic a{font-family:'ff-dagny-web-pro-1','ff-dagny-web-pro-2','Helvetica Neue',Arial,Helvetica,Geneva,sans-serif;padding-left:5px;}

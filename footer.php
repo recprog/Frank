@@ -5,6 +5,7 @@
  */
 ?>
 </div>
+</div>
 <div id="page_bottom" class='clear'>
 	<footer id='page_footer' class='wrapper clear'>	
 		<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Footer") ) : ?>
@@ -20,7 +21,11 @@
 	</div>
 </div>
 <div id="sticky_footer">
-	This will be the first-timer module.  <?php echo get_num_queries(); ?> queries in <?php timer_stop(1); ?> seconds.
+	<div class='wrapper clear'>
+	<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Sticky Footer") ) : ?>
+		<p><?php echo get_num_queries(); ?> queries in <?php timer_stop(1); ?> seconds.</p>
+	<?php endif; ?>
+	</div>
 </div>
 <?php wp_footer(); ?>
 

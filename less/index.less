@@ -23,30 +23,33 @@
 		}
 	}
 	
+	#content_primary, #content_secondary, #content_tertiary {
+		margin-bottom:@row-height*2;
+	}
+	
 	#content_primary {
-		margin-bottom:(@row-height);
 		.post {
 			header {
 				h1 {
+					.reset-dimensions;
 					font-size:19px;
-					margin-bottom:0;
+					margin-top:3px;
 				}
 			}
 			section {
 				margin:0 0 @row-height+2 0;
 				p {
+					font-family:@serif;
 					font-style:italic;
 					font-size:38px !important;
 					line-height:(@row-height*3);
-					padding-top:2px;
-					padding-bottom:5px;
+					padding:2px 0 5px 0;
 				}
 			}
 		}
 	}
 
 	#content_secondary, #content_tertiary {
-		margin-top:@row-height*2;
 		.post.active {
 			.metadata {
 				.opacity(1);
@@ -70,8 +73,10 @@
 			.metadata { .opacity(0); }
 			section  {
 				margin-top:5px;
+				font-family:@serif;
+				font-size: 13px;
 				p {
-					font-size: 11px;
+					
 					padding-bottom:0;
 				}
 			}

@@ -24,12 +24,17 @@ th { border-bottom: 1px solid; font-weight:bold; }
 
 body {
 	font-size: 62.5%;
-	font-family:@sans;
-	background-color: @color_highlight;
+	font-family:@sans-serif;
+	background-color: @color_off_black;
 	color: @color_off_black;
 	height: 100%;
 	.reset-dimensions;
 	line-height: @row-height;
+	padding-bottom:(@row-height*4);
+}
+
+#page_top {
+	background:@color_highlight;
 }
 
 #page_bottom {
@@ -75,8 +80,8 @@ blockquote {
 		margin-top:0;
 	}
 	p {
-		font-size: 17px !important;
-		line-height:30px !important;
+		font-size: 17px;
+		line-height:30px;
 	}
 	cite {
 		font-size:12px;
@@ -249,4 +254,4 @@ hr {
 
 -webkit-font-smoothing: antialiased;
 
-.time.iconic time, .comments.iconic a { font-family:@sans; padding-left:5px }
+.time.iconic time, .comments.iconic a { font-family:@sans-serif; padding-left:5px }
