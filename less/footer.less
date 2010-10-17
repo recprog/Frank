@@ -81,13 +81,16 @@
 	overflow: hidden;
 	bottom: 0;
 	z-index: 99999;
-	
+	padding:5px 0;
 	.widget {
 		float:left;
 		margin-right:20px;
 		width:190px;
 		margin-bottom:(@row-height*2);
 		color:@color_light;
+		a {
+			color:@color_light;
+		}
 		h3 {
 			.reset-dimensions;
 			font-size:12px;
@@ -113,6 +116,9 @@
 	background-color: rgba(254,250,250,.75);
 	.widget {
 		color:@color_off_black;
+		a {
+			color:@color_midtone;
+		}
 	}
 }
 

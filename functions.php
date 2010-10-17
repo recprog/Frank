@@ -47,6 +47,30 @@ if(!get_option('fs_comment_template_id'))
 	update_post_meta($comment_id, "_wp_page_template", "comment_wrapper.php");
 }
 
+if(!get_option('fs_category_template_id'))
+{
+	$args = array(
+	'post_title' => 'Categories',
+	'post_content' => '',		
+	'post_status' => 'publish', 
+	'post_type' => 'page',
+	'post_author' => 0,
+	'ping_status' => get_option('default_ping_status'), 
+	'post_parent' => 0,
+	'menu_order' => 0,
+	'to_ping' =>  '',
+	'pinged' => '',
+	'post_password' => '',
+	'guid' => '',
+	'post_content_filtered' => '',
+	'post_excerpt' => '',
+	'import_id' => 0);
+
+	$comment_id = wp_insert_post( $args );
+	update_option( 'fs_category_template_id', $comment_id );
+	update_post_meta($comment_id, "_wp_page_template", "categories_wrapper.php");
+}
+
 add_action('admin_menu', 'fs_plugin_menu');
 //add_action('after_setup_theme', 'fs_init');
 

@@ -3,9 +3,11 @@
 /*work pulldown is AJAX driven*/
 var followReq;
 var workReq;
+var catReq;
 
 var followTimeout;
 var workTimeout;
+var catTimeout;
 
 
 jQuery(document).ready(function() {
@@ -16,6 +18,42 @@ jQuery(document).ready(function() {
 	jQuery('#content.home #content_secondary .post, #content.home #content_tertiary .post').mouseleave(function(){
 		jQuery(this).toggleClass('active', false);
 	})
+	
+	
+	
+	jQuery("#menu-item-216").mouseenter(function(){
+		console.log('foo');
+		clearTimeout(catTimeout);
+		
+		if(jQuery(this).find('#categories_pullout').length) {
+			expand3(300);
+			return;
+		}
+		
+		jQuery('<div id="categories_pullout"></div>').appendTo(this);
+		
+		catReq = jQuery.ajax({
+		  url: 'http://localhost/wordpress/?page_id=218',
+		  type: "POST",
+		  cache: true,
+		  success: function(data) {
+			console.log('success', data);
+		    jQuery("#categories_pullout").html(data);
+			expand3(300);
+		  }
+		});
+		return false;
+	});
+	
+	jQuery('#menu-item-216').mouseleave(function(){
+		clearTimeout(catTimeout);
+		if(jQuery('#menu-item-216').find('#categories_pullout').length&&followReq) catReq.abort();
+		jQuery('#categories_pullout').toggleClass('expanded', false);
+		
+	});
+	
+	
+	
 		
 	jQuery('#menu-item-217').mouseenter(function(){
 		clearTimeout(followTimeout);
@@ -103,4 +141,8 @@ function expand(time) {
 
 function expand2(time) {
 	workTimeout = setTimeout("jQuery('#work_pullout').toggleClass('expanded', true);", time);
+}
+
+function expand3(time) {
+	catTimeout = setTimeout("jQuery('#categories_pullout').toggleClass('expanded', true);", time);
 }

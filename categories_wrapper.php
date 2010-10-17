@@ -11,11 +11,10 @@ http://www.emanueleferonato.com/2010/04/01/loading-wordpress-posts-with-ajax-and
 */
 ?>
 
-
 	<ul>
 		<?php $args = array(
 		    'show_option_all'    => NULL,
-		    'orderby'            => 'name',
+		    'orderby'            => 'term_group',
 		    'order'              => 'ASC',
 		    'show_last_update'   => 0,
 		    'style'              => 'list',
@@ -29,15 +28,15 @@ http://www.emanueleferonato.com/2010/04/01/loading-wordpress-posts-with-ajax-and
 		    'exclude'            => NULL,
 		    'exclude_tree'       => NULL,
 		    'include'            => NULL,
-		    'hierarchical'       => true,
-		    'title_li'           => __( 'Categories' ),
+		    'hierarchical'       => false,
+		    'title_li'           => NULL,
 		    'number'             => NULL,
 		    'echo'               => 1,
 		    'depth'              => 0,
 		    'current_category'   => 0,
 		    'pad_counts'         => 0,
 		    'taxonomy'           => 'category',
-		    'walker'             => 'Walker_Category' ); ?>
+		    'walker'             => 'Walker' ); ?>
 		
 			<?php wp_list_categories( $args ); ?> 
 	</ul>

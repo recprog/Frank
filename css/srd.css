@@ -21,6 +21,10 @@
 #page_header nav #work_pullout li.showcase{position:relative;}#page_header nav #work_pullout li.showcase a{text-decoration:none;}
 #page_header nav #work_pullout li.showcase h4{margin:0;padding:0;font-size:13px;background:rgba(93, 80, 79, 0.85);position:absolute;bottom:4px;width:185px;padding-left:5px;}
 #page_header nav #work_pullout.expanded{height:150px;}
+#page_header nav #categories_pullout{height:0;width:960px !important;position:absolute;background:rgba(93, 80, 79, 0.95);top:15px;left:-20px;padding:0 20px;display:block;color:#fefafa;overflow:hidden;z-index:999999;}#page_header nav #categories_pullout ul{width:960px;display:block;}#page_header nav #categories_pullout ul ul{display:inline;float:left;width:auto;}
+#page_header nav #categories_pullout ul li{margin:0;padding:0;margin:0;padding:0;float:left;width:120px;margin-right:20px;margin-top:10px;}#page_header nav #categories_pullout ul li a{display:inline;width:auto;}
+#page_header nav #categories_pullout ul li:nth-child(7n){margin-right:0;}
+#page_header nav #categories_pullout.expanded{height:210px;}
 #page_header nav nav .menu ul li{margin-right:20px !important;}#page_header nav nav .menu ul li a{width:46px;padding-left:4px;}
 #page_header #sub_header .widget{margin-bottom:0;}
 #content.single #post_footer .widget{margin-bottom:0;}
@@ -32,3 +36,5 @@
 #page_footer #cat_navigation li li:first-child{margin:0;}
 #page_heel .widget{margin-bottom:1px;}
 #sticky_footer .widget{margin-bottom:0;}
+#sticky_footer #sticky_footer_twitter_follow{font-size:12px;font-weight:bold;text-decoration:none;display:block;}#sticky_footer #sticky_footer_twitter_follow span{display:block;float:left;width:9px;height:12px;background:url(../images/fs_sprite.png) -5px -5px no-repeat;margin-right:10px;}
+#sticky_footer #sticky_footer_rss_follow{font-size:12px;font-weight:bold;text-decoration:none;display:block;}#sticky_footer #sticky_footer_rss_follow span{display:block;float:left;width:12px;height:12px;background:url(../images/fs_sprite.png) -28px -5px no-repeat;margin-right:10px;}

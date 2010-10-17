@@ -3,6 +3,14 @@
 .show-bounds{background-color:rgba(255, 255, 0, 0.5);}
 #sub_header #text-3 p{font-size:12px;line-height:15px;}
 #page_heel #nav_menu-3 ul{list-style:none;margin-left:0;}#page_heel #nav_menu-3 ul li{float:left;margin-right:15px;}
+#sidebar #rss-3 .rsswidget img{display:none;}
+#sidebar #rss-3 .rsswidget a{border:none;color:#050000;}
+#footer_follow_list{margin:0;padding:0;list-style:none;}#footer_follow_list li{margin:0;padding:0;float:left;margin-right:20px;margin-bottom:20px;}#footer_follow_list li a{display:block;width:50px;height:50px;text-indent:-9999px;}
+#footer_follow_list li.vimeo a{background:url(../images/fs_sprite.png) -5px -27px no-repeat;}
+#footer_follow_list li.twitter a{background:url(../images/fs_sprite.png) -64px -30px no-repeat;}
+#footer_follow_list li.tumblr a{background:url(../images/fs_sprite.png) -120px -30px no-repeat;}
+#footer_follow_list li.flickr a{background:url(../images/fs_sprite.png) -180px -18px no-repeat;}
+#footer_follow_list li:nth-child(3n){margin-right:0;}
 #wp-calendar{margin-top:0;margin-bottom:0;}#wp-calendar th,#wp-calendar td{padding:0 8px;}
 #wp-calendar th:first-child,#wp-calendar td:first-child{padding-left:0;}
 #wp-calendar th.last,#wp-calendar td.last{padding-right:0;}

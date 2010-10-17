@@ -3,6 +3,7 @@ var bottomY;
 jQuery(document).ready(function() {
 	
 	jQuery("a[href^='http:']").not("[href*='" + window.location.host + "']").each(function (i) {
+		if(jQuery(this).find('img').length) return;
 		jQuery(this).attr('target','_blank');
 		jQuery(this).addClass('external')
 	});

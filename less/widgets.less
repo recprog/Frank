@@ -21,6 +21,55 @@
 	}
 }
 
+#sidebar #rss-3 {
+	.rsswidget {
+		img {
+			display:none;
+		}
+		a {
+			border:none;
+			color:@color_off_black;
+		}
+	}
+}
+
+#footer_follow_list {
+	.reset-dimensions;
+	list-style:none;
+	
+	li {
+		.reset-dimensions;
+		float:left;
+		margin-right:20px;
+		margin-bottom:20px;
+		a {
+			display:block;
+			width:50px;
+			height:50px;
+			text-indent:-9999px;
+		}
+	}
+	
+	li.vimeo a {
+		background:url(../images/fs_sprite.png) -5px -27px no-repeat;
+	}
+	
+	li.twitter a {
+		background:url(../images/fs_sprite.png) -64px -30px no-repeat;
+	}
+	
+	li.tumblr a {
+		background:url(../images/fs_sprite.png) -120px -30px no-repeat;
+	}
+	
+	li.flickr a {
+		background:url(../images/fs_sprite.png) -180px -18px no-repeat;
+	}
+	
+	li:nth-child(3n) {
+		margin-right:0;
+	}
+}
 
 #wp-calendar {
 	margin-top:0;
