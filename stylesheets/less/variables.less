@@ -47,6 +47,10 @@
 	width:(@columns*@column-width)+(((@columns)-1)*@gutter-width);
 }
 
+.sprite-background(@x:0px, @y:0px) {
+	background:url(../../images/fs_sprite.png) @x @y no-repeat;
+}
+
 .drop-shadow(@x:0px, @y:0px, @blur:3px, @color:#000) {
 	-moz-box-shadow: @x @y @blur @color;
 	-webkit-box-shadow: @x @y @blur @color;

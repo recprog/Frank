@@ -85,7 +85,9 @@
   margin-right: 0;
 }
 #content.home #content_secondary img {
-  -moz-box-shadow: 0px 2px 7px #9e8886;
-  -webkit-box-shadow: 0px 2px 7px #9e8886;
-  box-shadow: 0px 2px 7px #9e8886;
+  /*.drop-shadow(0px, 2px, 7px, #9e8886);*/
+
+  -moz-box-shadow: 0px 2px 7px rgba(158, 136, 134, 0.6);
+  -webkit-box-shadow: 0px 2px 7px rgba(158, 136, 134, 0.6);
+  box-shadow: 0px 2px 7px rgba(158, 136, 134, 0.6);
 }

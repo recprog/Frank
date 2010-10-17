@@ -22,13 +22,6 @@
   float: left;
   margin-right: 15px;
 }
-#sidebar #rss-3 .rsswidget img {
-  display: none;
-}
-#sidebar #rss-3 .rsswidget a {
-  border: none;
-  color: #050000;
-}
 #wp-calendar {
   margin-top: 0;
   margin-bottom: 0;
