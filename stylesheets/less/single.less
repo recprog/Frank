@@ -1,0 +1,40 @@
+@import "variables";
+
+#content.single {
+	position: relative;
+	margin-top: @row-height;
+	#content_primary {
+		#excerpt {
+			p {
+				padding-top:0;
+				font-size:24px;
+				line-height:@row-height*2;
+				font-style:italic;
+				margin-bottom:(@row-height*2);
+			}
+		}
+		footer {
+			.reset-dimensions;
+			margin-top:(@row-height*2);
+			p {
+				font-size:14px !important;
+			}
+		}
+	}
+	#post_footer .widget {
+		float:left;
+		margin-right:20px;
+		width:190px;
+		margin-bottom:20px;
+	}
+
+	#post_footer .widget:nth-child(3n+1) {
+		width:330px;
+		clear:left;
+	}
+
+	#post_footer .widget:nth-child(3n) {
+		margin-right:0;
+	}
+}
+

@@ -1,0 +1,121 @@
+.reset-dimensions {
+  margin: 0;
+  padding: 0;
+}
+.incomplete {
+  background-color: rgba(255, 0, 255, 0);
+}
+.show-bounds {
+  background-color: rgba(255, 255, 0, 0.5);
+}
+#comments_container {
+  border-top: 3px double #f0eceb;
+  margin-top: 15px;
+  padding-top: 15px;
+}
+#comments_container #comments_ajax {
+  overflow: hidden;
+  height: 0;
+}
+#comments_container header h1 {
+  margin-bottom: 0;
+}
+#comments_container header h2 {
+  margin-top: 0;
+}
+#comments_container #comments {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 15px;
+}
+#comments_container #comments .metadata {
+  margin-bottom: 5px;
+  font-size: 11px;
+  margin-top: 15px;
+}
+#comments_container #comments .copy {
+  margin-top: 2px;
+  font-family: 'ff-meta-serif-web-pro-1', 'ff-meta-serif-web-pro-2', Georgia, "Times New Roman", Times, serif;
+}
+#comments_container #comments .copy p {
+  font-size: 12px;
+  line-height: 15px;
+}
+#comments_container #comments .copy blockquote, #comments_container #comments .copy blockquote p {
+  font-size: 13px;
+}
+#comments_container #comments li {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 15px;
+}
+#comments_container #comments .metadata small {
+  font-size: 11px;
+  padding-top: 5px;
+  margin-bottom: 0;
+}
+#comments_container #comments li {
+  background: none;
+  margin: 0;
+  padding: 30px 0;
+  border-bottom: 1px solid #f0eceb;
+}
+#comments_container #comments li:first-child {
+  margin-top: 0px;
+}
+#comments_container #comments li:last-child {
+  padding-bottom: 0;
+  border: 0;
+}
+#comments_container #comments p:last-child {
+  margin-bottom: 0;
+}
+#comments_container #no_comments {
+  font-size: 26px;
+  line-height: 30px;
+  padding-top: 10px;
+  margin-bottom: 30px;
+  color: #5d504f;
+}
+#comments_container #commentform dl {
+  position: relative !important;
+  margin: 0;
+  padding: 0;
+}
+#comments_container #commentform dl dt {
+  margin-top: 15px;
+  padding: 0;
+  margin-bottom: 5px;
+}
+#comments_container #commentform dl dt:first-child {
+  margin-top: 0;
+}
+#comments_container #commentform dl dd {
+  margin: 0;
+  padding: 0;
+}
+#comments_container #commentform dl dd input.textinput {
+  margin: 0;
+  font-size: 12px !important;
+  padding: 2px;
+  height: 15px;
+  width: 184px;
+}
+#comments_container #commentform textarea {
+  border: 1px solid #000;
+  margin: 0;
+  font-size: 12px !important;
+  height: 127px;
+  padding: 2px 4px;
+  width: 530px;
+}
+#comments_container #commentform textarea .loggedin {
+  width: 740px;
+}
+#comments_container #comment_form {
+  margin-top: 15px;
+}
+#comments_container #comment_form p.loggedin {
+  font-size: 12px !important;
+  margin-bottom: 15px;
+}

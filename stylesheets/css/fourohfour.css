@@ -1,0 +1,23 @@
+.reset-dimensions {
+  margin: 0;
+  padding: 0;
+}
+.incomplete {
+  background-color: rgba(255, 0, 255, 0);
+}
+.show-bounds {
+  background-color: rgba(255, 255, 0, 0.5);
+}
+#content.fourohfour .widget {
+  float: left;
+  margin-right: 20px;
+  width: 190px;
+  margin-bottom: 30px;
+}
+#content.fourohfour .widget:nth-child(4n+1) {
+  width: 330px;
+  clear: left;
+}
+#content.fourohfour .widget:nth-child(4n) {
+  margin-right: 0;
+}

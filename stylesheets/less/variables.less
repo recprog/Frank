@@ -1,0 +1,54 @@
+@color_accent: 		#ff1e00;
+@color_highlight: 	#fefafa;
+@color_light: 		#f0eceb;
+@color_midtone: 	#5d504f;
+@color_dark: 		#3d302f;
+@color_off_black: 	#050000;
+
+
+@sans-serif:'ff-dagny-web-pro-1', 'ff-dagny-web-pro-2', 'Helvetica Neue', Arial, Helvetica, Geneva, sans-serif;
+@sans-serif-alt:'Helvetica Neue', Arial, Helvetica, Geneva, sans-serif;
+@serif:'ff-meta-serif-web-pro-1','ff-meta-serif-web-pro-2', Georgia, "Times New Roman", Times, serif;
+
+@thin:100;
+@extra-light:200;
+@light:300;
+@normal:400;
+@medium:500;
+@demi-bold:600;
+@bold:700;
+@heavy:800;
+@black:900;
+
+@row-height:		15px;
+@column-width:		50px;
+@gutter-width:		20px;
+
+@border-break: 3px double @color_light;
+
+.reset-dimensions {
+	margin:0;
+	padding:0;
+}
+
+.incomplete {
+	background-color: rgba(255,0,255,0);
+}
+
+.show-bounds {
+	background-color: rgba(255, 255, 0, .5);
+}
+
+.opacity(@level:1) {
+	opacity:@level;
+}
+
+.columns(@columns:1) {
+	width:(@columns*@column-width)+(((@columns)-1)*@gutter-width);
+}
+
+.drop-shadow(@x:0px, @y:0px, @blur:3px, @color:#000) {
+	-moz-box-shadow: @x @y @blur @color;
+	-webkit-box-shadow: @x @y @blur @color;
+	box-shadow: @x @y @blur @color;
+}
