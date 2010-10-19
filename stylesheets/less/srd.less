@@ -271,29 +271,47 @@
 	}
 }
 
-#post_footer {
+#content.single #post_footer {
+	.widget:first-child {
+		margin-left:140px;
+		width:190px;
+	}
+
+
 	#text-14 {
 		.drop-shadow(0px, 0px, 4px, rgba(158, 136, 134,0.6));
 		background:@color_light;
 		height:100px;
 		font-family:@serif;
 		color:@color_midtone;
-		.header {
-			margin:10px;
-			display:block;
-			font-size:16px;
-		}
-		.caption {
-			margin:10px;
-			margin-top:10px;
-			display:block;
-			font-size:11px;
-			font-style:italic;
-			color:@color_off_black;
-			a {
-				color:@color_off_black;
+		position:relative;
+		a {
+			text-decoration:none;
+			.content {
+				width:170px;
+				position:absolute;
+				bottom:0;
+				display:block;
+				padding:5px 10px 10px 10px;
+				color:@color_highlight;
+				background: rgba(93,80,79,.85);
+
+				.header {
+					display:block;
+					font-size:14px;
+					font-family:@sans-serif;
+				}
+
+				.caption {
+					margin-top:5px;
+					display:block;
+					font-size:11px;
+					font-family:@serif;
+					font-style:italic;
+				}
 			}
 		}
+		
 	}
 
 	#post_footer_off_franklin_promo {
@@ -303,11 +321,13 @@
 		height:100px;
 		.drop-shadow(0px, 0px, 4px, rgba(158, 136, 134,0.6));
 		text-decoration:none;
+		position:relative;
 		.content {
+			width:170px;
+			position:absolute;
+			bottom:0;
 			display:block;
-			width:100px;
-			height:80px;
-			padding:10px;
+			padding:5px 10px 10px 10px;
 			color:@color_highlight;
 			background: rgba(93,80,79,.85);
 			
@@ -317,7 +337,7 @@
 			}
 			
 			.caption {
-				margin-top:15px;
+				margin-top:5px;
 				display:block;
 				font-size:11px;
 				font-family:@serif;
@@ -329,6 +349,33 @@
 
 
 #page_footer {
+
+	#footer_main_promo {
+		width:330px;
+		height:180px;
+		display:block;
+		.sprite-background(-280px, -300px);
+		background-color:@color_accent;
+		text-decoration:none;
+		.content {
+			display:block;
+			margin-left:170px;
+			padding-top:40px;
+			padding-right:10px;
+			.header {
+				font-family:@sans-serif;
+				display:block;
+				font-size:17px;
+				line-height:20px;
+			}
+			.caption {
+				display:block;
+				font-size:12px;
+				margin-top:15px;
+				font-style:italic;
+			}
+		}
+	}
 
 	#text-6 {
 		margin-top:(@row-height*-2);

@@ -255,7 +255,11 @@
 #content.single #post_footer .widget {
   margin-bottom: 0;
 }
-#post_footer #text-14 {
+#content.single #post_footer .widget:first-child {
+  margin-left: 140px;
+  width: 190px;
+}
+#content.single #post_footer #text-14 {
   -moz-box-shadow: 0px 0px 4px rgba(158, 136, 134, 0.6);
   -webkit-box-shadow: 0px 0px 4px rgba(158, 136, 134, 0.6);
   box-shadow: 0px 0px 4px rgba(158, 136, 134, 0.6);
@@ -263,24 +267,33 @@
   height: 100px;
   font-family: 'ff-meta-serif-web-pro-1', 'ff-meta-serif-web-pro-2', Georgia, "Times New Roman", Times, serif;
   color: #5d504f;
+  position: relative;
 }
-#post_footer #text-14 .header {
-  margin: 10px;
+#content.single #post_footer #text-14 a {
+  text-decoration: none;
+}
+#content.single #post_footer #text-14 a .content {
+  width: 170px;
+  position: absolute;
+  bottom: 0;
   display: block;
-  font-size: 16px;
+  padding: 5px 10px 10px 10px;
+  color: #fefafa;
+  background: rgba(93, 80, 79, 0.85);
 }
-#post_footer #text-14 .caption {
-  margin: 10px;
-  margin-top: 10px;
+#content.single #post_footer #text-14 a .content .header {
+  display: block;
+  font-size: 14px;
+  font-family: 'ff-dagny-web-pro-1', 'ff-dagny-web-pro-2', 'Helvetica Neue', Arial, Helvetica, Geneva, sans-serif;
+}
+#content.single #post_footer #text-14 a .content .caption {
+  margin-top: 5px;
   display: block;
   font-size: 11px;
+  font-family: 'ff-meta-serif-web-pro-1', 'ff-meta-serif-web-pro-2', Georgia, "Times New Roman", Times, serif;
   font-style: italic;
-  color: #050000;
 }
-#post_footer #text-14 .caption a {
-  color: #050000;
-}
-#post_footer #post_footer_off_franklin_promo {
+#content.single #post_footer #post_footer_off_franklin_promo {
   background: url(../../images/promos.png) 0px 0px no-repeat;
   display: block;
   width: 190px;
@@ -289,24 +302,52 @@
   -webkit-box-shadow: 0px 0px 4px rgba(158, 136, 134, 0.6);
   box-shadow: 0px 0px 4px rgba(158, 136, 134, 0.6);
   text-decoration: none;
+  position: relative;
 }
-#post_footer #post_footer_off_franklin_promo .content {
+#content.single #post_footer #post_footer_off_franklin_promo .content {
+  width: 170px;
+  position: absolute;
+  bottom: 0;
   display: block;
-  width: 100px;
-  height: 80px;
-  padding: 10px;
+  padding: 5px 10px 10px 10px;
   color: #fefafa;
   background: rgba(93, 80, 79, 0.85);
 }
-#post_footer #post_footer_off_franklin_promo .content .header {
+#content.single #post_footer #post_footer_off_franklin_promo .content .header {
   display: block;
   font-size: 14px;
 }
-#post_footer #post_footer_off_franklin_promo .content .caption {
-  margin-top: 15px;
+#content.single #post_footer #post_footer_off_franklin_promo .content .caption {
+  margin-top: 5px;
   display: block;
   font-size: 11px;
   font-family: 'ff-meta-serif-web-pro-1', 'ff-meta-serif-web-pro-2', Georgia, "Times New Roman", Times, serif;
+  font-style: italic;
+}
+#page_footer #footer_main_promo {
+  width: 330px;
+  height: 180px;
+  display: block;
+  background: url(../../images/fs_sprite.png) -280px -300px no-repeat;
+  background-color: #ff1e00;
+  text-decoration: none;
+}
+#page_footer #footer_main_promo .content {
+  display: block;
+  margin-left: 170px;
+  padding-top: 40px;
+  padding-right: 10px;
+}
+#page_footer #footer_main_promo .content .header {
+  font-family: 'ff-dagny-web-pro-1', 'ff-dagny-web-pro-2', 'Helvetica Neue', Arial, Helvetica, Geneva, sans-serif;
+  display: block;
+  font-size: 17px;
+  line-height: 20px;
+}
+#page_footer #footer_main_promo .content .caption {
+  display: block;
+  font-size: 12px;
+  margin-top: 15px;
   font-style: italic;
 }
 #page_footer #text-6 {
