@@ -179,7 +179,6 @@ em {
   font-style: italic;
 }
 ul, ol {
-  list-style: square;
   margin-left: 15px;
   padding-top: 5px;
 }
@@ -190,15 +189,15 @@ ol ol {
   padding-top: 0;
 }
 ul li, ol li {
-  margin: 0;
+  margin-left: 20px;
   font-size: 12px;
   margin-bottom: 5px;
 }
+ul {
+  list-style: square;
+}
 ol {
   list-style: decimal;
-}
-ol li {
-  margin-left: 20px;
 }
 dl {
   margin: 15px 0;

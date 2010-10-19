@@ -32,7 +32,8 @@
   position: relative;
   overflow: hidden;
   padding: 1px;
-  background: #3d302f;
+  background: #fefafa;
+  padding-bottom: 5px;
 }
 #cboxLoadedContent {
   overflow: auto;
@@ -75,56 +76,51 @@
   left: 0;
   text-align: center;
   width: 100%;
-  color: #949494;
+  color: #5d504f;
 }
 #cboxCurrent {
   position: absolute;
   bottom: 3px;
   left: 58px;
-  color: #949494;
+  color: #5d504f;
 }
 #cboxSlideshow {
   position: absolute;
   bottom: 3px;
   right: 30px;
-  color: #0092ef;
+  color: #5d504f;
 }
 #cboxPrevious {
   position: absolute;
-  bottom: 0;
-  left: 0px;
-  background: url(images/controls.png) -75px 0px no-repeat;
-  width: 25px;
-  height: 25px;
+  bottom: 5px;
+  left: 5px;
+  background: url(../../images/fs_sprite.png) -200px -150px no-repeat;
+  width: 20px;
+  height: 20px;
   text-indent: -9999px;
-}
-#cboxPrevious.hover {
-  background-position: -75px -25px;
+  border-right: 1px solid #5d504f;
+  border-bottom: 1px solid #5d504f;
 }
 #cboxNext {
   position: absolute;
-  bottom: 0;
-  left: 27px;
-  background: url(images/controls.png) -50px 0px no-repeat;
-  width: 25px;
-  height: 25px;
+  bottom: 5px;
+  left: 30px;
+  background: url(../../images/fs_sprite.png) -180px -150px no-repeat;
+  width: 20px;
+  height: 20px;
   text-indent: -9999px;
-}
-#cboxNext.hover {
-  background-position: -50px -25px;
 }
 #cboxLoadingGraphic {
   background: url(images/loading.gif) center center no-repeat;
 }
 #cboxClose {
   position: absolute;
-  bottom: 0;
-  right: 0;
-  background: url(images/controls.png) -25px 0px no-repeat;
-  width: 25px;
-  height: 25px;
+  bottom: 5px;
+  right: 5px;
+  background: url(../../images/fs_sprite.png) -215px -145px no-repeat;
+  width: 20px;
+  height: 20px;
   text-indent: -9999px;
-}
-#cboxClose.hover {
-  background-position: -25px -25px;
+  border-right: 1px solid #5d504f;
+  border-bottom: 1px solid #5d504f;
 }

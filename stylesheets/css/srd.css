@@ -255,8 +255,102 @@
 #content.single #post_footer .widget {
   margin-bottom: 0;
 }
+#post_footer #text-14 {
+  -moz-box-shadow: 0px 0px 4px rgba(158, 136, 134, 0.6);
+  -webkit-box-shadow: 0px 0px 4px rgba(158, 136, 134, 0.6);
+  box-shadow: 0px 0px 4px rgba(158, 136, 134, 0.6);
+  background: #f0eceb;
+  height: 100px;
+  font-family: 'ff-meta-serif-web-pro-1', 'ff-meta-serif-web-pro-2', Georgia, "Times New Roman", Times, serif;
+  color: #5d504f;
+}
+#post_footer #text-14 .header {
+  margin: 10px;
+  display: block;
+  font-size: 16px;
+}
+#post_footer #text-14 .caption {
+  margin: 10px;
+  margin-top: 10px;
+  display: block;
+  font-size: 11px;
+  font-style: italic;
+  color: #050000;
+}
+#post_footer #text-14 .caption a {
+  color: #050000;
+}
+#post_footer #post_footer_off_franklin_promo {
+  background: url(../../images/promos.png) 0px 0px no-repeat;
+  display: block;
+  width: 190px;
+  height: 100px;
+  -moz-box-shadow: 0px 0px 4px rgba(158, 136, 134, 0.6);
+  -webkit-box-shadow: 0px 0px 4px rgba(158, 136, 134, 0.6);
+  box-shadow: 0px 0px 4px rgba(158, 136, 134, 0.6);
+  text-decoration: none;
+}
+#post_footer #post_footer_off_franklin_promo .content {
+  display: block;
+  width: 100px;
+  height: 80px;
+  padding: 10px;
+  color: #fefafa;
+  background: rgba(93, 80, 79, 0.85);
+}
+#post_footer #post_footer_off_franklin_promo .content .header {
+  display: block;
+  font-size: 14px;
+}
+#post_footer #post_footer_off_franklin_promo .content .caption {
+  margin-top: 15px;
+  display: block;
+  font-size: 11px;
+  font-family: 'ff-meta-serif-web-pro-1', 'ff-meta-serif-web-pro-2', Georgia, "Times New Roman", Times, serif;
+  font-style: italic;
+}
 #page_footer #text-6 {
   margin-top: -30px;
+}
+#page_footer #text-7 #footer_submit_options {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+#page_footer #text-7 #footer_submit_options li.design, #page_footer #text-7 #footer_submit_options li.web, #page_footer #text-7 #footer_submit_options li.motion {
+  margin: 0;
+  padding: 0;
+  float: left;
+  margin-right: 20px;
+  text-align: center;
+}
+#page_footer #text-7 #footer_submit_options li.design a, #page_footer #text-7 #footer_submit_options li.web a, #page_footer #text-7 #footer_submit_options li.motion a {
+  display: block;
+  width: 50px;
+  height: 39px;
+  text-indent: -9999px;
+}
+#page_footer #text-7 #footer_submit_options li.design span, #page_footer #text-7 #footer_submit_options li.web span, #page_footer #text-7 #footer_submit_options li.motion span {
+  display: block;
+  margin-top: 2px;
+}
+#page_footer #text-7 #footer_submit_options li.design a {
+  background: url(../../images/fs_sprite.png) -5px -150px no-repeat;
+}
+#page_footer #text-7 #footer_submit_options li.web a {
+  background: url(../../images/fs_sprite.png) -60px -150px no-repeat;
+}
+#page_footer #text-7 #footer_submit_options li.motion a {
+  background: url(../../images/fs_sprite.png) -115px -150px no-repeat;
+}
+#page_footer #text-7 a.learnmore {
+  margin: 0;
+  padding: 0;
+  display: block;
+  font-family: 'ff-meta-serif-web-pro-1', 'ff-meta-serif-web-pro-2', Georgia, "Times New Roman", Times, serif;
+  font-size: 24px !important;
+  font-style: italic;
+  text-decoration: none;
 }
 #page_footer #footer_follow_list {
   margin: 0;
@@ -356,9 +450,9 @@
   font-size: 12px;
   /* box-shadow */
 
-  -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 4px;
-  -moz-box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 4px;
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 4px;
+  -moz-box-shadow: 0px 0px 4px rgba(158, 136, 134, 0.6);
+  -webkit-box-shadow: 0px 0px 4px rgba(158, 136, 134, 0.6);
+  box-shadow: 0px 0px 4px rgba(158, 136, 134, 0.6);
 }
 #rss_promo #rss_promo_top {
   display: block;
@@ -393,8 +487,6 @@
 #rss_promo #rss_promo_top .content strong span {
   display: block;
   font-size: 12px;
-  font-family: 'ff-dagny-web-pro-1', 'ff-dagny-web-pro-2', 'Helvetica Neue', Arial, Helvetica, Geneva, sans-serif;
-  font-style: normal;
 }
 #rss_promo #rss_promo_bottom {
   display: block;
