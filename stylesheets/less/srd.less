@@ -256,10 +256,16 @@
 			}	
 		}
 	}
-	#sub_header {
-		.widget {
-			margin-bottom:0;
-		}
+	
+}
+
+#sub_header {
+	#subheader_webbynode_promo {
+		display:block;
+		width:100px;
+		height:20px;
+		text-indent:-9999px;
+		.sprite-background(-5px, -260px);
 	}
 }
 
@@ -278,47 +284,83 @@
 	}
 
 
-	#text-14 {
+	#post_footer_post_of_week {
 		.drop-shadow(0px, 0px, 4px, rgba(158, 136, 134,0.6));
-		background:@color_light;
-		height:100px;
+		background:url(../../images/promos.png) -200px 0px no-repeat;
+		background-color:@color_light;
+		height:90px;
+		width:190px;
+		display:block;
 		font-family:@serif;
 		color:@color_midtone;
 		position:relative;
-		a {
-			text-decoration:none;
-			.content {
-				width:170px;
-				position:absolute;
-				bottom:0;
+		text-decoration:none;
+		.content {
+			width:170px;
+			position:absolute;
+			bottom:0;
+			display:block;
+			padding:5px 10px 10px 10px;
+			color:@color_highlight;
+			background: rgba(93,80,79,.85);
+
+			.header {
 				display:block;
-				padding:5px 10px 10px 10px;
-				color:@color_highlight;
-				background: rgba(93,80,79,.85);
+				font-size:14px;
+				font-family:@sans-serif;
+			}
 
-				.header {
-					display:block;
-					font-size:14px;
-					font-family:@sans-serif;
-				}
-
-				.caption {
-					margin-top:5px;
-					display:block;
-					font-size:11px;
-					font-family:@serif;
-					font-style:italic;
-				}
+			.caption {
+				margin-top:2px;
+				display:block;
+				font-size:11px;
+				font-family:@serif;
+				font-style:italic;
 			}
 		}
-		
+	}
+
+	#post_footer_tumblr_follow {
+		.drop-shadow(0px, 0px, 4px, rgba(158, 136, 134,0.6));
+		background:url(../../images/promos.png) -400px 0px no-repeat;
+		background-color:@color_light;
+		height:90px;
+		width:190px;
+		display:block;
+		font-family:@serif;
+		color:@color_midtone;
+		position:relative;
+		text-decoration:none;
+		.content {
+			width:170px;
+			position:absolute;
+			bottom:0;
+			display:block;
+			padding:5px 10px 10px 10px;
+			color:@color_highlight;
+			background: rgba(93,80,79,.85);
+
+			.header {
+				display:block;
+				font-size:14px;
+				font-family:@sans-serif;
+			}
+
+			.caption {
+				margin-top:2px;
+				display:block;
+				font-size:11px;
+				font-family:@serif;
+				font-style:italic;
+			}
+		}
 	}
 
 	#post_footer_off_franklin_promo {
 		background:url(../../images/promos.png) 0px 0px no-repeat;
 		display:block;
 		width:190px;
-		height:100px;
+		height:90px;
 		.drop-shadow(0px, 0px, 4px, rgba(158, 136, 134,0.6));
 		text-decoration:none;
 		position:relative;
@@ -337,7 +379,7 @@
 			}
 			
 			.caption {
-				margin-top:5px;
+				margin-top:2px;
 				display:block;
 				font-size:11px;
 				font-family:@serif;
@@ -455,6 +497,10 @@
 
 		li.flickr a {
 			.sprite-background(-180px, -18px);
+		}
+		
+		li.git a {
+			.sprite-background(-285px, -30px);
 		}
 
 		li:nth-child(3n) {

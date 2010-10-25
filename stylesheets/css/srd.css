@@ -249,8 +249,12 @@
   width: 46px;
   padding-left: 4px;
 }
-#page_header #sub_header .widget {
-  margin-bottom: 0;
+#sub_header #subheader_webbynode_promo {
+  display: block;
+  width: 100px;
+  height: 20px;
+  text-indent: -9999px;
+  background: url(../../images/fs_sprite.png) -5px -260px no-repeat;
 }
 #content.single #post_footer .widget {
   margin-bottom: 0;
@@ -259,20 +263,21 @@
   margin-left: 140px;
   width: 190px;
 }
-#content.single #post_footer #text-14 {
+#content.single #post_footer #post_footer_post_of_week {
   -moz-box-shadow: 0px 0px 4px rgba(158, 136, 134, 0.6);
   -webkit-box-shadow: 0px 0px 4px rgba(158, 136, 134, 0.6);
   box-shadow: 0px 0px 4px rgba(158, 136, 134, 0.6);
-  background: #f0eceb;
-  height: 100px;
+  background: url(../../images/promos.png) -200px 0px no-repeat;
+  background-color: #f0eceb;
+  height: 90px;
+  width: 190px;
+  display: block;
   font-family: 'ff-meta-serif-web-pro-1', 'ff-meta-serif-web-pro-2', Georgia, "Times New Roman", Times, serif;
   color: #5d504f;
   position: relative;
-}
-#content.single #post_footer #text-14 a {
   text-decoration: none;
 }
-#content.single #post_footer #text-14 a .content {
+#content.single #post_footer #post_footer_post_of_week .content {
   width: 170px;
   position: absolute;
   bottom: 0;
@@ -281,13 +286,48 @@
   color: #fefafa;
   background: rgba(93, 80, 79, 0.85);
 }
-#content.single #post_footer #text-14 a .content .header {
+#content.single #post_footer #post_footer_post_of_week .content .header {
   display: block;
   font-size: 14px;
   font-family: 'ff-dagny-web-pro-1', 'ff-dagny-web-pro-2', 'Helvetica Neue', Arial, Helvetica, Geneva, sans-serif;
 }
-#content.single #post_footer #text-14 a .content .caption {
-  margin-top: 5px;
+#content.single #post_footer #post_footer_post_of_week .content .caption {
+  margin-top: 2px;
+  display: block;
+  font-size: 11px;
+  font-family: 'ff-meta-serif-web-pro-1', 'ff-meta-serif-web-pro-2', Georgia, "Times New Roman", Times, serif;
+  font-style: italic;
+}
+#content.single #post_footer #post_footer_tumblr_follow {
+  -moz-box-shadow: 0px 0px 4px rgba(158, 136, 134, 0.6);
+  -webkit-box-shadow: 0px 0px 4px rgba(158, 136, 134, 0.6);
+  box-shadow: 0px 0px 4px rgba(158, 136, 134, 0.6);
+  background: url(../../images/promos.png) -400px 0px no-repeat;
+  background-color: #f0eceb;
+  height: 90px;
+  width: 190px;
+  display: block;
+  font-family: 'ff-meta-serif-web-pro-1', 'ff-meta-serif-web-pro-2', Georgia, "Times New Roman", Times, serif;
+  color: #5d504f;
+  position: relative;
+  text-decoration: none;
+}
+#content.single #post_footer #post_footer_tumblr_follow .content {
+  width: 170px;
+  position: absolute;
+  bottom: 0;
+  display: block;
+  padding: 5px 10px 10px 10px;
+  color: #fefafa;
+  background: rgba(93, 80, 79, 0.85);
+}
+#content.single #post_footer #post_footer_tumblr_follow .content .header {
+  display: block;
+  font-size: 14px;
+  font-family: 'ff-dagny-web-pro-1', 'ff-dagny-web-pro-2', 'Helvetica Neue', Arial, Helvetica, Geneva, sans-serif;
+}
+#content.single #post_footer #post_footer_tumblr_follow .content .caption {
+  margin-top: 2px;
   display: block;
   font-size: 11px;
   font-family: 'ff-meta-serif-web-pro-1', 'ff-meta-serif-web-pro-2', Georgia, "Times New Roman", Times, serif;
@@ -297,7 +337,7 @@
   background: url(../../images/promos.png) 0px 0px no-repeat;
   display: block;
   width: 190px;
-  height: 100px;
+  height: 90px;
   -moz-box-shadow: 0px 0px 4px rgba(158, 136, 134, 0.6);
   -webkit-box-shadow: 0px 0px 4px rgba(158, 136, 134, 0.6);
   box-shadow: 0px 0px 4px rgba(158, 136, 134, 0.6);
@@ -318,7 +358,7 @@
   font-size: 14px;
 }
 #content.single #post_footer #post_footer_off_franklin_promo .content .caption {
-  margin-top: 5px;
+  margin-top: 2px;
   display: block;
   font-size: 11px;
   font-family: 'ff-meta-serif-web-pro-1', 'ff-meta-serif-web-pro-2', Georgia, "Times New Roman", Times, serif;
@@ -422,6 +462,9 @@
 }
 #page_footer #footer_follow_list li.flickr a {
   background: url(../../images/fs_sprite.png) -180px -18px no-repeat;
+}
+#page_footer #footer_follow_list li.git a {
+  background: url(../../images/fs_sprite.png) -285px -30px no-repeat;
 }
 #page_footer #footer_follow_list li:nth-child(3n) {
   margin-right: 0;
