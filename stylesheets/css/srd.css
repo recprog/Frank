@@ -24,7 +24,9 @@
   display: block;
   font-weight: bold;
   padding-left: 20px;
-  background: url(../../images/fs_sprite.png) -3px -100px no-repeat;
+  background-image: url(../../images/fs_sprite.png);
+  background-position: -3px -100px;
+  background-repeat: no-repeat;
   background-color: #3d302f;
   text-indent: -9999px;
 }
@@ -254,7 +256,9 @@
   width: 100px;
   height: 20px;
   text-indent: -9999px;
-  background: url(../../images/fs_sprite.png) -5px -260px no-repeat;
+  background-image: url(../../images/fs_sprite.png);
+  background-position: -5px -260px;
+  background-repeat: no-repeat;
 }
 #content.single #post_footer .widget {
   margin-bottom: 0;
@@ -263,21 +267,12 @@
   margin-left: 140px;
   width: 190px;
 }
-#content.single #post_footer #post_footer_post_of_week {
-  -moz-box-shadow: 0px 0px 4px rgba(158, 136, 134, 0.6);
-  -webkit-box-shadow: 0px 0px 4px rgba(158, 136, 134, 0.6);
-  box-shadow: 0px 0px 4px rgba(158, 136, 134, 0.6);
-  background: url(../../images/promos.png) -200px 0px no-repeat;
-  background-color: #f0eceb;
+#content.single #post_footer #post_footer_post_of_week, #content.single #post_footer #post_footer_tumblr_follow, #content.single #post_footer #post_footer_off_franklin_promo {
   height: 90px;
   width: 190px;
-  display: block;
-  font-family: 'ff-meta-serif-web-pro-1', 'ff-meta-serif-web-pro-2', Georgia, "Times New Roman", Times, serif;
-  color: #5d504f;
   position: relative;
-  text-decoration: none;
 }
-#content.single #post_footer #post_footer_post_of_week .content {
+#content.single #post_footer #post_footer_post_of_week .content, #content.single #post_footer #post_footer_tumblr_follow .content, #content.single #post_footer #post_footer_off_franklin_promo .content {
   width: 170px;
   position: absolute;
   bottom: 0;
@@ -286,89 +281,49 @@
   color: #fefafa;
   background: rgba(93, 80, 79, 0.85);
 }
-#content.single #post_footer #post_footer_post_of_week .content .header {
+#content.single #post_footer #post_footer_post_of_week .content .header, #content.single #post_footer #post_footer_tumblr_follow .content .header, #content.single #post_footer #post_footer_off_franklin_promo .content .header {
   display: block;
   font-size: 14px;
   font-family: 'ff-dagny-web-pro-1', 'ff-dagny-web-pro-2', 'Helvetica Neue', Arial, Helvetica, Geneva, sans-serif;
 }
-#content.single #post_footer #post_footer_post_of_week .content .caption {
+#content.single #post_footer #post_footer_post_of_week .content .caption, #content.single #post_footer #post_footer_tumblr_follow .content .caption, #content.single #post_footer #post_footer_off_franklin_promo .content .caption {
   margin-top: 2px;
   display: block;
   font-size: 11px;
   font-family: 'ff-meta-serif-web-pro-1', 'ff-meta-serif-web-pro-2', Georgia, "Times New Roman", Times, serif;
   font-style: italic;
+}
+#content.single #post_footer #post_footer_post_of_week {
+  background-image: url(../../images/promos.png);
+  background-position: -200px 0px;
+  background-repeat: no-repeat;
 }
 #content.single #post_footer #post_footer_tumblr_follow {
-  -moz-box-shadow: 0px 0px 4px rgba(158, 136, 134, 0.6);
-  -webkit-box-shadow: 0px 0px 4px rgba(158, 136, 134, 0.6);
-  box-shadow: 0px 0px 4px rgba(158, 136, 134, 0.6);
-  background: url(../../images/promos.png) -400px 0px no-repeat;
-  background-color: #f0eceb;
-  height: 90px;
-  width: 190px;
-  display: block;
-  font-family: 'ff-meta-serif-web-pro-1', 'ff-meta-serif-web-pro-2', Georgia, "Times New Roman", Times, serif;
-  color: #5d504f;
-  position: relative;
-  text-decoration: none;
-}
-#content.single #post_footer #post_footer_tumblr_follow .content {
-  width: 170px;
-  position: absolute;
-  bottom: 0;
-  display: block;
-  padding: 5px 10px 10px 10px;
-  color: #fefafa;
-  background: rgba(93, 80, 79, 0.85);
-}
-#content.single #post_footer #post_footer_tumblr_follow .content .header {
-  display: block;
-  font-size: 14px;
-  font-family: 'ff-dagny-web-pro-1', 'ff-dagny-web-pro-2', 'Helvetica Neue', Arial, Helvetica, Geneva, sans-serif;
-}
-#content.single #post_footer #post_footer_tumblr_follow .content .caption {
-  margin-top: 2px;
-  display: block;
-  font-size: 11px;
-  font-family: 'ff-meta-serif-web-pro-1', 'ff-meta-serif-web-pro-2', Georgia, "Times New Roman", Times, serif;
-  font-style: italic;
+  background-image: url(../../images/promos.png);
+  background-position: -400px 0px;
+  background-repeat: no-repeat;
 }
 #content.single #post_footer #post_footer_off_franklin_promo {
-  background: url(../../images/promos.png) 0px 0px no-repeat;
-  display: block;
-  width: 190px;
-  height: 90px;
-  -moz-box-shadow: 0px 0px 4px rgba(158, 136, 134, 0.6);
-  -webkit-box-shadow: 0px 0px 4px rgba(158, 136, 134, 0.6);
-  box-shadow: 0px 0px 4px rgba(158, 136, 134, 0.6);
-  text-decoration: none;
-  position: relative;
+  background-image: url(../../images/promos.png);
+  background-position: 0px 0px;
+  background-repeat: no-repeat;
 }
-#content.single #post_footer #post_footer_off_franklin_promo .content {
-  width: 170px;
-  position: absolute;
-  bottom: 0;
-  display: block;
-  padding: 5px 10px 10px 10px;
-  color: #fefafa;
-  background: rgba(93, 80, 79, 0.85);
+#page_footer {
+  /*submit to SRD*/
+
+  /*Download Franklin Street*/
+
 }
-#content.single #post_footer #post_footer_off_franklin_promo .content .header {
-  display: block;
-  font-size: 14px;
-}
-#content.single #post_footer #post_footer_off_franklin_promo .content .caption {
-  margin-top: 2px;
-  display: block;
-  font-size: 11px;
-  font-family: 'ff-meta-serif-web-pro-1', 'ff-meta-serif-web-pro-2', Georgia, "Times New Roman", Times, serif;
-  font-style: italic;
+#page_footer .widget ul li {
+  margin-left: 0;
 }
 #page_footer #footer_main_promo {
   width: 330px;
   height: 180px;
   display: block;
-  background: url(../../images/fs_sprite.png) -280px -300px no-repeat;
+  background-image: url(../../images/fs_sprite.png);
+  background-position: -280px -300px;
+  background-repeat: no-repeat;
   background-color: #ff1e00;
   text-decoration: none;
 }
@@ -416,26 +371,38 @@
   margin-top: 2px;
 }
 #page_footer #text-7 #footer_submit_options li.design a {
-  background: url(../../images/fs_sprite.png) -5px -150px no-repeat;
+  background-image: url(../../images/fs_sprite.png);
+  background-position: -5px -150px;
+  background-repeat: no-repeat;
 }
 #page_footer #text-7 #footer_submit_options li.web a {
-  background: url(../../images/fs_sprite.png) -60px -150px no-repeat;
+  background-image: url(../../images/fs_sprite.png);
+  background-position: -60px -150px;
+  background-repeat: no-repeat;
 }
 #page_footer #text-7 #footer_submit_options li.motion a {
-  background: url(../../images/fs_sprite.png) -115px -150px no-repeat;
+  background-image: url(../../images/fs_sprite.png);
+  background-position: -115px -150px;
+  background-repeat: no-repeat;
 }
-#page_footer #text-7 a.learnmore {
-  margin: 0;
-  padding: 0;
-  display: block;
-  font-family: 'ff-meta-serif-web-pro-1', 'ff-meta-serif-web-pro-2', Georgia, "Times New Roman", Times, serif;
-  font-size: 24px !important;
+#page_footer #text-7 a.button {
+  font-size: 14px;
   font-style: italic;
-  text-decoration: none;
+  text-align: center;
+  padding: 4px 2px 6px 2px;
+  width: 190px;
+}
+#page_footer #text-8 a.button {
+  font-size: 14px;
+  font-style: italic;
+  text-align: center;
+  padding: 4px 2px 6px 2px;
+  margin-top: 15px;
 }
 #page_footer #footer_follow_list {
   margin: 0;
   padding: 0;
+  margin-top: 15px;
   list-style: none;
 }
 #page_footer #footer_follow_list li {
@@ -452,19 +419,29 @@
   text-indent: -9999px;
 }
 #page_footer #footer_follow_list li.vimeo a {
-  background: url(../../images/fs_sprite.png) -5px -27px no-repeat;
+  background-image: url(../../images/fs_sprite.png);
+  background-position: -5px -27px;
+  background-repeat: no-repeat;
 }
 #page_footer #footer_follow_list li.twitter a {
-  background: url(../../images/fs_sprite.png) -64px -30px no-repeat;
+  background-image: url(../../images/fs_sprite.png);
+  background-position: -64px -30px;
+  background-repeat: no-repeat;
 }
 #page_footer #footer_follow_list li.tumblr a {
-  background: url(../../images/fs_sprite.png) -120px -30px no-repeat;
+  background-image: url(../../images/fs_sprite.png);
+  background-position: -120px -30px;
+  background-repeat: no-repeat;
 }
 #page_footer #footer_follow_list li.flickr a {
-  background: url(../../images/fs_sprite.png) -180px -18px no-repeat;
+  background-image: url(../../images/fs_sprite.png);
+  background-position: -180px -18px;
+  background-repeat: no-repeat;
 }
 #page_footer #footer_follow_list li.git a {
-  background: url(../../images/fs_sprite.png) -285px -30px no-repeat;
+  background-image: url(../../images/fs_sprite.png);
+  background-position: -285px -30px;
+  background-repeat: no-repeat;
 }
 #page_footer #footer_follow_list li:nth-child(3n) {
   margin-right: 0;
@@ -478,36 +455,69 @@
 #page_heel .widget {
   margin-bottom: 1px;
 }
+#page_heel .widget ul li {
+  margin-left: 0;
+}
+#sticky_footer {
+  /*first-timer*/
+
+}
 #sticky_footer .widget {
   margin-bottom: 0;
+  padding: 0;
 }
-#sticky_footer #sticky_footer_twitter_follow {
+#sticky_footer #sticky_footer_twitter_follow, #sticky_footer #sticky_footer_rss_follow {
   font-size: 12px;
   font-weight: bold;
   text-decoration: none;
   display: block;
+  padding: 5px 0 2px 0;
+}
+#sticky_footer #sticky_footer_twitter_follow span, #sticky_footer #sticky_footer_rss_follow span {
+  display: block;
+  float: left;
+  margin-right: 10px;
 }
 #sticky_footer #sticky_footer_twitter_follow span {
-  display: block;
-  float: left;
   width: 9px;
   height: 12px;
-  background: url(../../images/fs_sprite.png) -5px -5px no-repeat;
-  margin-right: 10px;
-}
-#sticky_footer #sticky_footer_rss_follow {
-  font-size: 12px;
-  font-weight: bold;
-  text-decoration: none;
-  display: block;
+  background-image: url(../../images/fs_sprite.png);
+  background-position: -5px -5px;
+  background-repeat: no-repeat;
 }
 #sticky_footer #sticky_footer_rss_follow span {
-  display: block;
-  float: left;
   width: 12px;
   height: 12px;
-  background: url(../../images/fs_sprite.png) -28px -5px no-repeat;
-  margin-right: 10px;
+  background-image: url(../../images/fs_sprite.png);
+  background-position: -28px -5px;
+  background-repeat: no-repeat;
+}
+#sticky_footer #text-22 {
+  margin: 0;
+  width: 400px;
+  float: right;
+}
+#sticky_footer #text-22 a {
+  font-weight: bold;
+  padding: 5px 0 2px 10px;
+  display: block;
+  background-color: #ff1e00;
+  text-decoration: none;
+  font-size: 12px;
+  color: #fefafa;
+}
+#sticky_footer #text-22 a .user {
+  font-size: 15px;
+}
+#sticky_footer.light {
+  /*first-timer*/
+
+}
+#sticky_footer.light #text-22 a {
+  color: #fefafa;
+}
+#sidebar .widget ul li {
+  margin-left: 0;
 }
 #sidebar .widget_rss .widgettitle img {
   display: none;
@@ -532,11 +542,6 @@
   height: 70px;
   text-decoration: none;
   font-size: 12px;
-  /* box-shadow */
-
-  -moz-box-shadow: 0px 0px 4px rgba(158, 136, 134, 0.6);
-  -webkit-box-shadow: 0px 0px 4px rgba(158, 136, 134, 0.6);
-  box-shadow: 0px 0px 4px rgba(158, 136, 134, 0.6);
 }
 #rss_promo #rss_promo_top {
   display: block;
@@ -581,7 +586,8 @@
 #rss_promo #rss_promo_bottom .content {
   display: block;
   margin-left: 50px;
-  font-style: italic;
+  font-family: 'ff-dagny-web-pro-1', 'ff-dagny-web-pro-2', 'Helvetica Neue', Arial, Helvetica, Geneva, sans-serif;
+  font-style: normal;
   padding-top: 3px;
   font-weight: 500;
   line-height: 15px;

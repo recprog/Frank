@@ -92,9 +92,10 @@
   overflow: hidden;
   bottom: 0;
   z-index: 99999;
-  padding: 5px 0;
+  padding: 0;
 }
 #sticky_footer .widget {
+  padding: 5px 0;
   float: left;
   margin-right: 20px;
   width: 190px;

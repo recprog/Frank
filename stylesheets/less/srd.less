@@ -283,18 +283,11 @@
 		width:190px;
 	}
 
+	#post_footer_post_of_week, #post_footer_tumblr_follow, #post_footer_off_franklin_promo {
 
-	#post_footer_post_of_week {
-		.drop-shadow(0px, 0px, 4px, rgba(158, 136, 134,0.6));
-		background:url(../../images/promos.png) -200px 0px no-repeat;
-		background-color:@color_light;
 		height:90px;
 		width:190px;
-		display:block;
-		font-family:@serif;
-		color:@color_midtone;
 		position:relative;
-		text-decoration:none;
 		.content {
 			width:170px;
 			position:absolute;
@@ -318,79 +311,37 @@
 				font-style:italic;
 			}
 		}
+	}
+	
+	#post_footer_post_of_week {
+		background-image:url(../../images/promos.png); 
+		background-position:-200px 0px; 
+		background-repeat:no-repeat;
 	}
 
 	#post_footer_tumblr_follow {
-		.drop-shadow(0px, 0px, 4px, rgba(158, 136, 134,0.6));
-		background:url(../../images/promos.png) -400px 0px no-repeat;
-		background-color:@color_light;
-		height:90px;
-		width:190px;
-		display:block;
-		font-family:@serif;
-		color:@color_midtone;
-		position:relative;
-		text-decoration:none;
-		.content {
-			width:170px;
-			position:absolute;
-			bottom:0;
-			display:block;
-			padding:5px 10px 10px 10px;
-			color:@color_highlight;
-			background: rgba(93,80,79,.85);
-
-			.header {
-				display:block;
-				font-size:14px;
-				font-family:@sans-serif;
-			}
-
-			.caption {
-				margin-top:2px;
-				display:block;
-				font-size:11px;
-				font-family:@serif;
-				font-style:italic;
-			}
-		}
+		background-image:url(../../images/promos.png);
+		background-position: -400px 0px;
+		background-repeat: no-repeat;
 	}
 
 	#post_footer_off_franklin_promo {
-		background:url(../../images/promos.png) 0px 0px no-repeat;
-		display:block;
-		width:190px;
-		height:90px;
-		.drop-shadow(0px, 0px, 4px, rgba(158, 136, 134,0.6));
-		text-decoration:none;
-		position:relative;
-		.content {
-			width:170px;
-			position:absolute;
-			bottom:0;
-			display:block;
-			padding:5px 10px 10px 10px;
-			color:@color_highlight;
-			background: rgba(93,80,79,.85);
-			
-			.header {
-				display:block;
-				font-size:14px;
-			}
-			
-			.caption {
-				margin-top:2px;
-				display:block;
-				font-size:11px;
-				font-family:@serif;
-				font-style:italic;
-			}
-		}
+		background-image:url(../../images/promos.png);
+		background-position:0px 0px;
+		background-repeat:no-repeat;
 	}
 }
 
 
 #page_footer {
+
+	.widget {
+		ul {
+			li {
+				margin-left:0;
+			}
+		}
+	}
 
 	#footer_main_promo {
 		width:330px;
@@ -423,6 +374,7 @@
 		margin-top:(@row-height*-2);
 	}
 	
+	/*submit to SRD*/
 	#text-7 {
 		#footer_submit_options {
 			.reset-dimensions;
@@ -456,18 +408,29 @@
 				.sprite-background(-115px, -150px);
 			}
 		}
-		a.learnmore {
-			.reset-dimensions;
-			display:block;
-			font-family:@serif;
-			font-size:24px !important;
+		a.button {
+			font-size:14px;
 			font-style:italic;
-			text-decoration:none;
+			text-align:center;
+			padding:4px 2px 6px 2px;
+			.columns(3);
+		}
+	}
+	
+	/*Download Franklin Street*/
+	#text-8 {
+		a.button {
+			font-size:14px;
+			font-style:italic;
+			text-align:center;
+			padding:4px 2px 6px 2px;
+			margin-top:@row-height;
 		}
 	}
 
 	#footer_follow_list {
 		.reset-dimensions;
+		margin-top:@row-height;
 		list-style:none;
 
 		li {
@@ -522,6 +485,11 @@
 #page_heel {
 	.widget {
 		margin-bottom:1px;
+		ul {
+			li {
+				margin-left:0;
+			}
+		}
 	}
 }
 
@@ -529,53 +497,88 @@
 {
 	.widget {
 		margin-bottom:0;
+		padding:0;
 	}
 	
-	
-	#sticky_footer_twitter_follow {
+	#sticky_footer_twitter_follow, #sticky_footer_rss_follow {
 		font-size:12px;
 		font-weight:bold;
 		text-decoration:none;
 		display:block;
+		padding:5px 0 2px 0;
 		span {
 			display:block;
 			float:left;
+			margin-right:10px;
+		}
+	} 
+	#sticky_footer_twitter_follow {
+		span {
 			width:9px;
 			height:12px;
 			.sprite-background(-5px, -5px);
-			margin-right:10px;
 		}
 	}
 	
-	#sticky_footer_rss_follow {
-		font-size:12px;
-		font-weight:bold;
-		text-decoration:none;
-		display:block;
+	#sticky_footer_rss_follow {	
 		span {
-			display:block;
-			float:left;
 			width:12px;
 			height:12px;
 			.sprite-background(-28px, -5px);
-			margin-right:10px;
+		}
+	}
+	
+	/*first-timer*/
+	#text-22 {
+		margin:0;
+		.columns(6);
+		float:right;
+		a {
+			.user {
+				font-size:15px;
+			}
+			font-weight:bold;
+			padding:5px 0 2px 10px;
+			display:block;
+			background-color:@color_accent;
+			text-decoration:none;
+			font-size:12px;
+			color:@color_highlight;
 		}
 	}
 }
 
-#sidebar .widget_rss {
-	.widgettitle {
-		img {
-			display:none;
-		}
+#sticky_footer.light {
+	/*first-timer*/
+	#text-22 {
 		a {
-			text-decoration:none;
-			border:none !important;
-			color:@color_off_black;
+			color:@color_highlight;
 		}
 	}
-	ul {
-		list-style:decimal;
+}
+
+#sidebar {
+	.widget {
+		ul {
+			li {
+				margin-left:0;
+			}
+		}
+	}
+	.widget_rss {
+		.widgettitle {
+			img {
+				display:none;
+			}
+			a {
+				text-decoration:none;
+				border:none !important;
+				color:@color_off_black;
+			}
+		}
+		ul {
+			list-style:decimal;
+		}
 	}
 }
 
@@ -592,9 +595,6 @@
  height: 70px;
  text-decoration:none;
  font-size:12px;
-
- /* box-shadow */
- .drop-shadow(0px, 0px, 4px, rgba(158, 136, 134,0.6));
 
 	#rss_promo_top {
 	 display:block;
@@ -642,7 +642,8 @@
 		.content {
 		 display:block; 
 		 margin-left:50px;
-		 font-style:italic;
+		font-family:@sans-serif;
+		 font-style:normal;
 		 padding-top:3px;
 		 font-weight:500;
 		 line-height:@row-height;

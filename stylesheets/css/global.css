@@ -72,6 +72,17 @@ a.external:hover {
   text-decoration: none;
   border-bottom: 1px dotted #3d302f;
 }
+a.tag {
+  text-decoration: none;
+  background: #f0eceb;
+  padding: 0 4px 3px 4px;
+  color: #050000;
+  border-radius: 2px;
+}
+a.tag:hover {
+  background: #5d504f;
+  color: #fefafa;
+}
 h1,
 h2,
 h3,
@@ -310,6 +321,18 @@ hr {
 }
 .pagination {
   margin: 15px 0;
+}
+a.button {
+  -moz-box-shadow: 0px 0px 6px rgba(18, 7, 6, 0.4);
+  -webkit-box-shadow: 0px 0px 6px rgba(18, 7, 6, 0.4);
+  box-shadow: 0px 0px 6px rgba(18, 7, 6, 0.4);
+  background-color: #f0eceb;
+  display: block;
+  font-family: 'ff-meta-serif-web-pro-1', 'ff-meta-serif-web-pro-2', Georgia, "Times New Roman", Times, serif;
+  font-style: italic;
+  color: #5d504f !important;
+  position: relative;
+  text-decoration: none;
 }
 ::selection {
   background: #5d504f none repeat;

@@ -48,7 +48,9 @@
 }
 
 .sprite-background(@x:0px, @y:0px) {
-	background:url(../../images/fs_sprite.png) @x @y no-repeat;
+	background-image:url(../../images/fs_sprite.png);
+	background-position: @x @y;
+	background-repeat: no-repeat;
 }
 
 .drop-shadow(@x:0px, @y:0px, @blur:3px, @color:#000) {

@@ -55,6 +55,9 @@ a:hover { color: #9e8886; }
 a.external:hover { text-decoration: none; border-bottom: 1px dotted @color_dark; }
 a:visited { }
 
+a.tag { text-decoration:none; background:@color_light; padding:0 4px 3px 4px; color:@color_off_black; border-radius:2px; }
+a.tag:hover { background:@color_midtone; color:@color_highlight; }
+
 h1, h2, h3, h4, h5, h6 { margin: (@row-height)-5 0 (@row-height) 0; line-height:(@row-height*2) }
 h1:first-child, h2:first-child, h3:first-child, h4:first-child, h5:first-child, h6:first-child { margin-top: 0; }
 h1 { font-size: 28px; padding-top: 6px; margin-bottom: @row-height; }
@@ -249,6 +252,18 @@ hr {
 .pagination {
 	margin:@row-height 0;
 }
+
+a.button {
+	.drop-shadow(0px, 0px, 6px, rgba(18, 7, 6,0.4));
+	background-color:@color_light;
+	display:block;
+	font-family:@serif;
+	font-style:italic;
+	color:@color_midtone !important;
+	position:relative;
+	text-decoration:none;
+}
+
 
 ::selection			{ background: @color_midtone none repeat; color:@color_highlight; /* Safari and Opera */ }
 ::-moz-selection  { background: @color_midtone none; color:@color_highlight; /* Firefox */ }
