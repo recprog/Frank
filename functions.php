@@ -622,7 +622,7 @@ function close_tags($text) {
     return $text;
 }
 
-function content($maxLength)
+function content($maxLength, $read_more="Read More")
 {
 	$html=get_the_content(); //new
     $printedLength = 0;
@@ -631,6 +631,7 @@ function content($maxLength)
 
 	$content=''; //new
 	$count=0;
+	$read_more = ' <a href="the_permalink()" class="more">'.$read_more.'</a>';
 	
 	$matches = preg_match_all('{</?([a-z]+)[^>]*>|&#?[a-zA-Z0-9]+;}', $html, $match, PREG_OFFSET_CAPTURE, $position);
 	
@@ -645,7 +646,7 @@ function content($maxLength)
         {
             //print(substr($str, 0, $maxLength - $printedLength));
 			$content.=substr($str, 0, $maxLength - $printedLength);
-			$content.='...';
+			$content.='&hellip;'.$read_more;
             $printedLength = $maxLength;
             break;
         }
@@ -673,7 +674,7 @@ function content($maxLength)
                 assert($openingTag == $tagName); // check that tags are properly nested.
 
                 //print($tag);
-				if($matches-2==$count&&$printedLength >= $maxLength) $content.='...';
+				if($matches-2==$count&&$printedLength >= $maxLength) $content.='&hellip;'.$read_more;
 				$content.=$tag;
             }
             else if ($tag[strlen($tag) - 2] == '/')
@@ -688,6 +689,7 @@ function content($maxLength)
                 //print($tag);
 				$content.=$tag;
                 $tags[] = $tagName;
+				
             }
         }
 
@@ -699,6 +701,7 @@ function content($maxLength)
     if ($printedLength < $maxLength && $position < strlen($html))
         //print(substr($html, $position, $maxLength - $printedLength));
 		$content.=substr($html, $position, $maxLength - $printedLength);
+		if($printedLength >= $maxLength) $content.='&hellip;'.$read_more;
 
     // Close any open tags.
     while (!empty($tags))

@@ -322,12 +322,30 @@ hr {
 .pagination {
   margin: 15px 0;
 }
+.pagination .next a, .pagination .previous a {
+  display: block;
+  text-decoration: none;
+  background: #f0eceb;
+  padding: 4px 6px 3px 6px;
+  color: #050000;
+  border-radius: 2px;
+  margin-top: 15px;
+  font-size: 14px;
+  line-height: 20px;
+}
+.pagination .next a:hover, .pagination .previous a:hover {
+  background: #5d504f;
+  color: #fefafa;
+}
+.pagination .previous {
+  text-align: right;
+}
 a.button {
   -moz-box-shadow: 0px 0px 6px rgba(18, 7, 6, 0.4);
   -webkit-box-shadow: 0px 0px 6px rgba(18, 7, 6, 0.4);
   box-shadow: 0px 0px 6px rgba(18, 7, 6, 0.4);
   background-color: #f0eceb;
-  display: block;
+  display: inline-block;
   font-family: 'ff-meta-serif-web-pro-1', 'ff-meta-serif-web-pro-2', Georgia, "Times New Roman", Times, serif;
   font-style: italic;
   color: #5d504f !important;

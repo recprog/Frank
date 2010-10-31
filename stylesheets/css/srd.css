@@ -351,6 +351,7 @@
 #page_footer #text-7 #footer_submit_options {
   margin: 0;
   padding: 0;
+  margin-top: 15px;
   list-style: none;
 }
 #page_footer #text-7 #footer_submit_options li.design, #page_footer #text-7 #footer_submit_options li.web, #page_footer #text-7 #footer_submit_options li.motion {
@@ -368,7 +369,7 @@
 }
 #page_footer #text-7 #footer_submit_options li.design span, #page_footer #text-7 #footer_submit_options li.web span, #page_footer #text-7 #footer_submit_options li.motion span {
   display: block;
-  margin-top: 2px;
+  margin-top: 1px;
 }
 #page_footer #text-7 #footer_submit_options li.design a {
   background-image: url(../../images/fs_sprite.png);
@@ -385,18 +386,20 @@
   background-position: -115px -150px;
   background-repeat: no-repeat;
 }
+#page_footer #text-7 #footer_submit_options li.last {
+  margin-right: 0;
+}
 #page_footer #text-7 a.button {
   font-size: 14px;
   font-style: italic;
   text-align: center;
-  padding: 4px 2px 6px 2px;
-  width: 190px;
+  padding: 4px 10px 6px 10px;
 }
 #page_footer #text-8 a.button {
   font-size: 14px;
   font-style: italic;
   text-align: center;
-  padding: 4px 2px 6px 2px;
+  padding: 4px 10px 6px 10px;
   margin-top: 15px;
 }
 #page_footer #footer_follow_list {
@@ -413,35 +416,40 @@
   margin-bottom: 20px;
 }
 #page_footer #footer_follow_list li a {
-  display: block;
+  border-radius: 2px;
+  position: relative;
   width: 50px;
   height: 50px;
   text-indent: -9999px;
 }
-#page_footer #footer_follow_list li.vimeo a {
-  background-image: url(../../images/fs_sprite.png);
-  background-position: -5px -27px;
-  background-repeat: no-repeat;
+#page_footer #footer_follow_list li a .sprite {
+  position: absolute;
+  top: 50%;
+  left: 50%;
 }
-#page_footer #footer_follow_list li.twitter a {
-  background-image: url(../../images/fs_sprite.png);
-  background-position: -64px -30px;
-  background-repeat: no-repeat;
+#page_footer #footer_follow_list li a .vimeo {
+  margin-left: -15px;
+  margin-top: -13px;
 }
-#page_footer #footer_follow_list li.tumblr a {
-  background-image: url(../../images/fs_sprite.png);
-  background-position: -120px -30px;
-  background-repeat: no-repeat;
+#page_footer #footer_follow_list li a .twitter {
+  margin-left: -11px;
+  margin-top: -15px;
 }
-#page_footer #footer_follow_list li.flickr a {
-  background-image: url(../../images/fs_sprite.png);
-  background-position: -180px -18px;
-  background-repeat: no-repeat;
+#page_footer #footer_follow_list li a .tumblr {
+  margin-left: -9px;
+  margin-top: -15px;
 }
-#page_footer #footer_follow_list li.git a {
-  background-image: url(../../images/fs_sprite.png);
-  background-position: -285px -30px;
-  background-repeat: no-repeat;
+#page_footer #footer_follow_list li a .facebook {
+  margin-left: -7px;
+  margin-top: -15px;
+}
+#page_footer #footer_follow_list li a .flickr {
+  margin-left: -15px;
+  margin-top: -7px;
+}
+#page_footer #footer_follow_list li a .git {
+  margin-left: -14px;
+  margin-top: -15px;
 }
 #page_footer #footer_follow_list li:nth-child(3n) {
   margin-right: 0;

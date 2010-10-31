@@ -78,7 +78,7 @@
 				<?php endif; ?>
 				<section>
 					<?php 
-						$content = content(80);
+						$content = content(80, 'Read More&hellip;');
 						$content = apply_filters('the_content', $content);
 						
 						$pattern = '/\< *[img][^\>]* src *= *[\"\']{0,1}([^\"\'\ >]*)/i';
@@ -101,7 +101,7 @@
 				<footer>
 					<ul class='metadata clear'>
 						<li class='time iconic clock'><time datetime="<?php the_time('Y-m-d'); ?>" pubdate><?php the_time('Y-j-n'); ?></time></li>											
-						<li class='comments iconic comment last'><?php comments_popup_link('No comments', '1 comment', '% comments'); ?></li>
+						<li class='comments last'><span class='iconic comment'></span> <?php comments_popup_link('No comments', '1 comment', '% comments'); ?></li>
 					</ul>
 				</footer>
 				<?php endif; ?>
@@ -144,7 +144,7 @@
 				<?php endif; ?>
 				<section>
 					<?php
-						$content = content(80);
+						$content = content(80, 'Read More&hellip;');
 						$content = apply_filters('the_content', $content);
 					
 						$pattern = '/\< *[img][^\>]* src *= *[\"\']{0,1}([^\"\'\ >]*)/i';

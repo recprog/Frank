@@ -378,6 +378,7 @@
 	#text-7 {
 		#footer_submit_options {
 			.reset-dimensions;
+			margin-top:15px;
 			list-style:none;
 			li.design, li.web, li.motion {
 				.reset-dimensions;
@@ -392,7 +393,7 @@
 				}
 				span {
 					display:block;
-					margin-top:2px;
+					margin-top:1px;
 				}
 			}
 
@@ -407,13 +408,15 @@
 			li.motion a {
 				.sprite-background(-115px, -150px);
 			}
+			li.last {
+				margin-right:0;
+			}
 		}
 		a.button {
 			font-size:14px;
 			font-style:italic;
 			text-align:center;
-			padding:4px 2px 6px 2px;
-			.columns(3);
+			padding:4px 10px 6px 10px;
 		}
 	}
 	
@@ -423,11 +426,12 @@
 			font-size:14px;
 			font-style:italic;
 			text-align:center;
-			padding:4px 2px 6px 2px;
+			padding:4px 10px 6px 10px;
 			margin-top:@row-height;
+			
 		}
 	}
-
+	
 	#footer_follow_list {
 		.reset-dimensions;
 		margin-top:@row-height;
@@ -438,32 +442,43 @@
 			float:left;
 			margin-right:20px;
 			margin-bottom:20px;
+			
 			a {
-				display:block;
+				border-radius:2px;
+				position:relative;
 				width:50px;
 				height:50px;
 				text-indent:-9999px;
+				.sprite {
+					position:absolute;
+					top:50%;
+					left:50%;
+				}
+				.vimeo {
+					margin-left:-15px;
+					margin-top:-13px;
+				}
+				.twitter {
+					margin-left:-11px;
+					margin-top:-15px;
+				}
+				.tumblr {
+					margin-left:-9px;
+					margin-top:-15px;
+				}
+				.facebook {
+					margin-left:-7px;
+					margin-top:-15px;
+				}
+				.flickr {
+					margin-left:-15px;
+					margin-top:-7px;
+				}
+				.git {
+					margin-left:-14px;
+					margin-top:-15px;
+				}
 			}
-		}
-
-		li.vimeo a {
-			.sprite-background(-5px, -27px);
-		}
-
-		li.twitter a {
-			.sprite-background(-64px, -30px);
-		}
-
-		li.tumblr a {
-			.sprite-background(-120px, -30px);
-		}
-
-		li.flickr a {
-			.sprite-background(-180px, -18px);
-		}
-		
-		li.git a {
-			.sprite-background(-285px, -30px);
 		}
 
 		li:nth-child(3n) {
