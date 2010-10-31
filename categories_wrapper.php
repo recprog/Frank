@@ -10,8 +10,10 @@ http://www.emanueleferonato.com/2010/04/01/loading-wordpress-posts-with-ajax-and
 
 */
 ?>
-
-	<ul>
+<div id="categories_container" class='clear'>
+<div class='span-8'>
+	<h2>Categories</h2>
+	<ul id="category_list">
 		<?php $args = array(
 		    'show_option_all'    => NULL,
 		    'orderby'            => 'term_group',
@@ -40,3 +42,26 @@ http://www.emanueleferonato.com/2010/04/01/loading-wordpress-posts-with-ajax-and
 		
 			<?php wp_list_categories( $args ); ?> 
 	</ul>
+</div>
+<div id="tag_cloud" class='span-6 last'>	
+	<h2>Tags</h2>
+	<div class='tags'>
+	<?php $args = array(
+	    'smallest'  => 10, 
+	    'largest'   => 28,
+	    'unit'      => 'px', 
+	    'number'    => 45,  
+	    'format'    => 'flat',
+	    'separator' => ' ',
+	    'orderby'   => 'name', 
+	    'order'     => 'ASC',
+	    'exclude'   => NULL, 
+	    'include'   => NULL, 
+	    'link'      => 'view', 
+	    'taxonomy'  => 'post_tag', 
+	    'echo'      => true ); ?>
+	
+	<?php wp_tag_cloud( $args ); ?>
+	</div>
+</div>
+</div>

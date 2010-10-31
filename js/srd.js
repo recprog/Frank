@@ -22,7 +22,7 @@ jQuery(document).ready(function() {
 	
 	
 	jQuery("#menu-item-216").mouseenter(function(){
-		console.log('foo');
+		//console.log('foo');
 		clearTimeout(catTimeout);
 		
 		if(jQuery(this).find('#categories_pullout').length) {
@@ -37,7 +37,7 @@ jQuery(document).ready(function() {
 		  type: "POST",
 		  cache: true,
 		  success: function(data) {
-			console.log('success', data);
+			//console.log('success', data);
 		    jQuery("#categories_pullout").html(data);
 			expand3(300);
 		  }
@@ -49,7 +49,8 @@ jQuery(document).ready(function() {
 		clearTimeout(catTimeout);
 		if(jQuery('#menu-item-216').find('#categories_pullout').length&&followReq) catReq.abort();
 		jQuery('#categories_pullout').toggleClass('expanded', false);
-		
+		//expandCats();
+		jQuery("#categories_pullout").css('height', 0);
 	});
 	
 	
@@ -144,5 +145,15 @@ function expand2(time) {
 }
 
 function expand3(time) {
-	catTimeout = setTimeout("jQuery('#categories_pullout').toggleClass('expanded', true);", time);
+	
+	
+	catTimeout = setTimeout("expandCats()", time);
+	//catTimeout = setTimeout("jQuery('#categories_pullout').toggleClass('expanded', true);", time);
+}
+
+function expandCats() {
+	jQuery('#categories_pullout').toggleClass('expanded');
+	var h = (jQuery('#categories_pullout').hasClass('expanded'))?jQuery("#categories_pullout #categories_container").height():0;
+	//console.log(h, jQuery('#categories_pullout').hasClass('expanded'));
+	jQuery("#categories_pullout").css('height', h);
 }

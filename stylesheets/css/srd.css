@@ -215,16 +215,23 @@
   overflow: hidden;
   z-index: 999999;
 }
-#page_header nav #categories_pullout ul {
-  width: 960px;
+#page_header nav #categories_pullout h2 {
+  margin-bottom: 0;
+  margin-top: 10px;
+  font-size: 16px;
+}
+#page_header nav #categories_pullout #category_list {
+  padding-bottom: 15px;
+  width: 540px;
+  float: left;
   display: block;
 }
-#page_header nav #categories_pullout ul ul {
+#page_header nav #categories_pullout #category_list ul {
   display: inline;
   float: left;
   width: auto;
 }
-#page_header nav #categories_pullout ul li {
+#page_header nav #categories_pullout #category_list li {
   margin: 0;
   padding: 0;
   margin: 0;
@@ -234,15 +241,23 @@
   margin-right: 20px;
   margin-top: 10px;
 }
-#page_header nav #categories_pullout ul li a {
+#page_header nav #categories_pullout #category_list li a {
   display: inline;
   width: auto;
 }
-#page_header nav #categories_pullout ul li:nth-child(7n) {
+#page_header nav #categories_pullout #category_list li:nth-child(4n) {
   margin-right: 0;
 }
-#page_header nav #categories_pullout.expanded {
-  height: 210px;
+#page_header nav #categories_pullout #tag_cloud {
+  padding-bottom: 15px;
+}
+#page_header nav #categories_pullout #tag_cloud .tags {
+  margin-top: 10px;
+}
+#page_header nav #categories_pullout #tag_cloud .tags a {
+  display: inline;
+  font-size: auto;
+  font-weight: normal;
 }
 #page_header nav nav .menu ul li {
   margin-right: 20px !important;
