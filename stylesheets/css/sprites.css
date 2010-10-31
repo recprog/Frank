@@ -1,0 +1,55 @@
+.reset-dimensions {
+  margin: 0;
+  padding: 0;
+}
+.incomplete {
+  background-color: rgba(255, 0, 255, 0);
+}
+.show-bounds {
+  background-color: rgba(255, 255, 0, 0.5);
+}
+.sprite {
+  display: block;
+}
+.sprite.vimeo {
+  width: 30px;
+  height: 26px;
+  background-image: url(../../images/fs_sprite.png);
+  background-position: 0px -200px;
+  background-repeat: no-repeat;
+}
+.sprite.twitter {
+  width: 23px;
+  height: 30px;
+  background-image: url(../../images/fs_sprite.png);
+  background-position: -60px -200px;
+  background-repeat: no-repeat;
+}
+.sprite.tumblr {
+  width: 19px;
+  height: 30px;
+  background-image: url(../../images/fs_sprite.png);
+  background-position: -110px -200px;
+  background-repeat: no-repeat;
+}
+.sprite.facebook {
+  width: 14px;
+  height: 30px;
+  background-image: url(../../images/fs_sprite.png);
+  background-position: -150px -200px;
+  background-repeat: no-repeat;
+}
+.sprite.flickr {
+  width: 30px;
+  height: 15px;
+  background-image: url(../../images/fs_sprite.png);
+  background-position: -190px -200px;
+  background-repeat: no-repeat;
+}
+.sprite.git {
+  width: 28px;
+  height: 30px;
+  background-image: url(../../images/fs_sprite.png);
+  background-position: -240px -200px;
+  background-repeat: no-repeat;
+}
