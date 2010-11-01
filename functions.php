@@ -1,4 +1,9 @@
 <?php
+
+/*thanks to http://www.nathanrice.net/blog/wordpress-single-post-templates/ */
+add_filter('single_template', create_function('$t', 'foreach( (array) get_the_category() as $cat ) { if ( file_exists(TEMPLATEPATH . "/single-{$cat->category_nicename}.php") ) return TEMPLATEPATH . "/single-{$cat->category_nicename}.php"; } return $t;' ));
+
+
 /*
 Description: A helper plugin for the Franklin Street Wordpress Theme to make setup and alterations easier for the three-column 
 */
@@ -711,4 +716,10 @@ function content($maxLength, $read_more="Read More")
 	$content = apply_filters('the_content', $content); 
 	return $content;
 }
+
+
+
+
+
 ?>
+

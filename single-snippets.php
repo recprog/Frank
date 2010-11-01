@@ -17,7 +17,6 @@
 					</ul>
 				</hgroup>
 			</header>
-			<div id='excerpt'><?php the_excerpt(); ?></div>
 			<section>
 				<?php the_content(); ?>
 			</section>
@@ -32,15 +31,6 @@
 			</footer>
 		</article>
 		<?php endwhile; ?>
-		<div id="comments_container" class='clear'>
-			<header>
-				<h1><span class=' iconic chat'></span> The Discussion</h1>
-				<h2><?php comments_number('No Comments', 'One Comment', '% Comments' );?> on &#8220;<?php the_title(); ?>&#8221;</h2>
-				<a href='#comments' rel="<?php the_ID(); ?>" rev="<?php bloginfo('url'); ?>/?page_id=<?php echo get_option('fs_comment_template_id'); ?>" id="comments_toggle">Show comments</a>
-			</header>
-			<div id="comments_ajax" class='clear'></div>				
-		</div>
 	</div>
-<?php get_sidebar(); ?>	
 </div>
 <?php get_footer(); ?>

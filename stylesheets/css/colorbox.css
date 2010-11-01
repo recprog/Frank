@@ -110,9 +110,7 @@
   height: 20px;
   text-indent: -9999px;
 }
-#cboxLoadingGraphic {
-  background: url(images/loading.gif) center center no-repeat;
-}
+/*#cboxLoadingGraphic{background:url(images/loading.gif) center center no-repeat;}*/
 #cboxClose {
   position: absolute;
   bottom: 5px;
