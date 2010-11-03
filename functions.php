@@ -1,8 +1,18 @@
 <?php
 
 /*thanks to http://www.nathanrice.net/blog/wordpress-single-post-templates/ */
-add_filter('single_template', create_function('$t', 'foreach( (array) get_the_category() as $cat ) { if ( file_exists(TEMPLATEPATH . "/single-{$cat->category_nicename}.php") ) return TEMPLATEPATH . "/single-{$cat->category_nicename}.php"; } return $t;' ));
+/*add_filter('single_template', create_function('$t', 'foreach( (array) get_the_category() as $cat ) { if ( file_exists(TEMPLATEPATH . "/single-{$cat->category_nicename}.php") ) return TEMPLATEPATH . "/single-{$cat->category_nicename}.php"; } return $t;' ));*/
 
+add_filter('single_template', create_function('$t', 'foreach( (array) get_the_category() as $cat ) { 
+	if ( file_exists(TEMPLATEPATH . "/single-{$cat->category_nicename}.php") ) return TEMPLATEPATH . "/single-{$cat->category_nicename}.php"; 
+	else if($cat->category_parent!=0){
+		$pCat=$cat;
+		while($pCat->cat_ID) {
+			if ( file_exists(TEMPLATEPATH . "/single-{$pCat->category_nicename}.php") ) return TEMPLATEPATH . "/single-{$pCat->category_nicename}.php"; 
+			$pCat=get_category($pCat->category_parent);
+		}
+	}
+} return $t;' ));
 
 /*
 Description: A helper plugin for the Franklin Street Wordpress Theme to make setup and alterations easier for the three-column 

@@ -1,70 +1,16 @@
 @import "variables";
 
 #content.snippet {
-	.article_header {
-		margin-bottom: 0;
-		width: 100%; /*tweak for clearfix*/
-		.date {
-			float: right;
-			margin: 0;
-			margin-top: 30px;
-			line-height: 10px;
-			padding: 0;
-			font-size: 12px;
+	article {
+		section {
+			p {
+				font-size:39px;
+				line-height:@row-height*3;
+			}
+			.tag { background:none; }
+			.tag:hover { color:@color_off_black; }
+			margin-top: @row-height*2;
 		}
-	}
-	h2 {
-		padding-top: 0px;
-		margin-left: 70px;
-		margin-bottom: 0;
-		width: 40px;
-		height: 40px;
-		float: left;
-		a {
-			display: block;
-			width: 40px;
-			height: 40px;
-			text-indent: -9999px;
-			border: 0;
-		}
-	}
-	.entry {
-		padding-bottom: 20px;
-		padding-top: 40px;
-	}
-	.follow {
-		font-size: 14px;
-		font-style: italic;
-		padding-top: 4px;
-	}
-}
-
-#content.snippet.delicious {
-	h2 a {
-		
-	}
-	.entry {
-		.link {
-			padding-top: 2px;
-			font-size: 22px;
-		}
-		p {
-			font-size: 16px;
-			padding-top: 4px;
-		}
-	}
-}
-
-#content.snippet.twitter {
-	h2 a {
-	
-	}
-	.entry p {
-		font-size: 22px;
-		padding: 0;
-		margin: 0;
-		margin-bottom: -7px;
-		margin-top: -8px;
-		line-height: 40px;
+		margin-bottom: @row-height*4;
 	}
 }

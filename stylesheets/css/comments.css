@@ -119,3 +119,6 @@
   font-size: 12px !important;
   margin-bottom: 15px;
 }
+#comments_container #submit {
+  margin-top: 15px;
+}

@@ -5,6 +5,11 @@ var colorBoxURL='http://localhost/wordpress/wp-content/themes/Franklin-Street-Th
 
 jQuery(document).ready(function() {
 	
+	
+	if(window.location.hash) { 
+	        if(window.location.hash.indexOf("#comments") != -1) openComments(); 
+	}
+	
 	if(jQuery(document).find('.colorbox').length) {
 		jQuery.getScript(colorBoxURL, function() {
 			jQuery('.colorbox').colorbox();
@@ -41,8 +46,59 @@ jQuery(document).ready(function() {
 	});	
 		
 	jQuery("#content.single #comments_toggle").click(function(){
-		var post_id = jQuery(this).attr("rel");
-		var url = jQuery(this).attr("rev");
+		
+		if(jQuery("#content.single #comments_ajax").children().length&&jQuery("#content.single #comments_ajax").hasClass('open'))
+		{
+			jQuery("#content.single #comments_ajax").css('height', 0);
+			jQuery("#content.single #comments_ajax").removeClass('open');
+			jQuery("#comments_toggle").html('Show Comments')
+		} else if(jQuery("#content.single #comments_ajax").children().length) {
+			var h = jQuery("#content.single #comments_content").height();
+			jQuery("#content.single #comments_ajax").css('height', h);
+			jQuery("#content.single #comments_ajax").addClass('open');
+			jQuery("#comments_toggle").html('Hide Comments');
+		}
+		else {
+			var post_id = jQuery(this).attr("rel");
+			var url = jQuery(this).attr("rev");
+
+			jQuery.ajax({
+			  url: url,
+			  type: "POST",
+			  cache: true,
+			  data: ({id : post_id}),
+			  success: function(data) {
+			    jQuery("#content.single #comments_ajax").html(data);
+				var h = jQuery("#content.single #comments_content").height();
+				jQuery("#content.single #comments_ajax").css('height', h);
+				jQuery("#content.single #comments_ajax").addClass('open');
+				jQuery("#comments_toggle").html('Hide Comments');
+			  }
+			});
+		}
+		return false;
+	});
+	
+});
+
+function closeComments() {
+	jQuery("#content.single #comments_ajax").css('height', 0);
+	jQuery("#content.single #comments_ajax").removeClass('open');
+	jQuery("#comments_toggle").html('Show Comments');
+}
+
+function openComments() {
+	if(!jQuery("#content.single #comments_ajax").length) return;
+	
+	if(jQuery("#content.single #comments_ajax").children().length) {
+		var h = jQuery("#content.single #comments_content").height();
+		jQuery("#content.single #comments_ajax").css('height', h);
+		jQuery("#content.single #comments_ajax").addClass('open');
+		jQuery("#comments_toggle").html('Hide Comments');
+	}
+	else {
+		var post_id = jQuery("#content.single #comments_toggle").attr("rel");
+		var url = jQuery("#content.single #comments_toggle").attr("rev");
 
 		jQuery.ajax({
 		  url: url,
@@ -53,12 +109,13 @@ jQuery(document).ready(function() {
 		    jQuery("#content.single #comments_ajax").html(data);
 			var h = jQuery("#content.single #comments_content").height();
 			jQuery("#content.single #comments_ajax").css('height', h);
+			jQuery("#content.single #comments_ajax").addClass('open');
+			jQuery("#comments_toggle").html('Hide Comments');
+			jQuery(document).scrollTop(jQuery("#comments").position().top);
 		  }
 		});
-		return false;
-	});
-	
-});
+	}
+}
 
 function updateStickyFooter() {
 	bottomY=getBottomY();
