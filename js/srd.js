@@ -62,21 +62,24 @@ jQuery(document).ready(function() {
 			expand(300);
 			return;
 		}
-		jQuery('<div id="follow_list" class="span-6 last"><ul></ul></div>').appendTo(this);
+		//jQuery('<div id="follow_list" class="span-6 last"><ul></ul></div>').appendTo(this);
 		var d = new Date();
 		var start = d.getTime();
 		followReq = jQuery.ajax({
 		   type: "GET",
-		   url: "/wordpress/data/follow.xml",
-		   dataType: "xml",
-			success: function(xml) {
+		   url: "/wordpress/data/follow.html",
+		   dataType: "html",
+			success: function(data) {
+				/*
 				jQuery(xml).find('account').each(function(){
 					var id = jQuery(this).attr('id');
 					var name = jQuery(this).find('name').text();
 					var description = jQuery(this).find('description').text();
 					var url = jQuery(this).find('url').text();
-					jQuery('<li class="items" id="link_'+id+'"></li>').html('<a href="'+url+'"><span class="header">'+name+'</span> <span class="description">'+description+'</span></a>').appendTo('#follow_list ul');
+					jQuery('<li class="items" id="link_'+id+'"></li>').html('<a href="'+url+'" class="clear"><span class="sprite twitter-light-50"></span> <span class="content"><span class="header">'+name+'</span> <span class="description">'+description+'</span></span></a>').appendTo('#follow_list ul');
 				});
+				*/
+				jQuery('#menu-item-217').append(data);
 				expand(Math.max(0, 300-(d.getTime()-start)))
 			}
 		})		

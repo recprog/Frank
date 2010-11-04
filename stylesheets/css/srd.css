@@ -96,17 +96,21 @@
   width: 184px;
 }
 #page_header nav #follow_list {
-  background: rgba(255, 30, 0, 0.8);
+  background: rgba(255, 30, 0, 0.9);
   position: absolute;
   z-index: 999999;
   right: 0;
   height: 0;
-  padding-left: 20px;
   top: 15px;
   overflow: hidden;
 }
-#page_header nav #follow_list ul {
+#page_header nav #follow_list #follow_intro {
+  padding-left: 20px;
   margin-top: 15px;
+  font-size: 13px;
+  color: #fefafa;
+}
+#page_header nav #follow_list ul {
   display: block;
 }
 #page_header nav #follow_list ul li {
@@ -115,28 +119,60 @@
   padding: 0;
   display: block;
   float: none;
-  margin-bottom: 15px;
 }
 #page_header nav #follow_list ul li a {
-  /*temporary*/
-
-  background: url(http://placehold.it/50x50) no-repeat;
-  padding-left: 70px;
+  padding: 5px 0;
+  padding-left: 20px;
+  background: none;
+  display: block;
   display: block;
   height: auto;
   width: auto;
 }
+#page_header nav #follow_list ul li a .icon {
+  width: 50px;
+  height: 40px;
+  display: block;
+  float: left;
+  margin-right: 20px;
+  margin-top: 2px;
+}
+#page_header nav #follow_list ul li a .content {
+  float: left;
+}
 #page_header nav #follow_list ul li a .header {
   font-size: 22px;
-  line-height: 30px;
+  line-height: 15px;
   font-weight: normal;
+  margin: 0;
+  padding: 0;
+  display: block;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 #page_header nav #follow_list ul li a .description {
   display: block;
   font-weight: 400;
+  font-family: 'ff-meta-serif-web-pro-1', 'ff-meta-serif-web-pro-2', Georgia, "Times New Roman", Times, serif;
+  font-style: italic;
+}
+#page_header nav #follow_list ul li a:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+}
+#page_header nav #follow_list ul #link_follow_rss .sprite {
+  margin-left: 10px;
+  margin-top: 5px;
+}
+#page_header nav #follow_list ul #link_follow_twitter .sprite {
+  margin-left: 12px;
+  margin-top: 5px;
+}
+#page_header nav #follow_list ul #link_follow_tumblr .sprite {
+  margin-left: 15px;
+  margin-top: 5px;
 }
 #page_header nav #follow_list.expanded {
-  height: 150px;
+  height: 210px;
 }
 #page_header nav #work_pullout {
   height: 0;
