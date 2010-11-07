@@ -7,7 +7,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" <?php language_attributes(); ?>>
 <head>
-	<title><?php if ( is_single()||is_page() ) { wp_title(''); ?> &#8212; <?php } else if ($tag!=null) { echo($tag); ?> &raquo; <?php } ?> <?php bloginfo('name'); ?></title>
+	<title><?php wp_title(''); ?> &#8212; <?php bloginfo('name'); ?></title>
 
 	<meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />	
 	<meta name="generator" content="WordPress <?php bloginfo('version'); ?>" /> <!-- leave this for stats please -->

@@ -645,7 +645,7 @@ function truncate_title($title, $length, $echo=true)
 }
 
 function content($maxLength, $read_more="Read More", $image_width=190, $image_height=120, $image_quality=80, $echo=true)
-{
+{	
 	$html=get_the_content(); //new
     $printedLength = 0;
     $position = 0;
@@ -712,14 +712,12 @@ function content($maxLength, $read_more="Read More", $image_width=190, $image_he
             else if ($tag[strlen($tag) - 2] == '/')
             {
                 // Self-closing tag.
-                //print($tag);
-				$content.=$tag;
+                $content.=$tag;
             }
             else
             {
                 // Opening tag.
-                //print($tag);
-				$content.=$tag;
+                $content.=$tag;
                 $tags[] = $tagName;
 				
             }
@@ -737,14 +735,17 @@ function content($maxLength, $read_more="Read More", $image_width=190, $image_he
 		{
 			$content.='&hellip;'.$read_more;
 			$truncated=true;
+		} else if(strlen($html) > $maxLength&&!$truncated) {
+			$content.='&hellip;'.$read_more;
+			$truncated=true;
 		}
 
     // Close any open tags.
     while (!empty($tags))
-        //printf('</%s>', array_pop($tags));
 		$content.='</'.array_pop($tags).'>';
 
-	$content = apply_filters('the_content', $content); 
+	//$content = apply_filters('the_content', $content); 
+	$content = wpautop($content, 0);
 	
 	
 	$pattern = '/\< *[img][^\>]* src *= *[\"\']{0,1}([^\"\'\ >]*)/i';

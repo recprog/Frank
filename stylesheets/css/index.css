@@ -28,6 +28,9 @@
   margin-top: 15px;
   font-weight: 700;
 }
+#content.home #content_primary, #content.home #content_secondary, #content.home #content_tertiary {
+  margin-bottom: 15px;
+}
 #content.home #content_primary .post, #content.home #content_secondary .post, #content.home #content_tertiary .post {
   margin-bottom: 15px;
 }
@@ -90,7 +93,7 @@
 #content.home #content_secondary .post:nth-child(4n), #content.home #content_tertiary .post:nth-child(4n) {
   margin-right: 0;
 }
-#content.home #content_secondary .post:nth-child(n+4), #content.home #content_tertiary .post:nth-child(n+4) {
+#content.home #content_secondary .post:nth-child(n+5), #content.home #content_tertiary .post:nth-child(n+5) {
   margin-top: 0;
 }
 #content.home #content_secondary img {

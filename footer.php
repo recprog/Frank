@@ -24,7 +24,6 @@
 <div id="sticky_footer">
 	<div class='wrapper clear'>
 	<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Sticky Footer") ) : ?>
-		<p><?php echo get_num_queries(); ?> queries in <?php timer_stop(1); ?> seconds.</p>
 	<?php endif; ?>
 	</div>
 </div>

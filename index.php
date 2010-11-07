@@ -9,17 +9,17 @@
 	<div id="content_primary" class='span-14 last clear'>
 		<div class='nav content-header span-2'>
 			<span class='label'><?php if (function_exists("primaryColumnTitle")) primaryColumnTitle(); ?></span>
-			<span class='caption'><?php if (function_exists("primaryColumnCaption")) primaryColumnCaption(); ?></span> <span class='more'><a href='<?php bloginfo('url'); ?>?cat=<?php echo getPrimaryColumnCategories(); ?>'>See more...</a></span> 
+			<span class='caption'><?php if (function_exists("primaryColumnCaption")) primaryColumnCaption(); ?></span> <span class='more'><a href='<?php bloginfo('url'); ?>?cat=<?php echo getPrimaryColumnCategories(); ?>'>See more&hellip;</a></span> 
 			
 		</div>
 		<div class='contents span-12 last'>	
 			<?php 				
-			add_filter('excerpt_length', 'primary_excerpt_length');
-			$pri_posts_count=getPrimaryColumnPostCount();
-			
-			$posts = query_posts(array( 'cat' => getPrimaryColumnCategories(),  'showposts' => max(0, $pri_posts_count) ));
-			if(count($posts)>0) : foreach ($posts as $post) : start_wp(); 
-			?>			
+			$query = array (
+			    'posts_per_page' => max(0, getPrimaryColumnPostCount()),
+			    'cat' => getPrimaryColumnCategories()
+			);
+			$queryObject = new WP_Query($query);
+			 while ( $queryObject->have_posts() ) : $queryObject->the_post(); ?>
 				<article <?php post_class(); ?>>
 					<?php if(showPrimaryColumnHeader()) : ?>
 					<header>
@@ -39,29 +39,24 @@
 					</footer>
 					<?php endif; ?>
 				</article>
-			<?php endforeach; else : ?>
-				<div class="post no-posts">
-					<header>
-						<h1>No Posts Yet</h1>
-					</header>
-				</div>
-			<?php endif; ?>
+				
+			<?php endwhile; ?>
+			
 		</div>
 	</div>
 	<div id="content_secondary" class='span-14 last clear'>
 		<div class='nav content-header span-2'>
 			<span class='label'><?php if (function_exists("secondaryColumnTitle")) secondaryColumnTitle(); ?></span>
-			<span class='caption'><?php if (function_exists("secondaryColumnCaption")) secondaryColumnCaption(); ?></span> <span class='more'><a href='<?php bloginfo('url'); ?>?cat=<?php echo getSecondaryColumnCategories(); ?>'>See more...</a></span>
+			<span class='caption'><?php if (function_exists("secondaryColumnCaption")) secondaryColumnCaption(); ?></span> <span class='more'><a href='<?php bloginfo('url'); ?>?cat=<?php echo getSecondaryColumnCategories(); ?>'>See more&hellip;</a></span>
 		</div>
 		<div class='contents span-12 last'>	
-		<?php 
-		add_filter('excerpt_length', 'secondary_excerpt_length');
-		add_filter('excerpt_more', 'excerpt_read_more');
-		$sec_posts_count=getSecondaryColumnPostCount();
-		
-		$posts = get_posts('caller_get_posts=1&category='.getSecondaryColumnCategories().'&numberposts='.$sec_posts_count.'&offset=0'); 
-		if(count($posts)>0) : foreach ($posts as $post) : start_wp(); 
-		?>
+		<?php 		
+		$query = array (
+		    'posts_per_page' => max(0, getSecondaryColumnPostCount()),
+		    'cat' => getSecondaryColumnCategories()
+		);
+		$queryObject = new WP_Query($query);
+		 while ( $queryObject->have_posts() ) : $queryObject->the_post(); ?>
 			<article <?php post_class('span-3'); ?>>
 				<?php if(showSecondaryColumnHeader()) : ?>
 				<header>
@@ -81,28 +76,25 @@
 				</footer>
 				<?php endif; ?>
 			</article>
-		<?php endforeach; else : ?>
-			<div class="post no-posts">
-				<header>
-					<h1>No Posts Yet</h1>
-				</header>
-			</div>
-		<?php endif; ?>
+		<?php endwhile; ?>
+
 		</div>
 	</div>
 	<div id="content_tertiary" class='span-14 clear last'>
 		<div class="content-header nav span-2">
 			<span class='label'><?php if (function_exists("tertiaryColumnTitle")) tertiaryColumnTitle(); ?></span>
-			<span class='caption'><?php if (function_exists("tertiaryColumnCaption")) tertiaryColumnCaption(); ?></span> <span class='more'><a href='<?php bloginfo('url'); ?>?cat=<?php echo getTertiaryColumnCategories(); ?>'>See more...</a></span>
+			<span class='caption'><?php if (function_exists("tertiaryColumnCaption")) tertiaryColumnCaption(); ?></span> <span class='more'><a href='<?php bloginfo('url'); ?>?cat=<?php echo getTertiaryColumnCategories(); ?>'>See more&hellip;</a></span>
 		</div>
 		<div class='contents span-12 last'>	
-		<?php 
 		
-		$ter_posts_count=getTertiaryColumnPostCount();
-		$posts = get_posts('caller_get_posts=1&category='.getTertiaryColumnCategories().'&numberposts='.$ter_posts_count.'&offset=0'); 
-				
-		if(count($posts)>0) : foreach ($posts as $post) : start_wp(); 
-		?>
+		<?php 		
+		$query = array (
+		    'posts_per_page' => max(0, getTertiaryColumnPostCount()),
+		    'cat' => getTertiaryColumnCategories()
+		);
+		$queryObject = new WP_Query($query);
+		 while ( $queryObject->have_posts() ) : $queryObject->the_post(); ?>
+		
 			<article <?php post_class('span-3'); ?>>
 				<?php if(showTertiaryColumnHeader()) : ?>
 				<header>
@@ -120,13 +112,7 @@
 				</footer>
 				<?php endif; ?>
 			</article>
-		<?php endforeach; else : ?>
-			<div class="post no-posts">
-				<header>
-					<h1>No Posts Yet</h1>
-				</header>
-			</div>
-		<?php endif; ?>
+		<?php endwhile; ?>
 		</div>
 	</div>
 </div>
