@@ -19,6 +19,7 @@
 			Copyright information
 		<?php endif; ?>
 	</div>
+	<p><?php echo get_num_queries(); ?> queries in <?php timer_stop(1); ?> seconds.</p>
 </div>
 <div id="sticky_footer">
 	<div class='wrapper clear'>

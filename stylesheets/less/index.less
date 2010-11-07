@@ -24,16 +24,20 @@
 	}
 	
 	#content_primary, #content_secondary, #content_tertiary {
-		margin-bottom:@row-height*2;
 		.post {
+			margin-bottom:@row-height;
 			.read-more {
 				margin-top:@row-height;
 			}
+		}
+		.post:nth-child(4n+1) {
+			clear:left;
 		}
 	}
 	
 	#content_primary {
 		.post {
+			
 			header {
 				h1 {
 					.reset-dimensions;
@@ -87,13 +91,14 @@
 			}
 		}
 		.post:nth-child(4n) { margin-right:0; }
+		.post:nth-child(n+4) {
+			margin-top:0;
+		}
 	}
 		
 	#content_secondary {
 		img {
-			/*.drop-shadow(0px, 2px, 7px, #9e8886);*/
 			.drop-shadow(0px, 2px, 7px, rgba(158, 136, 134,0.6));
-
 		}
 	}
 	

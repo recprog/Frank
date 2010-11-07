@@ -637,7 +637,14 @@ function close_tags($text) {
     return $text;
 }
 
-function content($maxLength, $read_more="Read More")
+function truncate_title($title, $length, $echo=true)
+{	
+	if (strlen($title) > $length) $title=substr($title, 0, $length).'&hellip;';	
+	if($echo) echo $title;
+	return $title;
+}
+
+function content($maxLength, $read_more="Read More", $image_width=190, $image_height=120, $image_quality=80, $echo=true)
 {
 	$html=get_the_content(); //new
     $printedLength = 0;
@@ -738,11 +745,23 @@ function content($maxLength, $read_more="Read More")
 		$content.='</'.array_pop($tags).'>';
 
 	$content = apply_filters('the_content', $content); 
-	return $content;
+	
+	
+	$pattern = '/\< *[img][^\>]* src *= *[\"\']{0,1}([^\"\'\ >]*)/i';
+	$replacement = '<img src="/php/phpthumb/phpThumb.php?src=' . '$1' . '&w=190&h=120&zc=1&q=80"';
+
+	$pagecontent = preg_replace($pattern, $replacement, $content);
+
+	$pattern = '/height *= *[\"\']?[^\"\'\ >]*/';
+	$replacement = 'height="120"';
+	$pagecontent = preg_replace($pattern, $replacement, $pagecontent);
+
+	$pattern = '/width *= *[\"\']?[^\"\'\ >]*/';
+	$replacement = 'width="190"';
+	$pagecontent = preg_replace($pattern, $replacement, $pagecontent);
+	
+	if($echo) echo $pagecontent;
+	
+	return $pagecontent;
 }
-
-
-
-
-
 ?>

@@ -345,12 +345,11 @@ hr {
   font-weight: bold;
   font-family: 'ff-dagny-web-pro-1', 'ff-dagny-web-pro-2', 'Helvetica Neue', Arial, Helvetica, Geneva, sans-serif;
   font-size: 11px;
-  font-style: italic;
   display: inline-block;
   text-decoration: none;
-  -moz-box-shadow: 1px 1px 1px #3d302f;
-  -webkit-box-shadow: 1px 1px 1px #3d302f;
-  box-shadow: 1px 1px 1px #3d302f;
+  -moz-box-shadow: 1px 1px 0px #3d302f;
+  -webkit-box-shadow: 1px 1px 0px #3d302f;
+  box-shadow: 1px 1px 0px #3d302f;
 }
 a.button:hover {
   background: #5d504f;
@@ -360,9 +359,9 @@ a.button:hover {
   box-shadow: 1px 1px 1px #050000;
 }
 .button.light {
-  -moz-box-shadow: 1px 1px 1px #f0eceb;
-  -webkit-box-shadow: 1px 1px 1px #f0eceb;
-  box-shadow: 1px 1px 1px #f0eceb;
+  -moz-box-shadow: 1px 1px 0px #f0eceb;
+  -webkit-box-shadow: 1px 1px 0px #f0eceb;
+  box-shadow: 1px 1px 0px #f0eceb;
 }
 .button.light:hover {
   background: #f0eceb;

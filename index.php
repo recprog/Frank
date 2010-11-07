@@ -65,38 +65,11 @@
 			<article <?php post_class('span-3'); ?>>
 				<?php if(showSecondaryColumnHeader()) : ?>
 				<header>
-					<h1><a href="<?php the_permalink() ?>">
-					<?php
-					$thetitle = $post->post_title; /* or you can use get_the_title() */
-					$getlength = strlen($thetitle);
-					$thelength = 25;
-					echo substr($thetitle, 0, $thelength);
-					
-					if ($getlength > $thelength) echo "...";
-					?>
-					</a></h1>
+					<h1><a href="<?php the_permalink() ?>"><?php truncate_title(get_the_title(), 25); ?></a></h1>
 				</header>
 				<?php endif; ?>
 				<section>
-					<?php 
-						$content = content(80, 'Read More');
-						$content = apply_filters('the_content', $content);
-						
-						$pattern = '/\< *[img][^\>]* src *= *[\"\']{0,1}([^\"\'\ >]*)/i';
-						$replacement = '<img src="/php/phpthumb/phpThumb.php?src=' . '$1' . '&w=190&h=120&zc=1&q=80"';
-						
-						$pagecontent = preg_replace($pattern, $replacement, $content);
-						
-						$pattern = '/height *= *[\"\']?[^\"\'\ >]*/';
-						$replacement = 'height="120"';
-						$pagecontent = preg_replace($pattern, $replacement, $pagecontent);
-						
-						$pattern = '/width *= *[\"\']?[^\"\'\ >]*/';
-						$replacement = 'width="190"';
-						$pagecontent = preg_replace($pattern, $replacement, $pagecontent);
-						
-						echo $pagecontent;					
-					?>
+					<?php  $content = content(80); ?>
 				</section>
 				<?php if(showSecondaryColumnFooter()) : ?>
 				<footer>
@@ -133,38 +106,10 @@
 			<article <?php post_class('span-3'); ?>>
 				<?php if(showTertiaryColumnHeader()) : ?>
 				<header>
-					<h1><a href="<?php the_permalink() ?>">
-					<?php
-					$thetitle = $post->post_title; /* or you can use get_the_title() */
-					$getlength = strlen($thetitle);
-					$thelength = 25;
-					echo substr($thetitle, 0, $thelength);
-					if ($getlength > $thelength) echo "...";
-					?>
-					</a></h1>
+					<h1><a href="<?php the_permalink() ?>"><?php truncate_title(get_the_title(), 25); ?></a></h1>
 				</header>
 				<?php endif; ?>
-				<section>
-					<?php
-						$content = content(80, 'Read More');
-						$content = apply_filters('the_content', $content);
-					
-						$pattern = '/\< *[img][^\>]* src *= *[\"\']{0,1}([^\"\'\ >]*)/i';
-						$replacement = '<img src="/php/phpthumb/phpThumb.php?src=' . '$1' . '&w=190&h=120&zc=1&q=80"';
-					
-						$pagecontent = preg_replace($pattern, $replacement, $content);
-					
-						$pattern = '/height *= *[\"\']?[^\"\'\ >]*/';
-						$replacement = 'height="120"';
-						$pagecontent = preg_replace($pattern, $replacement, $pagecontent);
-					
-						$pattern = '/width *= *[\"\']?[^\"\'\ >]*/';
-						$replacement = 'width="190"';
-						$pagecontent = preg_replace($pattern, $replacement, $pagecontent);
-					
-						echo $pagecontent;
-					?>
-				</section>
+				<section><?php $content = content(80); ?></section>
 				<?php if(showTertiaryColumnFooter()) : ?>
 				<footer>
 					<ul class='metadata clear'>
