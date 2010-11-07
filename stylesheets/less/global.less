@@ -269,7 +269,34 @@ hr {
 	
 }
 
-a.button {
+.button {
+	padding:3px 6px 3px 6px;
+	font-weight:bold;
+	font-family:@sans-serif;
+	font-size:11px;
+	font-style:italic;
+	display:inline-block;
+	text-decoration:none;
+	.drop-shadow(1px, 1px, 1px, @color_dark);
+	
+}
+a.button:hover { 
+	background:@color_midtone; 
+	color:@color_highlight;
+	.drop-shadow(1px, 1px, 1px, @color_off_black);
+}
+
+.button.light {
+	.drop-shadow(1px, 1px, 1px, @color_light);
+}
+
+.button.light:hover { 
+	background:@color_light; 
+	color:@color_midtone !important;
+	.drop-shadow(1px, 1px, 1px, @color_dark);
+}
+
+.button-alt {
 	.drop-shadow(0px, 0px, 6px, rgba(18, 7, 6,0.4));
 	background-color:@color_light;
 	display:inline-block;
@@ -278,6 +305,11 @@ a.button {
 	color:@color_midtone !important;
 	position:relative;
 	text-decoration:none;
+}
+
+.button-alt:hover {
+	.drop-shadow(0px, 2px, 8px, rgba(18, 7, 6,0.5));
+	background-color:@color_highlight;
 }
 
 

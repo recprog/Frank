@@ -20,6 +20,8 @@ jQuery(document).ready(function() {
 	})
 	
 	
+	jQuery('#content.home #content_primary section p').wrapInner('<a href="'+jQuery('#content.home #content_primary header a').attr('href')+'" />');
+	jQuery('#content.home #content_secondary a img').unwrap();
 	
 	jQuery("#menu-item-216").mouseenter(function(){
 		//console.log('foo');

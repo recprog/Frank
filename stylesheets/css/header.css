@@ -40,6 +40,8 @@
   position: absolute;
   top: 2px;
   left: 4px;
+  font-style: normal;
+  font-weight: normal;
 }
 #page_header #search #search_button .label {
   display: none;

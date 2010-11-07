@@ -311,6 +311,24 @@
   background-position: -5px -260px;
   background-repeat: no-repeat;
 }
+#content.home #content_primary article header a {
+  background: url(http://placehold.it/820x280) no-repeat;
+  width: 820px;
+  height: 280px;
+  display: block;
+  text-indent: -9999px;
+}
+#content.home #content_primary section, #content.home #content_primary footer {
+  display: none;
+}
+#content.home #content_primary section a {
+  color: #050000;
+  text-decoration: none;
+}
+#content.home #content_secondary article header h1, #content.home #content_tertiary article header h1 {
+  text-transform: capitalize;
+  line-height: 15px;
+}
 #content.single #post_footer .widget {
   margin-bottom: 0;
 }
@@ -373,7 +391,7 @@
   height: 180px;
   display: block;
   background-image: url(../../images/fs_sprite.png);
-  background-position: -280px -300px;
+  background-position: 20px -350px;
   background-repeat: no-repeat;
   background-color: #ff1e00;
   text-decoration: none;
@@ -442,15 +460,11 @@
 }
 #page_footer #text-7 a.button {
   font-size: 14px;
-  font-style: italic;
-  text-align: center;
-  padding: 4px 10px 6px 10px;
+  padding: 6px 10px 6px 10px;
 }
 #page_footer #text-8 a.button {
   font-size: 14px;
-  font-style: italic;
-  text-align: center;
-  padding: 4px 10px 6px 10px;
+  padding: 6px 10px 6px 10px;
   margin-top: 15px;
 }
 #page_footer #footer_follow_list {
@@ -620,6 +634,8 @@
   margin-top: 10px;
   margin-left: 10px;
   margin-right: 5px;
+  font-style: normal;
+  font-weight: normal;
 }
 #rss_promo #rss_promo_top .content strong {
   margin-top: 5px;

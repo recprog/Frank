@@ -646,7 +646,8 @@ function content($maxLength, $read_more="Read More")
 
 	$content=''; //new
 	$count=0;
-	$read_more = ' <a href="the_permalink()" class="more">'.$read_more.'</a>';
+	$truncated=false;
+	$read_more = ' <div class="read-more"><a href="'.get_permalink().'" class="button more">'.$read_more.'</a></div>';
 	
 	$matches = preg_match_all('{</?([a-z]+)[^>]*>|&#?[a-zA-Z0-9]+;}', $html, $match, PREG_OFFSET_CAPTURE, $position);
 	
@@ -661,7 +662,11 @@ function content($maxLength, $read_more="Read More")
         {
             //print(substr($str, 0, $maxLength - $printedLength));
 			$content.=substr($str, 0, $maxLength - $printedLength);
-			$content.='&hellip;'.$read_more;
+			if(!$truncated) 
+			{
+				$content.='&hellip;'.$read_more;
+				$truncated=true;
+			}
             $printedLength = $maxLength;
             break;
         }
@@ -689,7 +694,12 @@ function content($maxLength, $read_more="Read More")
                 assert($openingTag == $tagName); // check that tags are properly nested.
 
                 //print($tag);
-				if($matches-2==$count&&$printedLength >= $maxLength) $content.='&hellip;'.$read_more;
+				if($matches-2==$count&&$printedLength >= $maxLength&&!$truncated) 
+				{
+					print('[truncating]');
+					$content.='&hellip;'.$read_more;
+					$truncated=true;
+				}
 				$content.=$tag;
             }
             else if ($tag[strlen($tag) - 2] == '/')
@@ -716,7 +726,11 @@ function content($maxLength, $read_more="Read More")
     if ($printedLength < $maxLength && $position < strlen($html))
         //print(substr($html, $position, $maxLength - $printedLength));
 		$content.=substr($html, $position, $maxLength - $printedLength);
-		if($printedLength >= $maxLength) $content.='&hellip;'.$read_more;
+		if($printedLength >= $maxLength&&!$truncated) 
+		{
+			$content.='&hellip;'.$read_more;
+			$truncated=true;
+		}
 
     // Close any open tags.
     while (!empty($tags))
@@ -732,4 +746,3 @@ function content($maxLength, $read_more="Read More")
 
 
 ?>
-

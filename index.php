@@ -32,8 +32,9 @@
 					<?php if(showPrimaryColumnFooter()) : ?>
 					<footer>
 						<ul class='metadata clear'>
-							<li class='time iconic clock'><time datetime="<?php the_time('Y-m-d'); ?>" pubdate><?php the_time('Y-j-n'); ?></time></li>											
-							<li class='comments iconic comment last'><?php comments_popup_link('No comments', '1 comment', '% comments'); ?></li>
+							<li class='time iconic clock'><time datetime="<?php the_time('Y-m-d'); ?>" pubdate><?php echo human_time_diff(get_the_time('U'), current_time('timestamp')) . ' ago'; ?></time></li>											
+							<li class='comments'><span class='iconic comment'></span> <?php comments_popup_link('No comments', '1 comment', '% comments'); ?></li>
+							<?php if(!showPrimaryColumnHeader()) : ?><li class='permalink last'><span class='iconic link'></span> <a href='<?php the_permalink(); ?>'>Link</a></li><?php endif; ?>
 						</ul>
 					</footer>
 					<?php endif; ?>
@@ -78,7 +79,7 @@
 				<?php endif; ?>
 				<section>
 					<?php 
-						$content = content(80, 'Read More&hellip;');
+						$content = content(80, 'Read More');
 						$content = apply_filters('the_content', $content);
 						
 						$pattern = '/\< *[img][^\>]* src *= *[\"\']{0,1}([^\"\'\ >]*)/i';
@@ -100,8 +101,9 @@
 				<?php if(showSecondaryColumnFooter()) : ?>
 				<footer>
 					<ul class='metadata clear'>
-						<li class='time iconic clock'><time datetime="<?php the_time('Y-m-d'); ?>" pubdate><?php the_time('Y-j-n'); ?></time></li>											
-						<li class='comments last'><span class='iconic comment'></span> <?php comments_popup_link('No comments', '1 comment', '% comments'); ?></li>
+						<li class='time iconic clock'><time datetime="<?php the_time('Y-m-d'); ?>" pubdate><?php echo human_time_diff(get_the_time('U'), current_time('timestamp')) . ' ago'; ?></time></li>											
+						<li class='comments'><span class='iconic comment'></span> <?php comments_popup_link('0', '1', '%'); ?></li>
+						<?php if(!showSecondaryColumnHeader()) : ?><li class='permalink last'><span class='iconic link'></span> <a href='<?php the_permalink(); ?>'>Link</a></li><?php endif; ?>
 					</ul>
 				</footer>
 				<?php endif; ?>
@@ -144,7 +146,7 @@
 				<?php endif; ?>
 				<section>
 					<?php
-						$content = content(80, 'Read More&hellip;');
+						$content = content(80, 'Read More');
 						$content = apply_filters('the_content', $content);
 					
 						$pattern = '/\< *[img][^\>]* src *= *[\"\']{0,1}([^\"\'\ >]*)/i';
@@ -166,8 +168,9 @@
 				<?php if(showTertiaryColumnFooter()) : ?>
 				<footer>
 					<ul class='metadata clear'>
-						<li class='time iconic clock'><time datetime="<?php the_time('Y-m-d'); ?>" pubdate><?php the_time('Y-j-n'); ?></time></li>											
-						<li class='comments iconic comment last'><?php comments_popup_link('No comments', '1 comment', '% comments'); ?></li>
+						<li class='time iconic clock'><time datetime="<?php the_time('Y-m-d'); ?>" pubdate><?php echo human_time_diff(get_the_time('U'), current_time('timestamp')) . ' ago'; ?></time></li>											
+						<li class='comments'><span class='iconic comment'></span> <?php comments_popup_link('0', '1', '%'); ?></li>
+						<?php if(!showTertiaryColumnHeader()) : ?><li class='permalink last'><span class='iconic link'></span> <a href='<?php the_permalink(); ?>'>Link</a></li><?php endif; ?>
 					</ul>
 				</footer>
 				<?php endif; ?>

@@ -31,18 +31,8 @@
 #content.home #content_primary, #content.home #content_secondary, #content.home #content_tertiary {
   margin-bottom: 30px;
 }
-#content.home #content_primary .post .more, #content.home #content_secondary .post .more, #content.home #content_tertiary .post .more {
-  display: inline-block;
-  text-decoration: none;
-  background: #f0eceb;
-  padding: 0 4px 3px 4px;
-  color: #050000;
-  border-radius: 2px;
+#content.home #content_primary .post .read-more, #content.home #content_secondary .post .read-more, #content.home #content_tertiary .post .read-more {
   margin-top: 15px;
-}
-#content.home #content_primary .post .more:hover, #content.home #content_secondary .post .more:hover, #content.home #content_tertiary .post .more:hover {
-  background: #5d504f;
-  color: #fefafa;
 }
 #content.home #content_primary .post header h1 {
   margin: 0;

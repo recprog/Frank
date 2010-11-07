@@ -340,7 +340,38 @@ hr {
 .pagination .previous {
   text-align: right;
 }
-a.button {
+.button {
+  padding: 3px 6px 3px 6px;
+  font-weight: bold;
+  font-family: 'ff-dagny-web-pro-1', 'ff-dagny-web-pro-2', 'Helvetica Neue', Arial, Helvetica, Geneva, sans-serif;
+  font-size: 11px;
+  font-style: italic;
+  display: inline-block;
+  text-decoration: none;
+  -moz-box-shadow: 1px 1px 1px #3d302f;
+  -webkit-box-shadow: 1px 1px 1px #3d302f;
+  box-shadow: 1px 1px 1px #3d302f;
+}
+a.button:hover {
+  background: #5d504f;
+  color: #fefafa;
+  -moz-box-shadow: 1px 1px 1px #050000;
+  -webkit-box-shadow: 1px 1px 1px #050000;
+  box-shadow: 1px 1px 1px #050000;
+}
+.button.light {
+  -moz-box-shadow: 1px 1px 1px #f0eceb;
+  -webkit-box-shadow: 1px 1px 1px #f0eceb;
+  box-shadow: 1px 1px 1px #f0eceb;
+}
+.button.light:hover {
+  background: #f0eceb;
+  color: #5d504f !important;
+  -moz-box-shadow: 1px 1px 1px #3d302f;
+  -webkit-box-shadow: 1px 1px 1px #3d302f;
+  box-shadow: 1px 1px 1px #3d302f;
+}
+.button-alt {
   -moz-box-shadow: 0px 0px 6px rgba(18, 7, 6, 0.4);
   -webkit-box-shadow: 0px 0px 6px rgba(18, 7, 6, 0.4);
   box-shadow: 0px 0px 6px rgba(18, 7, 6, 0.4);
@@ -351,6 +382,12 @@ a.button {
   color: #5d504f !important;
   position: relative;
   text-decoration: none;
+}
+.button-alt:hover {
+  -moz-box-shadow: 0px 2px 8px rgba(18, 7, 6, 0.5);
+  -webkit-box-shadow: 0px 2px 8px rgba(18, 7, 6, 0.5);
+  box-shadow: 0px 2px 8px rgba(18, 7, 6, 0.5);
+  background-color: #fefafa;
 }
 ::selection {
   background: #5d504f none repeat;
