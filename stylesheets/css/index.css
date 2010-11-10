@@ -37,6 +37,10 @@
 #content.home #content_primary .post .read-more, #content.home #content_secondary .post .read-more, #content.home #content_tertiary .post .read-more {
   margin-top: 15px;
 }
+#content.home #content_primary .post .read-more .more, #content.home #content_secondary .post .read-more .more, #content.home #content_tertiary .post .read-more .more {
+  font-size: 9px;
+  padding: 1px 4px;
+}
 #content.home #content_primary .post:nth-child(4n+1), #content.home #content_secondary .post:nth-child(4n+1), #content.home #content_tertiary .post:nth-child(4n+1) {
   clear: left;
 }

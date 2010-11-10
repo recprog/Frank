@@ -4,8 +4,7 @@ var colorBoxURL='http://localhost/wordpress/wp-content/themes/Franklin-Street-Th
 
 
 jQuery(document).ready(function() {
-	
-	
+		
 	if(window.location.hash) { 
 	        if(window.location.hash.indexOf("#comments") != -1||window.location.hash.indexOf("#respond") != -1) openComments(); 
 	}

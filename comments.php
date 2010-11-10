@@ -16,12 +16,12 @@
 	<ul id="comments" class='incomplete'>
 	<?php foreach ($comments as $comment) : ?>
 		<li class="comment span-11 last clear">
-			<div class="gravatar span-1"><?php echo get_avatar( $comment, 45 ); ?></div>
+			<div class="gravatar span-1"><?php echo get_avatar( $comment, 50 ); ?></div>
 			<div class="content span-10 last">
 				<div class='copy'><?php if ($comment->comment_approved == '0') : echo "<span id='comment_moderation'>Your comment is awaiting moderation.</span>"; endif; ?>
 				<?php comment_text() ?>	
 				</div>
-				<div class='metadata'><small><?php comment_author_link() ?> at <?php comment_date('j.m.Y') ?> <?php comment_time() ?> <span class='edit'><?php edit_comment_link('edit'); ?></span></small></div>
+				<div class='metadata'><span id="vcard-<?php comment_ID() ?>" class="vcard"><a class="url fn" href="<?php comment_author_url(); ?>"><?php comment_author(); ?></a></span> at <span><?php comment_date('Y-j-n') ?> <?php comment_time() ?></span> <span class='edit'><?php edit_comment_link('edit'); ?></span></div>
 			</div>
 		</li>
 		<?php $oddcomment = ( empty( $oddcomment ) ) ? 'class="alt" ' : ''; ?>
@@ -53,6 +53,9 @@
 		<?php else : ?>
 		<header>
 			<h1>Leave Your Own Comment</h1>
+			<?php if ( $user_ID ) : ?>
+				<p class='loggedin'>Logged in as <a href="<?php echo get_option('siteurl'); ?>/wp-admin/profile.php"><?php echo $user_identity; ?></a>. <a href="<?php echo get_option('siteurl'); ?>/wp-login.php?action=logout" title="Log out of this account">Log out &raquo;</a></p>
+			<?php endif; ?>
 		</header>
 		<form action="<?php echo get_option('siteurl'); ?>/wp-comments-post.php" method="post" id="commentform">
 			<?php if ( !$user_ID ) : ?>	
@@ -69,9 +72,6 @@
 			<?php endif; ?>
 			
 			<div class='<?php echo ( !$user_ID )?'span-8':'span-11' ?> last'>
-				<?php if ( $user_ID ) : ?>
-					<p class='loggedin'>Logged in as <a href="<?php echo get_option('siteurl'); ?>/wp-admin/profile.php"><?php echo $user_identity; ?></a>. <a href="<?php echo get_option('siteurl'); ?>/wp-login.php?action=logout" title="Log out of this account">Log out &raquo;</a></p>
-				<?php endif; ?>
 				<dl id="comment_form_comment" class="<?php if ( $user_ID ) : ?>loggedin<?php endif; ?>">
 					<dt><label for="comment">Your Comment</label></dt>
 					<dd><textarea name="comment" class="<?php if ( $user_ID ) echo('loggedin') ?>" id="comment" cols="100%" rows="10" tabindex="4"></textarea></dd>

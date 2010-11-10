@@ -32,7 +32,7 @@
 					<?php if(showPrimaryColumnFooter()) : ?>
 					<footer>
 						<ul class='metadata clear'>
-							<li class='time iconic clock'><time datetime="<?php the_time('Y-m-d'); ?>" pubdate><?php echo human_time_diff(get_the_time('U'), current_time('timestamp')) . ' ago'; ?></time></li>											
+							<li class='time'><span class='iconic calendar'></span> <time datetime="<?php the_time('Y-m-d'); ?>" pubdate><?php echo human_time_diff(get_the_time('U'), current_time('timestamp')) . ' ago'; ?></time></li>											
 							<li class='comments'><span class='iconic comment'></span> <?php comments_popup_link('No comments', '1 comment', '% comments'); ?></li>
 							<?php if(!showPrimaryColumnHeader()) : ?><li class='permalink last'><span class='iconic link'></span> <a href='<?php the_permalink(); ?>'>Link</a></li><?php endif; ?>
 						</ul>
@@ -69,7 +69,7 @@
 				<?php if(showSecondaryColumnFooter()) : ?>
 				<footer>
 					<ul class='metadata clear'>
-						<li class='time iconic clock'><time datetime="<?php the_time('Y-m-d'); ?>" pubdate><?php echo human_time_diff(get_the_time('U'), current_time('timestamp')) . ' ago'; ?></time></li>											
+						<li class='time'><span class='iconic calendar'></span> <time datetime="<?php the_time('Y-m-d'); ?>" pubdate><?php echo human_time_diff(get_the_time('U'), current_time('timestamp')) . ' ago'; ?></time></li>											
 						<li class='comments'><span class='iconic comment'></span> <?php comments_popup_link('0', '1', '%'); ?></li>
 						<?php if(!showSecondaryColumnHeader()) : ?><li class='permalink last'><span class='iconic link'></span> <a href='<?php the_permalink(); ?>'>Link</a></li><?php endif; ?>
 					</ul>
@@ -105,7 +105,7 @@
 				<?php if(showTertiaryColumnFooter()) : ?>
 				<footer>
 					<ul class='metadata clear'>
-						<li class='time iconic clock'><time datetime="<?php the_time('Y-m-d'); ?>" pubdate><?php echo human_time_diff(get_the_time('U'), current_time('timestamp')) . ' ago'; ?></time></li>											
+						<li class='time'><span class='iconic calendar'></span> <time datetime="<?php the_time('Y-m-d'); ?>" pubdate><?php echo human_time_diff(get_the_time('U'), current_time('timestamp')) . ' ago'; ?></time></li>											
 						<li class='comments'><span class='iconic comment'></span> <?php comments_popup_link('0', '1', '%'); ?></li>
 						<?php if(!showTertiaryColumnHeader()) : ?><li class='permalink last'><span class='iconic link'></span> <a href='<?php the_permalink(); ?>'>Link</a></li><?php endif; ?>
 					</ul>

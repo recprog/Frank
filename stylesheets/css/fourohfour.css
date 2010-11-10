@@ -8,6 +8,18 @@
 .show-bounds {
   background-color: rgba(255, 255, 0, 0.5);
 }
+#content.fourohfour h2 {
+  margin-top: 0;
+}
+#content.fourohfour .container p.default-message {
+  font-family: 'ff-meta-serif-web-pro-1', 'ff-meta-serif-web-pro-2', Georgia, "Times New Roman", Times, serif;
+  font-size: 19px;
+  line-height: 30px;
+}
+#content.fourohfour .container #s {
+  width: 330px;
+  font-size: 14px;
+}
 #content.fourohfour .widget {
   float: left;
   margin-right: 20px;

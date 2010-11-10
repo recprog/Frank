@@ -30,9 +30,14 @@
 			margin-top:2px;
 			font-family:@serif;
 			p {
-				font-size: 12px;
+				font-size: 13px;
 				line-height:@row-height;
 			}
+			
+			p:first-child {
+				padding-top:0;
+			}
+			
 			blockquote, blockquote p {
 				font-size:13px;
 			}
@@ -73,6 +78,7 @@
 		color: @color_midtone;
 	}
 	#commentform {
+	
 		dl { 
 			position:relative !important;
 			.reset-dimensions;
@@ -109,9 +115,16 @@
 	}
 	#comment_form {
 		margin-top: @row-height;
-		p.loggedin {
-			font-size: 12px !important;
+		
+		header {
 			margin-bottom: @row-height;
+			h1 {
+				font-size:18px;
+			}
+
+			p.loggedin {
+				font-size: 12px !important;
+			}
 		}
 	}
 	

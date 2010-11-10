@@ -38,8 +38,11 @@
   font-family: 'ff-meta-serif-web-pro-1', 'ff-meta-serif-web-pro-2', Georgia, "Times New Roman", Times, serif;
 }
 #comments_container #comments .copy p {
-  font-size: 12px;
+  font-size: 13px;
   line-height: 15px;
+}
+#comments_container #comments .copy p:first-child {
+  padding-top: 0;
 }
 #comments_container #comments .copy blockquote, #comments_container #comments .copy blockquote p {
   font-size: 13px;
@@ -115,9 +118,14 @@
 #comments_container #comment_form {
   margin-top: 15px;
 }
-#comments_container #comment_form p.loggedin {
-  font-size: 12px !important;
+#comments_container #comment_form header {
   margin-bottom: 15px;
+}
+#comments_container #comment_form header h1 {
+  font-size: 18px;
+}
+#comments_container #comment_form header p.loggedin {
+  font-size: 12px !important;
 }
 #comments_container #submit {
   margin-top: 15px;

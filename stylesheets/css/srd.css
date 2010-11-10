@@ -378,6 +378,8 @@
   background-repeat: no-repeat;
 }
 #page_footer {
+  /*suggestion-box*/
+
   /*submit to SRD*/
 
   /*Download Franklin Street*/
@@ -385,6 +387,11 @@
 }
 #page_footer .widget ul li {
   margin-left: 0;
+}
+#page_footer #text-23 p {
+  font-size: 22px;
+  line-height: 30px;
+  font-style: italic;
 }
 #page_footer #footer_main_promo {
   width: 330px;
