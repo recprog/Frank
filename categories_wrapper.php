@@ -10,6 +10,7 @@ http://www.emanueleferonato.com/2010/04/01/loading-wordpress-posts-with-ajax-and
 
 */
 ?>
+<div id="categories_pullout">
 <div id="categories_container" class='clear'>
 <div class='span-8'>
 	<h2>Categories</h2>
@@ -63,5 +64,6 @@ http://www.emanueleferonato.com/2010/04/01/loading-wordpress-posts-with-ajax-and
 	
 	<?php wp_tag_cloud( $args ); ?>
 	</div>
+</div>
 </div>
 </div>

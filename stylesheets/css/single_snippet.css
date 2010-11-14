@@ -1,26 +1,6 @@
-.reset-dimensions {
-  margin: 0;
-  padding: 0;
-}
-.incomplete {
-  background-color: rgba(255, 0, 255, 0);
-}
-.show-bounds {
-  background-color: rgba(255, 255, 0, 0.5);
-}
-#content.snippet article {
-  margin-bottom: 60px;
-}
-#content.snippet article section {
-  margin-top: 30px;
-}
-#content.snippet article section p {
-  font-size: 39px;
-  line-height: 45px;
-}
-#content.snippet article section .tag {
-  background: none;
-}
-#content.snippet article section .tag:hover {
-  color: #050000;
-}
+.reset-dimensions{margin:0;padding:0;}
+.incomplete{background-color:rgba(255, 0, 255, 0);}
+.show-bounds{background-color:rgba(255, 255, 0, 0.5);}
+#content.snippet article{margin-bottom:60px;}#content.snippet article section{margin-top:30px;}#content.snippet article section p{font-size:39px;line-height:45px;}
+#content.snippet article section .tag{background:none;}
+#content.snippet article section .tag:hover{color:#050000;}

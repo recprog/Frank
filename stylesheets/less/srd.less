@@ -1,6 +1,7 @@
 @import "variables";
 
 #page_header { 
+
 	h1 {  
 		.reset-dimensions;
 		margin-left: -20px;
@@ -166,7 +167,7 @@
 			}
 		}
 		
-		#follow_list.expanded {
+		.ajax_insert.expanded #follow_list {
 			height:210px;
 		}
 
@@ -237,15 +238,13 @@
 			}
 		}
 
-		#work_pullout.expanded {
+		.ajax_insert.expanded #work_pullout {
 			height:150px;
 		}
 		
 		
-		
 		#categories_pullout {
 			height:0;
-			
 			width: 960px !important;
 			position: absolute;
 			background: rgba(93,80,79,.95);
@@ -302,7 +301,7 @@
 			}
 		}
 
-		#categories_pullout.expanded {
+		.ajax_insert.expanded #categories_pullout {
 			
 		}
 		
@@ -692,6 +691,9 @@
 		}
 		ul {
 			list-style:decimal;
+			li {
+				margin-left:3px;
+			}
 		}
 	}
 }
