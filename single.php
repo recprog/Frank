@@ -22,9 +22,7 @@
 				<?php the_content(); ?>
 			</section>
 			<footer>
-				<div class='pagination'>
-					<?php wp_link_pages(); ?>
-				</div>
+				<?php wp_link_pages('before=<div class="page-links"><p>Pages:&after=</p></div>'); ?>
 				<div id='post_footer' class='clear'>
 					<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Post Footer") ) : ?>
 					<?php endif; ?>

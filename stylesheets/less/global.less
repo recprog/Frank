@@ -265,8 +265,23 @@ hr {
 	}
 	.previous {
 		text-align:right;
+	}	
+}
+
+.page-links {
+	margin:@row-height 0 @row-height+5 0;
+	padding:5px 0;
+	word-spacing:5px;
+	a {
+		padding:4px 8px;
+		.drop-shadow(1px, 1px, 0px, @color_dark);
+		text-decoration:none;
 	}
-	
+	a:hover { 
+		background:@color_midtone; 
+		color:@color_highlight;
+		.drop-shadow(1px, 1px, 1px, @color_off_black);
+	}
 }
 
 .button {

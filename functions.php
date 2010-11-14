@@ -644,7 +644,7 @@ function truncate_title($title, $length, $echo=true)
 	return $title;
 }
 
-function content($maxLength, $read_more="Read More", $image_width=190, $image_height=120, $image_quality=80, $echo=true)
+function content($maxLength, $read_more="Read More", $image_width=190, $image_height=120, $image_quality=80, $autolink=false, $echo=true)
 {	
 	$html=get_the_content(); //new
     $printedLength = 0;
@@ -744,7 +744,35 @@ function content($maxLength, $read_more="Read More", $image_width=190, $image_he
     while (!empty($tags))
 		$content.='</'.array_pop($tags).'>';
 
+	if($autolink) {
+		$text=$content;
+		$text = ' ' . $text . ' ';
+		$extensions = 'com|org|net|gov|edu|mil|us|info|biz|ws|name|mobi|cc|tv';
+	
+		$patterns = array(
+			'#([\s{}\(\)\[\]])(([a-z]+?)://([a-z_0-9\-]+\.([^\s{}\(\)\[\]]+[^\s,\.\;{}\(\)\[\]])))#ie',
+			"#([\s{}\(\)\[\]])([a-z0-9\-\.]+[a-z0-9\-])\.($extensions)((?:/[^\s{}\(\)\[\]]*[^\.,\s{}\(\)\[\]]?)?)#ie"
+		);
+
+		$replacements = array(
+			"'$1<a href=\"$2\" title=\"$2\" $link_attributes>' . autohyperlink_truncate_link(\"$4\") . '</a>'",
+			"'$1<a href=\"http://$2.$3$4\" title=\"http://$2.$3$4\" $link_attributes>' . autohyperlink_truncate_link(\"$2.$3$4\") . '</a>'"
+		);
+	
+		$text = preg_replace($patterns, $replacements, $text);
+
+		// Remove links within links
+		$text = preg_replace("#(<a( [^>]+?>|>))<a [^>]+?>([^>]+?)</a></a>#i", "$1$3</a>", $text);
+	
+		$content=$text;
+	}
+
+
+
 	//$content = apply_filters('the_content', $content); 
+
+	
+	
 	$content = wpautop($content, 0);
 	
 	
@@ -761,8 +789,20 @@ function content($maxLength, $read_more="Read More", $image_width=190, $image_he
 	$replacement = 'width="190"';
 	$pagecontent = preg_replace($pattern, $replacement, $pagecontent);
 	
+	
+	
 	if($echo) echo $pagecontent;
 	
 	return $pagecontent;
 }
+
+
+
+function autohyperlink_truncate_link ($url) {
+	$url = preg_replace("/(([a-z]+?):\\/\\/[a-z0-9\-\.]+).*/i", "$1", $url);
+
+	return $url;
+}
+
+
 ?>

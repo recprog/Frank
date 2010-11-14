@@ -65,6 +65,8 @@ hr{height:1px;border:0;margin:15px 0;padding:0;background-color:#b5aaa9;}
 .pagination{margin:15px 0;}.pagination .next a,.pagination .previous a{display:block;text-decoration:none;background:#f0eceb;padding:4px 6px 3px 6px;color:#050000;border-radius:2px;margin-top:15px;font-size:14px;line-height:20px;}
 .pagination .next a:hover,.pagination .previous a:hover{background:#5d504f;color:#fefafa;}
 .pagination .previous{text-align:right;}
+.page-links{margin:15px 0 20px 0;padding:5px 0;word-spacing:5px;}.page-links a{padding:4px 8px;-moz-box-shadow:1px 1px 0px #3d302f;-webkit-box-shadow:1px 1px 0px #3d302f;box-shadow:1px 1px 0px #3d302f;text-decoration:none;}
+.page-links a:hover{background:#5d504f;color:#fefafa;-moz-box-shadow:1px 1px 1px #050000;-webkit-box-shadow:1px 1px 1px #050000;box-shadow:1px 1px 1px #050000;}
 .button{padding:3px 6px 3px 6px;font-weight:bold;font-family:'ff-dagny-web-pro-1','ff-dagny-web-pro-2','Helvetica Neue',Arial,Helvetica,Geneva,sans-serif;font-size:11px;display:inline-block;text-decoration:none;-moz-box-shadow:1px 1px 0px #3d302f;-webkit-box-shadow:1px 1px 0px #3d302f;box-shadow:1px 1px 0px #3d302f;}
 a.button:hover{background:#5d504f;color:#fefafa;-moz-box-shadow:1px 1px 1px #050000;-webkit-box-shadow:1px 1px 1px #050000;box-shadow:1px 1px 1px #050000;}
 .button.light{-moz-box-shadow:1px 1px 0px #f0eceb;-webkit-box-shadow:1px 1px 0px #f0eceb;box-shadow:1px 1px 0px #f0eceb;}

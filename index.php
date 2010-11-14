@@ -101,7 +101,7 @@
 					<h1><a href="<?php the_permalink() ?>"><?php truncate_title(get_the_title(), 25); ?></a></h1>
 				</header>
 				<?php endif; ?>
-				<section><?php $content = content(80); ?></section>
+				<section><?php $content = content(80, "Read More", 190, 120, 80, true); ?></section>
 				<?php if(showTertiaryColumnFooter()) : ?>
 				<footer>
 					<ul class='metadata clear'>
