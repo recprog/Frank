@@ -37,10 +37,12 @@
 	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/stylesheets/css/print.css" type="text/css" media="print" />
 	
 	<!--[if IE]>
-	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/ie.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/stylesheets/css/ie.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/stylesheets/css/ie_srd.css" type="text/css" media="screen" />
 	<![endif]-->
 	<!--[if IE 7]>
-	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/ie7.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/stylesheets/css/ie7.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/stylesheets/css/ie7_srd.css" type="text/css" media="screen" />
 	<![endif]-->
 	
 	<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="<?php bloginfo('rss2_url'); ?>" />
@@ -49,11 +51,14 @@
 	<?php wp_enqueue_script('jquery'); ?>
 	<?php wp_enqueue_script('jquery-main', get_bloginfo('template_url') . '/js/main.js'); ?>
 	<?php wp_enqueue_script('jquery-srd', get_bloginfo('template_url') . '/js/srd.js'); ?>
-	<!--[if lte IE 8]>
-	<script src="<?php bloginfo('template_url'); ?>/js/html5.js" type="text/javascript"></script>
-	<![endif]-->
 	
 	<?php wp_head(); ?>
+	
+	<!--[if lte IE 8]>
+	<script src="<?php bloginfo('template_url'); ?>/js/html5.js" type="text/javascript"></script>
+	<script src="<?php bloginfo('template_url'); ?>/js/ie.js" type="text/javascript"></script>
+	<![endif]-->
+	
 </head>
 <body id="page">
 <div id="page_top">
