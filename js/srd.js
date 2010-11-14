@@ -74,6 +74,11 @@ function contract(elem, heightTarget) {
 }
 
 function expand(elem, time, heightElem, heightTarget) {
+	if(heightElem&&heightTarget) {
+		jQuery(elem+' .ajax_insert').toggleClass('expanded', true);
+		expandTimeout = setTimeout("jQuery('"+elem+" "+heightElem+"').css('height', jQuery('"+heightTarget+"').height());", time);
+		return;
+	}
+	
 	expandTimeout = setTimeout("jQuery('"+elem+" .ajax_insert').toggleClass('expanded', true);", time);
-	if(heightElem&&heightTarget) jQuery(elem+' '+heightElem).css('height', jQuery(heightTarget).height());
 }
