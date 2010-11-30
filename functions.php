@@ -442,6 +442,16 @@ if ( function_exists('register_sidebar') )
 	'before_title' => '<h3 class="widgettitle">',
 	'after_title' => '</h3>',
 	));
+	
+if ( function_exists('register_sidebar') ) {
+	register_sidebar(array(
+		'name' => 'Post Left Aside',
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget' => '</div>',
+		'before_title' => '<h3 class="widgettitle">',
+		'after_title' => '</h3>',
+	));
+}
 
 if ( function_exists('register_sidebar') ) {
 	register_sidebar(array(
@@ -755,8 +765,8 @@ function content($maxLength, $read_more="Read More", $image_width=190, $image_he
 		);
 
 		$replacements = array(
-			"'$1<a href=\"$2\" title=\"$2\" $link_attributes>' . autohyperlink_truncate_link(\"$4\") . '</a>'",
-			"'$1<a href=\"http://$2.$3$4\" title=\"http://$2.$3$4\" $link_attributes>' . autohyperlink_truncate_link(\"$2.$3$4\") . '</a>'"
+			"'$1<a href=\"$2\" title=\"$2\" $link_attributes>' . fs_autohyperlink_truncate_link(\"$4\") . '</a>'",
+			"'$1<a href=\"http://$2.$3$4\" title=\"http://$2.$3$4\" $link_attributes>' . fs_autohyperlink_truncate_link(\"$2.$3$4\") . '</a>'"
 		);
 	
 		$text = preg_replace($patterns, $replacements, $text);
@@ -777,17 +787,11 @@ function content($maxLength, $read_more="Read More", $image_width=190, $image_he
 	
 	
 	$pattern = '/\< *[img][^\>]* src *= *[\"\']{0,1}([^\"\'\ >]*)/i';
-	$replacement = '<img src="/php/phpthumb/phpThumb.php?src=' . '$1' . '&w=190&h=120&zc=1&q=80"';
+	$replacement = '<img src="' . get_bloginfo("template_directory") . '/php/phpthumb/phpThumb.php?src=' . '$1' . '&w=190&h=120&zc=1&q=80';
 
 	$pagecontent = preg_replace($pattern, $replacement, $content);
-
-	$pattern = '/height *= *[\"\']?[^\"\'\ >]*/';
-	$replacement = 'height="120"';
-	$pagecontent = preg_replace($pattern, $replacement, $pagecontent);
-
-	$pattern = '/width *= *[\"\']?[^\"\'\ >]*/';
-	$replacement = 'width="190"';
-	$pagecontent = preg_replace($pattern, $replacement, $pagecontent);
+	
+	
 	
 	
 	
@@ -798,7 +802,7 @@ function content($maxLength, $read_more="Read More", $image_width=190, $image_he
 
 
 
-function autohyperlink_truncate_link ($url) {
+function fs_autohyperlink_truncate_link ($url) {
 	$url = preg_replace("/(([a-z]+?):\\/\\/[a-z0-9\-\.]+).*/i", "$1", $url);
 
 	return $url;

@@ -33,8 +33,8 @@
 	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/stylesheets/css/colorbox.css" type="text/css" media="screen, projection" />
 	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/stylesheets/css/hacks.css" type="text/css" media="screen, projection" />
 	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/stylesheets/css/srd.css" type="text/css" media="screen, projection" />
-	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/stylesheets/css/mobile.css" type="text/css" media="handheld" />
-	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/stylesheets/css/print.css" type="text/css" media="print" />
+	<!--<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/stylesheets/css/mobile.css" type="text/css" media="handheld" />
+	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/stylesheets/css/print.css" type="text/css" media="print" />-->
 	
 	<!--[if IE]>
 	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/stylesheets/css/ie.css" type="text/css" media="screen" />
@@ -57,8 +57,7 @@
 	<!--[if lte IE 8]>
 	<script src="<?php bloginfo('template_url'); ?>/js/html5.js" type="text/javascript"></script>
 	<script src="<?php bloginfo('template_url'); ?>/js/ie.js" type="text/javascript"></script>
-	<![endif]-->
-	
+	<![endif]-->	
 </head>
 <body id="page">
 <div id="page_top">

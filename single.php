@@ -8,7 +8,7 @@
 <div id="content" class="span-14 last single clear">
 	<div id="content_primary" class='span-11 clear'>
 		<?php while(have_posts()) : the_post(); ?>
-		<article <?php post_class(); ?>>
+		<article <?php post_class(); ?> class='clear'>
 			<header>
 					<h1><span class='iconic document'></span><?php the_title(); ?></h1>
 					<ul class='metadata clear'>
@@ -18,9 +18,15 @@
 					</ul>
 			</header>
 			<div id='excerpt'><?php the_excerpt(); ?></div>
-			<section>
+			<div class='clear'>
+			<div class='span-2'>
+				<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Post Left Aside") ) : ?>
+				<?php endif; ?>
+			</div>	
+			<section class='span-9 last'>
 				<?php the_content(); ?>
 			</section>
+			</div>
 			<footer>
 				<?php wp_link_pages('before=<div class="page-links"><p>Pages:&after=</p></div>'); ?>
 				<div id='post_footer' class='clear'>

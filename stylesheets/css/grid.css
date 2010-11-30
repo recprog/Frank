@@ -5,6 +5,8 @@
 .wrapper.showgrid{background-image:url(../images/grid_14col.png);}
 div.span-1,div.span-2,div.span-3,div.span-4,div.span-5,div.span-6,div.span-7,div.span-8,div.span-9,div.span-10,div.span-11,div.span-12,div.span-13,div.span-14{float:left;margin-right:20px;}
 div.last{margin-right:0;}
+section.span-1,section.span-2,section.span-3,section.span-4,section.span-5,section.span-6,section.span-7,section.span-8,section.span-9,section.span-10,section.span-11,section.span-12,section.span-13,section.span-14{float:left;margin-right:20px;}
+section.last{margin-right:0;}
 .span-1{width:50px;}
 .span-2{width:120px;}
 .span-3{width:190px;}
