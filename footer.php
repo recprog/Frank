@@ -28,8 +28,8 @@
 	</div>
 </div>
 <?php wp_footer(); ?>
-<!--<?php echo get_num_queries(); ?> queries in <?php timer_stop(1); ?> seconds.-->
 <script type="text/javascript" src="http://use.typekit.com/mhn1uqt.js"></script>
 <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 </body>
 </html>
+<!--<?php echo get_num_queries(); ?> queries in <?php timer_stop(1); ?> seconds.-->

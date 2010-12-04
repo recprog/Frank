@@ -5,7 +5,7 @@
  */
 ?>
 <?php get_header(); ?>
-<div id="content" class="fullspread clearfix fourohfour">
+<div id="content" class="fullspread clear fourohfour">
 	<div id="content_primary">
 		<header>
 			<h1>Page Not Found</h1>

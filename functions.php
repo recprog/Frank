@@ -87,8 +87,6 @@ if(!get_option('fs_category_template_id'))
 }
 
 add_action('admin_menu', 'fs_plugin_menu');
-//add_action('after_setup_theme', 'fs_init');
-
 
 add_action( 'init', 'fs_register_menus' );
 
@@ -131,7 +129,6 @@ function fs_options_page() {
 		$show_footer_primary = ($_POST['show_footer_primary']=='show_footer')?'show_footer':'hide_footer';
 		$show_footer_secondary = ($_POST['show_footer_secondary']=='show_footer')?'show_footer':'hide_footer';
 		$show_footer_tertiary = ($_POST['show_footer_tertiary']=='show_footer')?'show_footer':'hide_footer';
-
 
 		$options = array();
 		
@@ -379,61 +376,35 @@ function getTertiaryColumnCategoriesArray() {
 	return $options['tertiary']; 
 }
 
-function primaryColumnTitle() {
-	echo get_option('fs_title_primary');
-}
+function primaryColumnTitle() { echo get_option('fs_title_primary'); }
 
-function secondaryColumnTitle() {
-	echo get_option('fs_title_secondary');
-}
+function secondaryColumnTitle() { echo get_option('fs_title_secondary'); }
 
-function tertiaryColumnTitle() {
-	echo get_option('fs_title_tertiary');
-}
+function tertiaryColumnTitle() { echo get_option('fs_title_tertiary'); }
 
-function primaryColumnCaption() {
-	echo get_option('fs_caption_primary');
-}
+function primaryColumnCaption() { echo get_option('fs_caption_primary'); }
 
-function secondaryColumnCaption() {
-	echo get_option('fs_caption_secondary');
-}
+function secondaryColumnCaption() { echo get_option('fs_caption_secondary'); }
 
-function tertiaryColumnCaption() {
-	echo get_option('fs_caption_tertiary');
-}
+function tertiaryColumnCaption() { echo get_option('fs_caption_tertiary'); }
 
-function showPrimaryColumnHeader() {
-	return (get_option('fs_show_header_primary')=='show_header')?true:false;
-}
+function showPrimaryColumnHeader() { return (get_option('fs_show_header_primary')=='show_header')?true:false; }
 
-function showSecondaryColumnHeader() {
-	return (get_option('fs_show_header_secondary')=='show_header')?true:false;
-}
+function showSecondaryColumnHeader() { return (get_option('fs_show_header_secondary')=='show_header')?true:false; }
 
-function showTertiaryColumnHeader() {
-	return (get_option('fs_show_header_tertiary')=='show_header')?true:false;
-}
+function showTertiaryColumnHeader() { return (get_option('fs_show_header_tertiary')=='show_header')?true:false; }
 
-function showPrimaryColumnFooter() {
-	return (get_option('fs_show_footer_primary')=='show_footer')?true:false;
-}
+function showPrimaryColumnFooter() { return (get_option('fs_show_footer_primary')=='show_footer')?true:false; }
 
-function showSecondaryColumnFooter() {
-	return (get_option('fs_show_footer_secondary')=='show_footer')?true:false;
-}
+function showSecondaryColumnFooter() { return (get_option('fs_show_footer_secondary')=='show_footer')?true:false; }
 
-function showTertiaryColumnFooter() {
-	return (get_option('fs_show_footer_tertiary')=='show_footer')?true:false;
-}
-
+function showTertiaryColumnFooter() { return (get_option('fs_show_footer_tertiary')=='show_footer')?true:false; }
 
 /**
  * @package WordPress
  * @subpackage Default_Theme
  */
 
-//automatic_feed_links();
 if ( function_exists('register_sidebar') )
 	register_sidebar(array(
 	'name' => 'Sub Header',
@@ -603,25 +574,10 @@ function mb_substrws( $text, $len=180 ) {
     return $text;
 }
 
-function primary_excerpt_length($length) {
-	return 25;
-}
 
-function secondary_excerpt_length($length) {
-	return 20;
-}
+function new_excerpt_more($more) { return '...'; }
 
-function tertiary_excerpt_length($length) {
-	return 20;
-}
-
-function new_excerpt_more($more) {
-	return '...';
-}
-
-function excerpt_read_more($post) {
-	return '<a href="'. get_permalink($post->ID) . '">' . 'Read the Rest...' . '</a>';
-}
+function excerpt_read_more($post) { return '<a href="'. get_permalink($post->ID) . '">' . 'Read the Rest...' . '</a>'; }
 
 /**
 * Find and close unclosed xml tags
@@ -777,12 +733,8 @@ function content($maxLength, $read_more="Read More", $image_width=190, $image_he
 		$content=$text;
 	}
 
-
-
 	//$content = apply_filters('the_content', $content); 
 
-	
-	
 	$content = wpautop($content, 0);
 	
 	
@@ -791,22 +743,14 @@ function content($maxLength, $read_more="Read More", $image_width=190, $image_he
 
 	$pagecontent = preg_replace($pattern, $replacement, $content);
 	
-	
-	
-	
-	
 	if($echo) echo $pagecontent;
 	
 	return $pagecontent;
 }
-
-
 
 function fs_autohyperlink_truncate_link ($url) {
 	$url = preg_replace("/(([a-z]+?):\\/\\/[a-z0-9\-\.]+).*/i", "$1", $url);
 
 	return $url;
 }
-
-
 ?>

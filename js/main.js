@@ -9,7 +9,6 @@ jQuery(document).ready(function() {
 	        if(window.location.hash.indexOf("#comments") != -1||window.location.hash.indexOf("#respond") != -1) openComments(); 
 	}
 	
-	
 	if(jQuery(document).find('.colorbox').length) {
 		/*
 		jQuery.getScript(colorBoxURL, function() {

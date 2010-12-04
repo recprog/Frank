@@ -1,0 +1,35 @@
+TODO:
+	-Rename srd.less, srd.css and srd.js to custom
+	-Rename categories_wrapper.php and comment_wrapper.php to template_categories.php and template_comments.php
+	-Update screenshot.png
+	-Rename fs_sprite.png to sprite.png
+	-Rename promos.png to custom.png
+	-Change CSS for sticky footer when viewed by mobile devices
+	-Pull mobile.css and print.css in after load when needed
+	-Make keyboard shortcut for showing/hiding grid
+	-Remove vertical lines from grid
+	-RSS post footer widget
+	
+	-index.php,index.less: Change #content_primary to .content-oneup.content-large, #content_secondary to .content-fourup and #content_tertiary to .content-fourup 
+	-main.js: Fix colorbox AJAX pull
+	-images.less: Fix placement image
+	-srd.less: Better semantic setup for follow component
+	
+	
++Admin panels
+	-Make Franklin Street a whole section in Wordpress admin
+	-Be able to add/remove/reorder 'tiers' for home page
+		-Primary tier works like normal loop (supports stickies and uses default loop count which should be able to be overwritten)
+		-All tiers can be styled in four basic templates (basic, large type, 2 column & 4 column)
+		-Tiers can choose specific categories to display
+		-Make all options in functions.php accessible in admin panel
+	-Option to add custom code to 'head' tag and above 'body' tag
+	-Option to toggle AJAX comments on and off
+	
++Template Cleanup
+	-Serious cleanup of functions.php
+	-Make templates far more modular
+	-Be able to easily make child themes of Franklin Street
+	
++Performance Increases
+	-Any way to lower queries?

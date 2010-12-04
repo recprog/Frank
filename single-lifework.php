@@ -10,7 +10,7 @@
 		<?php while(have_posts()) : the_post(); ?>
 		<article <?php post_class(); ?>>
 			<header>
-					<h1><span class='iconic document'></span><?php the_title(); ?></h1>
+					<h1><?php the_title(); ?></h1>
 					<ul class='metadata clear'>
 						<li class='time iconic clock'><time datetime="<?php the_time('Y-m-d'); ?>" pubdate><?php the_time('Y-j-n, g:i a'); ?></time></li>											
 						<li class='comments last'><span class='iconic comment'></span> <?php comments_popup_link('No comments', '1 comment', '% comments'); ?></li>
