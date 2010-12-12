@@ -32,7 +32,7 @@
 	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/stylesheets/css/footer.css" type="text/css" media="screen, projection" />
 	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/stylesheets/css/colorbox.css" type="text/css" media="screen, projection" />
 	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/stylesheets/css/hacks.css" type="text/css" media="screen, projection" />
-	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/stylesheets/css/srd.css" type="text/css" media="screen, projection" />
+	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/stylesheets/css/custom.css" type="text/css" media="screen, projection" />
 	<!--<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/stylesheets/css/mobile.css" type="text/css" media="handheld" />
 	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/stylesheets/css/print.css" type="text/css" media="print" />-->
 	
@@ -50,7 +50,7 @@
 			
 	<?php wp_enqueue_script('jquery'); ?>
 	<?php wp_enqueue_script('jquery-main', get_bloginfo('template_url') . '/js/main.js'); ?>
-	<?php wp_enqueue_script('jquery-srd', get_bloginfo('template_url') . '/js/srd.js'); ?>
+	<?php wp_enqueue_script('jquery-srd', get_bloginfo('template_url') . '/js/custom.js'); ?>
 	
 	<?php wp_head(); ?>
 	

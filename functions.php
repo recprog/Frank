@@ -1,5 +1,14 @@
 <?php
 
+require_once(dirname(__FILE__).'/php/mobile_device_detect/mobile_device_detect.php');
+if(mobile_device_detect(true,false,true,true,true,true,true,false,false)) {
+	add_action('wp_head', 'fs_add_mobile_style');
+}
+
+function fs_add_mobile_style() {
+	//wp_enqueue_style( $handle, $src, $deps, $ver, $media );
+}
+
 /*thanks to http://www.nathanrice.net/blog/wordpress-single-post-templates/ */
 /*add_filter('single_template', create_function('$t', 'foreach( (array) get_the_category() as $cat ) { if ( file_exists(TEMPLATEPATH . "/single-{$cat->category_nicename}.php") ) return TEMPLATEPATH . "/single-{$cat->category_nicename}.php"; } return $t;' ));*/
 

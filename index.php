@@ -6,7 +6,7 @@
 ?>
 <?php get_header(); ?>
 <div id="content" class="home clear">
-	<div id="content_primary" class='span-14 last clear'>
+	<div class='span-14 last clear content oneup large'>
 		<div class='nav content-header span-2'>
 			<span class='label'><?php if (function_exists("primaryColumnTitle")) primaryColumnTitle(); ?></span>
 			<span class='caption'><?php if (function_exists("primaryColumnCaption")) primaryColumnCaption(); ?></span> <span class='more'><a href='<?php bloginfo('url'); ?>?cat=<?php echo getPrimaryColumnCategories(); ?>'>See more&hellip;</a></span> 
@@ -44,7 +44,7 @@
 			
 		</div>
 	</div>
-	<div id="content_secondary" class='span-14 last clear'>
+	<div class='span-14 last clear content fourup'>
 		<div class='nav content-header span-2'>
 			<span class='label'><?php if (function_exists("secondaryColumnTitle")) secondaryColumnTitle(); ?></span>
 			<span class='caption'><?php if (function_exists("secondaryColumnCaption")) secondaryColumnCaption(); ?></span> <span class='more'><a href='<?php bloginfo('url'); ?>?cat=<?php echo getSecondaryColumnCategories(); ?>'>See more&hellip;</a></span>
@@ -80,7 +80,7 @@
 
 		</div>
 	</div>
-	<div id="content_tertiary" class='span-14 clear last'>
+	<div class='span-14 clear last content fourup'>
 		<div class="content-header nav span-2">
 			<span class='label'><?php if (function_exists("tertiaryColumnTitle")) tertiaryColumnTitle(); ?></span>
 			<span class='caption'><?php if (function_exists("tertiaryColumnCaption")) tertiaryColumnCaption(); ?></span> <span class='more'><a href='<?php bloginfo('url'); ?>?cat=<?php echo getTertiaryColumnCategories(); ?>'>See more&hellip;</a></span>

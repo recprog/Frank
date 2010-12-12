@@ -1,16 +1,13 @@
 TODO:
-	-Rename srd.less, srd.css and srd.js to custom
 	-Rename categories_wrapper.php and comment_wrapper.php to template_categories.php and template_comments.php
 	-Update screenshot.png
-	-Rename fs_sprite.png to sprite.png
-	-Rename promos.png to custom.png
 	-Change CSS for sticky footer when viewed by mobile devices
 	-Pull mobile.css and print.css in after load when needed
 	-Make keyboard shortcut for showing/hiding grid
 	-Remove vertical lines from grid
-	-RSS post footer widget
+	-RSS post footer widget?
+	-Change grid from 50/20 to 45/25?
 	
-	-index.php,index.less: Change #content_primary to .content-oneup.content-large, #content_secondary to .content-fourup and #content_tertiary to .content-fourup 
 	-main.js: Fix colorbox AJAX pull
 	-images.less: Fix placement image
 	-srd.less: Better semantic setup for follow component
