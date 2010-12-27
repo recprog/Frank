@@ -6,6 +6,9 @@ var req;
 
 jQuery(document).ready(function() {
 		
+	
+	var root=jQuery('link[rel=index]').attr('href');	
+		
 	jQuery('#content.home #content_secondary .post, #content.home #content_tertiary .post').mouseenter(function(){
 		jQuery(this).toggleClass('active', true);
 	})
@@ -18,7 +21,7 @@ jQuery(document).ready(function() {
 	
 	/*categories*/
 	jQuery("#menu-item-216 a").mouseenter(function() {
-		expandAjaxElement('#menu-item-216', 'http://localhost/wordpress/?page_id='+jQuery(this).attr('rel'), "#categories_pullout", "#categories_pullout #categories_container");
+		expandAjaxElement('#menu-item-216', root+'/?page_id='+jQuery(this).attr('rel'), "#categories_pullout", "#categories_pullout #categories_container");
 	});
 	
 	jQuery('#menu-item-216').mouseleave(function(){
@@ -27,7 +30,7 @@ jQuery(document).ready(function() {
 	
 	/*follow*/	
 	jQuery('#menu-item-217 a').mouseenter(function(){
-		expandAjaxElement('#menu-item-217', 'http://localhost/wordpress/?page_id='+jQuery(this).attr('rel'));	
+		expandAjaxElement('#menu-item-217', root+'/?page_id='+jQuery(this).attr('rel'));	
 	});
 		
 	jQuery('#menu-item-217').mouseleave(function(){
@@ -36,7 +39,7 @@ jQuery(document).ready(function() {
 		
 	/*work*/
 	jQuery('#menu-item-214 a').mouseenter(function(){
-		expandAjaxElement('#menu-item-214', 'http://localhost/wordpress/?page_id='+jQuery(this).attr('rel'));
+		expandAjaxElement('#menu-item-214', root+'/?page_id='+jQuery(this).attr('rel'));
 	});
 
 	jQuery('#menu-item-214').mouseleave(function(){

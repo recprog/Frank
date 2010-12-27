@@ -1,16 +1,17 @@
 @import "variables";
+@media screen, projection {
+	input[type=text], textarea {
+		font-size: 12px;
+		border: 1px solid @color_midtone;
+		font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+		color: @color_midtone;
+	}
 
-input[type=text], textarea {
-	font-size: 12px;
-	border: 1px solid @color_midtone;
-	font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
-	color: @color_midtone;
-}
-
-input[type=submit] {
-	font-size:12px;
-	background:none;
-	border:0;
-	padding:6px 10px 6px 10px;
-	cursor: pointer;
+	input[type=submit] {
+		font-size:12px;
+		background:none;
+		border:0;
+		padding:6px 10px 6px 10px;
+		cursor: pointer;
+	}
 }

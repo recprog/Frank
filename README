@@ -1,16 +1,12 @@
 TODO:
 	-Rename categories_wrapper.php and comment_wrapper.php to template_categories.php and template_comments.php
 	-Update screenshot.png
-	-Change CSS for sticky footer when viewed by mobile devices
-	-Pull mobile.css and print.css in after load when needed
-	-Make keyboard shortcut for showing/hiding grid
-	-Remove vertical lines from grid
-	-RSS post footer widget?
-	-Change grid from 50/20 to 45/25?
-	
 	-main.js: Fix colorbox AJAX pull
 	-images.less: Fix placement image
 	-srd.less: Better semantic setup for follow component
+	
+	-RSS post footer widget?
+	-Change grid from 50/20 to 45/25?
 	
 	
 +Admin panels
@@ -30,3 +26,10 @@ TODO:
 	
 +Performance Increases
 	-Any way to lower queries?
+	
++Frank
+	-Frank is fast
+	-Frank is flexible
+	-Frank is forward-thinking
+	-Frank is for all of us
+	-Frank is free

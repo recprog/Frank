@@ -30,9 +30,9 @@
 		<?php while(have_posts()) : the_post(); ?>
 		<article <?php post_class(); ?> id="<?php the_ID(); ?>">
 			<header>
-					<h1><span class='iconic document'></span><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
+					<h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
 					<ul class='metadata clear'>
-						<li class='time iconic clock'><time datetime="<?php the_time('Y-m-d'); ?>" pubdate><?php the_time('Y-j-n, g:i a'); ?></time></li>											
+						<li class='time'><span class='iconic calendar'></span> <time datetime="<?php the_time('Y-m-d'); ?>" pubdate><?php the_time('Y-j-n, g:i a'); ?></time></li>											
 						<li class='comments last'><span class='iconic comment'></span> <?php comments_popup_link('No comments', '1 comment', '% comments'); ?></li>
 					</ul>
 			</header>

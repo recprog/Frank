@@ -1,135 +1,136 @@
 @import "variables";
 
-#comments_container
-{
-	border-top:@border-break;
-	margin-top:(@row-height);
-	padding-top:@row-height;	
-	#comments_ajax	{
-		overflow:hidden;
-		height:0;
-	}
-	header {
-		h1 {
-			margin-bottom:0;
+@media screen, projection {
+	#comments_container
+	{
+		border-top:@border-break;
+		margin-top:(@row-height);
+		padding-top:@row-height;	
+		#comments_ajax	{
+			overflow:hidden;
+			height:0;
 		}
-		h2 {
-			margin-top:0;
+		header {
+			h1 {
+				margin-bottom:0;
+			}
+			h2 {
+				margin-top:0;
+			}
 		}
-	}
 	
-	#comments {
-		.reset-dimensions;
-		margin-bottom:(@row-height);
-		.metadata {
-			margin-bottom:5px;
-			font-size:11px;
-			margin-top:(@row-height);
-		}
-		.copy {
-			margin-top:2px;
-			font-family:@serif;
-			p {
-				font-size: 13px;
-				line-height:@row-height;
-			}
-			
-			p:first-child {
-				padding-top:0;
-			}
-			
-			blockquote, blockquote p {
-				font-size:13px;
-			}
-		}
-		li {
+		#comments {
 			.reset-dimensions;
 			margin-bottom:(@row-height);
-		}
-		.metadata {
-			small {
-				font-size: 11px;
-				padding-top: 5px;
+			.metadata {
+				margin-bottom:5px;
+				font-size:11px;
+				margin-top:(@row-height);
+			}
+			.copy {
+				margin-top:2px;
+				font-family:@serif;
+				p {
+					font-size: 13px;
+					line-height:@row-height;
+				}
+			
+				p:first-child {
+					padding-top:0;
+				}
+			
+				blockquote, blockquote p {
+					font-size:13px;
+				}
+			}
+			li {
+				.reset-dimensions;
+				margin-bottom:(@row-height);
+			}
+			.metadata {
+				small {
+					font-size: 11px;
+					padding-top: 5px;
+					margin-bottom: 0;
+				}
+			}
+			li {
+				background: none;
+				margin: 0;
+				padding: @row-height*2 0;
+				border-bottom: 1px solid @color_light;
+			}
+			li:first-child {
+				margin-top: 0px;
+			}
+			li:last-child {
+				padding-bottom: 0;
+				border: 0;
+			}
+			p:last-child {
 				margin-bottom: 0;
 			}
 		}
-		li {
-			background: none;
-			margin: 0;
-			padding: @row-height*2 0;
-			border-bottom: 1px solid @color_light;
+		#no_comments {
+			font-size: 26px;
+			line-height: (@row-height*2);
+			padding-top: 10px;
+			margin-bottom: (@row-height*2);
+			color: @color_midtone;
 		}
-		li:first-child {
-			margin-top: 0px;
-		}
-		li:last-child {
-			padding-bottom: 0;
-			border: 0;
-		}
-		p:last-child {
-			margin-bottom: 0;
-		}
-	}
-	#no_comments {
-		font-size: 26px;
-		line-height: (@row-height*2);
-		padding-top: 10px;
-		margin-bottom: (@row-height*2);
-		color: @color_midtone;
-	}
-	#commentform {
+		#commentform {
 	
-		dl { 
-			position:relative !important;
-			.reset-dimensions;
-			dt {
-				margin-top: (@row-height);
-				padding: 0;
-				margin-bottom:5px;
-			}
-			dt:first-child {
-				margin-top: 0;
-			}
-			dd {
+			dl { 
+				position:relative !important;
 				.reset-dimensions;
-				input.textinput {
-					margin: 0;
-					font-size: 12px !important;
-					padding: 2px;
-					height: (@row-height);
-					width: 184px;
+				dt {
+					margin-top: (@row-height);
+					padding: 0;
+					margin-bottom:5px;
+				}
+				dt:first-child {
+					margin-top: 0;
+				}
+				dd {
+					.reset-dimensions;
+					input.textinput {
+						margin: 0;
+						font-size: 12px !important;
+						padding: 2px;
+						height: (@row-height);
+						width: 184px;
+					}
+				}
+			}
+			textarea {
+				border: 1px solid #000;
+				margin: 0;
+				font-size: 12px !important;
+				height: 127px;
+				padding: 2px 4px;
+				width: 530px;
+				.loggedin {
+					width: 740px;
 				}
 			}
 		}
-		textarea {
-			border: 1px solid #000;
-			margin: 0;
-			font-size: 12px !important;
-			height: 127px;
-			padding: 2px 4px;
-			width: 530px;
-			.loggedin {
-				width: 740px;
-			}
-		}
-	}
-	#comment_form {
-		margin-top: @row-height;
+		#comment_form {
+			margin-top: @row-height;
 		
-		header {
-			margin-bottom: @row-height;
-			h1 {
-				font-size:18px;
-			}
+			header {
+				margin-bottom: @row-height;
+				h1 {
+					font-size:18px;
+				}
 
-			p.loggedin {
-				font-size: 12px !important;
+				p.loggedin {
+					font-size: 12px !important;
+				}
 			}
 		}
-	}
 	
-	#submit {
-		margin-top:@row-height;
+		#submit {
+			margin-top:@row-height;
+		}
 	}
 }
-

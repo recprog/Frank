@@ -2,11 +2,9 @@
 
 require_once(dirname(__FILE__).'/php/mobile_device_detect/mobile_device_detect.php');
 if(mobile_device_detect(true,false,true,true,true,true,true,false,false)) {
-	add_action('wp_head', 'fs_add_mobile_style');
-}
-
-function fs_add_mobile_style() {
-	//wp_enqueue_style( $handle, $src, $deps, $ver, $media );
+	$fs_mobile_url = get_bloginfo('template_url').'/stylesheets/css/mobile.css';
+	wp_register_style('fs_mobile_stylesheet', $fs_mobile_url);
+	wp_enqueue_style( 'fs_mobile_stylesheet');
 }
 
 /*thanks to http://www.nathanrice.net/blog/wordpress-single-post-templates/ */
@@ -762,4 +760,43 @@ function fs_autohyperlink_truncate_link ($url) {
 
 	return $url;
 }
+
+/**
+ * Add "first" and "last" CSS classes to dynamic sidebar widgets. Also adds numeric index class for each widget (widget-1, widget-2, etc.)
+ * via http://wordpress.org/support/topic/how-to-first-and-last-css-classes-for-sidebar-widgets
+ */
+function widget_first_last_classes($params) {
+
+	global $my_widget_num; // Global a counter array
+	$this_id = $params[0]['id']; // Get the id for the current sidebar we're processing
+	$arr_registered_widgets = wp_get_sidebars_widgets(); // Get an array of ALL registered widgets	
+
+	if(!$my_widget_num) {// If the counter array doesn't exist, create it
+		$my_widget_num = array();
+	}
+
+	if(!isset($arr_registered_widgets[$this_id]) || !is_array($arr_registered_widgets[$this_id])) { // Check if the current sidebar has no widgets
+		return $params; // No widgets in this sidebar... bail early.
+	}
+
+	if(isset($my_widget_num[$this_id])) { // See if the counter array has an entry for this sidebar
+		$my_widget_num[$this_id] ++;
+	} else { // If not, create it starting with 1
+		$my_widget_num[$this_id] = 1;
+	}
+
+	$class = 'class="widget-' . $my_widget_num[$this_id] . ' '; // Add a widget number class for additional styling options
+
+	if($my_widget_num[$this_id] == 1) { // If this is the first widget
+		$class .= 'widget-first ';
+	} elseif($my_widget_num[$this_id] == count($arr_registered_widgets[$this_id])) { // If this is the last widget
+		$class .= 'widget-last ';
+	}
+
+	$params[0]['before_widget'] = str_replace('class="', $class, $params[0]['before_widget']); // Insert our new classes into "before widget"
+
+	return $params;
+
+}
+add_filter('dynamic_sidebar_params','widget_first_last_classes');
 ?>

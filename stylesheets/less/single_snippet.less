@@ -1,16 +1,18 @@
 @import "variables";
 
-#content.snippet {
-	article {
-		section {
-			p {
-				font-size:39px;
-				line-height:@row-height*3;
+@media screen, projection {
+	#content.snippet {
+		article {
+			section {
+				p {
+					font-size:39px;
+					line-height:@row-height*3;
+				}
+				.tag { background:none; }
+				.tag:hover { color:@color_off_black; }
+				margin-top: @row-height*2;
 			}
-			.tag { background:none; }
-			.tag:hover { color:@color_off_black; }
-			margin-top: @row-height*2;
+			margin-bottom: @row-height*4;
 		}
-		margin-bottom: @row-height*4;
 	}
 }

@@ -1,36 +1,38 @@
 @import "variables";
 
-#content.fourohfour {
+@media screen, projection {
+	#content.fourohfour {
 	
-	h2 {
-		margin-top:0;
-	}
-	
-	.container  {
-		p.default-message {
-			font-family:@serif;
-			font-size:19px;
-			line-height:30px;
+		h2 {
+			margin-top:0;
 		}
-		#s {
-			.columns(5);
-			font-size:14px;
-		}
-	}
 	
-	.widget {
-		float:left;
-		margin-right:20px;
-		width:190px;
-		margin-bottom:(@row-height*2);
-	}
+		.container  {
+			p.default-message {
+				font-family:@serif;
+				font-size:19px;
+				line-height:30px;
+			}
+			#s {
+				.columns(5);
+				font-size:14px;
+			}
+		}
+	
+		.widget {
+			float:left;
+			margin-right:20px;
+			width:190px;
+			margin-bottom:(@row-height*2);
+		}
 
-	.widget:nth-child(4n+1) {
-		width:330px;
-		clear:left;
-	}
+		.widget:nth-child(4n+1) {
+			width:330px;
+			clear:left;
+		}
 
-	.widget:nth-child(4n) {
-		margin-right:0;
+		.widget:nth-child(4n) {
+			margin-right:0;
+		}
 	}
 }

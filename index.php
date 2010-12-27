@@ -20,7 +20,7 @@
 			);
 			$queryObject = new WP_Query($query);
 			 while ( $queryObject->have_posts() ) : $queryObject->the_post(); ?>
-				<article <?php post_class(); ?>>
+				<article <?php post_class('post-'.($queryObject->current_post+1)); ?>>
 					<?php if(showPrimaryColumnHeader()) : ?>
 					<header>
 						<h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
@@ -57,7 +57,7 @@
 		);
 		$queryObject = new WP_Query($query);
 		 while ( $queryObject->have_posts() ) : $queryObject->the_post(); ?>
-			<article <?php post_class('span-3'); ?>>
+			<article <?php post_class('span-3 post-'.($queryObject->current_post+1)); ?>>
 				<?php if(showSecondaryColumnHeader()) : ?>
 				<header>
 					<h1><a href="<?php the_permalink() ?>"><?php truncate_title(get_the_title(), 25); ?></a></h1>
@@ -95,7 +95,7 @@
 		$queryObject = new WP_Query($query);
 		 while ( $queryObject->have_posts() ) : $queryObject->the_post(); ?>
 		
-			<article <?php post_class('span-3'); ?>>
+			<article <?php post_class('span-3 post-'.($queryObject->current_post+1)); ?>>
 				<?php if(showTertiaryColumnHeader()) : ?>
 				<header>
 					<h1><a href="<?php the_permalink() ?>"><?php truncate_title(get_the_title(), 25); ?></a></h1>
