@@ -10,6 +10,8 @@
 		margin-top: -5px;
 		margin-bottom: 5px;
 	}
+	
+	small { font-size:10px; }
 
 	table {
 		border-collapse: separate;
@@ -218,10 +220,18 @@
 			}
 			section {
 				margin-bottom:@row-height;
+				font-size:17px;
+				ul li, ol li, code {
+					font-size:17px;
+					line-height:@row-height*2;
+				} 
 				p {
 					font-size:17px;
 					font-family:@serif;
 					line-height:@row-height*2;
+				}
+				small {
+					font-size:13px;
 				}
 			}
 		}
