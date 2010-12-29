@@ -16,34 +16,41 @@ jQuery(document).ready(function() {
 		jQuery(this).toggleClass('active', false);
 	})
 	
+	jQuery('#content_aside').mouseenter(function(){
+		jQuery(this).toggleClass('active', true);
+	})
+	jQuery('#content_aside').mouseleave(function(){
+		jQuery(this).toggleClass('active', false);
+	})
+	
 	jQuery('#content.home #content_primary section p').wrapInner('<a href="'+jQuery('#content.home #content_primary header a').attr('href')+'" />');
 	jQuery('#content.home #content_secondary a img').unwrap();
 	
 	/*categories*/
-	jQuery("#menu-item-216 a").mouseenter(function() {
-		expandAjaxElement('#menu-item-216', root+'/?page_id='+jQuery(this).attr('rel'), "#categories_pullout", "#categories_pullout #categories_container");
+	jQuery("#menu-primary .topics a").mouseenter(function() {
+		expandAjaxElement('#menu-primary .topics', root+'/?page_id='+jQuery(this).attr('rel'), "#categories_pullout", "#categories_pullout #categories_container");
 	});
 	
-	jQuery('#menu-item-216').mouseleave(function(){
-		contract('#menu-item-216', "#categories_pullout");
+	jQuery('#menu-primary .topics').mouseleave(function(){
+		contract('#menu-primary .topics', "#categories_pullout");
 	});
 	
 	/*follow*/	
-	jQuery('#menu-item-217 a').mouseenter(function(){
-		expandAjaxElement('#menu-item-217', root+'/?page_id='+jQuery(this).attr('rel'));	
+	jQuery('#menu-primary .follow a').mouseenter(function(){
+		expandAjaxElement('#menu-primary .follow', root+'/?page_id='+jQuery(this).attr('rel'));	
 	});
 		
-	jQuery('#menu-item-217').mouseleave(function(){
-		contract('#menu-item-217');			
+	jQuery('#menu-primary .follow').mouseleave(function(){
+		contract('#menu-primary .follow');			
 	});
 		
 	/*work*/
-	jQuery('#menu-item-214 a').mouseenter(function(){
-		expandAjaxElement('#menu-item-214', root+'/?page_id='+jQuery(this).attr('rel'));
+	jQuery('#menu-primary .work a').mouseenter(function(){
+		expandAjaxElement('#menu-primary .work', root+'/?page_id='+jQuery(this).attr('rel'));
 	});
 
-	jQuery('#menu-item-214').mouseleave(function(){
-		contract('#menu-item-214');
+	jQuery('#menu-primary .work').mouseleave(function(){
+		contract('#menu-primary .work');
 	});
 		
 });
@@ -51,6 +58,9 @@ jQuery(document).ready(function() {
 function expandAjaxElement(elem, url, heightElem, heightTarget) {
 	if(req) req.abort();
 	clearTimeout(expandTimeout);
+	
+	console.log(url);
+	
 	if(jQuery(elem).find('.ajax_insert').length) {
 		expand(elem, 300, heightElem, heightTarget);
 		return;
@@ -85,3 +95,57 @@ function expand(elem, time, heightElem, heightTarget) {
 	
 	expandTimeout = setTimeout("jQuery('"+elem+" .ajax_insert').toggleClass('expanded', true);", time);
 }
+
+
+/*Scroll follow
+ * Taken and tweaked from Happy Cog's blog (thanks)
+*/
+
+var scrollID = '#text-23'
+
+jQuery(document).ready(function()
+{
+	jQuery(scrollID).hide();
+});
+jQuery(window).load(function()
+{
+	jQuery(scrollID).fadeIn();
+});
+
+function positionFollowers(e) {
+	scrollerVisualTop = jQuery('#content_main').offset().top;
+	mainVisualTop = jQuery('#content_main').offset().top;
+	scrollerCssTop = mainVisualTop;
+	scrollerVisualBottom = jQuery('article footer').offset().top + jQuery('article footer').height() - jQuery(scrollID).outerHeight();
+	
+	/* Anchor to Bottom */
+	if (jQuery(window).scrollTop() > scrollerVisualBottom)
+	{
+		jQuery(scrollID).css({
+			position: 'absolute',
+			top: jQuery('#content_main').outerHeight(true)+jQuery('article footer').outerHeight(true) - jQuery(scrollID).outerHeight() -30
+		});
+	}
+	
+	/* Scroll with Page */
+	else if (jQuery(window).scrollTop() > scrollerVisualTop)
+	{
+		jQuery(scrollID).css({
+			position: 'fixed',
+			top: 0
+		});
+	}
+	
+	/* Fix to Top */
+	else
+	{		
+		jQuery(scrollID).css({
+			position: 'absolute',
+			top: 0
+		});
+	}
+}
+
+jQuery(window).resize(positionFollowers);
+jQuery(window).scroll(positionFollowers);
+jQuery(window).load(positionFollowers);

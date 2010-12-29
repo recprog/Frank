@@ -4,14 +4,20 @@
 	#content.single {
 		position: relative;
 		margin-top: @row-height;
+		article {
+			header {
+				margin-bottom:@row-height*2;
+			}
+		}
 		#content_primary {
 			#excerpt {
+				padding-bottom:@row-height*2;
+				border-bottom:1px solid rgba(93,80,79,.45);
 				p {
 					padding-top:0;
 					font-size:24px;
 					line-height:@row-height*2;
 					font-style:italic;
-					margin-bottom:(@row-height*2);
 				}
 			}
 			footer {
@@ -20,6 +26,10 @@
 				p {
 					font-size:14px !important;
 				}
+			}
+			#content_main {
+				padding-top:@row-height*2;
+				border-top:1px solid rgba(93,80,79,.1);
 			}
 		}
 		#post_footer .widget {

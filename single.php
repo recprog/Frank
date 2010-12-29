@@ -18,8 +18,8 @@
 					</ul>
 			</header>
 			<div id='excerpt'><?php the_excerpt(); ?></div>
-			<div class='clear'>
-			<div class='span-2'>
+			<div id='content_main' class='clear'>
+			<div id='content_aside' class='span-2'>
 				<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Post Left Aside") ) : ?>
 				<?php endif; ?>
 			</div>	
