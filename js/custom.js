@@ -116,6 +116,9 @@ jQuery(window).load(function()
 });
 
 function positionFollowers(e) {
+	
+	if(!jQuery(scrollID).length) return;
+	
 	scrollerVisualTop = jQuery('#content_main').offset().top;
 	mainVisualTop = jQuery('#content_main').offset().top;
 	scrollerCssTop = mainVisualTop;

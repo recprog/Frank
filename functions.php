@@ -1,11 +1,13 @@
 <?php
 
+/*
 require_once(dirname(__FILE__).'/php/mobile_device_detect/mobile_device_detect.php');
 if(mobile_device_detect(true,false,true,true,true,true,true,false,false)) {
 	$fs_mobile_url = get_bloginfo('template_url').'/stylesheets/css/mobile.css';
 	wp_register_style('fs_mobile_stylesheet', $fs_mobile_url);
 	wp_enqueue_style( 'fs_mobile_stylesheet');
 }
+*/
 
 /*thanks to http://www.nathanrice.net/blog/wordpress-single-post-templates/ */
 /*add_filter('single_template', create_function('$t', 'foreach( (array) get_the_category() as $cat ) { if ( file_exists(TEMPLATEPATH . "/single-{$cat->category_nicename}.php") ) return TEMPLATEPATH . "/single-{$cat->category_nicename}.php"; } return $t;' ));*/

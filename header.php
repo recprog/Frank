@@ -33,6 +33,7 @@
 	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/stylesheets/css/colorbox.css" type="text/css" media="all" />
 	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/stylesheets/css/hacks.css" type="text/css" media="all" />
 	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/stylesheets/css/custom.css" type="text/css" media="all" />
+	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/stylesheets/css/mobile.css" type="text/css" media="all" />
 	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/stylesheets/css/print.css" type="text/css" media="all" />
 	
 	<!--[if IE]>
@@ -76,8 +77,8 @@
 			</div>
 		</div>
 	</header>
-	<div id='sub_header' class='clear'>
+	<!--<div id='sub_header' class='clear'>
 		<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Sub Header") ) : ?>
 			<p><?php bloginfo('description'); ?></p>
 		<?php endif; ?>
-	</div>
+	</div>-->
