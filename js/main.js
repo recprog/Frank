@@ -26,8 +26,6 @@ jQuery(document).ready(function() {
 	bottomY=getBottomY();
 	updateStickyFooter();
 	
-	jQuery('#content #sidebar').clone().appendTo('#content').attr('id', 'faux_sidebar');
-	
 	jQuery(window).resize(function() {
 		updateStickyFooter()
 	});

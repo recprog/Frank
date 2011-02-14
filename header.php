@@ -17,7 +17,6 @@
 	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/stylesheets/css/global.css" type="text/css" media="all" />
 	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/stylesheets/css/forms.css" type="text/css" media="all" />
 	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/stylesheets/css/widgets.css" type="text/css" media="all" />
-	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/stylesheets/css/iconic.css" type="text/css" media="all" />
 	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/stylesheets/css/sprites.css" type="text/css" media="all" />
 	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/stylesheets/css/transitions.css" type="text/css" media="all" />
 	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/stylesheets/css/header.css" type="text/css" media="all" />
@@ -61,24 +60,22 @@
 <body id="page">
 <div id="page_top">
 <div class='wrapper clear'>
-	<header id="page_header" class="span-14 last clear">
+	<header id="page_header" class="span-12 last clear">
 		<hgroup>
 			<h1 id="title"><a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a></h1>
+			<h2 id="description"><?php bloginfo('description'); ?></h2>
 		</hgroup>
 		<nav class='clear'>
 			<div class='menu clear'>
 				<?php wp_nav_menu( array('theme_location' => 'primary', 'container' => '' ) ); ?>	
 			</div> 
 		</nav>
-		<div id='search'>
-			<div id='search_button'><span class='iconic magnifying-glass'></span> <span class='label'>Search</span></div>
-			<div id='search_form'>
-				<?php get_search_form(); ?>
-			</div>
-		</div>
+		
+		
 	</header>
-	<!--<div id='sub_header' class='clear'>
+	
+	
+	<div id='sub_header' class='clear'>
 		<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Sub Header") ) : ?>
-			<p><?php bloginfo('description'); ?></p>
 		<?php endif; ?>
-	</div>-->
+	</div>

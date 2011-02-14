@@ -15,10 +15,10 @@
 		<?php while(have_posts()) : the_post(); ?>
 		<article <?php post_class(); ?> id="<?php the_ID(); ?>">
 			<header>
-					<h1><span class='iconic document'></span><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
+					<h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
 					<ul class='metadata clear'>
-						<li class='time iconic clock'><time datetime="<?php the_time('Y-m-d'); ?>" pubdate><?php the_time('Y-j-n, g:i a'); ?></time></li>											
-						<li class='comments last'><span class='iconic comment'></span> <?php comments_popup_link('No comments', '1 comment', '% comments'); ?></li>
+						<li class='time clock'><time datetime="<?php the_time('Y-m-d'); ?>" pubdate><?php the_time('Y-j-n, g:i a'); ?></time></li>											
+						<li class='comments last'><?php comments_popup_link('No comments', '1 comment', '% comments'); ?></li>
 					</ul>
 			</header>
 			<section class="entry">
@@ -27,8 +27,8 @@
 		</article> <!-- .post -->
 		<?php endwhile; ?>
 		<div class="pagination clear">
-			<div class="span-2 next"><?php next_posts_link( '<span class="iconic arrow-left"></span> Older Entries' ); ?></div>
-			<div class="span-2 last previous"><?php previous_posts_link( 'Newer Entries <span class="iconic arrow-right"></span>' ); ?></div>
+			<div class="span-2 next"><?php next_posts_link( 'Older Entries' ); ?></div>
+			<div class="span-2 last previous"><?php previous_posts_link( 'Newer Entries' ); ?></div>
 		</div>
 		<?php else : ?>
 		<div class="post">

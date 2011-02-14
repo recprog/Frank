@@ -629,7 +629,7 @@ function content($maxLength, $read_more="Read More", $image_width=190, $image_he
 	$content=''; //new
 	$count=0;
 	$truncated=false;
-	$read_more = ' <div class="read-more"><a href="'.get_permalink().'" class="button more">'.$read_more.'</a></div>';
+	$read_more = ' <span class="more"><a href="'.get_permalink().'">'.$read_more.'</a></span>';
 	
 	$matches = preg_match_all('{</?([a-z]+)[^>]*>|&#?[a-zA-Z0-9]+;}', $html, $match, PREG_OFFSET_CAPTURE, $position);
 	
@@ -646,7 +646,7 @@ function content($maxLength, $read_more="Read More", $image_width=190, $image_he
 			$content.=substr($str, 0, $maxLength - $printedLength);
 			if(!$truncated) 
 			{
-				$content.='&hellip;'.$read_more;
+				$content.='&hellip; '.$read_more;
 				$truncated=true;
 			}
             $printedLength = $maxLength;
@@ -748,7 +748,7 @@ function content($maxLength, $read_more="Read More", $image_width=190, $image_he
 	
 	
 	$pattern = '/\< *[img][^\>]* src *= *[\"\']{0,1}([^\"\'\ >]*)/i';
-	$replacement = '<img src="' . get_bloginfo("template_directory") . '/php/phpthumb/phpThumb.php?src=' . '$1' . '&w=190&h=120&zc=1&q=80';
+	$replacement = '<img src="' . get_bloginfo("template_directory") . '/php/phpthumb/phpThumb.php?src=' . '$1' . '&w='.$image_width.'&h='.$image_height.'&zc=1&q='.$image_quality;
 
 	$pagecontent = preg_replace($pattern, $replacement, $content);
 	

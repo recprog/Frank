@@ -6,7 +6,7 @@
 ?>
 <?php get_header(); ?>
 <div id="content" class="archive clear">
-	<div id="content_primary" class='span-11'>
+	<div id="content_primary" class='span-9'>
 	<?php if(have_posts()) : ?>
 	<header>
 	<?php $post = $posts[0]; // Hack. Set $post so that the_date() works. ?>
@@ -28,22 +28,36 @@
 	<h2>Click on one of the items below to go to the post</h2>
 	</header>
 		<?php while(have_posts()) : the_post(); ?>
-		<article <?php post_class(); ?> id="<?php the_ID(); ?>">
-			<header>
-					<h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
-					<ul class='metadata clear'>
-						<li class='time'><span class='iconic calendar'></span> <time datetime="<?php the_time('Y-m-d'); ?>" pubdate><?php the_time('Y-j-n, g:i a'); ?></time></li>											
-						<li class='comments last'><span class='iconic comment'></span> <?php comments_popup_link('No comments', '1 comment', '% comments'); ?></li>
+			<article <?php post_class('span-9 post-'.($queryObject->current_post+1)); ?>>
+				<header>
+					<h1><a href="<?php the_permalink() ?>"><?php truncate_title(get_the_title(), 60); ?></a></h1>
+				</header>
+				<div class='clear'>
+				<div class='post-info span-2'>
+					<dl>
+						<dt>Posted</dt>
+						<dd><time datetime="<?php the_time('Y-m-d'); ?>" pubdate><?php echo human_time_diff(get_the_time('U'), current_time('timestamp')) . ' ago'; ?></time></dd>
+						<dt>Filed Under</dt>
+						<dd><?php the_category('</dd><dd>'); ?></dd>
+						<dt>Tagged</dt>
+						<dd><?php the_tags('','<dd>','</dd>'); ?></dd>
+					</dl>
+				</div>
+				<section class='span-7 last'>
+					<?php  $content = content(80, 'Read On&hellip;', 555, 200); ?>
+				</section>
+				</div>
+				<footer class='prefix-2'>
+					<ul class='metadata clear'>										
+						<li class='comments'><?php comments_popup_link('0', '1', '%'); ?></li>
+						<li class='permalink last'><a href='<?php the_permalink(); ?>'>Link</a></li>
 					</ul>
-			</header>
-			<section class="entry">
-				<?php the_content('Read the rest of this post...'); ?>
-			</section>
-		</article> <!-- .post -->
+				</footer>
+			</article> <!-- .post -->
 		<?php endwhile; ?>
 		<div class="pagination clear">
-			<div class="span-2 next"><?php next_posts_link( '<span class="iconic arrow-left"></span> Older Entries' ); ?></div>
-			<div class="span-2 last previous"><?php previous_posts_link( 'Newer Entries <span class="iconic arrow-right"></span>' ); ?></div>
+			<div class="span-2 next"><?php next_posts_link( 'Older Entries' ); ?></div>
+			<div class="span-2 last previous"><?php previous_posts_link( 'Newer Entries' ); ?></div>
 		</div>
 		<?php else : ?>
 		<div class="post">

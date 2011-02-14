@@ -2,10 +2,9 @@
 
 @media screen, projection {
 	#page_header { 
-		border-bottom:1px dotted @color_midtone;
 		position: relative;
 		h1 {
-			font-size:16px;
+			font-size:@medium;
 			margin-bottom:5px;
 			a {
 				text-decoration:none;
@@ -44,7 +43,7 @@
 						text-decoration: none;
 						height:(@row-height);
 						color: @color_off_black;
-						font-size: 11px;
+						font-size:@x-small;
 						padding-top:0;
 					
 					}
@@ -62,14 +61,14 @@
 	#search {
 		float:right;
 		#search_button { display:none; }
-		#search_form input { width:190px; font-size:11px; }
+		#search_form input { width:190px; font-size:@x-small; }
 	}
 
 	#sub_header {
 		margin-top:5px;
 		border-bottom:@border-break;
 		p {
-			font-size:11px;
+			font-size:@x-small;
 			color:@color_midtone;
 			line-height:@row-height;
 			margin-top:0;

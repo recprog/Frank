@@ -2,21 +2,30 @@
 
 @media screen, projection {
 	#content.single {
+		aside {
+			margin-top:@row-height*4;
+		}
 		position: relative;
 		margin-top: @row-height;
 		article {
 			header {
-				margin-bottom:@row-height*2;
+				margin-bottom:@row-height;
+				h1 {
+					font-weight:normal;
+					.font-size-large;
+					color:@color_dark;
+				}
 			}
 		}
 		#content_primary {
 			#excerpt {
 				padding-bottom:@row-height*2;
-				border-bottom:1px solid rgba(93,80,79,.45);
+				color:@color_midtone;
+				
 				p {
 					padding-top:0;
-					font-size:24px;
-					line-height:@row-height*2;
+					.font-size-xx-large;
+					font-family:@serif;
 					font-style:italic;
 				}
 			}
@@ -29,20 +38,15 @@
 				}
 			}
 			#content_main {
-				padding-top:@row-height*2;
-				border-top:1px solid rgba(93,80,79,.1);
+				margin-top:@row-height*2;
+				
 			}
 		}
 		#post_footer .widget {
 			float:left;
-			margin-right:20px;
-			width:190px;
+			margin-right:40px;
+			.columns(3);
 			margin-bottom:20px;
-		}
-
-		#post_footer .widget:nth-child(3n+1) {
-			width:330px;
-			clear:left;
 		}
 
 		#post_footer .widget:nth-child(3n) {

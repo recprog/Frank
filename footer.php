@@ -21,12 +21,6 @@
 	</div>
 	
 </div>
-<div id="sticky_footer">
-	<div class='wrapper clear'>
-	<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Sticky Footer") ) : ?>
-	<?php endif; ?>
-	</div>
-</div>
 <?php wp_footer(); ?>
 </body>
 </html>

@@ -15,13 +15,20 @@
 <?php if ($comments) : ?>
 	<ul id="comments" class='incomplete'>
 	<?php foreach ($comments as $comment) : ?>
-		<li class="comment span-11 last clear">
-			<div class="gravatar span-1"><?php echo get_avatar( $comment, 50 ); ?></div>
-			<div class="content span-10 last">
+		<li class="comment span-12 last clear">
+			<div class="comment-info span-2">
+				<dl class='metadata'>
+					<dt class='author'>By</dt>
+					<dd class='author' id="vcard-<?php comment_ID() ?>"><a class="url fn" href="<?php comment_author_url(); ?>"><?php comment_author(); ?></a></dd>
+					<dt class='time'>Posted</dt>
+					<dd class='time'><?php echo human_time_diff(get_comment_date('U'), current_time('timestamp')) . ' ago'; ?></dd> 
+				</dl>
+				<?php edit_comment_link('edit'); ?>
+			</div>
+			<div class="content span-7 suffix-3 last">
 				<div class='copy'><?php if ($comment->comment_approved == '0') : echo "<span id='comment_moderation'>Your comment is awaiting moderation.</span>"; endif; ?>
 				<?php comment_text() ?>	
 				</div>
-				<div class='metadata'><span id="vcard-<?php comment_ID() ?>" class="vcard"><a class="url fn" href="<?php comment_author_url(); ?>"><?php comment_author(); ?></a></span> at <span><?php comment_date('Y-j-n') ?> <?php comment_time() ?></span> <span class='edit'><?php edit_comment_link('edit'); ?></span></div>
 			</div>
 		</li>
 		<?php $oddcomment = ( empty( $oddcomment ) ) ? 'class="alt" ' : ''; ?>

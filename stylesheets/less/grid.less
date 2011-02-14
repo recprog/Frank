@@ -1,6 +1,6 @@
 @import "variables";
 .wrapper { 
-	width: (@column-width*14) + (@gutter-width*13); 
+	width: (@column-width*12) + (@gutter-width*11); 
 	position: relative;
  	margin:0 auto !important; 
 	display: block;
@@ -8,14 +8,14 @@
 
 .wrapper.showgrid { background-image: url(../images/grid_14col.png); }
 
-div.span-1,div.span-2,div.span-3,div.span-4,div.span-5,div.span-6,div.span-7,div.span-8,div.span-9,div.span-10,div.span-11,div.span-12,div.span-13,div.span-14 {
+div.span-1,div.span-2,div.span-3,div.span-4,div.span-5,div.span-6,div.span-7,div.span-8,div.span-9,div.span-10,div.span-11,div.span-12{
 	float: left;
 	margin-right: @gutter-width;
 }
 
 div.last { margin-right: 0; }
 
-section.span-1,section.span-2,section.span-3,section.span-4,section.span-5,section.span-6,section.span-7,section.span-8,section.span-9,section.span-10,section.span-11,section.span-12,section.span-13,section.span-14 {
+section.span-1,section.span-2,section.span-3,section.span-4,section.span-5,section.span-6,section.span-7,section.span-8,section.span-9,section.span-10,section.span-11,section.span-12 {
 	float: left;
 	margin-right: @gutter-width;
 }
@@ -34,8 +34,6 @@ section.last { margin-right: 0; }
 .span-10 { width: (@column-width*10) + (@gutter-width*9); }
 .span-11 { width: (@column-width*11) + (@gutter-width*10); }
 .span-12 { width: (@column-width*12) + (@gutter-width*11); }
-.span-13 { width: (@column-width*13) + (@gutter-width*12); }
-.span-14 { width: (@column-width*14) + (@gutter-width*13); }
 .suffix-1 { padding-right: @column-width + @gutter-width; }
 .suffix-2 { padding-right: (@column-width*2) + (@gutter-width*2); }
 .suffix-3 { padding-right: (@column-width*3) + (@gutter-width*3); }
@@ -47,8 +45,6 @@ section.last { margin-right: 0; }
 .suffix-9 { padding-right: (@column-width*9) + (@gutter-width*9); }
 .suffix-10 { padding-right: (@column-width*10) + (@gutter-width*10); }
 .suffix-11 { padding-right: (@column-width*11) + (@gutter-width*11); }
-.suffix-12 { padding-right: (@column-width*12) + (@gutter-width*12); }
-.suffix-13 { padding-right: (@column-width*13) + (@gutter-width*13); }
 .prefix-1 { padding-left: @column-width + @gutter-width; }
 .prefix-2 { padding-left: (@column-width*2) + (@gutter-width*2); }
 .prefix-3 { padding-left: (@column-width*3) + (@gutter-width*3); }
@@ -60,5 +56,3 @@ section.last { margin-right: 0; }
 .prefix-9 { padding-left: (@column-width*9) + (@gutter-width*9); }
 .prefix-10 { padding-left: (@column-width*10) + (@gutter-width*10); }
 .prefix-11 { padding-left: (@column-width*11) + (@gutter-width*11); }
-.prefix-12 { padding-left: (@column-width*12) + (@gutter-width*12); }
-.prefix-13 { padding-left: (@column-width*13) + (@gutter-width*13); }

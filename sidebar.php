@@ -4,19 +4,7 @@
  * @subpackage Franklin_Street
  */
 ?>
-	<aside id="sidebar" class='span-3 clear last' role="complementary">
-		
-		<div class="container span-6 clear last">
-			<div class='span-3'>
-				<?php if ( !function_exists('dynamic_sidebar')
-				|| !dynamic_sidebar('Article Sidebar: Column 2') ) : ?>
-				
-				<p>Column 2</p>
-				
-				<?php endif; ?>
-			</div>
-			<div class='span-3 last'>		
-					
+	<aside id="sidebar" class='span-3 last' role="complementary">	
 				<?php if ( !function_exists('dynamic_sidebar')
 				|| !dynamic_sidebar('Article Sidebar: Column 1') ) : ?>
 				<p>Column 1</p>	
@@ -52,6 +40,4 @@
 				<?php }?>
 				
 				<?php endif; ?>
-			</div>
-		</div>
 	</aside>
