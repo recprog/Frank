@@ -6,6 +6,8 @@
 }
 
 @dotted-line-dark:url(data:image/gif;base64,R0lGODlhBQABAIAAAD0wLwAAACH5BAHoAwEALAAAAAAFAAEAAAIDRB4FADs=);
+@dotted-line-midtone:url(data:image/gif;base64,R0lGODlhBQABAIAAAF1QTwAAACH5BAHoAwEALAAAAAAFAAEAAAIDRB4FADs=);
+@dotted-line-light:url(data:image/gif;base64,R0lGODlhBQABAIAAAJmEggAAACH5BAHoAwEALAAAAAAFAAEAAAIDRB4FADs=);
 
 @media screen, projection {
 	#ad {
@@ -17,6 +19,15 @@
 		p {
 			font-family:@serif;
 			.font-size-small;
+		}
+	}
+	
+	.post .metadata {
+		.author {
+			display:none;
+		}
+		dt.time {
+			margin-top:0;
 		}
 	}
 	
@@ -42,7 +53,7 @@
 
 	#content.home {
 		.content {
-			margin:@row-height*2 0;
+			margin:@row-height*2 0 @row-height 0;
 		}
 		
 		.content.halfandhalf .content-header {
@@ -159,29 +170,31 @@
 			text-decoration:none;
 			.sprite.fork {
 				float:left;
-				margin-left:20px;
+				margin-left:15px;
 			}
 			.content {
 				display:block;
 				float:left;
-				.columns(3);
-				margin-left:40px;
-				padding-top:40px;
+				width:250px;
+				margin-left:23px;
+				padding-top:@row-height*2;
 				padding-right:10px;
 				.header {
 					font-family:@sans-serif;
 					display:block;
-					font-size:@large;
-					line-height:20px;
+					.font-size-large;
 				}
 				.caption {
 					display:block;
-					font-size:@x-small;
-					margin-top:15px;
+					.font-size-x-small;
+					margin-top:@row-height;
 					font-style:italic;
 				}
 			}
 		}
+	}
+	#footer_main_promo:hover {
+		background-color:@color_accent_alt !important;
 	}
 
 	/*footer recommended*/
@@ -282,7 +295,7 @@
 
 #page_header { 
 	margin-bottom:@row-height;
-	padding-top:5px;
+	padding-top:@row-height;
 	border:none;
 	h1 {  
 		.reset-dimensions;
@@ -382,7 +395,7 @@
 					width:45px;
 					height:45px;
 					border-radius:22.5px;
-					margin-top:55px;
+					margin-top:50px;
 					position:fixed;
 					margin-left:255px;
 					a {
@@ -398,34 +411,10 @@
 					margin-right: 0;
 				}
 				li.rss:hover, li.twitter:hover {
-					background-color:@color_dark;
+					background-color:@color_accent_alt;
 				}		
 			}
 		}
 	}
 
-}
-
-/*temp*/
-
-#sub-header {
-	padding-bottom:5px;
-}
-
-.oneup {
-	section {
-		
-	}
-}
-
-.halfandhalf {	
-		article {
-			img {
-				.default-shadow;
-			}
-		}	
-}
-
-.fourup, .twoup {
-	display:none;
 }

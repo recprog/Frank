@@ -4,10 +4,23 @@
 	#comments_container
 	{
 		margin-top:(@row-height)*4;	
-		#comments_ajax	{
-			overflow:hidden;
-			height:0;
+		
+		.no_comments {
+			margin-top:@row-height*2;
+			.font-size-xx-large;
+			font-family:@serif;
+			font-style:italic;
+			color:@color_midtone;
 		}
+		
+		.comments_closed {
+			margin-top:@row-height*2;
+			.font-size-large;
+			font-family:@serif;
+			font-style:italic;
+			color:@color_midtone;
+		}
+		
 		header {
 			h1 {
 				margin-bottom:0;

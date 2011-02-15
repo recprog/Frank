@@ -1,12 +1,12 @@
-@color_accent: 			#ff1e00;
+@color_accent: 			#ea0000;
 @color_highlight: 		#fdfcfc;
 @color_light: 			#f0eceb;
 @color_midtone: 		#5d504f;
 @color_dark: 			#3d302f;
 @color_off_black: 		#050000;
 
-@color_midtone_light:	#766664;
-@color_accent_alt: 		#ad1400;
+@color_midtone_light:	#998482;
+@color_accent_alt: 		#ff1e00;
 
 @sans-serif:'Helvetica Neue', Arial, Helvetica, Geneva, sans-serif;
 @serif:Georgia, "Times New Roman", Times, serif;
@@ -21,6 +21,7 @@
 @heavy:800;
 @black:900;
 
+@xxx-large:38px;
 @xx-large:28px;
 @x-large:24px;
 @large:20px;
@@ -28,6 +29,12 @@
 @small:13px;
 @x-small:11px;
 @xx-small:10px;
+@xxx-small:9px;
+
+.font-size-xxx-large {
+	font-size:@xxx-large;
+	line-height:47px;
+}
 
 .font-size-xx-large {
 	font-size:@xx-large;
@@ -65,7 +72,7 @@
 }
 
 .default-shadow {
-	.drop-shadow(0px, 0px, 8px, rgba(18, 7, 6,0.25));
+	.drop-shadow(0px, 0px, 8px, rgba(18, 7, 6,0.3));
 }
 
 @row-height:		15px;

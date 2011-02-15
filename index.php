@@ -84,6 +84,7 @@
 				</div>
 				<section class='span-7 last'>
 					<?php  $content = content(80, 'Read On&hellip;', 555, 200, 70); ?>
+					<?php //the_content(); ?>
 				</section>
 				</div>
 				<?php if(showSecondaryColumnFooter()) : ?>

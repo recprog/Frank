@@ -11,6 +11,11 @@
 	$oddcomment = 'class="alt" ';
 ?>
 <!-- Start editing here. -->
+<div id='comments_container' class='clear'>
+	<header>
+		<h1>The Discussion</h1>
+		<h2><?php comments_number('No Comments', 'One Comment', '% Comments' );?> on &#8220;<?php the_title(); ?>&#8221;</h2>
+	</header>
 <div id='comments_content'>
 <?php if ($comments) : ?>
 	<ul id="comments" class='incomplete'>
@@ -38,9 +43,9 @@
 	<?php else : // this is displayed if there are no comments so far ?>
 
 		<?php if ('open' == $post->comment_status) : ?>
-			<h3 id="no_comments">Be the first to leave a comment. Don't be shy.</h3>
+			<p class="no_comments">Be the first to leave a comment. Don't be shy.</p>
 		<?php else : ?>
-		<p class="no_comments">Comments are closed.</p>
+		<p class="comments_closed">Comments are closed.</p>
 	<?php endif; ?>
 <?php endif; ?>
 
@@ -90,4 +95,5 @@
 		</form>	
 </div>
 	<?php endif; endif; ?>
+</div>
 </div>
