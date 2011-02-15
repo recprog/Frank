@@ -15,6 +15,7 @@
 			h2 {
 				margin-top:0;
 				font-family:@serif;
+				font-style:italic;
 			}
 		}
 	
@@ -83,7 +84,7 @@
 					.reset-dimensions;
 					input.textinput {
 						margin: 0;
-						font-size: 11px !important;
+						.font-size-x-small;
 						padding: 2px;
 						height: (@row-height);
 						width: 184px;
@@ -93,7 +94,7 @@
 			textarea {
 				border: 1px solid #000;
 				margin: 0;
-				font-size: 11px !important;
+				.font-size-small;
 				height: 127px;
 				padding: 2px 4px;
 				width: 530px;
@@ -108,11 +109,11 @@
 			header {
 				margin-bottom: @row-height;
 				h1 {
-					font-size:@medium;
+					.font-size-large;
 				}
 
-				p.loggedin {
-					font-size: 11px !important;
+				.loggedin {
+					font-style:italic;
 				}
 			}
 		}

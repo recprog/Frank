@@ -5,7 +5,8 @@
 .font-size-small{font-size:13px;line-height:19px;}
 .font-size-x-small{font-size:11px;line-height:14px;}
 .font-size-xx-small{font-size:10px;line-height:12px;}
+.default-shadow{-moz-box-shadow:0px 0px 8px rgba(18, 7, 6, 0.25);-webkit-box-shadow:0px 0px 8px rgba(18, 7, 6, 0.25);box-shadow:0px 0px 8px rgba(18, 7, 6, 0.25);}
 .reset-dimensions{margin:0;padding:0;}
 .incomplete{background-color:rgba(255, 0, 255, 0);}
 .show-bounds{background-color:rgba(255, 255, 0, 0.5);}
-@media screen, projection{input[type=text],textarea{font-size:11px;border:1px solid #5d504f;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;color:#5d504f;} input[type=submit]{font-size:11px;background:none;border:0;padding:6px 10px 6px 10px;cursor:pointer;}}
+@media screen, projection{input[type=text],textarea{font-size:13px;line-height:19px;border:1px solid #5d504f;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;color:#5d504f;} input[type=submit]{font-size:13px;line-height:19px;border:0;padding:6px 10px 6px 10px;cursor:pointer;}}

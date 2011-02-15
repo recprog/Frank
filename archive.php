@@ -34,13 +34,15 @@
 				</header>
 				<div class='clear'>
 				<div class='post-info span-2'>
-					<dl>
-						<dt>Posted</dt>
-						<dd><time datetime="<?php the_time('Y-m-d'); ?>" pubdate><?php echo human_time_diff(get_the_time('U'), current_time('timestamp')) . ' ago'; ?></time></dd>
-						<dt>Filed Under</dt>
-						<dd><?php the_category('</dd><dd>'); ?></dd>
-						<dt>Tagged</dt>
-						<dd><?php the_tags('','<dd>','</dd>'); ?></dd>
+					<dl class='metadata'>
+						<dt class='author'>By</dt>
+						<dd class='author'><?php the_author_link(); ?></dd>
+						<dt class='time'>Posted</dt>
+						<dd class='time'><time datetime="<?php the_time('Y-m-d'); ?>" pubdate><?php echo human_time_diff(get_the_time('U'), current_time('timestamp')) . ' ago'; ?></time></dd>
+						<dt class='categories'>Filed Under</dt>
+						<dd class='categories'><?php the_category('</dd><dd>'); ?></dd>
+						<dt class='tags'>Tagged</dt>
+						<dd class='tags'><?php the_tags('','<dd>','</dd>'); ?></dd>
 					</dl>
 				</div>
 				<section class='span-7 last'>
@@ -48,9 +50,10 @@
 				</section>
 				</div>
 				<footer class='prefix-2'>
-					<ul class='metadata clear'>										
-						<li class='comments'><?php comments_popup_link('0', '1', '%'); ?></li>
-						<li class='permalink last'><a href='<?php the_permalink(); ?>'>Link</a></li>
+					<ul class='metadata clear'>								
+						<li class='comments'><?php comments_popup_link('No comments', '1 comment', '% comments'); ?></li>	
+						<li class='tweet'>Retweet This Post</li>
+						<?php if(!showSecondaryColumnHeader()) : ?><li class='permalink last'><a href='<?php the_permalink(); ?>'>Link</a></li><?php endif; ?>
 					</ul>
 				</footer>
 			</article> <!-- .post -->

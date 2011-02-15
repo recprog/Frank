@@ -5,7 +5,8 @@
 .font-size-small{font-size:13px;line-height:19px;}
 .font-size-x-small{font-size:11px;line-height:14px;}
 .font-size-xx-small{font-size:10px;line-height:12px;}
+.default-shadow{-moz-box-shadow:0px 0px 8px rgba(18, 7, 6, 0.25);-webkit-box-shadow:0px 0px 8px rgba(18, 7, 6, 0.25);box-shadow:0px 0px 8px rgba(18, 7, 6, 0.25);}
 .reset-dimensions{margin:0;padding:0;}
 .incomplete{background-color:rgba(255, 0, 255, 0);}
 .show-bounds{background-color:rgba(255, 255, 0, 0.5);}
-@media screen, projection{#sidebar{opacity:0.5;width:215px;float:left;}#sidebar h3{font-weight:bold;font-size:13px;line-height:19px;margin-bottom:5px;} #sidebar h3:first-child{margin-top:0 !important;} #sidebar .container{padding-top:15px;} #sidebar:hover{opacity:1;}}
+@media screen, projection{#sidebar{margin-top:60px;opacity:0.75;width:215px;float:left;}#sidebar h3{font-weight:bold;font-size:13px;line-height:19px;margin-bottom:5px;} #sidebar h3:first-child{margin-top:0 !important;} #sidebar .container{padding-top:15px;} #sidebar:hover{opacity:1;}}

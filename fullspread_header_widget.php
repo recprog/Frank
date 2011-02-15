@@ -3,12 +3,15 @@
  * @package WordPress
  * @subpackage Franklin_Street
  */
+/*
+Template Name: Full-spread w/ Header Widget Template
+*/
 ?>
 <?php get_header(); ?>
-<div id="content" class="page clear">
-	<div id="content_primary" class="span-9">
-		<?php if(have_posts()) : while(have_posts()) : the_post(); ?>
-		<article class="post" id="p<?php the_ID(); ?>">
+<div id="content" class="page fullspread header-widget clear">
+	<div id="content_primary">
+		<?php if(have_posts()) : while(have_posts()) : the_post(); ?>		
+		<article class="post" id="p<?php the_ID(); ?>">	
 			<header>
 				<h1><?php the_title(); ?></h1>
 			</header>
@@ -18,6 +21,5 @@
 		</article>
 		<?php endwhile; endif; ?>
 	</div>
-	<?php get_sidebar(); ?>
 </div>
 <?php get_footer(); ?>

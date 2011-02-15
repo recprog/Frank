@@ -100,7 +100,7 @@
 
 		</div>
 		<div class='widgets span-3 last'>
-			<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Sub Header") ) : ?>
+			<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Half and Half Aside") ) : ?>
 				<p><?php bloginfo('description'); ?></p>
 			<?php endif; ?>
 		</div>

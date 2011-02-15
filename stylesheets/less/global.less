@@ -213,8 +213,12 @@
 
 	#content.home, #content.single, #content.page, #content.archive {
 		
+		#content_primary {
+			margin-top:@row-height;
+			
+		}
+		
 		article {
-			margin:@row-height 0;
 			header {
 				margin-bottom:@row-height;
 				h1 {
@@ -246,6 +250,17 @@
 			}
 		}
 	}
+	
+	
+	#content.home, #content.archive {
+		article:first-child {
+			margin-top:@row-height;
+		}
+		article:last-child {
+			margin-bottom:@row-height;
+		}
+	}
+	
 
 	.pagination {
 		margin:@row-height 0;
@@ -276,14 +291,21 @@
 		word-spacing:5px;
 		a {
 			padding:4px 8px;
-			.drop-shadow(1px, 1px, 0px, @color_dark);
+		
 			text-decoration:none;
 			word-spacing:0;
 		}
 		a:hover { 
 			background:@color_midtone; 
 			color:@color_highlight;
-			.drop-shadow(1px, 1px, 1px, @color_off_black);
+			
 		}
+	}
+	
+	.button {
+		display:block;
+		background:@color_dark;
+		color:@color_light;
+		.default-shadow;
 	}
 }

@@ -44,8 +44,8 @@
 		}
 		.widget {
 			float:left;
-			margin-right:20px;
-			width:190px;
+			margin-right:40px;
+			.columns(3);
 			margin-bottom:(@row-height*2);
 			color:@color_light;
 			h3 {
@@ -60,11 +60,7 @@
 				margin:5px 0;
 			}
 		}
-		.widget:nth-child(4n+1) {
-			width:330px;
-			clear:left;
-		}
-
+		
 		.widget:nth-child(4n) {
 			margin-right:0;
 		}

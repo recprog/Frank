@@ -12,15 +12,31 @@
 	
 	}
 	
+	#intro {
+		margin-bottom:@row-height;
+		p {
+			font-family:@serif;
+			.font-size-small;
+		}
+	}
+	
 	body {
 		border-top:3px solid @color_off_black;
 	}
 	
 	#webbynode_promo {
+		margin-top:@row-height;
 		small {
-			font-size:10px;
+			.font-size-xx-small;
 			display:block;
 			margin-bottom:2px;
+		}
+		#webbynode_promo_link {
+			display:block;
+			width:100px;
+			height:20px;
+			.sprite-background(-180px, -370px);
+			text-indent:-99999px;
 		}
 	}
 
@@ -121,6 +137,7 @@
 	}
 
 	#page_heel {
+		padding:@row-height 0;
 		.widget {
 			margin-bottom:1px;
 			ul {
@@ -178,66 +195,60 @@
 	}
 
 	/*footer follow*/
-	#text-17 {
+	#text-17.widget {
+		.columns(6);
 		#footer_follow_list {
 			.reset-dimensions;
-			margin-top:@row-height;
 			list-style:none;
 
 			li {
 				.reset-dimensions;
 				float:left;
 				margin-right:20px;
-				margin-bottom:20px;
-			
+				a:hover {
+					background:@color_highlight;
+				}
 				a {
-					border-radius:2px;
+					background:@color_light;
 					position:relative;
-					width:50px;
-					height:50px;
+					width:45px;
+					height:45px;
+					border-radius:22.5px;
 					text-indent:-9999px;
 					.sprite {
 						position:absolute;
 						top:50%;
 						left:50%;
 					}
-					.vimeo {
-						margin-left:-15px;
-						margin-top:-13px;
-					}
-					.twitter {
-						margin-left:-11px;
-						margin-top:-15px;
-					}
-					.tumblr {
-						margin-left:-9px;
-						margin-top:-15px;
-					}
-					.facebook {
+					.vimeo-dark-15 {
 						margin-left:-7px;
-						margin-top:-15px;
+						margin-top:-6px;
 					}
-					.flickr {
-						margin-left:-15px;
+					.twitter-dark-15 {
+						margin-left:-5px;
 						margin-top:-7px;
 					}
-					.git {
-						margin-left:-14px;
-						margin-top:-15px;
+					.tumblr-dark-15 {
+						margin-left:-4px;
+						margin-top:-7px;
 					}
-					.friendfeed {
-						margin-left:-14px;
-						margin-top:-15px;
+					.facebook-dark-15 {
+						margin-left:-3px;
+						margin-top:-7px;
+					}
+					.flickr-dark-15 {
+						margin-left:-7px;
+						margin-top:-3px;
+					}
+					.git-dark-15 {
+						margin-left:-7px;
+						margin-top:-7px;
+					}
+					.friendfeed-dark-15 {
+						margin-left:-7px;
+						margin-top:-7px;
 					}
 				}
-			}
-
-			li:nth-child(3n) {
-				margin-right:0;
-			}
-		
-			li:nth-child(4) {
-				margin-bottom:0;
 			}
 		}
 	}
@@ -297,11 +308,14 @@
 		color:@color_dark;
 	}
 	nav {
+		
 		width:215px;	
 		border:0;
 		.reset-dimensions;
+		margin-top:42px;
 		background:none;
 		float:right;
+		position:relative;
 		.menu {
 			.reset-dimensions;
 			ul {
@@ -310,6 +324,7 @@
 				.reset-dimensions;
 				display:block;
 				width:215px;
+				position:relative;
 				ul {
 					display:none;
 				}
@@ -326,18 +341,64 @@
 						height:(@row-height);
 						color: @color_dark;
 						font-size:@x-small;
-						width:40px;
+						width:45px;
 						padding:0;
-						padding-left:0px;
 						
 					}
 					a:hover {
-						color:@color_highlight;
-						background:@color_dark;
+						color:@color_midtone;
+					}
+				}
+				li.rss {
+					background:@color_accent;
+					.default-shadow;
+					
+					width:45px;
+					height:45px;
+					border-radius:22.5px;
+					margin-top:-15px;
+					a {
+						border:0;
+						width:15px;
+						height:15px;
+						.sprite-background(-275px, -125px);
+						text-indent:-99999px;
+						padding:15px;
 					}
 				}
 				li:last-child {
 					margin-right: 0;
+				}
+				/*testing*/
+				
+				li.rss {
+					position:fixed;
+					margin-left:255px;
+				}
+				
+				li.twitter {
+					background:@color_accent;
+					.default-shadow;
+					width:45px;
+					height:45px;
+					border-radius:22.5px;
+					margin-top:55px;
+					position:fixed;
+					margin-left:255px;
+					a {
+						border:0;
+						width:15px;
+						height:15px;
+						.sprite-background(-43px, -125px);
+						text-indent:-99999px;
+						padding:15px;
+					}
+				}
+				li:last-child {
+					margin-right: 0;
+				}
+				li.rss:hover, li.twitter:hover {
+					background-color:@color_dark;
 				}		
 			}
 		}
@@ -358,10 +419,11 @@
 }
 
 .halfandhalf {	
-		img {
-			.drop-shadow(0px, 0px, 6px, rgba(18, 7, 6,0.4));
-			
-		}
+		article {
+			img {
+				.default-shadow;
+			}
+		}	
 }
 
 .fourup, .twoup {
