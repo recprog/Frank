@@ -25,6 +25,8 @@
 						<dt class='tags'>Tagged</dt>
 						<dd class='tags'><?php the_tags('','<dd>','</dd>'); ?></dd>
 					</dl>
+					<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Post Left Aside') ) : ?>
+					<?php endif; ?>
 				</div>
 			<section class='span-7 last'>
 				<?php the_content(); ?>

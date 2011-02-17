@@ -70,11 +70,7 @@
 				<?php wp_nav_menu( array('theme_location' => 'primary', 'container' => '' ) ); ?>	
 			</div> 
 		</nav>
-		
-		
 	</header>
-	
-	
 	<div id='sub_header' class='clear'>
 		<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Sub Header") ) : ?>
 		<?php endif; ?>

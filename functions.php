@@ -1,14 +1,5 @@
 <?php
 
-/*
-require_once(dirname(__FILE__).'/php/mobile_device_detect/mobile_device_detect.php');
-if(mobile_device_detect(true,false,true,true,true,true,true,false,false)) {
-	$fs_mobile_url = get_bloginfo('template_url').'/stylesheets/css/mobile.css';
-	wp_register_style('fs_mobile_stylesheet', $fs_mobile_url);
-	wp_enqueue_style( 'fs_mobile_stylesheet');
-}
-*/
-
 /*thanks to http://www.nathanrice.net/blog/wordpress-single-post-templates/ */
 /*add_filter('single_template', create_function('$t', 'foreach( (array) get_the_category() as $cat ) { if ( file_exists(TEMPLATEPATH . "/single-{$cat->category_nicename}.php") ) return TEMPLATEPATH . "/single-{$cat->category_nicename}.php"; } return $t;' ));*/
 
@@ -498,94 +489,9 @@ if ( function_exists('register_sidebar') )
 	'after_title' => '</h3>',
 	));
 
-function myFilter($query) {  
-if ($query->is_feed) {  
-$query->set('cat','-4477'); //Don't forget to change the category ID =^o^=  
-}  
-return $query;  
-}
-
-/** 
-* word-sensitive substring function with html tags awareness 
-* @param text The text to cut 
-* @param len The maximum length of the cut string 
-* @returns string 
-**/ 
-function substrws( $text, $len=180 ) { 
-
-    if( (strlen($text) > $len) ) { 
-
-        $whitespaceposition = strpos($text," ",$len)-1; 
-
-        if( $whitespaceposition > 0 ) 
-            $text = substr($text, 0, ($whitespaceposition+1)); 
-
-        // close unclosed html tags 
-        if( preg_match_all("|<([a-zA-Z]+)>|",$text,$aBuffer) ) { 
-
-            if( !empty($aBuffer[1]) ) { 
-
-                preg_match_all("|</([a-zA-Z]+)>|",$text,$aBuffer2); 
-
-                if( count($aBuffer[1]) != count($aBuffer2[1]) ) { 
-
-                    foreach( $aBuffer[1] as $index => $tag ) { 
-
-                        if( empty($aBuffer2[1][$index]) || $aBuffer2[1][$index] != $tag) 
-                            $text .= '</'.$tag.'>'; 
-                    } 
-                } 
-            } 
-        } 
-    } 
-
-    return $text; 
-}  
-
-/**
-* word-sensitive substring function with html tags awareness
-* @param text The text to cut
-* @param len The maximum length of the cut string
-* @returns string
-**/
-function mb_substrws( $text, $len=180 ) {
-
-    if( (mb_strlen($text) > $len) ) {
-
-        $whitespaceposition = mb_strpos($text," ",$len)-1;
-
-        if( $whitespaceposition > 0 ) {
-            $chars = count_chars(mb_substr($text, 0, ($whitespaceposition+1)), 1);
-            if ($chars[ord('<')] > $chars[ord('>')])
-                $whitespaceposition = mb_strpos($text,">",$whitespaceposition)-1;
-            $text = mb_substr($text, 0, ($whitespaceposition+1));
-        }
-
-        // close unclosed html tags
-        if( preg_match_all("|<([a-zA-Z]+)|",$text,$aBuffer) ) {
-
-            if( !empty($aBuffer[1]) ) {
-
-                preg_match_all("|</([a-zA-Z]+)>|",$text,$aBuffer2);
-
-                if( count($aBuffer[1]) != count($aBuffer2[1]) ) {
-
-                    foreach( $aBuffer[1] as $index => $tag ) {
-
-                        if( empty($aBuffer2[1][$index]) || $aBuffer2[1][$index] != $tag)
-                            $text .= '</'.$tag.'>';
-                    }
-                }
-            }
-        }
-    }
-    return $text;
-}
-
-
 function new_excerpt_more($more) { return '...'; }
 
-function excerpt_read_more($post) { return '<a href="'. get_permalink($post->ID) . '">' . 'Read the Rest...' . '</a>'; }
+function excerpt_read_more($post) { return '<a href="'. get_permalink($post->ID) . '">' . 'Read On...' . '</a>'; }
 
 /**
 * Find and close unclosed xml tags
@@ -620,8 +526,7 @@ function truncate_title($title, $length, $echo=true)
 
 function content($maxLength, $read_more="Read More", $image_width=190, $image_height=120, $image_quality=80, $autolink=false, $echo=true)
 {	
-	
-	$content = get_the_content();
+	$content = get_the_content($read_more);
 	
 	$pattern = '/\< *[img][^\>]* src *= *[\"\']{0,1}([^\"\'\ >]*)/i';
 	$replacement = '<img src="' . get_bloginfo("template_directory") . '/php/phpthumb/phpThumb.php?src=' . '$1' . '&w='.$image_width.'&h='.$image_height.'&zc=1&q='.$image_quality;
@@ -633,18 +538,13 @@ function content($maxLength, $read_more="Read More", $image_width=190, $image_he
 	return $pagecontent;
 }
 
-function fs_autohyperlink_truncate_link ($url) {
-	$url = preg_replace("/(([a-z]+?):\\/\\/[a-z0-9\-\.]+).*/i", "$1", $url);
-
-	return $url;
-}
-
 /**
  * Add "first" and "last" CSS classes to dynamic sidebar widgets. Also adds numeric index class for each widget (widget-1, widget-2, etc.)
  * via http://wordpress.org/support/topic/how-to-first-and-last-css-classes-for-sidebar-widgets
  */
 function widget_first_last_classes($params) {
 
+	
 	global $my_widget_num; // Global a counter array
 	$this_id = $params[0]['id']; // Get the id for the current sidebar we're processing
 	$arr_registered_widgets = wp_get_sidebars_widgets(); // Get an array of ALL registered widgets	

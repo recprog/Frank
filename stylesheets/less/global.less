@@ -11,7 +11,7 @@
 	table {
 		border-collapse: separate;
 		border-spacing: 0;
-		font-size:@x-small;
+		.font-size-x-small;
 		margin:20px 0;
 	}
 	table,td,th { vertical-align: middle; }
@@ -25,7 +25,6 @@
 		color: @color_off_black;
 		height: 100%;
 		.reset-dimensions;
-		line-height: @row-height;
 		padding-bottom:0;
 		text-rendering: optimizelegibility;
 	}
@@ -50,7 +49,7 @@
 	
 	header a { color:@color_off_black; }
 	header a:hover { color:@color_midtone; }
-	.more a { font-style:italic; }
+	.more-link { font-style:italic; }
 	.metadata a { color:@color_midtone; text-decoration:none; }
 	.metadata a:hover { color:@color_off_black; }
 	
@@ -70,7 +69,7 @@
 
 	cite {
 		margin-left:@gutter-width;
-		font-size:@small;
+		.font-size-small;
 		font-family:@sans-serif;
 	}
 	cite:before {
@@ -82,6 +81,7 @@
 	blockquote {
 		margin-left:@gutter-width;
 		color:@color_dark;
+		
 		p {
 			font-size:inherit;
 			line-height:inherit;
@@ -234,7 +234,8 @@
 				
 			}
 			section {
-				font-size:@medium;
+				.font-size-medium;
+				font-family:@serif;
 				ul li, ol li, code, dt, dd, blockquote {
 					.font-size-medium;
 				} 

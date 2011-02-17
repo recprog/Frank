@@ -27,7 +27,7 @@
 					</header>
 					<?php endif; ?>
 					<section>
-						<p><?php echo get_the_excerpt(); ?> <span class='more'><a href="<?php the_permalink(); ?>">Read On&hellip;</a></span></p>
+						<p><?php echo get_the_excerpt(); ?> <span class='more-link'><a href="<?php the_permalink(); ?>">Read On&hellip;</a></span></p>
 					</section>
 					<?php if(showPrimaryColumnFooter()) : ?>
 					<footer>
@@ -84,7 +84,6 @@
 				</div>
 				<section class='span-7 last'>
 					<?php  $content = content(80, 'Read On&hellip;', 555, 200, 70); ?>
-					<?php //the_content(); ?>
 				</section>
 				</div>
 				<?php if(showSecondaryColumnFooter()) : ?>
