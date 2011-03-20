@@ -416,6 +416,15 @@ if ( function_exists('register_sidebar') )
 	
 if ( function_exists('register_sidebar') )
 	register_sidebar(array(
+	'name' => 'Navigation',
+	'before_widget' => '<div id="%1$s" class="widget %2$s">',
+	'after_widget' => '</div>',
+	'before_title' => '<h3 class="widgettitle">',
+	'after_title' => '</h3>',
+	));
+	
+if ( function_exists('register_sidebar') )
+	register_sidebar(array(
 	'name' => 'Half and Half Aside',
 	'before_widget' => '<div id="%1$s" class="widget %2$s">',
 	'after_widget' => '</div>',
@@ -516,13 +525,14 @@ function close_tags($text) {
     }
     return $text;
 }
-
+/*
 function truncate_title($title, $length, $echo=true)
 {	
 	if (strlen($title) > $length) $title=substr($title, 0, $length).'&hellip;';	
 	if($echo) echo $title;
 	return $title;
 }
+*/
 
 function content($maxLength, $read_more="Read More", $image_width=190, $image_height=120, $image_quality=80, $autolink=false, $echo=true)
 {	
