@@ -34,6 +34,7 @@
 	
 		#comments {
 			list-style:none;
+			
 			.comment-info {
 				text-align:right;
 			}
@@ -81,7 +82,14 @@
 			color: @color_midtone;
 		}
 		#commentform {
-	
+			#comment_form_info {
+				text-align:right;
+			}
+			#comment_form_info {
+				dl {
+					margin-bottom:@row-height;
+				}
+			}
 			dl { 
 				position:relative !important;
 				.reset-dimensions;
@@ -98,9 +106,8 @@
 					input.textinput {
 						margin: 0;
 						.font-size-x-small;
-						padding: 2px;
 						height: (@row-height);
-						width: 184px;
+						.columns(2);
 					}
 				}
 			}
@@ -110,15 +117,18 @@
 				.font-size-small;
 				height: 127px;
 				padding: 2px 4px;
-				width: 530px;
+				width: 100%;
 				.loggedin {
 					width: 740px;
 				}
 			}
+			input[type=text] {
+				text-align:right;
+			}
 		}
 		#comment_form {
 			margin-top: @row-height;
-		
+			
 			header {
 				margin-bottom: @row-height;
 				h1 {
@@ -128,6 +138,18 @@
 				.loggedin {
 					font-style:italic;
 				}
+			}
+		}
+		
+		#comment_form_comment {
+			dl {
+				text-align:left;
+			}
+			textarea {
+				height:@row-height*8-12; /*12 is for y-padding on textarea*/
+			}
+			textarea:focus {
+				height:@row-height*20;
 			}
 		}
 	

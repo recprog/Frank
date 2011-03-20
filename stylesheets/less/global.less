@@ -53,6 +53,7 @@
 	.metadata a { color:@color_midtone; text-decoration:none; }
 	.metadata a:hover { color:@color_off_black; }
 	
+	h1, h2, h3, h4, h5, h6 { font-family:@sans-serif; }
 	h1:first-child, h2:first-child, h3:first-child, h4:first-child, h5:first-child, h6:first-child { margin-top: 0; }
 	h1 { .font-size-x-large; padding-top: 6px; margin-bottom: @row-height; }
 	h2 { .font-size-large; padding-top: 0px; margin-bottom: @row-height; }
@@ -63,6 +64,7 @@
 
 	header {
 		h2 {
+			font-family:@serif;
 			.font-size-small;
 		}
 	}
@@ -182,7 +184,7 @@
 			.reset-dimensions;
 			float:left;
 			background:none;
-			margin-right:15px;
+			margin-right:20px;
 			.font-size-small;
 			
 		}
@@ -194,6 +196,7 @@
 	dl.metadata {
 		.reset-dimensions;
 		text-align:right;
+		margin-bottom:@row-height;
 	}
 
 
@@ -212,11 +215,11 @@
 	#content.home, #content.single, #content.page, #content.archive {
 		
 		#content_primary {
-			margin-top:@row-height;
-			
+			margin-top:@row-height;	
 		}
 		
 		article {
+			margin-bottom:@row-height*2;
 			header {
 				margin-bottom:@row-height;
 				h1 {
@@ -229,9 +232,6 @@
 					margin-top:0;
 					font-size:@x-small;
 				}
-			}
-			.post-info {
-				
 			}
 			section {
 				.font-size-medium;
@@ -307,9 +307,19 @@
 	}
 	
 	.button {
-		display:block;
+		display:inline-block;
 		background:@color_dark;
 		color:@color_light;
 		.default-shadow;
+		padding:4px 10px;
+		border-radius:5px;
+		font-family:@sans-serif;
+		text-align:center;
+		border:0;
+		text-shadow:0px 1px 1px rgba(18, 7, 6,0.3);
+	}
+	.button:hover {
+		background:@color_midtone;
+		color:@color_highlight;
 	}
 }

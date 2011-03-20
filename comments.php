@@ -65,13 +65,10 @@
 		<?php else : ?>
 		<header>
 			<h1>Leave Your Own Comment</h1>
-			<?php if ( $user_ID ) : ?>
-				<h2 class='loggedin'>Logged in as <a href="<?php echo get_option('siteurl'); ?>/wp-admin/profile.php"><?php echo $user_identity; ?></a>. <a href="<?php echo get_option('siteurl'); ?>/wp-login.php?action=logout" title="Log out of this account">Log out &raquo;</a></h2>
-			<?php endif; ?>
 		</header>
 		<form action="<?php echo get_option('siteurl'); ?>/wp-comments-post.php" method="post" id="commentform">
 			<?php if ( !$user_ID ) : ?>	
-			<div class='span-3'>				
+			<div class='span-2'>				
 				<dl id="comment_form_info">
 					<dt><label for="author">Name <?php if ($req) echo "(required)"; ?></label></dt>
 					<dd><input autocomplete="off" type="text" name="author" id="author" value="<?php echo $comment_author; ?>" size="22" class="textinput" tabindex="1" /></dd>
@@ -81,10 +78,19 @@
 					<dd><input autocomplete="off" type="text" name="url" id="url" value="<?php echo $comment_author_url; ?>" size="22" class="textinput" tabindex="3" /></dd>
 				</dl>
 			</div>
+			<?php else : ?>
+				<div id='comment_form_info' class='span-2'>				
+					<dl id="comment_form_info" class='metadata'>
+						<dt class='author'>By</label></dt>
+						<dd class='author'><a href="<?php echo get_option('siteurl'); ?>/wp-admin/profile.php"><?php echo $user_identity; ?></a></dd>
+					</dl>
+					<a href="<?php echo get_option('siteurl'); ?>/wp-login.php?action=logout" title="Log out of this account">Log out &raquo;</a>
+				</div>
 			<?php endif; ?>
 			
-			<div class='<?php echo ( !$user_ID )?'span-8':'span-11' ?> last'>
-				<dl id="comment_form_comment" class="<?php if ( $user_ID ) : ?>loggedin<?php endif; ?>">
+			
+			<div id="comment_form_comment" class='span-7 last'>
+				<dl class="<?php if ( $user_ID ) : ?>loggedin<?php endif; ?>">
 					<dt><label for="comment">Your Comment</label></dt>
 					<dd><textarea name="comment" class="<?php if ( $user_ID ) echo('loggedin') ?>" id="comment" cols="100%" rows="10" tabindex="4"></textarea></dd>
 				</dl>

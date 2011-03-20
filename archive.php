@@ -28,9 +28,9 @@
 	<h2>Click on one of the items below to go to the post</h2>
 	</header>
 		<?php while(have_posts()) : the_post(); ?>
-			<article <?php post_class('span-9 post-'.($queryObject->current_post+1)); ?>>
+			<article <?php post_class(); ?>>
 				<header>
-					<h1><a href="<?php the_permalink() ?>"><?php truncate_title(get_the_title(), 60); ?></a></h1>
+					<h1><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h1>
 				</header>
 				<div class='clear'>
 				<div class='post-info span-2'>
@@ -52,7 +52,7 @@
 				<footer class='prefix-2'>
 					<ul class='metadata clear'>								
 						<li class='comments'><?php comments_popup_link('No comments', '1 comment', '% comments'); ?></li>	
-						<li class='tweet'>Retweet This Post</li>
+						<li class='tweet'><a href='http://twitter.com/home?status=<?php the_title() ?> <?php the_permalink() ?>'>Retweet This Post</a></li>
 						<?php if(!showSecondaryColumnHeader()) : ?><li class='permalink last'><a href='<?php the_permalink(); ?>'>Link</a></li><?php endif; ?>
 					</ul>
 				</footer>

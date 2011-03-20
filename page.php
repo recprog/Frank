@@ -8,7 +8,7 @@
 <div id="content" class="page clear">
 	<div id="content_primary" class="span-9">
 		<?php if(have_posts()) : while(have_posts()) : the_post(); ?>
-		<article class="post" id="p<?php the_ID(); ?>">
+		<article class="post clear" id="p<?php the_ID(); ?>">
 			<header>
 				<h1><?php the_title(); ?></h1>
 			</header>

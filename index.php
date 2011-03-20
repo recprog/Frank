@@ -36,7 +36,7 @@
 							<li class='time'><time datetime="<?php the_time('Y-m-d'); ?>" pubdate>Posted <?php echo human_time_diff(get_the_time('U'), current_time('timestamp')) . ' ago'; ?></time></li>
 							<li>Filed Under <?php the_category(', '); ?></li>											
 							<li class='comments'><?php comments_popup_link('No comments', '1 comment', '% comments'); ?></li>
-							<li class='tweet'>Retweet This Post</li>
+							<li class='tweet'><a href='http://twitter.com/home?status=<?php the_title() ?> <?php the_permalink() ?>'>Retweet This Post</a></li>
 							<?php if(!showPrimaryColumnHeader()) : ?><li class='permalink last'><a href='<?php the_permalink(); ?>'>Link</a></li><?php endif; ?>
 						</ul>
 					</footer>
@@ -66,7 +66,7 @@
 			<article <?php post_class('span-9 post-'.($queryObject->current_post+1)); ?>>
 				<?php if(showSecondaryColumnHeader()) : ?>
 				<header>
-					<h1><a href="<?php the_permalink() ?>"><?php truncate_title(get_the_title(), 60); ?></a></h1>
+					<h1><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h1>
 				</header>
 				<?php endif; ?>
 				<div class='clear'>
@@ -90,7 +90,7 @@
 				<footer class='prefix-2'>
 					<ul class='metadata clear'>								
 						<li class='comments'><?php comments_popup_link('No comments', '1 comment', '% comments'); ?></li>	
-						<li class='tweet'>Retweet This Post</li>
+						<li class='tweet'><a href='http://twitter.com/home?status=<?php the_title() ?> <?php the_permalink() ?>'>Retweet This Post</a></li>
 						<?php if(!showSecondaryColumnHeader()) : ?><li class='permalink last'><a href='<?php the_permalink(); ?>'>Link</a></li><?php endif; ?>
 					</ul>
 				</footer>

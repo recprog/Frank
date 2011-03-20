@@ -47,6 +47,10 @@
 	<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="<?php bloginfo('rss2_url'); ?>" />
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 			
+	<script>
+		var colorBoxURL='<?php bloginfo('template_directory'); ?>/js/jquery.colorbox-min.js';
+	</script>		
+			
 	<?php wp_enqueue_script('jquery'); ?>
 	<?php wp_enqueue_script('jquery-main', get_bloginfo('template_url') . '/js/main.js'); ?>
 	<?php wp_enqueue_script('jquery-srd', get_bloginfo('template_url') . '/js/custom.js'); ?>
@@ -66,9 +70,11 @@
 			<h2 id="description"><?php bloginfo('description'); ?></h2>
 		</hgroup>
 		<nav class='clear'>
+			<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Navigation") ) : ?>
 			<div class='menu clear'>
 				<?php wp_nav_menu( array('theme_location' => 'primary', 'container' => '' ) ); ?>	
-			</div> 
+			</div>
+			<?php endif; ?> 
 		</nav>
 	</header>
 	<div id='sub_header' class='clear'>

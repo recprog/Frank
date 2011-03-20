@@ -9,7 +9,7 @@
 <div id="page_bottom" class='clear'>
 	<footer id='page_footer' class='wrapper clear'>	
 		<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Footer") ) : ?>
-			Name of blog
+			
 		<?php endif; ?>
 	</footer>
 </div>
