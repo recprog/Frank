@@ -6,7 +6,7 @@
 ?>
 	<aside id="sidebar" class='span-3 last' role="complementary">	
 				<?php if ( !function_exists('dynamic_sidebar')
-				|| !dynamic_sidebar('Article Sidebar: Column 1') ) : ?>
+				|| !dynamic_sidebar('Post Right Aside') ) : ?>
 				<p>Column 1</p>	
 				
 				<?php if ( is_404() || is_category() || is_day() || is_month() ||

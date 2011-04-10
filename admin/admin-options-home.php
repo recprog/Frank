@@ -93,6 +93,7 @@
                             <option<?php if( $franklin_street_section['display_type'] == 'one_up_lg' ) : ?> selected="selected"<?php endif ?> value="one_up_lg"><?php _e('One Up (Large)', 'franklinstreet'); ?></option>
                             <option<?php if( $franklin_street_section['display_type'] == 'two_up' ) : ?> selected="selected"<?php endif ?> value="two_up"><?php _e('Two Up', 'franklinstreet'); ?></option>
                             <option<?php if( $franklin_street_section['display_type'] == 'four_up' ) : ?> selected="selected"<?php endif ?> value="four_up"><?php _e('Four Up', 'franklinstreet'); ?></option>
+							<option<?php if( $franklin_street_section['display_type'] == 'right_aside' ) : ?> selected="selected"<?php endif ?> value="right_aside"><?php _e('Right Aside', 'franklinstreet'); ?></option>
                         </select>
                     </div>
                     <!-- /franklin-display-type -->

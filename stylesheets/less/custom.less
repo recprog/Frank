@@ -52,6 +52,21 @@
 	#content.home {
 		.content {
 			margin:@row-height*2 0 @row-height 0;
+			
+		}
+		
+		.content.oneup.large {
+			header {
+				display:none;
+			}
+			section {
+				a {
+					color:@color_off_black;
+				}
+				.more-link a {
+					color:@color_accent;
+				}
+			}
 		}
 		
 		.content.halfandhalf .content-header {
@@ -127,9 +142,17 @@
 				width:190px;
 			}
 			.metadata {
-				.columns(7);
-				padding-left: (@column-width*2) + (@gutter-width*2);
+				
+				margin-left: (@column-width*2) + (@gutter-width*2);
 			}
+		}
+		#comments_container {
+			-webkit-border-image: @dotted-line-dark  5 0 repeat;
+			-moz-border-image: @dotted-line-dark 5 0 repeat;
+			border-width:0;
+			border-top-width:1px;
+			padding-top:@row-height*2;
+			margin-top:@row-height*2;
 		}
 	}
 

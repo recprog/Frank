@@ -98,8 +98,8 @@
 	opacity:@level;
 }
 
-.columns(@columns:1) {
-	width:(@columns*@column-width)+(((@columns)-1)*@gutter-width);
+.columns(@columns:1, @modifier:0) {
+	width:(@columns*@column-width)+(((@columns)-1)*@gutter-width)+@modifier;
 }
 
 .sprite-background(@x:0px, @y:0px) {

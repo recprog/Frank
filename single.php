@@ -39,7 +39,6 @@
 						<ul class='metadata clear'>								
 							<li class='comments'><?php comments_popup_link('No comments', '1 comment', '% comments'); ?></li>	
 							<li class='tweet'><a href='http://twitter.com/home?status=<?php the_title() ?> <?php the_permalink() ?>'>Retweet This Post</a></li>
-							<?php if(!showSecondaryColumnHeader()) : ?><li class='permalink last'><a href='<?php the_permalink(); ?>'>Link</a></li><?php endif; ?>
 						</ul>
 					<?php endif; ?>
 				</div>
