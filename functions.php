@@ -186,12 +186,22 @@ function franklin_st_home()
     include 'admin/admin-options-home.php';
 }
 
+function franklin_st_general()
+{
+    include 'admin/admin-options-general.php';
+}
+
 // add our menus
 function franklin_street_admin_menu()
 {
     add_menu_page( 'Franklin Street', 'Franklin Street', 'manage_options', 'franklin-street', 'franklin_st_home' );
 
-    add_submenu_page( 'franklin-street', 'Franklin Street', 'Home Page Sections', 'manage_options', 'franklin-street', 'franklin_st_home');
+	add_submenu_page( 'franklin-street', 'Franklin Street', 'General', 'manage_options', 'franklin-street-general', 'franklin_st_general');
+    add_submenu_page( 'franklin-street', 'Franklin Street', 'Home Page Sections', 'manage_options', 'franklin-street-home', 'franklin_st_home');
+	/*
+	* TODO:
+	* Add a customize submenu for additional CSS & Javascript to be put in the header and footer
+	*/
 }
 
 add_action( 'admin_menu', 'franklin_street_admin_menu' );
@@ -206,3 +216,19 @@ function franklin_street_admin_assets()
 }    
  
 add_action( 'init', 'franklin_street_admin_assets' );
+
+function franklin_street_footer() {
+	
+	$franklin_street_general = get_option( '_franklin_street_general' );
+    if($franklin_street_general) echo $franklin_street_general['footer'];
+}
+
+function franklin_street_header() {
+	
+	$franklin_street_general = get_option( '_franklin_street_general' );
+    if($franklin_street_general) echo $franklin_street_general['header'];
+}
+
+add_action('wp_footer', 'franklin_street_footer');
+add_action('wp_head', 'franklin_street_header');
+?>

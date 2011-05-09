@@ -12,15 +12,14 @@
 			$franklin_street_sections = get_option( '_franklin_street_home_sections' );
 			if($franklin_street_sections) {
 				foreach($franklin_street_sections as $section) {
-					$display_type=$section[display_type];
-					$title=$section[title];
-					$caption=$section[caption];
-					$num_posts=$section[num_posts];
-					$categories=$section[categories];
+					$display_type=$section['display_type'];
+					$title=$section['title'];
+					$caption=$section['caption'];
+					$num_posts=$section['num_posts'];
+					$categories=$section['categories'];
 				
-					$args=array('posts_per_page' => max(0, $num_posts), 'cat' => implode(",",array_filter($categories)));
-					$queryObject=null;
-					$queryObject = new WP_Query($args);
+					$queryObject = new WP_Query(array('posts_per_page' => $num_posts, 'cat' => implode(",",array_filter($categories))));
+					
 				
 					switch($display_type) {
 						case 'one_up_reg':
@@ -35,9 +34,10 @@
 						case 'four_up':
 							include 'templates/four_up.php';
 							break;
-						default:
+						case 'right_aside':
 							include 'templates/right_aside.php';
 					}
+					
 				}
 			} else {
 				//Insert default loop

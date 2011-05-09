@@ -1,11 +1,8 @@
 TODO:
-	-Rename categories_wrapper.php and comment_wrapper.php to template_categories.php and template_comments.php
 	-Update screenshot.png
 	-main.js: Fix colorbox AJAX pull
 	-images.less: Fix placement image
 	-srd.less: Better semantic setup for follow component
-	
-	-RSS post footer widget?
 	
 	
 +Admin panels
@@ -16,7 +13,6 @@ TODO:
 		-Tiers can choose specific categories to display
 		-Make all options in functions.php accessible in admin panel
 	-Option to add custom code to 'head' tag and above 'body' tag
-	-Option to toggle AJAX comments on and off
 	
 +Template Cleanup
 	-Serious cleanup of functions.php
