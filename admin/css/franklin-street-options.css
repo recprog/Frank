@@ -2,10 +2,11 @@
 
 .franklin-group label { font-weight:bold; }
 
-.franklin-content-section { width:640px; margin-bottom:20px; background:#fff; border:2px solid #e3e3e3; border-radius:5px; -moz-border-radius:5px; -webkit-border-radius:5px; padding:25px; position:relative; }
+.franklin-content-section { width:640px; margin-bottom:20px; background:#fff; border:2px solid #e3e3e3; border-radius:5px; -moz-border-radius:5px; -webkit-border-radius:5px; padding:25px 25px 25px 35px; position:relative; }
+
+span.franklin-handle { display:block; position:absolute; top:28px; left:8px; background:url(../images/handle.gif) center center no-repeat; width:20px; height:20px; cursor:pointer; }
 
 a.franklin-content-section-delete { position:absolute; top:25px; right:25px; }
-
 .franklin-content-section:nth-child(1) a.franklin-content-section-delete { display:none; }
 
 .franklin-display-type { margin-bottom:13px; }

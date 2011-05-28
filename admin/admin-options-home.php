@@ -1,3 +1,14 @@
+<?php
+
+    // default data for first run
+    $franklin_defaults = array(
+                    'title'             => 'Section Title',
+                    'caption'           => 'Section Caption',
+                    'num_posts'         => 10
+    );
+
+?>
+
 <div class="wrap">
 
     <div id="icon-options-general" class="icon32"><br /></div>
@@ -84,6 +95,7 @@
             <?php foreach( $franklin_street_sections as $franklin_street_section_id => $franklin_street_section ) : ?>
                 <div class="franklin-content-section franklin-group<?php if( isset( $franklin_street_section['default'] ) ) : ?> franklin-content-section-default<?php endif ?>" id="franklin-street-section-<?php echo $franklin_street_section_id; ?>">
 
+                    <span class="franklin-handle"></span>
                     <a class="franklin-content-section-delete" href="#">X</a>
 
                     <div class="franklin-display-type">
@@ -104,15 +116,15 @@
                             <ul>
                                 <li class="franklin-section-title">
                                     <label for="franklin-section-title-<?php echo ( isset( $franklin_street_section['default'] ) ? 'default' : $franklin_street_section_id ); ?>"><?php _e('Section Title', 'franklinstreet'); ?></label>
-                                    <input type="text" name="franklin-section-title-<?php echo ( isset( $franklin_street_section['default'] ) ? 'default' : $franklin_street_section_id ); ?>" id="franklin-section-title-<?php echo ( isset( $franklin_street_section['default'] ) ? 'default' : $franklin_street_section_id ); ?>" value="<?php echo stripslashes( $franklin_street_section['title'] ); ?>" />
+                                    <input type="text" name="franklin-section-title-<?php echo ( isset( $franklin_street_section['default'] ) ? 'default' : $franklin_street_section_id ); ?>" id="franklin-section-title-<?php echo ( isset( $franklin_street_section['default'] ) ? 'default' : $franklin_street_section_id ); ?>" value="<?php echo !isset( $franklin_street_section['default'] ) ? stripslashes( $franklin_street_section['title'] ) : $franklin_defaults['title']; ?>" />
                                 </li>
                                 <li class="franklin-section-caption">
                                     <label for="franklin-section-caption-<?php echo ( isset( $franklin_street_section['default'] ) ? 'default' : $franklin_street_section_id ); ?>"><?php _e('Section Caption', 'franklinstreet'); ?></label>
-                                    <textarea name="franklin-section-caption-<?php echo ( isset( $franklin_street_section['default'] ) ? 'default' : $franklin_street_section_id ); ?>" id="franklin-section-caption-<?php echo ( isset( $franklin_street_section['default'] ) ? 'default' : $franklin_street_section_id ); ?>"><?php echo stripslashes( $franklin_street_section['caption'] ); ?></textarea>
+                                    <textarea name="franklin-section-caption-<?php echo ( isset( $franklin_street_section['default'] ) ? 'default' : $franklin_street_section_id ); ?>" id="franklin-section-caption-<?php echo ( isset( $franklin_street_section['default'] ) ? 'default' : $franklin_street_section_id ); ?>"><?php echo !isset( $franklin_street_section['default'] ) ? stripslashes( $franklin_street_section['caption'] ) : $franklin_defaults['caption']; ?></textarea>
                                 </li>
                                 <li class="franklin-section-num-posts">
                                     <label for="franklin-section-num-posts-<?php echo ( isset( $franklin_street_section['default'] ) ? 'default' : $franklin_street_section_id ); ?>"><?php _e('Number of Posts', 'franklinstreet'); ?></label>
-                                    <input type="text" name="franklin-section-num-posts-<?php echo ( isset( $franklin_street_section['default'] ) ? 'default' : $franklin_street_section_id ); ?>" id="franklin-section-num-posts-<?php echo ( isset( $franklin_street_section['default'] ) ? 'default' : $franklin_street_section_id ); ?>" value="<?php echo stripslashes( $franklin_street_section['num_posts'] ); ?>" />
+                                    <input type="text" name="franklin-section-num-posts-<?php echo ( isset( $franklin_street_section['default'] ) ? 'default' : $franklin_street_section_id ); ?>" id="franklin-section-num-posts-<?php echo ( isset( $franklin_street_section['default'] ) ? 'default' : $franklin_street_section_id ); ?>" value="<?php echo !isset( $franklin_street_section['default'] ) ? stripslashes( $franklin_street_section['num_posts'] ) : $franklin_defaults['num_posts']; ?>" />
                                 </li>
                             </ul>
                         </div>
