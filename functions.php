@@ -194,9 +194,9 @@ function franklin_st_general()
 // add our menus
 function franklin_street_admin_menu()
 {
-    add_menu_page( 'Franklin Street', 'Franklin Street', 'manage_options', 'franklin-street', 'franklin_st_home' );
+    add_menu_page( 'Franklin Street', 'Franklin Street', 'manage_options', 'franklin-street', 'franklin_st_general' );
 
-	add_submenu_page( 'franklin-street', 'Franklin Street', 'General', 'manage_options', 'franklin-street-general', 'franklin_st_general');
+	add_submenu_page( 'franklin-street', 'Franklin Street', 'General', 'manage_options', 'franklin-street', 'franklin_st_general');
     add_submenu_page( 'franklin-street', 'Franklin Street', 'Home Page Sections', 'manage_options', 'franklin-street-home', 'franklin_st_home');
 	/*
 	* TODO:
@@ -210,6 +210,7 @@ function franklin_street_admin_assets()
 {
     if( is_admin() )
     {
+        wp_enqueue_script( 'jquery-ui-sortable' );
         wp_enqueue_style( 'franklin-street-admin', get_bloginfo( 'stylesheet_directory' ) . '/admin/css/franklin-street-options.css', NULL, NULL, NULL );
         wp_enqueue_script( 'franklin-street-admin', get_bloginfo( 'stylesheet_directory' ) . '/admin/js/franklin-street-utils.js', 'jquery', NULL, true );
     }

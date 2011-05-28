@@ -62,6 +62,11 @@ jQuery(document).ready(function(){
             franklincat.attr('id',franklincat.attr('id')+'-'+franklinhash);
         });
 
+        if(jQuery('.franklin-content-section').length>1){
+            jQuery('.franklin-handle').show();
+            jQuery('#franklin-content-sections').sortable('refresh');
+        }
+
         return false;
 
     });
@@ -73,6 +78,12 @@ jQuery(document).ready(function(){
             franklin_section = jQuery(this).parent();
             franklin_section.slideUp(function(){
                 franklin_section.remove();
+                if(jQuery('.franklin-content-section').length>1){
+                    jQuery('.franklin-handle').show();
+                    jQuery('#franklin-content-sections').sortable('refresh');
+                }else{
+                    jQuery('.franklin-handle').hide();
+                }
             });
         }
         return false;
@@ -90,5 +101,19 @@ jQuery(document).ready(function(){
             });
         }
     });
+
+
+    if(jQuery('.franklin-content-section').length>1){
+        jQuery('#franklin-content-sections').sortable({
+            axis: 'y',
+            containment: 'parent',
+            forceHelperSize: true,
+            helper: 'clone',
+            opacity: 0.6
+        });
+        jQuery('#franklin-content-sections').disableSelection();
+    }else{
+        jQuery('.franklin-handle').hide();
+    }
 
 });
