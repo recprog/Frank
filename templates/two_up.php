@@ -6,7 +6,7 @@
 <div class='span-12 clear content twoup'>
 	<div class='nav content-header'>
 		<span class='label'><?php print($title); ?></span>
-		<span class='caption'><?php print($caption) ?></span> <span class='more'><a href='<?php bloginfo('url'); ?>?cat=<?php echo implode(",",array_filter($categories)); ?>'>View Archives&hellip;</a></span> 
+		<span class='caption'><?php print($caption) ?></span> <span class='more'><?php next_posts_link('View more&hellip;'); ?></span>
 		
 	</div>
 	<div class='contents span-12 last'>	

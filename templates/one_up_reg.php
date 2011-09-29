@@ -6,7 +6,7 @@
 <div class='span-12 last clear content oneup'>
 	<div class='nav content-header'>
 		<span class='label'><?php print($title); ?></span>
-		<span class='caption'><?php print($caption) ?></span> <span class='more'><a href='<?php bloginfo('url'); ?>?cat=<?php echo implode(",",array_filter($categories)); ?>'>View Archives&hellip;</a></span> 
+		<span class='caption'><?php print($caption) ?></span> <span class='more'><?php next_posts_link('View more&hellip;'); ?></span> 
 		
 	</div>
 	<div class='contents span-12 last'>
@@ -17,7 +17,11 @@
 		<h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
 	</header>
 	<section>
+		<?php if (!empty($post->post_excerpt)) : ?>
 		<p><?php echo get_the_excerpt(); ?> <span class='more-link'><a href="<?php the_permalink(); ?>">Read On&hellip;</a></span></p>
+		<?php else : ?>
+		<?php the_content('Read On&hellip;'); ?>
+		<?php endif; ?>
 	</section>
 	<footer>
 		<ul class='metadata clear'>

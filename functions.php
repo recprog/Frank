@@ -18,6 +18,13 @@ function fs_register_menus() {
   register_nav_menus(array('primary' => __( 'Primary Navigation' )));
 }
 
+if ( !is_admin() ) {
+function my_init_method() {
+wp_deregister_script( 'l10n' );
+}
+add_action('init', 'my_init_method'); 
+}
+
 
 /**
  * @package WordPress
@@ -110,16 +117,6 @@ if ( function_exists('register_sidebar') )
 function new_excerpt_more($more) { return '...'; }
 
 function excerpt_read_more($post) { return '<a href="'. get_permalink($post->ID) . '">' . 'Read On...' . '</a>'; }
-
-
-/*
-function truncate_title($title, $length, $echo=true)
-{	
-	if (strlen($title) > $length) $title=substr($title, 0, $length).'&hellip;';	
-	if($echo) echo $title;
-	return $title;
-}
-*/
 
 function content($maxLength, $read_more="Read More", $image_width=190, $image_height=120, $image_quality=80, $autolink=false, $echo=true)
 {	
@@ -221,13 +218,13 @@ add_action( 'init', 'franklin_street_admin_assets' );
 function franklin_street_footer() {
 	
 	$franklin_street_general = get_option( '_franklin_street_general' );
-    if($franklin_street_general) echo $franklin_street_general['footer'];
+    if($franklin_street_general) echo stripslashes($franklin_street_general['footer']);
 }
 
 function franklin_street_header() {
 	
 	$franklin_street_general = get_option( '_franklin_street_general' );
-    if($franklin_street_general) echo $franklin_street_general['header'];
+    if($franklin_street_general) print stripslashes($franklin_street_general['header']);
 }
 
 add_action('wp_footer', 'franklin_street_footer');

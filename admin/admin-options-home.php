@@ -101,11 +101,13 @@
                     <div class="franklin-display-type">
                         <label for="franklin-display-type-<?php echo ( isset( $franklin_street_section['default'] ) ? 'default' : $franklin_street_section_id ); ?>"><?php _e('Display Type:', 'franklinstreet'); ?></label>
                         <select name="franklin-display-type-<?php echo ( isset( $franklin_street_section['default'] ) ? 'default' : $franklin_street_section_id ); ?>" id="franklin-display-type-<?php echo ( isset( $franklin_street_section['default'] ) ? 'default' : $franklin_street_section_id ); ?>">
+							<option<?php if( $franklin_street_section['display_type'] == 'franklin_street_loop' ) : ?> selected="selected"<?php endif ?> value="franklin_street_loop"><?php _e('Franklin Street Loop', 'franklinstreet'); ?></option>
                             <option<?php if( $franklin_street_section['display_type'] == 'one_up_reg' ) : ?> selected="selected"<?php endif ?> value="one_up_reg"><?php _e('One Up (Regular)', 'franklinstreet'); ?></option>
                             <option<?php if( $franklin_street_section['display_type'] == 'one_up_lg' ) : ?> selected="selected"<?php endif ?> value="one_up_lg"><?php _e('One Up (Large)', 'franklinstreet'); ?></option>
                             <option<?php if( $franklin_street_section['display_type'] == 'two_up' ) : ?> selected="selected"<?php endif ?> value="two_up"><?php _e('Two Up', 'franklinstreet'); ?></option>
                             <option<?php if( $franklin_street_section['display_type'] == 'four_up' ) : ?> selected="selected"<?php endif ?> value="four_up"><?php _e('Four Up', 'franklinstreet'); ?></option>
 							<option<?php if( $franklin_street_section['display_type'] == 'right_aside' ) : ?> selected="selected"<?php endif ?> value="right_aside"><?php _e('Right Aside', 'franklinstreet'); ?></option>
+							<option<?php if( $franklin_street_section['display_type'] == 'default_loop' ) : ?> selected="selected"<?php endif ?> value="default_loop"><?php _e('Default Loop', 'franklinstreet'); ?></option>	
                         </select>
                     </div>
                     <!-- /franklin-display-type -->

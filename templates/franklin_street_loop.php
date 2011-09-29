@@ -1,19 +1,47 @@
 <?php
 /*
-	Template Name: Right Aside
+	Template Name: Franklin Street Loop
 */
 ?>
+
+
+<?php 
+	
+	
+	if(is_home()&&!is_paged()) {
+		$sticky = get_option( 'sticky_posts' );
+		$args = array(
+			'posts_per_page' => 1,
+			'post__in'  => $sticky,
+			'orderby' => 'date', 
+			'order' => 'DESC',
+			'ignore_sticky_posts' => 1
+		);
+	
+		//Query
+		$queryObject = new WP_Query( $args );
+	
+		//Output
+		if ( $sticky[0] ) { include 'one_up_lg.php'; }
+		
+		// Reset
+		wp_reset_postdata();
+	}
+
+?>
+
+
 <div class='span-12 last clear content halfandhalf'>
 	<div class='nav content-header'>
-		<span class='label'><?php print($title); ?></span>
-		<span class='caption'><?php print($caption) ?></span> <span class='more'><?php next_posts_link('View more&hellip;'); ?></span>
+		<span class='label'>Recent Posts</span>
+		<span class='caption'><?php print($caption) ?></span> <span class='more'><?php next_posts_link('View more&hellip;'); ?></span> 
 		
 	</div>
 	<div class='contents span-9'>	
 	<?php 		
-	 while ( $queryObject->have_posts() ) : $queryObject->the_post(); ?>
-		
-		<article <?php post_class('span-9 post-'.($queryObject->current_post+1)); ?>>
+	if (have_posts()) : while (have_posts()) : the_post(); ?>
+		<?php if(is_sticky($post->ID)) continue; ?>
+		<article <?php post_class('span-9 post-'.($post->current_post+1)); ?>>
 			<header>
 				<h1><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h1>
 			</header>
@@ -46,7 +74,7 @@
 			</footer>
 		</article>
 	<?php endwhile; ?>
-
+	<?php endif; ?>
 	</div>
 	<div class='widgets span-3 last'>
 		<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Index Right Aside") ) : ?>

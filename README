@@ -1,9 +1,6 @@
 TODO:
 	-Update screenshot.png
-	-main.js: Fix colorbox AJAX pull
-	-images.less: Fix placement image
-	-srd.less: Better semantic setup for follow component
-	
+	-images.less: Fix placement image	
 	
 +Admin panels
 	-Make Franklin Street a whole section in Wordpress admin
@@ -12,16 +9,15 @@ TODO:
 		-All tiers can be styled in four basic templates (basic, large type, 2 column & 4 column)
 		-Tiers can choose specific categories to display
 		-Make all options in functions.php accessible in admin panel
-	-Option to add custom code to 'head' tag and above 'body' tag
 	
 +Template Cleanup
-	-Serious cleanup of functions.php
 	-Make templates far more modular
-	-Be able to easily make child themes of Franklin Street
 	
 +Performance Increases
 	-Any way to lower queries?
 	
++Pages
+
 +Frank
 	-Frank is fast
 	-Frank is flexible

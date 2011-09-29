@@ -16,10 +16,9 @@
 <div id="page_heel">
 	<div class="wrapper clear">
 		<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Heel") ) : ?>
-			Copyright information
+			
 		<?php endif; ?>
-	</div>
-	
+	</div>	
 </div>
 <?php wp_footer(); ?>
 </body>

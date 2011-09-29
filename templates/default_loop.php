@@ -1,22 +1,21 @@
 <?php
 /*
-	Template Name: One Up (Large)
+	Template Name: Default Loop
 */
 ?>
-<div class='span-12 last clear content oneup large'>
-	<div class='nav content-header'>
-		<span class='label'><?php print($title); ?></span>
-		<span class='caption'><?php print($caption); ?></span> <span class='more'><?php next_posts_link('View more&hellip;'); ?></span>
-	</div>
+<div class='span-12 last clear content default'>
 	<div class='contents span-12 last'>
-<?php while ( $queryObject->have_posts() ) : $queryObject->the_post(); ?>
-
-<article <?php post_class('post-'.($queryObject->current_post+1)); ?>>
+<?php while ( have_posts() ) : the_post(); ?>
+<article <?php post_class(); ?>>
 	<header>
 		<h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
 	</header>
 	<section>
+		<?php if (!empty($post->post_excerpt)) : ?>
 		<p><?php echo get_the_excerpt(); ?> <span class='more-link'><a href="<?php the_permalink(); ?>">Read On&hellip;</a></span></p>
+		<?php else : ?>
+		<?php the_content('Read On&hellip;'); ?>
+		<?php endif; ?>
 	</section>
 	<footer>
 		<ul class='metadata clear'>
