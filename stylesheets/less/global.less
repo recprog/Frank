@@ -43,9 +43,6 @@
 	a:hover { color: @color_accent_alt; }
 	a.external:hover { text-decoration: none; border-bottom: 1px dotted @color_dark; }
 	a:visited { }
-
-	a.tag { text-decoration:none; background:@color_light; padding:0 4px 3px 4px; color:@color_off_black; border-radius:2px; }
-	a.tag:hover { background:@color_midtone; color:@color_highlight; }
 	
 	header a { color:@color_off_black; }
 	header a:hover { color:@color_midtone; }
@@ -61,6 +58,8 @@
 	h4 { .font-size-small; padding-top: 0px; margin-bottom: @row-height; }
 	h5 { .font-size-x-small; padding-top: 0px; margin-bottom: @row-height; }
 	h6 { .font-size-xx-small; padding-top: 0px; margin: @row-height 0; }
+	
+	strong { font-weight:bold; }
 
 	header {
 		h2 {
@@ -73,6 +72,8 @@
 		margin-left:@gutter-width;
 		.font-size-small;
 		font-family:@sans-serif;
+		margin-top:-1em;
+		margin-bottom:2em;
 	}
 	cite:before {
 		content:"— ";
@@ -81,13 +82,18 @@
 	blockquote,q { quotes: '„' '“'; }
 	
 	blockquote {
-		margin-left:@gutter-width;
+		
 		color:@color_dark;
+		border: 2px @color_off_black solid;
+		border-left:0;
+		border-right:0;
+		margin:2em 0 2em @gutter-width;
+		padding:1em 0;
 		
 		p {
 			font-size:inherit;
 			line-height:inherit;
-			margin-top:0;
+			margin:0;
 		}
 		p:first-child:before {
 			content: "“"; 
@@ -95,7 +101,16 @@
 		p:last-child:after {
 			content: "”"; 
 		}
-	} 
+	}  
+	
+	blockquote[cite]:after {
+		content: "— " attr(cite);
+		.font-size-small;
+		font-family:@sans-serif;
+		display:block;
+		color:@color_off_black;
+		margin-top:1em;
+	}
 
 	p {
 		margin:1em 0;
@@ -104,9 +119,23 @@
 	p:first-child { margin-top: 0; }
 	p:last-child { margin-bottom: 0; }
 
+	pre, code { 
+		white-space: pre;
+		white-space: pre-wrap;
+		white-space: -moz-pre-wrap;
+		white-space: -o-pre-wrap; 
+	}
+	
+	pre {
+		border: 2px @color_off_black solid;
+		border-left:0;
+		border-right:0;
+		margin:2em 0;
+		padding:1em 0;
+	}
+
 	pre,code,tt {
-		font: 11px 'andale mono','monotype.com','lucida console',monospace;
-		line-height: @row-height;
+		font-family: 'andale mono','monotype.com','lucida console',monospace;
 	}
 
 	em { font-style: italic; }
@@ -240,8 +269,11 @@
 			section {
 				.font-size-medium;
 				font-family:@serif;
-				ul li, ol li, code, dt, dd, blockquote {
+				ul li, ol li, dt, dd, blockquote {
 					.font-size-medium;
+				}
+				code {
+					.font-size-small;
 				} 
 				p {
 					font-family:@serif;
@@ -250,8 +282,16 @@
 				small {
 					.font-size-small;
 				}
+				img {
+					max-width:550px;
+					.default-shadow;
+				}
 			}
 		}
+	}
+	
+	#content.page article img {
+		.drop-shadow(0,0,0);
 	}
 	
 	

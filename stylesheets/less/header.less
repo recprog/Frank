@@ -1,6 +1,19 @@
 @import "variables";
 
 @media screen, projection {
+	
+	#top_bar {
+		padding:5px 20px 5px 40px;
+		.background_color_off_black_alpha(.9);
+		color:@color_highlight;
+		border-bottom:1px solid @color_off_black;
+	}
+	
+	#top_bar p {
+		.font-size-x-small;
+		font-weight:bold !important;
+	}
+	
 	#page_header { 
 		position: relative;
 		h1 {

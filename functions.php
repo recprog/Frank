@@ -33,6 +33,15 @@ add_action('init', 'my_init_method');
 
 if ( function_exists('register_sidebar') )
 	register_sidebar(array(
+	'name' => 'Top Bar',
+	'before_widget' => '<div id="top_bar" class="widget %2$s">',
+	'after_widget' => '</div>',
+	'before_title' => '<h3 class="widgettitle">',
+	'after_title' => '</h3>',
+	));
+
+if ( function_exists('register_sidebar') )
+	register_sidebar(array(
 	'name' => 'Sub Header',
 	'before_widget' => '<div id="%1$s" class="widget %2$s">',
 	'after_widget' => '</div>',
@@ -117,20 +126,6 @@ if ( function_exists('register_sidebar') )
 function new_excerpt_more($more) { return '...'; }
 
 function excerpt_read_more($post) { return '<a href="'. get_permalink($post->ID) . '">' . 'Read On...' . '</a>'; }
-
-function content($maxLength, $read_more="Read More", $image_width=190, $image_height=120, $image_quality=80, $autolink=false, $echo=true)
-{	
-	$content = get_the_content($read_more);
-	
-	$pattern = '/\< *[img][^\>]* src *= *[\"\']{0,1}([^\"\'\ >]*)/i';
-	$replacement = '<img src="' . get_bloginfo("template_directory") . '/php/timthumb/timthumb.php.php?src=' . '$1' . '&w='.$image_width.'&h='.$image_height.'&q='.$image_quality;
-
-	$pagecontent = preg_replace($pattern, $replacement, $content);
-	
-	if($echo) echo $pagecontent;
-	
-	return $pagecontent;
-}
 
 /**
  * Add "first" and "last" CSS classes to dynamic sidebar widgets. Also adds numeric index class for each widget (widget-1, widget-2, etc.)

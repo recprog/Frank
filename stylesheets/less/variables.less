@@ -8,6 +8,11 @@
 @color_midtone_light:	#998482;
 @color_accent_alt: 		#ff1e00;
 
+/*TODO: Put in the rest of the colors later*/
+.background_color_off_black_alpha(@alpha:1) {
+	background-color:rgba(5, 0, 0, @alpha);
+}
+
 @sans-serif:'Helvetica Neue', Arial, Helvetica, Geneva, sans-serif;
 @serif:Georgia, "Times New Roman", Times, serif;
 
@@ -103,9 +108,7 @@
 }
 
 .sprite-background(@x:0px, @y:0px) {
-	background-image:url(../../images/sprite.png);
-	background-position: @x @y;
-	background-repeat: no-repeat;
+	background: url(../../images/sprite.png) @x @y no-repeat;
 }
 
 .drop-shadow(@x:0px, @y:0px, @blur:3px, @color:#000) {

@@ -17,7 +17,7 @@
 				<h1><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h1>
 			</header>
 			<section>
-				<?php  $content = content(80); ?>
+				<?php the_content('Read On&hellip;'); ?>
 			</section>
 			<footer>
 				<ul class='metadata clear'>

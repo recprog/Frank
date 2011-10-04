@@ -11,8 +11,26 @@
 				margin-bottom:@row-height;
 				h1 {
 					font-weight:normal;
-					.font-size-large;
+					.font-size-x-large;
 					color:@color_dark;
+				}
+			}
+			section h1 {
+				padding:0;
+				.font-size-large;
+				margin:@row-height*2 0 @row-height 0;
+			}
+			
+			section h2 {
+				padding:0;
+				.font-size-medium;
+				font-weight:bold;
+				margin:@row-height 0 @row-height 0;
+			}
+			
+			dl {
+				dd {
+					margin-left:@gutter-width;
 				}
 			}
 		}

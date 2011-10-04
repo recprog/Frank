@@ -16,7 +16,7 @@
 			<header>
 				<h1><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h1>
 			</header>
-			<section><?php $content = content(80, "Read More", 190, 120, 80, true); ?></section>
+			<section><?php the_content('Read On&hellip;'); ?> </section>
 			<footer>
 				<ul class='metadata clear'>
 					<li class='time'><time datetime="<?php the_time('Y-m-d'); ?>" pubdate>Posted <?php echo human_time_diff(get_the_time('U'), current_time('timestamp')) . ' ago'; ?></time></li>										

@@ -12,7 +12,9 @@
 			<header>
 					<h1><?php the_title(); ?></h1>
 			</header>
-			<div id='excerpt'><?php the_excerpt(); ?></div>
+			<?php if($post->post_excerpt) : ?>
+				<div id='excerpt'><?php the_excerpt(); ?></div>
+			<?php endif; ?>
 			<div id='content_main' class='clear'>
 				<div class='post-info span-2'>
 					<dl class='metadata'>

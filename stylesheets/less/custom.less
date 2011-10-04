@@ -6,6 +6,7 @@
 }
 
 @dotted-line-dark:url(data:image/gif;base64,R0lGODlhBQABAIAAAD0wLwAAACH5BAHoAwEALAAAAAAFAAEAAAIDRB4FADs=);
+@checkbox-sprite:url(data:image/gif;base64,R0lGODlhCgAeAJEAAP76+mJVVF1QT8zMzCH5BAHoAwMALAAAAAAKAB4AAAIelI+py+0PYxu02ouz3rz7v0kiApRAkJhnaqJkO44FADs=);
 
 @media screen, projection {
 	#ad {
@@ -233,7 +234,7 @@
 	}
 
 	/*footer follow*/
-	#text-17.widget {
+	#text-7.widget {
 		.columns(6);
 		#footer_follow_list {
 			.reset-dimensions;
@@ -247,6 +248,7 @@
 					background:@color_highlight;
 				}
 				a {
+					border:0;
 					.reset-dimensions;
 					background:@color_light;
 					position:relative;
@@ -293,7 +295,7 @@
 	}
 	
 	/*footer hcard*/
-	#text-27 {
+	#text-8 {
 		padding-left: (@column-width*3) + (@gutter-width*3);
 		margin-top:@row-height;
 		.org, .email, .adr, .tags {
@@ -357,7 +359,7 @@
 	}
 	nav {
 		
-		width:215px;	
+		.columns(2);
 		border:0;
 		.reset-dimensions;
 		margin-top:42px;
@@ -371,14 +373,14 @@
 				list-style: none;
 				.reset-dimensions;
 				display:block;
-				width:215px;
+				.columns(2);
 				position:relative;
 				ul {
 					display:none;
 				}
 				li {
 					float: left;
-					margin-right: 40px;
+					margin-right:40px;
 					background: none;
 					padding: 0;
 					
@@ -397,10 +399,12 @@
 						color:@color_midtone;
 					}
 				}
-				li.rss {
+				
+				li.rss, li.twitter {
 					background:@color_accent;
 					.default-shadow;
-					
+					position:fixed;
+					margin-left:170px;
 					width:45px;
 					height:45px;
 					border-radius:22.5px;
@@ -409,9 +413,16 @@
 						border:0;
 						width:15px;
 						height:15px;
-						.sprite-background(-275px, -125px);
 						text-indent:-99999px;
 						padding:15px;
+					}
+				}
+				
+				
+				li.rss {
+					margin-top:-15px;
+					a {
+						.sprite-background(-275px, -125px);
 					}
 				}
 				li:last-child {
@@ -420,31 +431,16 @@
 				/*testing*/
 				
 				li.rss {
-					position:fixed;
-					margin-left:255px;
+					
 				}
 				
 				li.twitter {
-					background:@color_accent;
-					.default-shadow;
-					width:45px;
-					height:45px;
-					border-radius:22.5px;
 					margin-top:50px;
-					position:fixed;
-					margin-left:255px;
 					a {
-						border:0;
-						width:15px;
-						height:15px;
 						.sprite-background(-43px, -125px);
-						text-indent:-99999px;
-						padding:15px;
 					}
 				}
-				li:last-child {
-					margin-right: 0;
-				}
+
 				li.rss:hover, li.twitter:hover {
 					background-color:@color_accent_alt;
 				}		
@@ -455,7 +451,7 @@
 
 
 /*Project Template*/
-article h1 {
+#content.page article h1 {
 	display:none;
 }
 
@@ -503,10 +499,8 @@ article h1 {
 }
 
 #download_follow .button {
-	background:#998482;
 	display:block;
 	border:0;
-	background:#3d302f;
 	background:#5d504f;
 }
 
@@ -517,8 +511,6 @@ article h1 {
 }
 
 #download_follow .button:hover {
-	background:#aa9593;
-	background:#5d504f;
 	background:#998482;
 }
 
@@ -576,6 +568,11 @@ article h1 {
 	font-size:11px;
 }
 
+.srdslideshow_caption .caption strong {
+	font-weight:bold;
+	margin-right:10px;
+}
+
 .srdslideshow_navigation {
 	background:rgba(61, 48, 47, 0.8);
 	display:none;
@@ -620,7 +617,168 @@ article h1 {
 	color:#050000;
 }
 
+#hero_slideshow .slides {
+	.reset-dimensions;
+	li {
+		display:none;
+	}
+}
+
 .srd_slide {
 	padding:0;
 	margin:0;
+}
+
+#projects_navigation {
+	margin:15px 0;
+}
+
+#content.page #projects_navigation {
+	font-family:'Helvetica Neue', Arial, Helvetica, Geneva, sans-serif;
+}
+
+#content.page #projects_navigation dt {
+	color:#5d504f;
+}
+
+#content.page #projects_navigation dt, #content.page #projects_navigation dd {
+	margin:0;
+	font-size:11px;
+	line-height:14px;
+	margin-right:20px;
+	float:left;
+	
+}
+
+#projects_navigation dd:last-child {
+	margin-right:0;
+}
+
+#content.page #projects_navigation dd {
+	background:@checkbox-sprite 0 2px no-repeat;
+	cursor:pointer;
+	padding-left:15px;
+}
+
+#content.page #projects_navigation dd.active {
+	background:@checkbox-sprite 0 -18px no-repeat;
+	font-weight:bold;
+}
+
+#projects_list {
+	list-style:none;
+	margin:0;
+	padding:0;
+	display:block;
+}
+
+#projects_list .external {
+	border:0;
+}
+
+#projects_list li {
+	float:left;
+	padding:0;
+	margin:0;
+	margin-bottom:30px;
+	margin-right:40px;
+	.columns(3);
+	background:transparent;
+	-moz-box-shadow: 0px 0px 8px rgba(18, 7, 6, 0.3);
+	-webkit-box-shadow: 0px 0px 8px rgba(18, 7, 6, 0.3);
+	box-shadow: 0px 0px 8px rgba(18, 7, 6, 0.3);
+}
+
+#projects_list #projects_coffeesleeve {
+	
+}
+
+#projects_list li.deselected {
+	opacity:.5;
+}
+
+#projects_list li p { display:none;}
+
+#projects_list li {
+	-webkit-transition: opacity .3s cubic-bezier(0.02, 0, 0.18, 1.0); 
+	-moz-transition: opacity .3s cubic-bezier(0.02, 0, 0.18, 1.0); 
+	-o-transition: opacity .3s cubic-bezier(0.02, 0, 0.18, 1.0);
+}
+
+
+#projects_list li.last {
+	margin-right:0;
+}
+
+#projects_list li a {
+	display:block;
+	line-height:0;
+	margin:0 !important; padding:0 !important;
+	border:0 !important;
+	text-decoration:none;
+	.columns(3);
+	height:120px;
+}
+
+#projects_list li #projects_bitcons {
+	background:url(/wp-content/images/pages/projects/projects_sprite.jpg) 0 0;
+}
+
+#projects_list li #projects_sanscons {
+	background:url(/wp-content/images/pages/projects/projects_sprite.jpg) -215px 0;
+}
+
+#projects_list li #projects_processing {
+	background:url(/wp-content/images/pages/projects/projects_sprite.jpg) -430px 0;
+}
+
+#projects_list li #projects_photography {
+	background:url(/wp-content/images/pages/projects/projects_sprite.jpg) -645px 0;
+}
+
+#projects_list li #projects_offfranklin {
+	background:url(/wp-content/images/pages/projects/projects_sprite.jpg) -860px 0;
+}
+
+#projects_list li #projects_iconic {
+	background:url(/wp-content/images/pages/projects/projects_sprite.jpg) -1075px 0;
+}
+
+#projects_list li #projects_coffeesleeve {
+	background:url(/wp-content/images/pages/projects/projects_sprite.jpg) -1290px 0;
+}
+
+#projects_list li #projects_coordy {
+	background:url(/wp-content/images/pages/projects/projects_sprite.jpg) -1505px 0;
+}
+
+#projects_list li #projects_colortoolkit {
+	background:url(/wp-content/images/pages/projects/projects_sprite.jpg) -1720px 0;
+}
+
+#projects_list h3 {
+	position:relative;
+	.reset-dimensions;
+}
+
+#projects_list h3 small {
+	padding-left:6px;
+	background:rgba(93,80,79,.84);
+	margin:0;
+	position:absolute;
+	display:block;
+	bottom:0;
+	.columns(3, -6);
+}
+
+#projects_list small {
+	color:#fdfcfc;
+	
+	font-size:13px; line-height:13px;
+}
+
+#content.page #projects_list li p {
+	font-size:11px;
+	line-height:14px;
+	font-family:'Helvetica Neue', Arial, Helvetica, Geneva, sans-serif;
 }

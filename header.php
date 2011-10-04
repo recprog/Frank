@@ -65,6 +65,8 @@
 </head>
 <body id="page">
 <div id="page_top">
+	<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Top Bar") ) : ?>
+	<?php endif; ?>
 <div class='wrapper clear'>
 	<header id="page_header" class="span-12 last clear">
 		<hgroup>
