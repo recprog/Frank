@@ -33,7 +33,7 @@
 
 <div class='span-12 last clear content halfandhalf'>
 	<div class='nav content-header'>
-		<span class='label'>Recent Posts</span>
+		<span class='label'>Latest Posts</span>
 		<span class='caption'><?php print($caption) ?></span> <span class='more'><?php next_posts_link('View more&hellip;'); ?></span> 
 		
 	</div>
