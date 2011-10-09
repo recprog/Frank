@@ -34,27 +34,17 @@
 				</header>
 				<div class='clear'>
 				<div class='post-info span-2'>
-					<dl class='metadata'>
-						<dt class='author'>By</dt>
-						<dd class='author'><?php the_author_link(); ?></dd>
-						<dt class='time'>Posted</dt>
-						<dd class='time'><time datetime="<?php the_time('Y-m-d'); ?>" pubdate><?php echo human_time_diff(get_the_time('U'), current_time('timestamp')) . ' ago'; ?></time></dd>
-						<dt class='categories'>Filed Under</dt>
-						<dd class='categories'><?php the_category('</dd><dd>'); ?></dd>
-						<dt class='tags'>Tagged</dt>
-						<dd class='tags'><?php the_tags('','<dd>','</dd>'); ?>
-					</dl>
+					<ul class='metadata vertical'>
+						<li class="date"><time datetime="<?php the_time('Y-m-d'); ?>" pubdate><?php the_time('F j, Y'); ?></time></li>
+						<li class="author">By <?php the_author_link(); ?></li>
+						<li class="categories"><?php the_category(', '); ?></li>
+						<li class='comments'><?php comments_popup_link('No comments', '1 comment', '% comments'); ?></li>	
+					</ul>
 				</div>
 				<section class='span-7 last'>
 					<?php the_content('Read On&hellip;'); ?>
 				</section>
 				</div>
-				<footer class='prefix-2'>
-					<ul class='metadata clear'>								
-						<li class='comments'><?php comments_popup_link('No comments', '1 comment', '% comments'); ?></li>	
-						<li class='tweet'><a href='http://twitter.com/home?status=<?php the_title() ?> <?php the_permalink() ?>'>Retweet This Post</a></li>
-					</ul>
-				</footer>
 			</article> <!-- .post -->
 		<?php endwhile; ?>
 		<div class="pagination clear">			

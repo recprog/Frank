@@ -73,6 +73,32 @@
 			p:last-child {
 				margin-bottom: 0;
 			}
+			
+			ul.metadata.vertical {
+				.reset-dimensions;
+				margin-top:5px;
+				list-style:none;
+				li {
+					.reset-dimensions;
+					text-align:right;
+					float:none;
+					.font-size-x-small;
+					font-style:italic;			
+					margin-bottom:5px;
+					font-family:@serif;
+				}
+				li.date {
+					font-style:normal;	
+					font-weight:bold;
+					margin-bottom:10px;
+					font-family:@sans-serif;
+				}
+			}
+			.comment-edit-link {
+				font-weight:bold;
+				display:block;
+				margin-top:@row-height;
+			}
 		}
 		#no_comments {
 			font-size: 26px;

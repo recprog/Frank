@@ -22,12 +22,11 @@
 	<?php foreach ($comments as $comment) : ?>
 		<li class="comment span-12 last clear">
 			<div class="comment-info span-2">
-				<dl class='metadata'>
-					<dt class='author'>By</dt>
-					<dd class='author' id="vcard-<?php comment_ID() ?>"><a class="url fn" href="<?php comment_author_url(); ?>"><?php comment_author(); ?></a></dd>
-					<dt class='time'>Posted</dt>
-					<dd class='time'><?php echo human_time_diff(get_comment_date('U'), current_time('timestamp')) . ' ago'; ?></dd> 
-				</dl>
+				<ul class='metadata vertical'>
+					<li class="date"><time datetime="<?php the_time('Y-m-d'); ?>" pubdate><?php comment_date('F d, Y'); ?></time></li>
+					<li class='author' id="vcard-<?php comment_ID() ?>">By <a class="url fn" href="<?php comment_author_url(); ?>"><?php comment_author(); ?></a></li>
+				</ul>
+				
 				<?php edit_comment_link('edit'); ?>
 			</div>
 			<div class="content span-7 suffix-3 last">

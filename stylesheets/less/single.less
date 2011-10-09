@@ -2,8 +2,41 @@
 
 @media screen, projection {
 	#content.single {
-		aside {
-			
+		.post-info {
+			.previous {
+				margin-top:@row-height*4;
+				font-style:italic;
+				font-family:@serif;
+				a {
+					.font-size-small;
+					display:block;
+					text-align:center;
+				}
+				
+				nav {
+					padding-bottom:@row-height;
+					border-bottom:1px solid @color_light;
+					margin:@row-height 0;
+				}
+				
+				.arrow {
+					display:block;
+					.default-shadow;
+					width:45px;
+					height:45px;
+					border-radius:22.5px;
+					text-indent:-9999px;
+					.sprite-background(-135px, 15px);
+					background-color:@color_midtone;
+					
+				}
+				a:hover {
+					color:@color_accent_alt;
+					.arrow {
+						background-color:@color_dark;
+					}
+				}
+			}
 		}
 		position: relative;
 		article {
