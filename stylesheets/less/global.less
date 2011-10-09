@@ -324,8 +324,6 @@
 					.default-shadow;
 				}
 				img.noshadow {
-					-moz-box-shadow: none !important;
-					-webkit-box-shadow: none !important;
 					box-shadow: none !important;
 				}
 			}
@@ -333,8 +331,6 @@
 	}
 	
 	#content.page article section img {
-		-moz-box-shadow: none !important;
-		-webkit-box-shadow: none !important;
 		box-shadow: none !important;
 	}
 	
@@ -385,26 +381,24 @@
 		
 	button, .button, input[type=submit] {
 		display:inline-block;
-		background:@color_midtone;
+		background:@color_light;
 		.font-size-small;
-		color:@color_light;
+		color:@color_midtone;
 		padding:8px 10px;
 		border-radius:3px;
 		font-family:@sans-serif;
 		font-weight:bold;
 		text-align:center;
-		border:0;
-		text-shadow:0px 1px 0px rgba(18, 7, 6,0.6);
-		border:1px solid rgba(18, 7, 6,0.3);
+		/*text-shadow:0px 1px 0px rgba(18, 7, 6,0.6);*/
+		border:1px solid rgba(18, 7, 6,0.2);
 		
-		-moz-box-shadow: inset 0px -1px 1px rgba(18, 7, 6,0.3), inset 0px 1px 1px rgba(255, 253, 253,0.2);
-		-webkit-box-shadow: inset 0px -1px 1px rgba(18, 7, 6,0.3), inset 0px 1px 1px rgba(255, 253, 253,0.2);
-		box-shadow: inset 0px -1px 1px rgba(18, 7, 6,0.3), inset 0px 1px 1px rgba(255, 253, 253,0.2);
+		box-shadow: inset 0px -1px 1px rgba(18, 7, 6,0.1), inset 0px 1px 1px rgba(255, 253, 253,0.4);
 		
 	}
 	button:hover, .button:hover, input[type=submit]:hover {
-		background:@color_dark;
+		background:@color_midtone_light;
 		color:@color_highlight;
+		box-shadow: inset 0px -1px 1px rgba(18, 7, 6,0.1), inset 0px 1px 1px rgba(255, 253, 253,0.2);
 	}
 	.widget-last {
 		margin-right:0 !important;

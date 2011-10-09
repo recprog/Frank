@@ -56,6 +56,7 @@
 	<?php wp_enqueue_script('jquery'); ?>
 	<?php wp_enqueue_script('jquery-main', get_bloginfo('template_url') . '/js/main.js'); ?>
 	<?php wp_enqueue_script('jquery-srd', get_bloginfo('template_url') . '/js/custom.js'); ?>
+	<?php wp_enqueue_script('jquery-srd-slideshow', '/wp-content/js/slideshow/jquery.srdslideshow.js'); ?>
 	
 	<?php wp_head(); ?>
 	

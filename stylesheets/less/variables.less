@@ -112,14 +112,11 @@
 }
 
 .drop-shadow(@x:0px, @y:0px, @blur:3px, @color:#000) {
-	-moz-box-shadow: @x @y @blur @color;
-	-webkit-box-shadow: @x @y @blur @color;
 	box-shadow: @x @y @blur @color;
 }
 
 .inset-shadow(@x:0px, @y:0px, @blur:3px, @color:#000) {
-	-moz-box-shadow:inset @x @y @blur @color;
-	-webkit-box-shadow:inset @x @y @blur @color;
+	box-shadow: inset @x @y @blur @color;
 }
 
 .border-image(@url, @dimensions, @type) {

@@ -52,5 +52,16 @@
 				include 'templates/default_loop.php';
 			}
 			?>
+			
+			
+				<div class="pagination clear">			
+					<?php if(get_next_posts_link()): ?>
+						<a href='<?php echo next_posts( $max_page, false ); ?>' class='button'>Older Entries</a>
+					<?php endif; ?>
+					<?php if(get_previous_posts_link()): ?>
+						<a href='<?php echo previous_posts( $max_page, false ); ?>' class='button'>Newer Entries</a>
+					<?php endif; ?>
+				</div>
+
 </div>
 <?php get_footer(); ?>

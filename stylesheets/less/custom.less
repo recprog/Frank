@@ -129,7 +129,6 @@
 			section:last-child {
 				padding-bottom: @row-height*3;
 				background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAATCAYAAACdkl3yAAABSElEQVR42p3UrUtDURiAcRHhii6NibeIwTLBD3BNZSsWy8SkBofFJCZ1zKQsGDbcoggqKwNBQYvJIoIIgv+ACH6hQRGsXuden4XB6+FcZTf8yoX34Zx7OKdJRH6ZnZzQHCwiob4ZM8B/oVUIXhALGsrhG6Jiw42ERpCHBzG8YtwWMrfSizTuIT72MIBWPWuG8kghhmdL5ABh7GLMFmpBAYJPTGMIdyqyDRdlCN6Q0CEH66hCVGwKg3hACV3YgijviNdDmxCLL8wgjjQOIRYfGK2FriA+dpDFEZ4gPjK1UCcuIIYielDGAvpxA1EqyMCp/+wILo2VuCipgRSiuIXAwwaazeN3cY19hHAMUTzMoQ+PyJnHb8bmcQqxqGIJ3WhTc9YrksSZT6iCtUYubRjnlq1lg9z+DmNlywj8HkVwgpWgD5vWDvwd+gFhe32K6f2kfgAAAABJRU5ErkJggg==) center bottom no-repeat;
-				/*p:last-child:after { content: " \25A0"; color:@color_midtone; }*/
 			}
 			
 			#excerpt {
@@ -250,6 +249,7 @@
 					background:@color_highlight;
 				}
 				a {
+					display:block;
 					border:0;
 					.reset-dimensions;
 					background:@color_light;
@@ -477,16 +477,12 @@
 }
 
 #hero_slideshow .slideshow  {
-	-moz-box-shadow: 0px 0px 8px rgba(18, 7, 6, 0.3);
-	-webkit-box-shadow: 0px 0px 8px rgba(18, 7, 6, 0.3);
-	box-shadow: 0px 0px 8px rgba(18, 7, 6, 0.3);
+	.default-shadow;
 	line-height:0;
 }
 
 #work_promo {
-	-moz-box-shadow: 0px 0px 8px rgba(18, 7, 6, 0.3);
-	-webkit-box-shadow: 0px 0px 8px rgba(18, 7, 6, 0.3);
-	box-shadow: 0px 0px 8px rgba(18, 7, 6, 0.3);
+	.default-shadow;
 	background:#f0eceb;
 	border-radius:5px;
 	padding:10px 8px 15px 8px;
@@ -557,7 +553,7 @@
 }
 
 .srdslideshow_caption {
-	font-family:'Helvetica Neue', Arial, Helvetica, Geneva, sans-serif;
+	font-family:@sans-serif;
 }
 
 .srdslideshow_caption .title {
@@ -592,7 +588,7 @@
 	margin:0;
 	float:left;
 	margin-right:10px;
-	font-family:'Helvetica Neue', Arial, Helvetica, Geneva, sans-serif;
+	font-family:@sans-serif;
 	background:#ded3d1;
 	color:#3d302f;
 	cursor: default;
@@ -663,7 +659,7 @@
 }
 
 #content.page #projects_navigation dd.active {
-	background:@checkbox-sprite 0 -18px no-repeat;
+	background-position:0 -18px;
 	font-weight:bold;
 }
 
@@ -686,9 +682,7 @@
 	margin-right:40px;
 	.columns(3);
 	background:transparent;
-	-moz-box-shadow: 0px 0px 8px rgba(18, 7, 6, 0.3);
-	-webkit-box-shadow: 0px 0px 8px rgba(18, 7, 6, 0.3);
-	box-shadow: 0px 0px 8px rgba(18, 7, 6, 0.3);
+	.default-shadow;
 }
 
 #projects_list #projects_coffeesleeve {
@@ -782,5 +776,5 @@
 #content.page #projects_list li p {
 	font-size:11px;
 	line-height:14px;
-	font-family:'Helvetica Neue', Arial, Helvetica, Geneva, sans-serif;
+	font-family:@sans-serif;
 }

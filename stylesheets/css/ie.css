@@ -6,19 +6,15 @@
 .font-size-small{font-size:13px;line-height:19px;}
 .font-size-x-small{font-size:11px;line-height:14px;}
 .font-size-xx-small{font-size:10px;line-height:12px;}
-.default-shadow{-moz-box-shadow:0px 0px 8px rgba(18, 7, 6, 0.3);-webkit-box-shadow:0px 0px 8px rgba(18, 7, 6, 0.3);box-shadow:0px 0px 8px rgba(18, 7, 6, 0.3);}
+.default-shadow{box-shadow:0px 0px 8px rgba(18, 7, 6, 0.3);}
 .reset-dimensions{margin:0;padding:0;}
 .incomplete{background-color:rgba(255, 0, 255, 0);}
 .show-bounds{background-color:rgba(255, 255, 0, 0.5);}
+#top_bar{background:#050000;}
+#content.single{padding-bottom:45px;}
 #content.home #content_secondary .post.post-4,#content.home #content_tertiary .post.post-4{margin-right:0;}
-#page_footer .item-0,#page_footer .item-4,#page_footer .item-8{clear:left;width:330px;}
-#page_footer .item-3,#page_footer .item-7,#page_footer .item-11{margin-right:0;}
-#page_heel .item-0,#page_heel .item-4,#page_heel .item-8{clear:left;width:330px;}
-#page_heel .item-3,#page_heel .item-7,#page_heel .item-11{margin-right:0;}
-#sub_header .item-0,#sub_header .item-4,#sub_header .item-8{width:330px;clear:left;}
-#sub_header .item-3,#sub_header .item-7,#sub_header .item-11{margin-right:0;}
-#post_footer .item-0,#post_footer .item-4,#post_footer .item-8{clear:left;width:330px;}
-#post_footer .item-3,#post_footer .item-7,#post_footer .item-11{margin-right:0;}
+#page_footer .widget-1,#page_heel .widget-1,#sub_header .widget-1,#post_footer .widget-1,#page_footer .widget-4,#page_heel .widget-4,#sub_header .widget-4,#post_footer .widget-4,#page_footer .widget-7,#page_heel .widget-7,#sub_header .widget-7,#post_footer .widget-7{clear:left;width:470px;}
+#page_footer .widget-3,#page_heel .widget-3,#sub_header .widget-3,#post_footer .widget-3,#page_footer .widget-6,#page_heel .widget-6,#sub_header .widget-6,#post_footer .widget-6,#page_footer .widget-9,#page_heel .widget-9,#sub_header .widget-9,#post_footer .widget-9{margin-right:0;}
 #sidebar{background:#fffefe;}
 #sticky_footer{background:#3d302f;}
 #sticky_footer.light{background:#f0eceb;}
