@@ -1243,7 +1243,7 @@ color:#5d504f;
 position:absolute;
 bottom:5px;
 left:5px;
-background:url(/wp-content/themes/Franklin-Street-Theme/stylesheets/images/sprite.png) -200px -150px no-repeat;
+background:url(/wp-content/themes/Franklin-Street-Theme/images/sprite.png) -200px -150px no-repeat;
 width:20px;
 height:20px;
 text-indent:-9999px;
@@ -1255,7 +1255,7 @@ border-bottom:1px solid #5d504f;
 position:absolute;
 bottom:5px;
 left:30px;
-background:url(/wp-content/themes/Franklin-Street-Theme/stylesheets/images/sprite.png) -180px -150px no-repeat;
+background:url(/wp-content/themes/Franklin-Street-Theme/images/sprite.png) -180px -150px no-repeat;
 width:20px;
 height:20px;
 text-indent:-9999px;
@@ -1265,7 +1265,7 @@ text-indent:-9999px;
 position:absolute;
 bottom:5px;
 right:5px;
-background:url(/wp-content/themes/Franklin-Street-Theme/stylesheets/images/sprite.png) -215px -145px no-repeat;
+background:url(/wp-content/themes/Franklin-Street-Theme/images/sprite.png) -215px -145px no-repeat;
 width:20px;
 height:20px;
 text-indent:-9999px;
@@ -1934,6 +1934,14 @@ textarea {
 -webkit-transition-property:opacity .5s cubic-bezier(0.02,0,0.18,1);
 -moz-transition-property:opacity .5s cubic-bezier(0.02,0,0.18,1);
 opacity:0;
+}
+
+#hero_slideshow
+.slides {
+-webkit-transition:background-position .75s cubic-bezier(0.02,0,0.18,1);
+-moz-transition:background-position .75s cubic-bezier(0.02,0,0.18,1);
+margin:0;
+padding:0;
 }
 
 * html .clearfix,* html
@@ -2629,8 +2637,7 @@ line-height:19px;
 
 .reset-dimensions,#page_header nav
 .menu,.slideshow
-img,#hero_slideshow
-.slides {
+img {
 margin:0;
 padding:0;
 }

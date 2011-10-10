@@ -12,7 +12,7 @@
 	
 	<title><?php if ( is_single()||is_page() ) { wp_title(''); ?> &#8212; <?php } ?> <?php bloginfo('name'); ?></title>
 
-	<?php if(true) : ?>
+	<?php if(false) : ?>
 	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/stylesheets/css/reset.css" type="text/css" media="all" />
 	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/stylesheets/css/grid.css" type="text/css" media="all" />
 	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/stylesheets/css/global.css" type="text/css" media="all" />

@@ -15,6 +15,7 @@
 #content.home #content_secondary .post.post-4,#content.home #content_tertiary .post.post-4{margin-right:0;}
 #page_footer .widget-1,#page_heel .widget-1,#sub_header .widget-1,#post_footer .widget-1,#page_footer .widget-4,#page_heel .widget-4,#sub_header .widget-4,#post_footer .widget-4,#page_footer .widget-7,#page_heel .widget-7,#sub_header .widget-7,#post_footer .widget-7{clear:left;width:470px;}
 #page_footer .widget-3,#page_heel .widget-3,#sub_header .widget-3,#post_footer .widget-3,#page_footer .widget-6,#page_heel .widget-6,#sub_header .widget-6,#post_footer .widget-6,#page_footer .widget-9,#page_heel .widget-9,#sub_header .widget-9,#post_footer .widget-9{margin-right:0;}
+#page_heel .widget-2{margin-right:0;}
 #sidebar{background:#fffefe;}
 #sticky_footer{background:#3d302f;}
 #sticky_footer.light{background:#f0eceb;}

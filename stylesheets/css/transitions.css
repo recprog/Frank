@@ -5,3 +5,4 @@ nav li.rss,nav li.twitter{-webkit-transition:background-color 0.5s cubic-bezier(
 .slideshow .srd_slide{-webkit-transition-property:opacity 0.5s cubic-bezier(0.02, 0, 0.18, 1);-moz-transition-property:opacity 0.5s cubic-bezier(0.02, 0, 0.18, 1);}
 button,.button,input[type=submit]{-webkit-transition:background-color 0.5s cubic-bezier(0.02, 0, 0.18, 1);-moz-transition:background-color 0.5s cubic-bezier(0.02, 0, 0.18, 1);}
 #content.single .previous .arrow,#content.single .previous a{-webkit-transition:all 0.75s cubic-bezier(0.02, 0, 0.18, 1);-moz-transition:all 0.75s cubic-bezier(0.02, 0, 0.18, 1);}
+#hero_slideshow .slides{-webkit-transition:background-position 0.75s cubic-bezier(0.02, 0, 0.18, 1);-moz-transition:background-position 0.75s cubic-bezier(0.02, 0, 0.18, 1);}
