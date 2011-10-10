@@ -67,32 +67,24 @@
 		</header>
 		<form action="<?php echo get_option('siteurl'); ?>/wp-comments-post.php" method="post" id="commentform">
 			<?php if ( !$user_ID ) : ?>	
-			<div class='span-2'>				
-				<dl id="comment_form_info">
-					<dt><label for="author">Name <?php if ($req) echo "(required)"; ?></label></dt>
-					<dd><input autocomplete="off" type="text" name="author" id="author" value="<?php echo $comment_author; ?>" size="22" class="textinput" tabindex="1" /></dd>
-					<dt><label for="email">Email <?php if ($req) echo "(required)"; ?></label> </dt>
-					<dd><input autocomplete="off" type="text" name="email" id="email" value="<?php echo $comment_author_email; ?>" size="22" class="textinput" tabindex="2" /></dd>
-					<dt><label for="url">Website</label></dt>
-					<dd><input autocomplete="off" type="text" name="url" id="url" value="<?php echo $comment_author_url; ?>" size="22" class="textinput" tabindex="3" /></dd>
-				</dl>
+			<div class='span-2' id="comment_form_info">				
+					<label for="author">Name <?php if ($req) echo "(required)"; ?></label>
+					<input autocomplete="off" type="text" name="author" placeholder="Name (required)" id="author" value="<?php echo $comment_author; ?>" size="22" class="textinput" tabindex="1" />
+					<label for="email">Email <?php if ($req) echo "(required)"; ?></label>
+					<input autocomplete="off" type="text" name="email" placeholder="Email (required)" id="email" value="<?php echo $comment_author_email; ?>" size="22" class="textinput" tabindex="2" />
+					<label for="url">Website</label>
+					<input autocomplete="off" type="text" name="url" placeholder="URL" id="url" value="<?php echo $comment_author_url; ?>" size="22" class="textinput" tabindex="3" />
 			</div>
 			<?php else : ?>
 				<div id='comment_form_info' class='span-2'>				
-					<dl id="comment_form_info" class='metadata'>
-						<dt class='author'>By</label></dt>
-						<dd class='author'><a href="<?php echo get_option('siteurl'); ?>/wp-admin/profile.php"><?php echo $user_identity; ?></a></dd>
-					</dl>
-					<a href="<?php echo get_option('siteurl'); ?>/wp-login.php?action=logout" title="Log out of this account">Log out &raquo;</a>
+					By <a href="<?php echo get_option('siteurl'); ?>/wp-admin/profile.php"><?php echo $user_identity; ?></a> (<a href="<?php echo get_option('siteurl'); ?>/wp-login.php?action=logout" title="Log out of this account">Log out&hellip;</a>)
 				</div>
 			<?php endif; ?>
 			
 			
-			<div id="comment_form_comment" class='span-7 last'>
-				<dl class="<?php if ( $user_ID ) : ?>loggedin<?php endif; ?>">
-					<dt><label for="comment">Your Comment</label></dt>
-					<dd><textarea name="comment" class="<?php if ( $user_ID ) echo('loggedin') ?>" id="comment" cols="100%" rows="10" tabindex="4"></textarea></dd>
-				</dl>
+			<div id="comment_form_comment" class='span-7 last <?php if ( $user_ID ) : ?>loggedin<?php endif; ?>'>
+				<label for="comment">Your Comment</label>
+				<textarea name="comment" placeholder="Your Comment" class="<?php if ( $user_ID ) echo('loggedin') ?>" id="comment" cols="100%" rows="10" tabindex="4"></textarea>
 				<input name="submit" type="submit" id="submit" class="button <?php if ( $user_ID ) echo('loggedin') ?>" tabindex="5" value="Submit Comment" />
 				<input type="hidden" name="comment_post_ID" value="<?php echo $id; ?>" />
 			</div>

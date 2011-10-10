@@ -59,6 +59,7 @@
 				display:none;
 			}
 			section {
+				margin-bottom:0;
 				a {
 					color:@color_off_black;
 				}
@@ -85,15 +86,12 @@
 				font-style:italic;
 				color:@color_off_black;
 			}
-			.label:after {
-				content: " \2022";
-				color:@color_midtone;
-			}
 			.caption {
 				display:none;
 			}
 			.more {
 				font-family:@sans-serif;
+				margin-left:5px;
 			}
 		}
 			
@@ -297,7 +295,12 @@
 	}
 	
 	/*footer hcard*/
+	#page_heel .widget-2 {
+		margin-right:0;
+	}
+	
 	#text-8 {
+		
 		padding-left: (@column-width*3) + (@gutter-width*3);
 		margin-top:0;
 		.org, .email, .adr, .tags {
@@ -496,28 +499,10 @@
 	margin:15px 0;
 }
 
-#download_follow .button {
-	display:block;
-	border:0;
-	background:#5d504f;
-}
-
 #download_follow div {
 	border-top:3px solid #f0eceb;
 	padding:15px 0;
 	text-align:center;
-}
-
-#download_follow .button:hover {
-	background:#998482;
-}
-
-#download_follow #download .button {
-	background:#ea0000;
-}
-
-#download_follow #download .button:hover {
-	background:#ff1e00;
 }
 
 #download_follow small {

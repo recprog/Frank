@@ -7,10 +7,10 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" <?php language_attributes(); ?>>
 <head>
+	<meta charset="UTF-8" />
+	<meta name="generator" content="WordPress <?php bloginfo('version'); ?>" />
+	
 	<title><?php if ( is_single()||is_page() ) { wp_title(''); ?> &#8212; <?php } ?> <?php bloginfo('name'); ?></title>
-
-	<meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />	
-	<meta name="generator" content="WordPress <?php bloginfo('version'); ?>" /> <!-- leave this for stats please -->
 
 	<?php if(true) : ?>
 	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/stylesheets/css/reset.css" type="text/css" media="all" />

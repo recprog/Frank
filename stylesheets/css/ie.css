@@ -18,6 +18,11 @@
 #sidebar{background:#fffefe;}
 #sticky_footer{background:#3d302f;}
 #sticky_footer.light{background:#f0eceb;}
+#comments_container #commentform label{display:block;}
+#comments_container #commentform #comment_form_info label{text-align:right;}
+#comments_container #commentform #comment_form_info input[type=text]{margin-bottom:15px;}
+#comments_container #commentform textarea{height:137px;}
+#comment_form_comment dl{text-align:left;}
 .clear:after{content:".";display:block;clear:both;visibility:hidden;line-height:0;height:0;}
 .clear{display:inline-block;}
 html[xmlns] .clear{display:block;}

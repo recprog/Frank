@@ -10,4 +10,4 @@
 .reset-dimensions{margin:0;padding:0;}
 .incomplete{background-color:rgba(255, 0, 255, 0);}
 .show-bounds{background-color:rgba(255, 255, 0, 0.5);}
-@media screen, projection{label{font-family:'Helvetica Neue',Arial,Helvetica,Geneva,sans-serif;font-size:13px;line-height:19px;font-weight:bold;} input[type=text],textarea{font-size:13px;line-height:19px;border:1px solid #5d504f;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;color:#5d504f;}}
+@media screen, projection{label{font-family:'Helvetica Neue',Arial,Helvetica,Geneva,sans-serif;font-size:13px;line-height:19px;font-weight:bold;} input[type=text],textarea{font-size:13px;line-height:19px;border:1px solid #5d504f;font-family:'Helvetica Neue',Arial,Helvetica,Geneva,sans-serif;color:#5d504f;padding:3px 4px;font-size:13px;line-height:19px;box-shadow:inset 0px 0px 5px rgba(18, 7, 6, 0.2);border-radius:2px;} input[type=text]:focus,textarea:focus{border:1px solid #050000;box-shadow:inset 0px 0px 5px rgba(18, 7, 6, 0.1);}}

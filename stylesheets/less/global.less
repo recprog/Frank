@@ -222,18 +222,23 @@
 		.reset-dimensions;
 		margin-top:@row-height;
 		list-style:none;
-		background:@color_light;
-		padding:4px 10px;
-		border-radius:5px;
 		display:inline-block;
 		li {
 			.reset-dimensions;
 			float:left;
 			background:none;
 			margin-right:15px;
-			.font-size-small;
-			
+			.font-size-x-small;
+			font-style:italic;			
+			font-family:@serif;
 		}
+		
+		li.date {
+			font-style:normal;	
+			font-weight:bold;
+			font-family:@sans-serif;
+		}
+		
 		li.last, li:last-child {
 			margin-right:0;
 		}
@@ -343,6 +348,10 @@
 		 	margin:@row-height*3 0;
 		}
 		
+		article:first-child {
+			margin-top:@row-height;
+		}
+		
 		article > div > section p:last-child {
 				padding-bottom: @row-height*3;
 		}
@@ -352,19 +361,15 @@
 		}
 		
 		article > div > section:after {
-				/*color:@color_midtone; content: "\25C7 \00A0  \25C7 \00A0 \25C7"; display:block; text-align:center; margin: auto 0;*/
-				color:@color_midtone; content: "\25C6 \00A0  \25C6 \00A0 \25C6"; display:block; text-align:center; margin: auto 0; opacity:.6; .font-size-small;
-			}
+			color:@color_midtone; content: "\25C6 \00A0  \25C6 \00A0 \25C6"; display:block; text-align:center; margin: auto 0; opacity:.6; .font-size-small;
 		}
 		
 		article:last-child > div > section:after {
-				content:none !important;
-			}
-		
-		
-		article:first-child {
-			margin-top:@row-height;
+			content:none !important;
 		}
+		
+		
+		
 		article:last-child {
 			margin-bottom:@row-height;
 		}
@@ -379,7 +384,7 @@
 		}
 	}
 		
-	button, .button, input[type=submit] {
+	button, .button, input[type=submit], button.external, .button.external {
 		display:inline-block;
 		background:@color_light;
 		.font-size-small;
@@ -389,17 +394,33 @@
 		font-family:@sans-serif;
 		font-weight:bold;
 		text-align:center;
-		/*text-shadow:0px 1px 0px rgba(18, 7, 6,0.6);*/
 		border:1px solid rgba(18, 7, 6,0.2);
 		
 		box-shadow: inset 0px -1px 1px rgba(18, 7, 6,0.1), inset 0px 1px 1px rgba(255, 253, 253,0.4);
 		
 	}
-	button:hover, .button:hover, input[type=submit]:hover {
+	button:hover, .button:hover, input[type=submit]:hover, button.external:hover, .button.external:hover {
 		background:@color_midtone_light;
 		color:@color_highlight;
+		border:1px solid rgba(18, 7, 6,0.5);
 		box-shadow: inset 0px -1px 1px rgba(18, 7, 6,0.1), inset 0px 1px 1px rgba(255, 253, 253,0.2);
 	}
+	
+	button.alt, .button.alt, input[type=submit].alt, button.external.alt, .button.external.alt {
+		background:@color_accent;
+		color:@color_highlight;
+	}
+	
+	button.alt:hover, .button.alt:hover, input[type=submit].alt:hover, button.external.alt:hover, .button.external.alt:hover {
+		background:@color_accent_alt;
+		color:@color_highlight;
+		border:1px solid rgba(18, 7, 6,0.5);
+	}
+	
+	
+	button.external, .button.external
+	
+	
 	.widget-last {
 		margin-right:0 !important;
 	}

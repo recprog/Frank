@@ -19,12 +19,11 @@
 		<p><?php echo get_the_excerpt(); ?> <span class='more-link'><a href="<?php the_permalink(); ?>">Read On&hellip;</a></span></p>
 	</section>
 	<footer>
-		<ul class='metadata clear'>
+		<ul class='metadata horizontal clear'>
 			<li class='author'>By <?php the_author_link(); ?></li>	
-			<li class='time'><time datetime="<?php the_time('Y-m-d'); ?>" pubdate>Posted <?php echo human_time_diff(get_the_time('U'), current_time('timestamp')) . ' ago'; ?></time></li>
+			<li class='date'><time datetime="<?php the_time('Y-m-d'); ?>" pubdate><?php the_time('F j, Y'); ?></time></li>
 			<li>Filed Under <?php the_category(', '); ?></li>											
 			<li class='comments'><?php comments_popup_link('No comments', '1 comment', '% comments'); ?></li>
-			<li class='tweet'><a href='http://twitter.com/home?status=<?php the_title() ?> <?php the_permalink() ?>'>Retweet This Post</a></li>
 		</ul>
 	</footer>
 </article>	
