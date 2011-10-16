@@ -272,12 +272,6 @@ margin-top:1em;
 margin-left:-170px;
 }
 
-#content.single article section blockquote.large
-p {
-font-size:20px;
-line-height:30px;
-}
-
 #content.single article section img.flush-left {
 max-width:725px;
 }
@@ -288,8 +282,26 @@ line-height:14px;
 margin:1em 0;
 }
 
+p.xx-large {
+font-size:28px;
+line-height:35px;
+}
+
+p.x-large {
+font-size:24px;
+line-height:32px;
+}
+
+p.xx-small {
+font-size:10px;
+line-height:12px;
+}
+
 pre,code {
-white-space:0;
+white-space: pre;
+white-space: pre-wrap;
+white-space: -moz-pre-wrap;
+white-space: -o-pre-wrap;
 }
 
 pre {
@@ -583,97 +595,97 @@ padding:1px 0 0;
 .sprite.vimeo-dark-15 {
 width:18px;
 height:15px;
-background:url(/wp-content/themes/Franklin-Street-Theme/images/sprite.png) 0 -180px no-repeat;
+background:url(images/sprite.png) 0 -180px no-repeat;
 }
 
 .sprite.twitter-dark-15 {
 width:11px;
 height:15px;
-background:url(/wp-content/themes/Franklin-Street-Theme/images/sprite.png) -60px -180px no-repeat;
+background:url(images/sprite.png) -60px -180px no-repeat;
 }
 
 .sprite.tumblr-dark-15 {
 width:10px;
 height:15px;
-background:url(/wp-content/themes/Franklin-Street-Theme/images/sprite.png) -110px -180px no-repeat;
+background:url(images/sprite.png) -110px -180px no-repeat;
 }
 
 .sprite.facebook-dark-15 {
 width:7px;
 height:15px;
-background:url(/wp-content/themes/Franklin-Street-Theme/images/sprite.png) -150px -180px no-repeat;
+background:url(images/sprite.png) -150px -180px no-repeat;
 }
 
 .sprite.flickr-dark-15 {
 width:15px;
 height:8px;
-background:url(/wp-content/themes/Franklin-Street-Theme/images/sprite.png) -190px -180px no-repeat;
+background:url(images/sprite.png) -190px -180px no-repeat;
 }
 
 .sprite.git-dark-15 {
 width:14px;
 height:15px;
-background:url(/wp-content/themes/Franklin-Street-Theme/images/sprite.png) -240px -180px no-repeat;
+background:url(images/sprite.png) -240px -180px no-repeat;
 }
 
 .sprite.friendfeed-dark-15 {
 width:15px;
 height:15px;
-background:url(/wp-content/themes/Franklin-Street-Theme/images/sprite.png) -340px -180px no-repeat;
+background:url(images/sprite.png) -340px -180px no-repeat;
 }
 
 .sprite.vimeo-light-15 {
 width:18px;
 height:15px;
-background:url(/wp-content/themes/Franklin-Street-Theme/images/sprite.png) 0 -140px no-repeat;
+background:url(images/sprite.png) 0 -140px no-repeat;
 }
 
 .sprite.twitter-light-15 {
 width:11px;
 height:15px;
-background:url(/wp-content/themes/Franklin-Street-Theme/images/sprite.png) -60px -140px no-repeat;
+background:url(images/sprite.png) -60px -140px no-repeat;
 }
 
 .sprite.tumblr-light-15 {
 width:10px;
 height:15px;
-background:url(/wp-content/themes/Franklin-Street-Theme/images/sprite.png) -110px -140px no-repeat;
+background:url(images/sprite.png) -110px -140px no-repeat;
 }
 
 .sprite.facebook-light-15 {
 width:7px;
 height:15px;
-background:url(/wp-content/themes/Franklin-Street-Theme/images/sprite.png) -150px -140px no-repeat;
+background:url(images/sprite.png) -150px -140px no-repeat;
 }
 
 .sprite.flickr-light-15 {
 width:15px;
 height:8px;
-background:url(/wp-content/themes/Franklin-Street-Theme/images/sprite.png) -190px -140px no-repeat;
+background:url(images/sprite.png) -190px -140px no-repeat;
 }
 
 .sprite.git-light-15 {
 width:14px;
 height:15px;
-background:url(/wp-content/themes/Franklin-Street-Theme/images/sprite.png) -240px -140px no-repeat;
+background:url(images/sprite.png) -240px -140px no-repeat;
 }
 
 .sprite.rss-light-15 {
 width:15px;
 height:15px;
-background:url(/wp-content/themes/Franklin-Street-Theme/images/sprite.png) -290px -140px no-repeat;
+background:url(images/sprite.png) -290px -140px no-repeat;
 }
 
 .sprite.arrow-right-15 {
 width:9px;
 height:15px;
-background:url(/wp-content/themes/Franklin-Street-Theme/images/sprite.png) -110px 0 no-repeat;
+background:url(images/sprite.png) -110px 0 no-repeat;
 }
 
 .sprite.arrow-left-15 {
 width:9px;
 height:15px;
-background:url(/wp-content/themes/Franklin-Street-Theme/images/sprite.png) -160px 0 no-repeat;
+background:url(images/sprite.png) -160px 0 no-repeat;
 }
 
 #top_bar {
@@ -875,7 +887,7 @@ width:45px;
 height:45px;
 border-radius:22.5px;
 text-indent:-9999px;
-background:url(/wp-content/themes/Franklin-Street-Theme/images/sprite.png) -135px 15px no-repeat;
+background:url(images/sprite.png) -135px 15px no-repeat;
 background-color:#5d504f;
 }
 
@@ -1243,7 +1255,7 @@ color:#5d504f;
 position:absolute;
 bottom:5px;
 left:5px;
-background:url(/wp-content/themes/Franklin-Street-Theme/images/sprite.png) -200px -150px no-repeat;
+background:url(images/sprite.png) -5px 5px no-repeat;
 width:20px;
 height:20px;
 text-indent:-9999px;
@@ -1255,7 +1267,7 @@ border-bottom:1px solid #5d504f;
 position:absolute;
 bottom:5px;
 left:30px;
-background:url(/wp-content/themes/Franklin-Street-Theme/images/sprite.png) -180px -150px no-repeat;
+background:url(images/sprite.png) -20px 5px no-repeat;
 width:20px;
 height:20px;
 text-indent:-9999px;
@@ -1265,7 +1277,7 @@ text-indent:-9999px;
 position:absolute;
 bottom:5px;
 right:5px;
-background:url(/wp-content/themes/Franklin-Street-Theme/images/sprite.png) -215px -145px no-repeat;
+background:url(images/sprite.png) -35px 5px no-repeat;
 width:20px;
 height:20px;
 text-indent:-9999px;
@@ -1286,13 +1298,21 @@ margin-bottom:2px;
 display:block;
 width:100px;
 height:20px;
-background:url(/wp-content/themes/Franklin-Street-Theme/images/sprite.png) -180px -370px no-repeat;
+background:url(images/sprite.png) -180px -370px no-repeat;
 text-indent:-99999px;
 }
 
 #content.home
 .content {
 margin:30px 0 15px;
+}
+
+#content.home .content .nav
+.label {
+font-size:13px;
+line-height:19px;
+font-weight:700;
+color:#5d504f;
 }
 
 #content.home .content.oneup.large section .more-link
@@ -1337,7 +1357,7 @@ img {
 height:auto;
 }
 
-#content.single article section:last-child {
+#content.single article #content_main>section {
 padding-bottom:45px;
 background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAATCAYAAACdkl3yAAABSElEQVR42p3UrUtDURiAcRHhii6NibeIwTLBD3BNZSsWy8SkBofFJCZ1zKQsGDbcoggqKwNBQYvJIoIIgv+ACH6hQRGsXuden4XB6+FcZTf8yoX34Zx7OKdJRH6ZnZzQHCwiob4ZM8B/oVUIXhALGsrhG6Jiw42ERpCHBzG8YtwWMrfSizTuIT72MIBWPWuG8kghhmdL5ABh7GLMFmpBAYJPTGMIdyqyDRdlCN6Q0CEH66hCVGwKg3hACV3YgijviNdDmxCLL8wgjjQOIRYfGK2FriA+dpDFEZ4gPjK1UCcuIIYielDGAvpxA1EqyMCp/+wILo2VuCipgRSiuIXAwwaazeN3cY19hHAMUTzMoQ+PyJnHb8bmcQqxqGIJ3WhTc9YrksSZT6iCtUYubRjnlq1lg9z+DmNlywj8HkVwgpWgD5vWDvwd+gFhe32K6f2kfgAAAABJRU5ErkJggg==) center bottom no-repeat;
 }
@@ -1522,7 +1542,7 @@ padding:0;
 .sprite.fork {
 width:131px;
 height:150px;
-background:url(/wp-content/themes/Franklin-Street-Theme/images/sprite.png) 0 -240px no-repeat;
+background:url(images/sprite.png) 0 -240px no-repeat;
 }
 
 blink,.post header h1 a,.post header h2 a,.post header h3
@@ -1578,6 +1598,34 @@ font-size:13px;
 line-height:19px;
 }
 
+#content.single article section blockquote.large
+p,p.large {
+font-size:20px;
+line-height:30px;
+}
+
+p.medium,#content.home article section ul li,#content.single article section ul li,#content.page article section ul li,#content.archive article section ul li,#content.home article section ol li,#content.single article section ol li,#content.page article section ol li,#content.archive article section ol li,#content.home article section dt,#content.single article section dt,#content.page article section dt,#content.archive article section dt,#content.home article section dd,#content.single article section dd,#content.page article section dd,#content.archive article section dd,#content.home article section blockquote,#content.single article section blockquote,#content.page article section blockquote,#content.archive article section
+blockquote,#comments_container #comment_form header
+h1 {
+font-size:17px;
+line-height:27px;
+}
+
+p.small,#content.home article section code,#content.single article section code,#content.page article section code,#content.archive article section
+code,#content.home article section small,#content.single article section small,#content.page article section small,#content.archive article section
+small,#comments_container #comments .copy blockquote,#comments_container #comments .copy blockquote
+p {
+font-size:13px;
+line-height:19px;
+}
+
+p.x-small,#content.home .content.oneup .post .read-more .more,#content.home .content.oneup.large .post .read-more .more,#content.home .content.twoup .post .read-more .more,#content.home .content.fourup .post .read-more .more,#content.home .content.halfandhalf .post .read-more
+.more,#content.home .content.twoup .metadata li,#content.home .content.fourup .metadata
+li {
+font-size:11px;
+line-height:14px;
+}
+
 p:last-child,#content.archive header
 h1,#comments_container header
 h1,#comments_container #comments p:last-child,#content.home .content.oneup.large
@@ -1602,7 +1650,8 @@ ul,#search
 #search_button,#comments_container #commentform
 label,.post .metadata
 .author,#content.home .content .metadata
-dd.tags,#content.home .content.oneup.large
+dd.tags,#content.home .content .nav
+.more,#content.home .content.oneup.large
 header,#text-8 .org,#text-8 .email,#text-8 .adr,#text-8
 .tags {
 display:none;
@@ -1662,21 +1711,6 @@ header,#intro {
 margin-bottom:15px;
 }
 
-#content.home article section ul li,#content.single article section ul li,#content.page article section ul li,#content.archive article section ul li,#content.home article section ol li,#content.single article section ol li,#content.page article section ol li,#content.archive article section ol li,#content.home article section dt,#content.single article section dt,#content.page article section dt,#content.archive article section dt,#content.home article section dd,#content.single article section dd,#content.page article section dd,#content.archive article section dd,#content.home article section blockquote,#content.single article section blockquote,#content.page article section blockquote,#content.archive article section
-blockquote,#comments_container #comment_form header
-h1 {
-font-size:17px;
-line-height:27px;
-}
-
-#content.home article section code,#content.single article section code,#content.page article section code,#content.archive article section
-code,#content.home article section small,#content.single article section small,#content.page article section small,#content.archive article section
-small,#comments_container #comments .copy blockquote,#comments_container #comments .copy blockquote
-p {
-font-size:13px;
-line-height:19px;
-}
-
 #content.home article section img.noshadow,#content.single article section img.noshadow,#content.page article section img.noshadow,#content.archive article section
 img.noshadow,#content.page article section
 img {
@@ -1690,13 +1724,6 @@ position:relative;
 #sub_header .widget:nth-child(4n+1),#content.fourohfour .widget:nth-child(4n+1) {
 width:330px;
 clear:left;
-}
-
-#content.home .content.oneup .post .read-more .more,#content.home .content.oneup.large .post .read-more .more,#content.home .content.twoup .post .read-more .more,#content.home .content.fourup .post .read-more .more,#content.home .content.halfandhalf .post .read-more
-.more,#content.home .content.twoup .metadata li,#content.home .content.fourup .metadata
-li {
-font-size:11px;
-line-height:14px;
 }
 
 #content.home .content.twoup .post:nth-child(2n+1),#content.home .content.fourup .post:nth-child(4n+1),#cboxMiddleLeft,#cboxBottomLeft {
@@ -1729,36 +1756,6 @@ font-size:38px;
 line-height:47px;
 }
 
-.font-size-xx-large {
-font-size:28px;
-line-height:35px;
-}
-
-.font-size-x-large {
-font-size:24px;
-line-height:32px;
-}
-
-.font-size-large {
-font-size:20px;
-line-height:30px;
-}
-
-.font-size-medium {
-font-size:17px;
-line-height:27px;
-}
-
-.font-size-x-small {
-font-size:11px;
-line-height:14px;
-}
-
-.font-size-xx-small {
-font-size:10px;
-line-height:12px;
-}
-
 .default-shadow {
 box-shadow:0 0 8px rgba(18,7,6,0.3);
 }
@@ -1779,7 +1776,7 @@ margin:0 auto!important;
 }
 
 .wrapper.showgrid {
-background-image:url(/wp-content/themes/Franklin-Street-Theme/images/grid_14col.png);
+background-image:url(images/grid_14col.png);
 }
 
 .span-1 {
@@ -1989,7 +1986,7 @@ width:128px;
 height:71px;
 text-decoration:none;
 text-indent:-9999px;
-background:url(/wp-content/themes/Franklin-Street-Theme/images/sprite.png) -180px -280px no-repeat;
+background:url(images/sprite.png) -180px -280px no-repeat;
 }
 
 #page_header
@@ -2074,7 +2071,7 @@ margin-top:-15px;
 
 #page_header nav .menu ul li.rss
 a {
-background:url(/wp-content/themes/Franklin-Street-Theme/images/sprite.png) -275px -125px no-repeat;
+background:url(images/sprite.png) -275px -125px no-repeat;
 }
 
 #page_header nav .menu ul
@@ -2084,7 +2081,7 @@ margin-top:50px;
 
 #page_header nav .menu ul li.twitter
 a {
-background:url(/wp-content/themes/Franklin-Street-Theme/images/sprite.png) -43px -125px no-repeat;
+background:url(images/sprite.png) -43px -125px no-repeat;
 }
 
 #page_header nav .menu ul li.rss:hover,#page_header nav .menu ul li.twitter:hover {
@@ -2101,6 +2098,22 @@ color:#5d504f;
 .title {
 color:#050000;
 font-style:italic;
+}
+
+#content.page #info h1,#content.page #other_projects
+h1 {
+display:block;
+padding-top:0;
+}
+
+#content.page
+#other_projects {
+margin-top:30px;
+}
+
+#content.page #other_projects #projects_list
+li {
+margin-bottom:0;
 }
 
 #content.page #hero_slideshow
@@ -2324,6 +2337,11 @@ background:url(/wp-content/images/pages/projects/projects_sprite.jpg) -1505px 0;
 #projects_list li
 #projects_colortoolkit {
 background:url(/wp-content/images/pages/projects/projects_sprite.jpg) -1720px 0;
+}
+
+#projects_list li
+#cue {
+background:url(/wp-content/images/pages/projects/projects_sprite.jpg) -1935px 0;
 }
 
 #projects_list
@@ -2629,10 +2647,43 @@ span {
 background-image:none;
 }
 
-.font-size-small,#content.page #info
-p {
+.font-size-xx-large,#content.page #info p.xx-large,#content.page #other_projects p.xx-large {
+font-size:28px;
+line-height:35px;
+}
+
+.font-size-x-large,#content.page #info p.x-large,#content.page #other_projects p.x-large {
+font-size:24px;
+line-height:32px;
+}
+
+.font-size-large,#content.page #info p.large,#content.page #other_projects
+p.large {
+font-size:20px;
+line-height:30px;
+}
+
+.font-size-medium,#content.page #info p.medium,#content.page #other_projects
+p.medium {
+font-size:17px;
+line-height:27px;
+}
+
+.font-size-small,#content.page #info p,#content.page #other_projects
+p,#content.page #info p.small,#content.page #other_projects
+p.small {
 font-size:13px;
 line-height:19px;
+}
+
+.font-size-x-small,#content.page #info p.x-small,#content.page #other_projects p.x-small {
+font-size:11px;
+line-height:14px;
+}
+
+.font-size-xx-small,#content.page #info p.xx-small,#content.page #other_projects p.xx-small {
+font-size:10px;
+line-height:12px;
 }
 
 .reset-dimensions,#page_header nav

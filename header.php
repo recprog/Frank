@@ -61,7 +61,11 @@
 	<?php wp_head(); ?>
 	
 	<!--[if lte IE 8]>
-	<script src="<?php bloginfo('template_url'); ?>/js/html5.js" type="text/javascript"></script>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+	<![endif]-->
+	
+	<!--[if lt IE 7]>
+	<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE7.js"></script>
 	<![endif]-->	
 </head>
 <body id="page">

@@ -14,7 +14,7 @@
 <div id='comments_container' class='clear'>
 	<header>
 		<h1>The Discussion</h1>
-		<h2><?php comments_number('No Comments', 'One Comment', '% Comments' );?> on &#8220;<?php the_title(); ?>&#8221;</h2>
+		<h2><?php comments_number('No Comments', 'One Comment', '% Comments' );?></h2>
 	</header>
 <div id='comments_content'>
 <?php if ($comments) : ?>

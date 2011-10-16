@@ -52,9 +52,20 @@
 			margin:@row-height*2 0 @row-height 0;
 			.metadata dd.tags {display:none;}
 			.metadata dd.tags:nth-last-child(-n+5) {display:block;}
+			.nav {
+				.label {
+					.font-size-small;
+					font-weight:bold;
+					color:@color_midtone;
+				}
+				.more {
+					display:none;
+				}
+			}
 		}
 		
 		.content.oneup.large {
+			
 			header {
 				display:none;
 			}
@@ -124,7 +135,7 @@
 				}
 				
 			}
-			section:last-child {
+			#content_main > section {
 				padding-bottom: @row-height*3;
 				background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAATCAYAAACdkl3yAAABSElEQVR42p3UrUtDURiAcRHhii6NibeIwTLBD3BNZSsWy8SkBofFJCZ1zKQsGDbcoggqKwNBQYvJIoIIgv+ACH6hQRGsXuden4XB6+FcZTf8yoX34Zx7OKdJRH6ZnZzQHCwiob4ZM8B/oVUIXhALGsrhG6Jiw42ERpCHBzG8YtwWMrfSizTuIT72MIBWPWuG8kghhmdL5ABh7GLMFmpBAYJPTGMIdyqyDRdlCN6Q0CEH66hCVGwKg3hACV3YgijviNdDmxCLL8wgjjQOIRYfGK2FriA+dpDFEZ4gPjK1UCcuIIYielDGAvpxA1EqyMCp/+wILo2VuCipgRSiuIXAwwaazeN3cY19hHAMUTzMoQ+PyJnHb8bmcQqxqGIJ3WhTc9YrksSZT6iCtUYubRjnlq1lg9z+DmNlywj8HkVwgpWgD5vWDvwd+gFhe32K6f2kfgAAAABJRU5ErkJggg==) center bottom no-repeat;
 			}
@@ -469,8 +480,49 @@
 	color:#050000;
 	font-style:italic;
 }
-#content.page #info p {
-	font-size:13px;line-height:19px;
+#content.page #info, #content.page #other_projects { 
+	h1 {
+		display:block;
+		padding-top:0;
+	}
+	
+	p { 
+		.font-size-small;
+	}
+	p.xx-large {
+		.font-size-xx-large;
+	}
+	
+	p.x-large {
+		.font-size-x-large;
+	}
+	
+	p.large {
+		.font-size-large;
+	}
+	
+	p.medium {
+		.font-size-medium;
+	}
+	
+	p.small {
+		.font-size-small;
+	}
+	
+	p.x-small {
+		.font-size-x-small;
+	}
+	
+	p.xx-small {
+		.font-size-xx-small;
+	}
+}
+
+#content.page #other_projects {
+	margin-top:@row-height*2;
+	#projects_list li {
+		margin-bottom:0;
+	}
 }
 
 #content.page #hero_slideshow .caption {
@@ -735,6 +787,10 @@
 
 #projects_list li #projects_colortoolkit {
 	background:url(/wp-content/images/pages/projects/projects_sprite.jpg) -1720px 0;
+}
+
+#projects_list li #cue {
+	background:url(/wp-content/images/pages/projects/projects_sprite.jpg) -1935px 0;
 }
 
 #projects_list h3 {

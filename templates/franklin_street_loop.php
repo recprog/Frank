@@ -55,11 +55,7 @@
 				</ul>
 			</div>
 			<section class='span-7 last'>
-				<?php if (!empty($post->post_excerpt)) : ?>
-				<p><?php echo get_the_excerpt(); ?> <span class='more-link'><a href="<?php the_permalink(); ?>">Read On&hellip;</a></span></p>
-				<?php else : ?>
 				<?php the_content('Read On&hellip;'); ?>
-				<?php endif; ?>
 			</section>
 			</div>
 		</article>
