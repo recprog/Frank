@@ -11,3 +11,4 @@
 .incomplete{background-color:rgba(255, 0, 255, 0);}
 .show-bounds{background-color:rgba(255, 255, 0, 0.5);}
 #content,#sub_header,#content *,#sub_header *{z-index:-1 !important;}
+#projects_navigation{display:none;}

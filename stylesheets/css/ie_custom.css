@@ -10,6 +10,7 @@
 .reset-dimensions{margin:0;padding:0;}
 .incomplete{background-color:rgba(255, 0, 255, 0);}
 .show-bounds{background-color:rgba(255, 255, 0, 0.5);}
+#projects_list li h3 small{background-color:#5d504f;}
 #menu-primary li.rss,#menu-primary li.twitter{display:none !important;}
 #follow_list{background:#ea0000;}
 #work_pullout{background:#5d504f;}

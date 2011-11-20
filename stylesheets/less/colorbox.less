@@ -1,65 +1,11 @@
 @import "variables";
 @media screen, projection {
-/*
-    ColorBox Core Style
-    The following rules are the styles that are consistant between themes.
-    Avoid changing this area to maintain compatability with future versions of ColorBox.
-*/
-#colorbox, #cboxOverlay, #cboxWrapper{position:absolute; top:0; left:0; z-index:9999; overflow:hidden;}
-#cboxOverlay{position:fixed; width:100%; height:100%;}
-#cboxMiddleLeft, #cboxBottomLeft{clear:left;}
-#cboxContent{position:relative; overflow:hidden; padding:1px; background:@color_highlight; padding-bottom:5px;}
-#cboxLoadedContent{overflow:auto;}
-#cboxLoadedContent iframe{display:block; width:100%; height:100%; border:0;}
-#cboxTitle{margin:0;}
-#cboxLoadingOverlay, #cboxLoadingGraphic{position:absolute; top:0; left:0; width:100%;}
-#cboxPrevious, #cboxNext, #cboxClose, #cboxSlideshow{cursor:pointer;}
-
-/* 
-    Example user style
-    The following rules are ordered and tabbed in a way that represents the
-    order/nesting of the generated HTML, so that the structure easier to understand.
-*/
-#cboxOverlay{background-color:rgba(42,32,30,.75);}
-#colorbox{}
-
-        #cboxLoadedContent{margin-bottom:28px;}
-        #cboxTitle{position:absolute; bottom:3px; left:0; text-align:center; width:100%; color:@color_midtone;}
-        #cboxCurrent{position:absolute; bottom:3px; left:58px; color:@color_midtone;}
-        #cboxSlideshow{position:absolute; bottom:3px; right:30px; color:@color_midtone;}
-        #cboxPrevious {
-			position:absolute; 
-			bottom:5px; 
-			left:5px; 
-			background:url(../images/sprite.png) -200px -150px no-repeat; 
-			width:20px; 
-			height:20px; 
-			text-indent:-9999px; 
-			border-right:1px solid @color_midtone;
-			border-bottom:1px solid @color_midtone;
-		}
-        #cboxPrevious.hover{ }
-        #cboxNext {
-			position:absolute; 
-			bottom:5px; 
-			left:30px; 
-			background:url(../images/sprite.png) -180px -150px no-repeat; 
-			width:20px; 
-			height:20px; 
-			text-indent:-9999px;
-		}
-        #cboxNext.hover{ }	
-        /*#cboxLoadingGraphic{background:url(images/loading.gif) center center no-repeat;}*/
-        #cboxClose {
-			position:absolute; 
-			bottom:5px; 
-			right:5px; 
-			background:url(../images/sprite.png) -215px -145px no-repeat; 
-			width:20px; 
-			height:20px; 
-			text-indent:-9999px;
-			border-right:1px solid @color_midtone;
-			border-bottom:1px solid @color_midtone;
-		}
-        #cboxClose.hover{ }
+#jwSBoverlay { position:absolute; top:0; left:0; margin:0; padding:0; width:100%; height:100%; z-index:1000100; }
+#jwSBcontainer { background:@color_dark; width:100%; height:100%; position:fixed; top:0; left:0; z-index:1000110; opacity:0.7; -moz-opacity:0.7; filter:alpha(opacity=70); margin:0; padding:0; border:none; }
+#jwSBcontainer a,#jwSBcontainer a:hover { display:block; width:100%; height:100%; background:none; text-decoration:none; margin:0; padding:0; border:none; }
+#jwSBcontent { background:@color_midtone; top:50%; left:50%; padding:8px; position:fixed; z-index:1000120; }
+#jwSBcontent a#jwSBclose,#jwSBcontent a#jwSBclose:hover { position:absolute; right:5px; top:5px; display:block; width:20px; height:20px; background:url(../images/sprite.png) -215px -145px no-repeat; float:right; text-align:right; margin:0; padding:0; text-decoration:none; }
+#jwSBcontent a img { border:none; margin:0; padding:0; }
+#jwSBcontent a#jwSBimage,#jwSBcontent a#jwSBimage:hover { border:none; display:block; width:100%; height:100%; margin:0; padding:0; }
+#jwSBcontent span#sbcaption { font-size:11px; font-weight:bold; color:#fff; position:absolute; left:0; bottom:30px; display:block; background:#000; display:block; margin:8px; padding:8px; opacity:0.8; -moz-opacity:0.8; filter:alpha(opacity=80); z-index:1000130; }
 }

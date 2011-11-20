@@ -48,15 +48,10 @@
 	
 	<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="<?php bloginfo('rss2_url'); ?>" />
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
-			
-	<script>
-		var colorBoxURL='<?php bloginfo('template_directory'); ?>/js/jquery.colorbox-min.js';
-	</script>		
-			
-	<?php wp_enqueue_script('jquery'); ?>
-	<?php wp_enqueue_script('jquery-main', get_bloginfo('template_url') . '/js/main.js'); ?>
-	<?php wp_enqueue_script('jquery-srd', get_bloginfo('template_url') . '/js/custom.js'); ?>
-	<?php wp_enqueue_script('jquery-srd-slideshow', '/wp-content/js/slideshow/jquery.srdslideshow.js'); ?>
+				
+	<?php wp_enqueue_script('fcustom', get_bloginfo('template_url') . '/js/custom.min.js'); ?>
+	<?php wp_enqueue_script('fss', get_bloginfo('template_url') . '/js/frank.slideshow.min.js'); ?>
+	<?php wp_enqueue_script('fssb', get_bloginfo('template_url') . '/js/simplebox.min.js'); ?>
 	
 	<?php wp_head(); ?>
 	

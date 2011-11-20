@@ -525,17 +525,6 @@
 	}
 }
 
-#content.page #hero_slideshow .caption {
-	font-family:'Helvetica Neue', Arial, Helvetica, Geneva, sans-serif;
-	font-size:11px;
-	line-height:14px;
-}
-
-#hero_slideshow .slideshow  {
-	.default-shadow;
-	line-height:0;
-}
-
 #work_promo {
 	.default-shadow;
 	background:#f0eceb;
@@ -567,48 +556,30 @@
 
 
 /*Slideshow*/
-.slideshow {
-	background:#fdfcfc;
-	margin:0; padding:0;
-}
 
-.slideshow a, .slideshow div {
+
+
+#hero_slideshow .fss  {
+	.default-shadow;
 	line-height:0;
 }
 
-.slideshow img {
-	margin:0;
-	padding:0;
+.fss {
+	position:relative;
 }
 
-.slideshow .srd_slide {
-	.opacity(0)
-}
-
-.slideshow .srd_slide.active {
-	.opacity(1)
-}
-
-.srdslideshow_caption {
+.fss-caption {
 	font-family:@sans-serif;
+	.font-size-x-small;
+	margin-top:@row-height;
 }
 
-.srdslideshow_caption .title {
-	font-size:11px;
-	font-weight:bold;
-	padding-right:10px;
-}
-
-.srdslideshow_caption .caption {
-	font-size:11px;
-}
-
-.srdslideshow_caption .caption strong {
+.fss-caption strong {
 	font-weight:bold;
 	margin-right:10px;
 }
 
-.srdslideshow_navigation {
+.fss-nav {
 	background:rgba(61, 48, 47, 0.8);
 	display:none;
 	position:absolute;
@@ -620,48 +591,49 @@
 	margin:0;
 }
 
-.srdslideshow_navigation li {
-	padding:0;
-	margin:0;
+.fss-nav.active {
+	display:block;
+}
+
+
+.fss .fss-nav li {
 	float:left;
-	margin-right:10px;
-	font-family:@sans-serif;
+	display:block !important;
+	padding:0;
+	margin: 0 10px 0 0;
 	background:#ded3d1;
 	color:#3d302f;
-	cursor: default;
 	cursor:pointer;
+	font-family:@sans-serif;
 	font-size:10px !important;
+	line-height:20px !important;
 	font-weight:bold;
 	text-align:center;
 	width:20px;
 	height:20px;
-	line-height:20px !important;
 	
 }
 
-.srdslideshow_navigation li:first-child {
+.fss-nav li:first-child {
 	
 }
 
-.srdslideshow_navigation li:last-child {
+.fss-nav li:last-child {
 	margin-right:0;
 }
 
-.srdslideshow_navigation li.active {
+.fss-nav li.active {
 	background:#fefafa;
 	color:#050000;
 }
 
 #hero_slideshow .slides {
+	width:725px;
+	height:210px;
 	.reset-dimensions;
 	li {
 		display:none;
 	}
-}
-
-.srd_slide {
-	padding:0;
-	margin:0;
 }
 
 #projects_navigation {

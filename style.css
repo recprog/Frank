@@ -1,3 +1,17 @@
+/*
+Theme Name: Franklin Street (Public Release)
+Theme URI: http://www.somerandomdude.com/projects/franklinstreet
+Description: Franklin Street is the core theme used at SomeRandomDude.com. It is an extremely minimal theme - which keeps it open for visual customization.
+Version: 2.0
+Author: P.J. Onori
+Author URI: http://www.somerandomdude.com/
+
+
+Copyright (c) 2011 P.J. Onori (pj@somerandomdude.com)
+
+*/
+
+
 @media screen,projection{
 * {
 text-decoration:none;
@@ -298,10 +312,7 @@ line-height:12px;
 }
 
 pre,code {
-white-space: pre;
-white-space: pre-wrap;
-white-space: -moz-pre-wrap;
-white-space: -o-pre-wrap;
+white-space:0;
 }
 
 pre {
@@ -595,97 +606,97 @@ padding:1px 0 0;
 .sprite.vimeo-dark-15 {
 width:18px;
 height:15px;
-background:url(images/sprite.png) 0 -180px no-repeat;
+background:url(/wp-content/themes/Franklin-Street-Theme/images/sprite.png) 0 -180px no-repeat;
 }
 
 .sprite.twitter-dark-15 {
 width:11px;
 height:15px;
-background:url(images/sprite.png) -60px -180px no-repeat;
+background:url(/wp-content/themes/Franklin-Street-Theme/images/sprite.png) -60px -180px no-repeat;
 }
 
 .sprite.tumblr-dark-15 {
 width:10px;
 height:15px;
-background:url(images/sprite.png) -110px -180px no-repeat;
+background:url(/wp-content/themes/Franklin-Street-Theme/images/sprite.png) -110px -180px no-repeat;
 }
 
 .sprite.facebook-dark-15 {
 width:7px;
 height:15px;
-background:url(images/sprite.png) -150px -180px no-repeat;
+background:url(/wp-content/themes/Franklin-Street-Theme/images/sprite.png) -150px -180px no-repeat;
 }
 
 .sprite.flickr-dark-15 {
 width:15px;
 height:8px;
-background:url(images/sprite.png) -190px -180px no-repeat;
+background:url(/wp-content/themes/Franklin-Street-Theme/images/sprite.png) -190px -180px no-repeat;
 }
 
 .sprite.git-dark-15 {
 width:14px;
 height:15px;
-background:url(images/sprite.png) -240px -180px no-repeat;
+background:url(/wp-content/themes/Franklin-Street-Theme/images/sprite.png) -240px -180px no-repeat;
 }
 
 .sprite.friendfeed-dark-15 {
 width:15px;
 height:15px;
-background:url(images/sprite.png) -340px -180px no-repeat;
+background:url(/wp-content/themes/Franklin-Street-Theme/images/sprite.png) -340px -180px no-repeat;
 }
 
 .sprite.vimeo-light-15 {
 width:18px;
 height:15px;
-background:url(images/sprite.png) 0 -140px no-repeat;
+background:url(/wp-content/themes/Franklin-Street-Theme/images/sprite.png) 0 -140px no-repeat;
 }
 
 .sprite.twitter-light-15 {
 width:11px;
 height:15px;
-background:url(images/sprite.png) -60px -140px no-repeat;
+background:url(/wp-content/themes/Franklin-Street-Theme/images/sprite.png) -60px -140px no-repeat;
 }
 
 .sprite.tumblr-light-15 {
 width:10px;
 height:15px;
-background:url(images/sprite.png) -110px -140px no-repeat;
+background:url(/wp-content/themes/Franklin-Street-Theme/images/sprite.png) -110px -140px no-repeat;
 }
 
 .sprite.facebook-light-15 {
 width:7px;
 height:15px;
-background:url(images/sprite.png) -150px -140px no-repeat;
+background:url(/wp-content/themes/Franklin-Street-Theme/images/sprite.png) -150px -140px no-repeat;
 }
 
 .sprite.flickr-light-15 {
 width:15px;
 height:8px;
-background:url(images/sprite.png) -190px -140px no-repeat;
+background:url(/wp-content/themes/Franklin-Street-Theme/images/sprite.png) -190px -140px no-repeat;
 }
 
 .sprite.git-light-15 {
 width:14px;
 height:15px;
-background:url(images/sprite.png) -240px -140px no-repeat;
+background:url(/wp-content/themes/Franklin-Street-Theme/images/sprite.png) -240px -140px no-repeat;
 }
 
 .sprite.rss-light-15 {
 width:15px;
 height:15px;
-background:url(images/sprite.png) -290px -140px no-repeat;
+background:url(/wp-content/themes/Franklin-Street-Theme/images/sprite.png) -290px -140px no-repeat;
 }
 
 .sprite.arrow-right-15 {
 width:9px;
 height:15px;
-background:url(images/sprite.png) -110px 0 no-repeat;
+background:url(/wp-content/themes/Franklin-Street-Theme/images/sprite.png) -110px 0 no-repeat;
 }
 
 .sprite.arrow-left-15 {
 width:9px;
 height:15px;
-background:url(images/sprite.png) -160px 0 no-repeat;
+background:url(/wp-content/themes/Franklin-Street-Theme/images/sprite.png) -160px 0 no-repeat;
 }
 
 #top_bar {
@@ -887,7 +898,7 @@ width:45px;
 height:45px;
 border-radius:22.5px;
 text-indent:-9999px;
-background:url(images/sprite.png) -135px 15px no-repeat;
+background:url(/wp-content/themes/Franklin-Street-Theme/images/sprite.png) -135px 15px no-repeat;
 background-color:#5d504f;
 }
 
@@ -1181,108 +1192,100 @@ margin:5px 0;
 padding:0;
 }
 
-#colorbox,#cboxOverlay,#cboxWrapper {
+#jwSBoverlay {
 position:absolute;
 top:0;
 left:0;
-z-index:9999;
-overflow:hidden;
-}
-
-#cboxOverlay {
-position:fixed;
 width:100%;
 height:100%;
-background-color:rgba(42,32,30,0.75);
+z-index:1000100;
+margin:0;
+padding:0;
 }
 
-#cboxContent {
-position:relative;
-overflow:hidden;
-background:#fffefe;
-padding:1px 1px 5px;
+#jwSBcontainer {
+background:#3d302f;
+width:100%;
+height:100%;
+position:fixed;
+top:0;
+left:0;
+z-index:1000110;
+opacity:0.7;
+-moz-opacity:0.7;
+filter:alpha(opacity=70);
+border:none;
+margin:0;
+padding:0;
 }
 
-#cboxLoadedContent {
-overflow:auto;
-margin-bottom:28px;
-}
-
-#cboxLoadedContent
-iframe {
+#jwSBcontainer a,#jwSBcontainer a:hover {
 display:block;
 width:100%;
 height:100%;
-border:0;
-}
-
-#cboxTitle {
-position:absolute;
-bottom:3px;
-left:0;
-text-align:center;
-width:100%;
-color:#5d504f;
+background:none;
+text-decoration:none;
+border:none;
 margin:0;
+padding:0;
 }
 
-#cboxLoadingOverlay,#cboxLoadingGraphic {
+#jwSBcontent {
+background:#5d504f;
+top:50%;
+left:50%;
+position:fixed;
+z-index:1000120;
+padding:8px;
+}
+
+#jwSBcontent a#jwSBclose,#jwSBcontent a#jwSBclose:hover {
 position:absolute;
-top:0;
-left:0;
-width:100%;
-}
-
-#cboxPrevious,#cboxNext,#cboxClose,#cboxSlideshow {
-cursor:pointer;
-}
-
-#cboxCurrent {
-position:absolute;
-bottom:3px;
-left:58px;
-color:#5d504f;
-}
-
-#cboxSlideshow {
-position:absolute;
-bottom:3px;
-right:30px;
-color:#5d504f;
-}
-
-#cboxPrevious {
-position:absolute;
-bottom:5px;
-left:5px;
-background:url(images/sprite.png) -5px 5px no-repeat;
-width:20px;
-height:20px;
-text-indent:-9999px;
-border-right:1px solid #5d504f;
-border-bottom:1px solid #5d504f;
-}
-
-#cboxNext {
-position:absolute;
-bottom:5px;
-left:30px;
-background:url(images/sprite.png) -20px 5px no-repeat;
-width:20px;
-height:20px;
-text-indent:-9999px;
-}
-
-#cboxClose {
-position:absolute;
-bottom:5px;
 right:5px;
-background:url(images/sprite.png) -35px 5px no-repeat;
+top:5px;
+display:block;
 width:20px;
 height:20px;
-text-indent:-9999px;
-border-right:1px solid #5d504f;
-border-bottom:1px solid #5d504f;
+background:url(/wp-content/themes/Franklin-Street-Theme/stylesheets/images/sprite.png) -215px -145px no-repeat;
+float:right;
+text-align:right;
+text-decoration:none;
+margin:0;
+padding:0;
+}
+
+#jwSBcontent a
+img {
+border:none;
+margin:0;
+padding:0;
+}
+
+#jwSBcontent a#jwSBimage,#jwSBcontent a#jwSBimage:hover {
+border:none;
+display:block;
+width:100%;
+height:100%;
+margin:0;
+padding:0;
+}
+
+#jwSBcontent
+span#sbcaption {
+font-size:11px;
+font-weight:700;
+color:#fff;
+position:absolute;
+left:0;
+bottom:30px;
+background:#000;
+display:block;
+opacity:0.8;
+-moz-opacity:0.8;
+filter:alpha(opacity=80);
+z-index:1000130;
+margin:8px;
+padding:8px;
 }
 
 #webbynode_promo
@@ -1298,7 +1301,7 @@ margin-bottom:2px;
 display:block;
 width:100px;
 height:20px;
-background:url(images/sprite.png) -180px -370px no-repeat;
+background:url(/wp-content/themes/Franklin-Street-Theme/images/sprite.png) -180px -370px no-repeat;
 text-indent:-99999px;
 }
 
@@ -1542,7 +1545,7 @@ padding:0;
 .sprite.fork {
 width:131px;
 height:150px;
-background:url(images/sprite.png) 0 -240px no-repeat;
+background:url(/wp-content/themes/Franklin-Street-Theme/images/sprite.png) 0 -240px no-repeat;
 }
 
 blink,.post header h1 a,.post header h2 a,.post header h3
@@ -1726,7 +1729,7 @@ width:330px;
 clear:left;
 }
 
-#content.home .content.twoup .post:nth-child(2n+1),#content.home .content.fourup .post:nth-child(4n+1),#cboxMiddleLeft,#cboxBottomLeft {
+#content.home .content.twoup .post:nth-child(2n+1),#content.home .content.fourup .post:nth-child(4n+1) {
 clear:left;
 }
 
@@ -1776,7 +1779,7 @@ margin:0 auto!important;
 }
 
 .wrapper.showgrid {
-background-image:url(images/grid_14col.png);
+background-image:url(/wp-content/themes/Franklin-Street-Theme/images/grid_14col.png);
 }
 
 .span-1 {
@@ -1915,28 +1918,18 @@ padding-left:850px;
 padding-left:935px;
 }
 
-#sidebar {
--webkit-transition-property:opacity .5s cubic-bezier(0.02,0,0.18,1);
--moz-transition-property:opacity .5s cubic-bezier(0.02,0,0.18,1);
-}
-
 #comment_form_comment
 textarea {
 -webkit-transition:height .5s cubic-bezier(0.02,0,0.18,1);
 -moz-transition:height .5s cubic-bezier(0.02,0,0.18,1);
 }
 
-.slideshow
-.srd_slide {
--webkit-transition-property:opacity .5s cubic-bezier(0.02,0,0.18,1);
--moz-transition-property:opacity .5s cubic-bezier(0.02,0,0.18,1);
-opacity:0;
-}
-
 #hero_slideshow
 .slides {
 -webkit-transition:background-position .75s cubic-bezier(0.02,0,0.18,1);
 -moz-transition:background-position .75s cubic-bezier(0.02,0,0.18,1);
+width:725px;
+height:210px;
 margin:0;
 padding:0;
 }
@@ -1986,7 +1979,7 @@ width:128px;
 height:71px;
 text-decoration:none;
 text-indent:-9999px;
-background:url(images/sprite.png) -180px -280px no-repeat;
+background:url(/wp-content/themes/Franklin-Street-Theme/images/sprite.png) -180px -280px no-repeat;
 }
 
 #page_header
@@ -2071,7 +2064,7 @@ margin-top:-15px;
 
 #page_header nav .menu ul li.rss
 a {
-background:url(images/sprite.png) -275px -125px no-repeat;
+background:url(/wp-content/themes/Franklin-Street-Theme/images/sprite.png) -275px -125px no-repeat;
 }
 
 #page_header nav .menu ul
@@ -2081,7 +2074,7 @@ margin-top:50px;
 
 #page_header nav .menu ul li.twitter
 a {
-background:url(images/sprite.png) -43px -125px no-repeat;
+background:url(/wp-content/themes/Franklin-Street-Theme/images/sprite.png) -43px -125px no-repeat;
 }
 
 #page_header nav .menu ul li.rss:hover,#page_header nav .menu ul li.twitter:hover {
@@ -2116,19 +2109,6 @@ li {
 margin-bottom:0;
 }
 
-#content.page #hero_slideshow
-.caption {
-font-family:'Helvetica Neue',Arial,Helvetica,Geneva,sans-serif;
-font-size:11px;
-line-height:14px;
-}
-
-#hero_slideshow
-.slideshow {
-box-shadow:0 0 8px rgba(18,7,6,0.3);
-line-height:0;
-}
-
 #work_promo {
 box-shadow:0 0 8px rgba(18,7,6,0.3);
 background:#f0eceb;
@@ -2157,41 +2137,30 @@ line-height:12px;
 font-weight:700;
 }
 
-.slideshow {
-background:#fdfcfc;
-margin:0;
-padding:0;
-}
-
-.slideshow a,.slideshow
-div {
+#hero_slideshow
+.fss {
+box-shadow:0 0 8px rgba(18,7,6,0.3);
 line-height:0;
 }
 
-.slideshow
-.srd_slide.active {
-opacity:1;
+.fss {
+position:relative;
 }
 
-.srdslideshow_caption
-.title {
+.fss-caption {
+font-family:'Helvetica Neue',Arial,Helvetica,Geneva,sans-serif;
 font-size:11px;
-font-weight:700;
-padding-right:10px;
+line-height:14px;
+margin-top:15px;
 }
 
-.srdslideshow_caption
-.caption {
-font-size:11px;
-}
-
-.srdslideshow_caption .caption
+.fss-caption
 strong {
 font-weight:700;
 margin-right:10px;
 }
 
-.srdslideshow_navigation {
+.fss-nav {
 background:rgba(61,48,47,0.8);
 display:none;
 position:absolute;
@@ -2203,32 +2172,33 @@ margin:0;
 padding:10px;
 }
 
-.srdslideshow_navigation
+.fss .fss-nav
 li {
 float:left;
-font-family:'Helvetica Neue',Arial,Helvetica,Geneva,sans-serif;
+display:block!important;
 background:#ded3d1;
 color:#3d302f;
 cursor:pointer;
+font-family:'Helvetica Neue',Arial,Helvetica,Geneva,sans-serif;
 font-size:10px!important;
+line-height:20px!important;
 font-weight:700;
 text-align:center;
 width:20px;
 height:20px;
-line-height:20px!important;
 margin:0 10px 0 0;
 padding:0;
 }
 
-.srdslideshow_navigation
+.fss-nav
 li.active {
 background:#fefafa;
 color:#050000;
 }
 
-.srd_slide {
-margin:0;
-padding:0;
+#content.page
+#projects_navigation {
+font-family:'Helvetica Neue',Arial,Helvetica,Geneva,sans-serif;
 }
 
 #content.page #projects_navigation dt,#content.page #projects_navigation
@@ -2687,8 +2657,7 @@ line-height:12px;
 }
 
 .reset-dimensions,#page_header nav
-.menu,.slideshow
-img {
+.menu {
 margin:0;
 padding:0;
 }
@@ -2698,9 +2667,15 @@ float:left;
 margin-right:40px;
 }
 
-div.last,section.last,#page_header nav .menu ul li:last-child,.srdslideshow_navigation li:last-child,#projects_navigation dd:last-child,#projects_list
+div.last,section.last,#page_header nav .menu ul li:last-child,.fss-nav li:last-child,#projects_navigation dd:last-child,#projects_list
 li.last {
 margin-right:0;
+}
+
+#sidebar,.slideshow
+.srd_slide {
+-webkit-transition-property:opacity .5s cubic-bezier(0.02,0,0.18,1);
+-moz-transition-property:opacity .5s cubic-bezier(0.02,0,0.18,1);
 }
 
 nav li.rss,nav
@@ -2716,7 +2691,7 @@ a {
 -moz-transition:all .75s cubic-bezier(0.02,0,0.18,1);
 }
 
-.clearfix,.container,#wpadminbar .selected .shortlink-input,#wpadminbar .quicklinks li:hover>ul,#wpadminbar .quicklinks li.hover>ul {
+.clearfix,.container,.fss-nav.active,#wpadminbar .selected .shortlink-input,#wpadminbar .quicklinks li:hover>ul,#wpadminbar .quicklinks li.hover>ul {
 display:block;
 }
 
@@ -2735,11 +2710,6 @@ color:#5d504f;
 
 #download_follow,#projects_navigation {
 margin:15px 0;
-}
-
-.srdslideshow_caption,#content.page
-#projects_navigation {
-font-family:'Helvetica Neue',Arial,Helvetica,Geneva,sans-serif;
 }
 
 #wpadminbar .quicklinks ul
