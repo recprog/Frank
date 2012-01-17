@@ -1,19 +1,5 @@
 <?php
 
-/*thanks to http://www.nathanrice.net/blog/wordpress-single-post-templates/ */
-/*add_filter('single_template', create_function('$t', 'foreach( (array) get_the_category() as $cat ) { if ( file_exists(TEMPLATEPATH . "/single-{$cat->category_nicename}.php") ) return TEMPLATEPATH . "/single-{$cat->category_nicename}.php"; } return $t;' ));*/
-
-add_filter('single_template', create_function('$t', 'foreach( (array) get_the_category() as $cat ) { 
-	if ( file_exists(TEMPLATEPATH . "/single-{$cat->category_nicename}.php") ) return TEMPLATEPATH . "/single-{$cat->category_nicename}.php"; 
-	else if($cat->category_parent!=0){
-		$pCat=$cat;
-		while($pCat->cat_ID) {
-			if ( file_exists(TEMPLATEPATH . "/single-{$pCat->category_nicename}.php") ) return TEMPLATEPATH . "/single-{$pCat->category_nicename}.php"; 
-			$pCat=get_category($pCat->category_parent);
-		}
-	}
-} return $t;' ));
-
 function fs_register_menus() {
   register_nav_menus(array('primary' => __( 'Primary Navigation' )));
 }
@@ -123,9 +109,7 @@ if ( function_exists('register_sidebar') )
 	'after_title' => '</h3>',
 	));
 
-function new_excerpt_more($more) { return '...'; }
-
-function excerpt_read_more($post) { return '<a href="'. get_permalink($post->ID) . '">' . 'Read On...' . '</a>'; }
+function excerpt_read_more($post) { return '<a href="'. get_permalink($post->ID) . '">' . 'Read On&hellip;' . '</a>'; }
 
 /**
  * Add "first" and "last" CSS classes to dynamic sidebar widgets. Also adds numeric index class for each widget (widget-1, widget-2, etc.)

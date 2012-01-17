@@ -7,16 +7,14 @@
 		
 		.no_comments {
 			margin-top:@row-height*2;
-			.font-size-xx-large;
-			font-family:@serif;
+			.font(@font-xx-large, @serif);
 			font-style:italic;
 			color:@color_midtone;
 		}
 		
 		.comments_closed {
 			margin-top:@row-height*2;
-			.font-size-large;
-			font-family:@serif;
+			.font(@font-large, @serif);
 			font-style:italic;
 			color:@color_midtone;
 		}
@@ -82,10 +80,9 @@
 					.reset-dimensions;
 					text-align:right;
 					float:none;
-					.font-size-x-small;
+					.font(@font-x-small, @serif);
 					font-style:italic;			
 					margin-bottom:5px;
-					font-family:@serif;
 				}
 				li.date {
 					font-style:normal;	

@@ -36,7 +36,21 @@
 @xx-small:10px;
 @xxx-small:9px;
 
+@font-xxx-large:@xxx-large e('/') 47px;
+@font-xx-large:@xx-large e('/') 35px;
+@font-x-large:@x-large e('/') 32px;
+@font-large:@large e('/') 30px;
+@font-medium:@medium e('/') 27px;
+@font-small:@small e('/') 19px;
+@font-x-small:@x-small e('/') 14px;
+@font-xx-small:@xx-small e('/') 12px;
+
+.font(@size, @family:inherit) {
+	font: @size @family;
+}
+
 .font-size-xxx-large {
+	
 	font-size:@xxx-large;
 	line-height:47px;
 }

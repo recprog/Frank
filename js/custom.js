@@ -44,5 +44,89 @@ window.onload = function() {
 				}
 			}
 		}
-	}	
+	}
+	
+	/*custom tracking events*/
+	
+	/*top navigation*/
+	var tnav = document.querySelectorAll('#menu-primary li a');
+	for(var i=0; i<tnav.length; i++) {
+		ref=tnav[i];	
+		ref.onclick = function() { gaTrack('Top Nav', this.firstChild.nodeValue, document.title); 
+		setTimeout('document.location = "' + this.href + '"', 100);
+		return false; }
+	}
+	
+	/*projects twitter & rss*/
+	var proj = document.querySelectorAll('#download_follow a.twitter, #download_follow a.rss');
+	for(var i=0; i<proj.length; i++) {
+		ref=proj[i];	
+		ref.onclick = function() { gaTrack('Projects Follow', this.firstChild.nodeValue, document.title); 
+		setTimeout('document.location = "' + this.href + '"', 100);
+		return false; }
+	}
+	
+	/*other projects list*/
+	var projects = document.querySelectorAll('#other_projects #projects_list li a');
+	for(var i=0; i<projects.length; i++) {
+		ref=projects[i];	
+		ref.onclick = function() { gaTrack('Other Projects', this.querySelector('small').firstChild.nodeValue, document.title); 
+		setTimeout('document.location = "' + this.href + '"', 100);
+		return false; }
+	}
+	
+	/*previous post*/
+	var previous = document.querySelector('#content.single .post-info .previous a');
+	if(previous) { 
+		previous.onclick = function() { gaTrack('Previous Post', this.childNodes.item(1).nodeValue, document.title); 
+		setTimeout('document.location = "' + this.href + '"', 100);
+		return false; } 
+	}
+	
+	/*footer promo*/
+	var promo = document.querySelector('#footer_main_promo');
+	if(promo) { 
+		promo.onclick = function() { gaTrack('Footer Promo', this.querySelector('.header').firstChild.nodeValue, document.title); 
+		setTimeout('document.location = "' + this.href + '"', 100);
+		return false; }
+	}
+	
+	/*footer recommended*/
+	var recommended = document.querySelectorAll('#text-12 .recommended li a');
+	for(var i=0; i<recommended.length; i++) {
+		ref=recommended[i];	
+		ref.onclick = function() { gaTrack('Recommended', this.firstChild.nodeValue, document.title); 
+		setTimeout('document.location = "' + this.href + '"', 100);
+		return false; }
+	}
+	
+	/*footer topics*/
+	var topics = document.querySelectorAll('#text-13 .recommended li a');
+	for(var i=0; i<topics.length; i++) {
+		ref=topics[i];	
+		ref.onclick = function() { gaTrack('Topics', this.firstChild.nodeValue, document.title); 
+		setTimeout('document.location = "' + this.href + '"', 100);
+		return false; }
+	}
+	
+	/*footer follow list*/
+	var follow = document.querySelectorAll('#footer_follow_list li a');
+	for(var i=0; i<follow.length; i++) {
+		ref=follow[i];	
+		ref.onclick = function() { gaTrack('Follow Me', this.querySelector('span').firstChild.nodeValue, document.title); 
+		setTimeout('document.location = "' + this.href + '"', 100);
+		return false; }
+	}
+	
+	var twitter = document.querySelector('#tweet-button a');
+	if(twitter) { 
+		twitter.onclick = function() { gaTrack('Twitter Button', '', document.title); 
+		setTimeout('document.location = "' + this.href + '"', 100);
+		return false; }
+	}
+	
+	function gaTrack(cat, action, label, val) {
+		try { _gaq.push(['_trackEvent', cat, action, label, val]); } catch(err) {}
+	}
+		
 }

@@ -8,16 +8,11 @@
 @dotted-line-dark:url(data:image/gif;base64,R0lGODlhBQABAIAAAD0wLwAAACH5BAHoAwEALAAAAAAFAAEAAAIDRB4FADs=);
 @checkbox-sprite:url(data:image/gif;base64,R0lGODlhCgAeAJEAAP76+mJVVF1QT8zMzCH5BAHoAwMALAAAAAAKAB4AAAIelI+py+0PYxu02ouz3rz7v0kiApRAkJhnaqJkO44FADs=);
 
-@media screen, projection {
-	#ad {
-	
-	}
-	
+@media screen, projection {	
 	#intro {
 		margin-bottom:@row-height;
 		p {
-			font-family:@serif;
-			.font-size-small;
+			.font(@font-small, @serif);
 		}
 	}
 	
@@ -34,7 +29,7 @@
 	#webbynode_promo {
 		margin-top:@row-height;
 		small {
-			.font-size-xx-small;
+			.font(@font-xx-small);
 			display:block;
 			margin-bottom:2px;
 		}
@@ -341,9 +336,6 @@
 		height:150px;
 		.sprite-background(0px, -240px);
 	}
-	.sprite.webbynode {
-	
-	}
 }
 
 #page_header { 
@@ -444,11 +436,6 @@
 				li:last-child {
 					margin-right: 0;
 				}
-				/*testing*/
-				
-				li.rss {
-					
-				}
 				
 				li.twitter {
 					margin-top:50px;
@@ -484,37 +471,15 @@
 	h1 {
 		display:block;
 		padding-top:0;
+		.font(@font-x-large, @sans-serif);
 	}
 	
 	p { 
 		.font-size-small;
 	}
-	p.xx-large {
-		.font-size-xx-large;
-	}
-	
-	p.x-large {
-		.font-size-x-large;
-	}
 	
 	p.large {
 		.font-size-large;
-	}
-	
-	p.medium {
-		.font-size-medium;
-	}
-	
-	p.small {
-		.font-size-small;
-	}
-	
-	p.x-small {
-		.font-size-x-small;
-	}
-	
-	p.xx-small {
-		.font-size-xx-small;
 	}
 }
 
@@ -569,8 +534,7 @@
 }
 
 .fss-caption {
-	font-family:@sans-serif;
-	.font-size-x-small;
+	.font(@font-x-small, @sans-serif);
 	margin-top:@row-height;
 }
 
@@ -640,18 +604,13 @@
 	margin:15px 0;
 }
 
-#content.page #projects_navigation {
-	font-family:'Helvetica Neue', Arial, Helvetica, Geneva, sans-serif;
-}
-
 #content.page #projects_navigation dt {
 	color:#5d504f;
 }
 
 #content.page #projects_navigation dt, #content.page #projects_navigation dd {
 	margin:0;
-	font-size:11px;
-	line-height:14px;
+	.font(@font-x-small, @sans-serif);
 	margin-right:20px;
 	float:left;
 	
@@ -694,6 +653,10 @@
 	.default-shadow;
 }
 
+#projects_list li:hover {
+	.drop-shadow(0px, 0px, 12px, rgba(9, 4, 3,0.4));
+}
+
 #projects_list #projects_coffeesleeve {
 	
 }
@@ -703,13 +666,6 @@
 }
 
 #projects_list li p { display:none;}
-
-#projects_list li {
-	-webkit-transition: opacity .3s cubic-bezier(0.02, 0, 0.18, 1.0); 
-	-moz-transition: opacity .3s cubic-bezier(0.02, 0, 0.18, 1.0); 
-	-o-transition: opacity .3s cubic-bezier(0.02, 0, 0.18, 1.0);
-}
-
 
 #projects_list li.last {
 	margin-right:0;
@@ -725,44 +681,48 @@
 	height:120px;
 }
 
+#projects_list li a {
+	background-image:url(/wp-content/images/pages/projects/projects_sprite.png);
+}
+
 #projects_list li #projects_bitcons {
-	background:url(/wp-content/images/pages/projects/projects_sprite.jpg) 0 0;
+	background-position:0 0;
 }
 
 #projects_list li #projects_sanscons {
-	background:url(/wp-content/images/pages/projects/projects_sprite.jpg) -215px 0;
+	background-position:-215px 0;
 }
 
 #projects_list li #projects_processing {
-	background:url(/wp-content/images/pages/projects/projects_sprite.jpg) -430px 0;
+	background-position:-430px 0;
 }
 
 #projects_list li #projects_photography {
-	background:url(/wp-content/images/pages/projects/projects_sprite.jpg) -645px 0;
+	background-position:-645px 0;
 }
 
 #projects_list li #projects_offfranklin {
-	background:url(/wp-content/images/pages/projects/projects_sprite.jpg) -860px 0;
+	background-position:-860px 0;
 }
 
 #projects_list li #projects_iconic {
-	background:url(/wp-content/images/pages/projects/projects_sprite.jpg) -1075px 0;
+	background-position:-1075px 0;
 }
 
 #projects_list li #projects_coffeesleeve {
-	background:url(/wp-content/images/pages/projects/projects_sprite.jpg) -1290px 0;
+	background-position:-1290px 0;
 }
 
 #projects_list li #projects_coordy {
-	background:url(/wp-content/images/pages/projects/projects_sprite.jpg) -1505px 0;
+	background-position:-1505px 0;
 }
 
 #projects_list li #projects_colortoolkit {
-	background:url(/wp-content/images/pages/projects/projects_sprite.jpg) -1720px 0;
+	background-position:-1720px 0;
 }
 
 #projects_list li #cue {
-	background:url(/wp-content/images/pages/projects/projects_sprite.jpg) -1935px 0;
+	background-position:-1935px 0;
 }
 
 #projects_list h3 {
@@ -787,7 +747,34 @@
 }
 
 #content.page #projects_list li p {
-	font-size:11px;
-	line-height:14px;
-	font-family:@sans-serif;
+	.font(@font-x-small, @sans-serif);
+}
+
+/*project pages*/
+
+/*iconic*/
+#p5554 .slideshow .slides {
+	background-image:url(/wp-content/images/pages/iconic/slides_sprite.png);
+}
+
+#iconic_preview {
+	width:215px; height:76px; background:url(/wp-content/images/pages/iconic/slides_sprite.png) 0 -222px no-repeat; display:block; text-indent:-9999px;
+}
+
+/*cue*/
+#p11465 .slideshow .slides {
+	background-image:url(/wp-content/images/pages/cue/slides_sprite.png);
+}
+
+/*bitcons*/
+#p5734 .slideshow .slides {
+	background-image:url(/wp-content/images/pages/bitcons/bitcons_sprite.png);
+}
+
+#p5641 .slideshow .slides {
+	background-image:url(/wp-content/images/pages/sanscons/sanscons_sprite.png);
+}
+
+#p6975 .slideshow .slides {
+	background-image:url(/wp-content/images/pages/off_franklin/off_franklin_sprite.jpg);
 }
