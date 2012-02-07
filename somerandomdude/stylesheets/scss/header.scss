@@ -1,0 +1,72 @@
+@import "variables";
+	
+#page_header {
+	
+	margin-top:-1px;
+	margin-bottom: $row-height;
+	/*padding-top: $row-height;*/
+	background:$color_midtone;
+	border-radius:0 0 3px 3px;
+	border: none;
+	border:1px solid $color_dark;
+	border-top:0;
+	padding:5px $row-height 2px $row-height;
+	box-shadow:0 1px 1px rgba(5,0,0,.3);
+	h1 {
+		@include reset-dimensions();
+		float: left; 
+		a { 
+			color:#fffefe;
+			text-indent:-999999px;
+			display:block;
+			margin-top:5px;
+			@include sprite-background(-180px, -337px);
+			width:141px;
+			height:20px; 
+		}
+	}
+	h2 {
+		display:none;
+		}
+	nav {
+		@include columns(4);
+		border: 0;
+		@include reset-dimensions();
+		margin-top:$row-height - 7;
+		background: none;
+		float: right;
+		position: relative;
+		.menu {
+			@include reset-dimensions();
+			ul {
+				float: right;
+				list-style: none;
+				@include reset-dimensions();
+				display: block;
+				position: relative;
+				ul {
+					display: none; }
+				li {
+					@include reset-dimensions();
+					margin-right:30px;
+					float: left;
+					background: none;
+					a {
+						text-align:right;
+						display: block;
+						text-decoration: none;
+						font-weight: $bold;
+						height: $row-height;
+						color: $color_light;
+						font-size: $x-small;
+						padding: 0; 
+						text-shadow:0px -1px 0px rgba(5,0,0,.5);
+						}
+					a:hover {
+						color: $color_highlight; 
+					} 
+				}
+			}
+		}
+	}
+}

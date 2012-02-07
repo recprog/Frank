@@ -1,0 +1,64 @@
+#page_header {
+  margin-top: -1px;
+  margin-bottom: 15px;
+  /*padding-top: $row-height;*/
+  background: #5d504f;
+  border-radius: 0 0 3px 3px;
+  border: none;
+  border: 1px solid #3d302f;
+  border-top: 0;
+  padding: 5px 15px 2px 15px;
+  box-shadow: 0 1px 1px rgba(5, 0, 0, 0.3); }
+  #page_header h1 {
+    margin: 0;
+    padding: 0;
+    float: left; }
+    #page_header h1 a {
+      color: #fffefe;
+      text-indent: -999999px;
+      display: block;
+      margin-top: 5px;
+      background: url("../../images/sprite.png") -180px -337px no-repeat;
+      width: 141px;
+      height: 20px; }
+  #page_header h2 {
+    display: none; }
+  #page_header nav {
+    width: 300px;
+    border: 0;
+    margin: 0;
+    padding: 0;
+    margin-top: 8px;
+    background: none;
+    float: right;
+    position: relative; }
+    #page_header nav .menu {
+      margin: 0;
+      padding: 0; }
+      #page_header nav .menu ul {
+        float: right;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: block;
+        position: relative; }
+        #page_header nav .menu ul ul {
+          display: none; }
+        #page_header nav .menu ul li {
+          margin: 0;
+          padding: 0;
+          margin-right: 30px;
+          float: left;
+          background: none; }
+          #page_header nav .menu ul li a {
+            text-align: right;
+            display: block;
+            text-decoration: none;
+            font-weight: 700;
+            height: 15px;
+            color: #f0eceb;
+            font-size: 11px;
+            padding: 0;
+            text-shadow: 0px -1px 0px rgba(5, 0, 0, 0.5); }
+          #page_header nav .menu ul li a:hover {
+            color: #fffefe; }

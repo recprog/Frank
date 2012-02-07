@@ -1,0 +1,200 @@
+@import "variables";
+
+#content.page article h1 {
+	display: none; }
+
+#page_title {
+	font-size: 28px;
+	line-height: 35px;
+	color: #5d504f; }
+
+#page_title .title {
+	color: #050000;
+	font-style: italic; }
+
+#content.page #info, #content.page #other_projects {
+	h1 {
+		display: block;
+		padding-top: 0;
+		font: $font-x-large $sans-serif; }
+	p {
+		@include font-size-small(); }
+	p.large {
+		@include font-size-large(); } }
+
+#content.page #other_projects {
+	margin-top: $row-height * 2;
+	#projects_list li {
+		margin-bottom: 0; } }
+
+#content.page #iconic_info #work_promo h3 {
+	margin-top: 0; }
+
+#download_follow {
+	margin: 15px 0; }
+
+#download_follow div {
+	border-top: 3px solid #f0eceb;
+	padding: 15px 0;
+	text-align: center; }
+
+#download_follow small {
+	margin-top: 5px;
+	display: block;
+	font-size: 9px !important;
+	line-height: 12px;
+	font-weight: bold; }
+
+#hero_slideshow .fss {
+	@extend .default-shadow;
+	line-height: 0; }
+
+#hero_slideshow .slides {
+	width: 725px;
+	height: 210px;
+	@include reset-dimensions();
+	li {
+		display: none; } }
+
+#projects_navigation {
+	margin: 15px 0; }
+
+#content.page #projects_navigation dt {
+	color: #5d504f; }
+
+#content.page #projects_navigation dt, #content.page #projects_navigation dd {
+	margin: 0;
+	font: $font-x-small $sans-serif;
+	margin-right: 20px;
+	float: left; }
+
+#projects_navigation dd:last-child {
+	margin-right: 0; }
+
+#content.page #projects_navigation dd {
+	background: $checkbox-sprite 0 2px no-repeat;
+	cursor: pointer;
+	padding-left: 15px; }
+
+#content.page #projects_navigation dd.active {
+	background-position: 0 -18px;
+	font-weight: bold; }
+
+#projects_list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: block; }
+
+#projects_list .external {
+	border: 0; }
+
+#projects_list li {
+	float: left;
+	padding: 0;
+	margin: 0;
+	margin-bottom: 30px;
+	margin-right: 40px;
+	@include columns(3);
+	background: transparent;
+	@extend .default-shadow; }
+
+#projects_list li:hover {
+	@extend .default-shadow; }
+
+#projects_list #projects_coffeesleeve {}
+
+#projects_list li.deselected {
+	opacity: 0.5; }
+
+#projects_list li p {
+	display: none; }
+
+#projects_list li.last {
+	margin-right: 0; }
+
+#projects_list li a {
+	display: block;
+	line-height: 0;
+	margin: 0 !important;
+	padding: 0 !important;
+	border: 0 !important;
+	text-decoration: none;
+	@include columns(3);
+	height: 120px; }
+
+#projects_list li a {
+	background-image: url("/wp-content/images/pages/projects/projects_sprite.png"); }
+
+#projects_list li #projects_bitcons {
+	background-position: 0 0; }
+
+#projects_list li #projects_sanscons {
+	background-position: -215px 0; }
+
+#projects_list li #projects_processing {
+	background-position: -430px 0; }
+
+#projects_list li #projects_photography {
+	background-position: -645px 0; }
+
+#projects_list li #projects_offfranklin {
+	background-position: -860px 0; }
+
+#projects_list li #projects_iconic {
+	background-position: -1075px 0; }
+
+#projects_list li #projects_coffeesleeve {
+	background-position: -1290px 0; }
+
+#projects_list li #projects_coordy {
+	background-position: -1505px 0; }
+
+#projects_list li #projects_colortoolkit {
+	background-position: -1720px 0; }
+
+#projects_list li #cue {
+	background-position: -1935px 0; }
+
+#projects_list h3 {
+	position: relative;
+	@include reset-dimensions(); }
+
+#projects_list h3 small {
+	padding-left: 6px;
+	background: rgba(93, 80, 79, 0.84);
+	margin: 0;
+	position: absolute;
+	display: block;
+	bottom: 0;
+	@include columns(3, -6); }
+
+#projects_list small {
+	color: #fdfcfc;
+	font-size: 13px;
+	line-height: 13px; }
+
+#content.page #projects_list li p {
+	font: $font-x-small $sans-serif; }
+
+#p5554 .slideshow .slides {
+	background-image: url("/wp-content/images/pages/iconic/slides_sprite.png"); }
+
+#iconic_preview {
+	width: 215px;
+	height: 76px;
+	background: url("/wp-content/images/pages/iconic/slides_sprite.png") 0 -222px no-repeat;
+	display: block;
+	text-indent: -9999px; }
+
+#p11465 .slideshow .slides {
+	background-image: url("/wp-content/images/pages/cue/slides_sprite.png"); }
+
+#p5734 .slideshow .slides {
+	background-image: url("/wp-content/images/pages/bitcons/bitcons_sprite.png"); }
+
+#p5641 .slideshow .slides {
+	background-image: url("/wp-content/images/pages/sanscons/sanscons_sprite.png"); }
+
+#p6975 .slideshow .slides {
+	background-image: url("/wp-content/images/pages/off_franklin/off_franklin_sprite.jpg"); }

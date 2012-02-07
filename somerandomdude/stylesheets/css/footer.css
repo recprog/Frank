@@ -1,0 +1,156 @@
+#page_bottom {
+  border-top: 1px solid #3d302f;
+  box-shadow: 0 -1px 1px rgba(5, 0, 0, 0.3); }
+
+#twitter_follow {
+  margin-top: -90px;
+  padding-bottom: 100px; }
+  #twitter_follow p {
+    font: italic 20px/30px Georgia, "Times New Roman", Times, serif;
+    text-shadow: 0px -1px 0px rgba(5, 0, 0, 0.3); }
+  #twitter_follow a {
+    margin-left: 10px; }
+  #twitter_follow a:hover {
+    color: #fffefe; }
+
+.recommended {
+  width: 215px; }
+  .recommended dt {
+    font: 700 13px/19px "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-shadow: 0px -1px 0px rgba(5, 0, 0, 0.3);
+    margin-bottom: 2px; }
+  .recommended dd {
+    font: 11px/14px Georgia, "Times New Roman", Times, serif;
+    color: #f0eceb;
+    margin-bottom: 15px; }
+
+#work_promo {
+  background: #f0eceb;
+  border-radius: 5px;
+  padding: 10px 8px 15px 8px; }
+
+#page_footer .widget ul {
+  list-style: decimal; }
+  #page_footer .widget ul li {
+    font-size: 13px;
+    line-height: 19px;
+    margin-left: 0; }
+
+#page_heel {
+  padding: 15px 0; }
+  #page_heel .widget {
+    margin-bottom: 1px; }
+    #page_heel .widget ul li {
+      margin-left: 0; }
+
+#text-10 {
+  margin-top: -30px; }
+  #text-10 #footer_main_promo {
+    width: 470px;
+    height: 180px;
+    display: block;
+    background-color: #ea0000;
+    text-decoration: none; }
+    #text-10 #footer_main_promo .sprite.fork {
+      float: left;
+      margin-left: 15px; }
+    #text-10 #footer_main_promo .content {
+      display: block;
+      float: left;
+      width: 250px;
+      margin-left: 23px;
+      padding-top: 30px;
+      padding-right: 10px; }
+      #text-10 #footer_main_promo .content .header {
+        font: 20px/30px "Helvetica Neue", Helvetica, Arial, sans-serif;
+        display: block;
+        text-shadow: 0px -1px 0px rgba(5, 0, 0, 0.3); }
+      #text-10 #footer_main_promo .content .caption {
+        display: block;
+        font-size: 11px;
+        line-height: 14px;
+        margin-top: 15px;
+        font-style: italic; }
+
+#footer_main_promo:hover {
+  background-color: #ff1e00 !important; }
+
+#text-12 {
+  width: auto; }
+
+#text-13 {
+  width: auto; }
+
+#text-7.widget {
+  width: 470px; }
+  #text-7.widget #footer_follow_list {
+    margin: 0;
+    padding: 0;
+    list-style: none; }
+    #text-7.widget #footer_follow_list li {
+      margin: 0;
+      padding: 0;
+      float: left;
+      margin-right: 20px; }
+      #text-7.widget #footer_follow_list li a:hover {
+        background: #fffefe; }
+      #text-7.widget #footer_follow_list li a {
+        display: block;
+        border: 0;
+        background: #f0eceb;
+        position: relative;
+        width: 45px;
+        height: 45px;
+        border-radius: 22.5px;
+        text-indent: -9999px; }
+        #text-7.widget #footer_follow_list li a .sprite {
+          position: absolute;
+          top: 50%;
+          left: 50%; }
+        #text-7.widget #footer_follow_list li a .vimeo-dark-15 {
+          margin-left: -7px;
+          margin-top: -6px; }
+        #text-7.widget #footer_follow_list li a .twitter-dark-15 {
+          margin-left: -5px;
+          margin-top: -7px; }
+        #text-7.widget #footer_follow_list li a .tumblr-dark-15 {
+          margin-left: -4px;
+          margin-top: -7px; }
+        #text-7.widget #footer_follow_list li a .facebook-dark-15 {
+          margin-left: -3px;
+          margin-top: -7px; }
+        #text-7.widget #footer_follow_list li a .flickr-dark-15 {
+          margin-left: -7px;
+          margin-top: -3px; }
+        #text-7.widget #footer_follow_list li a .git-dark-15 {
+          margin-left: -7px;
+          margin-top: -7px; }
+        #text-7.widget #footer_follow_list li a .friendfeed-dark-15 {
+          margin-left: -7px;
+          margin-top: -7px; }
+
+#page_heel .widget-2 {
+  margin-right: 0; }
+
+#text-8 {
+  padding-left: 255px;
+  margin-top: 0; }
+  #text-8 .org, #text-8 .email, #text-8 .adr, #text-8 .tags {
+    display: none; }
+
+#nav_menu-3 ul {
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+#nav_menu-3 li {
+  margin: 0;
+  padding: 0;
+  margin-right: 10px;
+  float: left; }
+#nav_menu-3 li:last-child {
+  margin-right: 0px; }
+
+.sprite.fork {
+  width: 131px;
+  height: 150px;
+  background: url("../../images/sprite.png") 0px -240px no-repeat; }
