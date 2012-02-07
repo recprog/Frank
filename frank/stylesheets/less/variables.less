@@ -1,0 +1,138 @@
+@color_accent: 			#ea0000;
+@color_highlight: 		#fffefe;
+@color_light: 			#f0eceb;
+@color_midtone: 		#5d504f;
+@color_dark: 			#3d302f;
+@color_off_black: 		#050000;
+
+@color_midtone_light:	#998482;
+@color_accent_alt: 		#ff1e00;
+
+/*TODO: Put in the rest of the colors later*/
+.background_color_off_black_alpha(@alpha:1) {
+	background-color:rgba(5, 0, 0, @alpha);
+}
+
+@sans-serif:'Helvetica Neue', Arial, Helvetica, Geneva, sans-serif;
+@serif:Georgia, "Times New Roman", Times, serif;
+
+@thin:100;
+@extra-light:200;
+@light:300;
+@normal:400;
+@medium:500;
+@demi-bold:600;
+@bold:700;
+@heavy:800;
+@black:900;
+
+@xxx-large:38px;
+@xx-large:28px;
+@x-large:24px;
+@large:20px;
+@medium:17px;
+@small:13px;
+@x-small:11px;
+@xx-small:10px;
+@xxx-small:9px;
+
+@font-xxx-large:@xxx-large e('/') 47px;
+@font-xx-large:@xx-large e('/') 35px;
+@font-x-large:@x-large e('/') 32px;
+@font-large:@large e('/') 30px;
+@font-medium:@medium e('/') 27px;
+@font-small:@small e('/') 19px;
+@font-x-small:@x-small e('/') 14px;
+@font-xx-small:@xx-small e('/') 12px;
+
+.font-size-xxx-large {
+	
+	font-size:@xxx-large; 
+	line-height:47px;
+}
+
+.font-size-xx-large {
+	font-size:@xx-large;
+	line-height:35px;
+}
+
+.font-size-x-large {
+	font-size:@x-large;
+	line-height:32px;
+}
+
+.font-size-large {
+	font-size:@large;
+	line-height:30px;
+}
+
+.font-size-medium {
+	font-size:@medium;
+	line-height:27px;
+}
+
+.font-size-small {
+	font-size:@small;
+	line-height:19px;
+}
+
+.font-size-x-small {
+	font-size:@x-small;
+	line-height:14px;
+}
+
+.font-size-xx-small {
+	font-size:@xx-small;
+	line-height:12px;
+}
+
+.default-shadow {
+	box-shadow:0px 0px 8px rgba(18, 7, 6,0.3);
+}
+
+@row-height:		15px;
+@column-width:		45px; /*540*/
+@gutter-width:		40px; /*440*/
+
+@border-break: 2px solid @color_light;
+
+.reset-dimensions {
+	margin:0;
+	padding:0;
+}
+
+.incomplete {
+	background-color: rgba(255,0,255,0);
+}
+
+.show-bounds {
+	background-color: rgba(255, 255, 0, .5);
+}
+
+.opacity(@level:1) {
+	opacity:@level;
+}
+
+.columns(@columns:1, @modifier:0) {
+	width:(@columns*@column-width)+(((@columns)-1)*@gutter-width)+@modifier;
+}
+
+.sprite-background(@x:0px, @y:0px) {
+	background: url(../../images/sprite.png) @x @y no-repeat; 
+}
+
+/*
+.drop-shadow(@x:0px, @y:0px, @blur:3px, @color:#000) {
+	box-shadow: @x @y @blur @color;
+}
+*/
+
+.inset-shadow(@x:0px, @y:0px, @blur:3px, @color:#000) {
+	box-shadow: inset @x @y @blur @color;
+}
+/*
+.border-image(@url, @dimensions, @type) {
+	-webkit-border-image: @url  @dimensions @type;
+	-moz-border-image: @url @dimensions @type;
+}
+*/

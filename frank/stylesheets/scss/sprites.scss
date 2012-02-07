@@ -1,0 +1,69 @@
+@import "variables";
+
+@media screen, projection {
+	.sprite {
+		display: block; }
+	.sprite.vimeo-dark-15 {
+		width: 18px;
+		height: 15px;
+		@include sprite-background(0px, -180px); }
+	.sprite.twitter-dark-15 {
+		width: 11px;
+		height: 15px;
+		@include sprite-background(-60px, -180px); }
+	.sprite.tumblr-dark-15 {
+		width: 10px;
+		height: 15px;
+		@include sprite-background(-110px, -180px); }
+	.sprite.facebook-dark-15 {
+		width: 7px;
+		height: 15px;
+		@include sprite-background(-150px, -180px); }
+	.sprite.flickr-dark-15 {
+		width: 15px;
+		height: 8px;
+		@include sprite-background(-190px, -180px); }
+	.sprite.git-dark-15 {
+		width: 14px;
+		height: 15px;
+		@include sprite-background(-240px, -180px); }
+	.sprite.friendfeed-dark-15 {
+		width: 15px;
+		height: 15px;
+		@include sprite-background(-340px, -180px); }
+	.sprite.vimeo-light-15 {
+		width: 18px;
+		height: 15px;
+		@include sprite-background(0px, -140px); }
+	.sprite.twitter-light-15 {
+		width: 11px;
+		height: 15px;
+		@include sprite-background(-60px, -140px); }
+	.sprite.tumblr-light-15 {
+		width: 10px;
+		height: 15px;
+		@include sprite-background(-110px, -140px); }
+	.sprite.facebook-light-15 {
+		width: 7px;
+		height: 15px;
+		@include sprite-background(-150px, -140px); }
+	.sprite.flickr-light-15 {
+		width: 15px;
+		height: 8px;
+		@include sprite-background(-190px, -140px); }
+	.sprite.git-light-15 {
+		width: 14px;
+		height: 15px;
+		@include sprite-background(-240px, -140px); }
+	.sprite.rss-light-15 {
+		width: 15px;
+		height: 15px;
+		@include sprite-background(-290px, -140px); }
+	.sprite.arrow-right-15 {
+		width: 9px;
+		height: 15px;
+		@include sprite-background(-110px, 0px); }
+	.sprite.arrow-left-15 {
+		width: 9px;
+		height: 15px;
+		@include sprite-background(-160px, 0px); } }

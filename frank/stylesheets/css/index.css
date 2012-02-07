@@ -1,0 +1,52 @@
+#content.home .content-header {
+  font-size: 11px;
+  line-height: 14px; }
+  #content.home .content-header .caption {
+    font-style: italic;
+    font-family: Georgia, "Times New Roman", Times, serif; }
+  #content.home .content-header .more {
+    font-family: Georgia, "Times New Roman", Times, serif; }
+#content.home .content.oneup .post .read-more, #content.home .content.oneup.large .post .read-more, #content.home .content.twoup .post .read-more, #content.home .content.fourup .post .read-more, #content.home .content.halfandhalf .post .read-more {
+  margin-top: 15px; }
+  #content.home .content.oneup .post .read-more .more, #content.home .content.oneup.large .post .read-more .more, #content.home .content.twoup .post .read-more .more, #content.home .content.fourup .post .read-more .more, #content.home .content.halfandhalf .post .read-more .more {
+    font-size: 11px;
+    line-height: 14px; }
+#content.home .content.oneup.large .post header h1 {
+  font-size: 17px;
+  line-height: 27px; }
+#content.home .content.oneup.large .post section {
+  margin: 0 0 15px 0; }
+  #content.home .content.oneup.large .post section p {
+    font-style: italic;
+    font-size: 38px;
+    line-height: 47px; }
+#content.home .content.twoup .post, #content.home .content.fourup .post {
+  float: left;
+  margin: 15px 40px 0 0; }
+  #content.home .content.twoup .post header h1, #content.home .content.fourup .post header h1 {
+    font-size: 13px;
+    line-height: 19px;
+    font-weight: bold; }
+    #content.home .content.twoup .post header h1 a, #content.home .content.fourup .post header h1 a {
+      text-decoration: none; }
+  #content.home .content.twoup .post section, #content.home .content.fourup .post section {
+    margin-top: 5px;
+    font-size: 13px;
+    line-height: 19px; }
+#content.home .content.twoup .metadata li, #content.home .content.fourup .metadata li {
+  font-size: 11px;
+  line-height: 14px; }
+#content.home .content.twoup .post:nth-child(2n+1) {
+  clear: left; }
+#content.home .content.twoup .post:nth-child(2n) {
+  margin-right: 0; }
+#content.home .content.twoup .post:nth-child(n+3) {
+  margin-bottom: 0;
+  margin-top: 45px; }
+#content.home .content.fourup .post:nth-child(4n+1) {
+  clear: left; }
+#content.home .content.fourup .post:nth-child(4n) {
+  margin-right: 0; }
+#content.home .content.fourup .post:nth-child(n+5) {
+  margin-bottom: 0;
+  margin-top: 45px; }

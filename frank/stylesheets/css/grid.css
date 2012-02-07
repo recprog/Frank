@@ -1,0 +1,120 @@
+.wrapper {
+  width: 980px;
+  position: relative;
+  margin: 0 auto !important;
+  display: block; }
+
+.wrapper.showgrid {
+  background-image: url("../../images/grid_14col.png"); }
+
+.span-1, .span-2, .span-3, .span-4, .span-5, .span-6, .span-7, .span-8, .span-9, .span-10, .span-11, .span-12 {
+  float: left;
+  margin-right: 40px; }
+
+.last {
+  margin-right: 0; }
+
+section.last {
+  margin-right: 0; }
+
+.span-1 {
+  width: 45px; }
+
+.span-2 {
+  width: 130px; }
+
+.span-3 {
+  width: 215px; }
+
+.span-4 {
+  width: 300px; }
+
+.span-5 {
+  width: 385px; }
+
+.span-6 {
+  width: 470px; }
+
+.span-7 {
+  width: 555px; }
+
+.span-8 {
+  width: 640px; }
+
+.span-9 {
+  width: 725px; }
+
+.span-10 {
+  width: 810px; }
+
+.span-11 {
+  width: 895px; }
+
+.span-12 {
+  width: 980px; }
+
+.suffix-1 {
+  padding-right: 85px; }
+
+.suffix-2 {
+  padding-right: 170px; }
+
+.suffix-3 {
+  padding-right: 255px; }
+
+.suffix-4 {
+  padding-right: 340px; }
+
+.suffix-5 {
+  padding-right: 425px; }
+
+.suffix-6 {
+  padding-right: 510px; }
+
+.suffix-7 {
+  padding-right: 595px; }
+
+.suffix-8 {
+  padding-right: 680px; }
+
+.suffix-9 {
+  padding-right: 765px; }
+
+.suffix-10 {
+  padding-right: 850px; }
+
+.suffix-11 {
+  padding-right: 935px; }
+
+.prefix-1 {
+  padding-left: 85px; }
+
+.prefix-2 {
+  padding-left: 170px; }
+
+.prefix-3 {
+  padding-left: 255px; }
+
+.prefix-4 {
+  padding-left: 340px; }
+
+.prefix-5 {
+  padding-left: 425px; }
+
+.prefix-6 {
+  padding-left: 510px; }
+
+.prefix-7 {
+  padding-left: 595px; }
+
+.prefix-8 {
+  padding-left: 680px; }
+
+.prefix-9 {
+  padding-left: 765px; }
+
+.prefix-10 {
+  padding-left: 850px; }
+
+.prefix-11 {
+  padding-left: 935px; }

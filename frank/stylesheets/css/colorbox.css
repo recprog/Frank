@@ -1,0 +1,87 @@
+@media screen, projection {
+  #jwSBoverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000100; }
+
+  #jwSBcontainer {
+    background: #3d302f;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000110;
+    opacity: 0.7;
+    -moz-opacity: 0.7;
+    filter: alpha(opacity=70);
+    margin: 0;
+    padding: 0;
+    border: none; }
+
+  #jwSBcontainer a, #jwSBcontainer a:hover {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: none;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    border: none; }
+
+  #jwSBcontent {
+    background: #5d504f;
+    top: 50%;
+    left: 50%;
+    padding: 8px;
+    position: fixed;
+    z-index: 1000120; }
+
+  #jwSBcontent a#jwSBclose, #jwSBcontent a#jwSBclose:hover {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    display: block;
+    width: 20px;
+    height: 20px;
+    background: url("../images/sprite.png") -215px -145px no-repeat;
+    float: right;
+    text-align: right;
+    margin: 0;
+    padding: 0;
+    text-decoration: none; }
+
+  #jwSBcontent a img {
+    border: none;
+    margin: 0;
+    padding: 0; }
+
+  #jwSBcontent a#jwSBimage, #jwSBcontent a#jwSBimage:hover {
+    border: none;
+    display: block;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0; }
+
+  #jwSBcontent span#sbcaption {
+    font-size: 11px;
+    font-weight: bold;
+    color: white;
+    position: absolute;
+    left: 0;
+    bottom: 30px;
+    display: block;
+    background: black;
+    display: block;
+    margin: 8px;
+    padding: 8px;
+    opacity: 0.8;
+    -moz-opacity: 0.8;
+    filter: alpha(opacity=80);
+    z-index: 1000130; } }

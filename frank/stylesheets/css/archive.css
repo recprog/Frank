@@ -1,0 +1,11 @@
+#content.archive header {
+  margin-bottom: 30px; }
+  #content.archive header h1 {
+    margin-bottom: 0; }
+  #content.archive header h2 {
+    margin-top: 0;
+    color: #5d504f;
+    font-size: 13px;
+    line-height: 19px;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-style: italic; }
