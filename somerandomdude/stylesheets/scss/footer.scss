@@ -6,11 +6,13 @@
 }
 
 #twitter_follow {
+	float:left; /*TODO: this feels incredible hacky...*/
 	margin-top:-60px;
 	padding-bottom:60px;
 	p { font:italic $font-large $serif; text-shadow:0px -1px 0px rgba(5,0,0,.3); }
 	a { margin-left:10px; }
 	a:hover { color:$color_highlight; }
+	small { display:block; margin-top:$row-height*2; font:$font-x-small $sans-serif; }
 }
 
 .recommended {

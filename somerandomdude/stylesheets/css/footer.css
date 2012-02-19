@@ -3,6 +3,8 @@
   box-shadow: 0 -1px 1px rgba(5, 0, 0, 0.3); }
 
 #twitter_follow {
+  float: left;
+  /*TODO: this feels incredible hacky...*/
   margin-top: -60px;
   padding-bottom: 60px; }
   #twitter_follow p {
@@ -12,6 +14,10 @@
     margin-left: 10px; }
   #twitter_follow a:hover {
     color: #fffefe; }
+  #twitter_follow small {
+    display: block;
+    margin-top: 30px;
+    font: 11px/14px "Helvetica Neue", Helvetica, Arial, sans-serif; }
 
 .recommended {
   width: 470px; }
