@@ -5,7 +5,7 @@
  */
 ?>
 <?php get_header(); ?>
-<div id='content' class='span-12 last single clear'>
+<div id='content' class='single clear'>
 	<div id='content_primary' class='span-9 clear'>
 		<?php while(have_posts()) : the_post(); ?>
 		<article <?php post_class(); ?> class='clear'>
@@ -29,15 +29,17 @@
 				</div>
 			<section class='span-7 last'>
 				<?php the_content(); ?>
+				<?php wp_link_pages('before=<div class="pagination small"><span class="title">Pages:</span>&after=</div>'); ?>
 			</section>
 			</div>
-			<footer>
-				<?php wp_link_pages('before=<div class="page-links"><p>Pages:&after=</p></div>'); ?>
-				<div id='post_footer' class='clear'>
+			
+			<?php if (is_active_sidebar("widget-postfooter")) : ?>
+			<footer class='clear'>				
 					<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Post Footer') ) : ?>
 					<?php endif; ?>
-				</div>
 			</footer>
+			<?php endif; ?>
+			
 		</article>
 		<?php endwhile; ?>
 		<?php comments_template(); ?>

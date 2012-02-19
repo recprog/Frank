@@ -15,13 +15,13 @@
 			margin: $row-height 0; }
 		.arrow {
 			display: block;
-			@extend .default-shadow;
+			@include default-shadow();
 			width: 45px;
 			height: 45px;
 			border-radius: 22.5px;
 			text-indent: -9999px;
-			@include sprite-background(-135px, 15px);
-			background-color: $color_midtone; }
+			background: $color_midtone url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAQCAYAAADESFVDAAAAWElEQVR42qXSzQkAIAgF4EZolEZqhDZqpEZwBM8dovSUYD9YwuNdPgIlt5tWa6AA9wkgpXPfACeagaeAAGkFigDZACbKAoAC+5f+od7Oesh/iC+/QC/DPQAIxvkuqJQtLgAAAABJRU5ErkJggg==') no-repeat 16px 15px;
+		}
 		a:hover {
 			color: $color_accent_alt;
 			.arrow {
@@ -29,20 +29,22 @@
 	position: relative;
 	article {
 		header {
-			margin-bottom: $row-height;
 			h1 {
-				font-weight: normal;
 				@include font-size-x-large();
 				color: $color_dark; } }
+				
+		section h1, section h2 {
+			margin: $row-height 0;
+			padding: 0;
+		}		
 		section h1 {
-			padding: 0;
 			@include font-size-large();
-			margin: $row-height * 2 0 $row-height 0; }
+			margin-top: $row-height * 2; 
+		}
 		section h2 {
-			padding: 0;
 			@include font-size-medium();
-			font-weight: bold;
-			margin: $row-height 0 $row-height 0; }
+			font-weight: $bold;
+		}
 		dl dd {
 			margin-left: $gutter-width; } }
 	#content_primary {
@@ -54,17 +56,35 @@
 				@include font-size-xx-large();
 				font-family: $serif;
 				font-style: italic; } }
+		
+		section {
+			margin-bottom:$row-height * 3;
+		}
+		.pagination {
+			margin-top:$row-height*2;
+		}
 		footer {
 			@extend .reset-dimensions;
-			margin-top: $row-height * 2;
-			p {
-				font-size: 14px !important; } }
+			border-bottom:$border-break;
+			padding-bottom:$row-height;
+			margin-bottom:$row-height * 2;
+			.widget:nth-child(4n) {
+				margin-right: $gutter-width;
+			}
+			.widget:nth-child(4n+1) {
+				clear:none;
+			}
+			.widget:nth-child(3n) {
+				margin-right:0; 
+			}
+			.widget:nth-child(3n+1) {
+				clear:left; 
+			}
+		}
 		#content_main {
-			margin-top: $row-height * 2; } }
-	#post_footer .widget {
-		float: left;
-		margin-right: 40px;
-		@include columns(3);
-		margin-bottom: 20px; }
-	#post_footer .widget:nth-child(3n) {
-		margin-right: 0; } }
+			margin: $row-height * 2 0; 
+			border-bottom:$border-break;
+			padding-bottom:$row-height;
+			} 
+		}
+	}

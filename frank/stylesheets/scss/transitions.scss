@@ -1,18 +1,7 @@
-#sidebar {
-	-webkit-transition-property: opacity.5s cubic-bezier(0.02, 0, 0.18, 1.0);
-	-moz-transition-property: opacity 0.5s cubic-bezier(0.02, 0, 0.18, 1); }
-
-nav li.rss, nav li.twitter {
-	-webkit-transition: background-color 0.5s cubic-bezier(0.02, 0, 0.18, 1);
-	-moz-transition: background-color 0.5s cubic-bezier(0.02, 0, 0.18, 1); }
-
 #comment_form_comment textarea {
 	-webkit-transition: height 0.5s cubic-bezier(0.02, 0, 0.18, 1);
-	-moz-transition: height 0.5s cubic-bezier(0.02, 0, 0.18, 1); }
-
-.slideshow .srd_slide {
-	-webkit-transition-property: opacity 0.5s cubic-bezier(0.02, 0, 0.18, 1);
-	-moz-transition-property: opacity 0.5s cubic-bezier(0.02, 0, 0.18, 1); }
+	-moz-transition: height 0.5s cubic-bezier(0.02, 0, 0.18, 1); 
+}
 
 button, .button, input[type=submit] {
 	-webkit-transition: background-color 0.5s cubic-bezier(0.02, 0, 0.18, 1);
@@ -20,15 +9,5 @@ button, .button, input[type=submit] {
 
 #content.single .previous .arrow, #content.single .previous a {
 	-webkit-transition: all 0.75s cubic-bezier(0.02, 0, 0.18, 1);
-	-moz-transition: all 0.75s cubic-bezier(0.02, 0, 0.18, 1); }
-
-#hero_slideshow .slides {
-	-webkit-transition: background-position 0.75s cubic-bezier(0.02, 0, 0.18, 1);
-	-moz-transition: background-position 0.75s cubic-bezier(0.02, 0, 0.18, 1); }
-
-#projects_list li {
-	-webkit-transition: opacity 0.3s cubic-bezier(0.02, 0, 0.18, 1);
-	-moz-transition: opacity 0.3s cubic-bezier(0.02, 0, 0.18, 1);
-	-o-transition: opacity 0.3s cubic-bezier(0.02, 0, 0.18, 1);
-	-webkit-transition: box-shadow 0.2s cubic-bezier(0.02, 0, 0.18, 1);
-	-moz-transition: box-shadow 0.2s cubic-bezier(0.02, 0, 0.18, 1); }
+	-moz-transition: all 0.75s cubic-bezier(0.02, 0, 0.18, 1); 
+}

@@ -10,9 +10,9 @@
 	<meta charset="UTF-8" />
 	<meta name="generator" content="WordPress <?php bloginfo('version'); ?>" />
 	
-	<title><?php if ( is_single()||is_page() ) { wp_title(''); ?> &#8212; <?php } ?> <?php bloginfo('name'); ?></title>
+	<title><?php if (function_exists('is_tag') && is_tag()) { echo 'Tag Archive for &quot;'.$tag.'&quot;&mdash;'; } elseif (is_archive()) { wp_title(''); echo ' Archive&mdash;'; } elseif (is_search()) { echo 'Search for &quot;'.wp_specialchars($s).'&quot;&mdash;'; } elseif (!(is_404()) && (is_single()) || (is_page())) { wp_title(''); echo '&mdash;'; } elseif (is_404()) { echo 'Not Found&mdash;'; } bloginfo('name'); ?></title>
 
-	<?php if(false) : ?>
+	<?php if(franklin_devmode()) : ?>
 	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/stylesheets/css/reset.css" type="text/css" media="all" />
 	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/stylesheets/css/grid.css" type="text/css" media="all" />
 	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/stylesheets/css/global.css" type="text/css" media="all" />
@@ -30,7 +30,6 @@
 	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/stylesheets/css/footer.css" type="text/css" media="all" />
 	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/stylesheets/css/colorbox.css" type="text/css" media="all" />
 	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/stylesheets/css/hacks.css" type="text/css" media="all" />
-	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/stylesheets/css/custom.css" type="text/css" media="all" />
 	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/stylesheets/css/mobile.css" type="text/css" media="all" />
 	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/stylesheets/css/print.css" type="text/css" media="all" />
 	<?php else : ?>
@@ -39,19 +38,13 @@
 	
 	<!--[if IE]>
 	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/stylesheets/css/ie.css" type="text/css" media="screen" />
-	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/stylesheets/css/ie_custom.css" type="text/css" media="screen" />
 	<![endif]-->
 	<!--[if IE 7]>
 	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/stylesheets/css/ie7.css" type="text/css" media="screen" />
-	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/stylesheets/css/ie7_custom.css" type="text/css" media="screen" />
 	<![endif]-->
 	
 	<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="<?php bloginfo('rss2_url'); ?>" />
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
-				
-	<?php wp_enqueue_script('fcustom', get_bloginfo('template_url') . '/js/custom.min.js'); ?>
-	<?php wp_enqueue_script('fss', get_bloginfo('template_url') . '/js/frank.slideshow.min.js'); ?>
-	<?php wp_enqueue_script('fssb', get_bloginfo('template_url') . '/js/simplebox.min.js'); ?>
 	
 	<?php wp_head(); ?>
 	
@@ -64,11 +57,8 @@
 	<![endif]-->	
 </head>
 <body id="page">
-<div id="page_top">
-	<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Top Bar") ) : ?>
-	<?php endif; ?>
-<div class='wrapper clear'>
-	<header id="page_header" class="span-12 last clear">
+<div id="page_top" class='wrapper clear'>
+	<header id="page_header" class="clear">
 		<hgroup>
 			<h1 id="title"><a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a></h1>
 			<h2 id="description"><?php bloginfo('description'); ?></h2>
@@ -81,7 +71,9 @@
 			<?php endif; ?> 
 		</nav>
 	</header>
-	<div id='sub_header' class='clear'>
-		<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Sub Header") ) : ?>
-		<?php endif; ?>
-	</div>
+	<?php if ( is_active_sidebar("widget-subheader") ) : ?>
+		<div id='sub_header' class='clear'>
+			<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Sub Header") ) : ?>
+			<?php endif; ?>
+		</div>
+	<?php endif; ?>

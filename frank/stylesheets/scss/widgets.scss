@@ -1,18 +1,25 @@
 @import "variables";
+		
+.widget {
+	h3 { 
+		@include font-size-small(); 
+		white-space: nowrap;
+	    overflow: hidden;
+	    text-overflow: ellipsis;
+	    -o-text-overflow: ellipsis;
+	}
+	float: left;
+	
+	margin: 0 $gutter-width $row-height 0;
+}
 
-#wp-calendar {
-	margin-top: 0;
-	margin-bottom: 0;
-	th, td {
-		padding: 0 8px; }
-	th:first-child, td:first-child {
-		padding-left: 0; }
-	th.last, td.last {
-		padding-right: 0; }
-	caption {
-		font-style: italic;
-		font-size: $x-small;
-		padding: 0;
-		padding-top: 1px; }
-	#today {
-		font-weight: bold; } }
+.widget.fourup { @include columns(3); }
+.widget.fourup:nth-child(4n) { margin-right:0; }
+.widget.fourup:nth-child(4n+1) { clear:left; }
+.widget.threeup { @include columns(4); }
+.widget.threeup:nth-child(3n) { margin-right:0; }
+.widget.threeup:nth-child(3n+1) { clear:left; }
+.widget.twoup { @include columns(6); }
+.widget.twoup:nth-child(2n) { margin-right:0; }
+.widget.twoup:nth-child(2n+1) { clear:left; }
+.widget-last { margin-right: 0 !important; }

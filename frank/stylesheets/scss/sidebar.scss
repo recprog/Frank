@@ -1,18 +1,12 @@
 @import "variables";
 
-@media screen, projection {
-	#sidebar {
-		margin-top: $row-height * 4;
-		@include opacity(0.75);
-		@include columns(3);
-		float: left;
-		h3 {
-			font-weight: bold;
-			@include font-size-small();
-			margin-bottom: 5px; }
-		h3:first-child {
-			margin-top: 0 !important; }
-		.container {
-			padding-top: $row-height; } }
-	#sidebar:hover {
-		@include opacity(1); } }
+#sidebar {
+	margin-top: $row-height * 4;
+	@include columns(3);
+	float: left;
+	h3 {
+		font-weight: $bold;
+		@include font-size-small();
+		margin-bottom: 5px; }
+	h3:first-child { margin-top: 0 !important; }
+}

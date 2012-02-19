@@ -4,12 +4,11 @@
 	display: none; }
 
 #page_title {
-	font-size: 28px;
-	line-height: 35px;
-	color: #5d504f; }
+	@include font-size-xx-large();
+	color: $color_midtone }
 
 #page_title .title {
-	color: #050000;
+	color: $color_off_black;
 	font-style: italic; }
 
 #content.page #info, #content.page #other_projects {
@@ -17,24 +16,19 @@
 		display: block;
 		padding-top: 0;
 		font: $font-x-large $sans-serif; }
-	p {
-		@include font-size-small(); }
-	p.large {
-		@include font-size-large(); } }
+	p { @include font-size-small(); }
+	p.large { @include font-size-large(); } 
+}
 
 #content.page #other_projects {
 	margin-top: $row-height * 2;
-	#projects_list li {
-		margin-bottom: 0; } }
+	#projects_list li { margin-bottom: 0; } 
+}
 
-#content.page #iconic_info #work_promo h3 {
-	margin-top: 0; }
-
-#download_follow {
-	margin: 15px 0; }
+#download_follow { margin: 15px 0; }
 
 #download_follow div {
-	border-top: 3px solid #f0eceb;
+	border-top: 2px solid $color_light;
 	padding: 15px 0;
 	text-align: center; }
 
@@ -43,10 +37,10 @@
 	display: block;
 	font-size: 9px !important;
 	line-height: 12px;
-	font-weight: bold; }
+	font-weight: $bold; }
 
 #hero_slideshow .fss {
-	@extend .default-shadow;
+	@include default-shadow();
 	line-height: 0; }
 
 #hero_slideshow .slides {
@@ -60,7 +54,7 @@
 	margin: 15px 0; }
 
 #content.page #projects_navigation dt {
-	color: #5d504f; }
+	color: $color_midtone; }
 
 #content.page #projects_navigation dt, #content.page #projects_navigation dd {
 	margin: 0;
@@ -72,22 +66,20 @@
 	margin-right: 0; }
 
 #content.page #projects_navigation dd {
+	
 	background: $checkbox-sprite 0 2px no-repeat;
 	cursor: pointer;
 	padding-left: 15px; }
 
 #content.page #projects_navigation dd.active {
 	background-position: 0 -18px;
-	font-weight: bold; }
+	font-weight: $bold; }
 
 #projects_list {
 	list-style: none;
 	margin: 0;
 	padding: 0;
 	display: block; }
-
-#projects_list .external {
-	border: 0; }
 
 #projects_list li {
 	float: left;
@@ -97,10 +89,11 @@
 	margin-right: 40px;
 	@include columns(3);
 	background: transparent;
-	@extend .default-shadow; }
+	@include default-shadow(); }
 
 #projects_list li:hover {
-	@extend .default-shadow; }
+	box-shadow: 0px 2px 10px rgba(18, 7, 6, 0.5);
+}
 
 #projects_list #projects_coffeesleeve {}
 

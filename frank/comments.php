@@ -1,3 +1,10 @@
+<?php
+/**
+ * @package WordPress
+ * @subpackage Franklin_Street
+ */
+?>
+
 <?php // Do not delete these lines
 	if (!empty($_SERVER['SCRIPT_FILENAME']) && 'comments.php' == basename($_SERVER['SCRIPT_FILENAME']))
 		die ('Please do not load this page directly. Thanks!');
@@ -18,9 +25,9 @@
 	</header>
 <div id='comments_content'>
 <?php if ($comments) : ?>
-	<ul id="comments" class='incomplete'>
+	<ul id="comments">
 	<?php foreach ($comments as $comment) : ?>
-		<li class="comment span-12 last clear">
+		<li class="comment clear">
 			<div class="comment-info span-2">
 				<ul class='metadata vertical'>
 					<li class="date"><time datetime="<?php the_time('Y-m-d'); ?>" pubdate><?php comment_date('F d, Y'); ?></time></li>
@@ -29,10 +36,9 @@
 				
 				<?php edit_comment_link('edit'); ?>
 			</div>
-			<div class="content span-7 suffix-3 last">
-				<div class='copy'><?php if ($comment->comment_approved == '0') : echo "<span id='comment_moderation'>Your comment is awaiting moderation.</span>"; endif; ?>
+			<div class="content span-7 last">
+				<?php if ($comment->comment_approved == '0') : echo "<span id='comment_moderation'>Your comment is awaiting moderation.</span>"; endif; ?>
 				<?php comment_text() ?>	
-				</div>
 			</div>
 		</li>
 		<?php $oddcomment = ( empty( $oddcomment ) ) ? 'class="alt" ' : ''; ?>
@@ -48,15 +54,10 @@
 	<?php endif; ?>
 <?php endif; ?>
 
-<?php
-/**
- * @package WordPress
- * @subpackage Franklin_Street
- */
-?>
+
 <?php if ('open' == $post->comment_status) : ?>
 
-	<div id="comment_form" class="clearfix">
+	<div id="comment_form" class="clear">
 		
 		<?php if ( get_option('comment_registration') && !$user_ID ) : ?>
 		<p>You must be <a href="<?php echo get_option('siteurl'); ?>/wp-login.php?redirect_to=<?php echo urlencode(get_permalink()); ?>">logged in</a> to post a comment.</p>
@@ -80,7 +81,6 @@
 					By <a href="<?php echo get_option('siteurl'); ?>/wp-admin/profile.php"><?php echo $user_identity; ?></a> (<a href="<?php echo get_option('siteurl'); ?>/wp-login.php?action=logout" title="Log out of this account">Log out&hellip;</a>)
 				</div>
 			<?php endif; ?>
-			
 			
 			<div id="comment_form_comment" class='span-7 last <?php if ( $user_ID ) : ?>loggedin<?php endif; ?>'>
 				<label for="comment">Your Comment</label>

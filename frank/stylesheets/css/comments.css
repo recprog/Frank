@@ -1,72 +1,37 @@
 #comments_container {
   margin-top: 60px; }
-  #comments_container .no_comments {
+  #comments_container .no_comments, #comments_container .comments_closed {
     margin-top: 30px;
     font: 28px/35px Georgia, "Times New Roman", Times, serif;
     font-style: italic;
     color: #5d504f; }
-  #comments_container .comments_closed {
-    margin-top: 30px;
-    font: 20px/30px Georgia, "Times New Roman", Times, serif;
-    font-style: italic;
-    color: #5d504f; }
-  #comments_container header h1 {
-    margin-bottom: 0; }
-  #comments_container header h2 {
-    margin-top: 0;
-    font-family: Georgia, "Times New Roman", Times, serif;
-    font-style: italic; }
   #comments_container #comments {
-    list-style: none;
-    margin-bottom: 15px; }
+    list-style: none; }
+    #comments_container #comments li {
+      margin: 60px 0;
+      background: none; }
+    #comments_container #comments li:first-child {
+      margin-top: 0px; }
     #comments_container #comments .comment-info {
       text-align: right; }
-    #comments_container #comments .copy {
+    #comments_container #comments .content {
       font-family: Georgia, "Times New Roman", Times, serif; }
-      #comments_container #comments .copy p {
+      #comments_container #comments .content p {
         font-size: 17px;
         line-height: 27px;
         color: #3d302f; }
-      #comments_container #comments .copy p:first-child {
-        padding-top: 0; }
-      #comments_container #comments .copy blockquote, #comments_container #comments .copy blockquote p {
+      #comments_container #comments .content blockquote, #comments_container #comments .content blockquote p {
         font-size: 13px;
         line-height: 19px; }
-    #comments_container #comments li {
-      margin-bottom: 15px;
-      background: none;
-      margin: 0;
-      padding: 30px 0; }
-    #comments_container #comments li:first-child {
-      margin-top: 0px; }
-    #comments_container #comments li:last-child {
-      padding-bottom: 0;
-      border: 0; }
-    #comments_container #comments p:last-child {
-      margin-bottom: 0; }
-    #comments_container #comments ul.metadata.vertical {
-      margin-top: 5px;
-      list-style: none; }
-      #comments_container #comments ul.metadata.vertical li {
-        text-align: right;
-        float: none;
-        font: 11px/14px Georgia, "Times New Roman", Times, serif;
-        font-style: italic;
-        margin-bottom: 5px; }
-      #comments_container #comments ul.metadata.vertical li.date {
-        font-style: normal;
-        font-weight: bold;
-        margin-bottom: 10px;
-        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+    #comments_container #comments ul.metadata.vertical li {
+      margin: 0 0 5px 0; }
     #comments_container #comments .comment-edit-link {
-      font-weight: bold;
+      font-weight: 700;
       display: block;
       margin-top: 15px; }
   #comments_container #no_comments {
-    font-size: 26px;
-    line-height: 30px;
-    padding-top: 10px;
-    margin-bottom: 30px;
+    font: 28px/35px Georgia, "Times New Roman", Times, serif;
+    margin: 30px 0;
     color: #5d504f; }
   #comments_container #commentform label {
     display: none; }
@@ -82,14 +47,10 @@
       width: 740px; }
   #comments_container #commentform textarea:focus {
     height: 375px; }
-  #comments_container #comment_form {
-    margin-top: 15px; }
-    #comments_container #comment_form header {
-      margin-bottom: 15px; }
-      #comments_container #comment_form header h1 {
-        font-size: 17px;
-        line-height: 27px; }
-      #comments_container #comment_form header .loggedin {
-        font-style: italic; }
+  #comments_container #comment_form header h1 {
+    font-size: 20px;
+    line-height: 30px; }
+  #comments_container #comment_form header .loggedin {
+    font-style: italic; }
   #comments_container #submit {
     margin-top: 15px; }

@@ -1,10 +1,8 @@
-#intro {
-  margin-bottom: 15px; }
-  #intro p {
-    font: 13px/19px Georgia, "Times New Roman", Times, serif; }
+article .metadata .author {
+  display: none !important; }
 
-.post .metadata .author {
-  display: none; }
+body {
+  border-top: 3px solid #050000; }
 
 #webbynode_promo {
   margin-top: 15px; }
@@ -19,9 +17,6 @@
     background: url("../../images/sprite.png") -180px -370px no-repeat;
     text-indent: -99999px; }
 
-#page_top {
-  border-top: 3px solid #5d504f; }
-
 .fss {
   position: relative; }
 
@@ -30,7 +25,7 @@
   margin-top: 15px; }
 
 .fss-caption strong {
-  font-weight: bold;
+  font-weight: 700;
   margin-right: 10px; }
 
 .fss-nav {
@@ -55,10 +50,7 @@
   background: #ded3d1;
   color: #3d302f;
   cursor: pointer;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 10px !important;
-  line-height: 20px !important;
-  font-weight: bold;
+  font: 700 10px/20px "Helvetica Neue", Helvetica, Arial, sans-serif !important;
   text-align: center;
   width: 20px;
   height: 20px; }

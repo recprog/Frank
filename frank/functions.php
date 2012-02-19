@@ -19,7 +19,8 @@ add_post_type_support( 'page', 'post-formats' );
  * @subpackage Frank
  */
 
-if ( function_exists('register_sidebar') )
+
+if ( function_exists('register_sidebar') )/*KILL*/
 	register_sidebar(array(
 	'name' => 'Top Bar',
 	'before_widget' => '<div id="top_bar" class="widget %2$s">',
@@ -31,7 +32,8 @@ if ( function_exists('register_sidebar') )
 if ( function_exists('register_sidebar') )
 	register_sidebar(array(
 	'name' => 'Sub Header',
-	'before_widget' => '<div id="%1$s" class="widget %2$s">',
+	'id' => 'widget-subheader',
+	'before_widget' => '<div id="%1$s" class="widget %2$s fourup">',
 	'after_widget' => '</div>',
 	'before_title' => '<h3 class="widgettitle">',
 	'after_title' => '</h3>',
@@ -78,7 +80,8 @@ if ( function_exists('register_sidebar') ) {
 if ( function_exists('register_sidebar') )
 	register_sidebar(array(
 	'name' => 'Post Footer',
-	'before_widget' => '<div id="%1$s" class="widget %2$s">',
+	'id' => 'widget-postfooter',
+	'before_widget' => '<div id="%1$s" class="widget %2$s fourup">',
 	'after_widget' => '</div>',
 	'before_title' => '<h3 class="widgettitle">',
 	'after_title' => '</h3>',
@@ -87,25 +90,8 @@ if ( function_exists('register_sidebar') )
 if ( function_exists('register_sidebar') )
 	register_sidebar(array(
 	'name' => 'Footer',
-	'before_widget' => '<div id="%1$s" class="widget %2$s">',
-	'after_widget' => '</div>',
-	'before_title' => '<h3 class="widgettitle">',
-	'after_title' => '</h3>',
-	));
-	
-if ( function_exists('register_sidebar') )
-	register_sidebar(array(
-	'name' => 'Heel',
-	'before_widget' => '<div id="%1$s" class="widget %2$s">',
-	'after_widget' => '</div>',
-	'before_title' => '<h3 class="widgettitle">',
-	'after_title' => '</h3>',
-	));
-		
-if ( function_exists('register_sidebar') )
-	register_sidebar(array(
-	'name' => '404',
-	'before_widget' => '<div id="%1$s" class="widget %2$s">',
+	'id' => 'widget-footer',
+	'before_widget' => '<div id="%1$s" class="widget %2$s twoup">',
 	'after_widget' => '</div>',
 	'before_title' => '<h3 class="widgettitle">',
 	'after_title' => '</h3>',
@@ -196,8 +182,7 @@ function franklin_street_admin_assets()
  
 add_action( 'init', 'franklin_street_admin_assets' );
 
-function franklin_street_footer() {
-	
+function franklin_street_footer() {	
 	$franklin_street_general = get_option( '_franklin_street_general' );
     if($franklin_street_general) echo stripslashes($franklin_street_general['footer']);
 }
@@ -205,7 +190,12 @@ function franklin_street_footer() {
 function franklin_street_header() {
 	
 	$franklin_street_general = get_option( '_franklin_street_general' );
-    if($franklin_street_general) print stripslashes($franklin_street_general['header']);
+    if($franklin_street_general) echo stripslashes($franklin_street_general['header']);
+}
+
+function franklin_devmode() {
+	$franklin_street_general = get_option( '_franklin_street_general' );
+	if($franklin_street_general) return $franklin_street_general['devmode'];
 }
 
 add_action('wp_footer', 'franklin_street_footer');

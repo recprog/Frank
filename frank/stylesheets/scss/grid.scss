@@ -2,8 +2,10 @@
 
 .wrapper {
 	width: $column-width * 12 + $gutter-width * 11;
+	min-width:980px;
 	position: relative;
 	margin: 0 auto !important;
+	padding:0 10px;
 	display: block; 
 	}
 

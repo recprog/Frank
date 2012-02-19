@@ -6,6 +6,7 @@
  * @license		GNU/GPL license: http://www.gnu.org/copyleft/gpl.html
  */
 
+
 // Parameters
 var sbLoaderSide = 100;
 var resizeImage = 1;

@@ -7,12 +7,13 @@ window.onload = function() {
 	a.nodeValue = 'text/css';
 	style.setAttributeNode(a);
 
-	var t = document.createTextNode('a{ -webkit-transition-property: background, color; -webkit-transition-duration: .3s; -webkit-transition-timing-function: cubic-bezier(0.02, 0, 0.18, 1.0); -moz-transition-property: background, color; -moz-transition-duration: .3s; -moz-transition-timing-function: cubic-bezier(0.02, 0, 0.18, 1.0); -o-transition-property: background, color; -o-transition-duration: .3s; -o-transition-timing-function: cubic-bezier(0.02, 0, 0.18, 1.0); }');
+	var t = document.createTextNode('a{ -webkit-transition-property: background-color, color; -webkit-transition-duration: .3s; -webkit-transition-timing-function: cubic-bezier(0.02, 0, 0.18, 1.0); -moz-transition-property: background, color; -moz-transition-duration: .3s; -moz-transition-timing-function: cubic-bezier(0.02, 0, 0.18, 1.0); -o-transition-property: background, color; -o-transition-duration: .3s; -o-transition-timing-function: cubic-bezier(0.02, 0, 0.18, 1.0); }');
 	document.getElementsByTagName('head').item(0).appendChild(style);
 	try {style.appendChild(t); }
 	catch (err) {}
 
 	frank_slideshow('#hero_slideshow .slides', {width: 725, height: 210});
+	simpleBox();
 
 	if (document.querySelector('#p72')) {
 		var items, a, ref, i, k, j, itms, b;

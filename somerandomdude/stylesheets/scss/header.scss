@@ -2,22 +2,11 @@
 	
 #page_header {
 	
-	margin-top:-1px;
-	margin-bottom: $row-height;
-	/*padding-top: $row-height;*/
-	background:$color_midtone;
-	border-radius:0 0 3px 3px;
-	border: none;
-	border:1px solid $color_dark;
-	border-top:0;
-	padding:5px $row-height 2px $row-height;
-	box-shadow:0 1px 1px rgba(5,0,0,.3);
 	h1 {
 		@include reset-dimensions();
 		float: left; 
 		a { 
-			color:#fffefe;
-			text-indent:-999999px;
+			text-indent:-99999px;
 			display:block;
 			margin-top:5px;
 			@include sprite-background(-180px, -337px);
@@ -25,15 +14,9 @@
 			height:20px; 
 		}
 	}
-	h2 {
-		display:none;
-		}
 	nav {
-		@include columns(4);
-		border: 0;
-		@include reset-dimensions();
+		@include columns(2);
 		margin-top:$row-height - 7;
-		background: none;
 		float: right;
 		position: relative;
 		.menu {
@@ -44,27 +27,51 @@
 				@include reset-dimensions();
 				display: block;
 				position: relative;
-				ul {
-					display: none; }
 				li {
 					@include reset-dimensions();
-					margin-right:30px;
+					margin-right:$gutter-width;
 					float: left;
 					background: none;
 					a {
-						text-align:right;
 						display: block;
-						text-decoration: none;
 						font-weight: $bold;
 						height: $row-height;
-						color: $color_light;
+						color: $color_midtone;
 						font-size: $x-small;
 						padding: 0; 
-						text-shadow:0px -1px 0px rgba(5,0,0,.5);
 						}
 					a:hover {
-						color: $color_highlight; 
+						color: $color_off_black; 
 					} 
+				}
+				li:last-child { margin-right: 0; }
+				li.rss, li.twitter {
+					background:$color_accent;
+					@include default-shadow();
+					position:fixed;
+					margin-left:140px;
+					width:45px;
+					height:45px;
+					border-radius:22.5px;
+					a {
+						width:15px;
+						height:15px;
+						text-indent:-99999px;
+						padding:15px;
+					}
+				}
+				li.rss {
+					margin-top:-15px;
+					a { @include sprite-background(15px, -125px); }
+				}
+				
+				li.twitter {
+					margin-top:50px;
+					a { @include sprite-background(-43px, -125px); }
+				}
+
+				li.rss:hover, li.twitter:hover {
+					background-color:$color_accent_alt;
 				}
 			}
 		}

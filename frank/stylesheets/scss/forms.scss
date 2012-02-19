@@ -4,7 +4,7 @@
 	label {
 		font-family: $sans-serif;
 		@include font-size-small();
-		font-weight: bold; }
+		font-weight: $bold; }
 	input[type=text], textarea {
 		@include font-size-small();
 		border: 1px solid $color_midtone;

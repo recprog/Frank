@@ -9,9 +9,11 @@
 <head>
 	<meta charset="UTF-8" />
 	
-	<title><?php if ( is_single()||is_page() ) { wp_title(''); ?> &#8212; <?php } ?> Some Random Dude</title>
 
-	<?php if(true) : ?>
+	<title><?php if (function_exists('is_tag') && is_tag()) { echo 'Tag Archive for &quot;'.$tag.'&quot;&mdash;'; } elseif (is_archive()) { wp_title(''); echo ' Archive&mdash;'; } elseif (is_search()) { echo 'Search for &quot;'.wp_specialchars($s).'&quot;&mdash;'; } elseif (!(is_404()) && (is_single()) || (is_page())) { wp_title(''); echo '&mdash;'; } elseif (is_404()) { echo 'Not Found&mdash;'; } bloginfo('name'); ?></title>
+	
+
+	<?php if(franklin_devmode()) : ?>
 	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/stylesheets/css/reset.css" type="text/css" media="all" />
 	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/stylesheets/css/grid.css" type="text/css" media="all" />
 	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/stylesheets/css/global.css" type="text/css" media="all" />
@@ -56,17 +58,15 @@
 	
 	<!--[if IE]>
 	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/stylesheets/css/ie.css" type="text/css" media="screen" />
-	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/stylesheets/css/ie_custom.css" type="text/css" media="screen" />
 	<![endif]-->
 	<!--[if IE 7]>
 	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/stylesheets/css/ie7.css" type="text/css" media="screen" />
-	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/stylesheets/css/ie7_custom.css" type="text/css" media="screen" />
 	<![endif]-->
 	
 	<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://feeds.feedburner.com/somerandomdude" />
 	<link rel="pingback" href="/xmlrpc.php" />
 	
-	<?php #wp_head(); ?>
+	<?php wp_head(); ?>
 	
 	<!--[if lte IE 8]>
 	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
@@ -77,18 +77,16 @@
 	<![endif]-->	
 </head>
 <body id="page">
-<div id="page_top" class="clear">
 <div class='wrapper clear'>
 	<header id="page_header" class="clear">
 		<hgroup>
 			<h1 id="title"><a href="/">Some Random Dude</a></h1>
-			<h2 id="description">Some Random Dude is a blog by P.J. Onori that covers design &amp; technology in the broadest sense possible.</h2>
 		</hgroup>
 		<nav class='clear'>
-			<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Navigation") ) : ?>
-			<div class='menu clear'>
-				<?php wp_nav_menu( array('theme_location' => 'primary', 'container' => '' ) ); ?>	
-			</div>
-			<?php endif; ?> 
+			<div class='menu clear'><ul id="menu-primary" class="menu"><li id="menu-item-9681" class="work menu-item"><a href="/work">Work</a></li>
+			<li id="menu-item-9680" rel="author" class="last menu-item"><a href="/hello">Hello</a></li>
+			<li id="menu-item-9709" class="rss menu-item"><a href="http://feeds.feedburner.com/somerandomdude">RSS</a></li>
+			<li id="menu-item-9712" class="twitter menu-item"><a href="http://twitter.com/somerandomdude">Twitter</a></li>
+			</ul></div>
 		</nav>
 	</header>

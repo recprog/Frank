@@ -18,7 +18,7 @@
 	background: $color_midtone; }
 
 #text-10 {
-	@extend .default-shadow;
+	@include default-shadow();
 	margin-top: $row-height * -2;
 	#footer_main_promo {
 		@include columns(6);

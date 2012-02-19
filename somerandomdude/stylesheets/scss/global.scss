@@ -1,12 +1,9 @@
 @import "variables";
 
-#intro {
-	margin-bottom: $row-height;
-	p {
-		font: $font-small $serif; } }
-.post .metadata .author {
-	display: none; }
+article .metadata .author {
+	display: none !important; }
 body {
+	border-top:3px solid $color_off_black;
 }
 #webbynode_promo {
 	margin-top: $row-height;
@@ -20,20 +17,15 @@ body {
 		height: 20px;
 		@include sprite-background(-180px, -370px);
 		text-indent: -99999px; } }
-		
-		#page_top {
-				border-top: 3px solid $color_midtone; 
-		}
 
-.fss {
-	position: relative; }
+.fss { position: relative; }
 
 .fss-caption {
 	font: $font-x-small $sans-serif;
 	margin-top: $row-height; }
 
 .fss-caption strong {
-	font-weight: bold;
+	font-weight: $bold;
 	margin-right: 10px; }
 
 .fss-nav {
@@ -47,8 +39,7 @@ body {
 	padding: 10px;
 	margin: 0; }
 
-.fss-nav.active {
-	display: block; }
+.fss-nav.active { display: block; }
 
 .fss .fss-nav li {
 	float: left;
@@ -58,15 +49,10 @@ body {
 	background: #ded3d1;
 	color: #3d302f;
 	cursor: pointer;
-	font-family: $sans-serif;
-	font-size: 10px !important;
-	line-height: 20px !important;
-	font-weight: bold;
+	font: $bold 10px/20px $sans-serif !important;
 	text-align: center;
 	width: 20px;
 	height: 20px; }
-
-.fss-nav li:first-child {}
 
 .fss-nav li:last-child {
 	margin-right: 0; }

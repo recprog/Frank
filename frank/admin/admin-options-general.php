@@ -12,6 +12,7 @@
 	
 			$franklin_street_general['header']=$_POST['franklin-general-header'];
 			$franklin_street_general['footer']=$_POST['franklin-general-footer'];
+			$franklin_street_general['devmode']=$_POST['franklin-general-devmode'];
 	
             update_option( '_franklin_street_general', $franklin_street_general );
 
@@ -28,7 +29,8 @@
         {
             $franklin_street_general[] = array(
                                         'header'      		=> '',
-                                        'footer'            => ''
+                                        'footer'            => '',
+										'devmode'			=> ''
             );
         }
 
@@ -55,6 +57,9 @@
 				<div>
 					<label for="franklin-general-footer"><?php _e('Custom Footer Code', 'franklinstreet'); ?></label>
                 	<textarea name="franklin-general-footer"><?php echo stripslashes($franklin_street_general['footer']); ?></textarea>
+				</div>
+				<div>
+					<input type="checkbox" name="franklin-general-devmode" value="devmode" <?php if($franklin_street_general['devmode']): ?> checked="checked" <?php endif; ?> /> <label for="franklin-general-devmode"><?php _e('Developer Mode', 'franklinstreet'); ?></label>
 				</div>
         </div>
 

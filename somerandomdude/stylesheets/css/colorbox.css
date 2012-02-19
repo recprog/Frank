@@ -1,0 +1,59 @@
+#jwSBoverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000100; }
+
+#jwSBcontainer {
+  background: #3d302f;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000110;
+  opacity: 0.7;
+  margin: 0;
+  padding: 0;
+  border: none; }
+
+#jwSBcontainer a, #jwSBcontainer a:hover {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: none;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+  border: none; }
+
+#jwSBcontent {
+  background: #5d504f;
+  top: 50%;
+  left: 50%;
+  padding: 1px;
+  position: fixed;
+  z-index: 1000120; }
+
+#jwSBcontent a#jwSBclose, #jwSBcontent a#jwSBclose:hover {
+  display: none; }
+
+#jwSBcontent a img {
+  border: none;
+  margin: 0;
+  padding: 0; }
+
+#jwSBcontent a#jwSBimage, #jwSBcontent a#jwSBimage:hover {
+  border: none;
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0; }
+
+#jwSBcontent span#sbcaption {
+  display: none; }

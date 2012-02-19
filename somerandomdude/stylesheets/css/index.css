@@ -1,43 +1,7 @@
-#content.home .content {
-  margin: 30px 0 15px 0; }
-  #content.home .content .metadata dd.tags {
-    display: none; }
-  #content.home .content .metadata dd.tags:nth-last-child(-n+5) {
-    display: block; }
-  #content.home .content .nav .label {
-    font-size: 13px;
-    line-height: 19px;
-    font-weight: bold;
-    color: #5d504f; }
-  #content.home .content .nav .more {
-    display: none; }
-#content.home .content.oneup.large header {
-  display: none; }
-#content.home .content.oneup.large section {
-  margin-bottom: 0; }
-  #content.home .content.oneup.large section a {
-    color: #050000; }
-  #content.home .content.oneup.large section .more-link a {
-    color: #ea0000; }
-#content.home .content.halfandhalf .content-header {
-  width: 725px; }
 #content.home .content-header {
-  padding-bottom: 5px;
-  -webkit-border-image: url("data:image/gif;base64,R0lGODlhBQABAIAAAD0wLwAAACH5BAHoAwEALAAAAAAFAAEAAAIDRB4FADs=") 5 0 repeat;
-  -moz-border-image: url("data:image/gif;base64,R0lGODlhBQABAIAAAD0wLwAAACH5BAHoAwEALAAAAAAFAAEAAAIDRB4FADs=") 5 0 repeat;
-  border-width: 0;
-  border-bottom-width: 1px; }
-  #content.home .content-header .label {
-    font-size: 11px;
-    line-height: 14px;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-style: italic;
-    color: #050000; }
-  #content.home .content-header .caption {
-    display: none; }
-  #content.home .content-header .more {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    margin-left: 5px; }
-#content.home #content_primary section a {
-  color: #050000;
-  text-decoration: none; }
+  display: none; }
+#content.home .content.oneup.large header h1:before {
+  font-style: italic;
+  color: #5d504f;
+  margin-right: 10px;
+  content: "Featured Article:"; }

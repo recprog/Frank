@@ -1,7 +1,9 @@
 .wrapper {
   width: 980px;
+  min-width: 980px;
   position: relative;
   margin: 0 auto !important;
+  padding: 0 10px;
   display: block; }
 
 .wrapper.showgrid {

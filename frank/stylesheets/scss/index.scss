@@ -1,13 +1,20 @@
 @import "variables";
 
+
 #content.home {
+	.content {
+		margin-bottom:$row-height*4;
+	}
 	.content-header {
-		@include font-size-x-small();
-		.label {}
+		margin-bottom:$row-height*2;
+		padding-bottom:5px;
+		border-bottom: 1px $color-light solid;
+		font: $font-small $sans-serif;
 		.caption {
 			font-style: italic;
-			@extend .reset-dimensions;
-			font-family: $serif; }
+			color:$color-midtone;
+			margin-left:10px;
+		}
 		.more {
 			@extend .reset-dimensions;
 			font-family: $serif; } }
@@ -16,12 +23,12 @@
 			margin-top: $row-height;
 			.more {
 				@include font-size-x-small(); } }
-		img {
-			@extend .default-shadow; } }
-	.content.oneup.large .post {
+		 }
+	.content.oneup.large article {
 		header h1 {
-			@extend .reset-dimensions;
-			@include font-size-medium; }
+			
+			@include font-size-large; }
+		
 		section {
 			margin: 0 0 $row-height 0;
 			p {
@@ -32,15 +39,12 @@
 			float: left;
 			margin: $row-height $gutter-width 0 0;
 			header {
-				@extend .reset-dimensions;
 				h1 {
-					@extend .reset-dimensions;
 					@include font-size-small();
-					font-weight: bold;
+					font-weight: $bold;
 					a {
 						text-decoration: none; } } }
 			section {
-				margin-top: 5px;
 				@include font-size-small(); } }
 		.metadata li {
 			@include font-size-x-small(); } }

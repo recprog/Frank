@@ -26,14 +26,11 @@
   #content.page #other_projects #projects_list li {
     margin-bottom: 0; }
 
-#content.page #iconic_info #work_promo h3 {
-  margin-top: 0; }
-
 #download_follow {
   margin: 15px 0; }
 
 #download_follow div {
-  border-top: 3px solid #f0eceb;
+  border-top: 2px solid #f0eceb;
   padding: 15px 0;
   text-align: center; }
 
@@ -42,9 +39,10 @@
   display: block;
   font-size: 9px !important;
   line-height: 12px;
-  font-weight: bold; }
+  font-weight: 700; }
 
 #hero_slideshow .fss {
+  box-shadow: 0px 0px 8px rgba(18, 7, 6, 0.3);
   line-height: 0; }
 
 #hero_slideshow .slides {
@@ -71,22 +69,19 @@
   margin-right: 0; }
 
 #content.page #projects_navigation dd {
-  background: url("data:image/gif;base64,R0lGODlhCgAeAJEAAP76 mJVVF1QT8zMzCH5BAHoAwMALAAAAAAKAB4AAAIelI py 0PYxu02ouz3rz7v0kiApRAkJhnaqJkO44FADs=") 0 2px no-repeat;
+  background: url("data:image/gif;base64,R0lGODlhCgAeAJEAAP76+mJVVF1QT8zMzCH5BAHoAwMALAAAAAAKAB4AAAIelI+py+0PYxu02ouz3rz7v0kiApRAkJhnaqJkO44FADs=") 0 2px no-repeat;
   cursor: pointer;
   padding-left: 15px; }
 
 #content.page #projects_navigation dd.active {
   background-position: 0 -18px;
-  font-weight: bold; }
+  font-weight: 700; }
 
 #projects_list {
   list-style: none;
   margin: 0;
   padding: 0;
   display: block; }
-
-#projects_list .external {
-  border: 0; }
 
 #projects_list li {
   float: left;
@@ -95,7 +90,11 @@
   margin-bottom: 30px;
   margin-right: 40px;
   width: 215px;
-  background: transparent; }
+  background: transparent;
+  box-shadow: 0px 0px 8px rgba(18, 7, 6, 0.3); }
+
+#projects_list li:hover {
+  box-shadow: 0px 2px 10px rgba(18, 7, 6, 0.5); }
 
 #projects_list li.deselected {
   opacity: 0.5; }

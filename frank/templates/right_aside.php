@@ -3,11 +3,10 @@
 	Template Name: Right Aside
 */
 ?>
-<div class='span-12 last clear content halfandhalf'>
+<div class='clear content halfandhalf'>
 	<div class='nav content-header'>
 		<span class='label'><?php print($title); ?></span>
 		<span class='caption'><?php print($caption) ?></span> <span class='more'><?php next_posts_link('View more&hellip;'); ?></span>
-		
 	</div>
 	<div class='contents span-9'>	
 	<?php 		

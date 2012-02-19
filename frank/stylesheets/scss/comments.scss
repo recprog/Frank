@@ -2,99 +2,68 @@
 
 #comments_container {
 	margin-top: $row-height * 4;
-	.no_comments {
+	.no_comments, .comments_closed {
 		margin-top: $row-height * 2;
 		font: $font-xx-large $serif;
 		font-style: italic;
-		color: $color_midtone; }
-	.comments_closed {
-		margin-top: $row-height * 2;
-		font: $font-large $serif;
-		font-style: italic;
-		color: $color_midtone; }
-	header {
-		h1 {
-			margin-bottom: 0; }
-		h2 {
-			margin-top: 0;
-			font-family: $serif;
-			font-style: italic; } }
+		color: $color_midtone; 
+	}
 	#comments {
 		list-style: none;
+		
+		li {
+			margin:$row-height*4 0;
+			background: none;
+		}
+		li:first-child { margin-top: 0px; }
+
 		.comment-info {
-			text-align: right; }
-		@extend .reset-dimensions;
-		margin-bottom: $row-height;
-		.copy {
+			text-align: right; 
+		}
+		.content {
 			font-family: $serif;
 			p {
 				@include font-size-medium();
-				color: $color_dark; }
-			p:first-child {
-				padding-top: 0; }
-			blockquote, blockquote p {
-				@include font-size-small(); } }
-		li {
-			@extend .reset-dimensions;
-			margin-bottom: $row-height;
-			background: none;
-			margin: 0;
-			padding: $row-height * 2 0; }
-		li:first-child {
-			margin-top: 0px; }
-		li:last-child {
-			padding-bottom: 0;
-			border: 0; }
-		p:last-child {
-			margin-bottom: 0; }
+				color: $color_dark; 
+			}
+			blockquote, blockquote p { @include font-size-small(); } 
+		}
 		ul.metadata.vertical {
-			@extend .reset-dimensions;
-			margin-top: 5px;
-			list-style: none;
-			li {
-				@extend .reset-dimensions;
-				text-align: right;
-				float: none;
-				font: $font-x-small $serif;
-				font-style: italic;
-				margin-bottom: 5px; }
-			li.date {
-				font-style: normal;
-				font-weight: bold;
-				margin-bottom: 10px;
-				font-family: $sans-serif; } }
+			li { margin:0 0 5px 0; }
+ 		}
 		.comment-edit-link {
-			font-weight: bold;
+			font-weight: $bold;
 			display: block;
-			margin-top: $row-height; } }
+			margin-top: $row-height; 
+		} 
+	}
 	#no_comments {
-		font-size: 26px;
-		line-height: $row-height * 2;
-		padding-top: 10px;
-		margin-bottom: $row-height * 2;
-		color: $color_midtone; }
+		font: $font-xx-large $serif;
+		margin: $row-height * 2 0;
+		color: $color_midtone; 
+	}
 	#commentform {
-		label {
-			display: none; }
+		label { display: none; }
 		#comment_form_info input[type=text] {
 			margin-bottom: $row-height;
 			@include columns(2, -8);
-			text-align: right; }
+			text-align: right; 
+		}
 		textarea {
 			margin: 0;
 			height: 105px;
 			width: 100%;
-			.loggedin {
-				width: 740px; } }
-		textarea:focus {
-			height: $row-height * 25; } }
+			.loggedin { width: 740px; } 
+		}
+		textarea:focus { height: $row-height * 25; } 
+	}
 	#comment_form {
-		margin-top: $row-height;
 		header {
-			margin-bottom: $row-height;
-			h1 {
-				@include font-size-medium(); }
+			h1 { @include font-size-large(); }
 			.loggedin {
-				font-style: italic; } } }
-	#submit {
-		margin-top: $row-height; } }
+				font-style: italic; 
+			} 
+		} 
+	}
+	#submit { margin-top: $row-height; } 
+}

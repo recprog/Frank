@@ -1,1 +1,18 @@
 @import "variables";
+
+#bio_pic { 
+	@include sprite-background(-183px, -141px);
+	@include columns(3);
+	height:160px;
+	text-indent:-99999px;
+	display:block;
+	margin-bottom:$row-height;
+	@include default-shadow();
+}
+
+aside {
+	.widget {
+		width:auto;
+		margin-right:0;
+	}
+}

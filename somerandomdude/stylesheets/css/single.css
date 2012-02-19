@@ -6,23 +6,5 @@
     margin-bottom: 15px; }
 #content.single article section img {
   height: auto; }
-#content.single article #content_main > section {
-  padding-bottom: 45px;
-  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAATCAYAAACdkl3yAAABSElEQVR42p3UrUtDURiAcRHhii6NibeIwTLBD3BNZSsWy8SkBofFJCZ1zKQsGDbcoggqKwNBQYvJIoIIgv ACH6hQRGsXuden4XB6 FcZTf8yoX34Zx7OKdJRH6ZnZzQHCwiob4ZM8B/oVUIXhALGsrhG6Jiw42ERpCHBzG8YtwWMrfSizTuIT72MIBWPWuG8kghhmdL5ABh7GLMFmpBAYJPTGMIdyqyDRdlCN6Q0CEH66hCVGwKg3hACV3YgijviNdDmxCLL8wgjjQOIRYfGK2FriA dpDFEZ4gPjK1UCcuIIYielDGAvpxA1EqyMCp/ wILo2VuCipgRSiuIXAwwaazeN3cY19hHAMUTzMoQ PyJnHb8bmcQqxqGIJ3WhTc9YrksSZT6iCtUYubRjnlq1lg9z DmNlywj8HkVwgpWgD5vWDvwd gFhe32K6f2kfgAAAABJRU5ErkJggg==") center bottom no-repeat; }
 #content.single article #excerpt {
-  border-width: 0;
-  border-bottom-width: 1px; }
-#content.single #post_footer .widget {
-  margin-bottom: 0; }
-#content.single #post_footer .widget:first-child {
-  margin-left: 140px;
-  width: 190px; }
-#content.single #post_footer .metadata {
-  margin-left: 170px; }
-#content.single #comments_container {
-  -webkit-border-image: url("data:image/gif;base64,R0lGODlhBQABAIAAAD0wLwAAACH5BAHoAwEALAAAAAAFAAEAAAIDRB4FADs=") 5 0 repeat;
-  -moz-border-image: url("data:image/gif;base64,R0lGODlhBQABAIAAAD0wLwAAACH5BAHoAwEALAAAAAAFAAEAAAIDRB4FADs=") 5 0 repeat;
-  border-width: 0;
-  border-top-width: 1px;
-  padding-top: 30px;
-  margin-top: 30px; }
+  border-bottom: 2px solid #f0eceb; }

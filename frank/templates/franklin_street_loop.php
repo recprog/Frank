@@ -35,17 +35,15 @@
 	<div class='nav content-header'>
 		<span class='label'>Latest Posts</span>
 		<span class='caption'><?php print($caption) ?></span>
-		
 	</div>
 	<div class='contents span-9'>	
 	<?php 		
 	if (have_posts()) : while (have_posts()) : the_post(); ?>
 		<?php if(is_sticky($post->ID)) continue; ?>
-		<article <?php post_class('span-9 post-'.($post->current_post+1)); ?>>
+		<article class='clear'>
 			<header>
 				<h1><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h1>
 			</header>
-			<div class='clear'>
 			<div class='post-info span-2'>	
 				<ul class='metadata vertical'>
 					<li class="date"><time datetime="<?php the_time('Y-m-d'); ?>" pubdate><?php the_time('F j, Y'); ?></time></li>
@@ -57,7 +55,6 @@
 			<section class='span-7 last'>
 				<?php the_content('Read On&hellip;'); ?>
 			</section>
-			</div>
 		</article>
 	<?php endwhile; ?>
 	<?php endif; ?>
