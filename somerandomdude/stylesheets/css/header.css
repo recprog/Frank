@@ -6,7 +6,8 @@
     text-indent: -99999px;
     display: block;
     margin-top: 5px;
-    background: url("../../images/sprite.png") -180px -337px no-repeat;
+    background: url("/wp-content/themes/somerandomdude/images/title.png?embed=true") no-repeat;
+    /*@include sprite-background(-180px, -337px);*/
     width: 141px;
     height: 20px; }
 #page_header nav {
@@ -53,14 +54,17 @@
           width: 15px;
           height: 15px;
           text-indent: -99999px;
-          padding: 15px; }
+          padding: 15px;
+          margin: 15px 0 0 15px; }
       #page_header nav .menu ul li.rss {
         margin-top: -15px; }
         #page_header nav .menu ul li.rss a {
-          background: url("../../images/sprite.png") 15px -125px no-repeat; }
+          background: url("/wp-content/themes/somerandomdude/images/rss.png?embed=true") no-repeat;
+          /*@include sprite-background(15px, -125px);*/ }
       #page_header nav .menu ul li.twitter {
         margin-top: 50px; }
         #page_header nav .menu ul li.twitter a {
-          background: url("../../images/sprite.png") -43px -125px no-repeat; }
+          background: url("/wp-content/themes/somerandomdude/images/twitter.png?embed=true") no-repeat;
+          /*@include sprite-background(-43px, -125px); */ }
       #page_header nav .menu ul li.rss:hover, #page_header nav .menu ul li.twitter:hover {
         background-color: #ff1e00; }

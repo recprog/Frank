@@ -24,7 +24,7 @@
 	<script src="<?php bloginfo( 'stylesheet_directory' ); ?>/js/simplebox.js"></script>
 	<script src="<?php bloginfo( 'stylesheet_directory' ); ?>/js/main.js"></script>
 <?php else : ?>
-	<script src="<?php bloginfo( 'stylesheet_directory' ); ?>/js/somerandomdude.js"></script>
+	<script async src="<?php bloginfo( 'stylesheet_directory' ); ?>/js/somerandomdude.js"></script>
 <?php endif; ?>	
 
 </body>

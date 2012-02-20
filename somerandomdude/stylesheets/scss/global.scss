@@ -15,7 +15,8 @@ body {
 		display: block;
 		width: 100px;
 		height: 20px;
-		@include sprite-background(-180px, -370px);
+		background:url('/wp-content/themes/somerandomdude/images/webbynode.png?embed=true') no-repeat;
+		/*@include sprite-background(-180px, -370px);*/
 		text-indent: -99999px; } }
 
 .fss { position: relative; }

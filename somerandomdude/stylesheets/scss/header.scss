@@ -9,7 +9,8 @@
 			text-indent:-99999px;
 			display:block;
 			margin-top:5px;
-			@include sprite-background(-180px, -337px);
+			background:url('/wp-content/themes/somerandomdude/images/title.png?embed=true') no-repeat;
+			/*@include sprite-background(-180px, -337px);*/
 			width:141px;
 			height:20px; 
 		}
@@ -58,16 +59,23 @@
 						height:15px;
 						text-indent:-99999px;
 						padding:15px;
+						margin:15px 0 0 15px;
 					}
 				}
 				li.rss {
 					margin-top:-15px;
-					a { @include sprite-background(15px, -125px); }
+					a { 	
+						background:url('/wp-content/themes/somerandomdude/images/rss.png?embed=true') no-repeat;
+						/*@include sprite-background(15px, -125px);*/ 
+					}
 				}
 				
 				li.twitter {
 					margin-top:50px;
-					a { @include sprite-background(-43px, -125px); }
+					a { 
+						background:url('/wp-content/themes/somerandomdude/images/twitter.png?embed=true') no-repeat;
+						/*@include sprite-background(-43px, -125px); */
+					}
 				}
 
 				li.rss:hover, li.twitter:hover {

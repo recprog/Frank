@@ -1,5 +1,6 @@
 #bio_pic {
-  background: url("../../images/sprite.png") -183px -141px no-repeat;
+  background: url("/wp-content/themes/somerandomdude/images/profile.png?embed=true") no-repeat;
+  /*@include sprite-background(-183px, -141px);*/
   width: 215px;
   height: 160px;
   text-indent: -99999px;

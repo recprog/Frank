@@ -40,7 +40,8 @@
 		.sprite.fork {
 			width: 131px;
 			height: 150px;
-			@include sprite-background(0px, -240px);
+			background:url('/wp-content/themes/somerandomdude/images/fork.png?embed=true') no-repeat;
+			/*@include sprite-background(0px, -240px);*/
 			float: left;
 			margin-left: 15px;
 		}

@@ -1,7 +1,8 @@
 @import "variables";
 
 #bio_pic { 
-	@include sprite-background(-183px, -141px);
+	background:url('/wp-content/themes/somerandomdude/images/profile.png?embed=true') no-repeat;
+	/*@include sprite-background(-183px, -141px);*/
 	@include columns(3);
 	height:160px;
 	text-indent:-99999px;
