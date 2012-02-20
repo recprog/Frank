@@ -1,0 +1,16 @@
+@import "variables";
+
+	#page_bottom { background: $color_midtone; min-width:1000px; }
+
+	#page_footer {
+		padding: $row-height *2 0;
+		margin-top: $row-height * 2;
+		color: $color_light;
+		a { color: $color_highlight; }
+		h3 {
+			@include font-size-medium();
+			color: $color_light; 
+		}
+}
+	
+

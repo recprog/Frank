@@ -1,0 +1,69 @@
+@import "variables";
+
+#comments_container {
+	margin-top: $row-height * 4;
+	.no_comments, .comments_closed {
+		margin-top: $row-height * 2;
+		font: $font-xx-large $serif;
+		font-style: italic;
+		color: $color_midtone; 
+	}
+	#comments {
+		list-style: none;
+		
+		li {
+			margin:$row-height*4 0;
+			background: none;
+		}
+		li:first-child { margin-top: 0px; }
+
+		.comment-info {
+			text-align: right; 
+		}
+		.content {
+			font-family: $serif;
+			p {
+				@include font-size-medium();
+				color: $color_dark; 
+			}
+			blockquote, blockquote p { @include font-size-small(); } 
+		}
+		ul.metadata.vertical {
+			li { margin:0 0 5px 0; }
+ 		}
+		.comment-edit-link {
+			font-weight: $bold;
+			display: block;
+			margin-top: $row-height; 
+		} 
+	}
+	#no_comments {
+		font: $font-xx-large $serif;
+		margin: $row-height * 2 0;
+		color: $color_midtone; 
+	}
+	#commentform {
+		label { display: none; }
+		#comment_form_info input[type=text] {
+			margin-bottom: $row-height;
+			@include columns(2, -8);
+			text-align: right; 
+		}
+		textarea {
+			margin: 0;
+			height: 105px;
+			width: 100%;
+			.loggedin { width: 740px; } 
+		}
+		textarea:focus { height: $row-height * 25; } 
+	}
+	#comment_form {
+		header {
+			h1 { @include font-size-large(); }
+			.loggedin {
+				font-style: italic; 
+			} 
+		} 
+	}
+	#submit { margin-top: $row-height; } 
+}

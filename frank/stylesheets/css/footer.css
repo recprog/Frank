@@ -1,0 +1,14 @@
+#page_bottom {
+  background: #5d504f;
+  min-width: 1000px; }
+
+#page_footer {
+  padding: 30px 0;
+  margin-top: 30px;
+  color: #f0eceb; }
+  #page_footer a {
+    color: #fffefe; }
+  #page_footer h3 {
+    font-size: 17px;
+    line-height: 27px;
+    color: #f0eceb; }

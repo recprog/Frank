@@ -1,0 +1,26 @@
+TODO:
+	-Update screenshot.png
+	-images.less: Fix placement image	
+	
++Admin panels
+	-Make Franklin Street a whole section in Wordpress admin
+	-Be able to add/remove/reorder 'tiers' for home page
+		-Primary tier works like normal loop (supports stickies and uses default loop count which should be able to be overwritten)
+		-All tiers can be styled in four basic templates (basic, large type, 2 column & 4 column)
+		-Tiers can choose specific categories to display
+		-Make all options in functions.php accessible in admin panel
+	
++Template Cleanup
+	-Make templates far more modular
+	
++Performance Increases
+	-Any way to lower queries?
+	
++Pages
+
++Frank
+	-Frank is fast
+	-Frank is flexible
+	-Frank is forward-thinking
+	-Frank is for all of us
+	-Frank is free

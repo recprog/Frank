@@ -1,0 +1,5 @@
+#content, #sub_header, #content *, #sub_header * {
+  z-index: -1 !important; }
+
+#projects_navigation {
+  display: none; }

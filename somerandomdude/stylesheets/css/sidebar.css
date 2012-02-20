@@ -1,0 +1,13 @@
+#bio_pic {
+  background: url("/wp-content/themes/somerandomdude/images/profile.png?embed=true") no-repeat;
+  /*@include sprite-background(-183px, -141px);*/
+  width: 215px;
+  height: 160px;
+  text-indent: -99999px;
+  display: block;
+  margin-bottom: 15px;
+  box-shadow: 0px 0px 8px rgba(18, 7, 6, 0.3); }
+
+aside .widget {
+  width: auto;
+  margin-right: 0; }

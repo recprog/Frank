@@ -1,0 +1,15 @@
+/* For modern browsers */
+.clear:before,
+.clear:after {
+    content:"";
+    display:table;
+}
+
+.clear:after {
+    clear:both;
+}
+
+/* For IE 6/7 (trigger hasLayout) */
+.clear {
+    zoom:1;
+}

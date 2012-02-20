@@ -1,0 +1,66 @@
+@import "variables";
+
+/*work page*/
+#projects_list li h3 small {
+	background-color:@color_midtone;
+}
+
+#post_footer  {
+	
+}
+
+#menu-primary li.rss, #menu-primary li.twitter {
+	display:none !important;
+}
+
+#follow_list {
+	background:@color_accent;
+}
+
+#work_pullout {
+	background:@color_midtone;
+}
+
+#categories_pullout {
+	background:@color_midtone;
+}
+
+/*footer promo area*/
+#text-10 {
+	.default-shadow;
+	margin-top:(@row-height*-2);
+	#footer_main_promo {
+		.columns(6);
+		height:180px;
+		display:block;
+		background-color:@color_accent;
+		text-decoration:none;
+		position:relative;
+		.sprite.fork {
+			float:left;
+			margin-left:15px;
+		}
+		.content {
+			overflow-y:hidden;
+			display:block;
+			float:left;
+			height:180px;
+			width:250px;
+			margin-left:23px;
+			padding-top:@row-height*2;
+			padding-right:10px;
+			
+			.header {
+				font-family:@sans-serif;
+				display:block;
+				.font-size-large;
+			}
+			.caption {
+				display:block;
+				.font-size-x-small;
+				margin-top:@row-height;
+				font-style:italic;
+			}
+		}
+	}
+}

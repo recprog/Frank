@@ -1,0 +1,73 @@
+#content.single {
+  position: relative; }
+  #content.single .post-info .previous {
+    margin-top: 60px;
+    font-style: italic;
+    font-family: Georgia, "Times New Roman", Times, serif; }
+    #content.single .post-info .previous a {
+      font-size: 13px;
+      line-height: 19px;
+      display: block;
+      text-align: center; }
+    #content.single .post-info .previous nav {
+      padding-bottom: 15px;
+      border-bottom: 1px solid #f0eceb;
+      margin: 15px 0; }
+    #content.single .post-info .previous .arrow {
+      display: block;
+      box-shadow: 0px 0px 8px rgba(18, 7, 6, 0.3);
+      width: 45px;
+      height: 45px;
+      border-radius: 22.5px;
+      text-indent: -9999px;
+      background: #5d504f url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAQCAYAAADESFVDAAAAWElEQVR42qXSzQkAIAgF4EZolEZqhDZqpEZwBM8dovSUYD9YwuNdPgIlt5tWa6AA9wkgpXPfACeagaeAAGkFigDZACbKAoAC+5f+od7Oesh/iC+/QC/DPQAIxvkuqJQtLgAAAABJRU5ErkJggg==") no-repeat 16px 15px; }
+    #content.single .post-info .previous a:hover {
+      color: #ff1e00; }
+      #content.single .post-info .previous a:hover .arrow {
+        background-color: #3d302f; }
+  #content.single article header h1 {
+    font-size: 24px;
+    line-height: 32px;
+    color: #3d302f; }
+  #content.single article section h1, #content.single article section h2 {
+    margin: 15px 0;
+    padding: 0; }
+  #content.single article section h1 {
+    font-size: 20px;
+    line-height: 30px;
+    margin-top: 30px; }
+  #content.single article section h2 {
+    font-size: 17px;
+    line-height: 27px;
+    font-weight: 700; }
+  #content.single article dl dd {
+    margin-left: 40px; }
+  #content.single #content_primary #excerpt {
+    padding-bottom: 30px;
+    color: #5d504f; }
+    #content.single #content_primary #excerpt p {
+      padding-top: 0;
+      font-size: 28px;
+      line-height: 35px;
+      font-family: Georgia, "Times New Roman", Times, serif;
+      font-style: italic; }
+  #content.single #content_primary section {
+    margin-bottom: 45px; }
+  #content.single #content_primary .pagination {
+    margin-top: 30px; }
+  #content.single #content_primary footer {
+    border-bottom: 2px solid #f0eceb;
+    padding-bottom: 15px;
+    margin-bottom: 30px; }
+    #content.single #content_primary footer .widget:nth-child(4n) {
+      margin-right: 40px; }
+    #content.single #content_primary footer .widget:nth-child(4n+1) {
+      clear: none; }
+    #content.single #content_primary footer .widget:nth-child(3n) {
+      margin-right: 0; }
+    #content.single #content_primary footer .widget:nth-child(3n+1) {
+      clear: left; }
+  #content.single #content_primary #content_main {
+    margin: 30px 0;
+    border-bottom: 2px solid #f0eceb;
+    padding-bottom: 15px; }
