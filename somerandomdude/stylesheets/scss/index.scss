@@ -1,0 +1,13 @@
+@import "variables";
+
+#content.home {
+	.content-header { display:none; }
+	.content.oneup.large {
+		header h1:before {
+			font-style:italic;
+			color:$color-midtone;
+			margin-right:10px;
+			content:"Featured Article:";
+		}
+	}
+}

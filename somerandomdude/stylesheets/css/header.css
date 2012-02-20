@@ -1,0 +1,70 @@
+#page_header h1 {
+  margin: 0;
+  padding: 0;
+  float: left; }
+  #page_header h1 a {
+    text-indent: -99999px;
+    display: block;
+    margin-top: 5px;
+    background: url("/wp-content/themes/somerandomdude/images/title.png?embed=true") no-repeat;
+    /*@include sprite-background(-180px, -337px);*/
+    width: 141px;
+    height: 20px; }
+#page_header nav {
+  width: 130px;
+  margin-top: 8px;
+  float: right;
+  position: relative; }
+  #page_header nav .menu {
+    margin: 0;
+    padding: 0; }
+    #page_header nav .menu ul {
+      float: right;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: block;
+      position: relative; }
+      #page_header nav .menu ul li {
+        margin: 0;
+        padding: 0;
+        margin-right: 40px;
+        float: left;
+        background: none; }
+        #page_header nav .menu ul li a {
+          display: block;
+          font-weight: 700;
+          height: 15px;
+          color: #5d504f;
+          font-size: 11px;
+          padding: 0; }
+        #page_header nav .menu ul li a:hover {
+          color: #050000; }
+      #page_header nav .menu ul li:last-child {
+        margin-right: 0; }
+      #page_header nav .menu ul li.rss, #page_header nav .menu ul li.twitter {
+        background: #ea0000;
+        box-shadow: 0px 0px 8px rgba(18, 7, 6, 0.3);
+        position: fixed;
+        margin-left: 140px;
+        width: 45px;
+        height: 45px;
+        border-radius: 22.5px; }
+        #page_header nav .menu ul li.rss a, #page_header nav .menu ul li.twitter a {
+          width: 15px;
+          height: 15px;
+          text-indent: -99999px;
+          padding: 15px;
+          margin: 15px 0 0 15px; }
+      #page_header nav .menu ul li.rss {
+        margin-top: -15px; }
+        #page_header nav .menu ul li.rss a {
+          background: url("/wp-content/themes/somerandomdude/images/rss.png?embed=true") no-repeat;
+          /*@include sprite-background(15px, -125px);*/ }
+      #page_header nav .menu ul li.twitter {
+        margin-top: 50px; }
+        #page_header nav .menu ul li.twitter a {
+          background: url("/wp-content/themes/somerandomdude/images/twitter.png?embed=true") no-repeat;
+          /*@include sprite-background(-43px, -125px); */ }
+      #page_header nav .menu ul li.rss:hover, #page_header nav .menu ul li.twitter:hover {
+        background-color: #ff1e00; }

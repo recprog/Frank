@@ -1,0 +1,18 @@
+@import "variables";
+
+#content.single {
+	article {
+		section {
+			ul {
+				list-style: none;
+				font-family: $serif;
+				li {
+					padding-left: 10px;
+					margin-bottom: $row-height; } }
+			img {
+				height: auto; } }
+		#excerpt {
+			border-bottom: 2px solid $color_light;
+		} 
+	}
+}

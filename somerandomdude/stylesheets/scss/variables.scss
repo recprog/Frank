@@ -1,0 +1,129 @@
+$checkbox-sprite:url('data:image/gif;base64,R0lGODlhCgAeAJEAAP76+mJVVF1QT8zMzCH5BAHoAwMALAAAAAAKAB4AAAIelI+py+0PYxu02ouz3rz7v0kiApRAkJhnaqJkO44FADs=');
+
+
+$color_accent: #ea0000;
+$color_highlight: #fffefe;
+$color_light: #f0eceb;
+$color_midtone: #5d504f;
+$color_dark: #3d302f;
+$color_off_black: #050000;
+
+$color_midtone_light: #998482;
+$color_accent_alt: #ff1e00;
+
+@mixin background_color_off_black_alpha($alpha: 1) {
+background-color: rgba(5, 0, 0, $alpha);
+}
+
+$sans-serif: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$serif: Georgia, "Times New Roman", Times, serif;
+
+$thin: 100;
+$extra-light: 200;
+$light: 300; 
+$normal: 400;
+$medium: 500;
+$demi-bold: 600;
+$bold: 700;
+$heavy: 800;
+$black: 900;
+
+$xxx-large: 38px;
+$xx-large: 28px;
+$x-large: 24px;
+$large: 20px;
+$medium: 17px;
+$small: 13px;
+$x-small: 11px;
+$xx-small: 10px;
+$xxx-small: 9px;
+
+$xxx-large-lineheight: 47px;
+$xx-large-lineheight: 35px;
+$x-large-lineheight: 32px;
+$large-lineheight: 30px;
+$medium-lineheight: 27px;
+$small-lineheight: 19px;
+$x-small-lineheight: 14px;
+$xx-small-lineheight: 12px;
+$xxx-small-lineheight: 11px;
+
+$font-xxx-large: #{$xxx-large}/#{$xxx-large-lineheight};
+$font-xx-large: #{$xx-large}/#{$xx-large-lineheight};
+$font-x-large: #{$x-large}/#{$x-large-lineheight};
+$font-large: #{$large}/#{$large-lineheight};
+$font-medium: #{$medium}/#{$medium-lineheight};
+$font-small: #{$small}/#{$small-lineheight};
+$font-x-small: #{$x-small}/#{$x-small-lineheight};
+$font-xx-small: #{$xx-small}/#{$xx-small-lineheight};
+
+@mixin font-size-xxx-large() {
+font-size: $xxx-large;
+line-height: 47px;
+}
+
+@mixin font-size-xx-large() {
+font-size: $xx-large;
+line-height: 35px;
+}
+
+@mixin font-size-x-large() {
+font-size: $x-large;
+line-height: 32px;
+}
+
+@mixin font-size-large() {
+font-size: $large;
+line-height: 30px;
+}
+
+@mixin font-size-medium() {
+font-size: $medium;
+line-height: 27px;
+}
+
+@mixin font-size-small() {
+font-size: $small;
+line-height: 19px;
+}
+
+@mixin font-size-x-small() {
+font-size: $x-small;
+line-height: 14px;
+}
+
+@mixin font-size-xx-small() {
+font-size: $xx-small;
+line-height: 12px;
+}
+
+@mixin default-shadow() {
+box-shadow: 0px 0px 8px rgba(18, 7, 6, 0.3);
+}
+
+$row-height: 15px;
+$column-width: 45px;
+$gutter-width: 40px;
+
+$border-break: 2px solid $color_light;
+
+@mixin reset-dimensions() {
+margin: 0;
+padding: 0;
+}
+
+@mixin opacity($level: 1) {
+opacity: $level;
+}
+
+@mixin columns($columns: 1, $modifier: 0) {
+width: $columns * $column-width + ($columns - 1) * $gutter-width + $modifier;
+}
+
+@mixin sprite-background($x: 0px, $y: 0px) {
+background: url("../../images/sprite.png") $x $y no-repeat;
+}
+
+@mixin inset-shadow($x: 0px, $y: 0px, $blur: 3px, $color: black) {
+box-shadow: inset $x $y $blur $color;
+}

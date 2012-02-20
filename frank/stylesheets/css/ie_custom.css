@@ -1,0 +1,47 @@
+#projects_list li h3 small {
+  background-color: #5d504f; }
+
+#menu-primary li.rss, #menu-primary li.twitter {
+  display: none !important; }
+
+#follow_list {
+  background: #ea0000; }
+
+#work_pullout {
+  background: #5d504f; }
+
+#categories_pullout {
+  background: #5d504f; }
+
+#text-10 {
+  margin-top: -30px; }
+  #text-10 #footer_main_promo {
+    width: 470px;
+    height: 180px;
+    display: block;
+    background-color: #ea0000;
+    text-decoration: none;
+    position: relative; }
+    #text-10 #footer_main_promo .sprite.fork {
+      float: left;
+      margin-left: 15px; }
+    #text-10 #footer_main_promo .content {
+      overflow-y: hidden;
+      display: block;
+      float: left;
+      height: 180px;
+      width: 250px;
+      margin-left: 23px;
+      padding-top: 30px;
+      padding-right: 10px; }
+      #text-10 #footer_main_promo .content .header {
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        display: block;
+        font-size: 20px;
+        line-height: 30px; }
+      #text-10 #footer_main_promo .content .caption {
+        display: block;
+        font-size: 11px;
+        line-height: 14px;
+        margin-top: 15px;
+        font-style: italic; }

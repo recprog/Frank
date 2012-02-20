@@ -1,0 +1,90 @@
+@import "variables";
+
+#content.single {
+	.post-info .previous {
+		margin-top: $row-height * 4;
+		font-style: italic;
+		font-family: $serif;
+		a {
+			@include font-size-small();
+			display: block;
+			text-align: center; }
+		nav {
+			padding-bottom: $row-height;
+			border-bottom: 1px solid $color_light;
+			margin: $row-height 0; }
+		.arrow {
+			display: block;
+			@include default-shadow();
+			width: 45px;
+			height: 45px;
+			border-radius: 22.5px;
+			text-indent: -9999px;
+			background: $color_midtone url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAQCAYAAADESFVDAAAAWElEQVR42qXSzQkAIAgF4EZolEZqhDZqpEZwBM8dovSUYD9YwuNdPgIlt5tWa6AA9wkgpXPfACeagaeAAGkFigDZACbKAoAC+5f+od7Oesh/iC+/QC/DPQAIxvkuqJQtLgAAAABJRU5ErkJggg==') no-repeat 16px 15px;
+		}
+		a:hover {
+			color: $color_accent_alt;
+			.arrow {
+				background-color: $color_dark; } } }
+	position: relative;
+	article {
+		header {
+			h1 {
+				@include font-size-x-large();
+				color: $color_dark; } }
+				
+		section h1, section h2 {
+			margin: $row-height 0;
+			padding: 0;
+		}		
+		section h1 {
+			@include font-size-large();
+			margin-top: $row-height * 2; 
+		}
+		section h2 {
+			@include font-size-medium();
+			font-weight: $bold;
+		}
+		dl dd {
+			margin-left: $gutter-width; } }
+	#content_primary {
+		#excerpt {
+			padding-bottom: $row-height * 2;
+			color: $color_midtone;
+			p {
+				padding-top: 0;
+				@include font-size-xx-large();
+				font-family: $serif;
+				font-style: italic; } }
+		
+		section {
+			margin-bottom:$row-height * 3;
+		}
+		.pagination {
+			margin-top:$row-height*2;
+		}
+		footer {
+			@extend .reset-dimensions;
+			border-bottom:$border-break;
+			padding-bottom:$row-height;
+			margin-bottom:$row-height * 2;
+			.widget:nth-child(4n) {
+				margin-right: $gutter-width;
+			}
+			.widget:nth-child(4n+1) {
+				clear:none;
+			}
+			.widget:nth-child(3n) {
+				margin-right:0; 
+			}
+			.widget:nth-child(3n+1) {
+				clear:left; 
+			}
+		}
+		#content_main {
+			margin: $row-height * 2 0; 
+			border-bottom:$border-break;
+			padding-bottom:$row-height;
+			} 
+		}
+	}

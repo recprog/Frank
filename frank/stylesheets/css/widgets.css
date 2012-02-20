@@ -1,0 +1,40 @@
+.widget {
+  float: left;
+  margin: 0 40px 15px 0; }
+  .widget h3 {
+    font-size: 13px;
+    line-height: 19px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -o-text-overflow: ellipsis; }
+
+.widget.fourup {
+  width: 215px; }
+
+.widget.fourup:nth-child(4n) {
+  margin-right: 0; }
+
+.widget.fourup:nth-child(4n+1) {
+  clear: left; }
+
+.widget.threeup {
+  width: 300px; }
+
+.widget.threeup:nth-child(3n) {
+  margin-right: 0; }
+
+.widget.threeup:nth-child(3n+1) {
+  clear: left; }
+
+.widget.twoup {
+  width: 470px; }
+
+.widget.twoup:nth-child(2n) {
+  margin-right: 0; }
+
+.widget.twoup:nth-child(2n+1) {
+  clear: left; }
+
+.widget-last {
+  margin-right: 0 !important; }
