@@ -8,9 +8,9 @@
 		
 		h1 { font-size: $large; }
 		nav {
-			.menu ul {
-				list-style: none;
-				ul { display: none; }
+			.menu {
+				ul { list-style: none; }
+				ul ul { display: none; }
 				li {
 					@extend .reset-dimensions;
 					float: left;

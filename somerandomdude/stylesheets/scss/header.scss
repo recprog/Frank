@@ -21,63 +21,61 @@
 		margin-top:$row-height - 7;
 		float: right;
 		position: relative;
-		.menu {
-			@include reset-dimensions();
-			ul {
-				float: right;
-				list-style: none;
-				@include reset-dimensions();
-				display: block;
-				position: relative;
-				li {
-					@include reset-dimensions();
-					margin-right:$gutter-width;
-					float: left;
-					background: none;
-					a {
-						display: block;
-						font-weight: $bold;
-						height: $row-height;
-						color: $color_midtone;
-						font-size: $x-small;
-						padding: 0; 
-						}
-					a:hover {
-						color: $color_off_black; 
-					} 
-				}
-				li:last-child { margin-right: 0; }
-				li.rss, li.twitter {
-					position:fixed;
-					margin-left:140px;
-					a {
-						width:45px;
-						height:45px;
-						border-radius:22.5px;
-						display:block;
-						text-indent: 100%;
-						white-space: nowrap;
-						overflow: hidden;
-						@include default-shadow();
-					}
-				}
-				li.rss {
-					margin-top:-15px;
-					a { 	
-						background:$color_accent url('/wp-content/themes/somerandomdude/images/rss.png?embed=true') no-repeat center center;
-					}
-				}
-				
-				li.twitter {
-					margin-top:50px;
-					a { 
-						background:$color_accent url('/wp-content/themes/somerandomdude/images/twitter.png?embed=true') no-repeat center center;
-					}
-				}
 
-				li.rss a:hover, li.twitter a:hover {
-					background-color:$color_accent_alt;
+		#menu-primary {
+			float: right;
+			list-style: none;
+			@include reset-dimensions();
+			display: block;
+			position: relative;
+			li {
+				@include reset-dimensions();
+				margin-right:$gutter-width;
+				float: left;
+				background: none;
+				a {
+					display: block;
+					font-weight: $bold;
+					height: $row-height;
+					color: $color_midtone;
+					font-size: $x-small;
+					padding: 0; 
+					}
+				a:hover {
+					color: $color_off_black; 
+				} 
+			}
+			li:last-child, li.last { margin-right: 0; }
+			li.rss, li.twitter {
+				position:fixed;
+				margin-left:140px;
+				a {
+					width:45px;
+					height:45px;
+					border-radius:22.5px;
+					display:block;
+					text-indent: 100%;
+					white-space: nowrap;
+					overflow: hidden;
+					@include default-shadow();
 				}
+			}
+			li.rss {
+				margin-top:-15px;
+				a { 	
+					background:$color_accent url('/wp-content/themes/somerandomdude/images/rss.png?embed=true') no-repeat center center;
+				}
+			}
+			
+			li.twitter {
+				margin-top:50px;
+				a { 
+					background:$color_accent url('/wp-content/themes/somerandomdude/images/twitter.png?embed=true') no-repeat center center;
+				}
+			}
+
+			li.rss a:hover, li.twitter a:hover {
+				background-color:$color_accent_alt;
 			}
 		}
 	}
