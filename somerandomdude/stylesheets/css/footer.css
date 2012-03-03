@@ -43,7 +43,6 @@
       width: 131px;
       height: 150px;
       background: url("/wp-content/themes/somerandomdude/images/fork.png?embed=true") no-repeat;
-      /*@include sprite-background(0px, -240px);*/
       float: left;
       margin-left: 15px; }
     #text-10 #footer_main_promo .content {

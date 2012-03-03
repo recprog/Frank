@@ -348,7 +348,7 @@ dl.metadata {
 
 #content.home article header h1, #content.single article header h1, #content.page article header h1, #content.archive article header h1 {
   font-size: 20px;
-  font-weight: 17px;
+  font-weight: 400;
   line-height: 30px; }
 #content.home article section, #content.single article section, #content.page article section, #content.archive article section {
   font: 17px/27px Georgia, "Times New Roman", Times, serif; }
@@ -405,6 +405,14 @@ button.alt:hover, .button.alt:hover, input[type=submit].alt:hover {
   border: 1px solid rgba(18, 7, 6, 0.5); }
 
 /*Search - not implemented*/
+#searchform input {
+  width: 100%;
+  min-width: 215px; }
+
+/*404*/
+#content.fourohfour .main {
+  margin-bottom: 30px; }
+
 #search {
   float: right; }
   #search #search_button {

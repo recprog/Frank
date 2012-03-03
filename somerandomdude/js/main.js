@@ -47,83 +47,33 @@ window.onload = function() {
 	}
 
 	/*custom tracking events*/
-	var i, tnav, proj, projects, previous, promo, recommended, topics, follow, twitter;
+	trackElems(document.querySelectorAll('#menu-primary li a'), 'Top Nav', null, document.title);
+	trackElem(document.querySelector('#bio_pic'), 'Bio Pic', null, document.title);
+
+	trackElem(document.querySelector('#content.single .post-info .previous a'), 'Previous Post', '.arrow', document.title);
 	
-	/*top navigation*/
-	tnav = document.querySelectorAll('#menu-primary li a');
-	for (i = 0; i < tnav.length; i++) {
-		ref = tnav[i];
-		ref.onclick = function() { gaTrack('Top Nav', this.firstChild.nodeValue, document.title);
+	trackElems(document.querySelectorAll('#download_follow a.twitter, #download_follow a.rss'), 'Projects Follow', null, document.title);
+	trackElems(document.querySelectorAll('#other_projects #projects_list li a'), 'Other Projects', 'small', document.title);
+	
+	trackElem(document.querySelector('#footer_main_promo'), 'Footer Promo', '.header', document.title);
+	trackElems(document.querySelectorAll('#text-12 .recommended a'), 'Recommended', null, document.title);
+	trackElem(document.querySelector('#page_footer #twitter_follow a.button'), 'Footer Twitter', null, document.title);
+	
+
+	function trackElem(elem, cat, action, label) {
+		if(!elem) return;
+		elem.onclick = function() { gaTrack(cat, (action) ? this.querySelector(action).firstChild.nodeValue : this.firstChild.nodeValue, document.title);
 		setTimeout('document.location = "' + this.href + '"', 100);
 		return false; }
 	}
 
-	/*projects twitter & rss*/
-	proj = document.querySelectorAll('#download_follow a.twitter, #download_follow a.rss');
-	for (i = 0; i < proj.length; i++) {
-		ref = proj[i];
-		ref.onclick = function() { gaTrack('Projects Follow', this.firstChild.nodeValue, document.title);
-		setTimeout('document.location = "' + this.href + '"', 100);
-		return false; }
-	}
-
-	/*other projects list*/
-	projects = document.querySelectorAll('#other_projects #projects_list li a');
-	for (i = 0; i < projects.length; i++) {
-		ref = projects[i];
-		ref.onclick = function() { gaTrack('Other Projects', this.querySelector('small').firstChild.nodeValue, document.title);
-		setTimeout('document.location = "' + this.href + '"', 100);
-		return false; }
-	}
-
-	/*previous post*/
-	previous = document.querySelector('#content.single .post-info .previous a');
-	if (previous) {
-		previous.onclick = function() { gaTrack('Previous Post', this.childNodes.item(1).nodeValue, document.title);
-		setTimeout('document.location = "' + this.href + '"', 100);
-		return false; }
-	}
-
-	/*footer promo*/
-	promo = document.querySelector('#footer_main_promo');
-	if (promo) {
-		promo.onclick = function() { gaTrack('Footer Promo', this.querySelector('.header').firstChild.nodeValue, document.title);
-		setTimeout('document.location = "' + this.href + '"', 100);
-		return false; }
-	}
-
-	/*footer recommended*/
-	recommended = document.querySelectorAll('#text-12 .recommended li a');
-	for (i = 0; i < recommended.length; i++) {
-		ref = recommended[i];
-		ref.onclick = function() { gaTrack('Recommended', this.firstChild.nodeValue, document.title);
-		setTimeout('document.location = "' + this.href + '"', 100);
-		return false; }
-	}
-
-	/*footer topics*/
-	topics = document.querySelectorAll('#text-13 .recommended li a');
-	for (i = 0; i < topics.length; i++) {
-		ref = topics[i];
-		ref.onclick = function() { gaTrack('Topics', this.firstChild.nodeValue, document.title);
-		setTimeout('document.location = "' + this.href + '"', 100);
-		return false; }
-	}
-
-	/*footer follow list*/
-	var follow = document.querySelectorAll('#footer_follow_list li a');
-	for (i = 0; i < follow.length; i++) {
-		ref = follow[i];
-		ref.onclick = function() { gaTrack('Follow Me', this.querySelector('span').firstChild.nodeValue, document.title);
-		setTimeout('document.location = "' + this.href + '"', 100);
-		return false; }
-	}
-
-	twitter = document.querySelector('#tweet-button a');
-	if (twitter) {
-		twitter.onclick = function() { gaTrack('Twitter Button', '', document.title);
-		setTimeout('document.location = "' + this.href + '"', 100);
-		return false; }
+	function trackElems(elems, cat, action, label) {
+		if(!elems) return;
+		for (i = 0; i < elems.length; i++) {
+			elems[i].onclick = function() { gaTrack(cat, (action) ? this.querySelector(action).firstChild.nodeValue : this.firstChild.nodeValue, label);
+			setTimeout('document.location = "' + this.href + '"', 100);
+			return false; }
+		}
 	}
 
 	function gaTrack(cat, action, label, val) {

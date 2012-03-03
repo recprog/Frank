@@ -10,14 +10,18 @@ body {
 	small {
 		font: $font-xx-small $sans-serif;
 		display: block;
-		margin-bottom: 2px; }
+		margin-bottom: 2px; 
+	}
 	#webbynode_promo_link {
 		display: block;
 		width: 100px;
 		height: 20px;
 		background:url('/wp-content/themes/somerandomdude/images/webbynode.png?embed=true') no-repeat;
-		/*@include sprite-background(-180px, -370px);*/
-		text-indent: -99999px; } }
+		text-indent: 100%;
+		white-space: nowrap;
+		overflow: hidden; 
+	} 
+}
 
 .fss { position: relative; }
 

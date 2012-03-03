@@ -84,7 +84,7 @@
 			
 			<div id="comment_form_comment" class='span-7 last <?php if ( $user_ID ) : ?>loggedin<?php endif; ?>'>
 				<label for="comment">Your Comment</label>
-				<textarea name="comment" placeholder="Your Comment" class="<?php if ( $user_ID ) echo('loggedin') ?>" id="comment" cols="100%" rows="10" tabindex="4"></textarea>
+				<textarea name="comment" placeholder="Your Comment" class="<?php if ( $user_ID ) echo('loggedin') ?>" id="comment" rows="10" tabindex="4"></textarea>
 				<input name="submit" type="submit" id="submit" class="button <?php if ( $user_ID ) echo('loggedin') ?>" tabindex="5" value="Submit Comment" />
 				<input type="hidden" name="comment_post_ID" value="<?php echo $id; ?>" />
 			</div>

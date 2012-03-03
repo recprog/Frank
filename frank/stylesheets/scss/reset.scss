@@ -1,21 +1,104 @@
-/*
- *	 Tripoli is a generic CSS standard for HTML rendering. 
- *	 Copyright (C) 2007-2008 David Hellsing
- *	 
- *	 http://devkick.com/lab/tripoli/
- *
- *	 You should have received a copy of the GNU General Public License
- *	 along with this program.	If not, see <http://www.gnu.org/licenses/>.
-**
-_______________________________
-RESET */
-@media screen, projection {
-	*{text-decoration:none;font-size:1em;outline:none;margin:0;padding:0}code,kbd,samp,pre,tt,var,textarea,input,select,isindex,listing,xmp,plaintext{font:inherit;white-space:normal}a,img,a img,iframe,form,abbr,acronym,object,applet,table,a abbr,a acronym{border-width:0}dfn,i,cite,var,address,em{font-style:normal}th,b,strong,h1,h2,h3,h4,h5,h6,dt{font-weight:400}caption,th,td{text-align:left}html{background:#FFF;color:#000;line-height:1;font-family:arial, sans-serif}/* \*/html{font-family:sans-serif}/* */q{quotes:"\201C""\201D""\2018""\2019"}ul,ol,dir,menu{list-style:none}sub,sup{vertical-align:baseline}a{color:inherit}/*
-	_______________________________
-	DISABLE DEPRECATED HTML */
-	font,basefont{color:inherit;font:inherit;font-size:100%}center,*[align]{text-align:inherit}s,strike,u{text-decoration:inherit}img{border:none;margin:0}ol{list-style-type:decimal}body{background-color:transparent}tr,th,td{width:auto;height:auto;background-color:transparent;vertical-align:inherit;border:none}table[border],.content table[border]{border-collapse:separate;border-spacing:0}nobr{white-space:normal}marquee{overflow:visible;-moz-binding:none}blink{text-decoration:none}
+@import "variables";
 
-	article, header, hgroup, footer, nav {
-		display:block;
-	}
+/* 
+html5doctor.com Reset Stylesheet
+v1.6.1
+Last Updated: 2010-09-17
+Author: Richard Clark - http://richclarkdesign.com 
+Twitter: @rich_clark
+*/
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+body {
+    line-height:1;
+}
+
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section { 
+    display:block;
+}
+
+nav ul {
+    list-style:none;
+}
+
+blockquote, q {
+    quotes:none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content:'';
+    content:none;
+}
+
+a {
+    margin:0;
+    padding:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+/* change colours to suit your needs */
+ins {
+    background-color:$color-light;
+    color:$color-off-black;
+    text-decoration:none;
+}
+
+/* change colours to suit your needs */
+mark {
+    background-color:$color-light;
+    color:$color-off-black; 
+    font-style:italic;
+    font-weight:$bold;
+}
+
+del {
+    text-decoration: line-through;
+}
+
+abbr[title], dfn[title] {
+    border-bottom:1px dotted;
+    cursor:help;
+}
+
+table {
+    border-collapse:collapse;
+    border-spacing:0;
+}
+
+/* change border colour to suit your needs */
+hr {
+    display:block;
+    height:1px;
+    border:0;   
+    border-top:1px solid $color-midtone;
+    margin:$row-height 0;
+    padding:0;
+}
+
+input, select {
+    vertical-align:middle;
 }

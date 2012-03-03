@@ -11,7 +11,7 @@
 	<div class='contents'>
 <?php while ( $queryObject->have_posts() ) : $queryObject->the_post(); ?>
 
-<article>
+<article itemscope itemtype="http://schema.org/BlogPosting">
 	<header>
 		<h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
 	</header>
@@ -20,7 +20,7 @@
 	</section>
 	<footer>
 		<ul class='metadata horizontal clear'>
-			<li class='date'><time datetime="<?php the_time('Y-m-d'); ?>" pubdate><?php the_time('F j, Y'); ?></time></li>
+			<li class='date'><time itemprop="datePublished" datetime="<?php the_time('Y-m-d'); ?>"><?php the_time('F j, Y'); ?></time></li>
 			<li class='author'>By <?php the_author_link(); ?></li>	
 			<li>Filed Under <?php the_category(', '); ?></li>											
 			<li class='comments'><?php comments_popup_link('No comments', '1 comment', '% comments'); ?></li>

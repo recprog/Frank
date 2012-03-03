@@ -27,17 +27,17 @@
 	<h1 class="pagetitle">Blog Archives</h1>
 	<?php } ?>
 	<h2>Click on one of the items below to go to the post</h2>
-	</hgroup>
+		</hgroup>
 	</header>
 	<div class="posts">
 		<?php while(have_posts()) : the_post(); ?>
-			<article class='clear'>
+			<article itemscope itemtype="http://schema.org/BlogPosting" class='clear'>
 				<header>
 					<h1><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h1>
 				</header>
 				<div class='post-info span-2'>
 					<ul class='metadata vertical'>
-						<li class="date"><time datetime="<?php the_time('Y-m-d'); ?>" pubdate><?php the_time('F j, Y'); ?></time></li>
+						<li class="date"><time datetime="<?php the_time('Y-m-d'); ?>" itemprop="datePublished"><?php the_time('F j, Y'); ?></time></li>
 						<li class="author">By <?php the_author_link(); ?></li>
 						<li class="categories"><?php the_category(', '); ?></li>
 						<li class='comments'><?php comments_popup_link('No comments', '1 comment', '% comments'); ?></li>	
@@ -66,18 +66,13 @@
 		
 		<?php else : ?>
 		<div class="post">
-			<header>
-				<h1>Page Not Found</h1>
-			</header>
+			<header><h1>Page Not Found</h1></header>
 			<section>
-			
 			<p>Looks like the page you're looking for isn't here anymore. Try browsing the <a href="">categories</a>, <a href="">archives</a>, or using the search box below.</p>
-			
 			<?php include(TEMPLATEPATH.'/searchform.php'); ?>
 	 		</section>
 		</div>
 		<?php endif; ?>
-	</div>
 	</div>
 	<?php get_sidebar(); ?>
 </div>

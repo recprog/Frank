@@ -10,19 +10,19 @@
 	<?php if(have_posts()) : ?>
 	<header>
 		<hgroup>
-		<h1>Search Results for <strong>'<?php the_search_query(); ?>'</strong></h1>
+		<h1>Search Results for &#8216;<?php the_search_query(); ?>&#8217;</h1>
 		<h2>Click on one of the items below to go to the post</h2>
 		</hgroup>
 	</header>
 	<div class="posts">
 		<?php while(have_posts()) : the_post(); ?>
-			<article class='clear'>
+			<article itemscope itemtype="http://schema.org/BlogPosting" class='clear'>
 				<header>
 					<h1><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h1>
 				</header>
 					<div class='post-info span-2'>
 						<ul class='metadata vertical'>
-							<li class="date"><time datetime="<?php the_time('Y-m-d'); ?>" pubdate><?php the_time('F j, Y'); ?></time></li>
+							<li class="date"><time datetime="<?php the_time('Y-m-d'); ?>" itemprop="datePublished"><?php the_time('F j, Y'); ?></time></li>
 							<li class="author">By <?php the_author_link(); ?></li>
 							<li class="categories"><?php the_category(', '); ?></li>
 							<li class='comments'><?php comments_popup_link('No comments', '1 comment', '% comments'); ?></li>	

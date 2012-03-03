@@ -318,7 +318,7 @@ dl.metadata {
 		header {
 			h1 {
 				font-size: $large;
-				font-weight: $medium;
+				font-weight: $normal;
 				line-height: $row-height * 2; }
 		}
 		section {
@@ -374,7 +374,19 @@ button.alt:hover, .button.alt:hover, input[type=submit].alt:hover {
 }
 
 
-/*Search - not implemented*/	
+/*Search - not implemented*/
+#searchform input {
+	width:100%;
+	min-width:215px;
+	
+}
+
+/*404*/
+#content.fourohfour .main {
+	margin-bottom:$row-height*2;
+}
+
+	
 #search {
 	float: right;
 	#search_button {

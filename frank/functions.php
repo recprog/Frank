@@ -1,5 +1,14 @@
 <?php
 
+// Remove rel attribute from the category list - thanks Joseph (http://josephleedy.me/blog/make-wordpress-category-list-valid-by-removing-rel-attribute/)! 
+function remove_category_list_rel($output)
+{
+  $output = str_replace(' rel="category tag"', '', $output);
+  return $output;
+}
+add_filter('wp_list_categories', 'remove_category_list_rel');
+add_filter('the_category', 'remove_category_list_rel');
+
 function fs_register_menus() {
   register_nav_menus(array('primary' => __( 'Primary Navigation' )));
 }
@@ -175,8 +184,8 @@ function franklin_street_admin_assets()
     if( is_admin() )
     {
         wp_enqueue_script( 'jquery-ui-sortable' );
-        wp_enqueue_style( 'franklin-street-admin', get_bloginfo( 'stylesheet_directory' ) . '/admin/css/franklin-street-options.css', NULL, NULL, NULL );
-        wp_enqueue_script( 'franklin-street-admin', get_bloginfo( 'stylesheet_directory' ) . '/admin/js/franklin-street-utils.js', 'jquery', NULL, true );
+        wp_enqueue_style( 'franklin-street-admin', get_bloginfo( 'template_directory' ) . '/admin/css/franklin-street-options.css', NULL, NULL, NULL );
+        wp_enqueue_script( 'franklin-street-admin', get_bloginfo( 'template_directory' ) . '/admin/js/franklin-street-utils.js', 'jquery', NULL, true );
     }
 }    
  

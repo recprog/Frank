@@ -178,7 +178,9 @@
   height: 76px;
   background: url("/wp-content/images/pages/iconic/slides_sprite.png") 0 -222px no-repeat;
   display: block;
-  text-indent: -9999px; }
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden; }
 
 #p11465 .slideshow .slides {
   background-image: url("/wp-content/images/pages/cue/slides_sprite.png"); }

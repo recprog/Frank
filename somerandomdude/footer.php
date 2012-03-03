@@ -14,7 +14,7 @@
 		</div>
 		<div id="twitter_follow">
 			<p><?php echo twounter('somerandomdude') ?> people follow me on Twitter. <a href="http://twitter.com/somerandomdude" class="button alt">You should too.</a></p>
-			<small>P.J. Onori <em><a href='http://creativecommons.org/licenses/by-sa/3.0/'>Licensed under Creative Commons Attribution-ShareAlike 3.0 Unported.</a></em></strong>
+			<small>P.J. Onori <em><a href='http://creativecommons.org/licenses/by-sa/3.0/'>Licensed under Creative Commons Attribution-ShareAlike 3.0 Unported.</a></em></small>
 		</div>
 	</footer>
 </div>

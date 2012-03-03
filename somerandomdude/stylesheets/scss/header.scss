@@ -6,11 +6,12 @@
 		@include reset-dimensions();
 		float: left; 
 		a { 
-			text-indent:-99999px;
+			text-indent: 100%;
+			white-space: nowrap;
+			overflow: hidden;
 			display:block;
-			margin-top:5px;
+			margin-top:6px;
 			background:url('/wp-content/themes/somerandomdude/images/title.png?embed=true') no-repeat;
-			/*@include sprite-background(-180px, -337px);*/
 			width:141px;
 			height:20px; 
 		}
@@ -47,38 +48,34 @@
 				}
 				li:last-child { margin-right: 0; }
 				li.rss, li.twitter {
-					background:$color_accent;
-					@include default-shadow();
 					position:fixed;
 					margin-left:140px;
-					width:45px;
-					height:45px;
-					border-radius:22.5px;
 					a {
-						width:15px;
-						height:15px;
-						text-indent:-99999px;
-						padding:15px;
-						margin:15px 0 0 15px;
+						width:45px;
+						height:45px;
+						border-radius:22.5px;
+						display:block;
+						text-indent: 100%;
+						white-space: nowrap;
+						overflow: hidden;
+						@include default-shadow();
 					}
 				}
 				li.rss {
 					margin-top:-15px;
 					a { 	
-						background:url('/wp-content/themes/somerandomdude/images/rss.png?embed=true') no-repeat;
-						/*@include sprite-background(15px, -125px);*/ 
+						background:$color_accent url('/wp-content/themes/somerandomdude/images/rss.png?embed=true') no-repeat center center;
 					}
 				}
 				
 				li.twitter {
 					margin-top:50px;
 					a { 
-						background:url('/wp-content/themes/somerandomdude/images/twitter.png?embed=true') no-repeat;
-						/*@include sprite-background(-43px, -125px); */
+						background:$color_accent url('/wp-content/themes/somerandomdude/images/twitter.png?embed=true') no-repeat center center;
 					}
 				}
 
-				li.rss:hover, li.twitter:hover {
+				li.rss a:hover, li.twitter a:hover {
 					background-color:$color_accent_alt;
 				}
 			}
