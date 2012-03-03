@@ -15,7 +15,7 @@
 			$caption=$section['caption'];
 			$num_posts=$section['num_posts'];
 			$categories=$section['categories'];
-		
+			
 			switch($display_type) {
 				case 'franklin_street_loop':
 					include 'templates/franklin_street_loop.php';
