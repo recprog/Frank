@@ -230,12 +230,12 @@ header {
     color: #5d504f; }
 
 #content.single article section .flush-left {
-  margin-left: -170px; }
+  margin-left: -26.1%; }
 #content.single article section blockquote.large p {
   font-size: 20px;
   line-height: 30px; }
 #content.single article section img.flush-left {
-  max-width: 725px; }
+  max-width: 126.1%; }
 
 /*Generic Classes*/
 .more-link {
@@ -305,7 +305,8 @@ ul.metadata {
   list-style: none; }
   ul.metadata li {
     font: 11px/14px Georgia, "Times New Roman", Times, serif;
-    font-style: italic; }
+    font-style: italic;
+    margin-left: 0; }
   ul.metadata li.date {
     font-style: normal;
     font-weight: 700;
@@ -420,3 +421,49 @@ button.alt:hover, .button.alt:hover, input[type=submit].alt:hover {
   #search #search_form input {
     width: 190px;
     font-size: 11px; }
+
+/*MOBILE*/
+@media only screen and  (max-width: 767px) {
+  /*Typography*/
+  h1 {
+    font-size: 24px;
+    line-height: 32px; }
+
+  h2 {
+    font-size: 20px;
+    line-height: 30px; }
+
+  h3 {
+    font-size: 17px;
+    line-height: 27px; }
+
+  h4 {
+    font-size: 13px;
+    line-height: 19px; }
+
+  h5 {
+    font-size: 11px;
+    line-height: 14px; }
+
+  h6 {
+    font-size: 10px;
+    line-height: 12px; }
+
+  /*Metadata content*/
+  ul.metadata.vertical {
+    margin-top: 30px;
+    display: inline-block; }
+    ul.metadata.vertical li {
+      float: left;
+      background: none;
+      margin-right: 15px;
+      text-align: left; }
+    ul.metadata.vertical li.last, ul.metadata.vertical li:last-child {
+      margin-right: 0; }
+    ul.metadata.vertical li:first-child {
+      margin-left: 0; }
+
+  #content.single article section .flush-left {
+    margin-left: 0% !important; }
+  #content.single article section img.flush-left {
+    max-width: 100% !important; } }

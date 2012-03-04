@@ -1,9 +1,9 @@
 #page_bottom {
-  background: #5d504f;
-  min-width: 1000px; }
+  background: #5d504f; }
 
 #page_footer {
-  padding: 30px 0;
+  padding-top: 30px;
+  padding-bottom: 30px;
   margin-top: 30px;
   color: #f0eceb; }
   #page_footer a {

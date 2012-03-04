@@ -54,3 +54,9 @@
 #content.home .content.fourup .post:nth-child(n+5) {
   margin-bottom: 0;
   margin-top: 45px; }
+
+/*MOBILE*/
+@media only screen and  (max-width: 767px) {
+  #content.home .content.oneup.large article section p {
+    font-size: 24px;
+    line-height: 32px; } }

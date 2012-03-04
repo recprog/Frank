@@ -17,7 +17,6 @@
 		}
 	}
 	nav {
-		@include columns(2);
 		margin-top:$row-height - 7;
 		float: right;
 		position: relative;

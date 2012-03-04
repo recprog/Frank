@@ -28,7 +28,7 @@
 
 #download_follow { margin: 15px 0; }
 
-#download_follow div {
+#download_follow li {
 	border-top: 2px solid $color_light;
 	padding: 15px 0;
 	text-align: center; }
@@ -39,17 +39,10 @@
 	font-size: 9px !important;
 	line-height: 12px;
 	font-weight: $bold; }
-
-#hero_slideshow .fss {
-	@include default-shadow();
-	line-height: 0; }
-
-#hero_slideshow .slides {
-	width: 725px;
-	height: 210px;
-	@include reset-dimensions();
-	li {
-		display: none; } }
+	
+#hero_slideshow {
+	margin-bottom:$row-height*2;
+}
 
 #projects_navigation {
 	margin: 15px 0; }
@@ -76,122 +69,173 @@
 	background-position: 0 -18px;
 	font-weight: $bold; }
 
-#projects_list {
-	list-style: none;
-	margin: 0;
-	padding: 0;
-	display: block; }
+
+ul#projects_list {
+	list-style:none;
+}
 
 #projects_list li {
-	float: left;
-	padding: 0;
-	margin: 0;
-	margin-bottom: 30px;
-	margin-right: 40px;
-	@include columns(3);
-	background: transparent;
+	margin-top: $row-height;
+	margin-bottom: $row-height;
+}
+
+#projects_list li:nth-child(4n+1) {
+	margin-left:0;
+}
+
+#projects_list li:last-child {
+	float:left;
+}
+
+#projects_list div {
+	
 	@include default-shadow(); }
 
-#projects_list li:hover {
+#projects_list div:hover {
 	box-shadow: 0px 2px 10px rgba(18, 7, 6, 0.5);
 }
 
-#projects_list #projects_coffeesleeve {}
-
-#projects_list li.deselected {
+#projects_list .deselected {
 	opacity: 0.5; }
 
-#projects_list li p {
+#projects_list p {
 	display: none; }
 
-#projects_list li.last {
-	margin-right: 0; }
 
-#projects_list li a {
+
+#projects_list a {
 	display: block;
 	line-height: 0;
 	margin: 0 !important;
 	padding: 0 !important;
 	border: 0 !important;
 	text-decoration: none;
-	@include columns(3);
-	height: 120px; }
+	width:100%;
+	height: 120px;
+	background-image: url("/wp-content/images/pages/projects/projects_sprite.png"); 
+	}
 
-#projects_list li a {
-	background-image: url("/wp-content/images/pages/projects/projects_sprite.png"); }
-
-#projects_list li #projects_bitcons {
+#projects_list #projects_bitcons {
 	background-position: 0 0; }
 
-#projects_list li #projects_sanscons {
-	background-position: -215px 0; }
+#projects_list #projects_sanscons {
+	background-position: 0 -120px; }
 
-#projects_list li #projects_processing {
-	background-position: -430px 0; }
+#projects_list #projects_photography {
+	background-position: 0 -240px; }
 
-#projects_list li #projects_photography {
-	background-position: -645px 0; }
+#projects_list #projects_offfranklin {
+	background-position: 0 -360px; }
 
-#projects_list li #projects_offfranklin {
-	background-position: -860px 0; }
+#projects_list #projects_iconic {
+	background-position: 0 -480px; }
 
-#projects_list li #projects_iconic {
-	background-position: -1075px 0; }
+#projects_list #projects_coffeesleeve {
+	background-position: 0 -600px; }
 
-#projects_list li #projects_coffeesleeve {
-	background-position: -1290px 0; }
+#projects_list #projects_coordy {
+	background-position: 0 -720px; }
 
-#projects_list li #projects_coordy {
-	background-position: -1505px 0; }
-
-#projects_list li #projects_colortoolkit {
-	background-position: -1720px 0; }
-
-#projects_list li #cue {
-	background-position: -1935px 0; }
+#projects_list #cue {
+	background-position: 0 -840px; }
+	
+#projects_list #projects_frank {
+	background-position: 0 -960px; }
 
 #projects_list h3 {
 	position: relative;
-	@include reset-dimensions(); }
+	@include reset-dimensions(); 
+}
 
 #projects_list h3 small {
-	padding-left: 6px;
+	text-indent:6px;
 	background: rgba(93, 80, 79, 0.84);
 	margin: 0;
 	position: absolute;
 	display: block;
 	bottom: 0;
-	@include columns(3, -6); }
-
-#projects_list small {
-	color: #fdfcfc;
+	width:100%; 
+	color: $color_highlight;
 	font-size: 13px;
-	line-height: 13px; }
-
-#content.page #projects_list li p {
-	font: $font-x-small $sans-serif; }
-
-#p5554 .slideshow .slides {
-	background-image: url("/wp-content/images/pages/iconic/slides_sprite.png"); }
-
-#iconic_preview {
-	width: 215px;
-	height: 76px;
-	background: url("/wp-content/images/pages/iconic/slides_sprite.png") 0 -222px no-repeat;
-	display: block;
-	text-indent: 100%;
-	white-space: nowrap;
-	overflow: hidden;
+	line-height: 13px ;
 	}
 
-#p11465 .slideshow .slides {
-	background-image: url("/wp-content/images/pages/cue/slides_sprite.png"); }
+#content.page #projects_list div p {
+	font: $font-x-small $sans-serif; }
+	
+#p5554 .slideshow .slide-a, #p5554 .slideshow .slide-b {
+	background-image: url("/wp-content/images/pages/iconic/iconic_sprite.png"); }	
+	
+	
 
-#p5734 .slideshow .slides {
+#p5554 #project_preview {
+	margin-bottom:$row-height;
+	a {
+		width: 100%;
+		height: 76px;
+		background: url("/wp-content/images/pages/iconic/icons_sm.png?embed=true") no-repeat;
+		display: block;
+		text-indent: -9999px
+	}
+}
+
+#p11465 .slideshow .slide-a, #p11465 .slideshow .slide-b {
+	background-image: url("/wp-content/images/pages/cue/cue_sprite.png"); }
+
+#p5734 .slideshow .slide-a, #p5734 .slideshow .slide-b {
 	background-image: url("/wp-content/images/pages/bitcons/bitcons_sprite.png"); }
 
-#p5641 .slideshow .slides {
+#p5641 .slideshow .slide-a, #p5641 .slideshow .slide-b {
 	background-image: url("/wp-content/images/pages/sanscons/sanscons_sprite.png"); }
 
-#p6975 .slideshow .slides {
+#p6975 .slideshow .slide-a, #p6975 .slideshow .slide-b {
 	background-image: url("/wp-content/images/pages/off_franklin/off_franklin_sprite.jpg"); }
+	
+	
+	
+@media only screen and  (max-width: 767px) {
+	
+	#content.page #projects_navigation {
+		display:none;
+	}
+	
+	#projects_list div, #projects_list div:hover {
+		box-shadow:none;
+	}
+	
+	#projects_list li {
+		margin-top: $row-height*2;
+		margin-bottom: $row-height*2;
+	}
+	
+	#projects_list p {
+		display: block;
+		margin-top:5px;
+		font:$font-medium $serif !important; 
+	}
+	
+	#projects_list a {
+		background:none;
+		height:auto;
+	}
+	
+	#projects_list h3 small {
+		text-indent:0;
+		background: none;
+		margin: 0;
+		position: relative;
+		display: block;
+		width:100%; 
+		color:$color_midtone;
+		font:$font-large $sans-serif !important;
+	}
+	
+	#project_preview {
+		display:none;
+	}
+	
+	#p5215 #coordy_examples_nav, #p5212 #hero_slideshow {
+		display:none;
+	}
+	
+}	

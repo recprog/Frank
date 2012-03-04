@@ -1,9 +1,10 @@
 @import "variables";
 
-	#page_bottom { background: $color_midtone; min-width:1000px; }
+	#page_bottom { background: $color_midtone; }
 
 	#page_footer {
-		padding: $row-height *2 0;
+		padding-top:$row-height *2;
+		padding-bottom:$row-height *2;
 		margin-top: $row-height * 2;
 		color: $color_light;
 		a { color: $color_highlight; }

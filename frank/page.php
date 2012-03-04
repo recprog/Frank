@@ -5,8 +5,9 @@
  */
 ?>
 <?php get_header(); ?>
-<div id="content" class="page clear">
-	<div id="content_primary" class="span-9">
+<div id="content" class="page">
+	<div class="row">
+	<div id="content_primary" class="nine columns">
 		<?php if(have_posts()) : while(have_posts()) : the_post(); ?>
 		<article class="post clear" id="p<?php the_ID(); ?>">
 			<header>
@@ -19,5 +20,6 @@
 		<?php endwhile; endif; ?>
 	</div>
 	<?php get_sidebar(); ?>
+	</div>
 </div>
 <?php get_footer(); ?>

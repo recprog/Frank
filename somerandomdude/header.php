@@ -9,13 +9,13 @@
 <head>
 	<meta charset="UTF-8" />
 	<meta name="verify-v1" content="by1MB81PjkQUdjinZJQn73aCwjaV5erxwsvtTP7pTNE=" />
+	<meta name="viewport" content="width=device-width" />
 	
 	<link href="data:image/x-icon;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAOBJREFUeNrkUbsKwkAQ3Fs0EbVTP05JpSD4iEUKBb9AO/ErDJJgI5bi72gv8e44Hc9Hk1Owdthib4eZG3ZFzfOISFgYY9Az89WCXBAQgJPGgC8XixidpYSBzwyLvOA+lUqtk2TQ75+yDDUMw1UcX5RyCgqYwvuw38+Xy9PxKJhni8VkNHrkdARDpEaphKbTamkpUe1mE08MQeWL30qYPTJorekL4FQhQgYI4N0NAjRRr1f58AnVfb9KtNtsxjY3MI2ibZpCACoveK3VLv65Vrsfz17GfYefD0e/4C8FNwEGAIXxbCAjm60LAAAAAElFTkSuQmCC" rel="icon" type="image/x-icon" />
 	<link rel="apple-touch-icon" href="/wp-content/themes/somerandomdude/images/apple-touch-icon.png"/>
 	
 	<title><?php if (function_exists('is_tag') && is_tag()) { echo 'Tag Archive for &quot;'.$tag.'&quot;&mdash;'; } elseif (is_archive()) { wp_title(''); echo ' Archive&mdash;'; } elseif (is_search()) { echo 'Search for &quot;'.wp_specialchars($s).'&quot;&mdash;'; } elseif (!(is_404()) && (is_single()) || (is_page())) { wp_title(''); echo '&mdash;'; } elseif (is_404()) { echo 'Not Found&mdash;'; } bloginfo('name'); ?></title>
 	
-
 	<?php if(franklin_devmode()) : ?>
 	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/stylesheets/css/reset.css" media="all" />
 	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/stylesheets/css/grid.css" media="all" />
@@ -96,10 +96,11 @@
 	</script>
 </head>
 <body id="page">
-<div class='wrapper clear'>
-	<header id="page_header" class="clear">
-		<h1 id="title"><a href="/">Some Random Dude</a></h1>
-		<nav class='clear'>
+<div class='container'>
+	<div class="row">
+	<header id="page_header" class="clearfix">
+		<h1 id="title" class='three columns'><a href="/">Some Random Dude</a></h1>
+		<nav class='nine columns'>
 			<ul id="menu-primary" class="menu"><li><a href="/work/">Work</a></li>
 			<li class="last"><a href="/hello/" rel="author">Hello</a></li>
 			<li class="rss"><a href="http://feeds.feedburner.com/somerandomdude">RSS</a></li>
@@ -107,3 +108,4 @@
 			</ul>
 		</nav>
 	</header>
+	</div>

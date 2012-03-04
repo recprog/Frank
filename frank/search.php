@@ -5,8 +5,9 @@
  */
 ?>
 <?php get_header(); ?>
-<div id="content" class="archive clear">
-	<div id="content_primary" class='span-9'>
+<div id="content" class="archive">
+	<div class="row">
+	<div id="content_primary" class='nine columns'>
 	<?php if(have_posts()) : ?>
 	<header>
 		<hgroup>
@@ -20,7 +21,12 @@
 				<header>
 					<h1><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h1>
 				</header>
-					<div class='post-info span-2'>
+				<div class="row">
+					
+					<section class='nine columns push-three'>
+						<?php the_content('Read On&hellip;'); ?>
+					</section>
+					<div class='three columns pull-nine post-info'>
 						<ul class='metadata vertical'>
 							<li class="date"><time datetime="<?php the_time('Y-m-d'); ?>" itemprop="datePublished"><?php the_time('F j, Y'); ?></time></li>
 							<li class="author">By <?php the_author_link(); ?></li>
@@ -28,9 +34,7 @@
 							<li class='comments'><?php comments_popup_link('No comments', '1 comment', '% comments'); ?></li>	
 						</ul>
 					</div>
-					<section class='span-7 last'>
-						<?php the_content('Read On&hellip;'); ?>
-					</section>
+					</div>
 			</article>
 		<?php endwhile; ?>
 		<?php
@@ -60,6 +64,7 @@
 		</div>
 	</div>
 	<?php get_sidebar(); ?>
+	</div>
 </div>
 
 <?php get_footer(); ?>

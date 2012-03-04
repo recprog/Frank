@@ -8,7 +8,8 @@ Template Name: Full-spread Template
 */
 ?>
 <?php get_header(); ?>
-<div id="content" class="page fullspread clear">
+<div id="content" class="page fullspread">
+	<div class="row">
 	<div id="content_primary">
 		<?php if(have_posts()) : while(have_posts()) : the_post(); ?>		
 		<article class="post" id="p<?php the_ID(); ?>">
@@ -20,6 +21,7 @@ Template Name: Full-spread Template
 			</section>
 		</article>
 		<?php endwhile; endif; ?>
+	</div>
 	</div>
 </div>
 <?php get_footer(); ?>

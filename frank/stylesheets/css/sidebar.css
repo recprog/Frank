@@ -1,7 +1,7 @@
 #sidebar {
-  margin-top: 60px;
-  width: 215px;
-  float: left; }
+  margin-top: 60px; }
+  #sidebar .widget {
+    margin-right: 0; }
   #sidebar h3 {
     font-weight: 700;
     font-size: 13px;

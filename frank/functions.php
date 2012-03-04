@@ -90,7 +90,7 @@ if ( function_exists('register_sidebar') )
 	register_sidebar(array(
 	'name' => 'Post Footer',
 	'id' => 'widget-postfooter',
-	'before_widget' => '<div id="%1$s" class="widget %2$s fourup">',
+	'before_widget' => '<div id="%1$s" class="widget %2$s four columns">',
 	'after_widget' => '</div>',
 	'before_title' => '<h3 class="widgettitle">',
 	'after_title' => '</h3>',
@@ -100,7 +100,7 @@ if ( function_exists('register_sidebar') )
 	register_sidebar(array(
 	'name' => 'Footer',
 	'id' => 'widget-footer',
-	'before_widget' => '<div id="%1$s" class="widget %2$s twoup">',
+	'before_widget' => '<div id="%1$s" class="widget %2$s six columns">',
 	'after_widget' => '</div>',
 	'before_title' => '<h3 class="widgettitle">',
 	'after_title' => '</h3>',

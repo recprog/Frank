@@ -9,6 +9,7 @@
 <head>
 	<meta charset="UTF-8" />
 	<meta name="generator" content="WordPress <?php bloginfo('version'); ?>" />
+	<meta name="viewport" content="width=device-width" />
 	
 	<title><?php if (function_exists('is_tag') && is_tag()) { echo 'Tag Archive for &quot;'.$tag.'&quot;&mdash;'; } elseif (is_archive()) { wp_title(''); echo ' Archive&mdash;'; } elseif (is_search()) { echo 'Search for &quot;'.wp_specialchars($s).'&quot;&mdash;'; } elseif (!(is_404()) && (is_single()) || (is_page())) { wp_title(''); echo '&mdash;'; } elseif (is_404()) { echo 'Not Found&mdash;'; } bloginfo('name'); ?></title>
 

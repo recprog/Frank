@@ -22,13 +22,33 @@ body {
 .fss {
   position: relative; }
 
-.fss-caption {
-  font: 11px/14px "Helvetica Neue", Helvetica, Arial, sans-serif;
-  margin-top: 15px; }
+/*Temp*/
+.slide-container {
+  position: relative;
+  height: 210px; }
 
-.fss-caption strong {
-  font-weight: 700;
-  margin-right: 10px; }
+.fss .slide-container {
+  box-shadow: 0px 0px 8px rgba(18, 7, 6, 0.3);
+  line-height: 0; }
+
+.slideshow .captions li {
+  display: none;
+  font: 11px/14px "Helvetica Neue", Helvetica, Arial, sans-serif !important; }
+
+.slideshow .captions li.active {
+  display: block; }
+
+/*Temp*/
+.slideshow .slide-a, .slideshow .slide-b {
+  position: absolute;
+  opacity: 0;
+  -webkit-transition: opacity 0.5s ease-in;
+  -moz-transition: opacity 0.5s ease-in;
+  width: 100% !important;
+  background-position-x: center !important; }
+
+.slideshow .slide-a.visible, .slideshow .slide-b.visible {
+  opacity: 1; }
 
 .fss-nav {
   background: rgba(61, 48, 47, 0.8);
@@ -63,3 +83,5 @@ body {
 .fss-nav li.active {
   background: #fefafa;
   color: #050000; }
+
+/*MOBILE*/

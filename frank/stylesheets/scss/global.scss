@@ -181,13 +181,13 @@ header {
 
 #content.single article section {
 	.flush-left {
-		margin-left: ($column-width * 2 + $gutter-width * 2) * -1; 
+		margin-left: -26.1%;
 	}
 	blockquote.large p {
 		@include font-size-large(); 
 	}
 	img.flush-left {
-		max-width: $column-width * 9 + $gutter-width * 8; 
+		max-width:126.1%;
 	} 
 }
 
@@ -262,6 +262,7 @@ ul.metadata {
 		@extend .reset-dimensions;
 		font: $font-x-small $serif;
 		font-style: italic; 
+		margin-left:0;
 	}
 	li.date {
 		font-style: normal;
@@ -394,3 +395,45 @@ button.alt:hover, .button.alt:hover, input[type=submit].alt:hover {
 	#search_form input {
 		width: 190px;
 		font-size: $x-small; } }
+		
+		
+		
+/*MOBILE*/
+@media only screen and  (max-width: 767px) {
+	
+	/*Typography*/
+	h1 { @include font-size-x-large(); }
+	h2 { @include font-size-large(); }
+	h3 { @include font-size-medium(); }
+	h4 { @include font-size-small(); }
+	h5 { @include font-size-x-small(); }
+	h6 { @include font-size-xx-small(); }
+	
+	/*Metadata content*/
+	ul.metadata.vertical {
+		margin-top: $row-height *2;
+		display: inline-block;
+		li {
+			float: left;
+			background: none;
+			margin-right: 15px; 
+			text-align:left;
+		}
+		li.last, li:last-child {
+			margin-right: 0; 
+		} 
+		li:first-child {
+			margin-left:0;
+		}
+	}
+	#content.single article section {
+		.flush-left {
+			margin-left: 0% !important;
+		}
+		
+		img.flush-left {
+			
+			max-width:100% !important;
+		}
+	}
+}

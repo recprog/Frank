@@ -5,10 +5,15 @@
 	box-shadow:0 -1px 1px rgba(5,0,0,.3);
 }
 
+#page_footer {
+	padding-top:0;
+}
+
 #twitter_follow {
 	float:left; /*TODO: this feels incredible hacky...*/
 	margin-top:-60px;
 	padding-bottom:60px;
+	margin-left:0;
 	p { font:italic $font-large $serif; text-shadow:0px -1px 0px rgba(5,0,0,.3); }
 	a { margin-left:10px; }
 	a:hover { color:$color_highlight; }
@@ -16,7 +21,6 @@
 }
 
 .recommended {
-	@include columns(6);
 	dt {
 		font:$bold $font-small $sans-serif; text-shadow:0px -1px 0px rgba(5,0,0,.3);
 		margin-bottom:2px;
@@ -32,25 +36,25 @@
 	box-shadow: 0px 4px 8px rgba(18, 7, 6, 0.3);
 	margin-top: $row-height * 2 * -1;
 	#footer_main_promo {
-		@include columns(6);
-		height: 180px;
+		min-height: 180px;
 		display: block;
 		background-color: $color_accent;
 		text-decoration: none;
 		.sprite.fork {
-			width: 131px;
+			width:30%;
+			max-width: 131px;
 			height: 150px;
 			background:url('/wp-content/themes/somerandomdude/images/fork.png?embed=true') no-repeat;
+			background-size:100%;
 			float: left;
 			margin-left: 15px;
 		}
 		.content {
 			display: block;
-			float: left;
-			width: 250px;
-			margin-left: 23px;
+			float: right;
+			width: 55%;
 			padding-top: $row-height * 2;
-			padding-right: 10px;
+			padding-right: 5%;
 			.header {
 				font: $font-large $sans-serif;
 				display: block;
@@ -64,3 +68,12 @@
 #footer_main_promo:hover { background-color: $color_accent_alt !important;  }
 
 
+@media only screen and  (max-width: 767px) {
+	#twitter_follow {
+		margin-top:$row-height;
+		a { display:block; margin-left:0; }
+	}
+	
+	
+	
+}

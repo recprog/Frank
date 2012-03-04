@@ -10,16 +10,13 @@
 	}
 	float: left;
 	
-	margin: 0 $gutter-width $row-height 0;
+	margin-bottom:$row-height;
 }
 
-.widget.fourup { @include columns(3); }
 .widget.fourup:nth-child(4n) { margin-right:0; }
 .widget.fourup:nth-child(4n+1) { clear:left; }
-.widget.threeup { @include columns(4); }
 .widget.threeup:nth-child(3n) { margin-right:0; }
 .widget.threeup:nth-child(3n+1) { clear:left; }
-.widget.twoup { @include columns(6); }
 .widget.twoup:nth-child(2n) { margin-right:0; }
 .widget.twoup:nth-child(2n+1) { clear:left; }
 .widget-last { margin-right: 0 !important; }

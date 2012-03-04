@@ -33,7 +33,10 @@
 			margin: 0 0 $row-height 0;
 			p {
 				font-style: italic;
-				@include font-size-xxx-large(); } } }
+				@include font-size-xxx-large(); 
+			} 
+		} 
+	}
 	.content.twoup, .content.fourup {
 		.post {
 			float: left;
@@ -64,3 +67,11 @@
 		.post:nth-child(n+5) {
 			margin-bottom: 0;
 			margin-top: $row-height * 3; } } }
+			
+			
+/*MOBILE*/
+@media only screen and  (max-width: 767px) {
+	#content.home .content.oneup.large article section p {
+		@include font-size-x-large(); 
+	}
+}

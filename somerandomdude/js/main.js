@@ -12,7 +12,7 @@ window.onload = function() {
 	try {style.appendChild(t); }
 	catch (err) {}
 
-	frank_slideshow('#hero_slideshow .slides', {width: 725, height: 210});
+	frank_slideshow('#hero_slideshow .slideshow', {width: 725, height: 210});
 	simpleBox();
 
 	if (document.querySelector('#p72')) {

@@ -18,7 +18,7 @@
 	$oddcomment = 'class="alt" ';
 ?>
 <!-- Start editing here. -->
-<div id='comments_container' class='clear'>
+<div id='comments_container'>
 	<header>
 		<h1>The Discussion</h1>
 		<h2><?php comments_number('No Comments', 'One Comment', '% Comments' );?></h2>
@@ -27,8 +27,8 @@
 <?php if ($comments) : ?>
 	<ul id="comments">
 	<?php foreach ($comments as $comment) : ?>
-		<li class="comment clear">
-			<div class="comment-info span-2">
+		<li class="comment row">
+			<div class="comment-info three columns">
 				<ul class='metadata vertical'>
 					<li class="date"><time datetime="<?php the_time('Y-m-d'); ?>" pubdate><?php comment_date('F d, Y'); ?></time></li>
 					<li class='author' id="vcard-<?php comment_ID() ?>">By <a class="url fn" href="<?php comment_author_url(); ?>"><?php comment_author(); ?></a></li>
@@ -36,7 +36,7 @@
 				
 				<?php edit_comment_link('edit'); ?>
 			</div>
-			<div class="content span-7 last">
+			<div class="content nine columns">
 				<?php if ($comment->comment_approved == '0') : echo "<span id='comment_moderation'>Your comment is awaiting moderation.</span>"; endif; ?>
 				<?php comment_text() ?>	
 			</div>

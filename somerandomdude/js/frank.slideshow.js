@@ -9,8 +9,11 @@ function frank_slideshow(s,o) {
 function FSS(e,o) {
 	if( Object.prototype.toString.call(o) === '[object Object]' ) this.opt=o;
 	
+	//slideshow target
+	this.trgt=e;
+	
 	//slideshow container
-	this.con=e;
+	this.con;
 	
 	//slides
 	this.slds=[];
@@ -20,6 +23,12 @@ function FSS(e,o) {
 	//navigation element
 	this.nv;
 	
+	//slide a
+	this.sa;
+	
+	//slide b
+	this.sb;
+	
 	//caption
 	this.cpt
 	
@@ -27,8 +36,8 @@ function FSS(e,o) {
 	this.ci=-1;
 	
 	//dimensions
-	if(!this.opt.width) this.opt.width=this.con.offsetWidth;
-	if(!this.opt.height) this.opt.height=this.con.offsetHeight;
+	if(!this.opt.width) this.opt.width=this.trgt.offsetWidth;
+	if(!this.opt.height) this.opt.height=this.trgt.offsetHeight;
 	
 	//interval
 	this.to;
@@ -46,30 +55,56 @@ function FSS(e,o) {
 }
 
 FSS.prototype.init = function(e) {
-	
 	var ref=this;
-	
-	//container
-	this.con.style.width=this.opt.width+'px';
-	this.con.style.height=this.opt.height+'px';
+	var a;
 		
-	if(!this.con.className.match(new RegExp('(\\s|^)'+'fss'+'(\\s|$)'))) this.con.className += " "+'fss';
+	if(!this.trgt.className.match(new RegExp('(\\s|^)'+'fss'+'(\\s|$)'))) this.trgt.className += " "+'fss';
 	
 	//slides
-	var cs = e.childNodes;
 	
-	if(!e.hasChildNodes) return;
-	c=e.firstChild;
+	//caption
+	this.cpt = this.trgt.querySelector('.captions');
+	
+	if(!this.cpt) return;
+	c=this.cpt.firstChild;
 	var n=0;
 	while(c) {
-		if(c&&c.nodeType!=3) this.slds.push({ndx:n++, el:c.childNodes})
+		if(c&&c.nodeType!=3) this.slds.push({ndx:n++, el:c})
 		c=c.nextSibling;
-		
 	}
+	
+	//slide container
+	this.con = document.createElement("div");
+	a = document.createAttribute("class");
+	a.nodeValue="slide-container";
+	this.con.setAttributeNode(a);
+	
+	
+	
+	//dual slides
+	this.sa = document.createElement("div");
+	a = document.createAttribute("class");
+	a.nodeValue="slide-a visible";
+	this.sa.setAttributeNode(a);
+	
+	this.sb = document.createElement("div");
+	a = document.createAttribute("class");
+	a.nodeValue="slide-b";
+	this.sb.setAttributeNode(a);
+	
+	this.trgt.insertBefore(this.con, this.cpt)
+	this.con.appendChild(this.sa);
+	this.con.appendChild(this.sb);
+	
+	
+	this.sa.style.width=this.opt.width+'px';
+	this.sa.style.height=this.opt.height+'px';
+	this.sb.style.width=this.opt.width+'px';
+	this.sb.style.height=this.opt.height+'px';
 	
 	//navigation
 	this.nv = document.createElement("ul");
-	var a = document.createAttribute("class");
+	a = document.createAttribute("class");
 	a.nodeValue="fss-nav";
 	this.nv.setAttributeNode(a);
 	for(var i=0; i<this.slds.length; i++) {
@@ -81,19 +116,12 @@ FSS.prototype.init = function(e) {
 	
 	this.con.appendChild(this.nv)
 
-	//caption
-	
-	this.cpt = document.createElement("div");
-	a = document.createAttribute("class");
-	a.nodeValue="fss-caption";
-	this.cpt.setAttributeNode(a);
-	this.con.parentNode.insertBefore(this.cpt, this.con.nextSibling);
+	var g =  this.con
 	
 	//events 
 	this.con.onmouseover = function(e) {
 		if(!e) return;
-		
-		if(e.target!=ref.con) {
+		if(!ref.ischild(e.target, ref.con)) {
 			e.cancelBubble=true;
 			e.stopPropagation();
 			return false;
@@ -148,14 +176,24 @@ FSS.prototype.navclick = function(e) {
 
 FSS.prototype.gotoslide = function(n) {
 	if(this.ci==n) return;
+	var a;
 	
-	//update slides
-	this.con.style.backgroundPosition=String(this.opt.width*(n)*-1)+"px 0px";
+	//switch-a-roo 
+	var a = this.trgt.parentNode.querySelector(".visible")
+	if(a&&a==this.sa) {
+		this.sb.style.backgroundPosition="0px "+String(this.opt.height*(n)*-1)+"px";
+		this.sa.className=this.sa.className.replace(new RegExp('(\\s|^)'+'visible'+'(\\s|$)'),'');
+		this.sb.className += " "+'visible';
+	} else {
+		this.sa.style.backgroundPosition="0px "+String(this.opt.height*(n)*-1)+"px";
+		this.sb.className=this.sb.className.replace(new RegExp('(\\s|^)'+'visible'+'(\\s|$)'),'');
+		this.sa.className += " "+'visible';
+	}
 	
 	//--update navigation--
 
 	//remove 'active' class if exists
-	var a = this.nv.querySelector(".active");
+	a = this.nv.querySelector(".active");
 	if(a) a.removeAttribute("class");
 	
 	//add new 'active' class
@@ -166,13 +204,11 @@ FSS.prototype.gotoslide = function(n) {
 	//--update caption--
 	
 	//remove caption if exists
-	while(this.cpt.hasChildNodes()) this.cpt.removeChild(this.cpt.firstChild);
 	
-	//add new caption
-	for(var i=0; i<this.slds[n]["el"].length; i++) {
-		var cl = this.slds[n]["el"].item(i).cloneNode(true);
-		this.cpt.appendChild(cl)
-	}
+	var m = (this.ci==-1)?0:this.ci;
+	
+	this.slds[m]['el'].className=this.slds[m]['el'].className.replace(new RegExp('(\\s|^)'+'active'+'(\\s|$)'),'');
+	this.slds[n]['el'].className += " "+'active';
 	
 	this.ci=n;
 	
