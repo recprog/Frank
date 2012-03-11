@@ -337,7 +337,7 @@ dl.metadata {
 #content.page article section img { box-shadow: none !important; }
 
 #content.home, #content.archive {
-	article { margin: $row-height * 4 0; }
+	article { margin-top: $row-height * 4; margin-bottom: $row-height * 4; }
 	article:first-child { margin-top: 0; }
 	article:last-child {margin-bottom: 0;}
 }

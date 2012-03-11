@@ -37,9 +37,7 @@
 	if (have_posts()) : while (have_posts()) : the_post(); ?>
 		<?php if(is_sticky($post->ID)) continue; ?>
 		<article itemscope itemtype="http://schema.org/BlogPosting">
-			<header>
-				<h1><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h1>
-			</header>
+			<header><h1><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h1></header>
 			<div class='row'>
 			<section class='nine columns push-three'>
 				<?php the_content('Read On&hellip;'); ?>

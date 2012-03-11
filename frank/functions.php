@@ -42,7 +42,7 @@ if ( function_exists('register_sidebar') )
 	register_sidebar(array(
 	'name' => 'Sub Header',
 	'id' => 'widget-subheader',
-	'before_widget' => '<div id="%1$s" class="widget %2$s fourup">',
+	'before_widget' => '<div id="%1$s" class="widget %2$s four columns">',
 	'after_widget' => '</div>',
 	'before_title' => '<h3 class="widgettitle">',
 	'after_title' => '</h3>',
@@ -171,10 +171,6 @@ function franklin_street_admin_menu()
 
 	add_submenu_page( 'franklin-street', 'Franklin Street', 'General', 'manage_options', 'franklin-street', 'franklin_st_general');
     add_submenu_page( 'franklin-street', 'Franklin Street', 'Home Page Sections', 'manage_options', 'franklin-street-home', 'franklin_st_home');
-	/*
-	* TODO:
-	* Add a customize submenu for additional CSS & Javascript to be put in the header and footer
-	*/
 }
 
 add_action( 'admin_menu', 'franklin_street_admin_menu' );

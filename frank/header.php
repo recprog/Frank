@@ -58,23 +58,27 @@
 	<![endif]-->	
 </head>
 <body id="page">
-<div id="page_top" class='wrapper clear'>
-	<header id="page_header" class="clear">
-		<hgroup>
+<div class="container">
+	<div class="row">
+	<header id="page_header">
+		<div class='row'>
+		<hgroup class='9 columns'>
 			<h1 id="title"><a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a></h1>
 			<h2 id="description"><?php bloginfo('description'); ?></h2>
 		</hgroup>
-		<nav class='clear'>
+		</div>
+		<nav>
 			<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Navigation") ) : ?>
 			<div class='menu clear'>
-				<?php wp_nav_menu( array('theme_location' => 'primary', 'container' => '' ) ); ?>	
+				<?php wp_nav_menu( array('theme_location' => 'primary', 'container' => false ) ); ?>	
 			</div>
 			<?php endif; ?> 
 		</nav>
 	</header>
 	<?php if ( is_active_sidebar("widget-subheader") ) : ?>
-		<div id='sub_header' class='clear'>
+		<div id='sub_header' class='row'>
 			<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Sub Header") ) : ?>
 			<?php endif; ?>
 		</div>
 	<?php endif; ?>
+	</div>

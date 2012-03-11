@@ -33,18 +33,20 @@
     font: 28px/35px Georgia, "Times New Roman", Times, serif;
     margin: 30px 0;
     color: #5d504f; }
+  #comments_container #commentform input[type=text], #comments_container #commentform textarea {
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%; }
   #comments_container #commentform label {
     display: none; }
   #comments_container #commentform #comment_form_info input[type=text] {
     margin-bottom: 15px;
-    width: 122px;
     text-align: right; }
   #comments_container #commentform textarea {
     margin: 0;
-    height: 105px;
-    width: 100%; }
-    #comments_container #commentform textarea .loggedin {
-      width: 740px; }
+    height: 118px; }
   #comments_container #commentform textarea:focus {
     height: 375px; }
   #comments_container #comment_form header h1 {

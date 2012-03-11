@@ -1,9 +1,9 @@
 <?php
 /*
-	Template Name: Four Up
+	Template Name: Three Up
 */
 ?>
-<div class='content fourup row'>
+<div class='content threeup row'>
 	<div class='nav content-header'>
 		<span class='label'><?php print($title); ?></span>
 		<span class='caption'><?php print($caption) ?></span> <span class='more'><?php next_posts_link('View more&hellip;'); ?></span>
@@ -11,7 +11,7 @@
 	<div class='contents row'>	
 	
 	<?php while ( $queryObject->have_posts() ) : $queryObject->the_post(); ?>
-		<article itemscope itemtype="http://schema.org/BlogPosting" class='post three columns post-<?php echo($queryObject->current_post+1); ?>'>
+		<article itemscope itemtype="http://schema.org/BlogPosting" class='post four columns post-<?php echo($queryObject->current_post+1); ?>'>
 			<header>
 				<h1 class="truncate"><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h1>
 			</header>

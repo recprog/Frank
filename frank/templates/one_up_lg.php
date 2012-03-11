@@ -19,7 +19,7 @@
 		<p><?php echo get_the_excerpt(); ?> <span class='more-link'><a href="<?php the_permalink(); ?>">Read On&hellip;</a></span></p>
 	</section>
 	<footer>
-		<ul class='metadata horizontal clear'>
+		<ul class='metadata horizontal clearfix'>
 			<li class='date'><time itemprop="datePublished" datetime="<?php the_time('Y-m-d'); ?>"><?php the_time('F j, Y'); ?></time></li>
 			<li class='author'>By <?php the_author_link(); ?></li>	
 			<li>Filed Under <?php the_category(', '); ?></li>											

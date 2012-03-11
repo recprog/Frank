@@ -43,17 +43,23 @@
 		color: $color_midtone; 
 	}
 	#commentform {
+		
+		input[type=text], textarea {
+			-moz-box-sizing: border-box;
+			-ms-box-sizing: border-box;
+			-webkit-box-sizing: border-box;
+			box-sizing: border-box;
+			width:100%;
+		} 
+		
 		label { display: none; }
 		#comment_form_info input[type=text] {
 			margin-bottom: $row-height;
-			@include columns(2, -8);
 			text-align: right; 
 		}
 		textarea {
 			margin: 0;
-			height: 105px;
-			width: 100%;
-			.loggedin { width: 740px; } 
+			height: 118px;
 		}
 		textarea:focus { height: $row-height * 25; } 
 	}

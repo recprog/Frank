@@ -1,5 +1,4 @@
 .widget {
-  float: left;
   margin-bottom: 15px; }
   .widget h3 {
     font-size: 13px;
@@ -9,23 +8,13 @@
     text-overflow: ellipsis;
     -o-text-overflow: ellipsis; }
 
-.widget.fourup:nth-child(4n) {
-  margin-right: 0; }
+.widget.six.columns, .widget.three.columns, .widget.four.columns {
+  float: left !important; }
 
-.widget.fourup:nth-child(4n+1) {
+.widget.six.columns:nth-child(2n+1), .widget.three.columns:nth-child(4n+1), .widget.four.columns:nth-child(3n+1) {
+  margin-left: 0;
   clear: left; }
 
-.widget.threeup:nth-child(3n) {
-  margin-right: 0; }
-
-.widget.threeup:nth-child(3n+1) {
-  clear: left; }
-
-.widget.twoup:nth-child(2n) {
-  margin-right: 0; }
-
-.widget.twoup:nth-child(2n+1) {
-  clear: left; }
-
-.widget-last {
-  margin-right: 0 !important; }
+.widget.six.columns:nth-child(2n), .widget.three.columns:nth-child(4n), .widget.four.columns:nth-child(3n) {
+  margin-right: 0;
+  float: right; }

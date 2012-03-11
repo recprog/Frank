@@ -3,16 +3,14 @@
 	Template Name: Two Up
 */
 ?>
-<div class='span-12 clear content twoup'>
+<div class='content twoup row'>
 	<div class='nav content-header'>
 		<span class='label'><?php print($title); ?></span>
 		<span class='caption'><?php print($caption) ?></span> <span class='more'><?php next_posts_link('View more&hellip;'); ?></span>
-		
 	</div>
-	<div class='contents span-12 last'>	
-	
+	<div class='contents row'>	
 	<?php while ( $queryObject->have_posts() ) : $queryObject->the_post(); ?>
-		<article itemscope itemtype="http://schema.org/BlogPosting" class='clear post span-6 post-.<?php echo($queryObject->current_post+1); ?>'>
+		<article itemscope itemtype="http://schema.org/BlogPosting" class='post six columns post-<?php echo($queryObject->current_post+1); ?>'>
 			<header>
 				<h1 class="truncate"><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h1>
 			</header>
@@ -28,6 +26,5 @@
 			</footer>
 		</article>
 	<?php endwhile; ?>
-
 	</div>
 </div>

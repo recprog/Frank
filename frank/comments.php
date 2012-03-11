@@ -68,7 +68,7 @@
 		</header>
 		<form action="<?php echo get_option('siteurl'); ?>/wp-comments-post.php" method="post" id="commentform">
 			<?php if ( !$user_ID ) : ?>	
-			<div class='span-2' id="comment_form_info">				
+			<div class='three columns' id="comment_form_info">				
 					<label for="author">Name <?php if ($req) echo "(required)"; ?></label>
 					<input autocomplete="off" type="text" name="author" placeholder="Name (required)" id="author" value="<?php echo $comment_author; ?>" size="22" class="textinput" tabindex="1" />
 					<label for="email">Email <?php if ($req) echo "(required)"; ?></label>
@@ -77,12 +77,12 @@
 					<input autocomplete="off" type="text" name="url" placeholder="URL" id="url" value="<?php echo $comment_author_url; ?>" size="22" class="textinput" tabindex="3" />
 			</div>
 			<?php else : ?>
-				<div id='comment_form_info' class='span-2'>				
+				<div id='comment_form_info' class='three columns'>				
 					By <a href="<?php echo get_option('siteurl'); ?>/wp-admin/profile.php"><?php echo $user_identity; ?></a> (<a href="<?php echo get_option('siteurl'); ?>/wp-login.php?action=logout" title="Log out of this account">Log out&hellip;</a>)
 				</div>
 			<?php endif; ?>
 			
-			<div id="comment_form_comment" class='span-7 last <?php if ( $user_ID ) : ?>loggedin<?php endif; ?>'>
+			<div id="comment_form_comment" class='nine columns <?php if ( $user_ID ) : ?>loggedin<?php endif; ?>'>
 				<label for="comment">Your Comment</label>
 				<textarea name="comment" placeholder="Your Comment" class="<?php if ( $user_ID ) echo('loggedin') ?>" id="comment" rows="10" tabindex="4"></textarea>
 				<input name="submit" type="submit" id="submit" class="button <?php if ( $user_ID ) echo('loggedin') ?>" tabindex="5" value="Submit Comment" />

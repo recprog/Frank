@@ -18,7 +18,7 @@
 		.more {
 			@extend .reset-dimensions;
 			font-family: $serif; } }
-	.content.oneup .post, .content.oneup.large .post, .content.twoup .post, .content.fourup .post, .content.halfandhalf .post {
+	.content.oneup .post, .content.twoup .post, .content.threeup .post, .content.fourup .post {
 		.read-more {
 			margin-top: $row-height;
 			.more {
@@ -37,36 +37,66 @@
 			} 
 		} 
 	}
-	.content.twoup, .content.fourup {
+	.content.twoup, .content.threeup, .content.fourup {
 		.post {
-			float: left;
-			margin: $row-height $gutter-width 0 0;
+			margin-top: $row-height;
 			header {
 				h1 {
 					@include font-size-small();
 					font-weight: $bold;
 					a {
 						text-decoration: none; } } }
-			section {
+			section p {
 				@include font-size-small(); } }
 		.metadata li {
 			@include font-size-x-small(); } }
 	.content.twoup {
+		.post {
+			float:left !important;
+		}
 		.post:nth-child(2n+1) {
+			margin-left:0;
 			clear: left; }
 		.post:nth-child(2n) {
-			margin-right: 0; }
+			margin-right: 0; 
+			float:right;
+		}
 		.post:nth-child(n+3) {
 			margin-bottom: 0;
 			margin-top: $row-height * 3; } }
 	.content.fourup {
+		.post {
+			float:left !important;
+		}
 		.post:nth-child(4n+1) {
+			margin-left:0;
 			clear: left; }
 		.post:nth-child(4n) {
-			margin-right: 0; }
+			margin-right: 0; 
+			float:right;
+		}
 		.post:nth-child(n+5) {
 			margin-bottom: 0;
-			margin-top: $row-height * 3; } } }
+			margin-top: $row-height * 3; 
+		} 		
+	} 
+	.content.threeup {
+		.post {
+			float:left !important;
+		}
+		.post:nth-child(3n+1) {
+			margin-left:0;
+			clear: left; }
+		.post:nth-child(3n) {
+			margin-right: 0; 
+			float:right;
+		}
+		.post:nth-child(n+4) {
+			margin-bottom: 0;
+			margin-top: $row-height * 3; 
+		} 		
+	}
+}
 			
 			
 /*MOBILE*/

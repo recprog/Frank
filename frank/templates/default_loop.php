@@ -3,30 +3,36 @@
 	Template Name: Default Loop
 */
 ?>
-<div class='span-12 last clear content default'>
-	<div class='contents span-12 last'>
-<?php while ( have_posts() ) : the_post(); ?>
-<article itemscope itemtype="http://schema.org/BlogPosting" class='clear'>
-	<header>
-		<h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
-	</header>
-	<section>
-		<?php if (!empty($post->post_excerpt)) : ?>
-		<p><?php echo get_the_excerpt(); ?> <span class='more-link'><a href="<?php the_permalink(); ?>">Read On&hellip;</a></span></p>
-		<?php else : ?>
-		<?php the_content('Read On&hellip;'); ?>
+<div class='content default row'>
+	<div class='nine columns contents'>	
+	<?php 		
+	if (have_posts()) : while (have_posts()) : the_post(); ?>
+		<?php if(is_sticky($post->ID)) continue; ?>
+		<article itemscope itemtype="http://schema.org/BlogPosting">
+			<header><h1><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h1></header>
+			<div class='row'>
+			<section class='nine columns push-three'>
+				<?php the_content('Read On&hellip;'); ?>
+			</section>
+			<div class='three columns pull-nine post-info'>	
+				<ul class='metadata vertical'>
+					<li class="date"><time datetime="<?php the_time('Y-m-d'); ?>" itemprop="datePublished"><?php the_time('F j, Y'); ?></time></li>
+					<li class="author">By <?php the_author_link(); ?></li>
+					<li class="categories"><?php the_category(', '); ?></li>
+					<li class='comments'><?php comments_popup_link('No comments', '1 comment', '% comments'); ?></li>	
+				</ul>
+			</div>
+			</div>
+		</article>
+	<?php endwhile; ?>
+	<?php endif; ?>
+	</div>
+	<div id="sidebar" class='three columns widgets'>
+		<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Index Right Aside") ) : ?>
+			<h3>About This Site</h3>
+			<p><?php bloginfo('description'); ?></p>
+			<h3>Search</h3>
+			<?php get_search_form(); ?>
 		<?php endif; ?>
-	</section>
-	<footer>
-		<ul class='metadata clear'>
-			<li class='time'><time datetime="<?php the_time('Y-m-d'); ?>" itemprop="datePublished"><?php the_time('F j, Y'); ?></time></li>
-			<li class='author'>By <?php the_author_link(); ?></li>	
-			<li>Filed Under <?php the_category(', '); ?></li>											
-			<li class='comments'><?php comments_popup_link('No comments', '1 comment', '% comments'); ?></li>
-		</ul>
-	</footer>
-</article>	
-
-<?php endwhile; ?>
 	</div>
 </div>

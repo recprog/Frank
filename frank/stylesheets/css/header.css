@@ -5,6 +5,8 @@
   margin: 15px 0 30px 0; }
   #page_header h1 {
     font-size: 20px; }
+  #page_header h2 {
+    margin-top: 0; }
   #page_header nav .menu ul {
     list-style: none; }
   #page_header nav .menu ul ul {
@@ -15,7 +17,7 @@
       display: block;
       height: 15px;
       color: #050000;
-      font: 11px/14px "Helvetica Neue", Helvetica, Arial, sans-serif; }
+      font: 700 11px/14px "Helvetica Neue", Helvetica, Arial, sans-serif; }
     #page_header nav .menu li a:hover {
       color: #5d504f; }
   #page_header nav .menu li:first-child {

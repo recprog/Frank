@@ -47,6 +47,7 @@
 			li:last-child, li.last { margin-right: 0; }
 			li.rss, li.twitter {
 				position:fixed;
+				z-index:10000;
 				margin-left:140px;
 				a {
 					width:45px;

@@ -369,7 +369,8 @@ dl.metadata {
   box-shadow: none !important; }
 
 #content.home article, #content.archive article {
-  margin: 60px 0; }
+  margin-top: 60px;
+  margin-bottom: 60px; }
 #content.home article:first-child, #content.archive article:first-child {
   margin-top: 0; }
 #content.home article:last-child, #content.archive article:last-child {

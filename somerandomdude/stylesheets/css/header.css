@@ -41,6 +41,7 @@
       margin-right: 0; }
     #page_header nav #menu-primary li.rss, #page_header nav #menu-primary li.twitter {
       position: fixed;
+      z-index: 10000;
       margin-left: 140px; }
       #page_header nav #menu-primary li.rss a, #page_header nav #menu-primary li.twitter a {
         width: 45px;
