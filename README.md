@@ -18,7 +18,7 @@ Frank is built on HTML5 and CSS3. The theme strives for 100% valid HTML5 templat
 
 Frank uses a subset of [Foundation](http://foundation.zurb.com/) to provide a responsive layout for desktops, tablets and phones. Add this to the theme's small footprint and you have a mobile-optimized blog. 
 
-###Frank is yours
+###Frank is for you
 
 This theme is 100% open source and developer friendly. The parent theme (/frank) is under the [GNU Public License](http://www.gnu.org/copyleft/gpl.html) and the child theme (/somerandomdude) directory is under the [Creative Commons Attribution-ShareAlike 3.0 Unported License](http://creativecommons.org/licenses/by-sa/3.0/). 
 
