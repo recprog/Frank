@@ -1,3 +1,6 @@
+img {
+  -ms-interpolation-mode: bicubic; }
+
 #top_bar {
   background: #050000; }
 

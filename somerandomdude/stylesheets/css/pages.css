@@ -3,7 +3,6 @@
 
 #page_title {
   font-size: 28px;
-  line-height: 35px;
   color: #5d504f; }
 
 #page_title .title {
@@ -13,13 +12,11 @@
 #content.page #info h1, #content.page #other_projects h1 {
   display: block;
   padding-top: 0;
-  font: 24px/32px "Helvetica Neue", Helvetica, Arial, sans-serif; }
+  font-size: 24px; }
 #content.page #info p, #content.page #other_projects p {
-  font-size: 13px;
-  line-height: 19px; }
+  font-size: 13px; }
 #content.page #info p.large, #content.page #other_projects p.large {
-  font-size: 20px;
-  line-height: 30px; }
+  font-size: 20px; }
 
 #content.page #other_projects {
   margin-top: 30px; }
@@ -52,7 +49,8 @@
 
 #content.page #projects_navigation dt, #content.page #projects_navigation dd {
   margin: 0;
-  font: 11px/14px "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 11px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   margin-right: 20px;
   float: left; }
 
@@ -149,7 +147,8 @@ ul#projects_list {
   line-height: 13px; }
 
 #content.page #projects_list div p {
-  font: 11px/14px "Helvetica Neue", Helvetica, Arial, sans-serif; }
+  font-size: 11px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
 
 #p5554 .slideshow .slide-a, #p5554 .slideshow .slide-b {
   background-image: url("/wp-content/images/pages/iconic/iconic_sprite.png"); }
@@ -189,7 +188,8 @@ ul#projects_list {
   #projects_list p {
     display: block;
     margin-top: 5px;
-    font: 17px/27px Georgia, "Times New Roman", Times, serif !important; }
+    font-size: 17px !important;
+    font-family: Georgia, "Times New Roman", Times, serif !important; }
 
   #projects_list a {
     background: none;
@@ -203,7 +203,8 @@ ul#projects_list {
     display: block;
     width: 100%;
     color: #5d504f;
-    font: 20px/30px "Helvetica Neue", Helvetica, Arial, sans-serif !important; }
+    font-size: 20px !important;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important; }
 
   #project_preview {
     display: none; }

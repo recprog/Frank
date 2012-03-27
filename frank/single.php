@@ -21,7 +21,7 @@
 				</section>
 				<div class='three columns pull-nine post-info'>
 					<ul class='metadata vertical'>
-						<li class="date"><time datetime="<?php the_time('Y-m-d'); ?>"  itemprop="datePublished"><?php the_time('F j, Y'); ?></time></li>
+						<li class="date"><time datetime="<?php the_time('Y-m-d'); ?>" itemprop="datePublished"><?php the_time('F j, Y'); ?></time></li>
 						<li class="author">By <?php the_author_link(); ?></li>
 						<li class="categories"><?php the_category(', '); ?></li>
 						<li class='comments'><?php comments_popup_link('No comments', '1 comment', '% comments'); ?></li>	

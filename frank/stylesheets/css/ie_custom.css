@@ -37,11 +37,9 @@
       #text-10 #footer_main_promo .content .header {
         font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
         display: block;
-        font-size: 20px;
-        line-height: 30px; }
+        font-size: 20px; }
       #text-10 #footer_main_promo .content .caption {
         display: block;
         font-size: 11px;
-        line-height: 14px;
         margin-top: 15px;
         font-style: italic; }

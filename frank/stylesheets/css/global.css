@@ -1,16 +1,13 @@
 body {
   margin: 0;
   padding: 0;
-  font: 62.5% Georgia, "Times New Roman", Times, serif;
+  font: 62.5%/1.55 Georgia, "Times New Roman", Times, serif;
   background: #fffefe;
   color: #050000;
   height: 100%;
   text-rendering: optimizelegibility; }
 
 /*Images*/
-img {
-  -ms-interpolation-mode: bicubic; }
-
 img.noshadow {
   box-shadow: none !important; }
 
@@ -28,6 +25,7 @@ a:hover {
 h1, h2, h3, h4, h5, h6 {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 400;
+  line-height: 1.4;
   padding-top: 0px;
   margin-bottom: 15px; }
 
@@ -35,64 +33,49 @@ h1:first-child, h2:first-child, h3:first-child, h4:first-child, h5:first-child, 
   margin-top: 0; }
 
 h1 {
-  font-size: 24px;
-  line-height: 32px; }
+  font-size: 24px; }
 
 h2 {
-  font-size: 20px;
-  line-height: 30px; }
+  font-size: 20px; }
 
 h3 {
-  font-size: 17px;
-  line-height: 27px; }
+  font-size: 17px; }
 
 h4 {
-  font-size: 13px;
-  line-height: 19px; }
+  font-size: 13px; }
 
 h5 {
-  font-size: 11px;
-  line-height: 14px; }
+  font-size: 11px; }
 
 h6 {
-  font-size: 10px;
-  line-height: 12px; }
+  font-size: 10px; }
 
 /*Paragraph*/
 p {
   margin: 15px 0;
-  font-size: 13px;
-  line-height: 19px; }
+  font-size: 13px; }
 
 p.xx-large {
-  font-size: 28px;
-  line-height: 35px; }
+  font-size: 28px; }
 
 p.x-large {
-  font-size: 24px;
-  line-height: 32px; }
+  font-size: 24px; }
 
 p.large {
-  font-size: 20px;
-  line-height: 30px; }
+  font-size: 20px; }
 
 p.medium {
-  font-size: 17px;
-  line-height: 27px; }
+  font-size: 17px; }
 
 p.small {
-  font-size: 13px;
-  line-height: 19px; }
+  font-size: 13px; }
 
 p.x-small {
-  font-size: 11px;
-  line-height: 14px; }
+  font-size: 11px; }
 
 p.xx-small {
-  font-size: 10px;
-  line-height: 12px; }
+  font-size: 10px; }
 
-/*KILL?*/
 p:first-child {
   margin-top: 0; }
 
@@ -119,16 +102,18 @@ blockquote {
   blockquote p:last-child:after {
     content: "”"; }
 
+cite, blockquote[cite]:after, cite {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 13px; }
+
 blockquote[cite]:after {
   content: "—" attr(cite);
-  font: 13px/19px "Helvetica Neue", Helvetica, Arial, sans-serif;
   display: block;
   color: #050000;
   margin-top: 15px; }
 
 cite {
   margin-left: 40px;
-  font: 13px/19px "Helvetica Neue", Helvetica, Arial, sans-serif;
   margin-top: -1em;
   margin-bottom: 2em; }
 
@@ -156,7 +141,6 @@ table {
   border-collapse: separate;
   border-spacing: 0;
   font-size: 13px;
-  line-height: 19px;
   margin: 15px 0; }
 
 table, td, th {
@@ -176,8 +160,7 @@ ul, ol {
   margin-top: 15px; }
   ul li, ol li {
     margin-left: 20px;
-    font-size: 13px;
-    line-height: 19px; }
+    font-size: 13px; }
 
 ul {
   list-style: square; }
@@ -188,9 +171,10 @@ ol {
 /*Definition lists*/
 dl {
   margin: 15px 0;
-  padding-top: 5px; }
+  padding-top: 5px;
+  font-family: Georgia, "Times New Roman", Times, serif; }
   dl dt, dl dd {
-    font: 11px/14px Georgia, "Times New Roman", Times, serif; }
+    font-size: 11px; }
   dl dt {
     font-weight: 700;
     margin-top: 15px; }
@@ -199,8 +183,7 @@ dl {
 
 /*Typographic tags*/
 small {
-  font-size: 13px;
-  line-height: 19px; }
+  font-size: 13px; }
 
 strong {
   font-weight: 700; }
@@ -210,18 +193,17 @@ em {
 
 /*Horizontal rule*/
 hr {
-  height: 1px;
-  border: 0;
-  margin: 15px 0;
-  padding: 0;
-  background-color: #b5aaa9; }
+  border-color: #f0eceb; }
 
 header {
   margin-bottom: 15px; }
   header h1 {
-    margin-bottom: 0; }
+    margin-bottom: 0;
+    font-size: 20px; }
   header h2 {
-    font: italic 13px/19px Georgia, "Times New Roman", Times, serif;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-style: italic;
+    font-size: 13px;
     color: #5d504f;
     margin: 5px 0 0 0; }
   header a {
@@ -232,8 +214,7 @@ header {
 #content.single article section .flush-left {
   margin-left: -26.1%; }
 #content.single article section blockquote.large p {
-  font-size: 20px;
-  line-height: 30px; }
+  font-size: 20px; }
 #content.single article section img.flush-left {
   max-width: 126.1%; }
 
@@ -277,14 +258,13 @@ header {
 
 /*Pagination links*/
 .pagination {
-  font-size: 13px;
-  line-height: 19px; }
+  font-size: 13px; }
   .pagination a {
     margin-right: 40px;
     width: 110px; }
 
 .pagination.small {
-  font: 13px/19px "Helvetica Neue", Helvetica, Arial, sans-serif; }
+  font: 13px "Helvetica Neue", Helvetica, Arial, sans-serif; }
   .pagination.small .title {
     font-weight: 700;
     margin-right: 15px; }
@@ -304,7 +284,8 @@ header {
 ul.metadata {
   list-style: none; }
   ul.metadata li {
-    font: 11px/14px Georgia, "Times New Roman", Times, serif;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 11px;
     font-style: italic;
     margin-left: 0; }
   ul.metadata li.date {
@@ -347,20 +328,13 @@ dl.metadata {
   margin: 0 0 60px 0;
   position: relative; }
 
-#content.home article header h1, #content.single article header h1, #content.page article header h1, #content.archive article header h1 {
-  font-size: 20px;
-  font-weight: 400;
-  line-height: 30px; }
 #content.home article section, #content.single article section, #content.page article section, #content.archive article section {
-  font: 17px/27px Georgia, "Times New Roman", Times, serif; }
-  #content.home article section ul li, #content.home article section ol li, #content.home article section dt, #content.home article section dd, #content.home article section blockquote, #content.single article section ul li, #content.single article section ol li, #content.single article section dt, #content.single article section dd, #content.single article section blockquote, #content.page article section ul li, #content.page article section ol li, #content.page article section dt, #content.page article section dd, #content.page article section blockquote, #content.archive article section ul li, #content.archive article section ol li, #content.archive article section dt, #content.archive article section dd, #content.archive article section blockquote {
-    font-size: 17px;
-    line-height: 27px; }
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 17px; }
+  #content.home article section p, #content.home article section ul li, #content.home article section ol li, #content.home article section dt, #content.home article section dd, #content.home article section blockquote, #content.single article section p, #content.single article section ul li, #content.single article section ol li, #content.single article section dt, #content.single article section dd, #content.single article section blockquote, #content.page article section p, #content.page article section ul li, #content.page article section ol li, #content.page article section dt, #content.page article section dd, #content.page article section blockquote, #content.archive article section p, #content.archive article section ul li, #content.archive article section ol li, #content.archive article section dt, #content.archive article section dd, #content.archive article section blockquote {
+    font-size: 17px; }
   #content.home article section code, #content.home article section small, #content.single article section code, #content.single article section small, #content.page article section code, #content.page article section small, #content.archive article section code, #content.archive article section small {
-    font-size: 13px;
-    line-height: 19px; }
-  #content.home article section p, #content.single article section p, #content.page article section p, #content.archive article section p {
-    font: 17px/27px Georgia, "Times New Roman", Times, serif; }
+    font-size: 13px; }
   #content.home article section img, #content.single article section img, #content.page article section img, #content.archive article section img {
     max-width: 100%;
     box-shadow: 0px 0px 8px rgba(18, 7, 6, 0.3); }
@@ -383,7 +357,9 @@ button, .button, input[type=submit], a.button {
   color: #5d504f;
   padding: 8px 10px;
   border-radius: 3px;
-  font: 700 13px/19px "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-align: center;
   text-shadow: 0px 1px 0px rgba(255, 254, 254, 0.3);
   border: 1px solid rgba(18, 7, 6, 0.2);
@@ -409,7 +385,8 @@ button.alt:hover, .button.alt:hover, input[type=submit].alt:hover {
 /*Search - not implemented*/
 #searchform input {
   width: 100%;
-  min-width: 215px; }
+  box-sizing: border-box;
+  -moz-box-sizing: border-box; }
 
 /*404*/
 #content.fourohfour .main {
@@ -420,35 +397,28 @@ button.alt:hover, .button.alt:hover, input[type=submit].alt:hover {
   #search #search_button {
     display: none; }
   #search #search_form input {
-    width: 190px;
     font-size: 11px; }
 
 /*MOBILE*/
 @media only screen and  (max-width: 767px) {
   /*Typography*/
   h1 {
-    font-size: 24px;
-    line-height: 32px; }
+    font-size: 24px; }
 
   h2 {
-    font-size: 20px;
-    line-height: 30px; }
+    font-size: 20px; }
 
   h3 {
-    font-size: 17px;
-    line-height: 27px; }
+    font-size: 17px; }
 
   h4 {
-    font-size: 13px;
-    line-height: 19px; }
+    font-size: 13px; }
 
   h5 {
-    font-size: 11px;
-    line-height: 14px; }
+    font-size: 11px; }
 
   h6 {
-    font-size: 10px;
-    line-height: 12px; }
+    font-size: 10px; }
 
   /*Metadata content*/
   ul.metadata.vertical {

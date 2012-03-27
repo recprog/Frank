@@ -17,7 +17,9 @@
       display: block;
       height: 15px;
       color: #050000;
-      font: 700 11px/14px "Helvetica Neue", Helvetica, Arial, sans-serif; }
+      font-style: 700;
+      font-size: 11px;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
     #page_header nav .menu li a:hover {
       color: #5d504f; }
   #page_header nav .menu li:first-child {
@@ -31,6 +33,5 @@
   margin-bottom: 30px; }
   #sub_header p {
     font-size: 11px;
-    line-height: 14px;
     color: #5d504f;
     margin-top: 0; }

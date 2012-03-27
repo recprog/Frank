@@ -8,7 +8,8 @@ body {
 #webbynode_promo {
 	margin-top: $row-height;
 	small {
-		font: $font-xx-small $sans-serif;
+		font-size: $font-xx-small;
+		font-family: $sans-serif;
 		display: block;
 		margin-bottom: 2px; 
 	}
@@ -38,7 +39,8 @@ body {
 
 .slideshow .captions li {
 	display:none;
-	font:$font-x-small $sans-serif !important;
+	font-size:$font-x-small !important;
+	font-family: $sans-serif !important;
 }
 
 .slideshow .captions li.active {
@@ -80,7 +82,10 @@ body {
 	background: #ded3d1;
 	color: #3d302f;
 	cursor: pointer;
-	font: $bold 10px/20px $sans-serif !important;
+	font-weight: $bold !important; 
+	font-size:10px !important;
+	line-height:20px !important;
+	font-family: $sans-serif !important;
 	text-align: center;
 	width: 20px;
 	height: 20px; }

@@ -16,7 +16,7 @@
 	h1 {
 		display: block;
 		padding-top: 0;
-		font: $font-x-large $sans-serif; }
+		font-size: $font-x-large; }
 	p { @include font-size-small(); }
 	p.large { @include font-size-large(); } 
 }
@@ -52,7 +52,8 @@
 
 #content.page #projects_navigation dt, #content.page #projects_navigation dd {
 	margin: 0;
-	font: $font-x-small $sans-serif;
+	font-size: $font-x-small;
+	font-family:$sans-serif;
 	margin-right: 20px;
 	float: left; }
 
@@ -161,7 +162,8 @@ ul#projects_list {
 	}
 
 #content.page #projects_list div p {
-	font: $font-x-small $sans-serif; }
+	font-size: $font-x-small;
+	font-family:$sans-serif; }
 	
 #p5554 .slideshow .slide-a, #p5554 .slideshow .slide-b {
 	background-image: url("/wp-content/images/pages/iconic/iconic_sprite.png"); }	
@@ -211,7 +213,8 @@ ul#projects_list {
 	#projects_list p {
 		display: block;
 		margin-top:5px;
-		font:$font-medium $serif !important; 
+		font-size:$font-medium !important; 
+		font-family:$serif !important; 
 	}
 	
 	#projects_list a {
@@ -227,7 +230,8 @@ ul#projects_list {
 		display: block;
 		width:100%; 
 		color:$color_midtone;
-		font:$font-large $sans-serif !important;
+		font-size:$font-large !important; 
+		font-family:$sans-serif !important;
 	}
 	
 	#project_preview {

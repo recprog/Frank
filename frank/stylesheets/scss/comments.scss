@@ -4,22 +4,20 @@
 	margin-top: $row-height * 4;
 	.no_comments, .comments_closed {
 		margin-top: $row-height * 2;
-		font: $font-xx-large $serif;
 		font-style: italic;
+		font-size: $font-xx-large; 
+		font-family: $serif;
 		color: $color_midtone; 
 	}
 	#comments {
 		list-style: none;
 		
-		li {
+		li.comment {
 			margin:$row-height*4 0;
 			background: none;
 		}
 		li:first-child { margin-top: 0px; }
 
-		.comment-info {
-			text-align: right; 
-		}
 		.content {
 			font-family: $serif;
 			p {
@@ -28,17 +26,14 @@
 			}
 			blockquote, blockquote p { @include font-size-small(); } 
 		}
-		ul.metadata.vertical {
-			li { margin:0 0 5px 0; }
- 		}
 		.comment-edit-link {
 			font-weight: $bold;
-			display: block;
-			margin-top: $row-height; 
+			color:$color-accent;
 		} 
 	}
 	#no_comments {
-		font: $font-xx-large $serif;
+		font-family: $serif;
+		font-size:$font-xx-large;
 		margin: $row-height * 2 0;
 		color: $color_midtone; 
 	}
@@ -72,4 +67,12 @@
 		} 
 	}
 	#submit { margin-top: $row-height; } 
+}
+
+/*MOBILE*/
+@media only screen and  (max-width: 767px) {
+	
+	#comments_container #commentform #comment_form_info input[type=text] {
+		text-align: left; 
+	}
 }

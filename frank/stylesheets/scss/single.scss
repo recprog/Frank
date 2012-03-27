@@ -90,3 +90,16 @@
 			} 
 		}
 	}
+	
+/*MOBILE*/
+@media only screen and  (max-width: 767px) {
+	
+	.post-info .previous {
+		a:before {
+			content:"Previous Post: ";
+		}
+		nav {
+			display:none !important;
+		}
+	}	
+}

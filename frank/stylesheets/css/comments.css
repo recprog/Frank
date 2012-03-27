@@ -2,35 +2,30 @@
   margin-top: 60px; }
   #comments_container .no_comments, #comments_container .comments_closed {
     margin-top: 30px;
-    font: 28px/35px Georgia, "Times New Roman", Times, serif;
     font-style: italic;
+    font-size: 28px;
+    font-family: Georgia, "Times New Roman", Times, serif;
     color: #5d504f; }
   #comments_container #comments {
     list-style: none; }
-    #comments_container #comments li {
+    #comments_container #comments li.comment {
       margin: 60px 0;
       background: none; }
     #comments_container #comments li:first-child {
       margin-top: 0px; }
-    #comments_container #comments .comment-info {
-      text-align: right; }
     #comments_container #comments .content {
       font-family: Georgia, "Times New Roman", Times, serif; }
       #comments_container #comments .content p {
         font-size: 17px;
-        line-height: 27px;
         color: #3d302f; }
       #comments_container #comments .content blockquote, #comments_container #comments .content blockquote p {
-        font-size: 13px;
-        line-height: 19px; }
-    #comments_container #comments ul.metadata.vertical li {
-      margin: 0 0 5px 0; }
+        font-size: 13px; }
     #comments_container #comments .comment-edit-link {
       font-weight: 700;
-      display: block;
-      margin-top: 15px; }
+      color: #ea0000; }
   #comments_container #no_comments {
-    font: 28px/35px Georgia, "Times New Roman", Times, serif;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 28px;
     margin: 30px 0;
     color: #5d504f; }
   #comments_container #commentform input[type=text], #comments_container #commentform textarea {
@@ -50,9 +45,13 @@
   #comments_container #commentform textarea:focus {
     height: 375px; }
   #comments_container #comment_form header h1 {
-    font-size: 20px;
-    line-height: 30px; }
+    font-size: 20px; }
   #comments_container #comment_form header .loggedin {
     font-style: italic; }
   #comments_container #submit {
     margin-top: 15px; }
+
+/*MOBILE*/
+@media only screen and  (max-width: 767px) {
+  #comments_container #commentform #comment_form_info input[type=text] {
+    text-align: left; } }

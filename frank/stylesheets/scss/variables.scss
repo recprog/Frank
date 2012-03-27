@@ -45,53 +45,45 @@ $x-small-lineheight: 14px;
 $xx-small-lineheight: 12px;
 $xxx-small-lineheight: 11px;
 
-$font-xxx-large: #{$xxx-large}/#{$xxx-large-lineheight};
-$font-xx-large: #{$xx-large}/#{$xx-large-lineheight};
-$font-x-large: #{$x-large}/#{$x-large-lineheight};
-$font-large: #{$large}/#{$large-lineheight};
-$font-medium: #{$medium}/#{$medium-lineheight};
-$font-small: #{$small}/#{$small-lineheight};
-$font-x-small: #{$x-small}/#{$x-small-lineheight};
-$font-xx-small: #{$xx-small}/#{$xx-small-lineheight};
+$font-xxx-large: #{$xxx-large};
+$font-xx-large: #{$xx-large};
+$font-x-large: #{$x-large};
+$font-large: #{$large};
+$font-medium: #{$medium};
+$font-small: #{$small};
+$font-x-small: #{$x-small};
+$font-xx-small: #{$xx-small};
 
 @mixin font-size-xxx-large() {
 font-size: $xxx-large;
-line-height: 47px;
 }
 
 @mixin font-size-xx-large() {
 font-size: $xx-large;
-line-height: 35px;
 }
 
 @mixin font-size-x-large() {
 font-size: $x-large;
-line-height: 32px;
 }
 
 @mixin font-size-large() {
 font-size: $large;
-line-height: 30px;
 }
 
 @mixin font-size-medium() {
 font-size: $medium;
-line-height: 27px;
 }
 
 @mixin font-size-small() {
 font-size: $small;
-line-height: 19px;
 }
 
 @mixin font-size-x-small() {
 font-size: $x-small;
-line-height: 14px;
 }
 
 @mixin font-size-xx-small() {
 font-size: $xx-small;
-line-height: 12px;
 }
 
 @mixin default-shadow() {

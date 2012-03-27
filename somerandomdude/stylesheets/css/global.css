@@ -7,7 +7,8 @@ body {
 #webbynode_promo {
   margin-top: 15px; }
   #webbynode_promo small {
-    font: 10px/12px "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 10px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     display: block;
     margin-bottom: 2px; }
   #webbynode_promo #webbynode_promo_link {
@@ -33,7 +34,8 @@ body {
 
 .slideshow .captions li {
   display: none;
-  font: 11px/14px "Helvetica Neue", Helvetica, Arial, sans-serif !important; }
+  font-size: 11px !important;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important; }
 
 .slideshow .captions li.active {
   display: block; }
@@ -72,7 +74,10 @@ body {
   background: #ded3d1;
   color: #3d302f;
   cursor: pointer;
-  font: 700 10px/20px "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 10px !important;
+  line-height: 20px !important;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
   text-align: center;
   width: 20px;
   height: 20px; }

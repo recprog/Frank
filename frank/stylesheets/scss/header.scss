@@ -19,7 +19,9 @@
 						display: block;
 						height: $row-height;
 						color: $color_off_black;
-						font: $bold $font-x-small $sans-serif;
+						font-style:$bold;
+						font-size:$font-x-small;
+						font-family:$sans-serif;
 					}
 					a:hover { color: $color_midtone; } 
 				}

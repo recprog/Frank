@@ -28,17 +28,18 @@
 	<ul id="comments">
 	<?php foreach ($comments as $comment) : ?>
 		<li class="comment row">
-			<div class="comment-info three columns">
-				<ul class='metadata vertical'>
-					<li class="date"><time datetime="<?php the_time('Y-m-d'); ?>" pubdate><?php comment_date('F d, Y'); ?></time></li>
-					<li class='author' id="vcard-<?php comment_ID() ?>">By <a class="url fn" href="<?php comment_author_url(); ?>"><?php comment_author(); ?></a></li>
-				</ul>
-				
-				<?php edit_comment_link('edit'); ?>
-			</div>
-			<div class="content nine columns">
+			<div class="content nine columns push-three">
 				<?php if ($comment->comment_approved == '0') : echo "<span id='comment_moderation'>Your comment is awaiting moderation.</span>"; endif; ?>
 				<?php comment_text() ?>	
+			</div>
+			<div class="comment-info three columns pull-nine">
+				<ul class='metadata vertical'>
+					<li class="date"><time datetime="<?php the_time('Y-m-d'); ?>"><?php comment_date('F d, Y g:i A'); ?></time></li>
+					<li class='author' id="vcard-<?php comment_ID() ?>">By <a class="url fn" href="<?php comment_author_url(); ?>"><?php comment_author(); ?></a></li>
+					<li><?php edit_comment_link('edit'); ?></li>
+				</ul>
+				
+				
 			</div>
 		</li>
 		<?php $oddcomment = ( empty( $oddcomment ) ) ? 'class="alt" ' : ''; ?>

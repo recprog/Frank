@@ -2,7 +2,7 @@
 	
 body {
 	@include reset-dimensions();
-	font: 62.5% $serif;
+	font: 62.5%/1.55 $serif;
 	background: $color_highlight;
 	color: $color_off_black;
 	height: 100%;
@@ -10,7 +10,6 @@ body {
 }
 
 /*Images*/
-img { -ms-interpolation-mode: bicubic; }
 img.noshadow { box-shadow: none !important; }
 
 /*Anchor tags*/
@@ -26,6 +25,7 @@ a:hover { color: $color_accent_alt; }
 h1, h2, h3, h4, h5, h6 {
 	font-family: $sans-serif;
 	font-weight: $normal;
+	line-height:1.4;
 	padding-top: 0px; 
 	margin-bottom: $row-height; 
 }
@@ -50,7 +50,6 @@ p.small { @include font-size-small(); }
 p.x-small { @include font-size-x-small(); }
 p.xx-small { @include font-size-xx-small(); }
 
-/*KILL?*/
 p:first-child { margin-top: 0; }
 p:last-child { margin-bottom: 0; }
 
@@ -75,16 +74,18 @@ blockquote {
 	
 	p:last-child:after { content: "”"; } 
 }
+cite, blockquote[cite]:after, cite {
+	font-family: $sans-serif;
+	font-size:$font-small;
+}
 blockquote[cite]:after {
 	content: "—" attr(cite);
-	font: $font-small $sans-serif;
 	display: block;
 	color: $color_off_black;
 	margin-top: $row-height; 
 }
 cite {
 	margin-left: $gutter-width;
-	font: $font-small $sans-serif;
 	margin-top: -1em;
 	margin-bottom: 2em; 
 }
@@ -139,8 +140,9 @@ ol { list-style: decimal; }
 dl {
 	margin: $row-height 0;
 	padding-top: 5px;
+	font-family:$serif;
 	dt, dd {
-		font: $font-x-small $serif; 
+		@include font-size-x-small()
 	}
 	dt {
 		font-weight: $bold;
@@ -158,20 +160,19 @@ em { font-style: italic; }
 
 /*Horizontal rule*/
 hr {
-	height: 1px;
-	border: 0;
-	margin: $row-height 0;
-	padding: 0;
-	background-color: #b5aaa9; 
+	border-color: $color-light; 
 }
 
 header {
 	margin-bottom:$row-height;
 	h1 {
 		margin-bottom:0;
+		font-size: $large;
 	}
 	h2 {
-		font: italic $font-small $serif; 
+		font-family:$serif;
+		font-style: italic;
+		@include font-size-small(); 
 		color:$color-midtone;
 		margin:5px 0 0 0;
 	}
@@ -260,7 +261,8 @@ ul.metadata {
 	list-style: none;
 	li {
 		@extend .reset-dimensions;
-		font: $font-x-small $serif;
+		font-family: $serif;
+		@include font-size-x-small(); 
 		font-style: italic; 
 		margin-left:0;
 	}
@@ -315,18 +317,11 @@ dl.metadata {
 
 #content.home, #content.single, #content.page, #content.archive {
 	article {
-		
-		header {
-			h1 {
-				font-size: $large;
-				font-weight: $normal;
-				line-height: $row-height * 2; }
-		}
 		section {
-			font: $font-medium $serif;
-			ul li, ol li, dt, dd, blockquote { @include font-size-medium; }
+			font-family: $serif;
+			@include font-size-medium;
+			p, ul li, ol li, dt, dd, blockquote { @include font-size-medium; }
 			code, small { @include font-size-small; }
-			p { font: $font-medium $serif; }
 			img {
 				max-width: 100%;
 				@include default-shadow(); 
@@ -350,7 +345,9 @@ button, .button, input[type=submit], a.button {
 	color: $color_midtone;
 	padding: 8px 10px;
 	border-radius: 3px;
-	font: $bold $font-small $sans-serif;
+	font-weight: $bold;
+	@include font-size-small;
+	font-family: $sans-serif;
 	text-align: center;
 	text-shadow:0px 1px 0px rgba(255,254,254,.3);
 	border: 1px solid rgba(18, 7, 6, 0.2);
@@ -378,8 +375,8 @@ button.alt:hover, .button.alt:hover, input[type=submit].alt:hover {
 /*Search - not implemented*/
 #searchform input {
 	width:100%;
-	min-width:215px;
-	
+	box-sizing:border-box; 
+	-moz-box-sizing:border-box;
 }
 
 /*404*/
@@ -393,7 +390,6 @@ button.alt:hover, .button.alt:hover, input[type=submit].alt:hover {
 	#search_button {
 		display: none; }
 	#search_form input {
-		width: 190px;
 		font-size: $x-small; } }
 		
 		

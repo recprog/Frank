@@ -22,7 +22,8 @@ aside {
 
 @media only screen and  (max-width: 767px) {
 	#bio_pic {
-		font: $font-medium $sans-serif;
+		font-size:$font-medium; 
+		font-family:$sans-serif;
 		color:$color_midtone; 
 		background:none;
 		width:auto;

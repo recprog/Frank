@@ -4,7 +4,8 @@
   margin-bottom: 30px;
   padding-bottom: 5px;
   border-bottom: 1px #f0eceb solid;
-  font: 13px/19px "Helvetica Neue", Helvetica, Arial, sans-serif; }
+  font-size: 13px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
   #content.home .content-header .caption {
     font-style: italic;
     color: #5d504f;
@@ -14,31 +15,25 @@
 #content.home .content.oneup .post .read-more, #content.home .content.twoup .post .read-more, #content.home .content.threeup .post .read-more, #content.home .content.fourup .post .read-more {
   margin-top: 15px; }
   #content.home .content.oneup .post .read-more .more, #content.home .content.twoup .post .read-more .more, #content.home .content.threeup .post .read-more .more, #content.home .content.fourup .post .read-more .more {
-    font-size: 11px;
-    line-height: 14px; }
+    font-size: 11px; }
 #content.home .content.oneup.large article header h1 {
-  font-size: 20px;
-  line-height: 30px; }
+  font-size: 20px; }
 #content.home .content.oneup.large article section {
   margin: 0 0 15px 0; }
   #content.home .content.oneup.large article section p {
     font-style: italic;
-    font-size: 38px;
-    line-height: 47px; }
+    font-size: 38px; }
 #content.home .content.twoup .post, #content.home .content.threeup .post, #content.home .content.fourup .post {
   margin-top: 15px; }
   #content.home .content.twoup .post header h1, #content.home .content.threeup .post header h1, #content.home .content.fourup .post header h1 {
     font-size: 13px;
-    line-height: 19px;
     font-weight: 700; }
     #content.home .content.twoup .post header h1 a, #content.home .content.threeup .post header h1 a, #content.home .content.fourup .post header h1 a {
       text-decoration: none; }
   #content.home .content.twoup .post section p, #content.home .content.threeup .post section p, #content.home .content.fourup .post section p {
-    font-size: 13px;
-    line-height: 19px; }
+    font-size: 13px; }
 #content.home .content.twoup .metadata li, #content.home .content.threeup .metadata li, #content.home .content.fourup .metadata li {
-  font-size: 11px;
-  line-height: 14px; }
+  font-size: 11px; }
 #content.home .content.twoup .post {
   float: left !important; }
 #content.home .content.twoup .post:nth-child(2n+1) {
@@ -76,5 +71,4 @@
 /*MOBILE*/
 @media only screen and  (max-width: 767px) {
   #content.home .content.oneup.large article section p {
-    font-size: 24px;
-    line-height: 32px; } }
+    font-size: 24px; } }
