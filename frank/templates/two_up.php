@@ -15,6 +15,7 @@
 				<h1 class="truncate"><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h1>
 			</header>
 			<section>
+				<?php the_post_thumbnail( 'two-up-thumbnail' ); ?>
 				<?php the_content('Read On&hellip;'); ?>
 			</section>
 			<footer>

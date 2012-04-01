@@ -7,9 +7,9 @@
 <?php get_header(); ?>
 <div id="content" class="home">
 	<?php
-	$franklin_street_sections = get_option( '_franklin_street_home_sections' );
-	if($franklin_street_sections) {
-		foreach($franklin_street_sections as $section) {
+	$frank_sections = get_option( '_frank_street_home_sections' );
+	if($frank_sections) {
+		foreach($frank_sections as $section) {
 			$display_type=$section['display_type'];
 			$title=$section['title'];
 			$caption=$section['caption'];
@@ -17,8 +17,8 @@
 			$categories=$section['categories'];
 			
 			switch($display_type) {
-				case 'franklin_street_loop':
-					include 'templates/franklin_street_loop.php';
+				case 'srd_loop':
+					include 'templates/srd_loop.php';
 					break;
 				case 'one_up_reg':
 					$queryObject = new WP_Query(array('posts_per_page' => $num_posts, 'cat' => implode(",",array_filter($categories))));

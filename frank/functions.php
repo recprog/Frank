@@ -20,8 +20,22 @@ wp_deregister_script( 'l10n' );
 add_action('init', 'my_init_method'); 
 }
 
-add_theme_support( 'post-formats', array( 'aside', 'gallery', 'link', 'image', 'quote', 'status', 'video', 'audio', 'chat' ) );
-add_post_type_support( 'page', 'post-formats' );
+
+if ( function_exists( 'add_theme_support' ) ) { 
+  add_theme_support( 'post-formats', array( 'aside', 'gallery', 'link', 'image', 'quote', 'status', 'video', 'audio', 'chat' ) );
+  add_post_type_support( 'page', 'post-formats' );
+
+  add_theme_support( 'post-thumbnails' ); 
+  add_image_size( 'post-image', 535, 9999 ); //550 pixels wide (and unlimited height)
+  add_image_size( 'featured-image', 980, 200, true);
+  add_image_size( 'excerpt-image', 724, 160, true);
+  add_image_size( 'default-thumbnail', 535, 200, true);
+  add_image_size( 'two-up-thumbnail', 468, 200, true);
+  add_image_size( 'three-up-thumbnail', 297, 150, true);
+  add_image_size( 'four-up-thumbnail', 212, 100, true);
+  
+}
+
 
 /**
  * @package WordPress
@@ -154,55 +168,54 @@ add_filter('dynamic_sidebar_params','widget_first_last_classes');
 // = HOME PAGE SECTIONS =
 // ======================
 
-function franklin_st_home()
+function frank_home()
 {
     include 'admin/admin-options-home.php';
 }
 
-function franklin_st_general()
+function frank_general()
 {
     include 'admin/admin-options-general.php';
 }
 
 // add our menus
-function franklin_street_admin_menu()
+function frank_admin_menu()
 {
-    add_menu_page( 'Franklin Street', 'Franklin Street', 'manage_options', 'franklin-street', 'franklin_st_general' );
+    add_menu_page( 'Frank', 'Frank', 'manage_options', 'frank', 'frank_general' );
 
-	add_submenu_page( 'franklin-street', 'Franklin Street', 'General', 'manage_options', 'franklin-street', 'franklin_st_general');
-    add_submenu_page( 'franklin-street', 'Franklin Street', 'Home Page Sections', 'manage_options', 'franklin-street-home', 'franklin_st_home');
+	add_submenu_page( 'frank', 'Frank', 'General', 'manage_options', 'frank', 'frank_general');
+    add_submenu_page( 'frank', 'Frank', 'Home Page Sections', 'manage_options', 'frank-home', 'frank_home');
 }
 
-add_action( 'admin_menu', 'franklin_street_admin_menu' );
+add_action( 'admin_menu', 'frank_admin_menu' );
 
-function franklin_street_admin_assets()
+function frank_admin_assets()
 {
     if( is_admin() )
     {
         wp_enqueue_script( 'jquery-ui-sortable' );
-        wp_enqueue_style( 'franklin-street-admin', get_bloginfo( 'template_directory' ) . '/admin/css/franklin-street-options.css', NULL, NULL, NULL );
-        wp_enqueue_script( 'franklin-street-admin', get_bloginfo( 'template_directory' ) . '/admin/js/franklin-street-utils.js', 'jquery', NULL, true );
+        wp_enqueue_style( 'frank-admin', get_bloginfo( 'template_directory' ) . '/admin/css/frank-options.css', NULL, NULL, NULL );
+        wp_enqueue_script( 'frank-admin', get_bloginfo( 'template_directory' ) . '/admin/js/frank-utils.js', 'jquery', NULL, true );
     }
 }    
  
-add_action( 'init', 'franklin_street_admin_assets' );
+add_action( 'init', 'frank_admin_assets' );
 
-function franklin_street_footer() {	
-	$franklin_street_general = get_option( '_franklin_street_general' );
-    if($franklin_street_general) echo stripslashes($franklin_street_general['footer']);
+function frank_footer() {	
+	$frank_general = get_option( '_frank_general' );
+    if($frank_general) echo stripslashes($frank_general['footer']);
 }
 
-function franklin_street_header() {
-	
-	$franklin_street_general = get_option( '_franklin_street_general' );
-    if($franklin_street_general) echo stripslashes($franklin_street_general['header']);
+function frank_header() {
+	$frank_general = get_option( '_frank_general' );
+    if($frank_general) echo stripslashes($frank_general['header']);
 }
 
-function franklin_devmode() {
-	$franklin_street_general = get_option( '_franklin_street_general' );
-	if($franklin_street_general) return $franklin_street_general['devmode'];
+function frank_devmode() {
+	$frank_general = get_option( '_frank_general' );
+	if($frank_general) return $frank_general['devmode'];
 }
 
-add_action('wp_footer', 'franklin_street_footer');
-add_action('wp_head', 'franklin_street_header');
+add_action('wp_footer', 'frank_footer');
+add_action('wp_head', 'frank_header');
 ?>

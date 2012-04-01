@@ -19,7 +19,7 @@
 	</footer>
 </div>
 <?php wp_footer(); ?>
-<?php if(franklin_devmode()) : ?>
+<?php if(frank_devmode()) : ?>
 	<script src="<?php bloginfo( 'stylesheet_directory' ); ?>/js/frank.slideshow.js"></script>
 	<script src="<?php bloginfo( 'stylesheet_directory' ); ?>/js/simplebox.js"></script>
 	<script src="<?php bloginfo( 'stylesheet_directory' ); ?>/js/main.js"></script>

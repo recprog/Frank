@@ -1,0 +1,28 @@
+.frank-group { overflow:hidden; zoom:1; }
+
+.frank-group label { font-weight:bold; }
+
+.frank-content-section { width:640px; margin-bottom:20px; background:#fff; border:2px solid #e3e3e3; border-radius:5px; -moz-border-radius:5px; -webkit-border-radius:5px; padding:25px 25px 25px 35px; position:relative; }
+
+span.frank-handle { display:block; position:absolute; top:28px; left:8px; background:url(../images/handle.gif) center center no-repeat; width:20px; height:20px; cursor:pointer; }
+
+a.frank-content-section-delete { position:absolute; top:25px; right:25px; }
+.frank-content-section:nth-child(1) a.frank-content-section-delete { display:none; }
+
+.frank-display-type { margin-bottom:13px; }
+
+.frank-fields { width:320px; float:left; }
+.frank-fields label { display:block; margin-bottom:3px; }
+#frank-content-sections .frank-fields input,
+#frank-content-sections .frank-fields textarea { width:275px; margin-bottom:13px; }
+#frank-content-sections .frank-fields textarea { height:125px; }
+
+#frank-general textarea { display:block; width: 550px; height:250px; margin-bottom:13px; }
+
+.frank-categories { width:320px; float:left; }
+.frank-categories p { font-weight:bold; }
+.frank-categories label { font-weight:normal; }
+.frank-categories ul.frank-group li { width:50%; float:left; padding-top:13px; }
+.frank-categories ul.frank-group li:nth-child(2) { text-align:right; }
+
+#frank-add-content-section a { width:662px; display:block; background:#fff; border:1px solid #e3e3e3; border-radius:5px; -moz-border-radius:5px; -webkit-border-radius:5px; padding:15px; text-align:center; }

@@ -29,5 +29,7 @@ Theme URI:      http://somerandomdude.com/frank
 Description:    The next step of the Franklin Street theme.  
 Author:         P.J. Onori 
 Author URI:     http://somerandomdude.com/hello/  
-Version:        0.1.0  
+Version:        0.1.0
+License:		Creative Commons Share Alike 3.0
+License URI:	http://creativecommons.org/licenses/by-sa/3.0/us/  
 */"|cat - ../style.css > /tmp/out && mv /tmp/out ../style.css

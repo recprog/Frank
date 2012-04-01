@@ -1,7 +1,7 @@
 <?php
 
     // default data for first run
-    $franklin_defaults = array(
+    $frank_defaults = array(
                     'title'             => 'Section Title',
                     'caption'           => 'Section Caption',
                     'num_posts'         => 10
@@ -12,60 +12,60 @@
 <div class="wrap">
 
     <div id="icon-options-general" class="icon32"><br /></div>
-    <h2><?php _e('Franklin Street - Home Page Sections', 'franklinstreet'); ?></h2>
+    <h2><?php _e('Franklin Street - Home Page Sections', 'frankstreet'); ?></h2>
 
 
     <?php
-        $franklin_updated = false;
+        $frank_updated = false;
 
-        if ( !empty( $_POST ) && wp_verify_nonce( $_POST['franklin_key'], 'franklin_update_home_sections' ) )
+        if ( !empty( $_POST ) && wp_verify_nonce( $_POST['frank_key'], 'frank_update_home_sections' ) )
         {
-            $franklin_content_sections = array();
+            $frank_content_sections = array();
             foreach( $_POST as $key => $value )
             {
-                $keyflag = 'franklin-display-type-';
+                $keyflag = 'frank-display-type-';
                 if( substr( $key, 0, strlen( $keyflag ) ) == $keyflag )
                 {
                     // find our ID flag
-                    $franklin_section_flag = substr( $key, strlen( $keyflag ), strlen( $key ) );
+                    $frank_section_flag = substr( $key, strlen( $keyflag ), strlen( $key ) );
 
                     // since we're piggybacking some WP core functionality, the
                     // post categories have a slightly different ID depending on what was first
 
-                    if( $franklin_section_flag == 'default' )
+                    if( $frank_section_flag == 'default' )
                     {
-                        $franklin_post_category_flag = '';
+                        $frank_post_category_flag = '';
                     }
                     else
                     {
-                        $franklin_post_category_flag = '-' . $franklin_section_flag;
+                        $frank_post_category_flag = '-' . $frank_section_flag;
                     }
 
                     // add our data
-                    $franklin_content_sections[] = array(
-                                        'display_type'      => $_POST['franklin-display-type-' . $franklin_section_flag],
-                                        'title'             => $_POST['franklin-section-title-' . $franklin_section_flag],
-                                        'caption'           => $_POST['franklin-section-caption-' . $franklin_section_flag],
-                                        'num_posts'         => intval( $_POST['franklin-section-num-posts-' . $franklin_section_flag] ),
-                                        'categories'        => $_POST['post_category' . $franklin_post_category_flag]
+                    $frank_content_sections[] = array(
+                                        'display_type'      => $_POST['frank-display-type-' . $frank_section_flag],
+                                        'title'             => $_POST['frank-section-title-' . $frank_section_flag],
+                                        'caption'           => $_POST['frank-section-caption-' . $frank_section_flag],
+                                        'num_posts'         => intval( $_POST['frank-section-num-posts-' . $frank_section_flag] ),
+                                        'categories'        => $_POST['post_category' . $frank_post_category_flag]
                     );
                 }
             }
 
-            update_option( '_franklin_street_home_sections', $franklin_content_sections );
+            update_option( '_frank_street_home_sections', $frank_content_sections );
 
-            $franklin_updated = true;
+            $frank_updated = true;
 
         }
 
 
         // we need to pull our existing sections, if present
-        $franklin_street_sections = get_option( '_franklin_street_home_sections' );
+        $frank_sections = get_option( '_frank_street_home_sections' );
 
         // if there's nothing, we'll set our defaults
-        if( empty( $franklin_street_sections ) )
+        if( empty( $frank_sections ) )
         {
-            $franklin_street_sections[] = array(
+            $frank_sections[] = array(
                                         'display_type'      => 'default_loop',
                                         'title'             => '',
                                         'caption'           => '',
@@ -77,63 +77,63 @@
 
     ?>
 
-    <?php if( $franklin_updated ) : ?>
+    <?php if( $frank_updated ) : ?>
         <div class="message updated">
             <p><strong>Franklin Street</strong> home page sections updated.</p>
         </div>
         <!-- /message -->
     <?php endif ?>
 
-    <h3><?php _e('Content Sections', 'franklinstreet'); ?></h3>
+    <h3><?php _e('Content Sections', 'frankstreet'); ?></h3>
 
     <form action="" method="post">
 
-        <?php wp_nonce_field( 'franklin_update_home_sections', 'franklin_key' ); ?>
+        <?php wp_nonce_field( 'frank_update_home_sections', 'frank_key' ); ?>
 
-        <div id="franklin-content-sections">
+        <div id="frank-content-sections">
 
-            <?php foreach( $franklin_street_sections as $franklin_street_section_id => $franklin_street_section ) : ?>
-                <div class="franklin-content-section franklin-group<?php if( isset( $franklin_street_section['default'] ) ) : ?> franklin-content-section-default<?php endif ?>" id="franklin-street-section-<?php echo $franklin_street_section_id; ?>">
+            <?php foreach( $frank_sections as $frank_section_id => $frank_section ) : ?>
+                <div class="frank-content-section frank-group<?php if( isset( $frank_section['default'] ) ) : ?> frank-content-section-default<?php endif ?>" id="frank-street-section-<?php echo $frank_section_id; ?>">
 
-                    <span class="franklin-handle"></span>
-                    <a class="franklin-content-section-delete" href="#">X</a>
+                    <span class="frank-handle"></span>
+                    <a class="frank-content-section-delete" href="#">X</a>
 
-                    <div class="franklin-display-type">
-                        <label for="franklin-display-type-<?php echo ( isset( $franklin_street_section['default'] ) ? 'default' : $franklin_street_section_id ); ?>"><?php _e('Display Type:', 'franklinstreet'); ?></label>
-                        <select name="franklin-display-type-<?php echo ( isset( $franklin_street_section['default'] ) ? 'default' : $franklin_street_section_id ); ?>" id="franklin-display-type-<?php echo ( isset( $franklin_street_section['default'] ) ? 'default' : $franklin_street_section_id ); ?>">
-							<option<?php if( $franklin_street_section['display_type'] == 'default_loop' ) : ?> selected="selected"<?php endif ?> value="default_loop"><?php _e('Default Loop', 'franklinstreet'); ?></option>
-                            <option<?php if( $franklin_street_section['display_type'] == 'one_up_reg' ) : ?> selected="selected"<?php endif ?> value="one_up_reg"><?php _e('One Up (Regular)', 'franklinstreet'); ?></option>
-                            <option<?php if( $franklin_street_section['display_type'] == 'one_up_lg' ) : ?> selected="selected"<?php endif ?> value="one_up_lg"><?php _e('One Up (Large)', 'franklinstreet'); ?></option>
-                            <option<?php if( $franklin_street_section['display_type'] == 'two_up' ) : ?> selected="selected"<?php endif ?> value="two_up"><?php _e('Two Up', 'franklinstreet'); ?></option>
-							<option<?php if( $franklin_street_section['display_type'] == 'three_up' ) : ?> selected="selected"<?php endif ?> value="three_up"><?php _e('Three Up', 'franklinstreet'); ?></option>
-                            <option<?php if( $franklin_street_section['display_type'] == 'four_up' ) : ?> selected="selected"<?php endif ?> value="four_up"><?php _e('Four Up', 'franklinstreet'); ?></option>
-							<option<?php if( $franklin_street_section['display_type'] == 'franklin_street_loop' ) : ?> selected="selected"<?php endif ?> value="franklin_street_loop"><?php _e('Some Random Dude Loop', 'franklinstreet'); ?></option>
+                    <div class="frank-display-type">
+                        <label for="frank-display-type-<?php echo ( isset( $frank_section['default'] ) ? 'default' : $frank_section_id ); ?>"><?php _e('Display Type:', 'frankstreet'); ?></label>
+                        <select name="frank-display-type-<?php echo ( isset( $frank_section['default'] ) ? 'default' : $frank_section_id ); ?>" id="frank-display-type-<?php echo ( isset( $frank_section['default'] ) ? 'default' : $frank_section_id ); ?>">
+							<option<?php if( $frank_section['display_type'] == 'default_loop' ) : ?> selected="selected"<?php endif ?> value="default_loop"><?php _e('Default Loop', 'frankstreet'); ?></option>
+                            <option<?php if( $frank_section['display_type'] == 'one_up_reg' ) : ?> selected="selected"<?php endif ?> value="one_up_reg"><?php _e('One Up (Regular)', 'frankstreet'); ?></option>
+                            <option<?php if( $frank_section['display_type'] == 'one_up_lg' ) : ?> selected="selected"<?php endif ?> value="one_up_lg"><?php _e('One Up (Large)', 'frankstreet'); ?></option>
+                            <option<?php if( $frank_section['display_type'] == 'two_up' ) : ?> selected="selected"<?php endif ?> value="two_up"><?php _e('Two Up', 'frankstreet'); ?></option>
+							<option<?php if( $frank_section['display_type'] == 'three_up' ) : ?> selected="selected"<?php endif ?> value="three_up"><?php _e('Three Up', 'frankstreet'); ?></option>
+                            <option<?php if( $frank_section['display_type'] == 'four_up' ) : ?> selected="selected"<?php endif ?> value="four_up"><?php _e('Four Up', 'frankstreet'); ?></option>
+							<option<?php if( $frank_section['display_type'] == 'srd_loop' ) : ?> selected="selected"<?php endif ?> value="srd_loop"><?php _e('Some Random Dude Loop', 'frankstreet'); ?></option>
                         </select>
                     </div>
-                    <!-- /franklin-display-type -->
+                    <!-- /frank-display-type -->
 
-                    <div class="franklin-meta franklin-group">
+                    <div class="frank-meta frank-group">
 
-                        <div class="franklin-meta franklin-fields">
+                        <div class="frank-meta frank-fields">
                             <ul>
-                                <li class="franklin-section-title">
-                                    <label for="franklin-section-title-<?php echo ( isset( $franklin_street_section['default'] ) ? 'default' : $franklin_street_section_id ); ?>"><?php _e('Section Title', 'franklinstreet'); ?></label>
-                                    <input type="text" name="franklin-section-title-<?php echo ( isset( $franklin_street_section['default'] ) ? 'default' : $franklin_street_section_id ); ?>" id="franklin-section-title-<?php echo ( isset( $franklin_street_section['default'] ) ? 'default' : $franklin_street_section_id ); ?>" value="<?php echo !isset( $franklin_street_section['default'] ) ? stripslashes( $franklin_street_section['title'] ) : $franklin_defaults['title']; ?>" />
+                                <li class="frank-section-title">
+                                    <label for="frank-section-title-<?php echo ( isset( $frank_section['default'] ) ? 'default' : $frank_section_id ); ?>"><?php _e('Section Title', 'frankstreet'); ?></label>
+                                    <input type="text" name="frank-section-title-<?php echo ( isset( $frank_section['default'] ) ? 'default' : $frank_section_id ); ?>" id="frank-section-title-<?php echo ( isset( $frank_section['default'] ) ? 'default' : $frank_section_id ); ?>" value="<?php echo !isset( $frank_section['default'] ) ? stripslashes( $frank_section['title'] ) : $frank_defaults['title']; ?>" />
                                 </li>
-                                <li class="franklin-section-caption">
-                                    <label for="franklin-section-caption-<?php echo ( isset( $franklin_street_section['default'] ) ? 'default' : $franklin_street_section_id ); ?>"><?php _e('Section Caption', 'franklinstreet'); ?></label>
-                                    <textarea name="franklin-section-caption-<?php echo ( isset( $franklin_street_section['default'] ) ? 'default' : $franklin_street_section_id ); ?>" id="franklin-section-caption-<?php echo ( isset( $franklin_street_section['default'] ) ? 'default' : $franklin_street_section_id ); ?>"><?php echo !isset( $franklin_street_section['default'] ) ? stripslashes( $franklin_street_section['caption'] ) : $franklin_defaults['caption']; ?></textarea>
+                                <li class="frank-section-caption">
+                                    <label for="frank-section-caption-<?php echo ( isset( $frank_section['default'] ) ? 'default' : $frank_section_id ); ?>"><?php _e('Section Caption', 'frankstreet'); ?></label>
+                                    <textarea name="frank-section-caption-<?php echo ( isset( $frank_section['default'] ) ? 'default' : $frank_section_id ); ?>" id="frank-section-caption-<?php echo ( isset( $frank_section['default'] ) ? 'default' : $frank_section_id ); ?>"><?php echo !isset( $frank_section['default'] ) ? stripslashes( $frank_section['caption'] ) : $frank_defaults['caption']; ?></textarea>
                                 </li>
-                                <li class="franklin-section-num-posts">
-                                    <label for="franklin-section-num-posts-<?php echo ( isset( $franklin_street_section['default'] ) ? 'default' : $franklin_street_section_id ); ?>"><?php _e('Number of Posts', 'franklinstreet'); ?></label>
-                                    <input type="text" name="franklin-section-num-posts-<?php echo ( isset( $franklin_street_section['default'] ) ? 'default' : $franklin_street_section_id ); ?>" id="franklin-section-num-posts-<?php echo ( isset( $franklin_street_section['default'] ) ? 'default' : $franklin_street_section_id ); ?>" value="<?php echo !isset( $franklin_street_section['default'] ) ? stripslashes( $franklin_street_section['num_posts'] ) : $franklin_defaults['num_posts']; ?>" />
+                                <li class="frank-section-num-posts">
+                                    <label for="frank-section-num-posts-<?php echo ( isset( $frank_section['default'] ) ? 'default' : $frank_section_id ); ?>"><?php _e('Number of Posts', 'frankstreet'); ?></label>
+                                    <input type="text" name="frank-section-num-posts-<?php echo ( isset( $frank_section['default'] ) ? 'default' : $frank_section_id ); ?>" id="frank-section-num-posts-<?php echo ( isset( $frank_section['default'] ) ? 'default' : $frank_section_id ); ?>" value="<?php echo !isset( $frank_section['default'] ) ? stripslashes( $frank_section['num_posts'] ) : $frank_defaults['num_posts']; ?>" />
                                 </li>
                             </ul>
                         </div>
-                        <!-- /franklin-meta- franklin-fields -->
+                        <!-- /frank-meta- frank-fields -->
 
-                        <div class="franklin-meta franklin-categories categorydiv">
-                            <p><?php _e('Categories to Display', 'franklinstreet'); ?></p>
+                        <div class="frank-meta frank-categories categorydiv">
+                            <p><?php _e('Categories to Display', 'frankstreet'); ?></p>
                             <div class="tabs-panel">
                                 <ul class="categorychecklist">
                                     <?php wp_terms_checklist( ) ?>
@@ -144,8 +144,8 @@
                             <!-- in order to keep things WP standard, we're going to auto-check via jQuery -->
                             <script type="text/javascript">
                                 jQuery(document).ready(function(){
-                                    <?php foreach( $franklin_street_section['categories'] as $category ) : ?>
-                                        jQuery('#franklin-street-section-<?php echo $franklin_street_section_id; ?> ul.categorychecklist input').each(function(){
+                                    <?php foreach( $frank_section['categories'] as $category ) : ?>
+                                        jQuery('#frank-street-section-<?php echo $frank_section_id; ?> ul.categorychecklist input').each(function(){
                                             if(jQuery(this).val()==<?php echo $category; ?>){
                                                 jQuery(this).attr('checked', true);
                                             }
@@ -154,30 +154,30 @@
                                 });
                             </script>
 
-                            <ul class="franklin-group">
-                                <li><a class="button franklin-select" href="#"><?php _e('Select All', 'franklinstreet'); ?></a></li>
-                                <li><a class="button franklin-deselect" href="#"><?php _e('Deselect All', 'franklinstreet'); ?></a></li>
+                            <ul class="frank-group">
+                                <li><a class="button frank-select" href="#"><?php _e('Select All', 'frankstreet'); ?></a></li>
+                                <li><a class="button frank-deselect" href="#"><?php _e('Deselect All', 'frankstreet'); ?></a></li>
                             </ul>
                         </div>
-                        <!-- /franklin-meta- franklin-categories -->
+                        <!-- /frank-meta- frank-categories -->
                     </div>
-                    <!-- /franklin-meta franklin-group -->
+                    <!-- /frank-meta frank-group -->
 
                 </div>
-                <!-- /franklin-content-section -->
+                <!-- /frank-content-section -->
             <?php endforeach; ?>
 
         </div>
-        <!-- /franklin-content-sections -->
+        <!-- /frank-content-sections -->
 
-        <div id="franklin-add-content-section">
-            <a href="#"><?php _e('Add New Section', 'franklinstreet'); ?></a>
+        <div id="frank-add-content-section">
+            <a href="#"><?php _e('Add New Section', 'frankstreet'); ?></a>
         </div>
-        <!-- /franklin-add-content-section -->
+        <!-- /frank-add-content-section -->
 
-        <div id="franklin-save">
+        <div id="frank-save">
             <p class="submit">
-                <input type="submit" class="button-primary" value="<?php _e('Save', 'franklinstreet'); ?>" />
+                <input type="submit" class="button-primary" value="<?php _e('Save', 'frankstreet'); ?>" />
             </p>
         </div>
 

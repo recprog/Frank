@@ -16,6 +16,7 @@
 			<?php endif; ?>
 			<div id='content_main' class='row'>
 				<section class='nine columns push-three'>
+					<?php the_post_thumbnail( 'default-thumbnail' ); ?>
 					<?php the_content(); ?>
 					<?php wp_link_pages('before=<div class="pagination small"><span class="title">Pages:</span>&after=</div>'); ?>
 				</section>

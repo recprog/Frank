@@ -15,7 +15,10 @@
 			<header>
 				<h1 class="truncate"><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h1>
 			</header>
-			<section><?php the_content('Read On&hellip;'); ?> </section>
+			<section>
+				<?php the_post_thumbnail( 'three-up-thumbnail' ); ?>
+				<?php the_content('Read On&hellip;'); ?> 
+			</section>
 			<footer>
 				<ul class='metadata horizontal clear'>
 					<li class='time'><time datetime="<?php the_time('Y-m-d'); ?>" itemprop="datePublished"><?php the_time('F j, Y'); ?></time></li>										

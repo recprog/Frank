@@ -11,6 +11,7 @@
 			<header><h1><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h1></header>
 			<div class='row'>
 				<section class='nine columns push-three'>
+					<?php the_post_thumbnail( 'default-thumbnail' ); ?>
 					<?php the_content('Read On&hellip;'); ?>
 				</section>
 				<footer class='three columns pull-nine post-info'>	

@@ -1,33 +1,33 @@
 <div class="wrap">
 
     <div id="icon-options-general" class="icon32"><br /></div>
-    <h2><?php _e('Franklin Street - General', 'franklinstreet'); ?></h2>
+    <h2><?php _e('Franklin Street - General', 'frankstreet'); ?></h2>
 
 
     <?php
-        $franklin_general_updated = false;
+        $frank_general_updated = false;
 
-        if ( !empty( $_POST ) && wp_verify_nonce( $_POST['franklin_general_key'], 'franklin_update_general' ) )
+        if ( !empty( $_POST ) && wp_verify_nonce( $_POST['frank_general_key'], 'frank_update_general' ) )
         {
 	
-			$franklin_street_general['header']=$_POST['franklin-general-header'];
-			$franklin_street_general['footer']=$_POST['franklin-general-footer'];
-			$franklin_street_general['devmode']=$_POST['franklin-general-devmode'];
+			$frank_general['header']=$_POST['frank-general-header'];
+			$frank_general['footer']=$_POST['frank-general-footer'];
+			$frank_general['devmode']=$_POST['frank-general-devmode'];
 	
-            update_option( '_franklin_street_general', $franklin_street_general );
+            update_option( '_frank_general', $frank_general );
 
-            $franklin_general_updated = true;
+            $frank_general_updated = true;
 
         }
 
 
         // we need to pull our existing sections, if present
-        $franklin_street_general = get_option( '_franklin_street_general' );
+        $frank_general = get_option( '_frank_general' );
 
         // if there's nothing, we'll set our defaults
-        if( empty( $franklin_street_general ) )
+        if( empty( $frank_general ) )
         {
-            $franklin_street_general[] = array(
+            $frank_general[] = array(
                                         'header'      		=> '',
                                         'footer'            => '',
 										'devmode'			=> ''
@@ -36,36 +36,36 @@
 
     ?>
 
-    <?php if( $franklin_general_updated) : ?>
+    <?php if( $frank_general_updated) : ?>
         <div class="message updated">
             <p><strong>Franklin Street</strong> general settings updated.</p>
         </div>
         <!-- /message -->
     <?php endif ?>
 
-    <h3><?php _e('General Settings', 'franklinstreet'); ?></h3>
+    <h3><?php _e('General Settings', 'frankstreet'); ?></h3>
 
     <form action="" method="post">
 
-        <?php wp_nonce_field( 'franklin_update_general', 'franklin_general_key' ); ?>
+        <?php wp_nonce_field( 'frank_update_general', 'frank_general_key' ); ?>
 
-        <div id="franklin-general">
+        <div id="frank-general">
 				<div>
-                	<label for="franklin-general-header"><?php _e('Custom Header Code', 'franklinstreet'); ?></label>
-                	<textarea name="franklin-general-header"><?php echo stripslashes($franklin_street_general['header']); ?></textarea>
+                	<label for="frank-general-header"><?php _e('Custom Header Code', 'frankstreet'); ?></label>
+                	<textarea name="frank-general-header"><?php echo stripslashes($frank_general['header']); ?></textarea>
 				</div>
 				<div>
-					<label for="franklin-general-footer"><?php _e('Custom Footer Code', 'franklinstreet'); ?></label>
-                	<textarea name="franklin-general-footer"><?php echo stripslashes($franklin_street_general['footer']); ?></textarea>
+					<label for="frank-general-footer"><?php _e('Custom Footer Code', 'frankstreet'); ?></label>
+                	<textarea name="frank-general-footer"><?php echo stripslashes($frank_general['footer']); ?></textarea>
 				</div>
 				<div>
-					<input type="checkbox" name="franklin-general-devmode" value="devmode" <?php if($franklin_street_general['devmode']): ?> checked="checked" <?php endif; ?> /> <label for="franklin-general-devmode"><?php _e('Developer Mode', 'franklinstreet'); ?></label>
+					<input type="checkbox" name="frank-general-devmode" value="devmode" <?php if($frank_general['devmode']): ?> checked="checked" <?php endif; ?> /> <label for="frank-general-devmode"><?php _e('Developer Mode', 'frankstreet'); ?></label>
 				</div>
         </div>
 
-        <div id="franklin-save">
+        <div id="frank-save">
             <p class="submit">
-                <input type="submit" class="button-primary" value="<?php _e('Save', 'franklinstreet'); ?>" />
+                <input type="submit" class="button-primary" value="<?php _e('Save', 'frankstreet'); ?>" />
             </p>
         </div>
 
