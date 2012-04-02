@@ -18,30 +18,30 @@
 			
 			switch($display_type) {
 				case 'srd_loop':
-					include 'templates/srd_loop.php';
+					locate_template( array('templates/srd_loop.php'), $load = true, $require_once = true );
 					break;
 				case 'one_up_reg':
 					$queryObject = new WP_Query(array('posts_per_page' => $num_posts, 'cat' => implode(",",array_filter($categories))));
-					include 'templates/one_up_reg.php';
+					locate_template( array('templates/one_up_reg.php'), $load = true, $require_once = true );
 					break;
 				case 'one_up_lg':
 					$queryObject = new WP_Query(array('posts_per_page' => $num_posts, 'cat' => implode(",",array_filter($categories))));
-					include 'templates/one_up_lg.php';
+					locate_template( array('templates/one_up_lg.php'), $load = true, $require_once = true );
 					break;
 				case 'two_up':
 					$queryObject = new WP_Query(array('posts_per_page' => $num_posts, 'cat' => implode(",",array_filter($categories))));
-					include 'templates/two_up.php';
+					locate_template( array('templates/two_up.php'), $load = true, $require_once = true );
 					break;
 				case 'three_up':
 					$queryObject = new WP_Query(array('posts_per_page' => $num_posts, 'cat' => implode(",",array_filter($categories))));
-					include 'templates/three_up.php';
+					locate_template( array('templates/three_up.php'), $load = true, $require_once = true );
 					break;
 				case 'four_up':
 					$queryObject = new WP_Query(array('posts_per_page' => $num_posts, 'cat' => implode(",",array_filter($categories))));
-					include 'templates/four_up.php';
+					locate_template( array('templates/four_up.php'), $load = true, $require_once = true );
 					break;
 				default :
-					include 'templates/default_loop.php';
+					locate_template( array('templates/default_loop.php'), $load = true, $require_once = true );
 			}
 			
 		}

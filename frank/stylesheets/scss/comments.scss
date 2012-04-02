@@ -16,6 +16,9 @@
 			margin:$row-height*4 0;
 			background: none;
 		}
+		li.comment.bypostauthor  {
+			margin:$row-height*3 0;
+		}
 		li:first-child { margin-top: 0px; }
 
 		.content {
@@ -37,7 +40,7 @@
 		margin: $row-height * 2 0;
 		color: $color_midtone; 
 	}
-	#commentform {
+	#respond {
 		
 		input[type=text], textarea {
 			-moz-box-sizing: border-box;
@@ -66,7 +69,7 @@
 			} 
 		} 
 	}
-	#submit { margin-top: $row-height; } 
+	#submit { margin-top: $row-height; margin-left: 26.1%; } 
 }
 
 /*MOBILE*/

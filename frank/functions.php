@@ -1,5 +1,12 @@
 <?php
 
+if ( ! isset( $content_width ) ) $content_width = 980;
+
+define('HEADER_TEXTCOLOR', 'ffffff');
+define('HEADER_IMAGE', '%s/images/default_header.jpg'); // %s is the template dir uri
+define('HEADER_IMAGE_WIDTH', 980); // use width and height appropriate for your theme
+define('HEADER_IMAGE_HEIGHT', 200);
+
 // Remove rel attribute from the category list - thanks Joseph (http://josephleedy.me/blog/make-wordpress-category-list-valid-by-removing-rel-attribute/)! 
 function remove_category_list_rel($output)
 {
@@ -22,6 +29,8 @@ add_action('init', 'my_init_method');
 
 
 if ( function_exists( 'add_theme_support' ) ) { 
+  add_theme_support( 'automatic-feed-links' );
+	
   add_theme_support( 'post-formats', array( 'aside', 'gallery', 'link', 'image', 'quote', 'status', 'video', 'audio', 'chat' ) );
   add_post_type_support( 'page', 'post-formats' );
 
@@ -214,6 +223,29 @@ function frank_header() {
 function frank_devmode() {
 	$frank_general = get_option( '_frank_general' );
 	if($frank_general) return $frank_general['devmode'];
+}
+
+function frank_comment($comment, $args, $depth) {
+   $GLOBALS['comment'] = $comment; ?>
+
+	<li <?php comment_class('row'); ?> id="li-comment-<?php comment_ID() ?>">
+		<div class="content nine columns push-three">
+			<?php if ($comment->comment_approved == '0') : echo "<span id='comment_moderation'>Your comment is awaiting moderation.</span>"; endif; ?>
+			<?php comment_text() ?>	
+			<div class="reply">
+		         <?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
+		    </div>
+		</div>
+		<div class="comment-info three columns pull-nine">
+			<ul class='metadata vertical'>
+				<li class="date"><time datetime="<?php the_time('Y-m-d'); ?>"><?php comment_date('F d, Y g:i A'); ?></time></li>
+				<li class='author' id="vcard-<?php comment_ID() ?>">By <a class="url fn" href="<?php comment_author_url(); ?>"><?php comment_author(); ?></a></li>
+				<li><?php edit_comment_link('edit'); ?></li>
+			</ul>
+			
+			
+		</div>
+<?php
 }
 
 add_action('wp_footer', 'frank_footer');

@@ -193,6 +193,24 @@ ul#projects_list {
 #p6975 .slideshow .slide-a, #p6975 .slideshow .slide-b {
 	background-image: url("/wp-content/images/pages/off_franklin/off_franklin_sprite.jpg"); }
 	
+/*Frank*/
+#p4537 #info {
+	margin-top:$row-height*2;
+}
+
+#p4537 #features h3 {
+	font-size:$font-x-large;
+	margin-top:$row-height*4;
+}
+
+#p4537 #features h3:first-child {
+	font-size:$font-x-large;
+	margin-top:$row-height*2;
+}
+
+#p4537 #features .feature p {
+	font-size:$medium;
+}
 	
 	
 @media only screen and  (max-width: 767px) {

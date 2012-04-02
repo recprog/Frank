@@ -26,26 +26,11 @@
 <div id='comments_content'>
 <?php if ($comments) : ?>
 	<ul id="comments">
-	<?php foreach ($comments as $comment) : ?>
-		<li class="comment row">
-			<div class="content nine columns push-three">
-				<?php if ($comment->comment_approved == '0') : echo "<span id='comment_moderation'>Your comment is awaiting moderation.</span>"; endif; ?>
-				<?php comment_text() ?>	
-			</div>
-			<div class="comment-info three columns pull-nine">
-				<ul class='metadata vertical'>
-					<li class="date"><time datetime="<?php the_time('Y-m-d'); ?>"><?php comment_date('F d, Y g:i A'); ?></time></li>
-					<li class='author' id="vcard-<?php comment_ID() ?>">By <a class="url fn" href="<?php comment_author_url(); ?>"><?php comment_author(); ?></a></li>
-					<li><?php edit_comment_link('edit'); ?></li>
-				</ul>
-				
-				
-			</div>
-		</li>
-		<?php $oddcomment = ( empty( $oddcomment ) ) ? 'class="alt" ' : ''; ?>
-	
-	<?php endforeach; ?>
+		
+	<?php wp_list_comments( array( 'callback' => 'frank_comment' ) ); ?>	
+		
 	</ul>
+	<?php paginate_comments_links(); ?>
 	<?php else : // this is displayed if there are no comments so far ?>
 
 		<?php if ('open' == $post->comment_status) : ?>
@@ -63,34 +48,26 @@
 		<?php if ( get_option('comment_registration') && !$user_ID ) : ?>
 		<p>You must be <a href="<?php echo get_option('siteurl'); ?>/wp-login.php?redirect_to=<?php echo urlencode(get_permalink()); ?>">logged in</a> to post a comment.</p>
 
-		<?php else : ?>
-		<header>
-			<h1>Leave Your Own Comment</h1>
-		</header>
-		<form action="<?php echo get_option('siteurl'); ?>/wp-comments-post.php" method="post" id="commentform">
-			<?php if ( !$user_ID ) : ?>	
-			<div class='three columns' id="comment_form_info">				
-					<label for="author">Name <?php if ($req) echo "(required)"; ?></label>
-					<input autocomplete="off" type="text" name="author" placeholder="Name (required)" id="author" value="<?php echo $comment_author; ?>" size="22" class="textinput" tabindex="1" />
-					<label for="email">Email <?php if ($req) echo "(required)"; ?></label>
-					<input autocomplete="off" type="text" name="email" placeholder="Email (required)" id="email" value="<?php echo $comment_author_email; ?>" size="22" class="textinput" tabindex="2" />
-					<label for="url">Website</label>
-					<input autocomplete="off" type="text" name="url" placeholder="URL" id="url" value="<?php echo $comment_author_url; ?>" size="22" class="textinput" tabindex="3" />
-			</div>
-			<?php else : ?>
-				<div id='comment_form_info' class='three columns'>				
-					By <a href="<?php echo get_option('siteurl'); ?>/wp-admin/profile.php"><?php echo $user_identity; ?></a> (<a href="<?php echo get_option('siteurl'); ?>/wp-login.php?action=logout" title="Log out of this account">Log out&hellip;</a>)
-				</div>
-			<?php endif; ?>
-			
-			<div id="comment_form_comment" class='nine columns <?php if ( $user_ID ) : ?>loggedin<?php endif; ?>'>
-				<label for="comment">Your Comment</label>
-				<textarea name="comment" placeholder="Your Comment" class="<?php if ( $user_ID ) echo('loggedin') ?>" id="comment" rows="10" tabindex="4"></textarea>
-				<input name="submit" type="submit" id="submit" class="button <?php if ( $user_ID ) echo('loggedin') ?>" tabindex="5" value="Submit Comment" />
-				<input type="hidden" name="comment_post_ID" value="<?php echo $id; ?>" />
-			</div>
-			<?php do_action('comment_form', $post->ID); ?>
-		</form>	
+		<?php else : ?>		
+		<?php
+		$fields =  array(
+			'author' => '<div class="three columns" id="comment_form_info">' . '<label for="author">' . __( 'Name' ) . '' . ( $req ? '<span class="required">*</span>' : '' ) . '</label> ' .
+			            '<input id="author" name="author" type="text" placeholder="Name (required)" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30"' . $aria_req . ' />',
+			'email'  => '<label for="email">' . __( 'Email' ) . '' . ( $req ? '<span class="required">*</span>' : '' ) . '</label> ' .
+			            '<input id="email" name="email" type="text" placeholder="Email (required)" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30"' . $aria_req . ' />',
+			'url'    => '<label for="url">' . __( 'Website' ) . '</label>' .
+			            '<input id="url" name="url" type="text" placeholder="Website" value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" /></div>',
+		); 
+		
+		$comment_field = '<div id="comment_form_comment" class="nine columns"><label for="comment">' . _x( 'Comment', 'noun' ) . '</label><textarea id="comment" placeholder="Your Comment" name="comment" aria-required="true"></textarea></div>';
+
+		$logged_in_as = '<div class="logged-in-as three columns"><p>' . sprintf( __( 'Logged in as <a href="%1$s">%2$s</a>. <a href="%3$s" title="Log out of this account">Log out?</a>' ), admin_url( 'profile.php' ), $user_identity, wp_logout_url( apply_filters( 'the_permalink', get_permalink( ) ) ) ) . '</p></div>';
+		
+		$comment_notes_after = '<div class="row"><div class="form-allowed-tags nine columns push-three"><p class="">' . sprintf( __( 'You may use these <abbr title="HyperText Markup Language">HTML</abbr> tags and attributes: %s' ), ' <code>' . allowed_tags() . '</code>' ) . '</p></div></div>';
+		
+		comment_form(array('id_form' => 'frm-comment', 'logged_in_as' => $logged_in_as, 'comment_notes_before' => '', 'comment_notes_after' => $comment_notes_after, 'title_reply' => '<header><h1>Leave a Comment</h1></header>', 'fields' => $fields, 'comment_field' => $comment_field)); 
+		?>
+		
 </div>
 	<?php endif; endif; ?>
 </div>

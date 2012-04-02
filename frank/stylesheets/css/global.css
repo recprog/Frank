@@ -228,6 +228,13 @@ header {
 .crop {
   overflow: hidden; }
 
+.truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -o-text-overflow: ellipsis; }
+
+/*Wordpress Classes*/
 .alignleft, .alignright, .aligncenter {
   margin: 10px 0 15px 0; }
 
@@ -257,11 +264,11 @@ header {
   color: #5d504f;
   margin-top: 10px; }
 
-.truncate {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  -o-text-overflow: ellipsis; }
+.bypostauthor {
+  border: 2px solid #5d504f;
+  padding: 15px 0;
+  border-left: 0;
+  border-right: 0; }
 
 /*Pagination links*/
 .pagination {

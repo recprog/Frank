@@ -22,7 +22,7 @@
 		$queryObject = new WP_Query( $args );
 	
 		//Output
-		if ( $sticky[0] ) { include 'one_up_lg.php'; }
+		if ( $sticky[0] ) { include 'one_up_lg.php'; } /*FIX*/
 		
 		// Reset
 		wp_reset_postdata();
