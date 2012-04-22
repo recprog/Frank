@@ -1,4 +1,4 @@
-#jwSBoverlay {
+#flb-overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -8,7 +8,7 @@
   height: 100%;
   z-index: 1000100; }
 
-#jwSBcontainer {
+#flb-container {
   background: #3d302f;
   width: 100%;
   height: 100%;
@@ -21,7 +21,7 @@
   padding: 0;
   border: none; }
 
-#jwSBcontainer a, #jwSBcontainer a:hover {
+#flb-container a, #flb-container a:hover {
   display: block;
   width: 100%;
   height: 100%;
@@ -31,7 +31,7 @@
   padding: 0;
   border: none; }
 
-#jwSBcontent {
+#flb-content {
   background: #5d504f;
   top: 50%;
   left: 50%;
@@ -39,15 +39,15 @@
   position: fixed;
   z-index: 1000120; }
 
-#jwSBcontent a#jwSBclose, #jwSBcontent a#jwSBclose:hover {
+#flb-content a#flb-close, #flb-content a#flb-close:hover {
   display: none; }
 
-#jwSBcontent a img {
+#flb-content a img {
   border: none;
   margin: 0;
   padding: 0; }
 
-#jwSBcontent a#jwSBimage, #jwSBcontent a#jwSBimage:hover {
+#flb-content #flb-image, #flb-content a#flb-image:hover {
   border: none;
   display: block;
   width: 100%;
@@ -55,5 +55,8 @@
   margin: 0;
   padding: 0; }
 
-#jwSBcontent span#sbcaption {
+#flb-content #flb-image {
   display: none; }
+
+#flb-content.active #flb-image {
+  display: block; }

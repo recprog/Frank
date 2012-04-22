@@ -22,13 +22,14 @@
 				</section>
 				<div class='three columns pull-nine post-info'>
 					<ul class='metadata vertical'>
-						<li class="date"><time datetime="<?php the_time('Y-m-d'); ?>" itemprop="datePublished"><?php the_time('F j, Y'); ?></time></li>
+						<li class="date"><time datetime="<?php the_time('Y-m-d'); ?>" itemprop="datePublished"><?php the_time(get_option('date_format')); ?></time></li>
 						<li class="author">By <?php the_author_link(); ?></li>
 						<li class="categories"><?php the_category(', '); ?></li>
+						<li class="tags"><?php the_tags('', ', '); ?></li>
 						<li class='comments'><?php comments_popup_link('No comments', '1 comment', '% comments'); ?></li>	
 					</ul>
 					<div class='previous'>
-						<?php previous_post('%','<nav><span class="arrow">Previous Post</span></nav>', 'yes'); ?> 
+						<?php previous_post_link('%link', '<nav><span class="arrow">%title</span></nav><p>%title</p>'); ?>
 					</div>
 					<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Post Left Aside') ) : ?>
 					<?php endif; ?>

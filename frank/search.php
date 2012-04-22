@@ -22,16 +22,16 @@
 					<h1><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h1>
 				</header>
 				<div class="row">
-					
 					<section class='nine columns push-three'>
 						<?php the_content('Read On&hellip;'); ?>
 					</section>
 					<div class='three columns pull-nine post-info'>
 						<ul class='metadata vertical'>
-							<li class="date"><time datetime="<?php the_time('Y-m-d'); ?>" itemprop="datePublished"><?php the_time('F j, Y'); ?></time></li>
+							<li class="date"><time datetime="<?php the_time('Y-m-d'); ?>" itemprop="datePublished"><?php the_time(get_option('date_format')); ?></time></li>
 							<li class="author">By <?php the_author_link(); ?></li>
 							<li class="categories"><?php the_category(', '); ?></li>
-							<li class='comments'><?php comments_popup_link('No comments', '1 comment', '% comments'); ?></li>	
+							<li class="tags"><?php the_tags('', ', '); ?></li>
+							<li class="comments"><?php comments_popup_link('No comments', '1 comment', '% comments'); ?></li>	
 						</ul>
 					</div>
 					</div>
@@ -56,9 +56,9 @@
 		
 			<h2>Page Not Found</h2>
 			
-			<p>Looks like the page you're looking for isn't here anymore. Try browsing the <a href="">categories</a>, <a href="">archives</a>, or using the search box below.</p>
+			<p>Looks like the page you're looking for isn't here anymore. Try using the search box below.</p>
 			
-			<?php include(TEMPLATEPATH.'/searchform.php'); ?>		
+			<?php get_search_form(true); ?>		
 		</div>
 		<?php endif; ?>
 		</div>

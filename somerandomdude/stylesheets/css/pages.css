@@ -189,6 +189,9 @@ ul#projects_list {
 #p4537 #features .feature p {
   font-size: 17px; }
 
+#p5215 object {
+  height: 350px; }
+
 @media only screen and  (max-width: 767px) {
   #content.page #projects_navigation {
     display: none; }

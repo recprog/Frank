@@ -21,7 +21,7 @@
 			</section>
 			<footer>
 				<ul class='metadata horizontal clear'>
-					<li class='time'><time datetime="<?php the_time('Y-m-d'); ?>" itemprop="datePublished"><?php the_time('F j, Y'); ?></time></li>										
+					<li class='time'><time datetime="<?php the_time('Y-m-d'); ?>" itemprop="datePublished"><?php the_time(get_option('date_format')); ?></time></li>										
 					<li class='comments'><?php comments_popup_link('No comments', '1 comment', '% comments'); ?></li>
 				</ul>
 			</footer>

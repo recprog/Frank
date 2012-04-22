@@ -17,7 +17,7 @@
 	<title><?php if (function_exists('is_tag') && is_tag()) { echo 'Tag Archive for &quot;'.$tag.'&quot;&mdash;'; } elseif (is_archive()) { wp_title(''); echo ' Archive&mdash;'; } elseif (is_search()) { echo 'Search for &quot;'.wp_specialchars($s).'&quot;&mdash;'; } elseif (!(is_404()) && (is_single()) || (is_page())) { wp_title(''); echo '&mdash;'; } elseif (is_404()) { echo 'Not Found&mdash;'; } bloginfo('name'); ?></title>
 	
 	<?php if(!frank_devmode()) : ?>
-		<link rel="stylesheet" media="all" href="/wp-content/themes/somerandomdude/style.css"  />
+		<link rel="stylesheet" media="all" href="<?php echo get_stylesheet_directory_uri(); ?>/style.css"  />
 	<?php else : ?>
 		<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/stylesheets/css/reset.css" media="all" />
 		<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/stylesheets/css/grid.css" media="all" />

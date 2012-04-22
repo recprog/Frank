@@ -31,8 +31,13 @@ add_action('init', 'my_init_method');
 if ( function_exists( 'add_theme_support' ) ) { 
   add_theme_support( 'automatic-feed-links' );
 	
+	
+/*
+//I have yet to have a good reason to support post formats. Disabling for now...
+	
   add_theme_support( 'post-formats', array( 'aside', 'gallery', 'link', 'image', 'quote', 'status', 'video', 'audio', 'chat' ) );
   add_post_type_support( 'page', 'post-formats' );
+*/
 
   add_theme_support( 'post-thumbnails' ); 
   add_image_size( 'post-image', 535, 9999 ); //550 pixels wide (and unlimited height)
@@ -187,13 +192,16 @@ function frank_general()
     include 'admin/admin-options-general.php';
 }
 
+function frank_theme_options()
+{
+    include 'admin/frank-theme-options.php';
+}
+
 // add our menus
 function frank_admin_menu()
 {
-    add_menu_page( 'Frank', 'Frank', 'manage_options', 'frank', 'frank_general' );
 
-	add_submenu_page( 'frank', 'Frank', 'General', 'manage_options', 'frank', 'frank_general');
-    add_submenu_page( 'frank', 'Frank', 'Home Page Sections', 'manage_options', 'frank-home', 'frank_home');
+	add_theme_page( 'Frank', 'Frank Theme Options', 'manage_options', 'frank', 'frank_theme_options' );
 }
 
 add_action( 'admin_menu', 'frank_admin_menu' );
@@ -203,8 +211,8 @@ function frank_admin_assets()
     if( is_admin() )
     {
         wp_enqueue_script( 'jquery-ui-sortable' );
-        wp_enqueue_style( 'frank-admin', get_bloginfo( 'template_directory' ) . '/admin/css/frank-options.css', NULL, NULL, NULL );
-        wp_enqueue_script( 'frank-admin', get_bloginfo( 'template_directory' ) . '/admin/js/frank-utils.js', 'jquery', NULL, true );
+        wp_enqueue_style( 'frank-admin', get_template_directory_uri() . '/admin/css/frank-options.css', NULL, NULL, NULL );
+        wp_enqueue_script( 'frank-admin', get_template_directory_uri() . '/admin/js/frank-utils.js', 'jquery', NULL, true );
     }
 }    
  

@@ -20,11 +20,11 @@
 </div>
 <?php wp_footer(); ?>
 <?php if(frank_devmode()) : ?>
-	<script src="<?php bloginfo( 'stylesheet_directory' ); ?>/js/frank.slideshow.js"></script>
-	<script src="<?php bloginfo( 'stylesheet_directory' ); ?>/js/simplebox.js"></script>
-	<script src="<?php bloginfo( 'stylesheet_directory' ); ?>/js/main.js"></script>
+	<script src="<?php echo get_stylesheet_directory_uri(); ?>/js/frank.slideshow.js"></script>
+	<script src="<?php echo get_stylesheet_directory_uri(); ?>/js/simplebox.js"></script>
+	<script src="<?php echo get_stylesheet_directory_uri(); ?>/js/main.js"></script>
 <?php else : ?>
-	<script async src="<?php bloginfo( 'stylesheet_directory' ); ?>/js/somerandomdude.js"></script>
+	<script async src="<?php echo get_stylesheet_directory_uri(); ?>/js/somerandomdude.js"></script>
 <?php endif; ?>	
 
 </body>

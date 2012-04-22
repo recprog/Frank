@@ -264,6 +264,12 @@ header {
   color: #5d504f;
   margin-top: 10px; }
 
+.gallery-caption {
+  text-rendering: optimizelegibility; }
+
+.sticky {
+  text-rendering: optimizelegibility; }
+
 .bypostauthor {
   border: 2px solid #5d504f;
   padding: 15px 0;
