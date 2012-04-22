@@ -28,7 +28,8 @@
 						<li class="tags"><?php the_tags('', ', '); ?></li>
 						<li class='comments'><?php comments_popup_link('No comments', '1 comment', '% comments'); ?></li>	
 					</ul>
-					<div class='previous'>
+					<a id="post_tweet" class="button alt small2" href='https://twitter.com/share?text=<?php the_title(); ?>&via=somerandomdude&related=somerandomdude&url=<?php the_permalink(); ?>&counturl=<?php the_permalink(); ?>'>Tweet this Post</a>
+					<div id="previous_post" class="clearfix">
 						<?php previous_post_link('%link', '<nav><span class="arrow">%title</span></nav><p>%title</p>'); ?>
 					</div>
 					<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Post Left Aside') ) : ?>
@@ -37,7 +38,7 @@
 			</div>
 			
 			<?php if (is_active_sidebar("widget-postfooter")) : ?>
-			<footer class='row'>				
+			<footer id="post_footer" class='row'>				
 					<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Post Footer') ) : ?>
 					<?php endif; ?>
 			</footer>

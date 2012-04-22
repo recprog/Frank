@@ -1,7 +1,7 @@
 @import "variables";
 
 #content.single {
-	.post-info .previous {
+	#previous_post {
 		margin-top: $row-height * 4;
 		font-style: italic;
 		font-family: $serif;
@@ -27,13 +27,18 @@
 		a:hover {
 			color: $color_accent_alt;
 			.arrow {
-				background-color: $color_dark; } } }
+				background-color: $color_dark; 
+			} 
+		} 
+	}
 	position: relative;
 	article {
 		header {
 			h1 {
 				@include font-size-x-large();
-				color: $color_dark; } }
+				color: $color_dark; 
+			} 
+		}
 				
 		section h1, section h2 {
 			margin: $row-height 0;
@@ -48,48 +53,56 @@
 			font-weight: $bold;
 		}
 		dl dd {
-			margin-left: $gutter-width; } }
+			margin-left: $gutter-width; 
+		} 
+	}
+	#excerpt {
+		padding-bottom: $row-height * 2;
+		color: $color_midtone;
+		p {
+			padding-top: 0;
+			@include font-size-xx-large();
+			font-family: $serif;
+			font-style: italic; 
+		} 
+	}
 	#content_primary {
-		#excerpt {
-			padding-bottom: $row-height * 2;
-			color: $color_midtone;
-			p {
-				padding-top: 0;
-				@include font-size-xx-large();
-				font-family: $serif;
-				font-style: italic; } }
-		
 		section {
 			margin-bottom:$row-height * 3;
 		}
 		.pagination {
 			margin-top:$row-height*2;
 		}
-		footer {
-			@extend .reset-dimensions;
-			border-bottom:$border-break;
-			padding-bottom:$row-height;
-			margin-bottom:$row-height * 2;
-			.widget:nth-child(4n) {
-				margin-right: $gutter-width;
-			}
-			.widget:nth-child(4n+1) {
-				clear:none;
-			}
-			.widget:nth-child(3n) {
-				margin-right:0; 
-			}
-			.widget:nth-child(3n+1) {
-				clear:left; 
-			}
-		}
 		#content_main {
 			margin: $row-height * 2 0; 
 			border-bottom:$border-break;
 			padding-bottom:$row-height;
-			} 
+		} 
+	}
+	#post_footer {
+		@extend .reset-dimensions;
+		border-bottom:$border-break;
+		padding-bottom:$row-height;
+		margin-bottom:$row-height * 2;
+		.widget:nth-child(4n) {
+			margin-right: $gutter-width;
+		}
+		.widget:nth-child(4n+1) {
+			clear:none;
+		}
+		.widget:nth-child(3n) {
+			margin-right:0; 
+		}
+		.widget:nth-child(3n+1) {
+			clear:left; 
 		}
 	}
+	#post_tweet {
+		float:right;
+		margin:$row-height 0 $row-height*2 0;
+		margin:15px 0 30px 0;
+	}
+}
 	
 /*MOBILE*/
 @media only screen and  (max-width: 767px) {

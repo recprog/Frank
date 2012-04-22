@@ -59,16 +59,16 @@
       width: 55%;
       padding-top: 30px;
       padding-right: 5%; }
-      #text-10 #footer_main_promo .content .header {
-        font-size: 20px;
-        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-        display: block;
-        text-shadow: 0px -1px 0px rgba(5, 0, 0, 0.3); }
-      #text-10 #footer_main_promo .content .caption {
-        display: block;
-        font-size: 11px;
-        margin-top: 15px;
-        font-style: italic; }
+    #text-10 #footer_main_promo .header {
+      font-size: 20px;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      display: block;
+      text-shadow: 0px -1px 0px rgba(5, 0, 0, 0.3); }
+    #text-10 #footer_main_promo .caption {
+      display: block;
+      font-size: 11px;
+      margin-top: 15px;
+      font-style: italic; }
 
 #footer_main_promo:hover {
   background-color: #ff1e00 !important; }

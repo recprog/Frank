@@ -17,6 +17,8 @@
 	
 	    <?php
 	        $frank_general_updated = false;
+			 // we need to pull our existing sections, if present
+		        $frank_general = get_option( '_frank_options' );
 	
 	        if ( !empty( $_POST ) && wp_verify_nonce( $_POST['frank_general_key'], 'frank_update_general' ) )
 	        {
@@ -24,16 +26,16 @@
 				$frank_general['header']=$_POST['frank-general-header'];
 				$frank_general['footer']=$_POST['frank-general-footer'];
 				$frank_general['devmode']=$_POST['frank-general-devmode'];
+				
 		
-	            update_option( '_frank_general', $frank_general );
+	            update_option( '_frank_options', $frank_general );
 	
 	            $frank_general_updated = true;
 	
 	        }
 	
 	
-	        // we need to pull our existing sections, if present
-	        $frank_general = get_option( '_frank_general' );
+	       
 	
 	        // if there's nothing, we'll set our defaults
 	        if( empty( $frank_general ) )
@@ -89,10 +91,12 @@
 
     <?php
         $frank_updated = false;
+		// we need to pull our existing sections, if present
+        $frank_sections = get_option( '_frank_options' );
 
         if ( !empty( $_POST ) && wp_verify_nonce( $_POST['frank_key'], 'frank_update_home_sections' ) )
         {
-            $frank_content_sections = array();
+            $sections = array();
             foreach( $_POST as $key => $value )
             {
                 $keyflag = 'frank-display-type-';
@@ -114,7 +118,7 @@
                     }
 
                     // add our data
-                    $frank_content_sections[] = array(
+                    $sections[] = array(
                                         'display_type'      => $_POST['frank-display-type-' . $frank_section_flag],
                                         'title'             => $_POST['frank-section-title-' . $frank_section_flag],
                                         'caption'           => $_POST['frank-section-caption-' . $frank_section_flag],
@@ -123,21 +127,22 @@
                     );
                 }
             }
-
-            update_option( '_frank_street_home_sections', $frank_content_sections );
+			$frank_sections['sections']=$sections;
+            update_option( '_frank_options', $frank_sections );
 
             $frank_updated = true;
 
         }
 
 
-        // we need to pull our existing sections, if present
-        $frank_sections = get_option( '_frank_street_home_sections' );
+        
+
+		$frank_sections = $frank_sections['sections'];
 
         // if there's nothing, we'll set our defaults
         if( empty( $frank_sections ) )
         {
-            $frank_sections[] = array(
+            $frank_sections['sections'] = array(
                                         'display_type'      => 'default_loop',
                                         'title'             => '',
                                         'caption'           => '',

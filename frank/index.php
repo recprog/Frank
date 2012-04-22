@@ -7,7 +7,8 @@
 <?php get_header(); ?>
 <div id="content" class="home">
 	<?php
-	$frank_sections = get_option( '_frank_street_home_sections' );
+	$frank_sections = get_option( '_frank_options' );
+	$frank_sections = $frank_sections['sections'];
 	if($frank_sections) {
 		foreach($frank_sections as $section) {
 			$display_type=$section['display_type'];

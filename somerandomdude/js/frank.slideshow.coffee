@@ -6,18 +6,18 @@
 #Slideshow class
 class FSS
   
-  @element=null
-  @options=null
-  @target=null
-  @container=null
-  @slides=[]
-  @navigation=null
-  @slideA=null
-  @slideB=null
-  @caption=null
-  @currentIndex=-1
-  @interval=null
-  @autoplay=true
+  # @element=null
+  # @options=null
+  # @target=null
+  # @container=null
+  # @slides=[]
+  # @navigation=null
+  # @slideA=null
+  # @slideB=null
+  # @caption=null
+  # @currentIndex=-1
+  # @interval=null
+  # @autoplay=true
 
   constructor: (el, o) ->
     @element=el

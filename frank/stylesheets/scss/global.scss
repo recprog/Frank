@@ -176,7 +176,10 @@ header {
 		color:$color-midtone;
 		margin:5px 0 0 0;
 	}
-	a { color: $color_off_black; }
+	a { 
+		color: $color_off_black;  
+		text-decoration:none;
+	}
 	a:hover { color: $color_midtone; }
 }
 
@@ -335,26 +338,21 @@ dl.metadata {
 
 #content {
 	margin: 0 0 $row-height*4 0;
-	position: relative; 
-}
-
-#content.home, #content.single, #content.page, #content.archive {
-	article {
-		section {
-			font-family: $serif;
-			@include font-size-medium;
-			p, ul li, ol li, dt, dd, blockquote { @include font-size-medium; }
-			code, small { @include font-size-small; }
-			img {
-				max-width: 100%;
-				@include default-shadow(); 
-			}
-		} 
+	position: relative;
+	section {
+		font-family: $serif;
+		@include font-size-medium;
+		p, ul li, ol li, dt, dd, blockquote { @include font-size-medium; }
+		code, small { @include font-size-small; }
+		img {
+			max-width: 100%;
+			@include default-shadow(); 
+		}
 	} 
 }
-#content.page article section img { box-shadow: none !important; }
+#content.page section img { box-shadow: none !important; }
 
-#content.home, #content.archive {
+#content.home, #content.archive, #content.search {
 	article { margin-top: $row-height * 4; margin-bottom: $row-height * 4; }
 	article:first-child { margin-top: 0; }
 	article:last-child {margin-bottom: 0;}
@@ -392,6 +390,11 @@ button.alt:hover, .button.alt:hover, input[type=submit].alt:hover {
 	background: $color_accent_alt;
 	color: $color_highlight;
 	border: 1px solid rgba(18, 7, 6, 0.5); 
+}
+
+button.small2, .button.small2, a.button.small2 {
+	@include font-size-xx-small;
+	padding: 4px 8px;
 }
 
 

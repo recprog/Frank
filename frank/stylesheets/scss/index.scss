@@ -2,9 +2,7 @@
 
 
 #content.home {
-	.content {
-		margin-bottom:$row-height*4;
-	}
+	.content { margin-bottom:$row-height*4; }
 	.content-header {
 		margin-bottom:$row-height*2;
 		padding-bottom:5px;
@@ -19,17 +17,14 @@
 		.more {
 			@extend .reset-dimensions;
 			font-family: $serif; } }
-	.content.oneup .post, .content.twoup .post, .content.threeup .post, .content.fourup .post {
-		.read-more {
+	.content {
+		.read-more { 
 			margin-top: $row-height;
-			.more {
-				@include font-size-x-small(); } }
-		 }
-	.content.oneup.large article {
-		header h1 {
-			
-			@include font-size-large; }
-		
+			.more { @include font-size-x-small(); } 
+		}
+	}
+	.content.oneup.large {
+		header h1 { @include font-size-large; }
 		section {
 			margin: 0 0 $row-height 0;
 			p {
@@ -41,61 +36,27 @@
 	.content.twoup, .content.threeup, .content.fourup {
 		.post {
 			margin-top: $row-height;
-			header {
-				h1 {
-					@include font-size-small();
-					font-weight: $bold;
-					a {
-						text-decoration: none; } } }
-			section p {
-				@include font-size-small(); } }
-		.metadata li {
-			@include font-size-x-small(); } }
-	.content.twoup {
-		.post {
 			float:left !important;
 		}
-		.post:nth-child(2n+1) {
-			margin-left:0;
-			clear: left; }
-		.post:nth-child(2n) {
-			margin-right: 0; 
-			float:right;
+		header h1 {
+			@include font-size-small();
+			font-weight: $bold;  
 		}
-		.post:nth-child(n+3) {
-			margin-bottom: 0;
-			margin-top: $row-height * 3; } }
-	.content.fourup {
-		.post {
-			float:left !important;
-		}
-		.post:nth-child(4n+1) {
-			margin-left:0;
-			clear: left; }
-		.post:nth-child(4n) {
-			margin-right: 0; 
-			float:right;
-		}
-		.post:nth-child(n+5) {
-			margin-bottom: 0;
-			margin-top: $row-height * 3; 
-		} 		
-	} 
-	.content.threeup {
-		.post {
-			float:left !important;
-		}
-		.post:nth-child(3n+1) {
-			margin-left:0;
-			clear: left; }
-		.post:nth-child(3n) {
-			margin-right: 0; 
-			float:right;
-		}
-		.post:nth-child(n+4) {
-			margin-bottom: 0;
-			margin-top: $row-height * 3; 
-		} 		
+		section p { @include font-size-small(); }
+		.metadata li { @include font-size-x-small(); }
+	}
+	
+	.content.twoup .post:nth-child(2n+1), .content.threeup .post:nth-child(3n+1), .content.fourup .post:nth-child(4n+1) {
+		margin-left:0;
+		clear: left;
+	}
+	.content.twoup .post:nth-child(2n), .content.threeup .post:nth-child(3n), .content.fourup .post:nth-child(4n) {
+		margin-right: 0; 
+		float:right;
+	}
+	.content.twoup .post:nth-child(n+3), .content.threeup .post:nth-child(n+4), .content.fourup .post:nth-child(n+5) {
+		margin-bottom: 0;
+		margin-top: $row-height * 3;
 	}
 }
 			

@@ -68,17 +68,21 @@
 			width: 55%;
 			padding-top: $row-height * 2;
 			padding-right: 5%;
-			.header {
-				font-size: $font-large;
-				font-family: $sans-serif;
-				display: block;
-				text-shadow:0px -1px 0px rgba(5,0,0,.3); 
-				}
-			.caption {
+		}
+		.header {
+			font-size: $font-large;
+			font-family: $sans-serif;
+			display: block;
+			text-shadow:0px -1px 0px rgba(5,0,0,.3); 
+		}
+		.caption {
 				display: block;
 				@include font-size-x-small();
 				margin-top: $row-height;
-				font-style: italic; } } } }
+				font-style: italic; 
+		} 
+	}
+}
 #footer_main_promo:hover { background-color: $color_accent_alt !important;  }
 
 

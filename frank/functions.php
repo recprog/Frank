@@ -182,15 +182,6 @@ add_filter('dynamic_sidebar_params','widget_first_last_classes');
 // = HOME PAGE SECTIONS =
 // ======================
 
-function frank_home()
-{
-    include 'admin/admin-options-home.php';
-}
-
-function frank_general()
-{
-    include 'admin/admin-options-general.php';
-}
 
 function frank_theme_options()
 {
@@ -219,17 +210,17 @@ function frank_admin_assets()
 add_action( 'init', 'frank_admin_assets' );
 
 function frank_footer() {	
-	$frank_general = get_option( '_frank_general' );
+	$frank_general = get_option( '_frank_options' );
     if($frank_general) echo stripslashes($frank_general['footer']);
 }
 
 function frank_header() {
-	$frank_general = get_option( '_frank_general' );
+	$frank_general = get_option( '_frank_options' );
     if($frank_general) echo stripslashes($frank_general['header']);
 }
 
 function frank_devmode() {
-	$frank_general = get_option( '_frank_general' );
+	$frank_general = get_option( '_frank_options' );
 	if($frank_general) return $frank_general['devmode'];
 }
 

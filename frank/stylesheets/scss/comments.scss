@@ -9,67 +9,65 @@
 		font-family: $serif;
 		color: $color_midtone; 
 	}
-	#comments {
-		list-style: none;
-		
-		li.comment {
-			margin:$row-height*4 0;
-			background: none;
-		}
-		li.comment.bypostauthor  {
-			margin:$row-height*3 0;
-		}
-		li:first-child { margin-top: 0px; }
+}
 
-		.content {
-			font-family: $serif;
-			p {
-				@include font-size-medium();
-				color: $color_dark; 
-			}
-			blockquote, blockquote p { @include font-size-small(); } 
-		}
-		.comment-edit-link {
-			font-weight: $bold;
-			color:$color-accent;
-		} 
+#comments {
+	list-style: none;
+	
+	.comment {
+		margin:$row-height*4 0;
+		background: none;
 	}
-	#no_comments {
+	.comment.bypostauthor  {
+		margin:$row-height*3 0;
+	}
+	li:first-child { margin-top: 0px; }
+
+	.content {
 		font-family: $serif;
-		font-size:$font-xx-large;
-		margin: $row-height * 2 0;
-		color: $color_midtone; 
-	}
-	#respond {
-		
-		input[type=text], textarea {
-			-moz-box-sizing: border-box;
-			-ms-box-sizing: border-box;
-			-webkit-box-sizing: border-box;
-			box-sizing: border-box;
-			width:100%;
-		} 
-		
-		label { display: none; }
-		#comment_form_info input[type=text] {
-			margin-bottom: $row-height;
-			text-align: right; 
+		p {
+			@include font-size-medium();
+			color: $color_dark; 
 		}
-		textarea {
-			margin: 0;
-			height: 118px;
-		}
-		textarea:focus { height: $row-height * 25; } 
+		blockquote, blockquote p { @include font-size-small(); } 
 	}
-	#comment_form {
-		header {
-			h1 { @include font-size-large(); }
-			.loggedin {
-				font-style: italic; 
-			} 
-		} 
+	.comment-edit-link {
+		font-weight: $bold;
+		color:$color-accent;
+	} 
+}
+#no_comments {
+	font-family: $serif;
+	font-size:$font-xx-large;
+	margin: $row-height * 2 0;
+	color: $color_midtone; 
+}
+#respond {
+	
+	input[type=text], textarea {
+		-moz-box-sizing: border-box;
+		-ms-box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+		box-sizing: border-box;
+		width:100%;
+	} 
+	
+	label { display: none; }
+	#comment_form_info input[type=text] {
+		margin-bottom: $row-height;
+		text-align: right; 
 	}
+	textarea {
+		margin: 0;
+		height: 118px;
+	}
+	textarea:focus { height: $row-height * 25; } 
+	
 	#submit { margin-top: $row-height; margin-left: 26.1%; } 
+}
+#comment_form {
+	h1 { @include font-size-large(); }
+	.loggedin { font-style: italic; } 
 }
 
 /*MOBILE*/
