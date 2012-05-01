@@ -32,8 +32,6 @@ window.onload = ->
         return
   
   # Google Analytics event tracking
-  
-
   trackElems = (elems, cat, action, label) ->
     return if not elems
     for elem in elems
@@ -43,6 +41,7 @@ window.onload = ->
         return false
     return false
 
+  trackElems(document.querySelectorAll('#post_tweet'), 'Tweet Post', null, document.title);
   trackElems(document.querySelectorAll('#menu-primary li a'), 'Top Nav', null, document.title);
   trackElems(document.querySelectorAll('#bio_pic'), 'Bio Pic', null, document.title);
   trackElems(document.querySelectorAll('#content.single .post-info .previous a'), 'Previous Post', '.arrow', document.title);
@@ -59,4 +58,9 @@ window.onload = ->
       print error
     return
 
+  return
+
+# Track client-side JS errors
+window.error = (message, file, line) -> 
+  _gaq.push(['_trackEvent', 'Exceptions', 'Application', '[' + file + ' (' + line + ')] ' + message, null, true]);
   return

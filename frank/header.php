@@ -13,35 +13,40 @@
 	
 	<title><?php if (function_exists('is_tag') && is_tag()) { echo 'Tag Archive for &quot;'.$tag.'&quot;&mdash;'; } elseif (is_archive()) { wp_title(''); echo ' Archive&mdash;'; } elseif (is_search()) { echo 'Search for &quot;'.wp_specialchars($s).'&quot;&mdash;'; } elseif (!(is_404()) && (is_single()) || (is_page())) { wp_title(''); echo '&mdash;'; } elseif (is_404()) { echo 'Not Found&mdash;'; } bloginfo('name'); ?></title>
 
-	<?php if(!frank_devmode()) : ?>
-		<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
-	<?php else : ?>
-		<link rel="stylesheet" href="<?php get_template_directory_uri(); ?>/stylesheets/css/reset.css" type="text/css" media="all" />
-		<link rel="stylesheet" href="<?php get_template_directory_uri(); ?>/stylesheets/css/grid.css" type="text/css" media="all" />
-		<link rel="stylesheet" href="<?php get_template_directory_uri(); ?>/stylesheets/css/global.css" type="text/css" media="all" />
-		<link rel="stylesheet" href="<?php get_template_directory_uri(); ?>/stylesheets/css/forms.css" type="text/css" media="all" />
-		<link rel="stylesheet" href="<?php get_template_directory_uri(); ?>/stylesheets/css/widgets.css" type="text/css" media="all" />
-		<link rel="stylesheet" href="<?php get_template_directory_uri(); ?>/stylesheets/css/sprites.css" type="text/css" media="all" />
-		<link rel="stylesheet" href="<?php get_template_directory_uri(); ?>/stylesheets/css/transitions.css" type="text/css" media="all" />
-		<link rel="stylesheet" href="<?php get_template_directory_uri(); ?>/stylesheets/css/header.css" type="text/css" media="all" />
-		<link rel="stylesheet" href="<?php get_template_directory_uri(); ?>/stylesheets/css/index.css" type="text/css" media="all" />
-		<link rel="stylesheet" href="<?php get_template_directory_uri(); ?>/stylesheets/css/single.css" type="text/css" media="all" />
-		<link rel="stylesheet" href="<?php get_template_directory_uri(); ?>/stylesheets/css/archive.css" type="text/css" media="all" />
-		<link rel="stylesheet" href="<?php get_template_directory_uri(); ?>/stylesheets/css/fourohfour.css" type="text/css" media="all" />
-		<link rel="stylesheet" href="<?php get_template_directory_uri(); ?>/stylesheets/css/sidebar.css" type="text/css" media="all" />
-		<link rel="stylesheet" href="<?php get_template_directory_uri(); ?>/stylesheets/css/comments.css" type="text/css" media="all" />
-		<link rel="stylesheet" href="<?php get_template_directory_uri(); ?>/stylesheets/css/footer.css" type="text/css" media="all" />
-		<link rel="stylesheet" href="<?php get_template_directory_uri(); ?>/stylesheets/css/colorbox.css" type="text/css" media="all" />
-		<link rel="stylesheet" href="<?php get_template_directory_uri(); ?>/stylesheets/css/hacks.css" type="text/css" media="all" />
-		<link rel="stylesheet" href="<?php get_template_directory_uri(); ?>/stylesheets/css/mobile.css" type="text/css" media="all" />
-		<link rel="stylesheet" href="<?php get_template_directory_uri(); ?>/stylesheets/css/print.css" type="text/css" media="all" />
-	<?php endif; ?> 
+	<?php 
+	if(!frank_devmode()) {
+		wp_enqueue_style('frank_stylesheet', get_bloginfo( 'stylesheet_url' ), null, '0.1', 'all' );
+	}
+	else {
+		wp_enqueue_style('frank_stylesheet_reset', get_bloginfo('template_directory').'/stylesheets/css/reset.css', null, '0.1', 'all' );
+		wp_enqueue_style('frank_stylesheet_grid', get_bloginfo('template_directory').'/stylesheets/css/grid.css', null, '0.1', 'all' );
+		wp_enqueue_style('frank_stylesheet_global', get_bloginfo('template_directory').'/stylesheets/css/global.css', null, '0.1', 'all' );
+		wp_enqueue_style('frank_stylesheet_forms', get_bloginfo('template_directory').'/stylesheets/css/forms.css', null, '0.1', 'all' );
+		wp_enqueue_style('frank_stylesheet_widgets', get_bloginfo('template_directory').'/stylesheets/css/widgets.css', null, '0.1', 'all' );
+		wp_enqueue_style('frank_stylesheet_sprites', get_bloginfo('template_directory').'/stylesheets/css/sprites.css', null, '0.1', 'all' );
+		wp_enqueue_style('frank_stylesheet_transitions', get_bloginfo('template_directory').'/stylesheets/css/transitions.css', null, '0.1', 'all' );
+		wp_enqueue_style('frank_stylesheet_header', get_bloginfo('template_directory').'/stylesheets/css/header.css', null, '0.1', 'all' );
+		wp_enqueue_style('frank_stylesheet_index', get_bloginfo('template_directory').'/stylesheets/css/index.css', null, '0.1', 'all' );
+		wp_enqueue_style('frank_stylesheet_single', get_bloginfo('template_directory').'/stylesheets/css/single.css', null, '0.1', 'all' );
+		wp_enqueue_style('frank_stylesheet_archive', get_bloginfo('template_directory').'/stylesheets/css/archive.css', null, '0.1', 'all' );
+		wp_enqueue_style('frank_stylesheet_fourohfour', get_bloginfo('template_directory').'/stylesheets/css/fourohfour.css', null, '0.1', 'all' );
+		wp_enqueue_style('frank_stylesheet_sidebar', get_bloginfo('template_directory').'/stylesheets/css/sidebar.css', null, '0.1', 'all' );
+		wp_enqueue_style('frank_stylesheet_comments', get_bloginfo('template_directory').'/stylesheets/css/comments.css', null, '0.1', 'all' );
+		wp_enqueue_style('frank_stylesheet_footer', get_bloginfo('template_directory').'/stylesheets/css/footer.css', null, '0.1', 'all' );
+		wp_enqueue_style('frank_stylesheet_colorbox', get_bloginfo('template_directory').'/stylesheets/css/colorbox.css', null, '0.1', 'all' );
+		wp_enqueue_style('frank_stylesheet_hacks', get_bloginfo('template_directory').'/stylesheets/css/hacks.css', null, '0.1', 'all' );
+		
+		wp_enqueue_style('frank_stylesheet_mobile', get_bloginfo('template_directory').'/stylesheets/css/mobile.css', null, '0.1', 'all' );
+		wp_enqueue_style('frank_stylesheet_print', get_bloginfo('template_directory').'/stylesheets/css/print.css', null, '0.1', 'print' );
+	}	
+	?>
+
 	
 	<!--[if IE]>
-	<link rel="stylesheet" href="<?php get_template_directory_uri();; ?>/stylesheets/css/ie.css" type="text/css" media="screen" />
+	<?php wp_enqueue_style('frank_stylesheet_ie', get_bloginfo('template_directory').'/stylesheets/css/ie.css', null, '0.1', 'all' ); ?>
 	<![endif]-->
 	<!--[if IE 7]>
-	<link rel="stylesheet" href="<?php get_template_directory_uri();; ?>/stylesheets/css/ie7.css" type="text/css" media="screen" />
+	<?php wp_enqueue_style('frank_stylesheet_ie7', get_bloginfo('template_directory').'/stylesheets/css/ie7.css', null, '0.1', 'all' ); ?>
 	<![endif]-->
 	
 	<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="<?php get_feed_link( 'rss2' ) ?>" />

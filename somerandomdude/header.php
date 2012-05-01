@@ -16,66 +16,13 @@
 	
 	<title><?php if (function_exists('is_tag') && is_tag()) { echo 'Tag Archive for &quot;'.$tag.'&quot;&mdash;'; } elseif (is_archive()) { wp_title(''); echo ' Archive&mdash;'; } elseif (is_search()) { echo 'Search for &quot;'.wp_specialchars($s).'&quot;&mdash;'; } elseif (!(is_404()) && (is_single()) || (is_page())) { wp_title(''); echo '&mdash;'; } elseif (is_404()) { echo 'Not Found&mdash;'; } bloginfo('name'); ?></title>
 	
-	<?php if(!frank_devmode()) : ?>
-		<link rel="stylesheet" media="all" href="<?php echo get_stylesheet_directory_uri(); ?>/style.css"  />
-	<?php else : ?>
-		<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/stylesheets/css/reset.css" media="all" />
-		<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/stylesheets/css/grid.css" media="all" />
-		<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/stylesheets/css/global.css" media="all" />
-		<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/stylesheets/css/forms.css" media="all" />
-		<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/stylesheets/css/widgets.css" media="all" />
-		<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/stylesheets/css/sprites.css" media="all" />
-		<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/stylesheets/css/transitions.css" media="all" />
-		<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/stylesheets/css/header.css" media="all" />
-		<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/stylesheets/css/index.css" media="all" />
-		<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/stylesheets/css/single.css" media="all" />
-		<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/stylesheets/css/archive.css" media="all" />
-		<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/stylesheets/css/fourohfour.css" media="all" />
-		<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/stylesheets/css/sidebar.css" media="all" />
-		<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/stylesheets/css/comments.css" media="all" />
-		<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/stylesheets/css/footer.css" media="all" />
-		<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/stylesheets/css/colorbox.css" media="all" />
-		<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/stylesheets/css/hacks.css" media="all" />
-
-		<link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/stylesheets/css/global.css" media="all" />
-		<link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/stylesheets/css/forms.css" media="all" />
-		<link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/stylesheets/css/widgets.css" media="all" />
-		<link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/stylesheets/css/sprites.css" media="all" />
-		<link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/stylesheets/css/transitions.css" media="all" />
-		<link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/stylesheets/css/header.css" media="all" />
-		<link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/stylesheets/css/index.css" media="all" />
-		<link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/stylesheets/css/single.css" media="all" />
-		<link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/stylesheets/css/page.css" media="all" />
-		<link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/stylesheets/css/archive.css" media="all" />
-		<link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/stylesheets/css/fourohfour.css" media="all" />
-		<link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/stylesheets/css/sidebar.css" media="all" />
-		<link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/stylesheets/css/comments.css" media="all" />
-		<link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/stylesheets/css/footer.css" media="all" />
-		<link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/stylesheets/css/pages.css" media="all" />
-		<link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/stylesheets/css/colorbox.css" media="all" />
-		<link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/stylesheets/css/hacks.css" media="all" />
-
-		<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/stylesheets/css/mobile.css" media="all" />
-		<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/stylesheets/css/print.css" media="all" />
-	<?php endif; ?> 
-	
-	<!--[if IE]>
-	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/stylesheets/css/ie.css" media="screen" />
-	<![endif]-->
-	<!--[if IE 7]>
-	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/stylesheets/css/ie7.css" media="screen" />
-	<![endif]-->
+	<?php 
+	if(!frank_devmode()) { frank_srd_enqueue_styles(); }
+	else { frank_srd_enqueue_styles_dev(); }
+	?>
 	
 	<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://feeds.feedburner.com/somerandomdude" />
 	<link rel="pingback" href="/xmlrpc.php" />
-	
-	<!--[if lte IE 8]>
-	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-	<![endif]-->
-	
-	<!--[if lt IE 7]>
-	<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE7.js"></script>
-	<![endif]-->
 	
 	<script type="text/javascript">
 		var analyticsFileTypes = [''];

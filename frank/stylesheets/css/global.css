@@ -402,7 +402,7 @@ button.alt:hover, .button.alt:hover, input[type=submit].alt:hover {
   color: #fffefe;
   border: 1px solid rgba(18, 7, 6, 0.5); }
 
-button.small2, .button.small2, a.button.small2 {
+button.small, .button.small, a.button.small {
   font-size: 10px;
   padding: 4px 8px; }
 
