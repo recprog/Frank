@@ -24,6 +24,14 @@
 	<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://feeds.feedburner.com/somerandomdude" />
 	<link rel="pingback" href="/xmlrpc.php" />
 	
+	<!--[if lte IE 8]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+	<![endif]-->
+	
+	<!--[if lt IE 7]>
+	<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE7.js"></script>
+	<![endif]-->
+	
 	<script type="text/javascript">
 		var analyticsFileTypes = [''];
 		var analyticsEventTracking = 'enabled';

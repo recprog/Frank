@@ -48,3 +48,46 @@
 				@include font-size-x-small();
 				margin-top: $row-height;
 				font-style: italic; } } } }
+				
+				
+				
+				
+/*PNG replacements*/
+#page_header {
+	
+	h1 {
+		a { 
+
+			background:url('/wp-content/themes/somerandomdude/images/title.png?embed=true') no-repeat;
+
+		}
+	}
+	nav {
+		#menu-primary {
+			
+			li.rss {
+				a { 	
+					background:$color_accent url('/wp-content/themes/somerandomdude/images/rss.png?embed=true') no-repeat center center;
+				}
+			}
+			
+			li.twitter {
+
+				a { 
+					background:$color_accent url('/wp-content/themes/somerandomdude/images/twitter.png?embed=true') no-repeat center center;
+				}
+			}
+		}
+	}
+}
+
+#text-10 {
+
+	#footer_main_promo {
+
+		.sprite.fork {
+
+			background:url('/wp-content/themes/somerandomdude/images/fork.png?embed=true') no-repeat;
+		}
+	}
+}

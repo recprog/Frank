@@ -28,7 +28,7 @@
 						<li class="tags"><?php the_tags('', ', '); ?></li>
 						<li class='comments'><?php comments_popup_link('No comments', '1 comment', '% comments'); ?></li>	
 					</ul>
-					<a id="post_tweet" class="button alt small" href="https://twitter.com/share?text=<?php the_title(); ?>&via=somerandomdude&related=somerandomdude&url=<?php the_permalink(); ?>&counturl=<?php the_permalink(); ?>" target="_blank">Tweet this Post</a>
+					<a id="post_tweet" class="button alt small" href="https://twitter.com/share?text=<?php echo rawurlencode(get_the_title()); ?>&amp;via=somerandomdude&amp;related=somerandomdude&amp;url=<?php the_permalink(); ?>&amp;counturl=<?php the_permalink(); ?>" target="_blank">Tweet this Post</a>
 					<div id="previous_post" class="clearfix">
 						<?php previous_post_link('%link', '<nav><span class="arrow">%title</span></nav><p>%title</p>'); ?>
 					</div>

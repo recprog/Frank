@@ -1,22 +1,22 @@
 class FLB
 
-  @sbLoaderSide
-  @resizeImage
-  @imgDisplayDelay
-  @sbOverlayId
-  @element
-  @options
-  @image
-  @container
-  @overlay
-  @imgContainer
+  @sbLoaderSide=null
+  @resizeImage=null
+  @imgDisplayDelay=null
+  @sbOverlayId=null
+  @element=null
+  @options=null
+  @image=null
+  @container=null
+  @overlay=null
+  @imgContainer=null
 
   constructor: (el, o) ->
     @element=el
     if Object.prototype.toString.call(o) is '[object Object]'
       @options=o
     else 
-      @options=new Object()
+      @options={}
 
     @options.resizeImage=false
 

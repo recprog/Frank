@@ -1,0 +1,7 @@
+<!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.1//EN'  'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'>
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" height="3200px" viewBox="0 0 3200 3200" width="3200px" version="1.1" y="0px" x="0px" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 3200 3200">
+<path d="m400 2400c220.9 0 400 179.1 400 400s-179.1 400-400 400-400-179-400-400 179.1-400 400-400z" fill="#fff"/>
+<path d="m600 2e3c330 0 600 270 600 600h400c0-600-400-1e3 -1e3 -1e3v400z" fill="#fff"/>
+<path d="m600 1200c800 0 1400 600 1400 1400h400c0-1e3 -800-1800-1800-1800v400z" fill="#fff"/>
+<path d="m600 400c1200 0 2200 1e3 2200 2200h400c0-1400-1200-2600-2600-2600v400z" fill="#fff"/>
+</svg>

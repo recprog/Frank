@@ -34,7 +34,7 @@
 	<?php else : // this is displayed if there are no comments so far ?>
 
 		<?php if ('open' == $post->comment_status) : ?>
-			<p class="no_comments">Be the first to leave a comment. Don't be shy.</p>
+			<p class="no_comments">Be the first to leave a comment. Don&rsquo;t be shy.</p>
 		<?php else : ?>
 		<p class="comments_closed">Comments are closed.</p>
 	<?php endif; ?>
@@ -65,7 +65,7 @@
 		
 		$comment_notes_after = '<div class="row"><div class="form-allowed-tags nine columns push-three"><p class="">' . sprintf( __( 'You may use these <abbr title="HyperText Markup Language">HTML</abbr> tags and attributes: %s' ), ' <code>' . allowed_tags() . '</code>' ) . '</p></div></div>';
 		
-		comment_form(array('id_form' => 'frm-comment', 'logged_in_as' => $logged_in_as, 'comment_notes_before' => '', 'comment_notes_after' => $comment_notes_after, 'title_reply' => '<header><h1>Leave a Comment</h1></header>', 'fields' => $fields, 'comment_field' => $comment_field)); 
+		comment_form(array('id_form' => 'frm-comment', 'logged_in_as' => $logged_in_as, 'comment_notes_before' => '', 'comment_notes_after' => $comment_notes_after, 'title_reply' => 'Leave a Comment', 'fields' => $fields, 'comment_field' => $comment_field)); 
 		?>
 		
 </div>

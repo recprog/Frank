@@ -10,6 +10,8 @@ define('HEADER_IMAGE_HEIGHT', 200);
 add_filter('wp_list_categories', 'frank_remove_category_list_rel');
 add_filter('the_category', 'frank_remove_category_list_rel');
 add_filter('dynamic_sidebar_params','frank_widget_first_last_classes');
+add_filter( 'script_loader_src', 'frank_remove_script_version', 15, 1 );
+add_filter( 'style_loader_src', 'frank_remove_script_version', 15, 1 );
 
 register_nav_menus(array('primary' => __( 'Primary Navigation' )));
 
@@ -112,6 +114,11 @@ if ( function_exists('register_sidebar') ) {
 
 function frank_init() {
 	wp_deregister_script( 'l10n' );
+}
+
+function frank_remove_script_version( $src ){
+	$parts = explode( '?', $src );
+	return $parts[0];
 }
 
 // Remove rel attribute from the category list - thanks Joseph (http://josephleedy.me/blog/make-wordpress-category-list-valid-by-removing-rel-attribute/)! 
