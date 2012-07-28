@@ -23,7 +23,12 @@ window.onload = ->
 	trackClickHandler = (elem, cat, action, label) ->
 		return () ->
 			gaTrack(cat, if action then elem.querySelector(action).firstChild.nodeValue else elem.firstChild.nodeValue)
-			setTimeout('document.location = "' + elem.href + '"', 100);
+			#setTimeout('document.location = "' + elem.href + '"', 100);
+
+			if elem.getAttribute("target")
+				window.open(@href, @getAttribute("target"))
+			else 
+				setTimeout('document.location = "' + elem.href + '"', 100)
 			return false
 
 	
@@ -56,7 +61,16 @@ window.onload = ->
 		for navItem in navItems
 			navItem.onclick = navClickHandler(navItem, navItems)
 
-	trackElems(document.querySelectorAll('#post_tweet'), 'Tweet Post', null, document.title);
+	postTweet = document.querySelector('#post_tweet')
+	if postTweet
+		postTweet.onclick = (e) ->
+			gaTrack('Tweet Post', @firstChild.nodeValue, document.title)
+			centerLeft = window.screen.width/2 - 550/2
+			centerTop = window.screen.height/2 - 470/2
+			window.open(@href, @getAttribute("target"), 'width=550, height=470, location=0, left='+centerLeft+', top='+centerTop)
+			return false
+
+	#trackElems(document.querySelectorAll('#post_tweet'), 'Tweet Post', null, document.title);
 	trackElems(document.querySelectorAll('#menu-primary li a'), 'Top Nav', null, document.title);
 	trackElems(document.querySelectorAll('#bio_pic'), 'Bio Pic', null, document.title);
 	trackElems(document.querySelectorAll('#previous_post a'), 'Previous Post', '.arrow', document.title);

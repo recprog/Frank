@@ -3,7 +3,7 @@
 */
 
 window.onload = function() {
-  var flb, fss, gaTrack, lightbox, lightboxes, navClickHandler, navItem, navItems, slideshow, slideshows, trackClickHandler, trackElems, _i, _j, _k, _len, _len1, _len2;
+  var flb, fss, gaTrack, lightbox, lightboxes, navClickHandler, navItem, navItems, postTweet, slideshow, slideshows, trackClickHandler, trackElems, _i, _j, _k, _len, _len1, _len2;
   if (!document.querySelector) {
     return;
   }
@@ -35,7 +35,11 @@ window.onload = function() {
   trackClickHandler = function(elem, cat, action, label) {
     return function() {
       gaTrack(cat, action ? elem.querySelector(action).firstChild.nodeValue : elem.firstChild.nodeValue);
-      setTimeout('document.location = "' + elem.href + '"', 100);
+      if (elem.getAttribute("target")) {
+        window.open(this.href, this.getAttribute("target"));
+      } else {
+        setTimeout('document.location = "' + elem.href + '"', 100);
+      }
       return false;
     };
   };
@@ -81,7 +85,17 @@ window.onload = function() {
       navItem.onclick = navClickHandler(navItem, navItems);
     }
   }
-  trackElems(document.querySelectorAll('#post_tweet'), 'Tweet Post', null, document.title);
+  postTweet = document.querySelector('#post_tweet');
+  if (postTweet) {
+    postTweet.onclick = function(e) {
+      var centerLeft, centerTop;
+      gaTrack('Tweet Post', this.firstChild.nodeValue, document.title);
+      centerLeft = window.screen.width / 2 - 550 / 2;
+      centerTop = window.screen.height / 2 - 470 / 2;
+      window.open(this.href, this.getAttribute("target"), 'width=550, height=470, location=0, left=' + centerLeft + ', top=' + centerTop);
+      return false;
+    };
+  }
   trackElems(document.querySelectorAll('#menu-primary li a'), 'Top Nav', null, document.title);
   trackElems(document.querySelectorAll('#bio_pic'), 'Bio Pic', null, document.title);
   trackElems(document.querySelectorAll('#previous_post a'), 'Previous Post', '.arrow', document.title);

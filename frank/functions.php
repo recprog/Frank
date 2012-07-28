@@ -210,6 +210,16 @@ function frank_devmode() {
 	if($frank_general) return $frank_general['devmode'];
 }
 
+function frank_tweet_post_button() {
+	$frank_general = get_option( '_frank_options' );
+    if($frank_general&&$frank_general['tweet_post_button']) return true;
+}
+
+function frank_tweet_post_attribution() {
+	$frank_general = get_option( '_frank_options' );
+    if($frank_general) return $frank_general['tweet_post_attribution'];
+}
+
 function frank_comment($comment, $args, $depth) {
    $GLOBALS['comment'] = $comment; ?>
 

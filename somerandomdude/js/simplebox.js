@@ -4,26 +4,6 @@ var FLB;
 FLB = (function() {
   var clickHandler, closeClickHandler, imageLoadHandler, sizeContainer;
 
-  FLB.sbLoaderSide = null;
-
-  FLB.resizeImage = null;
-
-  FLB.imgDisplayDelay = null;
-
-  FLB.sbOverlayId = null;
-
-  FLB.element = null;
-
-  FLB.options = null;
-
-  FLB.image = null;
-
-  FLB.container = null;
-
-  FLB.overlay = null;
-
-  FLB.imgContainer = null;
-
   function FLB(el, o) {
     this.element = el;
     if (Object.prototype.toString.call(o) === '[object Object]') {
