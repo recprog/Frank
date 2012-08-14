@@ -4,7 +4,7 @@ This theme has been the personal project of [P.J. Onori](http://somerandomdude.c
 
 ###Frank is fast
 
-Frank's main focus is speed. The parent theme's default home page makes 9 database queries and consists of 2 requests weighing ~29Kb (9.3Kb gzipped). Frank keeps it basic—no Javascript frameworks, no unecessary images, just a simple, no-frills, screaming fast blog.
+Frank's main focus is speed. The parent theme's default home page makes 9 database queries and consists of 2 requests weighing ~29Kb (9.3Kb gzipped). Frank keeps it basic—no Javascript frameworks, no unnecessary images, just a simple, no-frills, screaming fast blog.
 
 ###Frank is flexible
 
@@ -12,7 +12,7 @@ Frank has several different layouts to choose from for your home page. Most layo
 
 ###Frank is forward-thinking
 
-Frank is built on HTML5 and CSS3. The theme strives for 100% valid HTML5 templates. One way Frank is so small is that it uses CSS3's effects and transitions to avoid unneeded images and Javascript. One side effect of this appraoch is that Frank does not support Internet Explorer 6 and *moderately* supports Internet Explorer 7 & 8. 
+Frank is built on HTML5 and CSS3. The theme strives for 100% valid HTML5 templates. One way Frank is so small is that it uses CSS3's effects and transitions to avoid unneeded images and Javascript. One side effect of this approach is that Frank does not support Internet Explorer 6 and *moderately* supports Internet Explorer 7 & 8. 
 
 ###Frank fits on your phone
 
