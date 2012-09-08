@@ -1,10 +1,9 @@
 <?php
 /**
- * @package WordPress
- * @subpackage Frank
+ * @package Frank
  */
 ?>
-	<aside id="sidebar" class='three columns' role="complementary">	
+	<aside id="sidebar" role="complementary">	
 			<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Post Right Aside') ) : ?>
 				<h3>About This Site</h3>
 				<p><?php bloginfo('description'); ?></p>

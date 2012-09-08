@@ -1,7 +1,6 @@
 <?php
 /**
- * @package WordPress
- * @subpackage Franklin_Street
+ * @package Frank
  */
 ?>
 
@@ -17,6 +16,7 @@
 	/* This variable is for alternating comment background */
 	$oddcomment = 'class="alt" ';
 ?>
+
 <!-- Start editing here. -->
 <div id='comments_container'>
 	<header>
@@ -26,9 +26,7 @@
 <div id='comments_content'>
 <?php if ($comments) : ?>
 	<ul id="comments">
-		
-	<?php wp_list_comments( array( 'callback' => 'frank_comment' ) ); ?>	
-		
+	<?php wp_list_comments( array( 'callback' => 'frank_comment' ) ); ?>		
 	</ul>
 	<?php paginate_comments_links(); ?>
 	<?php else : // this is displayed if there are no comments so far ?>

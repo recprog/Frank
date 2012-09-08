@@ -4,7 +4,8 @@
 	label {
 		font-family: $sans-serif;
 		@include font-size-small();
-		font-weight: $bold; }
+		font-weight: $bold; 
+	}
 	input[type=text], textarea {
 		@include font-size-small();
 		border: 1px solid $color_midtone;
@@ -13,7 +14,10 @@
 		padding: 3px 4px;
 		@include font-size-small();
 		box-shadow: inset 0px 0px 5px rgba(18, 7, 6, 0.2);
-		border-radius: 2px; }
+		border-radius: 2px; 
+	}
 	input[type=text]:focus, textarea:focus {
 		border: 1px solid $color_off_black;
-		box-shadow: inset 0px 0px 5px rgba(18, 7, 6, 0.1); } }
+		box-shadow: inset 0px 0px 5px rgba(18, 7, 6, 0.1); 
+	} 
+}

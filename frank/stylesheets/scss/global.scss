@@ -1,4 +1,5 @@
-@import "variables";
+
+
 	
 body {
 	@include reset-dimensions();
@@ -14,6 +15,14 @@ img.noshadow { box-shadow: none !important; }
 
 /*Anchor tags*/
 a {
+
+	/*Reset*/
+	margin:0;
+  padding:0;
+  font-size:100%;
+  vertical-align:baseline;
+  background:transparent;
+
 	color: $color_accent;
 	text-decoration: none;
 	
@@ -29,6 +38,7 @@ h1, h2, h3, h4, h5, h6 {
 	padding-top: 0px; 
 	margin-bottom: $row-height; 
 }
+/* TODO: Try this pattern out :not(:last-child) */
 h1:first-child, h2:first-child, h3:first-child, h4:first-child, h5:first-child, h6:first-child { margin-top: 0; }
 h1 { @include font-size-x-large(); }
 h2 { @include font-size-large(); }
@@ -141,27 +151,22 @@ dl {
 	margin: $row-height 0;
 	padding-top: 5px;
 	font-family:$serif;
-	dt, dd {
-		@include font-size-x-small()
-	}
-	dt {
-		font-weight: $bold;
-		margin-top: $row-height; 
-	}
-	dt:first-child {
-		margin: 0; 
-	} 
+}
+dt, dd {
+	@include font-size-x-small()
+}
+dt {
+	font-weight: $bold;
+	margin-top: $row-height; 
+}
+dt:first-child {
+	margin: 0; 
 }
 
 /*Typographic tags*/
 small { @include font-size-small; }
 strong { font-weight: $bold; }
 em { font-style: italic; }
-
-/*Horizontal rule*/
-hr {
-	border-color: $color-light; 
-}
 
 header {
 	margin-bottom:$row-height;
@@ -298,26 +303,24 @@ ul.metadata {
 		font-family: $sans-serif; 
 	} 
 }
+
+/* TODO: Try this pattern out :not(:last-child) */
 ul.metadata.horizontal {
 	margin-top: $row-height;
 	display: inline-block;
 	li {
 		float: left;
 		background: none;
-		margin-right: 15px; 
+		margin:0 15px 0 0; 
 	}
 	li.last, li:last-child {
 		margin-right: 0; 
 	} 
-	li:first-child {
-		margin-left:0;
-	}
 }
 ul.metadata.vertical {
 	margin-top: 5px;
 	li {
 		text-align: right;
-		float: none;
 		margin-bottom: 5px; 
 	}
 	li.date {
@@ -330,28 +333,46 @@ dl.metadata {
 	text-align: right;
 	margin-bottom: $row-height; 
 }
-	
+
 .post {
-	header { margin-bottom: $row-height; }
-	p .callout { padding-top: 0; } 
+	.post-header { margin-bottom: $row-height; }
+	.post-content {
+		@extend .column;
+		width: $nine-columns;
+		@extend .push-three;
+		font-family: $serif;
+		@include font-size-medium;
+		p, ul li, ol li, dt, dd, blockquote { 
+			@include font-size-medium; 
+		}
+		code, small { 
+			@include font-size-small; 
+		}
+		img {
+			max-width: 100%;
+			@include default-shadow(); 
+		}
+	}
+	.post-info {
+		@extend .column;
+		width: $three-columns;
+		@extend .pull-nine;
+	}
 }
 
 #content {
 	margin: 0 0 $row-height*4 0;
 	position: relative;
-	section {
-		font-family: $serif;
-		@include font-size-medium;
-		p, ul li, ol li, dt, dd, blockquote { @include font-size-medium; }
-		code, small { @include font-size-small; }
-		img {
-			max-width: 100%;
-			@include default-shadow(); 
-		}
-	} 
 }
-#content.page section img { box-shadow: none !important; }
 
+#content-primary {
+	@extend .column;
+	width: $nine-columns;
+}
+
+#content.page .post img { box-shadow: none !important; }
+
+/* TODO: Try this pattern out :not(:last-child) */
 #content.home, #content.archive, #content.search {
 	article { margin-top: $row-height * 4; margin-bottom: $row-height * 4; }
 	article:first-child { margin-top: 0; }

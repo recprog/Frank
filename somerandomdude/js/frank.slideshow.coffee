@@ -80,7 +80,6 @@ class FSS
 	# Private Methods
 
 	init: ->
-
 		context = @
 		@options.width=@element.offsetWidth if not @options.width 
 		@options.height=@element.offsetHeight if not @options.height

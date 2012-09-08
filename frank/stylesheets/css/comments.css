@@ -7,6 +7,7 @@
     font-family: Georgia, "Times New Roman", Times, serif;
     color: #5d504f; }
 
+/* TODO: Break out heirarchy */
 #comments {
   list-style: none; }
   #comments .comment {
@@ -33,6 +34,7 @@
   margin: 30px 0;
   color: #5d504f; }
 
+/* TODO: Break out heirarchy */
 #respond input[type=text], #respond textarea {
   -moz-box-sizing: border-box;
   -ms-box-sizing: border-box;
@@ -59,6 +61,6 @@
   font-style: italic; }
 
 /*MOBILE*/
-@media only screen and  (max-width: 767px) {
+@media only screen and (max-width: 767px) {
   #comments_container #commentform #comment_form_info input[type=text] {
     text-align: left; } }

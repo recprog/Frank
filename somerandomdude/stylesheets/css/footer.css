@@ -26,6 +26,7 @@
     font-size: 11px;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
 
+/* TODO: Generalize font-size rule*/
 .recommended dt {
   font-size: 13px;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -37,6 +38,7 @@
   color: #f0eceb;
   margin-bottom: 15px; }
 
+/* TODO: Break main CSS out of #text-10*/
 #text-10 {
   box-shadow: 0px 4px 8px rgba(18, 7, 6, 0.3);
   margin-top: -30px; }
@@ -50,7 +52,8 @@
       max-width: 131px;
       height: 150px;
       /*background:url('/wp-content/themes/somerandomdude/images/fork.svg?embed=true') no-repeat center -2px;*/
-      background: url("data:image/svg+xml;charset=utf-8;base64,PCFET0NUWVBFIHN2ZyAgUFVCTElDICctLy9XM0MvL0RURCBTVkcgMS4xLy9FTicgICdodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQnPgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgaGVpZ2h0PSIzMjIwcHgiIHZpZXdCb3g9IjAuMiAwIDI3NTkuNzQ5IDMyMjAiIHdpZHRoPSIyNzYwcHgiIHZlcnNpb249IjEuMSIgeT0iMHB4IiB4PSIwcHgiIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAuMiAwIDI3NTkuNzQ5IDMyMjAiPgo8ZyBmaWxsPSIjZmZmIj4KCTxwYXRoIGQ9Im0xOTgwIDB2MzkwYzAgMTYwLTYyLjAxIDMxMC0xODAgNDIwbC0xMTAwIDExMDBjLTE5MCAyMDAtMjgwIDQwMC0zMDAgNzAwaC0zOTkuOGw2MDAgNjAwIDYwMC02MDBoLTM5OS44YzkuOTYxLTEzOS43IDY3Ljk3LTI4MCAxNzAtMzgwbDExMDAtMTEwMGMyMDAtMTkwIDMwMC00NTAgMzAwLTcxMHYtMzkwaC00MDBsMTAtMzB6Ii8+Cgk8cGF0aCBkPSJtMjM4MCAyNjAwYy0xMC45NC0yNTAtMTEwLTQ4MC0yOTAtNjYwbC0yMTkuOS0yMjAtMzAwIDMwMCAyMTkuOSAyMjBjMTAwIDEwMCAxNjAuMSAyMzkuNyAxNjkuOCAzODBoLTQwMGw2MDAgNjAwIDYwMC02MDBoLTQwMGwyMC4wMi0yMC4wMnoiLz4KPC9nPgo8L3N2Zz4K") no-repeat center -2px;
+      /*background:url('data:image/svg+xml;charset=utf-8;base64,PCFET0NUWVBFIHN2ZyAgUFVCTElDICctLy9XM0MvL0RURCBTVkcgMS4xLy9FTicgICdodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQnPgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgaGVpZ2h0PSIzMjIwcHgiIHZpZXdCb3g9IjAuMiAwIDI3NTkuNzQ5IDMyMjAiIHdpZHRoPSIyNzYwcHgiIHZlcnNpb249IjEuMSIgeT0iMHB4IiB4PSIwcHgiIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAuMiAwIDI3NTkuNzQ5IDMyMjAiPgo8ZyBmaWxsPSIjZmZmIj4KCTxwYXRoIGQ9Im0xOTgwIDB2MzkwYzAgMTYwLTYyLjAxIDMxMC0xODAgNDIwbC0xMTAwIDExMDBjLTE5MCAyMDAtMjgwIDQwMC0zMDAgNzAwaC0zOTkuOGw2MDAgNjAwIDYwMC02MDBoLTM5OS44YzkuOTYxLTEzOS43IDY3Ljk3LTI4MCAxNzAtMzgwbDExMDAtMTEwMGMyMDAtMTkwIDMwMC00NTAgMzAwLTcxMHYtMzkwaC00MDBsMTAtMzB6Ii8+Cgk8cGF0aCBkPSJtMjM4MCAyNjAwYy0xMC45NC0yNTAtMTEwLTQ4MC0yOTAtNjYwbC0yMTkuOS0yMjAtMzAwIDMwMCAyMTkuOSAyMjBjMTAwIDEwMCAxNjAuMSAyMzkuNyAxNjkuOCAzODBoLTQwMGw2MDAgNjAwIDYwMC02MDBoLTQwMGwyMC4wMi0yMC4wMnoiLz4KPC9nPgo8L3N2Zz4K') no-repeat center -2px;*/
+      background: url("data:image/svg+xml;charset=utf-8;base64,CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBoZWlnaHQ9IjMyMjBweCIgd2lkdGg9IjI3NjBweCIgeT0iMHB4IiB4PSIwcHgiPgo8ZyBmaWxsPSIjZmZmIj4KCTxwYXRoIGQ9Im0xOTgwIDB2MzkwYzAgMTYwLTYyLjAxIDMxMC0xODAgNDIwbC0xMTAwIDExMDBjLTE5MCAyMDAtMjgwIDQwMC0zMDAgNzAwaC0zOTkuOGw2MDAgNjAwIDYwMC02MDBoLTM5OS44YzkuOTYxLTEzOS43IDY3Ljk3LTI4MCAxNzAtMzgwbDExMDAtMTEwMGMyMDAtMTkwIDMwMC00NTAgMzAwLTcxMHYtMzkwaC00MDBsMTAtMzB6Ii8+Cgk8cGF0aCBkPSJtMjM4MCAyNjAwYy0xMC45NC0yNTAtMTEwLTQ4MC0yOTAtNjYwbC0yMTkuOS0yMjAtMzAwIDMwMCAyMTkuOSAyMjBjMTAwIDEwMCAxNjAuMSAyMzkuNyAxNjkuOCAzODBoLTQwMGw2MDAgNjAwIDYwMC02MDBoLTQwMGwyMC4wMi0yMC4wMnoiLz4KPC9nPgo8L3N2Zz4K") no-repeat center -2px;
       background-size: contain;
       float: left;
       margin-left: 15px; }

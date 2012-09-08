@@ -1,61 +1,62 @@
 @import "variables";
+@import "grid";
+
+#previous_post {
+	margin-top: $row-height * 4;
+	font-style: italic;
+	font-family: $serif;
+	a {
+		@include font-size-small();
+		display: block;
+		text-align: center; }
+	nav {
+		padding-bottom: $row-height;
+		border-bottom: 1px solid $color_light;
+		margin: $row-height 0; }
+	.arrow {
+		display: block;
+		@include default-shadow();
+		width: 45px;
+		height: 45px;
+		border-radius: 22.5px;
+		text-indent: 100%;
+		white-space: nowrap;
+		overflow: hidden;
+		background: $color_midtone url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAQCAYAAADESFVDAAAAWElEQVR42qXSzQkAIAgF4EZolEZqhDZqpEZwBM8dovSUYD9YwuNdPgIlt5tWa6AA9wkgpXPfACeagaeAAGkFigDZACbKAoAC+5f+od7Oesh/iC+/QC/DPQAIxvkuqJQtLgAAAABJRU5ErkJggg==') no-repeat 16px 15px;
+	}
+	a:hover {
+		color: $color_accent_alt;
+		.arrow {
+			background-color: $color_dark; 
+		} 
+	} 
+}
+
+/* TODO: Remove heirarchy */
 
 #content.single {
-	#previous_post {
-		margin-top: $row-height * 4;
-		font-style: italic;
-		font-family: $serif;
-		a {
-			@include font-size-small();
-			display: block;
-			text-align: center; }
-		nav {
-			padding-bottom: $row-height;
-			border-bottom: 1px solid $color_light;
-			margin: $row-height 0; }
-		.arrow {
-			display: block;
-			@include default-shadow();
-			width: 45px;
-			height: 45px;
-			border-radius: 22.5px;
-			text-indent: 100%;
-			white-space: nowrap;
-			overflow: hidden;
-			background: $color_midtone url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAQCAYAAADESFVDAAAAWElEQVR42qXSzQkAIAgF4EZolEZqhDZqpEZwBM8dovSUYD9YwuNdPgIlt5tWa6AA9wkgpXPfACeagaeAAGkFigDZACbKAoAC+5f+od7Oesh/iC+/QC/DPQAIxvkuqJQtLgAAAABJRU5ErkJggg==') no-repeat 16px 15px;
-		}
-		a:hover {
-			color: $color_accent_alt;
-			.arrow {
-				background-color: $color_dark; 
-			} 
-		} 
-	}
 	position: relative;
-	article {
-		header {
-			h1 {
-				@include font-size-x-large();
-				color: $color_dark; 
-			} 
-		}
-				
-		section h1, section h2 {
-			margin: $row-height 0;
-			padding: 0;
-		}		
-		section h1 {
-			@include font-size-large();
-			margin-top: $row-height * 2; 
-		}
-		section h2 {
-			@include font-size-medium();
-			font-weight: $bold;
-		}
-		dl dd {
-			margin-left: $gutter-width; 
+	header {
+		h1 {
+			@include font-size-x-large();
+			color: $color_dark; 
 		} 
+	}		
+	section h1, section h2 {
+		margin: $row-height 0;
+		padding: 0;
+	}		
+	section h1 {
+		@include font-size-large();
+		margin-top: $row-height * 2; 
 	}
+	section h2 {
+		@include font-size-medium();
+		font-weight: $bold;
+	}
+	dl dd {
+		margin-left: $gutter-width; 
+	} 
 	#excerpt {
 		padding-bottom: $row-height * 2;
 		color: $color_midtone;
@@ -66,24 +67,24 @@
 			font-style: italic; 
 		} 
 	}
-	#content_primary {
-		section {
-			margin-bottom:$row-height * 3;
-		}
-		.pagination {
-			margin-top:$row-height*2;
-		}
-		#content_main {
-			margin: $row-height * 2 0; 
-			border-bottom:$border-break;
-			padding-bottom:$row-height;
-		} 
+
+	section {
+		margin-bottom:$row-height * 3;
 	}
+	.pagination {
+		margin-top:$row-height*2;
+	}
+	#content-main {
+		margin: $row-height * 2 0; 
+		border-bottom:$border-break;
+		padding-bottom:$row-height;
+	} 
 	#post_footer {
 		@extend .reset-dimensions;
 		border-bottom:$border-break;
 		padding-bottom:$row-height;
 		margin-bottom:$row-height * 2;
+		/* TODO: Try this pattern out :not(:last-child) */
 		.widget:nth-child(4n) {
 			margin-right: $gutter-width;
 		}
@@ -100,13 +101,11 @@
 	#post_tweet {
 		float:right;
 		margin:$row-height 0 $row-height*2 0;
-		margin:15px 0 30px 0;
 	}
 }
 	
 /*MOBILE*/
 @media only screen and  (max-width: 767px) {
-	
 	.post-info .previous {
 		a:before {
 			content:"Previous Post: ";

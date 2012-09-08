@@ -1,7 +1,7 @@
 @import "variables";
 
 #bio_pic { 
-	background:url('/wp-content/themes/somerandomdude/images/profile.png?embed=true') no-repeat center center;
+	background:image-url('/wp-content/themes/somerandomdude/images/profile.png') no-repeat center center;
 	
 	max-width:100%;
 	height:160px;

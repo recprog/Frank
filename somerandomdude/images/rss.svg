@@ -1,7 +1,10 @@
-<!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.1//EN'  'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'>
-<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" height="3200px" viewBox="0 0 3200 3200" width="3200px" version="1.1" y="0px" x="0px" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 3200 3200">
-<path d="m400 2400c220.9 0 400 179.1 400 400s-179.1 400-400 400-400-179-400-400 179.1-400 400-400z" fill="#fff"/>
-<path d="m600 2e3c330 0 600 270 600 600h400c0-600-400-1e3 -1e3 -1e3v400z" fill="#fff"/>
-<path d="m600 1200c800 0 1400 600 1400 1400h400c0-1e3 -800-1800-1800-1800v400z" fill="#fff"/>
-<path d="m600 400c1200 0 2200 1e3 2200 2200h400c0-1400-1200-2600-2600-2600v400z" fill="#fff"/>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 15.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="320px" height="320px" viewBox="0 0 320 320" enable-background="new 0 0 320 320" xml:space="preserve">
+<path fill="#FFFFFF" d="M40,240c22.09,0,40,17.91,40,40s-17.91,40-40,40S0,302.1,0,280S17.91,240,40,240z"/>
+<path fill="#FFFFFF" d="M60,200c33,0,60,27,60,60h40c0-60-40-100-100-100V200z"/>
+<path fill="#FFFFFF" d="M60,120c80,0,140,60,140,140h40c0-100-80-180-180-180V120z"/>
+<path fill="#FFFFFF" d="M60,40c120,0,220,100,220,220h40C320,120,200,0,60,0V40z"/>
 </svg>

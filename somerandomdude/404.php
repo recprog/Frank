@@ -6,7 +6,7 @@
 ?>
 <?php get_header(); ?>
 <div id="content" class="fullspread fourohfour">
-	<div id="content_primary" class='row'>
+	<div id="content-primary" class='row'>
 		<header>
 			<h1>Page Not Found</h1>
 		</header>

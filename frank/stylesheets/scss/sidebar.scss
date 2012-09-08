@@ -1,6 +1,9 @@
 @import "variables";
+@import "grid";
 
 #sidebar {
+	@extend .column;
+	width: $three-columns;
 	margin-top: 10px;
 	
 	.widget {
@@ -11,5 +14,6 @@
 		font-weight: $bold;
 		@include font-size-small();
 		margin-bottom: 5px; }
+	/* TODO: Try this pattern out :not(:last-child) */
 	h3:first-child { margin-top: 0 !important; }
 }

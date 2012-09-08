@@ -28,10 +28,10 @@ if ( function_exists( 'add_theme_support' ) ) {
   add_image_size( 'post-image', 535, 9999 ); //550 pixels wide (and unlimited height)
   add_image_size( 'featured-image', 980, 200, true);
   add_image_size( 'excerpt-image', 724, 160, true);
-  add_image_size( 'default-thumbnail', 535, 200, true);
-  add_image_size( 'two-up-thumbnail', 468, 200, true);
-  add_image_size( 'three-up-thumbnail', 297, 150, true);
-  add_image_size( 'four-up-thumbnail', 212, 100, true);
+  add_image_size( 'large-thumbnail', 600, 300, true);
+  add_image_size( 'medium-thumbnail', 400, 200, true);
+  add_image_size( 'small-thumbnail', 300, 150, true);
+  add_image_size( 'tiny-thumbnail', 100, 100, true);
 
 	/*
 	//I have yet to have a good reason to support post formats. Disabling for now...
@@ -204,10 +204,11 @@ function frank_header() {
 	$frank_general = get_option( '_frank_options' );
     if($frank_general) echo stripslashes($frank_general['header']);
 }
-
-function frank_devmode() {
-	$frank_general = get_option( '_frank_options' );
-	if($frank_general) return $frank_general['devmode'];
+if (!function_exists('frank_devmode')) {
+	function frank_devmode() {
+		$frank_general = get_option( '_frank_options' );
+		if($frank_general) return $frank_general['devmode'];
+	}
 }
 
 function frank_tweet_post_button() {
@@ -242,12 +243,85 @@ function frank_comment($comment, $args, $depth) {
 		</div>
 <?php
 }
+if (!function_exists('frank_enqueue_styles')) {
+	function frank_enqueue_styles() {
+		global $wp_styles;
+	
+		wp_register_style('frank_srd_stylesheet', get_stylesheet_directory_uri().'/style.css', null, '0.1', 'all' );
+		wp_register_style('frank_srd_stylesheet_ie', get_stylesheet_directory_uri().'/stylesheets/css/ie.css', null, '0.1', 'all' );
+		wp_register_style('frank_srd_stylesheet_ie7', get_stylesheet_directory_uri().'/stylesheets/css/ie7.css', null, '0.1', 'all' );
+	
+		$wp_styles->add_data('frank_srd_stylesheet_ie', 'conditional', 'IE');
+		$wp_styles->add_data('frank_srd_stylesheet_ie7', 'conditional', 'IE 7');
+	
+		wp_enqueue_style('frank_srd_stylesheet');
+		wp_enqueue_style('frank_srd_stylesheet_ie');
+		wp_enqueue_style('frank_srd_stylesheet_ie7');
+	}
+}
+
+if (!function_exists('frank_enqueue_styles_dev')) {
+	function frank_enqueue_styles_dev() {
+		global $wp_styles;
+
+		wp_register_style('frank_stylesheet_reset', get_bloginfo('template_directory').'/stylesheets/css/reset.css', null, '0.1', 'all' );
+		wp_register_style('frank_stylesheet_grid', get_bloginfo('template_directory').'/stylesheets/css/grid.css', null, '0.1', 'all' );
+		wp_register_style('frank_stylesheet_global', get_bloginfo('template_directory').'/stylesheets/css/global.css', null, '0.1', 'all' );
+		wp_register_style('frank_stylesheet_forms', get_bloginfo('template_directory').'/stylesheets/css/forms.css', null, '0.1', 'all' );
+		wp_register_style('frank_stylesheet_widgets', get_bloginfo('template_directory').'/stylesheets/css/widgets.css', null, '0.1', 'all' );
+		wp_register_style('frank_stylesheet_sprites', get_bloginfo('template_directory').'/stylesheets/css/sprites.css', null, '0.1', 'all' );
+		wp_register_style('frank_stylesheet_transitions', get_bloginfo('template_directory').'/stylesheets/css/transitions.css', null, '0.1', 'all' );
+		wp_register_style('frank_stylesheet_header', get_bloginfo('template_directory').'/stylesheets/css/header.css', null, '0.1', 'all' );
+		wp_register_style('frank_stylesheet_index', get_bloginfo('template_directory').'/stylesheets/css/index.css', null, '0.1', 'all' );
+		wp_register_style('frank_stylesheet_single', get_bloginfo('template_directory').'/stylesheets/css/single.css', null, '0.1', 'all' );
+		wp_register_style('frank_stylesheet_archive', get_bloginfo('template_directory').'/stylesheets/css/archive.css', null, '0.1', 'all' );
+		wp_register_style('frank_stylesheet_fourohfour', get_bloginfo('template_directory').'/stylesheets/css/fourohfour.css', null, '0.1', 'all' );
+		wp_register_style('frank_stylesheet_sidebar', get_bloginfo('template_directory').'/stylesheets/css/sidebar.css', null, '0.1', 'all' );
+		wp_register_style('frank_stylesheet_comments', get_bloginfo('template_directory').'/stylesheets/css/comments.css', null, '0.1', 'all' );
+		wp_register_style('frank_stylesheet_footer', get_bloginfo('template_directory').'/stylesheets/css/footer.css', null, '0.1', 'all' );
+		wp_register_style('frank_stylesheet_colorbox', get_bloginfo('template_directory').'/stylesheets/css/colorbox.css', null, '0.1', 'all' );
+		wp_register_style('frank_stylesheet_hacks', get_bloginfo('template_directory').'/stylesheets/css/hacks.css', null, '0.1', 'all' );
+
+		wp_register_style('frank_stylesheet_mobile', get_bloginfo('template_directory').'/stylesheets/css/mobile.css', null, '0.1', 'all' );
+		wp_register_style('frank_stylesheet_print', get_bloginfo('template_directory').'/stylesheets/css/print.css', null, '0.1', 'print' );
+	
+		wp_register_style('frank_srd_stylesheet_ie', get_stylesheet_directory_uri().'/stylesheets/css/ie.css', null, '0.1', 'all' );
+		wp_register_style('frank_srd_stylesheet_ie7', get_stylesheet_directory_uri().'/stylesheets/css/ie7.css', null, '0.1', 'all' );
+	
+		$wp_styles->add_data('frank_srd_stylesheet_ie', 'conditional', 'IE');
+		$wp_styles->add_data('frank_srd_stylesheet_ie7', 'conditional', 'IE 7');
+	
+		wp_enqueue_style('frank_stylesheet_reset');
+		wp_enqueue_style('frank_stylesheet_grid');
+		wp_enqueue_style('frank_stylesheet_global');
+		wp_enqueue_style('frank_stylesheet_forms');
+		wp_enqueue_style('frank_stylesheet_widgets');
+		wp_enqueue_style('frank_stylesheet_sprites');
+		wp_enqueue_style('frank_stylesheet_transitions');
+		wp_enqueue_style('frank_stylesheet_header');
+		wp_enqueue_style('frank_stylesheet_index');
+		wp_enqueue_style('frank_stylesheet_single');
+		wp_enqueue_style('frank_stylesheet_archive');
+		wp_enqueue_style('frank_stylesheet_fourohfour');
+		wp_enqueue_style('frank_stylesheet_sidebar');
+		wp_enqueue_style('frank_stylesheet_comments');
+		wp_enqueue_style('frank_stylesheet_footer');
+		wp_enqueue_style('frank_stylesheet_colorbox');
+		wp_enqueue_style('frank_stylesheet_hacks');
+	
+		wp_enqueue_style('frank_stylesheet_mobile');
+		wp_enqueue_style('frank_stylesheet_print');
+	
+		wp_enqueue_style('frank_srd_stylesheet_ie');
+		wp_enqueue_style('frank_srd_stylesheet_ie7');
+	}
+}
 
 function frank_srd_enqueue_styles() {
 	
 	global $wp_styles;
 	
-	wp_register_style('frank_srd_stylesheet', get_stylesheet_directory_uri().'/style.css', null, '0.1', 'all' );
+	#wp_register_style('frank_srd_stylesheet', get_stylesheet_directory_uri().'/style.css', null, '0.1', 'all' );
 	
 	wp_register_style('frank_srd_stylesheet_ie', get_stylesheet_directory_uri().'/stylesheets/css/ie.css', null, '0.1', 'all' );
 	wp_register_style('frank_srd_stylesheet_ie7', get_stylesheet_directory_uri().'/stylesheets/css/ie7.css', null, '0.1', 'all' );
@@ -255,10 +329,19 @@ function frank_srd_enqueue_styles() {
 	$wp_styles->add_data('frank_srd_stylesheet_ie', 'conditional', 'IE');
 	$wp_styles->add_data('frank_srd_stylesheet_ie7', 'conditional', 'IE 7');
 	
-	wp_enqueue_style('frank_srd_stylesheet');
+	#wp_enqueue_style('frank_srd_stylesheet');
+	
+
+	$css = file_get_contents(get_stylesheet_directory_uri().'/style.css');
+	echo '<style type="text/css">';
+	echo $css;
+	echo '</style>';
+	
+	
 	wp_enqueue_style('frank_srd_stylesheet_ie');
 	wp_enqueue_style('frank_srd_stylesheet_ie7');
 }
+
 
 function frank_srd_enqueue_styles_dev() {
 	

@@ -1,19 +1,18 @@
 <?php
 /**
- * @package WordPress
- * @subpackage Frank
+ * @package Frank
  */
 ?>
 <?php get_header(); ?>
 <div id="content" class="page">
 	<div class="row">
-	<div id="content_primary" class="nine columns">
+	<div id="content-primary">
 		<?php if(have_posts()) : while(have_posts()) : the_post(); ?>
 		<article class="post clear" id="p<?php the_ID(); ?>">
-			<header>
-				<h1><?php the_title(); ?></h1>
+			<header class="post-header">
+				<h1 class="post-title"><?php the_title(); ?></h1>
 			</header>
-			<section>
+			<section class="post-content">
 				<?php the_content(); ?>
 			</section>
 		</article>

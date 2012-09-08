@@ -12,16 +12,17 @@ body {
 		font-family: $sans-serif;
 		display: block;
 		margin-bottom: 2px; 
-	}
-	#webbynode_promo_link {
-		display: block;
-		width: 100px;
-		height: 20px;
-		background:url('/wp-content/themes/somerandomdude/images/webbynode.png?embed=true') no-repeat;
-		text-indent: 100%;
-		white-space: nowrap;
-		overflow: hidden; 
-	} 
+	}	 
+}
+
+#webbynode_promo_link {
+	display: block;
+	width: 100px;
+	height: 20px;
+	background:url('/wp-content/themes/somerandomdude/images/webbynode.png?embed=true') no-repeat;
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden; 
 }
 
 .fss { position: relative; }
@@ -52,7 +53,6 @@ body {
 	position:absolute;
 	opacity:0;
 	-webkit-transition: opacity 0.5s ease-in;
-	-moz-transition: opacity 0.5s ease-in;
 	width:100% !important;
 	background-position-x: center !important;
 }

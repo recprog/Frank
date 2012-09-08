@@ -74,6 +74,10 @@
 					</div>
 					<div>
 						<input type="checkbox" name="frank-general-devmode" value="devmode" <?php if($frank_general['devmode']): ?> checked="checked" <?php endif; ?> /> <label for="frank-general-devmode"><?php _e('Developer Mode', 'frank'); ?></label>
+							<input type="checkbox" name="frank-general-css-injection" value="csssinject" <?php if($frank_general['cssinject']): ?> checked="checked" <?php endif; ?>>	
+								<label for="frank-general-css-injection"><?php _e('Add CSS code directly into header', 'frank'); ?></label>
+						<input type="checkbox" name="frank-general-javascript-injection" value="jsinject" <?php if($frank_general['jsinject']): ?> checked="checked" <?php endif; ?>>	
+							<label for="frank-general-javascript-injection"><?php _e('Add Javascript code directly into footer', 'frank'); ?></label>
 					</div>
 
 					<div>

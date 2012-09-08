@@ -12,6 +12,10 @@ $color_accent_alt: #ff1e00;
 background-color: rgba(5, 0, 0, $alpha);
 }
 
+@mixin column() {
+	margin-left: 4.4%; float: left; min-height: 1px; position: relative;
+}
+
 $sans-serif: "Helvetica Neue", Helvetica, Arial, sans-serif;
 $serif: Georgia, "Times New Roman", Times, serif;
 
@@ -53,6 +57,19 @@ $font-medium: #{$medium};
 $font-small: #{$small};
 $font-x-small: #{$x-small};
 $font-xx-small: #{$xx-small};
+
+$one-column: 4.3%;
+$two-columns: 13%;
+$three-columns: 21.679%;
+$four-columns: 30.37%;
+$five-columns: 39.1%; 
+$six-columns: 47.8%;
+$seven-columns: 56.5%;
+$eight-columns: 65.2%;
+$nine-columns: 73.9%;
+$ten-columns: 82.6%; 
+$eleven-columns: 91.3%;
+$twelve-columns: 100%;
 
 @mixin font-size-xxx-large() {
 font-size: $xxx-large;

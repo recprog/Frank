@@ -45,7 +45,7 @@
 		section p { @include font-size-small(); }
 		.metadata li { @include font-size-x-small(); }
 	}
-	
+	/* TODO: Try this pattern out :not(:last-child) */
 	.content.twoup .post:nth-child(2n+1), .content.threeup .post:nth-child(3n+1), .content.fourup .post:nth-child(4n+1) {
 		margin-left:0;
 		clear: left;
