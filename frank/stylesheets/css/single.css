@@ -321,20 +321,20 @@ img, object, embed {
     margin: 30px 0;
     border-bottom: 2px solid #f0eceb;
     padding-bottom: 15px; }
-  #content.single #post_footer {
+  #content.single #post-footer {
     border-bottom: 2px solid #f0eceb;
     padding-bottom: 15px;
     margin-bottom: 30px;
     /* TODO: Try this pattern out :not(:last-child) */ }
-    #content.single #post_footer .widget:nth-child(4n) {
+    #content.single #post-footer .widget:nth-child(4n) {
       margin-right: 40px; }
-    #content.single #post_footer .widget:nth-child(4n+1) {
+    #content.single #post-footer .widget:nth-child(4n+1) {
       clear: none; }
-    #content.single #post_footer .widget:nth-child(3n) {
+    #content.single #post-footer .widget:nth-child(3n) {
       margin-right: 0; }
-    #content.single #post_footer .widget:nth-child(3n+1) {
+    #content.single #post-footer .widget:nth-child(3n+1) {
       clear: left; }
-  #content.single #post_tweet {
+  #content.single #post-tweet {
     float: right;
     margin: 15px 0 30px 0; }
 

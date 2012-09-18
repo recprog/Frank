@@ -1,12 +1,10 @@
-@import "variables";
-		
 .widget {
 	h3 { 
-		@include font-size-small(); 
+		font-size: $font-size-small; 
 		white-space: nowrap;
-	    overflow: hidden;
-	    text-overflow: ellipsis;
-	    -o-text-overflow: ellipsis;
+	  overflow: hidden;
+	  text-overflow: ellipsis;
+	  -o-text-overflow: ellipsis;
 	}	
 	margin-bottom:$row-height;
 }

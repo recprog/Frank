@@ -414,9 +414,6 @@ dl.metadata {
   text-align: right;
   margin-bottom: 15px; }
 
-.column, .post .post-content, .post .post-info, #content-primary, #sidebar {
-  background: #0ff; }
-
 .post .post-header {
   margin-bottom: 15px; }
 .post .post-content {
@@ -583,7 +580,7 @@ button.small, .button.small, a.button.small {
   margin-right: 0;
   float: right; }
 
-#comment_form_comment textarea {
+#comment-form-content textarea {
   -webkit-transition: height 0.5s cubic-bezier(0.02, 0, 0.18, 1);
   -moz-transition: height 0.5s cubic-bezier(0.02, 0, 0.18, 1); }
 
@@ -882,14 +879,14 @@ img, object, embed {
   max-width: none!important; }
 
 /* Nicolas Gallagher's micro clearfix */
-.row:before, .row:after, .clearfix:before, .clearfix:after {
+.row:before, .row:after, .clearfix:before, .post .post-content:before, .clearfix:after, .post .post-content:after {
   content: "";
   display: table; }
 
-.row:after, .clearfix:after {
+.row:after, .clearfix:after, .post .post-content:after {
   clear: both; }
 
-.row, .clearfix {
+.row, .clearfix, .post .post-content {
   zoom: 1; }
 
 /*	--------------------------------------------------
@@ -1006,20 +1003,20 @@ img, object, embed {
     margin: 30px 0;
     border-bottom: 2px solid #f0eceb;
     padding-bottom: 15px; }
-  #content.single #post_footer {
+  #content.single #post-footer {
     border-bottom: 2px solid #f0eceb;
     padding-bottom: 15px;
     margin-bottom: 30px;
     /* TODO: Try this pattern out :not(:last-child) */ }
-    #content.single #post_footer .widget:nth-child(4n) {
+    #content.single #post-footer .widget:nth-child(4n) {
       margin-right: 40px; }
-    #content.single #post_footer .widget:nth-child(4n+1) {
+    #content.single #post-footer .widget:nth-child(4n+1) {
       clear: none; }
-    #content.single #post_footer .widget:nth-child(3n) {
+    #content.single #post-footer .widget:nth-child(3n) {
       margin-right: 0; }
-    #content.single #post_footer .widget:nth-child(3n+1) {
+    #content.single #post-footer .widget:nth-child(3n+1) {
       clear: left; }
-  #content.single #post_tweet {
+  #content.single #post-tweet {
     float: right;
     margin: 15px 0 30px 0; }
 
@@ -1237,14 +1234,14 @@ img, object, embed {
   max-width: none!important; }
 
 /* Nicolas Gallagher's micro clearfix */
-.row:before, .row:after, .clearfix:before, .clearfix:after {
+.row:before, .row:after, .clearfix:before, .post .post-content:before, .clearfix:after, .post .post-content:after {
   content: "";
   display: table; }
 
-.row:after, .clearfix:after {
+.row:after, .clearfix:after, .post .post-content:after {
   clear: both; }
 
-.row, .clearfix {
+.row, .clearfix, .post .post-content {
   zoom: 1; }
 
 /*	--------------------------------------------------
@@ -1314,9 +1311,9 @@ img, object, embed {
   #sidebar h3:first-child {
     margin-top: 0 !important; }
 
-#comments_container {
+#comments-container {
   margin-top: 60px; }
-  #comments_container .no_comments, #comments_container .comments_closed {
+  #comments-container .no_comments, #comments-container .comments_closed {
     margin-top: 30px;
     font-style: italic;
     font-size: 28px;
@@ -1359,7 +1356,7 @@ img, object, embed {
   width: 100%; }
 #respond label {
   display: none; }
-#respond #comment_form_info input[type=text] {
+#respond #comment-form-info input[type=text] {
   margin-bottom: 15px;
   text-align: right; }
 #respond textarea {
@@ -1378,20 +1375,20 @@ img, object, embed {
 
 /*MOBILE*/
 @media only screen and (max-width: 767px) {
-  #comments_container #commentform #comment_form_info input[type=text] {
+  #comments-container #commentform #comment-form-info input[type=text] {
     text-align: left; } }
-#page_bottom {
+#page-bottom {
   background: #5d504f; }
 
-#page_footer {
+#page-footer {
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.5);
   padding-top: 30px;
   padding-bottom: 30px;
   margin-top: 30px;
   color: #f0eceb; }
-  #page_footer a {
+  #page-footer a {
     color: #fffefe; }
-  #page_footer h3 {
+  #page-footer h3 {
     font-size: 17px;
     color: #f0eceb;
     text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.7); }

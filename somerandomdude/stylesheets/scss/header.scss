@@ -1,25 +1,23 @@
-@import "variables";
-@import "grid";
-
+#page-header {
+	border-bottom:$border-break;
+	padding-bottom:$row-height;
+	margin:$row-height*2 auto $row-height * 2 auto; 
+}
 /* TODO: Break out heirarchy*/
 #site-title {
-	@include reset-dimensions();
+	@extend .reset;
 	float: left; 
 	a { 
-		text-indent: 100%;
-		white-space: nowrap;
-		overflow: hidden;
+		@extend .hide-text;
 		display:block;
-		margin-top:6px;
-		background:image-url('/wp-content/themes/somerandomdude/images/title.svg') no-repeat;
+		background:inline-image('title.svg') no-repeat left bottom;
 		background-size:contain;
-		width:141px;
-		height:20px; 
+		width:151px;
+		height:15px; 
 	}
 }
 
 #site-nav {
-	margin-top:$row-height - 7;
 	float: right;
 	position: relative;
 }
@@ -27,28 +25,26 @@
 #menu-primary {
 	float: right;
 	list-style: none;
-	@include reset-dimensions();
+	@extend .reset;
 	display: block;
 	position: relative;
 	li {
-		@include reset-dimensions();
+		@extend .reset;
 		margin-right:$gutter-width;
 		float: left;
-		background: none;
 		a {
 			display: block;
-			font-weight: $bold;
 			height: $row-height;
-			color: $color_midtone;
-			font-size: $x-small;
-			padding: 0; 
+			color: $color-midtone;
+			font: #{$bold} #{$font-size-x-small} #{$typeface-secondary};
 			}
 		a:hover {
-			color: $color_off_black; 
+			color: $color-off-black; 
 		} 
+		&:last-child { 
+			margin-right: 0; 
+		}
 	}
-	li:last-child, li.last { margin-right: 0; }
-	/* TODO: Remove 'li' selectors */ 
 	.rss, .twitter {
 		position:fixed;
 		z-index:10000;
@@ -58,16 +54,14 @@
 			height:45px;
 			border-radius:22.5px;
 			display:block;
-			text-indent: 100%;
-			white-space: nowrap;
-			overflow: hidden;
+			@extend .hide-text;
 			@include default-shadow();
 		}
 	}
 	.rss {
 		margin-top:-15px;
 		a { 
-			background:$color_accent image-url('/wp-content/themes/somerandomdude/images/rss.svg') no-repeat center center;	
+			background:$color-accent inline-image('rss.svg') no-repeat center center;	
 			background-size:50%;
 		}
 	}
@@ -75,12 +69,12 @@
 	.twitter {
 		margin-top:50px;
 		a { 
-			background:$color_accent image-url('/wp-content/themes/somerandomdude/images/twitter.svg') no-repeat center center;
+			background:$color-accent inline-image('twitter.svg') no-repeat center center;
 			background-size:60%;
 		}
 	}
 
 	.rss a:hover, .twitter a:hover {
-		background-color:$color_accent_alt;
+		background-color:$color-accent-alt;
 	}
 }

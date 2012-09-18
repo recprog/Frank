@@ -1,4 +1,4 @@
-#comment_form_comment textarea {
+#comment-form-content textarea {
   -webkit-transition: height 0.5s cubic-bezier(0.02, 0, 0.18, 1);
   -moz-transition: height 0.5s cubic-bezier(0.02, 0, 0.18, 1); }
 

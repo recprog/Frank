@@ -1,24 +1,30 @@
-@import "variables";
-
-#content.page article header {
-	display:none;
+#content.page {
+	.post-header {
+		display:none;
+	}
+	#sidebar {
+		margin-top:$row-height*6;
+	} 
 }
 
 #page_title {
-	@include font-size-xx-large();
-	color: $color_midtone }
+	font-size: $font-size-xx-large;
+	color: $color-midtone 
+}
 
 #page_title .title {
-	color: $color_off_black;
-	font-style: italic; }
+	color: $color-off-black;
+	font-size: inherit;
+	font-style: italic; 
+}
 
 #content.page #info, #content.page #other_projects {
 	h1 {
 		display: block;
 		padding-top: 0;
-		font-size: $font-x-large; }
-	p { @include font-size-small(); }
-	p.large { @include font-size-large(); } 
+		font-size: $font-size-x-large; }
+	p { font-size: $font-size-small; }
+	p.large { font-size: $font-size-large; } 
 }
 
 #content.page #other_projects {
@@ -29,13 +35,14 @@
 #download_follow { margin: 15px 0; }
 
 #download_follow li {
-	border-top: 2px solid $color_light;
+	border-top: 2px solid $color-light;
 	padding: 15px 0;
 	text-align: center; }
 
 #download_follow small {
 	margin-top: 5px;
 	display: block;
+	/* TODO variables */
 	font-size: 9px !important;
 	line-height: 12px;
 	font-weight: $bold; }
@@ -47,13 +54,12 @@
 #projects_navigation {
 	margin: 15px 0; }
 
-#content.page #projects_navigation dt {
-	color: $color_midtone; }
+#projects_navigation dt {
+	color: $color-midtone; }
 
-#content.page #projects_navigation dt, #content.page #projects_navigation dd {
+#projects_navigation dt, #projects_navigation dd {
 	margin: 0;
-	font-size: $font-x-small;
-	font-family:$sans-serif;
+	font: #{$typeface-secondary} #{$font-size-x-small};
 	margin-right: 20px;
 	float: left; }
 
@@ -71,8 +77,9 @@
 	font-weight: $bold; }
 
 
-ul#projects_list {
+#projects_list, #download_follow {
 	list-style:none;
+	padding-left: 0;
 }
 
 #projects_list li {
@@ -89,8 +96,8 @@ ul#projects_list {
 }
 
 #projects_list div {
-	
-	@include default-shadow(); }
+	@include default-shadow();
+}
 
 #projects_list div:hover {
 	box-shadow: 0px 2px 10px rgba(18, 7, 6, 0.5);
@@ -101,8 +108,6 @@ ul#projects_list {
 
 #projects_list p {
 	display: none; }
-
-
 
 #projects_list a {
 	display: block;
@@ -116,55 +121,61 @@ ul#projects_list {
 	background-image: url("/wp-content/images/pages/projects/projects_sprite.png"); 
 	}
 
-#projects_list #projects_bitcons {
-	background-position: 0 0; }
 
-#projects_list #projects_sanscons {
-	background-position: 0 -120px; }
-
-#projects_list #projects_photography {
-	background-position: 0 -240px; }
-
-#projects_list #projects_offfranklin {
-	background-position: 0 -360px; }
-
-#projects_list #projects_iconic {
-	background-position: 0 -480px; }
-
-#projects_list #projects_coffeesleeve {
-	background-position: 0 -600px; }
-
-#projects_list #projects_coordy {
-	background-position: 0 -720px; }
-
-#projects_list #cue {
-	background-position: 0 -840px; }
-	
-#projects_list #projects_frank {
-	background-position: 0 -960px; }
-
-#projects_list h3 {
-	position: relative;
-	@include reset-dimensions(); 
+#projects_list {
+	#projects_bitcons {
+		background-position: 0 0; 
+	}
+	#projects_sanscons {
+		background-position: 0 -120px; 
+	}
+	#projects_photography {
+		background-position: 0 -240px; 
+	}
+	#projects_offfranklin {
+		background-position: 0 -360px; 
+	}
+	#projects_iconic {
+		background-position: 0 -480px; 
+	}
+	#projects_iconic {
+		background-position: 0 -480px; 
+	}
+	#projects_coffeesleeve {
+		background-position: 0 -600px; 
+	}
+	#projects_coordy {
+		background-position: 0 -720px; 
+	}
+	#cue {
+		background-position: 0 -840px; 
+	}
+	#projects_frank {
+		background-position: 0 -960px; 
+	}
+	h3 {
+		position: relative;
+		@extend .reset; 
+		small {
+			text-indent:6px;
+			padding:6px 0;
+			background: rgba(93, 80, 79, 0.84);
+			margin: 0;
+			position: absolute;
+			display: block;
+			bottom: 0;
+			width:100%; 
+			color: $color-highlight;
+			font-size: 13px;
+			line-height: 13px ;
+		}
+	}
 }
 
-#projects_list h3 small {
-	text-indent:6px;
-	padding:6px 0;
-	background: rgba(93, 80, 79, 0.84);
-	margin: 0;
-	position: absolute;
-	display: block;
-	bottom: 0;
-	width:100%; 
-	color: $color_highlight;
-	font-size: 13px;
-	line-height: 13px ;
-	}
-
+/* TODO: Clean up selector */
 #content.page #projects_list div p {
-	font-size: $font-x-small;
-	font-family:$sans-serif; }
+	font: #{$typeface-secondary} #{$font-size-x-small};
+}
 	
 #p5554 .slideshow .slide-a, #p5554 .slideshow .slide-b {
 	background-image: url("/wp-content/images/pages/iconic/iconic_sprite.png"); }	
@@ -200,12 +211,12 @@ ul#projects_list {
 }
 
 #p4537 #features h3 {
-	font-size:$font-x-large;
+	font-size:$font-size-x-large;
 	margin-top:$row-height*4;
 }
 
 #p4537 #features h3:first-child {
-	font-size:$font-x-large;
+	font-size:$font-size-x-large;
 	margin-top:$row-height*2;
 }
 
@@ -236,8 +247,9 @@ ul#projects_list {
 	#projects_list p {
 		display: block;
 		margin-top:5px;
-		font-size:$font-medium !important; 
-		font-family:$serif !important; 
+		/* TODO shorthand */
+		font-size:$font-size-medium !important; 
+		font-family:$typeface-primary !important; 
 	}
 	
 	#projects_list a {
@@ -252,9 +264,8 @@ ul#projects_list {
 		position: relative;
 		display: block;
 		width:100%; 
-		color:$color_midtone;
-		font-size:$font-large !important; 
-		font-family:$sans-serif !important;
+		color:$color-midtone;
+		font: #{$typeface-secondary} #{$font-size-large} !important;
 	}
 	
 	#project_preview {

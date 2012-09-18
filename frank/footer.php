@@ -5,8 +5,8 @@
 ?>
 </div>
 <?php if ( is_active_sidebar("widget-footer") ) : ?>
-<div id="page_bottom">
-	<footer id='page_footer' class='container'>	
+<div id="page-bottom">
+	<footer id='page-footer' class='container'>	
 		<div class="row">
 		<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Footer") ) : ?>
 			

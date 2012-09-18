@@ -13,8 +13,8 @@ function frank_enqueue_styles() {
 	
 	wp_register_style('frank_srd_stylesheet', get_stylesheet_directory_uri().'/style.css', null, '0.1', 'all' );
 	
-	wp_register_style('frank_srd_stylesheet_ie', get_stylesheet_directory_uri().'/stylesheets/css/ie.css', null, '0.1', 'all' );
-	wp_register_style('frank_srd_stylesheet_ie7', get_stylesheet_directory_uri().'/stylesheets/css/ie7.css', null, '0.1', 'all' );
+	wp_register_style('frank_srd_stylesheet_ie', get_stylesheet_directory_uri().'/ie.css', null, '0.1', 'all' );
+	wp_register_style('frank_srd_stylesheet_ie7', get_stylesheet_directory_uri().'/ie7.css', null, '0.1', 'all' );
 	
 	$wp_styles->add_data('frank_srd_stylesheet_ie', 'conditional', 'IE');
 	$wp_styles->add_data('frank_srd_stylesheet_ie7', 'conditional', 'IE 7');
@@ -129,12 +129,12 @@ function frank_enqueue_styles_dev() {
 function frank_enqueue_scripts() {
 	
 	global $wp_scripts;
-	
+	/*
 	wp_register_script('somerandomdude', (get_stylesheet_directory_uri().'/js/somerandomdude.js'), false, '1.0');
 	wp_enqueue_script('somerandomdude');
+	*/
 	
-	
-	#add_action('wp_footer', 'frank_print_scripts');
+	add_action('wp_footer', 'frank_print_scripts');
 }
 
 function frank_print_scripts() {

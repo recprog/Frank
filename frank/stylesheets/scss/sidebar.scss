@@ -1,6 +1,4 @@
-@import "variables";
-@import "grid";
-
+/* TODO: Use class selectors */
 #sidebar {
 	@extend .column;
 	width: $three-columns;
@@ -12,8 +10,10 @@
 	
 	h3 {
 		font-weight: $bold;
-		@include font-size-small();
-		margin-bottom: 5px; }
-	/* TODO: Try this pattern out :not(:last-child) */
-	h3:first-child { margin-top: 0 !important; }
+		font-size: $font-size-small;
+		margin-bottom: 5px; 
+		&:first-child { 
+			margin-top: 0 !important; 
+		}
+	}
 }

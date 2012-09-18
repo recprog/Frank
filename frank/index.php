@@ -15,7 +15,7 @@
 			$caption=$section['caption'];
 			$num_posts=$section['num_posts'];
 			$categories=$section['categories'];
-			
+			/* TODO: Clean this up */
 			switch($display_type) {
 				case 'srd_loop':
 					get_template_part('partials/loops/loop', 'srd');

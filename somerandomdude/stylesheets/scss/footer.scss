@@ -1,95 +1,87 @@
-@import "variables";
 
-#page_bottom {
-	border-top: 1px solid $color_dark;
+
+#page-bottom {
+	border-top: 1px solid $color-dark;
 	box-shadow:0 -1px 1px rgba(5,0,0,.3);
 }
 
-#page_footer {
+#page-footer {
 	padding-top:0;
 }
 
-#twitter_follow {
+#twitter-follow {
 	float:left; /*TODO: this feels incredible hacky...*/
 	margin-top:-60px;
 	padding-bottom:60px;
 	margin-left:0;
 	p { 
-		font-style:italic; 
-		font-size:$font-large;
-		font-family:$serif; 
+		font: italic #{$font-size-large} #{$typeface-primary};
 		text-shadow:0px -1px 0px rgba(5,0,0,.3); 
 	}
 	a { margin-left:10px; }
-	a:hover { color:$color_highlight; }
+	a:hover { color:$color-highlight; }
 	small { 
 		display:block; 
 		margin-top:$row-height*2; 
-		font-size:$font-x-small; 
-		font-family:$sans-serif; 
+		font: #{$font-size-x-small} #{$typeface-secondary}; 
 	}
 }
 
 /* TODO: Generalize font-size rule*/
 .recommended {
 	dt {
-		font-size:$font-small;
-		font-family:$sans-serif; 
+		font: #{$bold} #{$font-size-small} #{$typeface-secondary};
 		text-shadow:0px -1px 0px rgba(5,0,0,.3);
 		margin-bottom:2px;
 	}
 	dd {
-		font-size:$font-x-small;
-		font-family:$serif;
-		color:$color_light;
+		font-size:$font-size-x-small;
+		color:$color-light;
 		margin-bottom:15px;
 	}
 }
 
 /* TODO: Break main CSS out of #text-10*/
-#text-10 {
-	box-shadow: 0px 4px 8px rgba(18, 7, 6, 0.3);
+#footer_main_promo {
 	margin-top: $row-height * 2 * -1;
-	#footer_main_promo {
-		min-height: 180px;
-		display: block;
-		background-color: $color_accent;
-		text-decoration: none;
-		.sprite.fork {
-			width:30%;
-			max-width: 131px;
-			height: 150px;
-			background:image-url('/wp-content/themes/somerandomdude/images/fork.svg') no-repeat center -2px;
-			background-size:contain;
-			float: left;
-			margin-left: 15px;
-		}
-		.content {
-			display: block;
-			float: right;
-			width: 55%;
-			padding-top: $row-height * 2;
-			padding-right: 5%;
-		}
-		.header {
-			font-size: $font-large;
-			font-family: $sans-serif;
-			display: block;
-			text-shadow:0px -1px 0px rgba(5,0,0,.3); 
-		}
-		.caption {
-				display: block;
-				@include font-size-x-small();
-				margin-top: $row-height;
-				font-style: italic; 
-		} 
+	box-shadow: 0px 4px 8px rgba(18, 7, 6, 0.3);
+	min-height: 180px;
+	display: block;
+	background-color: $color-accent;
+	text-decoration: none;
+	&:hover { background-color: $color-accent-alt !important;  }
+	.sprite.fork {
+		width:30%;
+		max-width: 131px;
+		height: 150px;
+		background:inline-image('fork.svg') no-repeat center -2px;
+		background-size:contain;
+		float: left;
+		margin-left: 15px;
 	}
+	.content {
+		display: block;
+		float: right;
+		width: 55%;
+		padding-top: $row-height * 2;
+		padding-right: 5%;
+	}
+	.header {
+		font: #{$font-size-large} #{$typeface-secondary};
+		display: block;
+		text-shadow:0px -1px 0px rgba(5,0,0,.3); 
+	}
+	.caption {
+			display: block;
+			font-size: $font-size-x-small;
+			margin-top: $row-height;
+			font-style: italic; 
+	} 
 }
-#footer_main_promo:hover { background-color: $color_accent_alt !important;  }
 
 
 @media only screen and  (max-width: 767px) {
-	#twitter_follow {
+	#twitter-follow {
 		margin-top:$row-height;
 		a { display:block; margin-left:0; }
 	}

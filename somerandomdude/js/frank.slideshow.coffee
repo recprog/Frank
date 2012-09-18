@@ -1,8 +1,4 @@
-###global console:true###
-#
-# var s Selector
-# var o Options object
-#
+###global ###
 
 #Slideshow class
 class FSS

@@ -19,7 +19,7 @@
 	$queryObject = new WP_Query( $args );
 	?>
 	<?php if($sticky[0]) : ?>
-		<div class='row content oneup large'>
+		<div class='row post-group oneup large'>
 			<?php 
 			get_template_part('partials/posts/post', 'oneuplarge'); 
 			wp_reset_postdata();
@@ -27,8 +27,8 @@
 		</div>
 	<?php endif; ?>
 
-<div class='row content halfandhalf'>
-	<div class='nine columns contents'>	
+<div class='row post-group halfandhalf'>
+	<div class='nine columns post-group-contents'>	
 	<?php 		
 	if (have_posts()) : while (have_posts()) : the_post(); ?>
 		<?php if(is_sticky($post->ID)) continue; ?>
@@ -36,5 +36,5 @@
 	<?php endwhile; ?>
 	<?php endif; ?>
 	</div>
-	<?php get_sidebar(); ?>
+	<?php get_template_part('partials/sidebars/sidebar', 'index'); ?>
 </div>

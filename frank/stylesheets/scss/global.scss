@@ -1,13 +1,11 @@
-
-
-	
 body {
-	@include reset-dimensions();
-	font: 62.5%/1.55 $serif;
-	background: $color_highlight;
-	color: $color_off_black;
+	@extend .reset;
+	font: 62.5%/1.55 $typeface-primary;
+	background: $color-highlight;
+	color: $color-off-black;
 	height: 100%;
 	text-rendering: optimizelegibility; 
+	-webkit-font-smoothing: antialiased;
 }
 
 /*Images*/
@@ -23,42 +21,64 @@ a {
   vertical-align:baseline;
   background:transparent;
 
-	color: $color_accent;
+	color: $color-accent;
 	text-decoration: none;
 	
 	img { border: none;  } 
 }
-a:hover { color: $color_accent_alt; }
+a:hover { color: $color-accent-alt; }
+
+.hide-text {
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+/* Titles */
+.title, .widget-title {
+	font: #{$normal} #{$font-size-medium}/1.3 #{$typeface-secondary};
+	a {
+		color: $color-midtone;
+	}
+	a:hover {
+		color: $color-dark;
+	}
+}
+
+.title.large {
+	font-size: $font-size-large;
+}
+.title.small {
+	font: $bold #{$font-size-small}/1.25 #{$typeface-secondary};
+}
 
 /*Headers*/
 h1, h2, h3, h4, h5, h6 {
-	font-family: $sans-serif;
-	font-weight: $normal;
-	line-height:1.3;
+	@extend .title;
 	padding-top: 0px; 
 	margin-bottom: $row-height; 
 }
 /* TODO: Try this pattern out :not(:last-child) */
 h1:first-child, h2:first-child, h3:first-child, h4:first-child, h5:first-child, h6:first-child { margin-top: 0; }
-h1 { @include font-size-x-large(); }
-h2 { @include font-size-large(); }
-h3 { @include font-size-medium(); }
-h4 { @include font-size-small(); }
-h5 { @include font-size-x-small(); }
-h6 { @include font-size-xx-small(); }
+h1 { font-size: $font-size-x-large; }
+h2 { font-size: $font-size-large; }
+h3 { font-size: $font-size-medium; }
+h4 { font-size: $font-size-small; }
+h5 { font-size: $font-size-x-small; }
+h6 { font-size: $font-size-xx-small; }
 
 /*Paragraph*/
 p {
 	margin: $row-height 0;
-	@include font-size-small(); 
+	font-size: $font-size-small; 
 }
-p.xx-large { @include font-size-xx-large(); }
-p.x-large { @include font-size-x-large(); }
-p.large { @include font-size-large(); }
-p.medium { @include font-size-medium(); }
-p.small { @include font-size-small(); }
-p.x-small { @include font-size-x-small(); }
-p.xx-small { @include font-size-xx-small(); }
+.font-size-xx-large { font-size: $font-size-xx-large; }
+.font-size-x-large { font-size: $font-size-x-large; }
+.font-size-large { font-size: $font-size-large; }
+.font-size-medium { font-size: $font-size-medium; }
+.font-size-small { font-size: $font-size-small; }
+.font-size-x-small { font-size: $font-size-x-small; }
+.font-size-xx-small { font-size: $font-size-xx-small; }
 
 p:first-child { margin-top: 0; }
 p:last-child { margin-bottom: 0; }
@@ -67,8 +87,8 @@ p:last-child { margin-bottom: 0; }
 /*Blockquote*/
 blockquote, q { quotes: "„" "“"; }
 blockquote {
-	color: $color_dark;
-	border: 2px $color_off_black solid;
+	color: $color-dark;
+	border: 2px $color-off-black solid;
 	border-left: 0;
 	border-right: 0;
 	margin: ($row-height * 2) 0 ($row-height * 2) $gutter-width;
@@ -85,13 +105,13 @@ blockquote {
 	p:last-child:after { content: "”"; } 
 }
 cite, blockquote[cite]:after, cite {
-	font-family: $sans-serif;
-	font-size:$font-small;
+	font-family: $typeface-secondary;
+	font-size:$font-size-small;
 }
 blockquote[cite]:after {
 	content: "—" attr(cite);
 	display: block;
-	color: $color_off_black;
+	color: $color-off-black;
 	margin-top: $row-height; 
 }
 cite {
@@ -110,7 +130,7 @@ pre, code {
 	font-family: "andale mono", "lucida console", monospace; 
 }
 pre { /*Merge with Blockquote?*/
-	border: 2px $color_off_black solid;
+	border: 2px $color-off-black solid;
 	border-left: 0;
 	border-right: 0;
 	margin: ($row-height * 2) 0 ($row-height * 2) $gutter-width;
@@ -121,7 +141,7 @@ pre { /*Merge with Blockquote?*/
 table {
 	border-collapse: separate;
 	border-spacing: 0;
-	@include font-size-small();
+	font-size: $font-size-small;
 	margin: $row-height 0; 
 }
 table, td, th { vertical-align: middle; }
@@ -140,7 +160,6 @@ ul, ol {
 	margin-top:$row-height;
 	li {
 		margin-left: 20px;
-		@include font-size-small();
 	} 
 }
 ul { list-style: square; }
@@ -150,50 +169,35 @@ ol { list-style: decimal; }
 dl {
 	margin: $row-height 0;
 	padding-top: 5px;
-	font-family:$serif;
+	font-family:$typeface-primary;
 }
 dt, dd {
-	@include font-size-x-small()
+	font-size: $font-size-x-small;
 }
 dt {
+
 	font-weight: $bold;
 	margin-top: $row-height; 
+	&:first-child {
+		margin:0;
+	}
 }
-dt:first-child {
-	margin: 0; 
+dd {
+	margin-left: 0;
 }
 
 /*Typographic tags*/
-small { @include font-size-small; }
+small { font-size: $font-size-small; }
 strong { font-weight: $bold; }
 em { font-style: italic; }
 
-header {
-	margin-bottom:$row-height;
-	h1 {
-		margin-bottom:0;
-		font-size: $large;
-	}
-	h2 {
-		font-family:$serif;
-		font-style: italic;
-		@include font-size-small(); 
-		color:$color-midtone;
-		margin:5px 0 0 0;
-	}
-	a { 
-		color: $color_off_black;  
-		text-decoration:none;
-	}
-	a:hover { color: $color_midtone; }
-}
-
+/* TODO: Cleanup heirarchy */
 #content.single article section {
 	.flush-left {
 		margin-left: -26.1%;
 	}
 	blockquote.large p {
-		@include font-size-large(); 
+		font-size: $font-size-large; 
 	}
 	img.flush-left {
 		max-width:126.1%;
@@ -210,6 +214,10 @@ header {
     overflow: hidden;
     text-overflow: ellipsis;
     -o-text-overflow: ellipsis;
+}
+.reset {
+	margin:0;
+	padding:0;
 }
 
 
@@ -236,7 +244,7 @@ header {
 }
 
 .wp-caption-text {
-	font-size: $small !important;
+	font-size: $font-size-small !important;
 	color:$color-midtone;
 	margin-top:10px;
 }
@@ -259,15 +267,15 @@ header {
 /*Pagination links*/
 .pagination {
 	
-	@include font-size-small();
+	font-size: font-size-small;
 	a {
 		margin-right: $gutter-width;
-		@include columns(2, -20); 
+		@include column-based-width(2, -20); 
 	} 
 }
 
 .pagination.small {
-	font: $font-small $sans-serif;
+	font: $font-size-small $typeface-secondary;
 	.title {
 		font-weight:$bold;
 		margin-right:15px;
@@ -283,24 +291,19 @@ header {
 
 /*Metadata content*/
 .metadata {
-	a { color: $color_midtone; }
-	a:hover { color: $color_off_black;  }
+	a { color: $color-midtone; }
+	a:hover { color: $color-off-black;  }
+	font: #{$font-size-x-small} #{$typeface-secondary};
 }
 
 ul.metadata {
-	@extend .reset-dimensions;
+	@extend .reset;
 	list-style: none;
 	li {
-		@extend .reset-dimensions;
-		font-family: $serif;
-		@include font-size-x-small(); 
-		font-style: italic; 
-		margin-left:0;
+		@extend .reset;
 	}
 	li.date {
-		font-style: normal;
 		font-weight: $bold;
-		font-family: $sans-serif; 
 	} 
 }
 
@@ -311,11 +314,10 @@ ul.metadata.horizontal {
 	li {
 		float: left;
 		background: none;
-		margin:0 15px 0 0; 
+		&:not(:last-of-type) {
+    	margin-right: 15px;
+  	}
 	}
-	li.last, li:last-child {
-		margin-right: 0; 
-	} 
 }
 ul.metadata.vertical {
 	margin-top: 5px;
@@ -328,30 +330,51 @@ ul.metadata.vertical {
 	} 
 }
 dl.metadata {
-	display: none;
-	@extend .reset-dimensions;
+	@extend .reset;
 	text-align: right;
 	margin-bottom: $row-height; 
 }
 
+.post-group { 
+	margin-top:0;
+	& ~ .post-group {
+		margin: $row-height*4 auto;
+	}
+}
+
 .post {
+	.post-title {
+		font-size: $font-size-large;
+	}
+	margin: $row-height * 4 0;
+	&:first-child { 
+		margin-top: 0; 
+	}
+	&:last-child { 
+		margin-bottom: 0;
+	}
 	.post-header { margin-bottom: $row-height; }
 	.post-content {
-		@extend .column;
-		width: $nine-columns;
-		@extend .push-three;
-		font-family: $serif;
-		@include font-size-medium;
+		font: #{$font-size-medium}/1.55 #{$typeface-primary};
 		p, ul li, ol li, dt, dd, blockquote { 
-			@include font-size-medium; 
+			font-size: $font-size-medium; 
 		}
 		code, small { 
-			@include font-size-small; 
+			font-size: $font-size-small; 
 		}
 		img {
 			max-width: 100%;
 			@include default-shadow(); 
 		}
+	}
+}
+
+.post.leftaside {
+	.post-content {
+		@extend .clearfix; 
+		@extend .column;
+		width: $nine-columns;
+		@extend .push-three;
 	}
 	.post-info {
 		@extend .column;
@@ -371,50 +394,41 @@ dl.metadata {
 }
 
 #content.page .post img { box-shadow: none !important; }
-
-/* TODO: Try this pattern out :not(:last-child) */
-#content.home, #content.archive, #content.search {
-	article { margin-top: $row-height * 4; margin-bottom: $row-height * 4; }
-	article:first-child { margin-top: 0; }
-	article:last-child {margin-bottom: 0;}
-}
-		
 		
 /*Buttons*/		
 button, .button, input[type=submit], a.button {
 	display: inline-block;
-	background: $color_light;
-	color: $color_midtone;
+	background: $color-light;
+	color: $color-midtone;
 	padding: 8px 10px;
 	border-radius: 3px;
-	font-weight: $bold;
-	@include font-size-small;
-	font-family: $sans-serif;
+	font: #{$bold} #{$font-size-small} #{$typeface-secondary};
+
 	text-align: center;
 	text-shadow:0px 1px 0px rgba(255,254,254,.3);
 	border: 1px solid rgba(18, 7, 6, 0.2);
 	box-shadow: inset 0px -1px 1px rgba(18, 7, 6, 0.1), inset 0px 1px 1px rgba(255, 253, 253, 0.4); 
 }
 button:hover, .button:hover, input[type=submit]:hover {
-	background: $color_midtone_light;
-	color: $color_highlight;
+	background: $color-midtone-light;
+	color: $color-highlight;
 	border: 1px solid rgba(18, 7, 6, 0.5);
 	text-shadow:0px -1px 0px rgba(5,0,0,.3);
 	box-shadow: inset 0px -1px 1px rgba(18, 7, 6, 0.1), inset 0px 1px 1px rgba(255, 253, 253, 0.2); 
 }
 button.alt, .button.alt, input[type=submit].alt {
-	background: $color_accent;
-	color: $color_highlight; 
+	background: $color-accent;
+	color: $color-highlight; 
 	text-shadow:0px -1px 0px rgba(5,0,0,.3);
 }
 button.alt:hover, .button.alt:hover, input[type=submit].alt:hover {
-	background: $color_accent_alt;
-	color: $color_highlight;
+	background: $color-accent-alt;
+	color: $color-highlight;
 	border: 1px solid rgba(18, 7, 6, 0.5); 
 }
 
 button.small, .button.small, a.button.small {
-	@include font-size-xx-small;
+	font-size: $font-size-xx-small;
 	padding: 4px 8px;
 }
 
@@ -437,7 +451,9 @@ button.small, .button.small, a.button.small {
 	#search_button {
 		display: none; }
 	#search_form input {
-		font-size: $x-small; } }
+		font-size: $font-size-x-small; 
+	} 
+}
 		
 		
 		
@@ -445,12 +461,12 @@ button.small, .button.small, a.button.small {
 @media only screen and  (max-width: 767px) {
 	
 	/*Typography*/
-	h1 { @include font-size-x-large(); }
-	h2 { @include font-size-large(); }
-	h3 { @include font-size-medium(); }
-	h4 { @include font-size-small(); }
-	h5 { @include font-size-x-small(); }
-	h6 { @include font-size-xx-small(); }
+	h1 { font-size: $font-size-x-large; }
+	h2 { font-size: $font-size-large; }
+	h3 { font-size: $font-size-medium; }
+	h4 { font-size: $font-size-small; }
+	h5 { font-size: $font-size-x-small; }
+	h6 { font-size: $font-size-xx-small; }
 	
 	/*Metadata content*/
 	ul.metadata.vertical {

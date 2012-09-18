@@ -2,7 +2,7 @@
 img { -ms-interpolation-mode: bicubic; }
 
 #top_bar {
-	background: $color_off_black; }
+	background: $color-off-black; }
 
 #content.single {
 	padding-bottom: $row-height * 3; }
@@ -11,7 +11,7 @@ img { -ms-interpolation-mode: bicubic; }
 	#content_secondary .post.post-4, #content_tertiary .post.post-4 {
 		margin-right: 0; } }
 
-#page_footer, #page_heel, #sub_header, #post_footer {
+#page-footer, #page_heel, #sub_header, #post-footer {
 	.widget-1, .widget-4, .widget-7 {
 		clear: left;
 		width: 470px; }
@@ -21,21 +21,11 @@ img { -ms-interpolation-mode: bicubic; }
 #page_heel .widget-2 {
 	margin-right: 0; }
 
-#sidebar {
-	background: $color_highlight; }
 
-#sidebar:hover {}
-
-#sticky_footer {
-	background: $color_dark; }
-
-#sticky_footer.light {
-	background: $color_light; }
-
-#comments_container #commentform {
+#comments-container #commentform {
 	label {
 		display: block; }
-	#comment_form_info {
+	#comment-form-info {
 		label {
 			text-align: right; }
 		input[type=text] {
@@ -43,10 +33,10 @@ img { -ms-interpolation-mode: bicubic; }
 	textarea {
 		height: 137px; } }
 
-#comment_form_comment dl {
+#comment-form-content dl {
 	text-align: left; }
 
-.clear:after {
+.clearfix:after {
 	content: ".";
 	display: block;
 	clear: both;
@@ -54,11 +44,11 @@ img { -ms-interpolation-mode: bicubic; }
 	line-height: 0;
 	height: 0; }
 
-.clear {
+.clearfix {
 	display: inline-block; }
 
-html[xmlns] .clear {
+html[xmlns] .clearfix {
 	display: block; }
 
-* html .clear {
+* html .clearfix {
 	height: 1%; }

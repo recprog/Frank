@@ -47,7 +47,7 @@ if ( function_exists('register_sidebar') ) {
 	'name' => 'Top Bar',
 	'before_widget' => '<div id="top_bar" class="widget %2$s">',
 	'after_widget' => '</div>',
-	'before_title' => '<h3 class="widgettitle">',
+	'before_title' => '<h3 class="widget-title">',
 	'after_title' => '</h3>',
 	));
 	
@@ -56,7 +56,7 @@ if ( function_exists('register_sidebar') ) {
 	'id' => 'widget-subheader',
 	'before_widget' => '<div id="%1$s" class="widget %2$s four columns">',
 	'after_widget' => '</div>',
-	'before_title' => '<h3 class="widgettitle">',
+	'before_title' => '<h3 class="widget-title">',
 	'after_title' => '</h3>',
 	));
 	
@@ -64,7 +64,7 @@ if ( function_exists('register_sidebar') ) {
 	'name' => 'Navigation',
 	'before_widget' => '<div id="%1$s" class="widget %2$s">',
 	'after_widget' => '</div>',
-	'before_title' => '<h3 class="widgettitle">',
+	'before_title' => '<h3 class="widget-title">',
 	'after_title' => '</h3>',
 	));
 	
@@ -72,7 +72,7 @@ if ( function_exists('register_sidebar') ) {
 	'name' => 'Index Right Aside',
 	'before_widget' => '<div id="%1$s" class="widget %2$s">',
 	'after_widget' => '</div>',
-	'before_title' => '<h3 class="widgettitle">',
+	'before_title' => '<h3 class="widget-title">',
 	'after_title' => '</h3>',
 	));
 	
@@ -80,7 +80,7 @@ if ( function_exists('register_sidebar') ) {
 		'name' => 'Post Left Aside',
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div>',
-		'before_title' => '<h3 class="widgettitle">',
+		'before_title' => '<h3 class="widget-title">',
 		'after_title' => '</h3>',
 	));
 	
@@ -88,7 +88,7 @@ if ( function_exists('register_sidebar') ) {
 		'name' => 'Post Right Aside',
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div>',
-		'before_title' => '<h3 class="widgettitle">',
+		'before_title' => '<h3 class="widget-title">',
 		'after_title' => '</h3>',
 	));
 	
@@ -97,7 +97,7 @@ if ( function_exists('register_sidebar') ) {
 	'id' => 'widget-postfooter',
 	'before_widget' => '<div id="%1$s" class="widget %2$s four columns">',
 	'after_widget' => '</div>',
-	'before_title' => '<h3 class="widgettitle">',
+	'before_title' => '<h3 class="widget-title">',
 	'after_title' => '</h3>',
 	));
 	
@@ -106,7 +106,7 @@ if ( function_exists('register_sidebar') ) {
 	'id' => 'widget-footer',
 	'before_widget' => '<div id="%1$s" class="widget %2$s six columns">',
 	'after_widget' => '</div>',
-	'before_title' => '<h3 class="widgettitle">',
+	'before_title' => '<h3 class="widget-title">',
 	'after_title' => '</h3>',
 	));
 	
@@ -166,8 +166,31 @@ function frank_widget_first_last_classes($params) {
 
 }
 
+function frank_meta_keywords() {
 
+	$keywords = array();
+	$tags = get_the_tags();
+	if($tags) {
+		foreach($tags as $tag) { 
+			array_push($keywords, $tag->name);
+		}
+	}
 
+	$categories = get_the_category();
+	if($categories) {
+		foreach($categories as $category) { 
+			array_push($keywords, $category->name);
+		}
+	}
+	
+	$author = get_the_author($post->ID);
+	print(get_the_author());
+	$meta = '<meta name="keywords" content="';
+	$meta .= implode(',', $keywords);
+	$meta .= '" />';
+	echo $meta;
+
+}
 
 // ======================
 // = HOME PAGE SECTIONS =
@@ -221,42 +244,44 @@ function frank_tweet_post_attribution() {
     if($frank_general) return $frank_general['tweet_post_attribution'];
 }
 
-function frank_comment($comment, $args, $depth) {
-   $GLOBALS['comment'] = $comment; ?>
+if (!function_exists('frank_comment')) {
+	function frank_comment($comment, $args, $depth) {
+	   $GLOBALS['comment'] = $comment; ?>
 
-	<li <?php comment_class('row'); ?> id="li-comment-<?php comment_ID() ?>">
-		<div class="content nine columns push-three">
-			<?php if ($comment->comment_approved == '0') : echo "<span id='comment_moderation'>Your comment is awaiting moderation.</span>"; endif; ?>
-			<?php comment_text() ?>	
-			<div class="reply">
-		         <?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
-		    </div>
-		</div>
-		<div class="comment-info three columns pull-nine">
-			<ul class='metadata vertical'>
-				<li class="date"><time datetime="<?php the_time('Y-m-d'); ?>"><?php comment_date('F d, Y g:i A'); ?></time></li>
-				<li class='author' id="vcard-<?php comment_ID() ?>">By <a class="url fn" href="<?php comment_author_url(); ?>"><?php comment_author(); ?></a></li>
-				<li><?php edit_comment_link('edit'); ?></li>
-			</ul>
-			
-			
-		</div>
-<?php
+		<li id="li-comment-<?php comment_ID() ?>" class="comment">
+			<div class="row">
+				<div class="comment-content">
+					<?php if ($comment->comment_approved == '0') : echo "<span class='comment-moderation'>Your comment is awaiting moderation.</span>"; endif; ?>
+					<?php comment_text() ?>	
+					<div class="comment-reply">
+				    <?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
+				  </div>
+				</div>
+				<div class="comment-info">
+					<ul class='metadata vertical'>
+						<li class="date"><time datetime="<?php the_time('Y-m-d'); ?>"><?php comment_date('F d, Y g:i A'); ?></time></li>
+						<li class='author' id="vcard-<?php comment_ID() ?>">By <a class="url fn" href="<?php comment_author_url(); ?>"><?php comment_author(); ?></a></li>
+						<li><?php edit_comment_link('edit'); ?></li>
+					</ul>
+				</div>
+			</div>
+	<?php
+	}
 }
 if (!function_exists('frank_enqueue_styles')) {
 	function frank_enqueue_styles() {
 		global $wp_styles;
 	
-		wp_register_style('frank_srd_stylesheet', get_stylesheet_directory_uri().'/style.css', null, '0.1', 'all' );
-		wp_register_style('frank_srd_stylesheet_ie', get_stylesheet_directory_uri().'/stylesheets/css/ie.css', null, '0.1', 'all' );
-		wp_register_style('frank_srd_stylesheet_ie7', get_stylesheet_directory_uri().'/stylesheets/css/ie7.css', null, '0.1', 'all' );
+		wp_register_style('frank_stylesheet', get_stylesheet_directory_uri().'/style.css', null, '0.1', 'all' );
+		wp_register_style('frank_stylesheet_ie', get_stylesheet_directory_uri().'/ie.css', null, '0.1', 'all' );
+		wp_register_style('frank_stylesheet_ie7', get_stylesheet_directory_uri().'/ie7.css', null, '0.1', 'all' );
 	
-		$wp_styles->add_data('frank_srd_stylesheet_ie', 'conditional', 'IE');
-		$wp_styles->add_data('frank_srd_stylesheet_ie7', 'conditional', 'IE 7');
+		$wp_styles->add_data('frank_stylesheet_ie', 'conditional', 'IE');
+		$wp_styles->add_data('frank_stylesheet_ie7', 'conditional', 'IE 7');
 	
-		wp_enqueue_style('frank_srd_stylesheet');
-		wp_enqueue_style('frank_srd_stylesheet_ie');
-		wp_enqueue_style('frank_srd_stylesheet_ie7');
+		wp_enqueue_style('frank_stylesheet');
+		wp_enqueue_style('frank_stylesheet_ie');
+		wp_enqueue_style('frank_stylesheet_ie7');
 	}
 }
 
@@ -285,8 +310,8 @@ if (!function_exists('frank_enqueue_styles_dev')) {
 		wp_register_style('frank_stylesheet_mobile', get_bloginfo('template_directory').'/stylesheets/css/mobile.css', null, '0.1', 'all' );
 		wp_register_style('frank_stylesheet_print', get_bloginfo('template_directory').'/stylesheets/css/print.css', null, '0.1', 'print' );
 	
-		wp_register_style('frank_srd_stylesheet_ie', get_stylesheet_directory_uri().'/stylesheets/css/ie.css', null, '0.1', 'all' );
-		wp_register_style('frank_srd_stylesheet_ie7', get_stylesheet_directory_uri().'/stylesheets/css/ie7.css', null, '0.1', 'all' );
+		wp_register_style('frank_stylesheet_ie', get_stylesheet_directory_uri().'/stylesheets/css/ie.css', null, '0.1', 'all' );
+		wp_register_style('frank_stylesheet_ie7', get_stylesheet_directory_uri().'/stylesheets/css/ie7.css', null, '0.1', 'all' );
 	
 		$wp_styles->add_data('frank_srd_stylesheet_ie', 'conditional', 'IE');
 		$wp_styles->add_data('frank_srd_stylesheet_ie7', 'conditional', 'IE 7');
@@ -316,125 +341,5 @@ if (!function_exists('frank_enqueue_styles_dev')) {
 		wp_enqueue_style('frank_srd_stylesheet_ie7');
 	}
 }
-
-function frank_srd_enqueue_styles() {
-	
-	global $wp_styles;
-	
-	#wp_register_style('frank_srd_stylesheet', get_stylesheet_directory_uri().'/style.css', null, '0.1', 'all' );
-	
-	wp_register_style('frank_srd_stylesheet_ie', get_stylesheet_directory_uri().'/stylesheets/css/ie.css', null, '0.1', 'all' );
-	wp_register_style('frank_srd_stylesheet_ie7', get_stylesheet_directory_uri().'/stylesheets/css/ie7.css', null, '0.1', 'all' );
-	
-	$wp_styles->add_data('frank_srd_stylesheet_ie', 'conditional', 'IE');
-	$wp_styles->add_data('frank_srd_stylesheet_ie7', 'conditional', 'IE 7');
-	
-	#wp_enqueue_style('frank_srd_stylesheet');
-	
-
-	$css = file_get_contents(get_stylesheet_directory_uri().'/style.css');
-	echo '<style type="text/css">';
-	echo $css;
-	echo '</style>';
-	
-	
-	wp_enqueue_style('frank_srd_stylesheet_ie');
-	wp_enqueue_style('frank_srd_stylesheet_ie7');
-}
-
-
-function frank_srd_enqueue_styles_dev() {
-	
-		global $wp_styles;
-	
-		wp_register_style('frank_stylesheet_reset', get_bloginfo('template_directory').'/stylesheets/css/reset.css', null, '0.1', 'all' );
-		wp_register_style('frank_stylesheet_grid', get_bloginfo('template_directory').'/stylesheets/css/grid.css', null, '0.1', 'all' );
-		wp_register_style('frank_stylesheet_global', get_bloginfo('template_directory').'/stylesheets/css/global.css', null, '0.1', 'all' );
-		wp_register_style('frank_stylesheet_forms', get_bloginfo('template_directory').'/stylesheets/css/forms.css', null, '0.1', 'all' );
-		wp_register_style('frank_stylesheet_widgets', get_bloginfo('template_directory').'/stylesheets/css/widgets.css', null, '0.1', 'all' );
-		wp_register_style('frank_stylesheet_sprites', get_bloginfo('template_directory').'/stylesheets/css/sprites.css', null, '0.1', 'all' );
-		wp_register_style('frank_stylesheet_transitions', get_bloginfo('template_directory').'/stylesheets/css/transitions.css', null, '0.1', 'all' );
-		wp_register_style('frank_stylesheet_header', get_bloginfo('template_directory').'/stylesheets/css/header.css', null, '0.1', 'all' );
-		wp_register_style('frank_stylesheet_index', get_bloginfo('template_directory').'/stylesheets/css/index.css', null, '0.1', 'all' );
-		wp_register_style('frank_stylesheet_single', get_bloginfo('template_directory').'/stylesheets/css/single.css', null, '0.1', 'all' );
-		wp_register_style('frank_stylesheet_archive', get_bloginfo('template_directory').'/stylesheets/css/archive.css', null, '0.1', 'all' );
-		wp_register_style('frank_stylesheet_fourohfour', get_bloginfo('template_directory').'/stylesheets/css/fourohfour.css', null, '0.1', 'all' );
-		wp_register_style('frank_stylesheet_sidebar', get_bloginfo('template_directory').'/stylesheets/css/sidebar.css', null, '0.1', 'all' );
-		wp_register_style('frank_stylesheet_comments', get_bloginfo('template_directory').'/stylesheets/css/comments.css', null, '0.1', 'all' );
-		wp_register_style('frank_stylesheet_footer', get_bloginfo('template_directory').'/stylesheets/css/footer.css', null, '0.1', 'all' );
-		wp_register_style('frank_stylesheet_colorbox', get_bloginfo('template_directory').'/stylesheets/css/colorbox.css', null, '0.1', 'all' );
-		wp_register_style('frank_stylesheet_hacks', get_bloginfo('template_directory').'/stylesheets/css/hacks.css', null, '0.1', 'all' );
-		
-		wp_register_style('frank_srd_stylesheet_global', get_stylesheet_directory_uri().'/stylesheets/css/global.css', null, '0.1', 'all' );
-		wp_register_style('frank_srd_stylesheet_forms', get_stylesheet_directory_uri().'/stylesheets/css/forms.css', null, '0.1', 'all' );
-		wp_register_style('frank_srd_stylesheet_widgets', get_stylesheet_directory_uri().'/stylesheets/css/widgets.css', null, '0.1', 'all' );
-		wp_register_style('frank_srd_stylesheet_sprites', get_stylesheet_directory_uri().'/stylesheets/css/sprites.css', null, '0.1', 'all' );
-		wp_register_style('frank_srd_stylesheet_transitions', get_stylesheet_directory_uri().'/stylesheets/css/transitions.css', null, '0.1', 'all' );
-		wp_register_style('frank_srd_stylesheet_header', get_stylesheet_directory_uri().'/stylesheets/css/header.css', null, '0.1', 'all' );
-		wp_register_style('frank_srd_stylesheet_index', get_stylesheet_directory_uri().'/stylesheets/css/index.css', null, '0.1', 'all' );
-		wp_register_style('frank_srd_stylesheet_single', get_stylesheet_directory_uri().'/stylesheets/css/single.css', null, '0.1', 'all' );
-		wp_register_style('frank_srd_stylesheet_page', get_stylesheet_directory_uri().'/stylesheets/css/page.css', null, '0.1', 'all' );
-		wp_register_style('frank_srd_stylesheet_archive', get_stylesheet_directory_uri().'/stylesheets/css/archive.css', null, '0.1', 'all' );
-		wp_register_style('frank_srd_stylesheet_fourohfour', get_stylesheet_directory_uri().'/stylesheets/css/fourohfour.css', null, '0.1', 'all' );
-		wp_register_style('frank_srd_stylesheet_sidebar', get_stylesheet_directory_uri().'/stylesheets/css/sidebar.css', null, '0.1', 'all' );
-		wp_register_style('frank_srd_stylesheet_comments', get_stylesheet_directory_uri().'/stylesheets/css/comments.css', null, '0.1', 'all' );
-		wp_register_style('frank_srd_stylesheet_footer', get_stylesheet_directory_uri().'/stylesheets/css/footer.css', null, '0.1', 'all' );
-		wp_register_style('frank_srd_stylesheet_pages', get_stylesheet_directory_uri().'/stylesheets/css/pages.css', null, '0.1', 'all' );
-		wp_register_style('frank_srd_stylesheet_colorbox', get_stylesheet_directory_uri().'/stylesheets/css/colorbox.css', null, '0.1', 'all' );
-		wp_register_style('frank_srd_stylesheet_hacks', get_stylesheet_directory_uri().'/stylesheets/css/hacks.css', null, '0.1', 'all' );
-
-		wp_register_style('frank_stylesheet_mobile', get_bloginfo('template_directory').'/stylesheets/css/mobile.css', null, '0.1', 'all' );
-		wp_register_style('frank_stylesheet_print', get_bloginfo('template_directory').'/stylesheets/css/print.css', null, '0.1', 'print' );
-		
-		wp_register_style('frank_srd_stylesheet_ie', get_stylesheet_directory_uri().'/stylesheets/css/ie.css', null, '0.1', 'all' );
-		wp_register_style('frank_srd_stylesheet_ie7', get_stylesheet_directory_uri().'/stylesheets/css/ie7.css', null, '0.1', 'all' );
-		
-		$wp_styles->add_data('frank_srd_stylesheet_ie', 'conditional', 'IE');
-		$wp_styles->add_data('frank_srd_stylesheet_ie7', 'conditional', 'IE 7');
-		
-		wp_enqueue_style('frank_stylesheet_reset');
-		wp_enqueue_style('frank_stylesheet_grid');
-		wp_enqueue_style('frank_stylesheet_global');
-		wp_enqueue_style('frank_stylesheet_forms');
-		wp_enqueue_style('frank_stylesheet_widgets');
-		wp_enqueue_style('frank_stylesheet_sprites');
-		wp_enqueue_style('frank_stylesheet_transitions');
-		wp_enqueue_style('frank_stylesheet_header');
-		wp_enqueue_style('frank_stylesheet_index');
-		wp_enqueue_style('frank_stylesheet_single');
-		wp_enqueue_style('frank_stylesheet_archive');
-		wp_enqueue_style('frank_stylesheet_fourohfour');
-		wp_enqueue_style('frank_stylesheet_sidebar');
-		wp_enqueue_style('frank_stylesheet_comments');
-		wp_enqueue_style('frank_stylesheet_footer');
-		wp_enqueue_style('frank_stylesheet_colorbox');
-		wp_enqueue_style('frank_stylesheet_hacks');
-		
-		wp_enqueue_style('frank_srd_stylesheet_global');
-		wp_enqueue_style('frank_srd_stylesheet_forms');
-		wp_enqueue_style('frank_srd_stylesheet_widgets');
-		wp_enqueue_style('frank_srd_stylesheet_sprites');
-		wp_enqueue_style('frank_srd_stylesheet_transitions');
-		wp_enqueue_style('frank_srd_stylesheet_header');
-		wp_enqueue_style('frank_srd_stylesheet_index');
-		wp_enqueue_style('frank_srd_stylesheet_single');
-		wp_enqueue_style('frank_srd_stylesheet_page');
-		wp_enqueue_style('frank_srd_stylesheet_archive');
-		wp_enqueue_style('frank_srd_stylesheet_fourohfour');
-		wp_enqueue_style('frank_srd_stylesheet_sidebar');
-		wp_enqueue_style('frank_srd_stylesheet_comments');
-		wp_enqueue_style('frank_srd_stylesheet_footer');
-		wp_enqueue_style('frank_srd_stylesheet_pages');
-		wp_enqueue_style('frank_srd_stylesheet_colorbox');
-		wp_enqueue_style('frank_srd_stylesheet_hacks');
-
-		wp_enqueue_style('frank_stylesheet_mobile');
-		wp_enqueue_style('frank_stylesheet_print');
-		
-		wp_enqueue_style('frank_srd_stylesheet_ie');
-		wp_enqueue_style('frank_srd_stylesheet_ie7');
-}
-
-
 
 ?>

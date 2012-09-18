@@ -1,6 +1,6 @@
-#comments_container {
+#comments-container {
   margin-top: 60px; }
-  #comments_container .no_comments, #comments_container .comments_closed {
+  #comments-container .no_comments, #comments-container .comments_closed {
     margin-top: 30px;
     font-style: italic;
     font-size: 28px;
@@ -43,7 +43,7 @@
   width: 100%; }
 #respond label {
   display: none; }
-#respond #comment_form_info input[type=text] {
+#respond #comment-form-info input[type=text] {
   margin-bottom: 15px;
   text-align: right; }
 #respond textarea {
@@ -62,5 +62,5 @@
 
 /*MOBILE*/
 @media only screen and (max-width: 767px) {
-  #comments_container #commentform #comment_form_info input[type=text] {
+  #comments-container #commentform #comment-form-info input[type=text] {
     text-align: left; } }

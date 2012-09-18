@@ -10,6 +10,7 @@
 	<meta name="generator" content="WordPress <?php bloginfo('version'); ?>" />
 	<meta name="viewport" content="width=device-width" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+	<?php frank_meta_keywords(); ?>
 	
 	<title><?php if (function_exists('is_tag') && is_tag()) { echo 'Tag Archive for &quot;'.$tag.'&quot;&mdash;'; } elseif (is_archive()) { wp_title(''); echo ' Archive&mdash;'; } elseif (is_search()) { echo 'Search for &quot;'.wp_specialchars($s).'&quot;&mdash;'; } elseif (!(is_404()) && (is_single()) || (is_page())) { wp_title(''); echo '&mdash;'; } elseif (is_404()) { echo 'Not Found&mdash;'; } bloginfo('name'); ?></title>
 
@@ -17,13 +18,6 @@
 	if(!frank_devmode()) { frank_enqueue_styles(); }
 	else { frank_enqueue_styles_dev(); }
 	?>
-
-	<!--[if IE]>
-	<?php wp_enqueue_style('frank_stylesheet_ie', get_bloginfo('template_directory').'/stylesheets/css/ie.css', null, '0.1', 'all' ); ?>
-	<![endif]-->
-	<!--[if IE 7]>
-	<?php wp_enqueue_style('frank_stylesheet_ie7', get_bloginfo('template_directory').'/stylesheets/css/ie7.css', null, '0.1', 'all' ); ?>
-	<![endif]-->
 	
 	<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="<?php get_feed_link( 'rss2' ) ?>" />
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
@@ -40,24 +34,20 @@
 </head>
 <body id="page" <?php body_class($class); ?>>
 <div class="container">
-	<div class="row">
-	<header id="page-header">
+	<header id="page-header" class="row">
 		<hgroup>
 			<h1 id="site-title"><a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a></h1>
 			<h2 id="site-description"><?php bloginfo('description'); ?></h2>
 		</hgroup>
 		<nav id="site-nav">
 			<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Navigation") ) : ?>
-			<div class='menu clear'>
 				<?php wp_nav_menu( array('theme_location' => 'primary', 'container' => false ) ); ?>	
-			</div>
 			<?php endif; ?> 
 		</nav>
-	</header>
-	<?php if ( is_active_sidebar("widget-subheader") ) : ?>
+		<?php if ( is_active_sidebar("widget-subheader") ) : ?>
 		<div id='sub_header' class='row'>
 			<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Sub Header") ) : ?>
 			<?php endif; ?>
 		</div>
 	<?php endif; ?>
-	</div>
+	</header>

@@ -42,7 +42,7 @@
 		</div>
 		<?php endif; ?>
 	</div>
-	<?php get_sidebar(); ?>
+	<?php get_template_part('partials/sidebars/sidebar', 'archive'); ?>
 	</div>
 </div>
 <?php get_footer(); ?>

@@ -1,4 +1,4 @@
-<article itemscope itemtype="http://schema.org/BlogPosting" class="post">
+<article itemscope itemtype="http://schema.org/BlogPosting" class="post leftaside">
 	<header class="post-header">
 		<h1 class="post-title">
 			<a href="<?php the_permalink() ?>"><?php the_title(); ?></a>
@@ -9,8 +9,8 @@
 			<?php the_post_thumbnail( 'medium-thumbnail' ); ?>
 			<?php the_content('Read On&hellip;'); ?>
 		</section>
-		<div class="post-info">
+		<footer class="post-info">
 			<?php get_template_part('partials/post-metadata'); ?>
-		</div>
+		</footer>
 	</div>
 </article>
