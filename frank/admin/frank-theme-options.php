@@ -89,12 +89,10 @@ function frank_build_settings_page() {
 					$frank_general = get_option('_frank_options');
 
 					if (!empty($_POST) && wp_verify_nonce($_POST['frank_general_key'], 'frank_update_general')) {
-
-						$frank_general['header']					= $_POST['frank-general-header'];
-						$frank_general['footer']					= $_POST['frank-general-footer'];
-						$frank_general['devmode']					= $_POST['frank-general-devmode'];
-						$frank_general['tweet_post_button']			= $_POST['frank-general-tweet-post-button'];
-						$frank_general['tweet_post_attribution']	= $_POST['frank-general-tweet-post-attribution'];
+						$frank_general['header']					= (isset($_POST['frank-general-header'])) ? $_POST['frank-general-header'] : '';
+						$frank_general['footer']					= (isset($_POST['frank-general-footer'])) ? $_POST['frank-general-footer'] : '';
+						$frank_general['tweet_post_button']			= (isset($_POST['frank-general-tweet-post-button'])) ? $_POST['frank-general-tweet-post-button'] : false;
+						$frank_general['tweet_post_attribution']	= (isset($_POST['frank-general-tweet-post-attribution'])) ? $_POST['frank-general-tweet-post-attribution']: '';
 
 						update_option( '_frank_options', $frank_general );
 
@@ -110,7 +108,6 @@ function frank_build_settings_page() {
 							'footer'            			=> '',
 							'tweet_post_button' 			=> false,
 							'tweet_post_attribution' 		=> '',
-							'devmode'						=> ''
 						);
 
 					} ?>

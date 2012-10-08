@@ -10,17 +10,13 @@
 	<meta name="generator" content="WordPress <?php bloginfo('version'); ?>" />
 	<meta name="viewport" content="width=device-width" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-	<?php frank_meta_keywords(); ?>
 	
 	<title>
 		<?php wp_title('&mdash;',true,'right'); ?>
  		<?php bloginfo('name'); ?>
 	</title>
 
-	<?php 
-	if(!frank_devmode()) { frank_enqueue_styles(); }
-	else { frank_enqueue_styles_dev(); }
-	?>
+	<?php frank_enqueue_styles(); ?>
 	
 	<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="<?php get_feed_link( 'rss2' ) ?>" />
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
@@ -35,7 +31,7 @@
 	<?php if ( is_singular() ) wp_enqueue_script( 'comment-reply' ); ?>
 	<?php wp_head(); ?>	
 </head>
-<body id="page" <?php body_class($class); ?>>
+<body id="page" <?php body_class(); ?>>
 <div class="container">
 	<!--[if lt IE 7]>
 		<p class="chromeframe">Your browser is out of date. Please <a href="http://browsehappy.com/">upgrade your browser </a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a>.</p>
