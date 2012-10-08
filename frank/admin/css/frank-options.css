@@ -278,17 +278,22 @@ label.section-title {
 	display: block;
 	float: left;
 	height: auto;
-	margin: -2px 0 25px 0;
 	min-height: 18px;
+	margin-bottom: 25px;
 	padding: 0;
-	width: auto;
+	width: 348px;
+	padding: 10px;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	max-height: 300px;
+	overflow-y:scroll;
+	background: #fff;
 }
 
 .categories-container .categorychecklist li {
 	display: block;
-	float: left;
-	height: 18px;
-	margin: 0 15px 5px 0;
+	
+	margin: 5px 0;
 	padding: 0;
 	width: auto;
 }
