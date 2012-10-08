@@ -59,7 +59,7 @@ h3.type-title {
 	border-bottom: none;
 }
 
-h3.feature-title {
+label.feature-title {
 	display: inline-block;
 	float: left;
 	font: 12px/18px Helvetica, Sans-Serif;
@@ -208,11 +208,12 @@ a.frank-content-section-delete {
 	margin: 0 40px 20px 0;
 }
 
-.section-title {
+label.section-title {
 	color: #555;
 	display: block;
 	margin: 0 0 5px 0;
 	padding: 0;
+	font-weight: bold
 }
 
 .display-types select,

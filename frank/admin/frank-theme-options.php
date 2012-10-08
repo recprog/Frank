@@ -138,7 +138,7 @@ function frank_build_settings_page() {
 
 					<!-- CUSTOM HEADER CODE -->
 					<div id="first-option" class="option-container">
-						<h3 class="feature-title"><?php _e('Custom Header Code', 'frank'); ?></h3>
+						<label class="feature-title"><?php _e('Custom Header Code', 'frank'); ?></label>
 						<div class="feature">
 							<textarea name="frank-general-header" class="textarea"><?php echo stripslashes($frank_general['header']); ?></textarea>
 						</div>
@@ -153,7 +153,7 @@ function frank_build_settings_page() {
 
 					<!-- CUSTOM FOOTER CODE -->
 					<div class="option-container">
-						<h3 class="feature-title"><?php _e('Custom Footer Code', 'frank'); ?></h3>
+						<label class="feature-title"><?php _e('Custom Footer Code', 'frank'); ?></label>
 						<div class="feature">
 							<textarea name="frank-general-footer" class="textarea"><?php echo stripslashes($frank_general['footer']); ?></textarea>
 						</div>
@@ -166,7 +166,7 @@ function frank_build_settings_page() {
 					</div>
 					<!-- TWEET THIS OPTION -->
 					<div class="option-container">
-						<h3 class="feature-title"><?php _e('Tweet This', 'frank'); ?></h3>
+						<label class="feature-title"><?php _e('Tweet This', 'frank'); ?></label>
 						<div class="feature">
 							<input type="checkbox"
 								   name="frank-general-tweet-post-button"
@@ -188,7 +188,7 @@ function frank_build_settings_page() {
 					</div>
 					<!-- TWEET THIS HANDLE -->
 					<div class="option-container">
-						<h3 class="feature-title"><?php _e('Twitter Handle', 'frank'); ?></h3>
+						<label class="feature-title"><?php _e('Twitter Handle', 'frank'); ?></label>
 						<div class="feature">
 							<input type="text"
 								   name="frank-general-tweet-post-attribution"
@@ -245,12 +245,12 @@ function frank_build_settings_page() {
 
 								// ADD OUR DATA
 								$sections[] = array(
-									'display_type'      => $_POST['frank-display-type-' . $frank_section_flag],
-									'header'             => $_POST['frank-section-header-' . $frank_section_flag],
-									'title'             => $_POST['frank-section-title-' . $frank_section_flag],
-									'caption'           => $_POST['frank-section-caption-' . $frank_section_flag],
-									'num_posts'         => intval( $_POST['frank-section-num-posts-' . $frank_section_flag]),
-									'categories'        => $_POST['post_category' . $frank_post_category_flag]
+									'display_type'      => (isset($_POST['frank-display-type-' . $frank_section_flag])) ? $_POST['frank-display-type-' . $frank_section_flag] : 'default_loop',
+									'header'             => (isset($_POST['frank-section-header-' . $frank_section_flag])) ? $_POST['frank-section-header-' . $frank_section_flag] : '',
+									'title'             => (isset($_POST['frank-section-title-' . $frank_section_flag])) ? $_POST['frank-section-title-' . $frank_section_flag] : '',
+									'caption'           => (isset($_POST['frank-section-caption-' . $frank_section_flag])) ? $_POST['frank-section-caption-' . $frank_section_flag] : '',
+									'num_posts'         => (isset($_POST['frank-section-num-posts-' . $frank_section_flag])) ? intval( $_POST['frank-section-num-posts-' . $frank_section_flag]) : 10,
+									'categories'        => (isset($_POST['post_category' . $frank_section_flag])) ? $_POST['post_category' . $frank_post_category_flag] : array()
 								);
 
 							}
@@ -273,7 +273,7 @@ function frank_build_settings_page() {
 							'header'             => false,
 							'title'             => '',
 							'caption'           => '',
-							'num_posts'         => '',
+							'num_posts'         => 10,
 							'categories'        => array(),
 							'default'           => true
 						);
@@ -286,7 +286,7 @@ function frank_build_settings_page() {
 
 						<?php
 
-						if ($frank_updated) {
+						if (isset($frank_updated)&&$frank_updated) {
 
 							echo '<h4 class="saved-success">';
 							echo '<img src="/wp-content/themes/frank/admin/images/success.png" /> Franklin Street Theme Settings Have Been Updated.';
@@ -345,12 +345,12 @@ function frank_build_settings_page() {
 									checked( $value, "section_header" ); 
 									?>
 									/>
-									<label>Display section header</label>
+									<label class="section-title">Display section header</label>
 								</div>
 
 								<!-- // SECTION TITLE -->
 								<div class="display-titles">
-									<h3 class="section-title"><?php _e('Section Title:', 'frank'); ?></h3>
+									<label class="section-title"><?php _e('Section Title:', 'frank'); ?></label>
 									<input type="text"
 										   class="text text-title"
 										   name="frank-section-title-<?php echo (isset($frank_section['default']) ? 'default' : $frank_section_id); ?>"
@@ -359,7 +359,7 @@ function frank_build_settings_page() {
 								
 								<!-- // POSTS TO DISPLAY -->
 								<div class="display-posts">
-									<h3 class="section-title"><?php _e('Number of Posts:', 'frank'); ?></h3>
+									<label class="section-title"><?php _e('Number of Posts:', 'frank'); ?></label>
 									<input type="text"
 										   class="text"
 										   name="frank-section-num-posts-<?php echo (isset($frank_section['default']) ? 'default' : $frank_section_id); ?>"
@@ -368,7 +368,7 @@ function frank_build_settings_page() {
 								
 								<!-- // DISPLAY TYPES -->
 								<div class="display-types">
-									<h3 class="section-title"><?php _e('Display Type:', 'frank'); ?></h3>
+									<label class="section-title"><?php _e('Display Type:', 'frank'); ?></label>
 									<select name="frank-display-type-<?php echo (isset($frank_section['default']) ? 'default' : $frank_section_id); ?>" class="dropmenu">
 										<option<?php if($the_type == 'default_loop') { ?> selected="selected"<?php } ?> value="default_loop"><?php _e('Default Loop', 'frank'); ?></option>
 										<option<?php if($the_type == 'one_up_reg' ) { ?> selected="selected"<?php } ?> value="one_up_reg"><?php _e('One Up (Regular)', 'frank'); ?></option>
@@ -388,14 +388,14 @@ function frank_build_settings_page() {
 								
 								<!-- // SECTION CAPTIONS -->
 								<div class="display-captions">
-									<h3 class="section-title"><?php _e('Section Caption:', 'frank'); ?></h3>
+									<label class="section-title"><?php _e('Section Caption:', 'frank'); ?></label>
 									<textarea name="frank-section-caption-<?php echo (isset($frank_section['default']) ? 'default' : $frank_section_id); ?>" class="textarea"><?php echo !isset($frank_section['default']) ? stripslashes($frank_section['caption']) : $frank_defaults['caption']; ?></textarea>
 								</div>
 								
 								
 								<!-- // CATEGORIES TO DISPLAY -->
 								<div class="display-categories">
-									<h3 class="section-title"><?php _e('Categories to Display', 'frank'); ?></h3>
+									<label class="section-title"><?php _e('Categories to Display', 'frank'); ?></label>
 									<div class="categories-container">
 										<ul class="categorychecklist">
 											<?php wp_terms_checklist(); ?>
