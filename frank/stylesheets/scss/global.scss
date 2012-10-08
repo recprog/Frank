@@ -1,11 +1,16 @@
 body {
 	@extend .reset;
-	font: 62.5%/1.55 $typeface-primary;
+	font: 62.5%/1.6 $typeface-primary;
 	background: $color-highlight;
 	color: $color-off-black;
 	height: 100%;
 	text-rendering: optimizelegibility; 
 	-webkit-font-smoothing: antialiased;
+}
+
+.reset {
+	margin:0;
+	padding:0;
 }
 
 /*Images*/
@@ -58,7 +63,6 @@ h1, h2, h3, h4, h5, h6 {
 	padding-top: 0px; 
 	margin-bottom: $row-height; 
 }
-/* TODO: Try this pattern out :not(:last-child) */
 h1:first-child, h2:first-child, h3:first-child, h4:first-child, h5:first-child, h6:first-child { margin-top: 0; }
 h1 { font-size: $font-size-x-large; }
 h2 { font-size: $font-size-large; }
@@ -85,7 +89,16 @@ p:last-child { margin-bottom: 0; }
 
 
 /*Blockquote*/
-blockquote, q { quotes: "„" "“"; }
+
+blockquote > p:first-child::before {
+	content: open-quote;
+}
+blockquote > p:last-child::after {
+	content: close-quote;
+}
+blockquote, q { 
+	quotes: "“" "”" ; 
+}
 blockquote {
 	color: $color-dark;
 	border: 2px $color-off-black solid;
@@ -97,12 +110,8 @@ blockquote {
 	p {
 		font-size: inherit;
 		line-height: inherit;
-		margin: 0; 
+		
 	}
-	
-	p:first-child:before { content: "“"; }
-	
-	p:last-child:after { content: "”"; } 
 }
 cite, blockquote[cite]:after, cite {
 	font-family: $typeface-secondary;
@@ -157,12 +166,12 @@ th {
 
 /*Ordered & Unordered lists*/
 ul, ol {
-	margin-top:$row-height;
-	li {
-		margin-left: 20px;
-	} 
+	@extend .reset;
+	list-style: disc;
+	margin: $row-height 0 $row-height $gutter-width;
+	
 }
-ul { list-style: square; }
+ul { list-style: disc; }
 ol { list-style: decimal; }
 
 /*Definition lists*/
@@ -191,20 +200,6 @@ small { font-size: $font-size-small; }
 strong { font-weight: $bold; }
 em { font-style: italic; }
 
-/* TODO: Cleanup heirarchy */
-#content.single article section {
-	.flush-left {
-		margin-left: -26.1%;
-	}
-	blockquote.large p {
-		font-size: $font-size-large; 
-	}
-	img.flush-left {
-		max-width:126.1%;
-	} 
-}
-
-
 /*Generic Classes*/
 .more-link { font-style: italic;  }
 .hidden { display: none; }
@@ -215,10 +210,7 @@ em { font-style: italic; }
     text-overflow: ellipsis;
     -o-text-overflow: ellipsis;
 }
-.reset {
-	margin:0;
-	padding:0;
-}
+
 
 
 /*Wordpress Classes*/
@@ -307,7 +299,6 @@ ul.metadata {
 	} 
 }
 
-/* TODO: Try this pattern out :not(:last-child) */
 ul.metadata.horizontal {
 	margin-top: $row-height;
 	display: inline-block;
@@ -355,7 +346,7 @@ dl.metadata {
 	}
 	.post-header { margin-bottom: $row-height; }
 	.post-content {
-		font: #{$font-size-medium}/1.55 #{$typeface-primary};
+		font: #{$font-size-medium}/1.6 #{$typeface-primary};
 		p, ul li, ol li, dt, dd, blockquote { 
 			font-size: $font-size-medium; 
 		}

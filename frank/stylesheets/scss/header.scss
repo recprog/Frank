@@ -1,8 +1,23 @@
-#site-title { font-size: $font-size-x-large; }
-#site-description { margin-top:0; }
+#site-title-description {
+	margin-top: $row-height;
+}
+#site-title { 
+	font-size: $font-size-x-large; 
+	margin-bottom: 5px;
+}
+#site-description { 
+	margin-top:0; 
+	font-size: $font-size-small;
+}
 #site-nav {
 	@extend .clearfix;
-	ul { list-style: none; }
+	margin:$row-height auto $row-height * 2 auto; 
+	padding-bottom:$row-height;
+	border-bottom:$border-break;
+	ul { 
+		margin-left: 0;
+		list-style: none; 
+	}
 	ul ul { display: none; }
 	li {
 		@extend .reset;
@@ -18,9 +33,6 @@
 }
 #page-header {
 	position: relative;
-	border-bottom:$border-break;
-	padding-bottom:$row-height;
-	margin:$row-height auto $row-height * 2 auto; 
 }
 
 #sub_header {

@@ -1,4 +1,4 @@
-<article itemscope itemtype="http://schema.org/BlogPosting" class="post leftaside">
+<article itemscope itemtype="http://schema.org/BlogPosting" <?php post_class('leftaside'); ?>>
 	<header class="post-header">
 		<h1 class="post-title">
 			<a href="<?php the_permalink() ?>"><?php the_title(); ?></a>

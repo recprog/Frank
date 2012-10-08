@@ -43,6 +43,27 @@
 		section p { font-size: $font-size-small; }
 		.metadata li { font-size: $font-size-x-small; }
 	}
+	.post-group.twoup {
+		.post {
+			@extend .column;
+			width: $six-columns;
+		}
+	}
+
+	.post-group.threeup {
+		.post {
+			@extend .column;
+			width: $four-columns;
+		}
+	}
+
+	.post-group.fourup {
+		.post {
+			@extend .column;
+			width: $three-columns;
+		}
+	}
+
 	/* TODO: Try this pattern out :not(:last-child) */
 	.post-group.twoup .post:nth-child(2n+1), .post-group.threeup .post:nth-child(3n+1), .post-group.fourup .post:nth-child(4n+1) {
 		margin-left:0;

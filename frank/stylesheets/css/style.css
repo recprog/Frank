@@ -943,19 +943,19 @@ img, object, embed {
   width: 18.5%; }
 
 /* 	.block-grid.five-up>li:nth-child(5n+1) {clear: left;} */
-#previous_post {
+#previous-post {
   margin-top: 60px;
   font-style: italic;
   font-family: Georgia, "Times New Roman", Times, serif; }
-  #previous_post a {
+  #previous-post a {
     font-size: 13px;
     display: block;
     text-align: center; }
-  #previous_post nav {
+  #previous-post nav {
     padding-bottom: 15px;
     border-bottom: 1px solid #f0eceb;
     margin: 15px 0; }
-  #previous_post .arrow {
+  #previous-post .arrow {
     display: block;
     box-shadow: 0px 0px 8px rgba(18, 7, 6, 0.3);
     width: 45px;
@@ -965,9 +965,9 @@ img, object, embed {
     white-space: nowrap;
     overflow: hidden;
     background: #5d504f url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAQCAYAAADESFVDAAAAWElEQVR42qXSzQkAIAgF4EZolEZqhDZqpEZwBM8dovSUYD9YwuNdPgIlt5tWa6AA9wkgpXPfACeagaeAAGkFigDZACbKAoAC+5f+od7Oesh/iC+/QC/DPQAIxvkuqJQtLgAAAABJRU5ErkJggg==") no-repeat 16px 15px; }
-  #previous_post a:hover {
+  #previous-post a:hover {
     color: #ff1e00; }
-    #previous_post a:hover .arrow {
+    #previous-post a:hover .arrow {
       background-color: #3d302f; }
 
 /* TODO: Remove heirarchy */

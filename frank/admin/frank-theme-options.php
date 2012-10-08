@@ -1,277 +1,495 @@
 <?php
 
-		// default data for first run
-		$frank_defaults = array(
-										'title'             => 'Section Title',
-										'caption'           => 'Section Caption',
-										'num_posts'         => 10
-		);
+// LAST UPDATED AT 3AM ON SEPTEMBER 25TH, 2012
 
-?>
+//add_action( 'admin_menu', 'frankSettingsPageInit' );
 
-<div class="wrap">
-	<div id="icon-options-general" class="icon32"><br /></div>
-			<h2><?php _e('Frank - General Options', 'frank'); ?></h2>
-			<?php
-					$frank_general_updated = false;
-			 // we need to pull our existing sections, if present
-						$frank_general = get_option( '_frank_options' );
-	
-					if ( !empty( $_POST ) && wp_verify_nonce( $_POST['frank_general_key'], 'frank_update_general' ) )
-					{
-		
-				$frank_general['header']=$_POST['frank-general-header'];
-				$frank_general['footer']=$_POST['frank-general-footer'];
-				$frank_general['devmode']=$_POST['frank-general-devmode'];
-				$frank_general['tweet_post_button']=$_POST['frank-general-tweet-post-button'];
-				$frank_general['tweet_post_attribution']=$_POST['frank-general-tweet-post-attribution'];
-				
-		
-							update_option( '_frank_options', $frank_general );
-	
-							$frank_general_updated = true;
-	
-					}
-	
-	
-				 
-	
-					// if there's nothing, we'll set our defaults
-					if( empty( $frank_general ) )
-					{
-							$frank_general[] = array(
-								'header'      						=> '',
-								'footer'            			=> '',
-								'tweet_post_button' 			=> false,
-								'tweet_post_attribution' 	=> '',
-								'devmode'									=> ''
-							);
-					}
-	
-			?>
-	
-			<?php if( $frank_general_updated) : ?>
-					<div class="message updated">
-							<p><strong>Franklin Street</strong> general settings updated.</p>
-					</div>
-					<!-- /message -->
-			<?php endif ?>
-	
-			<h3><?php _e('General Settings', 'frank'); ?></h3>
-	
-			<form action="" method="post">
-	
-					<?php wp_nonce_field( 'frank_update_general', 'frank_general_key' ); ?>
-	
-					<div id="frank-general">
-					<div>
-										<label for="frank-general-header"><?php _e('Custom Header Code', 'frank'); ?></label>
-										<textarea name="frank-general-header"><?php echo stripslashes($frank_general['header']); ?></textarea>
-					</div>
-					<div>
-						<label for="frank-general-footer"><?php _e('Custom Footer Code', 'frank'); ?></label>
-										<textarea name="frank-general-footer"><?php echo stripslashes($frank_general['footer']); ?></textarea>
-					</div>
-					<div>
-						<input type="checkbox" name="frank-general-devmode" value="devmode" <?php if($frank_general['devmode']): ?> checked="checked" <?php endif; ?> /> <label for="frank-general-devmode"><?php _e('Developer Mode', 'frank'); ?></label>
-							<input type="checkbox" name="frank-general-css-injection" value="csssinject" <?php if($frank_general['cssinject']): ?> checked="checked" <?php endif; ?>>	
-								<label for="frank-general-css-injection"><?php _e('Add CSS code directly into header', 'frank'); ?></label>
-						<input type="checkbox" name="frank-general-javascript-injection" value="jsinject" <?php if($frank_general['jsinject']): ?> checked="checked" <?php endif; ?>>	
-							<label for="frank-general-javascript-injection"><?php _e('Add Javascript code directly into footer', 'frank'); ?></label>
-					</div>
+// REGISTER NEW SETTINGS PAGE WITH WORDPRESS
+/*
+function frankSettingsPageInit() {
 
-					<div>
-						<input type="checkbox" name="frank-general-tweet-post-button" value="tweet_post_button" <?php if($frank_general['tweet_post_button']): ?> checked="checked" <?php endif; ?> /> <label for="frank-general-tweet-post-button"><?php _e('Add "Tweet this Post" button to blog post template', 'frank'); ?></label>
-						<br />
-						<label for="frank-general-tweet-post-attribution"><?php _e('Username to Attribute in Tweet Post', 'frank'); ?></label>
-						<br />
-						<input type="text" name="frank-general-tweet-post-attribution" value="<?php echo stripslashes($frank_general['tweet_post_attribution']); ?>" />
-					</div>
+	$frankSettings = add_menu_page( 'Theme Settings', 'Theme Settings', 'edit_theme_options', 'frank-settings', 'frank_build_settings_page' );
 
-					</div>
+	add_action( "load-{$frankSettings}", 'frankLoadSettingsPage' );
+
+}
+*/
+
+// CREATE THE SETTINGS TABS IN WP ADMIN
+if (!function_exists('frank_admin_tabs')) {
+function frank_admin_tabs($current = 'general') {
+
+	$tabs = array( 'general' => 'General Settings', 'home' => 'Home Page Settings');
+
+	echo '<div id="icon-themes" class="icon32"><br></div>';
+	echo '<h2 class="nav-tab-wrapper">';
+
+	foreach($tabs as $tab => $name) {
+
+		$class = ($tab == $current) ? ' nav-tab-active' : '';
+
+        echo "<a class='nav-tab$class' href='?page=frank-settings&tab=$tab'>$name</a>";
+
+    }
+
+    echo '</h2>';
+
+}
+}
+
+// BUILD THE CONTENT THAT DISPLAYS IN THEME SETTINGS
+if (!function_exists('frank_build_settings_page')) {
+function frank_build_settings_page() {
+	global $pagenow;
+
+	// SET FILE DIRECTORY
+	$file_dir = get_bloginfo('template_directory');
 	
-					<div id="frank-save">
-							<p class="submit">
-									<input type="submit" class="button-primary" value="<?php _e('Save', 'frank'); ?>" />
-							</p>
-					</div>
-	
-			</form>
-	
+	// SETUP NEEDED STYLES & SCRIPTS FOR OPTIONS PAGE
+	//wp_enqueue_script('jquery-ui-sortable' );
+	//wp_enqueue_script('frank-admin', $file_dir . '/admin/js/frank-utils.js', 'jquery', NULL, TRUE);
+	//wp_enqueue_style('frank-admin', $file_dir . '/admin/css/frank-options.css', NULL, NULL, NULL);
 
-		<div id="icon-themes" class="icon32"><br /></div>
-		<h2><?php _e('Frank - Home Page Options', 'frank'); ?></h2>
+	// SET DEFAULT DATA FOR FIRST RUN
+	$frank_defaults = array(
+		'title'             => 'Section Title',
+		'caption'           => 'Section Caption',
+		'num_posts'         => 10
+	);
 
+	?>
 
-		<?php
-				$frank_updated = false;
-		// we need to pull our existing sections, if present
-				$frank_sections = get_option( '_frank_options' );
+	<div class="wrap">
 
-				if ( !empty( $_POST ) && wp_verify_nonce( $_POST['frank_key'], 'frank_update_home_sections' ) )
-				{
-						$sections = array();
-						foreach( $_POST as $key => $value )
-						{
-								$keyflag = 'frank-display-type-';
-								if( substr( $key, 0, strlen( $keyflag ) ) == $keyflag )
-								{
-										// find our ID flag
-										$frank_section_flag = substr( $key, strlen( $keyflag ), strlen( $key ) );
+		<h2>Frank Theme Settings</h2>
 
-										// since we're piggybacking some WP core functionality, the
-										// post categories have a slightly different ID depending on what was first
+		<?php if (isset($_GET['tab'])) { frank_admin_tabs($_GET['tab']); } else { frank_admin_tabs('general'); } ?>
 
-										if( $frank_section_flag == 'default' )
-										{
-												$frank_post_category_flag = '';
-										}
-										else
-										{
-												$frank_post_category_flag = '-' . $frank_section_flag;
-										}
+		<form method="post" action="">
 
-										// add our data
-										$sections[] = array(
-																				'display_type'      => $_POST['frank-display-type-' . $frank_section_flag],
-																				'title'             => $_POST['frank-section-title-' . $frank_section_flag],
-																				'caption'           => $_POST['frank-section-caption-' . $frank_section_flag],
-																				'num_posts'         => intval( $_POST['frank-section-num-posts-' . $frank_section_flag] ),
-																				'categories'        => $_POST['post_category' . $frank_post_category_flag]
-										);
-								}
-						}
-			$frank_sections['sections']=$sections;
-						update_option( '_frank_options', $frank_sections );
+			<div id="settings-container"> <?php
+			wp_nonce_field( 'frank_update_general', 'frank_general_key' );
+			
+			if ($pagenow == 'themes.php' && $_GET['page'] == 'frank-settings') {
+
+				if (isset($_GET['tab'])) { $tab = $_GET['tab']; } else { $tab = 'general'; }
+
+				switch ($tab) {
+
+					// SETUP OPTIONS FOR GENERAL TAB
+					case 'general' : ?>
+
+					<h3 class="type-title">General Settings</h3>
+
+					<?php
+
+					$frank_updated = false;
+
+					// PULL EXISTING SECTIONS, IF PRESENT
+					$frank_general = get_option('_frank_options');
+
+					if (!empty($_POST) && wp_verify_nonce($_POST['frank_general_key'], 'frank_update_general')) {
+
+						$frank_general['header']					= $_POST['frank-general-header'];
+						$frank_general['footer']					= $_POST['frank-general-footer'];
+						$frank_general['devmode']					= $_POST['frank-general-devmode'];
+						$frank_general['tweet_post_button']			= $_POST['frank-general-tweet-post-button'];
+						$frank_general['tweet_post_attribution']	= $_POST['frank-general-tweet-post-attribution'];
+
+						update_option( '_frank_options', $frank_general );
 
 						$frank_updated = true;
 
-				}
+					}
 
+					// IF THERES NOTHING, SET DEFAULTS
+					if(empty($frank_general)) {
 
-				
-
-		$frank_sections = $frank_sections['sections'];
-
-				// if there's nothing, we'll set our defaults
-				if( empty( $frank_sections ) )
-				{
-						$frank_sections['sections'] = array(
-																				'display_type'      => 'default_loop',
-																				'title'             => '',
-																				'caption'           => '',
-																				'num_posts'         => '',
-																				'categories'        => array(),
-																				'default'           => true
+						$frank_general[] = array(
+							'header'      					=> '',
+							'footer'            			=> '',
+							'tweet_post_button' 			=> false,
+							'tweet_post_attribution' 		=> '',
+							'devmode'						=> ''
 						);
-				}
 
-		?>
+					} ?>
 
-		<?php if( $frank_updated ) : ?>
-				<div class="message updated">
-						<p><strong>Frank</strong> home page sections updated.</p>
-				</div>
-				<!-- /message -->
-		<?php endif ?>
+					<div class="button-container">
 
-		<h3><?php _e('Content Sections', 'frank'); ?></h3>
+						<input type="submit" name="submit"  class="save-settings" value="<?php _e('Update Settings', 'frank'); ?>" />
 
-		<form action="" method="post">
+						<?php
 
-				<?php wp_nonce_field( 'frank_update_home_sections', 'frank_key' ); ?>
+						if ($frank_updated) {
 
-				<div id="frank-content-sections">
+							echo '<h4 class="saved-success">';
+							echo '<img src="/wp-content/themes/frank/admin/images/success.png" /> Franklin Street Theme Settings Have Been Updated.';
+							echo '</h4>';
 
-						<?php foreach( $frank_sections as $frank_section_id => $frank_section ) : ?>
-								<div class="frank-content-section frank-group<?php if( isset( $frank_section['default'] ) ) : ?> frank-content-section-default<?php endif ?>" id="frank-street-section-<?php echo $frank_section_id; ?>">
+						} else {
 
-										<span class="frank-handle"></span>
-										<a class="frank-content-section-delete" href="#">X</a>
+							echo '<h4 class="info">';
+							echo 'Make Changes And Use The Update Settings Button To Save! &rarr;';
+							echo '</h4>';
 
-										<div class="frank-display-type">
-												<label for="frank-display-type-<?php echo ( isset( $frank_section['default'] ) ? 'default' : $frank_section_id ); ?>"><?php _e('Display Type:', 'frank'); ?></label>
-												<select name="frank-display-type-<?php echo ( isset( $frank_section['default'] ) ? 'default' : $frank_section_id ); ?>" id="frank-display-type-<?php echo ( isset( $frank_section['default'] ) ? 'default' : $frank_section_id ); ?>">
-							<option<?php if( $frank_section['display_type'] == 'default_loop' ) : ?> selected="selected"<?php endif ?> value="default_loop"><?php _e('Default Loop', 'frank'); ?></option>
-														<option<?php if( $frank_section['display_type'] == 'one_up_reg' ) : ?> selected="selected"<?php endif ?> value="one_up_reg"><?php _e('One Up (Regular)', 'frank'); ?></option>
-														<option<?php if( $frank_section['display_type'] == 'one_up_lg' ) : ?> selected="selected"<?php endif ?> value="one_up_lg"><?php _e('One Up (Large)', 'frank'); ?></option>
-														<option<?php if( $frank_section['display_type'] == 'two_up' ) : ?> selected="selected"<?php endif ?> value="two_up"><?php _e('Two Up', 'frank'); ?></option>
-							<option<?php if( $frank_section['display_type'] == 'three_up' ) : ?> selected="selected"<?php endif ?> value="three_up"><?php _e('Three Up', 'frank'); ?></option>
-														<option<?php if( $frank_section['display_type'] == 'four_up' ) : ?> selected="selected"<?php endif ?> value="four_up"><?php _e('Four Up', 'frank'); ?></option>
-							<option<?php if( $frank_section['display_type'] == 'srd_loop' ) : ?> selected="selected"<?php endif ?> value="srd_loop"><?php _e('Some Random Dude Loop', 'frank'); ?></option>
-												</select>
-										</div>
-										<!-- /frank-display-type -->
+						}
 
-										<div class="frank-meta frank-group">
+						?>
 
-												<div class="frank-meta frank-fields">
-														<ul>
-																<li class="frank-section-title">
-																		<label for="frank-section-title-<?php echo ( isset( $frank_section['default'] ) ? 'default' : $frank_section_id ); ?>"><?php _e('Section Title', 'frank'); ?></label>
-																		<input type="text" name="frank-section-title-<?php echo ( isset( $frank_section['default'] ) ? 'default' : $frank_section_id ); ?>" id="frank-section-title-<?php echo ( isset( $frank_section['default'] ) ? 'default' : $frank_section_id ); ?>" value="<?php echo !isset( $frank_section['default'] ) ? stripslashes( $frank_section['title'] ) : $frank_defaults['title']; ?>" />
-																</li>
-																<li class="frank-section-caption">
-																		<label for="frank-section-caption-<?php echo ( isset( $frank_section['default'] ) ? 'default' : $frank_section_id ); ?>"><?php _e('Section Caption', 'frank'); ?></label>
-																		<textarea name="frank-section-caption-<?php echo ( isset( $frank_section['default'] ) ? 'default' : $frank_section_id ); ?>" id="frank-section-caption-<?php echo ( isset( $frank_section['default'] ) ? 'default' : $frank_section_id ); ?>"><?php echo !isset( $frank_section['default'] ) ? stripslashes( $frank_section['caption'] ) : $frank_defaults['caption']; ?></textarea>
-																</li>
-																<li class="frank-section-num-posts">
-																		<label for="frank-section-num-posts-<?php echo ( isset( $frank_section['default'] ) ? 'default' : $frank_section_id ); ?>"><?php _e('Number of Posts', 'frank'); ?></label>
-																		<input type="text" name="frank-section-num-posts-<?php echo ( isset( $frank_section['default'] ) ? 'default' : $frank_section_id ); ?>" id="frank-section-num-posts-<?php echo ( isset( $frank_section['default'] ) ? 'default' : $frank_section_id ); ?>" value="<?php echo !isset( $frank_section['default'] ) ? stripslashes( $frank_section['num_posts'] ) : $frank_defaults['num_posts']; ?>" />
-																</li>
-														</ul>
-												</div>
-												<!-- /frank-meta- frank-fields -->
+					</div><!-- // BUTTON CONTAINER -->
 
-												<div class="frank-meta frank-categories categorydiv">
-														<p><?php _e('Categories to Display', 'frank'); ?></p>
-														<div class="tabs-panel">
-																<ul class="categorychecklist">
-																		<?php wp_terms_checklist( ) ?>
-																</ul>
-														</div>
-														<!-- /tabs-panel -->
+					<!-- CUSTOM HEADER CODE -->
+					<div id="first-option" class="option-container">
+						<h3 class="feature-title"><?php _e('Custom Header Code', 'frank'); ?></h3>
+						<div class="feature">
+							<textarea name="frank-general-header" class="textarea"><?php echo stripslashes($frank_general['header']); ?></textarea>
+						</div>
+						<div class="feature-desc">
+							This features allows you to write or copy & paste your own code straight
+							into the header. Many people use this feature to include their Google Analytics
+							code, or other small bits of Javascript. Feel free to use this as you wish!
+						</div>
+						<div style="clear:both;"></div>
+					</div>
 
-														<!-- in order to keep things WP standard, we're going to auto-check via jQuery -->
-														<script type="text/javascript">
-																jQuery(document).ready(function(){
-																		<?php foreach( $frank_section['categories'] as $category ) : ?>
-																				jQuery('#frank-street-section-<?php echo $frank_section_id; ?> ul.categorychecklist input').each(function(){
-																						if(jQuery(this).val()==<?php echo $category; ?>){
-																								jQuery(this).attr('checked', true);
-																						}
-																				})
-																		<?php endforeach; ?>
-																});
-														</script>
 
-														<ul class="frank-group">
-																<li><a class="button frank-select" href="#"><?php _e('Select All', 'frank'); ?></a></li>
-																<li><a class="button frank-deselect" href="#"><?php _e('Deselect All', 'frank'); ?></a></li>
-														</ul>
-												</div>
-												<!-- /frank-meta- frank-categories -->
-										</div>
-										<!-- /frank-meta frank-group -->
+					<!-- CUSTOM FOOTER CODE -->
+					<div class="option-container">
+						<h3 class="feature-title"><?php _e('Custom Footer Code', 'frank'); ?></h3>
+						<div class="feature">
+							<textarea name="frank-general-footer" class="textarea"><?php echo stripslashes($frank_general['footer']); ?></textarea>
+						</div>
+						<div class="feature-desc">
+							This feature allows you to write or copy & paste your own code directly
+							to the footer. A lot of people use this feature to include external & internal
+							Javascript files, for plugins and things of the sort. Use it as you wish!
+						</div>
+						<div style="clear:both;"></div>
+					</div>
+					<!-- TWEET THIS OPTION -->
+					<div class="option-container">
+						<h3 class="feature-title"><?php _e('Tweet This', 'frank'); ?></h3>
+						<div class="feature">
+							<input type="checkbox"
+								   name="frank-general-tweet-post-button"
+								   class="checkbox"
+								   value="tweet_post_button" 
+									<?php checked( $frank_general['tweet_post_button'], "tweet_post_button" ); ?>
+								/>
 
-								</div>
-								<!-- /frank-content-section -->
-						<?php endforeach; ?>
+							<label for="frank-general-tweet-post-button">
+								<?php _e('Add a "Tweet This Post" Button to Post Templates.', 'frank'); ?>
+							</label>
+						</div>
+						<div class="feature-desc">
+							This feature gives you the option to integrate a little bit of social
+							networking directly into your posts. By turning this feature on, we'll automatically
+							create a "Tweet" Button people can use to share your content!
+						</div>
+						<div style="clear:both;"></div>
+					</div>
+					<!-- TWEET THIS HANDLE -->
+					<div class="option-container">
+						<h3 class="feature-title"><?php _e('Twitter Handle', 'frank'); ?></h3>
+						<div class="feature">
+							<input type="text"
+								   name="frank-general-tweet-post-attribution"
+								   class="text"
+								   value="<?php echo stripslashes($frank_general['tweet_post_attribution']); ?>" />
+						</div>
+						<div class="feature-desc">
+							By entering your handle once right here, you can easily reference
+							this setting throughout the theme and change it later with ease, if needed.
+							Refrain from using the '@' sign. An example handle: 'somerandomdude'
+						</div>
+						<div style="clear:both;"></div>
+					</div>			
 
-				</div>
-				<!-- /frank-content-sections -->
+					 <?php
+						
+					break;
 
-				<div id="frank-add-content-section">
-						<a href="#"><?php _e('Add New Section', 'frank'); ?></a>
-				</div>
-				<!-- /frank-add-content-section -->
+					case 'home' : ?>
 
-				<div id="frank-save">
-						<p class="submit">
-								<input type="submit" class="button-primary" value="<?php _e('Save', 'frank'); ?>" />
+					<h3 class="type-title">Home Page Settings</h3> <?php
+
+					wp_nonce_field('frank_update_home_sections', 'frank_key');
+
+					// GET EXISTING SECTIONS, IF PRESENT
+					$frank_sections = get_option('_frank_options');
+
+					if (!empty($_POST) && wp_verify_nonce($_POST['frank_key'], 'frank_update_home_sections')) {
+
+						$frank_updated 	= false;
+						$sections 		= array();
+
+						foreach($_POST as $key => $value) {
+
+							$keyflag = 'frank-display-type-';
+
+							if(substr($key, 0, strlen($keyflag)) == $keyflag) {
+
+								// FIND ID FLAG
+								$frank_section_flag = substr($key, strlen($keyflag), strlen($key));
+
+								// SINCE WE'RE PIGGY-BACKING SOME WP CORE FUNCTIONALTITY, THE POST
+								// CATEGORIES HAVE A SLIGHTLY DIFFERENT ID DEPENDING ON WHAT WAS FIRST
+
+								if($frank_section_flag == 'default') {
+
+									echo $frank_post_category_flag = '';
+
+								} else {
+
+									$frank_post_category_flag = '-' . $frank_section_flag;
+
+								}
+
+								// ADD OUR DATA
+								$sections[] = array(
+									'display_type'      => $_POST['frank-display-type-' . $frank_section_flag],
+									'header'             => $_POST['frank-section-header-' . $frank_section_flag],
+									'title'             => $_POST['frank-section-title-' . $frank_section_flag],
+									'caption'           => $_POST['frank-section-caption-' . $frank_section_flag],
+									'num_posts'         => intval( $_POST['frank-section-num-posts-' . $frank_section_flag]),
+									'categories'        => $_POST['post_category' . $frank_post_category_flag]
+								);
+
+							}
+
+						} // END FOREACH LOOP
+
+						$frank_sections['sections'] = $sections;
+						update_option('_frank_options', $frank_sections);
+						$frank_updated = true;
+
+					}
+
+					$frank_sections = $frank_sections['sections'];
+
+					// IF NOTHING'S SET, SET DEFAULTS
+					if(empty($frank_sections)) {
+
+						$frank_sections['sections'] = array(
+							'display_type'      => 'default_loop',
+							'header'             => false,
+							'title'             => '',
+							'caption'           => '',
+							'num_posts'         => '',
+							'categories'        => array(),
+							'default'           => true
+						);
+
+					} ?>
+
+					<div class="button-container">
+
+						<input type="submit" name="submit"  class="save-settings" value="<?php _e('Update Settings', 'frank'); ?>" />
+
+						<?php
+
+						if ($frank_updated) {
+
+							echo '<h4 class="saved-success">';
+							echo '<img src="/wp-content/themes/frank/admin/images/success.png" /> Franklin Street Theme Settings Have Been Updated.';
+							echo '</h4>';
+
+						} else {
+
+							echo '<h4 class="info">';
+							echo 'Make Changes And Use The Update Settings Button To Save! &rarr;';
+							echo '</h4>';
+
+						}
+
+						?>
+
+					</div><!-- // BUTTON CONTAINER --> 
+					
+					<div class="helper-container">
+						<p class="section-helper">
+							Content Sections give you the opportunity to create a dynamic homepage 
+							for you to keep your readers engaged. With a vast variety of different layouts,
+							you have the choice to select a look that works best for you.
 						</p>
-				</div>
+					</div>
 
-		</form>
+					<div style="clear:both;"></div>
 
-</div>
+											
+					<?php
+
+					foreach($frank_sections as $frank_section_id => $frank_section) : ?>
+
+					<div class="frank-content-sections" id="frank-street-section-<?php echo $frank_section_id; ?>">
+
+						<h3 class="content-titles">
+							<?php _e('Content Section', 'frank'); ?>
+							<span class="frank-handle"></span>
+							<a class="frank-content-section-delete" href="#">X</a>
+						</h3>
+
+						<div class="content-group">
+
+							<div class="top-options-container">
+	
+								<?php $the_type = $frank_section['display_type']; ?>
+								
+
+								<!-- // SECTION HEADER TOGGLE -->
+								<div class="display-headers">
+									<input type="checkbox"
+								   name="frank-section-header-<?php echo (isset($frank_section['default']) ? 'default' : $frank_section_id); ?>"
+									class="checkbox"
+									value="section_header"
+									<?php 
+									$value = !isset($frank_section['default']) ? stripslashes($frank_section['header']) : $frank_defaults['header'];
+									checked( $value, "section_header" ); 
+									?>
+									/>
+									<label>Display section header</label>
+								</div>
+
+								<!-- // SECTION TITLE -->
+								<div class="display-titles">
+									<h3 class="section-title"><?php _e('Section Title:', 'frank'); ?></h3>
+									<input type="text"
+										   class="text text-title"
+										   name="frank-section-title-<?php echo (isset($frank_section['default']) ? 'default' : $frank_section_id); ?>"
+										   value="<?php echo !isset($frank_section['default']) ? stripslashes($frank_section['title']) : $frank_defaults['title']; ?>" />
+								</div>
+								
+								<!-- // POSTS TO DISPLAY -->
+								<div class="display-posts">
+									<h3 class="section-title"><?php _e('Number of Posts:', 'frank'); ?></h3>
+									<input type="text"
+										   class="text"
+										   name="frank-section-num-posts-<?php echo (isset($frank_section['default']) ? 'default' : $frank_section_id); ?>"
+										   value="<?php echo !isset($frank_section['default']) ? stripslashes($frank_section['num_posts']) : $frank_defaults['num_posts']; ?>" />
+								</div>
+								
+								<!-- // DISPLAY TYPES -->
+								<div class="display-types">
+									<h3 class="section-title"><?php _e('Display Type:', 'frank'); ?></h3>
+									<select name="frank-display-type-<?php echo (isset($frank_section['default']) ? 'default' : $frank_section_id); ?>" class="dropmenu">
+										<option<?php if($the_type == 'default_loop') { ?> selected="selected"<?php } ?> value="default_loop"><?php _e('Default Loop', 'frank'); ?></option>
+										<option<?php if($the_type == 'one_up_reg' ) { ?> selected="selected"<?php } ?> value="one_up_reg"><?php _e('One Up (Regular)', 'frank'); ?></option>
+										<option<?php if($the_type == 'one_up_lg' ) { ?> selected="selected"<?php } ?> value="one_up_lg"><?php _e('One Up (Large)', 'frank'); ?></option>
+										<option<?php if($the_type == 'two_up' ) { ?> selected="selected"<?php } ?> value="two_up"><?php _e('Two Up', 'frank'); ?></option>
+										<option<?php if($the_type == 'three_up' ) { ?> selected="selected"<?php } ?> value="three_up"><?php _e('Three Up', 'frank'); ?></option>
+										<option<?php if($the_type == 'four_up' ) { ?> selected="selected"<?php } ?> value="four_up"><?php _e('Four Up', 'frank'); ?></option>
+										<option<?php if($the_type == 'srd_loop' ) { ?> selected="selected"<?php } ?> value="srd_loop"><?php _e('Some Random Dude Loop', 'frank'); ?></option>
+									</select>
+								</div>
+
+							</div><!-- // END TOP OPTIONS CONTAINER -->
+	
+							<div style="clear:both;"></div>
+	
+							<div class="bottom-options-container">
+								
+								<!-- // SECTION CAPTIONS -->
+								<div class="display-captions">
+									<h3 class="section-title"><?php _e('Section Caption:', 'frank'); ?></h3>
+									<textarea name="frank-section-caption-<?php echo (isset($frank_section['default']) ? 'default' : $frank_section_id); ?>" class="textarea"><?php echo !isset($frank_section['default']) ? stripslashes($frank_section['caption']) : $frank_defaults['caption']; ?></textarea>
+								</div>
+								
+								
+								<!-- // CATEGORIES TO DISPLAY -->
+								<div class="display-categories">
+									<h3 class="section-title"><?php _e('Categories to Display', 'frank'); ?></h3>
+									<div class="categories-container">
+										<ul class="categorychecklist">
+											<?php wp_terms_checklist(); ?>
+										</ul>
+										
+										<div style="clear:both;"></div>
+										
+										<ul class="frank-group">
+											<li><a class="select-button frank-select" href="#"><?php _e('Select All', 'frank'); ?></a></li>
+											<li><a class="select-button frank-deselect" href="#"><?php _e('Deselect All', 'frank'); ?></a></li>
+										</ul>
+										<div style="clear:both;"></div>
+									</div>
+	
+									<div style="clear:both;"></div>
+	
+									<?php $categories = $frank_section['categories']; ?>
+									
+									<script type="text/javascript">
+									jQuery(document).ready(function() {
+										<?php if (is_array($categories)) : ?>
+										<?php foreach($categories as $category) : ?>
+
+											jQuery('#frank-street-section-<?php echo $frank_section_id; ?> .categorychecklist input').each(function(){
+
+												if(jQuery(this).val() == <?php echo $category; ?>) {
+
+													jQuery(this).attr('checked', true);
+
+												}
+
+											});
+
+										<?php endforeach; ?>
+										<?php endif; ?>
+
+									});
+									</script>
+	
+								</div>
+	
+							</div><!-- //  END BOTTOM OPTIONS CONTAINER -->
+	
+							<div style="clear:both;"></div>
+	
+						</div>
+	
+						<div style="clear:both;"></div>
+	
+					</div><!-- // FRANK CONTENT SECTIONS --> <?php 
+					
+					endforeach; ?>
+
+					<div id="frank-add-content-section">
+						<a href="#"><?php _e('+ Add New Section +', 'frank'); ?></a>
+					</div> <?php 
+					
+					break;
+
+					} // END CASE "HOME"
+
+				} /* END SWITCH STATEMENT */ ?>
+
+				<div class="button-container bottom">
+
+					<input type="submit" name="submit"  class="save-settings" value="<?php _e('Update Settings', 'frank'); ?>" />
+
+					<?php
+
+					if ($frank_updated) {
+
+						echo '<h4 class="saved-success">';
+						echo '<img src="/wp-content/themes/frank/admin/images/success.png" /> Franklin Street Theme Settings Have Been Updated.';
+						echo '</h4>';
+
+					} else {
+
+						echo '<h4 class="info">';
+						echo 'Make Changes And Use The Update Settings Button To Save! &rarr;';
+						echo '</h4>';
+
+					}
+
+					?>
+
+				</div><!-- // BUTTON CONTAINER -->
+
+			</div><!-- // SETTINGS CONTAINER -->
+
+		</form><!-- // END FORM -->
+
+	</div><!-- // WRAP -->
+
+<?php } } ?>

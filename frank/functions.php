@@ -1,4 +1,6 @@
 <?php
+// INCLUDE FILE TO CREATE NEW ADMIN OPTIONS
+require_once('admin/frank-theme-options.php');
 
 if ( ! isset( $content_width ) ) $content_width = 980;
 
@@ -15,7 +17,6 @@ add_filter( 'style_loader_src', 'frank_remove_script_version', 15, 1 );
 
 register_nav_menus(array('primary' => __( 'Primary Navigation' )));
 
-if ( !is_admin() ) add_action('init', 'frank_init'); 
 add_action( 'init', 'frank_admin_assets' );
 add_action( 'admin_menu', 'frank_admin_menu' );
 add_action('wp_footer', 'frank_footer');
@@ -28,10 +29,10 @@ if ( function_exists( 'add_theme_support' ) ) {
   add_image_size( 'post-image', 535, 9999 ); //550 pixels wide (and unlimited height)
   add_image_size( 'featured-image', 980, 200, true);
   add_image_size( 'excerpt-image', 724, 160, true);
-  add_image_size( 'large-thumbnail', 600, 300, true);
-  add_image_size( 'medium-thumbnail', 400, 200, true);
-  add_image_size( 'small-thumbnail', 300, 150, true);
-  add_image_size( 'tiny-thumbnail', 100, 100, true);
+  add_image_size( 'default-thumbnail', 535, 200, true);
+  add_image_size( 'two-up-thumbnail', 468, 200, true);
+  add_image_size( 'three-up-thumbnail', 297, 150, true);
+  add_image_size( 'four-up-thumbnail', 212, 100, true);
 
 	/*
 	//I have yet to have a good reason to support post formats. Disabling for now...
@@ -44,19 +45,11 @@ if ( function_exists( 'add_theme_support' ) ) {
 
 if ( function_exists('register_sidebar') ) {
 	register_sidebar(array(
-	'name' => 'Top Bar',
-	'before_widget' => '<div id="top_bar" class="widget %2$s">',
-	'after_widget' => '</div>',
-	'before_title' => '<h3 class="widget-title">',
-	'after_title' => '</h3>',
-	));
-	
-	register_sidebar(array(
 	'name' => 'Sub Header',
 	'id' => 'widget-subheader',
 	'before_widget' => '<div id="%1$s" class="widget %2$s four columns">',
 	'after_widget' => '</div>',
-	'before_title' => '<h3 class="widget-title">',
+	'before_title' => '<h3 class="widgettitle">',
 	'after_title' => '</h3>',
 	));
 	
@@ -64,7 +57,7 @@ if ( function_exists('register_sidebar') ) {
 	'name' => 'Navigation',
 	'before_widget' => '<div id="%1$s" class="widget %2$s">',
 	'after_widget' => '</div>',
-	'before_title' => '<h3 class="widget-title">',
+	'before_title' => '<h3 class="widgettitle">',
 	'after_title' => '</h3>',
 	));
 	
@@ -72,7 +65,7 @@ if ( function_exists('register_sidebar') ) {
 	'name' => 'Index Right Aside',
 	'before_widget' => '<div id="%1$s" class="widget %2$s">',
 	'after_widget' => '</div>',
-	'before_title' => '<h3 class="widget-title">',
+	'before_title' => '<h3 class="widgettitle">',
 	'after_title' => '</h3>',
 	));
 	
@@ -80,7 +73,7 @@ if ( function_exists('register_sidebar') ) {
 		'name' => 'Post Left Aside',
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div>',
-		'before_title' => '<h3 class="widget-title">',
+		'before_title' => '<h3 class="widgettitle">',
 		'after_title' => '</h3>',
 	));
 	
@@ -88,7 +81,7 @@ if ( function_exists('register_sidebar') ) {
 		'name' => 'Post Right Aside',
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div>',
-		'before_title' => '<h3 class="widget-title">',
+		'before_title' => '<h3 class="widgettitle">',
 		'after_title' => '</h3>',
 	));
 	
@@ -97,7 +90,7 @@ if ( function_exists('register_sidebar') ) {
 	'id' => 'widget-postfooter',
 	'before_widget' => '<div id="%1$s" class="widget %2$s four columns">',
 	'after_widget' => '</div>',
-	'before_title' => '<h3 class="widget-title">',
+	'before_title' => '<h3 class="widgettitle">',
 	'after_title' => '</h3>',
 	));
 	
@@ -106,15 +99,11 @@ if ( function_exists('register_sidebar') ) {
 	'id' => 'widget-footer',
 	'before_widget' => '<div id="%1$s" class="widget %2$s six columns">',
 	'after_widget' => '</div>',
-	'before_title' => '<h3 class="widget-title">',
+	'before_title' => '<h3 class="widgettitle">',
 	'after_title' => '</h3>',
 	));
 	
 }	
-
-function frank_init() {
-	wp_deregister_script( 'l10n' );
-}
 
 function frank_remove_script_version( $src ){
 	$parts = explode( '?', $src );
@@ -166,6 +155,37 @@ function frank_widget_first_last_classes($params) {
 
 }
 
+
+
+
+// ======================
+// = HOME PAGE SECTIONS =
+// ======================
+
+
+if (!function_exists('frank_theme_options')) {
+	function frank_theme_options() {
+		frank_build_settings_page();
+	}
+}
+
+// add our menus
+function frank_admin_menu() {
+	add_theme_page( 'Frank', 'Frank Theme Options', 'manage_options', 'frank-settings', 'frank_theme_options' );
+}
+
+
+
+function frank_admin_assets() {
+	if( is_admin() ) {
+		wp_enqueue_script('jquery-ui-sortable' );
+		wp_enqueue_style('frank-admin', get_template_directory_uri() . '/admin/css/frank-options.css', NULL, NULL, NULL);
+		wp_enqueue_script('frank-admin', get_template_directory_uri() . '/admin/js/frank-utils.js', 'jquery', NULL, true);
+	}
+} 
+   
+ 
+
 function frank_meta_keywords() {
 
 	$keywords = array();
@@ -190,32 +210,7 @@ function frank_meta_keywords() {
 	$meta .= '" />';
 	echo $meta;
 
-}
-
-// ======================
-// = HOME PAGE SECTIONS =
-// ======================
-
-
-function frank_theme_options() {
-	include 'admin/frank-theme-options.php';
-}
-
-// add our menus
-function frank_admin_menu() {
-	add_theme_page( 'Frank', 'Frank Theme Options', 'manage_options', 'frank', 'frank_theme_options' );
-}
-
-
-
-function frank_admin_assets() {
-	if( is_admin() ) {
-		wp_enqueue_script( 'jquery-ui-sortable' );
-		wp_enqueue_style( 'frank-admin', get_template_directory_uri() . '/admin/css/frank-options.css', NULL, NULL, NULL );
-		wp_enqueue_script( 'frank-admin', get_template_directory_uri() . '/admin/js/frank-utils.js', 'jquery', NULL, true );
-	}
-}    
- 
+} 
 
 
 function frank_footer() {	
@@ -341,5 +336,7 @@ if (!function_exists('frank_enqueue_styles_dev')) {
 		wp_enqueue_style('frank_srd_stylesheet_ie7');
 	}
 }
+
+
 
 ?>

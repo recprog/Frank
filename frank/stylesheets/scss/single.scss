@@ -1,4 +1,4 @@
-#previous_post {
+#previous-post {
 	margin-top: $row-height * 4;
 	font-style: italic;
 	font-family: $typeface-primary;
@@ -33,11 +33,8 @@
 #content.single {
 	position: relative;
 	.post-title {
-			color: $color-dark; 
-	} 	
-	dd {
-		margin-left: $gutter-width; 
-	} 
+		color: $color-dark; 
+	}
 	#excerpt {
 		padding-bottom: $row-height * 2;
 		color: $color-midtone;
@@ -60,7 +57,32 @@
 			font-size: $font-size-medium;
 			font-weight: $bold;
 		}
+		dd {
+			margin-left: $gutter-width; 
+		} 
+		.flush-left {
+			margin-left: -26.1%;
+		}
+		blockquote.large p {
+			font-size: $font-size-large; 
+		}
+		img.flush-left, video.flush-left {
+			max-width:126.1%;
+		} 
+
+		.alignright, .alignleft {
+			max-width:40%;
+		}
+
+		.alignright {
+			margin-left: 20px;
+		}
+
+		.alignleft {
+			margin-right: 20px;
+		}
 	}
+
 	.pagination {
 		margin-top:$row-height*2;
 	}
@@ -69,27 +91,29 @@
 		border-bottom:$border-break;
 		padding-bottom:$row-height;
 	} 
-	#post-footer {
-		border-bottom:$border-break;
-		padding-bottom:$row-height;
-		margin: 0 0 $row-height * 2 0;
-		/* TODO: Try this pattern out :not(:last-child) */
-		.widget:nth-child(4n) {
-			margin-right: $gutter-width;
-		}
-		.widget:nth-child(4n+1) {
-			clear:none;
-		}
-		.widget:nth-child(3n) {
-			margin-right:0; 
-		}
-		.widget:nth-child(3n+1) {
-			clear:left; 
-		}
+}
+
+#post-tweet {
+	float:right;
+	margin:$row-height 0 $row-height*2 0;
+}
+
+#post-footer {
+	border-bottom:$border-break;
+	padding-bottom:$row-height;
+	margin: 0 0 $row-height * 2 0;
+	/* TODO: Try this pattern out :not(:last-child) */
+	.widget:nth-child(4n) {
+		margin-right: $gutter-width;
 	}
-	#post-tweet {
-		float:right;
-		margin:$row-height 0 $row-height*2 0;
+	.widget:nth-child(4n+1) {
+		clear:none;
+	}
+	.widget:nth-child(3n) {
+		margin-right:0; 
+	}
+	.widget:nth-child(3n+1) {
+		clear:left; 
 	}
 }
 	

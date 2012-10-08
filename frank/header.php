@@ -12,7 +12,10 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
 	<?php frank_meta_keywords(); ?>
 	
-	<title><?php if (function_exists('is_tag') && is_tag()) { echo 'Tag Archive for &quot;'.$tag.'&quot;&mdash;'; } elseif (is_archive()) { wp_title(''); echo ' Archive&mdash;'; } elseif (is_search()) { echo 'Search for &quot;'.wp_specialchars($s).'&quot;&mdash;'; } elseif (!(is_404()) && (is_single()) || (is_page())) { wp_title(''); echo '&mdash;'; } elseif (is_404()) { echo 'Not Found&mdash;'; } bloginfo('name'); ?></title>
+	<title>
+		<?php wp_title('&mdash;',true,'right'); ?>
+ 		<?php bloginfo('name'); ?>
+	</title>
 
 	<?php 
 	if(!frank_devmode()) { frank_enqueue_styles(); }
@@ -34,8 +37,11 @@
 </head>
 <body id="page" <?php body_class($class); ?>>
 <div class="container">
+	<!--[if lt IE 7]>
+		<p class="chromeframe">Your browser is out of date. Please <a href="http://browsehappy.com/">upgrade your browser </a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a>.</p>
+	<![endif]-->
 	<header id="page-header" class="row">
-		<hgroup>
+		<hgroup id="site-title-description">
 			<h1 id="site-title"><a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a></h1>
 			<h2 id="site-description"><?php bloginfo('description'); ?></h2>
 		</hgroup>
@@ -49,5 +55,5 @@
 			<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Sub Header") ) : ?>
 			<?php endif; ?>
 		</div>
-	<?php endif; ?>
+		<?php endif; ?>
 	</header>

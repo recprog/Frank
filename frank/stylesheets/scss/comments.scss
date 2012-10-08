@@ -44,7 +44,6 @@
 	@extend .push-three;
 }
 
-/* TODO: Break out heirarchy */
 #comments {
 	list-style: none;
 	padding-left: 0;
@@ -71,7 +70,6 @@
 	} 
 }
 
-/* TODO: Break out heirarchy, use class selectors */
 #respond {
 	label { display: none; }
 	input[type=text], textarea {

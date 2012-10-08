@@ -2,15 +2,21 @@
 /*
 	Template Name: One Up (Large)
 */
+global $frank_section_header;
+global $frank_section_title;
+global $frank_section_caption;
 ?>
 <div class='row post-group oneup large'>
+	<?php if(isset($frank_section_header)) : ?>
 	<div class='nav post-group-header'>
-		<span class='label'><?php print($title); ?></span>
-		<span class='caption'><?php print($caption); ?></span> <span class='more'><?php next_posts_link('View more&hellip;'); ?></span>
+		<span class='label'><?php print($frank_section_title); ?></span>
+		<span class='caption'><?php print($frank_section_caption) ?></span> <span class='more'><?php next_posts_link('View more&hellip;'); ?></span> 
 	</div>
+	<?php endif; ?>
+	<?php print($frank_query); ?>
 	<div class='contents'>
-		<?php while ( $queryObject->have_posts() ) : $queryObject->the_post(); ?>
-			<?php get_template_part('partials/posts/post', 'oneuplarge'); 	
+		<?php while ( $wp_query->have_posts() ) : $wp_query->the_post(); ?>
+			<?php get_template_part('partials/posts/post', 'oneuplarge'); ?>	
 		<?php endwhile; ?>
 	</div>
 </div>
