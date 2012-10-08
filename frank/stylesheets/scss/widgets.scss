@@ -1,5 +1,6 @@
 .widget {
-	h3 { 
+	font-size: $font-size-x-small;
+	.widget-title { 
 		font-size: $font-size-small; 
 		white-space: nowrap;
 	  overflow: hidden;
@@ -7,6 +8,9 @@
 	  -o-text-overflow: ellipsis;
 	}	
 	margin-bottom:$row-height;
+	p {
+		font-size: $font-size-x-small;
+	}
 }
 
 .widget.six.columns, .widget.three.columns, .widget.four.columns {

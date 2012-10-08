@@ -49,7 +49,7 @@ if ( function_exists('register_sidebar') ) {
 	'id' => 'widget-subheader',
 	'before_widget' => '<div id="%1$s" class="widget %2$s four columns">',
 	'after_widget' => '</div>',
-	'before_title' => '<h3 class="widgettitle">',
+	'before_title' => '<h3 class="widget-title">',
 	'after_title' => '</h3>',
 	));
 	
@@ -57,7 +57,7 @@ if ( function_exists('register_sidebar') ) {
 	'name' => 'Navigation',
 	'before_widget' => '<div id="%1$s" class="widget %2$s">',
 	'after_widget' => '</div>',
-	'before_title' => '<h3 class="widgettitle">',
+	'before_title' => '<h3 class="widget-title">',
 	'after_title' => '</h3>',
 	));
 	
@@ -65,7 +65,7 @@ if ( function_exists('register_sidebar') ) {
 	'name' => 'Index Right Aside',
 	'before_widget' => '<div id="%1$s" class="widget %2$s">',
 	'after_widget' => '</div>',
-	'before_title' => '<h3 class="widgettitle">',
+	'before_title' => '<h3 class="widget-title">',
 	'after_title' => '</h3>',
 	));
 	
@@ -73,7 +73,7 @@ if ( function_exists('register_sidebar') ) {
 		'name' => 'Post Left Aside',
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div>',
-		'before_title' => '<h3 class="widgettitle">',
+		'before_title' => '<h3 class="widget-title">',
 		'after_title' => '</h3>',
 	));
 	
@@ -81,7 +81,7 @@ if ( function_exists('register_sidebar') ) {
 		'name' => 'Post Right Aside',
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div>',
-		'before_title' => '<h3 class="widgettitle">',
+		'before_title' => '<h3 class="widget-title">',
 		'after_title' => '</h3>',
 	));
 	
@@ -90,7 +90,7 @@ if ( function_exists('register_sidebar') ) {
 	'id' => 'widget-postfooter',
 	'before_widget' => '<div id="%1$s" class="widget %2$s four columns">',
 	'after_widget' => '</div>',
-	'before_title' => '<h3 class="widgettitle">',
+	'before_title' => '<h3 class="widget-title">',
 	'after_title' => '</h3>',
 	));
 	
@@ -99,7 +99,7 @@ if ( function_exists('register_sidebar') ) {
 	'id' => 'widget-footer',
 	'before_widget' => '<div id="%1$s" class="widget %2$s six columns">',
 	'after_widget' => '</div>',
-	'before_title' => '<h3 class="widgettitle">',
+	'before_title' => '<h3 class="widget-title">',
 	'after_title' => '</h3>',
 	));
 	

@@ -8,12 +8,7 @@
 		margin-right:0;
 	}
 	
-	h3 {
-		font-weight: $bold;
-		font-size: $font-size-small;
-		margin-bottom: 5px; 
-		&:first-child { 
-			margin-top: 0 !important; 
-		}
+	.widget-title:first-child { 
+		margin-top: 0 !important; 
 	}
 }
