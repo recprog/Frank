@@ -12,7 +12,6 @@
 #site-nav {
 	@extend .clearfix;
 	margin:$row-height auto $row-height * 2 auto; 
-	padding-bottom:$row-height;
 	border-bottom:$border-break;
 	ul { 
 		margin-left: 0;
@@ -21,7 +20,7 @@
 	ul ul { display: none; }
 	li {
 		@extend .reset;
-		margin-right: 20px;
+		margin: 0 20px $row-height 0px;
 		float: left;
 	}
 	a {
@@ -42,4 +41,20 @@
 	p {
 		margin-top: 0; 
 	}
+}
+
+@media only screen and  (max-width: 420px) {
+	#site-nav li {
+		float: none;
+		margin: 0;
+		border-bottom:1px solid $color-light;
+		a {
+			font-size: $font-size-small;
+			padding: 15px 0;
+		}
+		&:last-child {
+			border-bottom: 0;
+		}
+	}
+
 }
