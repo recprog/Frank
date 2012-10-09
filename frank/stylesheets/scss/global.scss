@@ -241,6 +241,15 @@ em { font-style: italic; }
 	margin-top:10px;
 }
 
+.gallery {
+	.gallery-caption {
+		margin-left: 0 !important;
+
+		font: $font-size-x-small $typeface-secondary !important;
+		line-height:1.45;
+	}
+}
+
 .gallery-caption {
 	text-rendering: optimizelegibility; 
 }
@@ -273,7 +282,7 @@ em { font-style: italic; }
 		margin-right:15px;
 	}
 	a {
-		margin:0 10px;
+		margin:0;
 		border: 1px $color-light solid;
 		color:$color-midtone;
 		padding: 4px 6px;

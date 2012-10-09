@@ -4,11 +4,14 @@
 		margin-bottom:$row-height*2;
 		padding-bottom:5px;
 		border-bottom: 1px $color-light solid;
-		font: #{$typeface-secondary} #{$font-size-small};
+		font: #{$font-size-small} #{$typeface-secondary};
+		.label {
+			font-weight: $bold;
+		}
 		.caption {
 			font-style: italic;
 			color:$color-midtone;
-			margin-left:10px;
+			margin:0 10px;
 		}
 		.more {
 			font-family: $typeface-primary; } 

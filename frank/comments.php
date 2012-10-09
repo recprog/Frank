@@ -45,6 +45,9 @@
 
 		<?php else : ?>		
 		<?php
+		$req = get_option( 'require_name_email' );
+		$aria_req = ( $req ? " aria-required='true'" : '' );
+
 		$fields =  array(
 			'author' => '<div id="comment-form-info">' . '<label for="author">' . __( 'Name' ) . '' . ( $req ? '<span class="required">*</span>' : '' ) . '</label> ' .
 			            '<input id="author" name="author" type="text" placeholder="Name (required)" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30"' . $aria_req . ' />',

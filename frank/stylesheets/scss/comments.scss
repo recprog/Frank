@@ -47,6 +47,7 @@
 #comments {
 	list-style: none;
 	padding-left: 0;
+	margin-left: 0;
 	.comment {
 		@extend .reset;
 	}
@@ -62,7 +63,7 @@
 	}
 	.children {
 		list-style: none;
-		margin-left: 20px;
+		margin-left: 40px;
 		margin-top:0;
 		.comment {
 			margin:$row-height*2 0;
