@@ -4,10 +4,10 @@ require_once('admin/frank-theme-options.php');
 
 if ( ! isset( $content_width ) ) $content_width = 980;
 
-define('HEADER_TEXTCOLOR', 'ffffff');
+define('HEADER_TEXTCOLOR', '3D302F');
 define('HEADER_IMAGE', '%s/images/default_header.jpg'); // %s is the template dir uri
 define('HEADER_IMAGE_WIDTH', 980); // use width and height appropriate for your theme
-define('HEADER_IMAGE_HEIGHT', 200);
+define('HEADER_IMAGE_HEIGHT', 225);
 
 add_filter('wp_list_categories', 'frank_remove_category_list_rel');
 add_filter('the_category', 'frank_remove_category_list_rel');
@@ -21,6 +21,21 @@ add_action( 'init', 'frank_admin_assets' );
 add_action( 'admin_menu', 'frank_admin_menu' );
 add_action('wp_footer', 'frank_footer');
 add_action('wp_head', 'frank_header');
+
+$custom_header_support = array(
+		// The default header text color.
+		'default-text-color' => '3D302F',
+		// Support flexible heights.
+		'flex-height' => true,
+		// Callback for styling the header.
+		'wp-head-callback' => 'frank_header_style',
+		// Callback for styling the header preview in the admin.
+		'admin-head-callback' => 'frank_admin_header_style',
+		// Callback used to display the header preview in the admin.
+		'admin-preview-callback' => 'frank_admin_header_image',
+	);
+	
+	add_theme_support( 'custom-header', $custom_header_support );
 
 if ( function_exists( 'add_theme_support' ) ) { 
   add_theme_support( 'automatic-feed-links' );
@@ -109,6 +124,130 @@ function frank_remove_script_version( $src ){
 	$parts = explode( '?', $src );
 	return $parts[0];
 }
+
+
+if ( ! function_exists( 'frank_header_style' ) ) :
+
+function frank_header_style() {
+	$text_color = get_header_textcolor();
+
+	// If no custom options for text are set, let's bail.
+	if ( $text_color == HEADER_TEXTCOLOR )
+		return;
+		
+	// If we get this far, we have custom styles. Let's do this.
+	?>
+	<style type="text/css">
+	<?php
+		// Has the text been hidden?
+		if ( 'blank' == $text_color ) :
+	?>
+		#site-title-description {
+			position: absolute !important;
+			clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+			clip: rect(1px, 1px, 1px, 1px);
+		}
+	<?php
+		// If the user has set a custom color for the text use that
+		else :
+	?>
+		#site-title a,
+		#site-description {
+			color: #<?php echo $text_color; ?> !important;
+		}
+	<?php endif; ?>
+	</style>
+	<?php
+}
+endif; 
+
+if ( ! function_exists( 'frank_admin_header_style' ) ) :
+function frank_admin_header_style() {
+?>
+	<style type="text/css">
+	.appearance_page_custom-header #headimg {
+		border: none;
+	}
+
+	#desc, h1 {
+		line-height: 1.25;
+	}
+	#headimg h1 {
+		font-family: "Helvetica Neue", Arial, Helvetica, "Nimbus Sans L", sans-serif;
+		font-size: 24px;
+		margin-bottom: 5px;
+		margin-top:15px;
+		font-weight: normal
+	}
+	#headimg h1 a {
+		color: #3D302F;
+		text-decoration: none
+	}
+	#desc {
+		margin-top: 0;
+		font-size: 13px;
+		margin-bottom: 15px
+	}
+	<?php
+		// If the user has set a custom color for the text use that
+		if ( get_header_textcolor() != HEADER_TEXTCOLOR ) :
+	?>
+		#site-title a,
+		#site-description {
+			color: #<?php echo get_header_textcolor(); ?>;
+		}
+	<?php endif; ?>
+	#headimg img {
+		max-width: 980px;
+		height: auto;
+		width: 100%;
+	}
+	</style>
+<?php
+}
+endif;
+
+
+if ( ! function_exists( 'frank_admin_header_image' ) ) :
+function frank_admin_header_image() { ?>
+	<div id="headimg">
+		<?php
+		$color = get_header_textcolor();
+		$image = get_header_image();
+		if ( $color && $color != 'blank' )
+			$style = ' style="color:#' . $color . '"';
+		else
+			$style = ' style="display:none"';
+		?>
+		<h1><a id="name"<?php echo $style; ?> onclick="return false;" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a></h1>
+		<div id="desc"<?php echo $style; ?>><?php bloginfo( 'description' ); ?></div>
+		<?php if ( $image ) : ?>
+			<img src="<?php echo esc_url( $image ); ?>" alt="" />
+		<?php endif; ?>
+	</div>
+<?php }
+endif; 
+
+if ( ! function_exists( 'frank_admin_header_image' ) ) :
+function frank_admin_header_image() { ?>
+	<div id="headimg">
+		<?php
+		$color = get_header_textcolor();
+		$image = get_header_image();
+		if ( $color && $color != 'blank' )
+			$style = ' style="color:#' . $color . '"';
+		else
+			$style = ' style="display:none"';
+		?>
+		<h1><a id="name"<?php echo $style; ?> onclick="return false;" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a></h1>
+		<div id="desc"<?php echo $style; ?>><?php bloginfo( 'description' ); ?></div>
+		<?php if ( $image ) : ?>
+			<img src="<?php echo esc_url( $image ); ?>" alt="" />
+		<?php endif; ?>
+	</div>
+<?php }
+endif; 
+
 
 // Remove rel attribute from the category list - thanks Joseph (http://josephleedy.me/blog/make-wordpress-category-list-valid-by-removing-rel-attribute/)! 
 function frank_remove_category_list_rel($output) {

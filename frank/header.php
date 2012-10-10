@@ -41,6 +41,58 @@
 			<h1 id="site-title"><a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a></h1>
 			<h2 id="site-description"><?php bloginfo('description'); ?></h2>
 		</hgroup>
+
+
+		<?php
+			// Check to see if the header image has been removed
+			$header_image = get_header_image();
+			if ( $header_image ) :
+				// Compatibility with versions of WordPress prior to 3.4.
+				if ( function_exists( 'get_custom_header' ) ) {
+					// We need to figure out what the minimum width should be for our featured image.
+					// This result would be the suggested width if the theme were to implement flexible widths.
+					$header_image_width = get_theme_support( 'custom-header', 'width' );
+				} else {
+					$header_image_width = HEADER_IMAGE_WIDTH;
+				}
+				?>
+		<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
+			<?php
+				// The header image
+				// Check if this is a post or page, if it has a thumbnail, and if it's a big one
+				if ( is_singular() && has_post_thumbnail( $post->ID ) &&
+						( /* $src, $width, $height */ $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), array( $header_image_width, $header_image_width ) ) ) &&
+						$image[1] >= $header_image_width ) :
+					// Houston, we have a new header image!
+					echo get_the_post_thumbnail( $post->ID, 'post-thumbnail' );
+				else :
+					// Compatibility with versions of WordPress prior to 3.4.
+					if ( function_exists( 'get_custom_header' ) ) {
+						$header_image_width  = get_custom_header()->width;
+						$header_image_height = get_custom_header()->height;
+					} else {
+						$header_image_width  = HEADER_IMAGE_WIDTH;
+						$header_image_height = HEADER_IMAGE_HEIGHT;
+					}
+					?>
+				<img src="<?php header_image(); ?>" width="<?php echo $header_image_width; ?>" height="<?php echo $header_image_height; ?>" alt="" />
+			<?php endif; // end check for featured image or standard header ?>
+		</a>
+		<?php endif; // end check for removed header image ?>
+
+		<?php
+				// Has the text been hidden?
+				if ( 'blank' == get_header_textcolor() ) :
+			?>
+				<div class="only-search<?php if ( $header_image ) : ?> with-image<?php endif; ?>">
+				<?php get_search_form(); ?>
+				</div>
+			<?php
+				else :
+			?>
+				<?php get_search_form(); ?>
+			<?php endif; ?>
+
 		<nav id="site-nav">
 			<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Navigation") ) : ?>
 				<?php wp_nav_menu( array('theme_location' => 'primary', 'container' => false ) ); ?>	
