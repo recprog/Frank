@@ -32,10 +32,10 @@
 	<?php wp_head(); ?>	
 </head>
 <body id="page" <?php body_class(); ?>>
-<div class="container">
-	<!--[if lt IE 7]>
-		<p class="chromeframe">Your browser is out of date. Please <a href="http://browsehappy.com/">upgrade your browser </a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a>.</p>
+	<!--[if lt IE 9]>
+		<div class="chromeframe">Your browser is out of date. Please <a href="http://browsehappy.com/">upgrade your browser </a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a>.</div>
 	<![endif]-->
+<div class="container">
 	<header id="page-header" class="row">
 		<hgroup id="site-title-description">
 			<h1 id="site-title"><a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a></h1>
