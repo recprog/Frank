@@ -43,7 +43,7 @@ function frank_build_settings_page() {
 	global $pagenow;
 
 	// SET FILE DIRECTORY
-	$file_dir = get_bloginfo('template_directory');
+	$file_dir = get_template_directory_uri();
 	
 	// SETUP NEEDED STYLES & SCRIPTS FOR OPTIONS PAGE
 	//wp_enqueue_script('jquery-ui-sortable' );

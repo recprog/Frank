@@ -51,6 +51,10 @@
 	.comment {
 		@extend .reset;
 	}
+	.date-time {
+		display:block;
+		margin-top:3px;
+	}
 	.comment:not(:first-child) {
 		margin:$row-height*4 0;
 	}
@@ -99,5 +103,26 @@
 	
 	#respond #comment-form-info input[type=text] {
 		text-align: left; 
+	}
+
+	#respond {
+		margin-bottom:$row-height*2;
+		#submit {
+		margin-left:0;
+		display:block;
+		width:100%;
+	}
+	}
+	#comments {
+		.metadata	{
+			margin-top:5px;
+		}
+		.date-time {
+			display:inline;
+			margin-top:0px;
+		}
+		.children {
+			margin-left:0;
+		}
 	}
 }

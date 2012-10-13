@@ -1,5 +1,4 @@
 <?php
-// INCLUDE FILE TO CREATE NEW ADMIN OPTIONS
 require_once('admin/frank-theme-options.php');
 
 add_action('after_setup_theme', 'frank_theme_setup');
@@ -10,8 +9,8 @@ function frank_theme_setup(){
 if ( ! isset( $content_width ) ) $content_width = 980;
 
 define('HEADER_TEXTCOLOR', '3D302F');
-define('HEADER_IMAGE', '%s/images/default_header.jpg'); // %s is the template dir uri
-define('HEADER_IMAGE_WIDTH', 980); // use width and height appropriate for your theme
+define('HEADER_IMAGE', '%s/images/default_header.jpg'); 
+define('HEADER_IMAGE_WIDTH', 980);
 define('HEADER_IMAGE_HEIGHT', 225);
 
 add_filter('wp_list_categories', 'frank_remove_category_list_rel');
@@ -26,17 +25,13 @@ add_action( 'init', 'frank_admin_assets' );
 add_action( 'admin_menu', 'frank_admin_menu' );
 add_action('wp_footer', 'frank_footer');
 add_action('wp_head', 'frank_header');
+add_editor_style();
 
 $custom_header_support = array(
-		// The default header text color.
 		'default-text-color' => '3D302F',
-		// Support flexible heights.
 		'flex-height' => true,
-		// Callback for styling the header.
 		'wp-head-callback' => 'frank_header_style',
-		// Callback for styling the header preview in the admin.
 		'admin-head-callback' => 'frank_admin_header_style',
-		// Callback used to display the header preview in the admin.
 		'admin-preview-callback' => 'frank_admin_header_image',
 	);
 	
@@ -46,7 +41,7 @@ if ( function_exists( 'add_theme_support' ) ) {
   add_theme_support( 'automatic-feed-links' );
 	
   add_theme_support( 'post-thumbnails' ); 
-  add_image_size( 'post-image', 535, 9999 ); //550 pixels wide (and unlimited height)
+  add_image_size( 'post-image', 535, 9999 ); 
   add_image_size( 'featured-image', 980, 200, true);
   add_image_size( 'excerpt-image', 724, 160, true);
   add_image_size( 'default-thumbnail', 535, 200, true);
@@ -54,15 +49,7 @@ if ( function_exists( 'add_theme_support' ) ) {
   add_image_size( 'three-up-thumbnail', 297, 150, true);
   add_image_size( 'four-up-thumbnail', 212, 100, true);
 
-  add_theme_support('custom-background', array('default-color' => '#fffefe'));
-
-	/*
-	//I have yet to have a good reason to support post formats. Disabling for now...
-
-	  add_theme_support( 'post-formats', array( 'aside', 'gallery', 'link', 'image', 'quote', 'status', 'video', 'audio', 'chat' ) );
-	  add_post_type_support( 'page', 'post-formats' );
-	*/
-  
+  add_theme_support('custom-background', array('default-color' => 'fffefe'));
 }
 
 if ( function_exists('register_sidebar') ) {
@@ -138,15 +125,11 @@ if ( ! function_exists( 'frank_header_style' ) ) :
 function frank_header_style() {
 	$text_color = get_header_textcolor();
 
-	// If no custom options for text are set, let's bail.
 	if ( $text_color == HEADER_TEXTCOLOR )
 		return;
-		
-	// If we get this far, we have custom styles. Let's do this.
 	?>
 	<style type="text/css">
 	<?php
-		// Has the text been hidden?
 		if ( 'blank' == $text_color ) :
 	?>
 		#site-title-description {
@@ -155,7 +138,6 @@ function frank_header_style() {
 			clip: rect(1px, 1px, 1px, 1px);
 		}
 	<?php
-		// If the user has set a custom color for the text use that
 		else :
 	?>
 		#site-title a,
@@ -365,7 +347,7 @@ if (!function_exists('frank_comment')) {
 				</div>
 				<div class="comment-info">
 					<ul class='metadata vertical'>
-						<li class="date"><time datetime="<?php the_time('Y-m-d'); ?>"><?php comment_date('F d, Y g:i A'); ?></time></li>
+						<li class="date"><time datetime="<?php the_time('Y-m-d'); ?>"><span class="date-date"><?php comment_date('F d, Y'); ?></span> <span class="date-time"><?php comment_date('g:i A'); ?></span></time></li>
 						<li class='author' id="vcard-<?php comment_ID() ?>">By <a class="url fn" href="<?php comment_author_url(); ?>"><?php comment_author(); ?></a></li>
 						<li><?php edit_comment_link('edit'); ?></li>
 					</ul>
@@ -377,8 +359,7 @@ if (!function_exists('frank_comment')) {
 if (!function_exists('frank_enqueue_styles')) {
 	function frank_enqueue_styles() {
 		global $wp_styles;
-		//TODO: Replace with custom editor style
-		add_editor_style('stylesheets/css/global.css');
+		
 		wp_register_style('frank_stylesheet', get_stylesheet_directory_uri().'/style.css', null, '0.1', 'all' );
 		wp_register_style('frank_stylesheet_ie', get_stylesheet_directory_uri().'/ie.css', null, '0.1', 'all' );
 		wp_register_style('frank_stylesheet_ie7', get_stylesheet_directory_uri().'/ie7.css', null, '0.1', 'all' );
@@ -386,10 +367,9 @@ if (!function_exists('frank_enqueue_styles')) {
 		$wp_styles->add_data('frank_stylesheet_ie', 'conditional', 'IE');
 		$wp_styles->add_data('frank_stylesheet_ie7', 'conditional', 'IE 7');
 	
-
-	wp_enqueue_style('frank_srd_stylesheet');
-	wp_enqueue_style('frank_srd_stylesheet_ie');
-	wp_enqueue_style('frank_srd_stylesheet_ie7');
+		wp_enqueue_style('frank_stylesheet');
+		wp_enqueue_style('frank_stylesheet_ie');
+		wp_enqueue_style('frank_stylesheet_ie7');
 	}
 }
 

@@ -60,7 +60,7 @@
 	
 		$comment_field = '<div id="comment-form-content"><label for="comment">' . _x( 'Comment', 'noun', 'frank-theme'  ) . '</label><textarea id="comment-form-textarea" placeholder="Your Comment" name="comment" aria-required="true"></textarea></div>';
 		$logged_in_as = '<div id="comment-form-logged-in-as"><p>' . sprintf( __( 'Logged in as <a href="%1$s">%2$s</a>. <a href="%3$s" title="Log out of this account">Log out?</a>' ), admin_url( 'profile.php' ), $user_identity, wp_logout_url( apply_filters( 'the_permalink', get_permalink( ) ) ) ) . '</p></div>';
-		
+		$comment_notes_after = '<div class="row"><div id="comment-form-allowed-tags"><p>' . sprintf( __( 'You may use these <abbr title="HyperText Markup Language">HTML</abbr> tags and attributes: %s' ), ' <code>' . allowed_tags() . '</code>' ) . '</p></div></div>';
 		
 		comment_form(array('id_form' => 'comment-form', 'logged_in_as' => $logged_in_as, 'comment_notes_before' => '', 'comment_notes_after' => $comment_notes_after, 'title_reply' => 'Join the Discussion', 'fields' => $fields, 'comment_field' => $comment_field)); 
 		?>
