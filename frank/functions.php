@@ -1,5 +1,10 @@
 <?php
 
+add_action('after_setup_theme', 'frank_theme_setup');
+function frank_theme_setup(){
+    load_theme_textdomain('frank-theme', get_template_directory() . '/languages');
+}
+
 if ( ! isset( $content_width ) ) $content_width = 980;
 
 define('HEADER_TEXTCOLOR', 'ffffff');
