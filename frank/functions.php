@@ -262,6 +262,8 @@ function frank_srd_enqueue_styles() {
 
 function frank_srd_enqueue_styles_dev() {
 	
+add_editor_style('stylesheets/css/global.css');
+
 		global $wp_styles;
 	
 		wp_register_style('frank_stylesheet_reset', get_template_directory_uri().'/stylesheets/css/reset.css', null, '0.1', 'all' );
