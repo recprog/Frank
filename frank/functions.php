@@ -13,7 +13,7 @@ add_filter('dynamic_sidebar_params','frank_widget_first_last_classes');
 add_filter( 'script_loader_src', 'frank_remove_script_version', 15, 1 );
 add_filter( 'style_loader_src', 'frank_remove_script_version', 15, 1 );
 
-register_nav_menus(array('primary' => __( 'Primary Navigation' )));
+register_nav_menus(array('primary' => __( 'Primary Navigation', 'frank-theme' )));
 
 if ( !is_admin() ) add_action('init', 'frank_init'); 
 add_action( 'init', 'frank_admin_assets' );

@@ -51,15 +51,15 @@
 		<?php else : ?>		
 		<?php
 		$fields =  array(
-			'author' => '<div class="three columns" id="comment_form_info">' . '<label for="author">' . __( 'Name' ) . '' . ( $req ? '<span class="required">*</span>' : '' ) . '</label> ' .
+			'author' => '<div class="three columns" id="comment_form_info">' . '<label for="author">' . __( 'Name', 'frank-theme' ) . '' . ( $req ? '<span class="required">*</span>' : '' ) . '</label> ' .
 			            '<input id="author" name="author" type="text" placeholder="Name (required)" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30"' . $aria_req . ' />',
-			'email'  => '<label for="email">' . __( 'Email' ) . '' . ( $req ? '<span class="required">*</span>' : '' ) . '</label> ' .
+			'email'  => '<label for="email">' . __( 'Email', 'frank-theme' ) . '' . ( $req ? '<span class="required">*</span>' : '' ) . '</label> ' .
 			            '<input id="email" name="email" type="text" placeholder="Email (required)" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30"' . $aria_req . ' />',
-			'url'    => '<label for="url">' . __( 'Website' ) . '</label>' .
+			'url'    => '<label for="url">' . __( 'Website', 'frank-theme' ) . '</label>' .
 			            '<input id="url" name="url" type="text" placeholder="Website" value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" /></div>',
 		); 
 		
-		$comment_field = '<div id="comment_form_comment" class="nine columns"><label for="comment">' . _x( 'Comment', 'noun' ) . '</label><textarea id="comment" placeholder="Your Comment" name="comment" aria-required="true"></textarea></div>';
+		$comment_field = '<div id="comment_form_comment" class="nine columns"><label for="comment">' . _x( 'Comment', 'noun', 'frank-theme' ) . '</label><textarea id="comment" placeholder="Your Comment" name="comment" aria-required="true"></textarea></div>';
 
 		$logged_in_as = '<div class="logged-in-as three columns"><p>' . sprintf( __( 'Logged in as <a href="%1$s">%2$s</a>. <a href="%3$s" title="Log out of this account">Log out?</a>' ), admin_url( 'profile.php' ), $user_identity, wp_logout_url( apply_filters( 'the_permalink', get_permalink( ) ) ) ) . '</p></div>';
 		
