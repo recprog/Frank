@@ -121,7 +121,7 @@ function frank_build_settings_page() {
 						if ($frank_updated) {
 
 							echo '<h4 class="saved-success">';
-							echo '<img src="/wp-content/themes/frank/admin/images/success.png" /> Franklin Street Theme Settings Have Been Updated.';
+							echo '<img src="/wp-content/themes/frank/admin/images/success.png" /> Frank&rsquo;s Settings Have Been Updated.';
 							echo '</h4>';
 
 						} else {
@@ -289,7 +289,7 @@ function frank_build_settings_page() {
 						if (isset($frank_updated)&&$frank_updated) {
 
 							echo '<h4 class="saved-success">';
-							echo '<img src="/wp-content/themes/frank/admin/images/success.png" /> Franklin Street Theme Settings Have Been Updated.';
+							echo '<img src="/wp-content/themes/frank/admin/images/success.png" /> Frank&rsquo;s Settings Have Been Updated.';
 							echo '</h4>';
 
 						} else {
@@ -468,7 +468,7 @@ function frank_build_settings_page() {
 					if ($frank_updated) {
 
 						echo '<h4 class="saved-success">';
-						echo '<img src="/wp-content/themes/frank/admin/images/success.png" /> Franklin Street Theme Settings Have Been Updated.';
+						echo '<img src="/wp-content/themes/frank/admin/images/success.png" /> Frank&rsquo;s Settings Have Been Updated.';
 						echo '</h4>';
 
 					} else {
