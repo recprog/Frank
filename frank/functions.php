@@ -33,6 +33,8 @@ if ( function_exists( 'add_theme_support' ) ) {
   add_image_size( 'three-up-thumbnail', 297, 150, true);
   add_image_size( 'four-up-thumbnail', 212, 100, true);
 
+  add_theme_support('custom-background', array('default-color' => '#fffefe'));
+
 	/*
 	//I have yet to have a good reason to support post formats. Disabling for now...
 
