@@ -1,0 +1,28 @@
+/* 
+Theme Name:     Frank
+Theme URI:      http://somerandomdude.com/work/frank 
+Description:    The next step of the Franklin Street theme.  
+Author:         P.J. Onori 
+Author URI:     http://somerandomdude.com/hello/  
+Version:        0.1.0
+License:				GPL 3.0
+License URI:		http://www.gnu.org/copyleft/gpl.html 
+Tags: brown, red, white, two-columns, fixed-width, sticky-post, custom-menu
+*/
+@import "variables";
+@import "reset";
+@import "grid";
+@import "global";
+@import "forms";
+@import "widgets";
+@import "transitions";
+@import "header";
+@import "index";
+@import "single";
+@import "page";
+@import "archive";
+@import "fourohfour";
+@import "sidebar";
+@import "comments";
+@import "footer";
+@import "mobile";

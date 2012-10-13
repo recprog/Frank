@@ -1,8 +1,4 @@
-###global console:true###
-#
-# var s Selector
-# var o Options object
-#
+###global ###
 
 #Slideshow class
 class FSS
@@ -80,7 +76,6 @@ class FSS
 	# Private Methods
 
 	init: ->
-
 		context = @
 		@options.width=@element.offsetWidth if not @options.width 
 		@options.height=@element.offsetHeight if not @options.height

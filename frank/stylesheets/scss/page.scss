@@ -1,4 +1,6 @@
-@import "variables";
-
-#content.page article header {
-	margin-bottom: $row-height * 2; }
+#content.page.fullspread {
+	#content-primary {
+		float:none;
+		width:100%;
+	}
+}

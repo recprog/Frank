@@ -1,4 +1,4 @@
-###global FSS:true, FLB:true, _gaq:true, console:true###
+###global FSS:true, FLB:true, _gaq:true###
 #This will be where all JS specific to SRD.com shows up
 
 window.onload = ->
@@ -21,8 +21,9 @@ window.onload = ->
 			return
 
 	trackClickHandler = (elem, cat, action, label) ->
+		actn = if action then elem.querySelector(action).firstChild.nodeValue else elem.firstChild.nodeValue
 		return () ->
-			gaTrack(cat, if action then elem.querySelector(action).firstChild.nodeValue else elem.firstChild.nodeValue)
+			gaTrack(cat, actn, label)
 			#setTimeout('document.location = "' + elem.href + '"', 100);
 
 			if elem.getAttribute("target")
@@ -61,16 +62,16 @@ window.onload = ->
 		for navItem in navItems
 			navItem.onclick = navClickHandler(navItem, navItems)
 
-	postTweet = document.querySelector('#post_tweet')
+	postTweet = document.querySelector('#post-tweet')
 	if postTweet
-		postTweet.onclick = (e) ->
+		postTweet.onclick = () ->
 			gaTrack('Tweet Post', @firstChild.nodeValue, document.title)
 			centerLeft = window.screen.width/2 - 550/2
 			centerTop = window.screen.height/2 - 470/2
 			window.open(@href, @getAttribute("target"), 'width=550, height=470, location=0, left='+centerLeft+', top='+centerTop)
 			return false
 
-	#trackElems(document.querySelectorAll('#post_tweet'), 'Tweet Post', null, document.title);
+	#trackElems(document.querySelectorAll('#post-tweet'), 'Tweet Post', null, document.title);
 	trackElems(document.querySelectorAll('#menu-primary li a'), 'Top Nav', null, document.title);
 	trackElems(document.querySelectorAll('#bio_pic'), 'Bio Pic', null, document.title);
 	trackElems(document.querySelectorAll('#previous_post a'), 'Previous Post', '.arrow', document.title);
@@ -78,7 +79,7 @@ window.onload = ->
 	trackElems(document.querySelectorAll('#other_projects #projects_list li a'), 'Other Projects', 'small', document.title);
 	trackElems(document.querySelectorAll('#footer_main_promo'), 'Footer Promo', '.header', document.title);
 	trackElems(document.querySelectorAll('#text-12 .recommended a'), 'Recommended', null, document.title);
-	trackElems(document.querySelectorAll('#page_footer #twitter_follow a.button'), 'Footer Twitter', null, document.title);
+	trackElems(document.querySelectorAll('#page-footer #twitter-follow a.button'), 'Footer Twitter', null, document.title);
 
 	return
 

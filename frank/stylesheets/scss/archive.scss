@@ -1,4 +1,3 @@
-@import "variables";
-#content.archive header {
-	margin-bottom:$row-height*2;
-}
+#content.archive #sidebar {
+	margin-top:$row-height*4;
+} 

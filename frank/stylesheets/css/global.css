@@ -13,6 +13,12 @@ img.noshadow {
 
 /*Anchor tags*/
 a {
+  /*Reset*/
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
   color: #ea0000;
   text-decoration: none; }
   a img {
@@ -29,6 +35,7 @@ h1, h2, h3, h4, h5, h6 {
   padding-top: 0px;
   margin-bottom: 15px; }
 
+/* TODO: Try this pattern out :not(:last-child) */
 h1:first-child, h2:first-child, h3:first-child, h4:first-child, h5:first-child, h6:first-child {
   margin-top: 0; }
 
@@ -173,13 +180,16 @@ dl {
   margin: 15px 0;
   padding-top: 5px;
   font-family: Georgia, "Times New Roman", Times, serif; }
-  dl dt, dl dd {
-    font-size: 11px; }
-  dl dt {
-    font-weight: 700;
-    margin-top: 15px; }
-  dl dt:first-child {
-    margin: 0; }
+
+dt, dd {
+  font-size: 11px; }
+
+dt {
+  font-weight: 700;
+  margin-top: 15px; }
+
+dt:first-child {
+  margin: 0; }
 
 /*Typographic tags*/
 small {
@@ -190,10 +200,6 @@ strong {
 
 em {
   font-style: italic; }
-
-/*Horizontal rule*/
-hr {
-  border-color: #f0eceb; }
 
 header {
   margin-bottom: 15px; }
@@ -314,23 +320,21 @@ ul.metadata {
     font-weight: 700;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
 
+/* TODO: Try this pattern out :not(:last-child) */
 ul.metadata.horizontal {
   margin-top: 15px;
   display: inline-block; }
   ul.metadata.horizontal li {
     float: left;
     background: none;
-    margin-right: 15px; }
+    margin: 0 15px 0 0; }
   ul.metadata.horizontal li.last, ul.metadata.horizontal li:last-child {
     margin-right: 0; }
-  ul.metadata.horizontal li:first-child {
-    margin-left: 0; }
 
 ul.metadata.vertical {
   margin-top: 5px; }
   ul.metadata.vertical li {
     text-align: right;
-    float: none;
     margin-bottom: 5px; }
   ul.metadata.vertical li.date {
     margin-bottom: 10px; }
@@ -340,28 +344,33 @@ dl.metadata {
   text-align: right;
   margin-bottom: 15px; }
 
-.post header {
+.post .post-header {
   margin-bottom: 15px; }
-.post p .callout {
-  padding-top: 0; }
+.post .post-content {
+  width: 73.9%;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 17px; }
+  .post .post-content p, .post .post-content ul li, .post .post-content ol li, .post .post-content dt, .post .post-content dd, .post .post-content blockquote {
+    font-size: 17px; }
+  .post .post-content code, .post .post-content small {
+    font-size: 13px; }
+  .post .post-content img {
+    max-width: 100%;
+    box-shadow: 0px 0px 8px rgba(18, 7, 6, 0.3); }
+.post .post-info {
+  width: 21.679%; }
 
 #content {
   margin: 0 0 60px 0;
   position: relative; }
-  #content section {
-    font-family: Georgia, "Times New Roman", Times, serif;
-    font-size: 17px; }
-    #content section p, #content section ul li, #content section ol li, #content section dt, #content section dd, #content section blockquote {
-      font-size: 17px; }
-    #content section code, #content section small {
-      font-size: 13px; }
-    #content section img {
-      max-width: 100%;
-      box-shadow: 0px 0px 8px rgba(18, 7, 6, 0.3); }
 
-#content.page section img {
+#content-primary {
+  width: 73.9%; }
+
+#content.page .post img {
   box-shadow: none !important; }
 
+/* TODO: Try this pattern out :not(:last-child) */
 #content.home article, #content.archive article, #content.search article {
   margin-top: 60px;
   margin-bottom: 60px; }
@@ -424,7 +433,7 @@ button.small, .button.small, a.button.small {
     font-size: 11px; }
 
 /*MOBILE*/
-@media only screen and  (max-width: 767px) {
+@media only screen and (max-width: 767px) {
   /*Typography*/
   h1 {
     font-size: 24px; }

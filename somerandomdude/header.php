@@ -10,6 +10,8 @@
 	<meta charset="<?php bloginfo('charset'); ?>" />
 	<meta name="verify-v1" content="by1MB81PjkQUdjinZJQn73aCwjaV5erxwsvtTP7pTNE=" />
 	<meta name="viewport" content="width=device-width" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+	<?php frank_meta_keywords(); ?>
 	
 	<link href="data:image/x-icon;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAOBJREFUeNrkUbsKwkAQ3Fs0EbVTP05JpSD4iEUKBb9AO/ErDJJgI5bi72gv8e44Hc9Hk1Owdthib4eZG3ZFzfOISFgYY9Az89WCXBAQgJPGgC8XixidpYSBzwyLvOA+lUqtk2TQ75+yDDUMw1UcX5RyCgqYwvuw38+Xy9PxKJhni8VkNHrkdARDpEaphKbTamkpUe1mE08MQeWL30qYPTJorekL4FQhQgYI4N0NAjRRr1f58AnVfb9KtNtsxjY3MI2ibZpCACoveK3VLv65Vrsfz17GfYefD0e/4C8FNwEGAIXxbCAjm60LAAAAAElFTkSuQmCC" rel="icon" type="image/x-icon" />
 	<link rel="apple-touch-icon" href="/wp-content/themes/somerandomdude/images/apple-touch-icon.png"/>
@@ -17,13 +19,15 @@
 	<title><?php if (function_exists('is_tag') && is_tag()) { echo 'Tag Archive for &quot;'.$tag.'&quot;&mdash;'; } elseif (is_archive()) { wp_title(''); echo ' Archive&mdash;'; } elseif (is_search()) { echo 'Search for &quot;'.wp_specialchars($s).'&quot;&mdash;'; } elseif (!(is_404()) && (is_single()) || (is_page())) { wp_title(''); echo '&mdash;'; } elseif (is_404()) { echo 'Not Found&mdash;'; } bloginfo('name'); ?></title>
 	
 	<?php 
-	if(!frank_devmode()) { frank_srd_enqueue_styles(); }
-	else { frank_srd_enqueue_styles_dev(); }
+	if(!frank_devmode()) { frank_enqueue_styles(); }
+	else { frank_enqueue_styles_dev(); }
 	?>
 	
 	<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://feeds.feedburner.com/somerandomdude" />
 	<link rel="pingback" href="/xmlrpc.php" />
 	
+	<?php wp_head(); ?>
+
 	<!--[if lte IE 8]>
 	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
 	<![endif]-->
@@ -47,14 +51,12 @@
 			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 		})();
 	</script>
-	<?php wp_head(); ?>
 </head>
 <body id="page" <?php body_class($class); ?>>
 <div class='container'>
-	<div class="row">
-	<header id="page_header" class="clearfix">
-		<h1 id="title" class='three columns'><a href="/">Some Random Dude</a></h1>
-		<nav class='nine columns'>
+	<header id="page-header" class="row">
+		<h1 id="site-title" class='three columns'><a href="/">Some Random Dude</a></h1>
+		<nav id="site-nav" class='nine columns'>
 			<ul id="menu-primary" class="menu"><li><a href="/work/">Work</a></li>
 			<li class="last"><a href="/hello/" rel="author">Hello</a></li>
 			<li class="rss"><a href="http://feeds.feedburner.com/somerandomdude">RSS</a></li>
@@ -62,4 +64,3 @@
 			</ul>
 		</nav>
 	</header>
-	</div>

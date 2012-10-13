@@ -1,11 +1,13 @@
 <?php
+// INCLUDE FILE TO CREATE NEW ADMIN OPTIONS
+require_once('admin/frank-theme-options.php');
 
 if ( ! isset( $content_width ) ) $content_width = 980;
 
-define('HEADER_TEXTCOLOR', 'ffffff');
+define('HEADER_TEXTCOLOR', '3D302F');
 define('HEADER_IMAGE', '%s/images/default_header.jpg'); // %s is the template dir uri
 define('HEADER_IMAGE_WIDTH', 980); // use width and height appropriate for your theme
-define('HEADER_IMAGE_HEIGHT', 200);
+define('HEADER_IMAGE_HEIGHT', 225);
 
 add_filter('wp_list_categories', 'frank_remove_category_list_rel');
 add_filter('the_category', 'frank_remove_category_list_rel');
@@ -15,11 +17,25 @@ add_filter( 'style_loader_src', 'frank_remove_script_version', 15, 1 );
 
 register_nav_menus(array('primary' => __( 'Primary Navigation', 'frank-theme' )));
 
-if ( !is_admin() ) add_action('init', 'frank_init'); 
 add_action( 'init', 'frank_admin_assets' );
 add_action( 'admin_menu', 'frank_admin_menu' );
 add_action('wp_footer', 'frank_footer');
 add_action('wp_head', 'frank_header');
+
+$custom_header_support = array(
+		// The default header text color.
+		'default-text-color' => '3D302F',
+		// Support flexible heights.
+		'flex-height' => true,
+		// Callback for styling the header.
+		'wp-head-callback' => 'frank_header_style',
+		// Callback for styling the header preview in the admin.
+		'admin-head-callback' => 'frank_admin_header_style',
+		// Callback used to display the header preview in the admin.
+		'admin-preview-callback' => 'frank_admin_header_image',
+	);
+	
+	add_theme_support( 'custom-header', $custom_header_support );
 
 if ( function_exists( 'add_theme_support' ) ) { 
   add_theme_support( 'automatic-feed-links' );
@@ -46,19 +62,11 @@ if ( function_exists( 'add_theme_support' ) ) {
 
 if ( function_exists('register_sidebar') ) {
 	register_sidebar(array(
-	'name' => 'Top Bar',
-	'before_widget' => '<div id="top_bar" class="widget %2$s">',
-	'after_widget' => '</div>',
-	'before_title' => '<h3 class="widgettitle">',
-	'after_title' => '</h3>',
-	));
-	
-	register_sidebar(array(
 	'name' => 'Sub Header',
 	'id' => 'widget-subheader',
 	'before_widget' => '<div id="%1$s" class="widget %2$s four columns">',
 	'after_widget' => '</div>',
-	'before_title' => '<h3 class="widgettitle">',
+	'before_title' => '<h3 class="widget-title">',
 	'after_title' => '</h3>',
 	));
 	
@@ -66,7 +74,7 @@ if ( function_exists('register_sidebar') ) {
 	'name' => 'Navigation',
 	'before_widget' => '<div id="%1$s" class="widget %2$s">',
 	'after_widget' => '</div>',
-	'before_title' => '<h3 class="widgettitle">',
+	'before_title' => '<h3 class="widget-title">',
 	'after_title' => '</h3>',
 	));
 	
@@ -74,7 +82,7 @@ if ( function_exists('register_sidebar') ) {
 	'name' => 'Index Right Aside',
 	'before_widget' => '<div id="%1$s" class="widget %2$s">',
 	'after_widget' => '</div>',
-	'before_title' => '<h3 class="widgettitle">',
+	'before_title' => '<h3 class="widget-title">',
 	'after_title' => '</h3>',
 	));
 	
@@ -82,7 +90,7 @@ if ( function_exists('register_sidebar') ) {
 		'name' => 'Post Left Aside',
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div>',
-		'before_title' => '<h3 class="widgettitle">',
+		'before_title' => '<h3 class="widget-title">',
 		'after_title' => '</h3>',
 	));
 	
@@ -90,7 +98,7 @@ if ( function_exists('register_sidebar') ) {
 		'name' => 'Post Right Aside',
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div>',
-		'before_title' => '<h3 class="widgettitle">',
+		'before_title' => '<h3 class="widget-title">',
 		'after_title' => '</h3>',
 	));
 	
@@ -99,7 +107,7 @@ if ( function_exists('register_sidebar') ) {
 	'id' => 'widget-postfooter',
 	'before_widget' => '<div id="%1$s" class="widget %2$s four columns">',
 	'after_widget' => '</div>',
-	'before_title' => '<h3 class="widgettitle">',
+	'before_title' => '<h3 class="widget-title">',
 	'after_title' => '</h3>',
 	));
 	
@@ -108,20 +116,140 @@ if ( function_exists('register_sidebar') ) {
 	'id' => 'widget-footer',
 	'before_widget' => '<div id="%1$s" class="widget %2$s six columns">',
 	'after_widget' => '</div>',
-	'before_title' => '<h3 class="widgettitle">',
+	'before_title' => '<h3 class="widget-title">',
 	'after_title' => '</h3>',
 	));
 	
 }	
 
-function frank_init() {
-	wp_deregister_script( 'l10n' );
-}
-
 function frank_remove_script_version( $src ){
 	$parts = explode( '?', $src );
 	return $parts[0];
 }
+
+
+if ( ! function_exists( 'frank_header_style' ) ) :
+
+function frank_header_style() {
+	$text_color = get_header_textcolor();
+
+	// If no custom options for text are set, let's bail.
+	if ( $text_color == HEADER_TEXTCOLOR )
+		return;
+		
+	// If we get this far, we have custom styles. Let's do this.
+	?>
+	<style type="text/css">
+	<?php
+		// Has the text been hidden?
+		if ( 'blank' == $text_color ) :
+	?>
+		#site-title-description {
+			position: absolute !important;
+			clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+			clip: rect(1px, 1px, 1px, 1px);
+		}
+	<?php
+		// If the user has set a custom color for the text use that
+		else :
+	?>
+		#site-title a,
+		#site-description {
+			color: #<?php echo $text_color; ?> !important;
+		}
+	<?php endif; ?>
+	</style>
+	<?php
+}
+endif; 
+
+if ( ! function_exists( 'frank_admin_header_style' ) ) :
+function frank_admin_header_style() {
+?>
+	<style type="text/css">
+	.appearance_page_custom-header #headimg {
+		border: none;
+	}
+
+	#desc, h1 {
+		line-height: 1.25;
+	}
+	#headimg h1 {
+		font-family: "Helvetica Neue", Arial, Helvetica, "Nimbus Sans L", sans-serif;
+		font-size: 24px;
+		margin-bottom: 5px;
+		margin-top:15px;
+		font-weight: normal
+	}
+	#headimg h1 a {
+		color: #3D302F;
+		text-decoration: none
+	}
+	#desc {
+		margin-top: 0;
+		font-size: 13px;
+		margin-bottom: 15px
+	}
+	<?php
+		// If the user has set a custom color for the text use that
+		if ( get_header_textcolor() != HEADER_TEXTCOLOR ) :
+	?>
+		#site-title a,
+		#site-description {
+			color: #<?php echo get_header_textcolor(); ?>;
+		}
+	<?php endif; ?>
+	#headimg img {
+		max-width: 980px;
+		height: auto;
+		width: 100%;
+	}
+	</style>
+<?php
+}
+endif;
+
+
+if ( ! function_exists( 'frank_admin_header_image' ) ) :
+function frank_admin_header_image() { ?>
+	<div id="headimg">
+		<?php
+		$color = get_header_textcolor();
+		$image = get_header_image();
+		if ( $color && $color != 'blank' )
+			$style = ' style="color:#' . $color . '"';
+		else
+			$style = ' style="display:none"';
+		?>
+		<h1><a id="name"<?php echo $style; ?> onclick="return false;" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a></h1>
+		<div id="desc"<?php echo $style; ?>><?php bloginfo( 'description' ); ?></div>
+		<?php if ( $image ) : ?>
+			<img src="<?php echo esc_url( $image ); ?>" alt="" />
+		<?php endif; ?>
+	</div>
+<?php }
+endif; 
+
+if ( ! function_exists( 'frank_admin_header_image' ) ) :
+function frank_admin_header_image() { ?>
+	<div id="headimg">
+		<?php
+		$color = get_header_textcolor();
+		$image = get_header_image();
+		if ( $color && $color != 'blank' )
+			$style = ' style="color:#' . $color . '"';
+		else
+			$style = ' style="display:none"';
+		?>
+		<h1><a id="name"<?php echo $style; ?> onclick="return false;" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a></h1>
+		<div id="desc"<?php echo $style; ?>><?php bloginfo( 'description' ); ?></div>
+		<?php if ( $image ) : ?>
+			<img src="<?php echo esc_url( $image ); ?>" alt="" />
+		<?php endif; ?>
+	</div>
+<?php }
+endif; 
+
 
 // Remove rel attribute from the category list - thanks Joseph (http://josephleedy.me/blog/make-wordpress-category-list-valid-by-removing-rel-attribute/)! 
 function frank_remove_category_list_rel($output) {
@@ -176,40 +304,35 @@ function frank_widget_first_last_classes($params) {
 // ======================
 
 
-function frank_theme_options() {
-	include 'admin/frank-theme-options.php';
+if (!function_exists('frank_theme_options')) {
+	function frank_theme_options() {
+		frank_build_settings_page();
+	}
 }
 
 // add our menus
 function frank_admin_menu() {
-	add_theme_page( 'Frank', 'Frank Theme Options', 'manage_options', 'frank', 'frank_theme_options' );
+	add_theme_page( 'Frank', 'Frank Theme Options', 'manage_options', 'frank-settings', 'frank_theme_options' );
 }
 
 
 
 function frank_admin_assets() {
 	if( is_admin() ) {
-		wp_enqueue_script( 'jquery-ui-sortable' );
-		wp_enqueue_style( 'frank-admin', get_template_directory_uri() . '/admin/css/frank-options.css', NULL, NULL, NULL );
-		wp_enqueue_script( 'frank-admin', get_template_directory_uri() . '/admin/js/frank-utils.js', 'jquery', NULL, true );
+		wp_enqueue_script('jquery-ui-sortable' );
+		wp_enqueue_style('frank-admin', get_template_directory_uri() . '/admin/css/frank-options.css', NULL, NULL, NULL);
+		wp_enqueue_script('frank-admin', get_template_directory_uri() . '/admin/js/frank-utils.js', 'jquery', NULL, true);
 	}
-}    
- 
-
+} 
 
 function frank_footer() {	
 	$frank_general = get_option( '_frank_options' );
-    if($frank_general) echo stripslashes($frank_general['footer']);
+    if($frank_general&&isset($frank_general['footer'])) echo stripslashes($frank_general['footer']);
 }
 
 function frank_header() {
 	$frank_general = get_option( '_frank_options' );
-    if($frank_general) echo stripslashes($frank_general['header']);
-}
-
-function frank_devmode() {
-	$frank_general = get_option( '_frank_options' );
-	if($frank_general) return $frank_general['devmode'];
+    if($frank_general&&isset($frank_general['header'])) echo stripslashes($frank_general['header']);
 }
 
 function frank_tweet_post_button() {
@@ -222,140 +345,47 @@ function frank_tweet_post_attribution() {
     if($frank_general) return $frank_general['tweet_post_attribution'];
 }
 
-function frank_comment($comment, $args, $depth) {
-   $GLOBALS['comment'] = $comment; ?>
+if (!function_exists('frank_comment')) {
+	function frank_comment($comment, $args, $depth) {
+	   $GLOBALS['comment'] = $comment; ?>
 
-	<li <?php comment_class('row'); ?> id="li-comment-<?php comment_ID() ?>">
-		<div class="content nine columns push-three">
-			<?php if ($comment->comment_approved == '0') : echo "<span id='comment_moderation'>Your comment is awaiting moderation.</span>"; endif; ?>
-			<?php comment_text() ?>	
-			<div class="reply">
-		         <?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
-		    </div>
-		</div>
-		<div class="comment-info three columns pull-nine">
-			<ul class='metadata vertical'>
-				<li class="date"><time datetime="<?php the_time('Y-m-d'); ?>"><?php comment_date('F d, Y g:i A'); ?></time></li>
-				<li class='author' id="vcard-<?php comment_ID() ?>">By <a class="url fn" href="<?php comment_author_url(); ?>"><?php comment_author(); ?></a></li>
-				<li><?php edit_comment_link('edit'); ?></li>
-			</ul>
-			
-			
-		</div>
-<?php
+		<li id="li-comment-<?php comment_ID() ?>" class="comment">
+			<div class="row">
+				<div class="comment-content">
+					<?php if ($comment->comment_approved == '0') : echo "<span class='comment-moderation'>Your comment is awaiting moderation.</span>"; endif; ?>
+					<?php comment_text() ?>	
+					<div class="comment-reply">
+				    <?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
+				  </div>
+				</div>
+				<div class="comment-info">
+					<ul class='metadata vertical'>
+						<li class="date"><time datetime="<?php the_time('Y-m-d'); ?>"><?php comment_date('F d, Y g:i A'); ?></time></li>
+						<li class='author' id="vcard-<?php comment_ID() ?>">By <a class="url fn" href="<?php comment_author_url(); ?>"><?php comment_author(); ?></a></li>
+						<li><?php edit_comment_link('edit'); ?></li>
+					</ul>
+				</div>
+			</div>
+	<?php
+	}
 }
+if (!function_exists('frank_enqueue_styles')) {
+	function frank_enqueue_styles() {
+		global $wp_styles;
+		//TODO: Replace with custom editor style
+		add_editor_style('stylesheets/css/global.css');
+		wp_register_style('frank_stylesheet', get_stylesheet_directory_uri().'/style.css', null, '0.1', 'all' );
+		wp_register_style('frank_stylesheet_ie', get_stylesheet_directory_uri().'/ie.css', null, '0.1', 'all' );
+		wp_register_style('frank_stylesheet_ie7', get_stylesheet_directory_uri().'/ie7.css', null, '0.1', 'all' );
+	
+		$wp_styles->add_data('frank_stylesheet_ie', 'conditional', 'IE');
+		$wp_styles->add_data('frank_stylesheet_ie7', 'conditional', 'IE 7');
+	
 
-function frank_srd_enqueue_styles() {
-	
-	global $wp_styles;
-	
-	wp_register_style('frank_srd_stylesheet', get_stylesheet_directory_uri().'/style.css', null, '0.1', 'all' );
-	
-	wp_register_style('frank_srd_stylesheet_ie', get_stylesheet_directory_uri().'/stylesheets/css/ie.css', null, '0.1', 'all' );
-	wp_register_style('frank_srd_stylesheet_ie7', get_stylesheet_directory_uri().'/stylesheets/css/ie7.css', null, '0.1', 'all' );
-	
-	$wp_styles->add_data('frank_srd_stylesheet_ie', 'conditional', 'IE');
-	$wp_styles->add_data('frank_srd_stylesheet_ie7', 'conditional', 'IE 7');
-	
 	wp_enqueue_style('frank_srd_stylesheet');
 	wp_enqueue_style('frank_srd_stylesheet_ie');
 	wp_enqueue_style('frank_srd_stylesheet_ie7');
+	}
 }
-
-function frank_srd_enqueue_styles_dev() {
-	
-add_editor_style('stylesheets/css/global.css');
-
-		global $wp_styles;
-	
-		wp_register_style('frank_stylesheet_reset', get_template_directory_uri().'/stylesheets/css/reset.css', null, '0.1', 'all' );
-		wp_register_style('frank_stylesheet_grid', get_template_directory_uri().'/stylesheets/css/grid.css', null, '0.1', 'all' );
-		wp_register_style('frank_stylesheet_global', get_template_directory_uri().'/stylesheets/css/global.css', null, '0.1', 'all' );
-		wp_register_style('frank_stylesheet_forms', get_template_directory_uri().'/stylesheets/css/forms.css', null, '0.1', 'all' );
-		wp_register_style('frank_stylesheet_widgets', get_template_directory_uri().'/stylesheets/css/widgets.css', null, '0.1', 'all' );
-		wp_register_style('frank_stylesheet_sprites', get_template_directory_uri().'/stylesheets/css/sprites.css', null, '0.1', 'all' );
-		wp_register_style('frank_stylesheet_transitions', get_template_directory_uri().'/stylesheets/css/transitions.css', null, '0.1', 'all' );
-		wp_register_style('frank_stylesheet_header', get_template_directory_uri().'/stylesheets/css/header.css', null, '0.1', 'all' );
-		wp_register_style('frank_stylesheet_index', get_template_directory_uri().'/stylesheets/css/index.css', null, '0.1', 'all' );
-		wp_register_style('frank_stylesheet_single', get_template_directory_uri().'/stylesheets/css/single.css', null, '0.1', 'all' );
-		wp_register_style('frank_stylesheet_archive', get_template_directory_uri().'/stylesheets/css/archive.css', null, '0.1', 'all' );
-		wp_register_style('frank_stylesheet_fourohfour', get_template_directory_uri().'/stylesheets/css/fourohfour.css', null, '0.1', 'all' );
-		wp_register_style('frank_stylesheet_sidebar', get_template_directory_uri().'/stylesheets/css/sidebar.css', null, '0.1', 'all' );
-		wp_register_style('frank_stylesheet_comments', get_template_directory_uri().'/stylesheets/css/comments.css', null, '0.1', 'all' );
-		wp_register_style('frank_stylesheet_footer', get_template_directory_uri().'/stylesheets/css/footer.css', null, '0.1', 'all' );
-		wp_register_style('frank_stylesheet_colorbox', get_template_directory_uri().'/stylesheets/css/colorbox.css', null, '0.1', 'all' );
-		wp_register_style('frank_stylesheet_hacks', get_template_directory_uri().'/stylesheets/css/hacks.css', null, '0.1', 'all' );
-		
-		wp_register_style('frank_srd_stylesheet_global', get_stylesheet_directory_uri().'/stylesheets/css/global.css', null, '0.1', 'all' );
-		wp_register_style('frank_srd_stylesheet_forms', get_stylesheet_directory_uri().'/stylesheets/css/forms.css', null, '0.1', 'all' );
-		wp_register_style('frank_srd_stylesheet_widgets', get_stylesheet_directory_uri().'/stylesheets/css/widgets.css', null, '0.1', 'all' );
-		wp_register_style('frank_srd_stylesheet_sprites', get_stylesheet_directory_uri().'/stylesheets/css/sprites.css', null, '0.1', 'all' );
-		wp_register_style('frank_srd_stylesheet_transitions', get_stylesheet_directory_uri().'/stylesheets/css/transitions.css', null, '0.1', 'all' );
-		wp_register_style('frank_srd_stylesheet_header', get_stylesheet_directory_uri().'/stylesheets/css/header.css', null, '0.1', 'all' );
-		wp_register_style('frank_srd_stylesheet_index', get_stylesheet_directory_uri().'/stylesheets/css/index.css', null, '0.1', 'all' );
-		wp_register_style('frank_srd_stylesheet_single', get_stylesheet_directory_uri().'/stylesheets/css/single.css', null, '0.1', 'all' );
-		wp_register_style('frank_srd_stylesheet_page', get_stylesheet_directory_uri().'/stylesheets/css/page.css', null, '0.1', 'all' );
-		wp_register_style('frank_srd_stylesheet_archive', get_stylesheet_directory_uri().'/stylesheets/css/archive.css', null, '0.1', 'all' );
-		wp_register_style('frank_srd_stylesheet_fourohfour', get_stylesheet_directory_uri().'/stylesheets/css/fourohfour.css', null, '0.1', 'all' );
-		wp_register_style('frank_srd_stylesheet_sidebar', get_stylesheet_directory_uri().'/stylesheets/css/sidebar.css', null, '0.1', 'all' );
-		wp_register_style('frank_srd_stylesheet_comments', get_stylesheet_directory_uri().'/stylesheets/css/comments.css', null, '0.1', 'all' );
-		wp_register_style('frank_srd_stylesheet_footer', get_stylesheet_directory_uri().'/stylesheets/css/footer.css', null, '0.1', 'all' );
-		wp_register_style('frank_srd_stylesheet_pages', get_stylesheet_directory_uri().'/stylesheets/css/pages.css', null, '0.1', 'all' );
-		wp_register_style('frank_srd_stylesheet_colorbox', get_stylesheet_directory_uri().'/stylesheets/css/colorbox.css', null, '0.1', 'all' );
-		wp_register_style('frank_srd_stylesheet_hacks', get_stylesheet_directory_uri().'/stylesheets/css/hacks.css', null, '0.1', 'all' );
-
-		wp_register_style('frank_stylesheet_mobile', get_template_directory_uri().'/stylesheets/css/mobile.css', null, '0.1', 'all' );
-		wp_register_style('frank_stylesheet_print', get_template_directory_uri().'/stylesheets/css/print.css', null, '0.1', 'print' );
-		
-		wp_register_style('frank_srd_stylesheet_ie', get_stylesheet_directory_uri().'/stylesheets/css/ie.css', null, '0.1', 'all' );
-		wp_register_style('frank_srd_stylesheet_ie7', get_stylesheet_directory_uri().'/stylesheets/css/ie7.css', null, '0.1', 'all' );
-		
-		$wp_styles->add_data('frank_srd_stylesheet_ie', 'conditional', 'IE');
-		$wp_styles->add_data('frank_srd_stylesheet_ie7', 'conditional', 'IE 7');
-		
-		wp_enqueue_style('frank_stylesheet_reset');
-		wp_enqueue_style('frank_stylesheet_grid');
-		wp_enqueue_style('frank_stylesheet_global');
-		wp_enqueue_style('frank_stylesheet_forms');
-		wp_enqueue_style('frank_stylesheet_widgets');
-		wp_enqueue_style('frank_stylesheet_sprites');
-		wp_enqueue_style('frank_stylesheet_transitions');
-		wp_enqueue_style('frank_stylesheet_header');
-		wp_enqueue_style('frank_stylesheet_index');
-		wp_enqueue_style('frank_stylesheet_single');
-		wp_enqueue_style('frank_stylesheet_archive');
-		wp_enqueue_style('frank_stylesheet_fourohfour');
-		wp_enqueue_style('frank_stylesheet_sidebar');
-		wp_enqueue_style('frank_stylesheet_comments');
-		wp_enqueue_style('frank_stylesheet_footer');
-		wp_enqueue_style('frank_stylesheet_colorbox');
-		wp_enqueue_style('frank_stylesheet_hacks');
-		
-		wp_enqueue_style('frank_srd_stylesheet_global');
-		wp_enqueue_style('frank_srd_stylesheet_forms');
-		wp_enqueue_style('frank_srd_stylesheet_widgets');
-		wp_enqueue_style('frank_srd_stylesheet_sprites');
-		wp_enqueue_style('frank_srd_stylesheet_transitions');
-		wp_enqueue_style('frank_srd_stylesheet_header');
-		wp_enqueue_style('frank_srd_stylesheet_index');
-		wp_enqueue_style('frank_srd_stylesheet_single');
-		wp_enqueue_style('frank_srd_stylesheet_page');
-		wp_enqueue_style('frank_srd_stylesheet_archive');
-		wp_enqueue_style('frank_srd_stylesheet_fourohfour');
-		wp_enqueue_style('frank_srd_stylesheet_sidebar');
-		wp_enqueue_style('frank_srd_stylesheet_comments');
-		wp_enqueue_style('frank_srd_stylesheet_footer');
-		wp_enqueue_style('frank_srd_stylesheet_pages');
-		wp_enqueue_style('frank_srd_stylesheet_colorbox');
-		wp_enqueue_style('frank_srd_stylesheet_hacks');
-
-		wp_enqueue_style('frank_stylesheet_mobile');
-		wp_enqueue_style('frank_stylesheet_print');
-		
-		wp_enqueue_style('frank_srd_stylesheet_ie');
-		wp_enqueue_style('frank_srd_stylesheet_ie7');
-}
-
-
 
 ?>

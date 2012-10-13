@@ -1,31 +1,30 @@
-#page_header {
+#site-title {
+  font-size: 24px; }
+
+#site-description {
+  margin-top: 0; }
+
+#site-nav ul {
+  list-style: none; }
+#site-nav ul ul {
+  display: none; }
+#site-nav li {
+  float: left; }
+#site-nav a {
+  display: block;
+  height: 15px;
+  color: #050000;
+  font-style: 700;
+  font-size: 11px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+#site-nav a:hover {
+  color: #5d504f; }
+
+#page-header {
   position: relative;
   border-bottom: 2px solid #f0eceb;
   padding-bottom: 15px;
   margin: 15px 0 30px 0; }
-  #page_header h1 {
-    font-size: 24px; }
-  #page_header h2 {
-    margin-top: 0; }
-  #page_header nav .menu ul {
-    list-style: none; }
-  #page_header nav .menu ul ul {
-    display: none; }
-  #page_header nav .menu li {
-    float: left; }
-    #page_header nav .menu li a {
-      display: block;
-      height: 15px;
-      color: #050000;
-      font-style: 700;
-      font-size: 11px;
-      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
-    #page_header nav .menu li a:hover {
-      color: #5d504f; }
-  #page_header nav .menu li:first-child {
-    margin-left: 0; }
-  #page_header nav .menu li.last {
-    margin-right: 0; }
 
 #sub_header {
   border-bottom: 2px solid #f0eceb;

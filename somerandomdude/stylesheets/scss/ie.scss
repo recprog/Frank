@@ -1,82 +1,20 @@
+@import "../../../frank/stylesheets/scss/variables";
 @import "variables";
+@import "../../../frank/stylesheets/scss/ie";
 
 #projects_list li h3 small {
-	background-color: $color_midtone; }
-
-#post_footer {}
+	background-color: $color-midtone; 
+}
 
 #menu-primary li.rss, #menu-primary li.twitter {
 	display: none !important; }
-
-#follow_list {
-	background: $color_accent; }
-
-#work_pullout {
-	background: $color_midtone; }
-
-#categories_pullout {
-	background: $color_midtone; }
-
-#text-10 {
-	@include default-shadow();
-	margin-top: $row-height * -2;
-	#footer_main_promo {
-		@include columns(6);
-		height: 180px;
-		display: block;
-		background-color: $color_accent;
-		text-decoration: none;
-		position: relative;
-		.sprite.fork {
-			float: left;
-			margin-left: 15px; }
-		.content {
-			overflow-y: hidden;
-			display: block;
-			float: left;
-			height: 180px;
-			width: 250px;
-			margin-left: 23px;
-			padding-top: $row-height * 2;
-			padding-right: 10px;
-			.header {
-				font-family: $sans-serif;
-				display: block;
-				@include font-size-large(); }
-			.caption {
-				display: block;
-				@include font-size-x-small();
-				margin-top: $row-height;
-				font-style: italic; } } } }
 				
-				
-				
-				
+		
 /*PNG replacements*/
-#page_header {
-	
-	h1 {
+#page-header {
+	#site-title {
 		a { 
-
-			background:url('/wp-content/themes/somerandomdude/images/title.png?embed=true') no-repeat;
-
-		}
-	}
-	nav {
-		#menu-primary {
-			
-			li.rss {
-				a { 	
-					background:$color_accent url('/wp-content/themes/somerandomdude/images/rss.png?embed=true') no-repeat center center;
-				}
-			}
-			
-			li.twitter {
-
-				a { 
-					background:$color_accent url('/wp-content/themes/somerandomdude/images/twitter.png?embed=true') no-repeat center center;
-				}
-			}
+			background:inline-image('title.png') no-repeat left center;
 		}
 	}
 }
@@ -87,7 +25,7 @@
 
 		.sprite.fork {
 
-			background:url('/wp-content/themes/somerandomdude/images/fork.png?embed=true') no-repeat;
+			background:inline-image('fork.png') no-repeat;
 		}
 	}
 }

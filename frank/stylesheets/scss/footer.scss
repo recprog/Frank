@@ -1,19 +1,15 @@
-@import "variables";
+#page-bottom { 
+	background: $color-midtone;
+	color: $color-light; 
+	text-shadow:0 -1px 0 rgba(0,0,0,.5);
+}
 
-	#page_bottom { background: $color_midtone; }
-
-	#page_footer {
-		text-shadow:0 -1px 0 rgba(0,0,0,.5);
-		padding-top:$row-height *2;
-		padding-bottom:$row-height *2;
-		margin-top: $row-height * 2;
-		color: $color_light;
-		a { color: $color_highlight; }
-		h3 {
-			@include font-size-medium();
-			color: $color_light; 
-			text-shadow:0 -1px 0 rgba(0,0,0,.7);
-		}
+#page-footer {
+	padding-top:$row-height *2;
+	padding-bottom:$row-height *2;
+	margin-top: $row-height * 2;
+	
+	a { color: $color-highlight; }
 }
 	
 

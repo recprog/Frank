@@ -1,56 +1,21 @@
 <?php
 /**
- * @package WordPress
- * @subpackage Frank
+ * @package Frank
  */
 ?>
 <?php get_header(); ?>
 <div id="content" class="archive">
 	<div class="row">
-	<div id="content_primary" class='nine columns'>
+	<div id="content-primary">
 	<?php if(have_posts()) : ?>
 	<header>
-		<hgroup>
-		<h1>Search Results for &#8216;<?php the_search_query(); ?>&#8217;</h1>
-		<h2>Click on one of the items below to go to the post</h2>
-		</hgroup>
+		<h1 class="page-title">Search Results for &#8216;<?php the_search_query(); ?>&#8217;</h1>
 	</header>
 	<div class="posts">
 		<?php while(have_posts()) : the_post(); ?>
-			<article itemscope itemtype="http://schema.org/BlogPosting" class='clear'>
-				<header>
-					<h1><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h1>
-				</header>
-				<div class="row">
-					<section class='nine columns push-three'>
-						<?php the_content('Read On&hellip;'); ?>
-					</section>
-					<div class='three columns pull-nine post-info'>
-						<ul class='metadata vertical'>
-							<li class="date"><time datetime="<?php the_time('Y-m-d'); ?>" itemprop="datePublished"><?php the_time(get_option('date_format')); ?></time></li>
-							<li class="author">By <?php the_author_link(); ?></li>
-							<li class="categories"><?php the_category(', '); ?></li>
-							<li class="tags"><?php the_tags('', ', '); ?></li>
-							<li class="comments"><?php comments_popup_link('No comments', '1 comment', '% comments'); ?></li>	
-						</ul>
-					</div>
-					</div>
-			</article>
+			<?php get_template_part('partials/posts/post'); ?>
 		<?php endwhile; ?>
-		<?php
-		$next = get_next_posts_link();
-		$prev = get_previous_posts_link();
-		?>
-		<?php if($next || $prev): ?>	
-		<div class="pagination">			
-			<?php if($next): ?>
-				<a href='<?php echo next_posts( $max_page, false ); ?>' class='button'>Older Entries</a>
-			<?php endif; ?>
-			<?php if($prev): ?>
-				<a href='<?php echo previous_posts( $max_page, false ); ?>' class='button'>Newer Entries</a>
-			<?php endif; ?>
-		</div>
-		<?php endif; ?>
+		<?php get_template_part( 'partials/post-pagination'); ?>
 		<?php else : ?>
 		<div class="post">
 		
