@@ -1,7 +1,6 @@
 <?php
 /**
- * @package WordPress
- * @subpackage Frank
+ * @package Frank
  */
 ?>
 <form method="get" id="searchform" action="<?php echo home_url(); ?>/">

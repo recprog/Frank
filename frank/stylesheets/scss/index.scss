@@ -1,60 +1,82 @@
-@import "variables";
-
-
+/* TODO: General cleanup */
 #content.home {
-	.content { margin-bottom:$row-height*4; }
-	.content-header {
+	.post-group-header {
 		margin-bottom:$row-height*2;
 		padding-bottom:5px;
 		border-bottom: 1px $color-light solid;
-		font-size: $font-small; 
-		font-family:$sans-serif;
+		font: #{$font-size-small} #{$typeface-secondary};
+		.label {
+			font-weight: $bold;
+		}
 		.caption {
 			font-style: italic;
 			color:$color-midtone;
-			margin-left:10px;
+			margin:0 10px;
 		}
 		.more {
-			@extend .reset-dimensions;
-			font-family: $serif; } }
-	.content {
+			font-family: $typeface-primary; } 
+		}
+	.post-group {
+		margin-bottom:$row-height*4;
 		.read-more { 
 			margin-top: $row-height;
-			.more { @include font-size-x-small(); } 
+			.more { 
+				font-size: $font-size-x-small; 
+			} 
 		}
 	}
-	.content.oneup.large {
-		header h1 { @include font-size-large; }
+	.post-group.oneup.large {
 		section {
 			margin: 0 0 $row-height 0;
 			p {
 				font-style: italic;
-				@include font-size-xxx-large(); 
+				font-size: $font-size-xxx-large; 
 			} 
 		} 
 	}
-	.content.twoup, .content.threeup, .content.fourup {
+	.post-group.twoup, .post-group.threeup, .post-group.fourup {
 		.post {
 			margin-top: $row-height;
 			float:left !important;
 		}
 		header h1 {
-			@include font-size-small();
+			font-size: $font-size-small;
 			font-weight: $bold;  
 		}
-		section p { @include font-size-small(); }
-		.metadata li { @include font-size-x-small(); }
+		section p { font-size: $font-size-small; }
+		.metadata li { font-size: $font-size-x-small; }
 	}
-	
-	.content.twoup .post:nth-child(2n+1), .content.threeup .post:nth-child(3n+1), .content.fourup .post:nth-child(4n+1) {
+	.post-group.twoup {
+		.post {
+			@extend .column;
+			width: $six-columns;
+		}
+	}
+
+	.post-group.threeup {
+		.post {
+			@extend .column;
+			width: $four-columns;
+		}
+	}
+
+	.post-group.fourup {
+		.post {
+			@extend .column;
+			width: $three-columns;
+		}
+	}
+
+	/* TODO: Try this pattern out :not(:last-child) */
+	.post-group.twoup .post:nth-child(2n+1), .post-group.threeup .post:nth-child(3n+1), .post-group.fourup .post:nth-child(4n+1) {
 		margin-left:0;
 		clear: left;
 	}
-	.content.twoup .post:nth-child(2n), .content.threeup .post:nth-child(3n), .content.fourup .post:nth-child(4n) {
+	.post-group.twoup .post:nth-child(2n), .post-group.threeup .post:nth-child(3n), .post-group.fourup .post:nth-child(4n) {
 		margin-right: 0; 
 		float:right;
 	}
-	.content.twoup .post:nth-child(n+3), .content.threeup .post:nth-child(n+4), .content.fourup .post:nth-child(n+5) {
+	.post-group.twoup .post:nth-child(n+3), .post-group.threeup .post:nth-child(n+4), .post-group.fourup .post:nth-child(n+5) {
 		margin-bottom: 0;
 		margin-top: $row-height * 3;
 	}
@@ -63,7 +85,7 @@
 			
 /*MOBILE*/
 @media only screen and  (max-width: 767px) {
-	#content.home .content.oneup.large article section p {
-		@include font-size-x-large(); 
+	#content.home .post-group.oneup.large .post-content p {
+		font-size: $font-size-x-large; 
 	}
 }

@@ -1,112 +1,125 @@
-@import "variables";
-
-#content.single {
-	#previous_post {
-		margin-top: $row-height * 4;
-		font-style: italic;
-		font-family: $serif;
-		a {
-			@include font-size-small();
-			display: block;
-			text-align: center; }
-		nav {
-			padding-bottom: $row-height;
-			border-bottom: 1px solid $color_light;
-			margin: $row-height 0; }
-		.arrow {
-			display: block;
-			@include default-shadow();
-			width: 45px;
-			height: 45px;
-			border-radius: 22.5px;
-			text-indent: 100%;
-			white-space: nowrap;
-			overflow: hidden;
-			background: $color_midtone url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAQCAYAAADESFVDAAAAWElEQVR42qXSzQkAIAgF4EZolEZqhDZqpEZwBM8dovSUYD9YwuNdPgIlt5tWa6AA9wkgpXPfACeagaeAAGkFigDZACbKAoAC+5f+od7Oesh/iC+/QC/DPQAIxvkuqJQtLgAAAABJRU5ErkJggg==') no-repeat 16px 15px;
-		}
-		a:hover {
-			color: $color_accent_alt;
-			.arrow {
-				background-color: $color_dark; 
-			} 
-		} 
+#previous-post {
+	margin-top: $row-height * 4;
+	margin-bottom: $row-height * 2;
+	font-style: italic;
+	font-family: $typeface-primary;
+	a {
+		font-size: $font-size-small;
+		display: block;
+		text-align: center; }
+	nav {
+		padding-bottom: $row-height;
+		border-bottom: 1px solid $color-light;
+		margin: $row-height 0; }
+	.arrow {
+		display: block;
+		@include default-shadow();
+		width: 45px;
+		height: 45px;
+		border-radius: 22.5px;
+		text-indent: 100%;
+		white-space: nowrap;
+		overflow: hidden;
+		background: $color-midtone url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAQCAYAAADESFVDAAAAWElEQVR42qXSzQkAIAgF4EZolEZqhDZqpEZwBM8dovSUYD9YwuNdPgIlt5tWa6AA9wkgpXPfACeagaeAAGkFigDZACbKAoAC+5f+od7Oesh/iC+/QC/DPQAIxvkuqJQtLgAAAABJRU5ErkJggg==') no-repeat 16px 15px;
 	}
-	position: relative;
-	article {
-		header {
-			h1 {
-				@include font-size-x-large();
-				color: $color_dark; 
-			} 
-		}
-				
-		section h1, section h2 {
-			margin: $row-height 0;
-			padding: 0;
-		}		
-		section h1 {
-			@include font-size-large();
-			margin-top: $row-height * 2; 
-		}
-		section h2 {
-			@include font-size-medium();
-			font-weight: $bold;
-		}
-		dl dd {
-			margin-left: $gutter-width; 
+	a:hover {
+		color: $color-accent-alt;
+		.arrow {
+			background-color: $color-dark; 
 		} 
+	} 
+}
+
+/* TODO: Remove heirarchy & general cleanup */
+#content.single {
+	position: relative;
+	.post-title {
+		color: $color-dark; 
 	}
 	#excerpt {
 		padding-bottom: $row-height * 2;
-		color: $color_midtone;
+		color: $color-midtone;
 		p {
 			padding-top: 0;
-			@include font-size-xx-large();
-			font-family: $serif;
-			font-style: italic; 
+			font: italic #{$font-size-xx-large}/1.55 #{$typeface-primary};
 		} 
 	}
-	#content_primary {
-		section {
-			margin-bottom:$row-height * 3;
+	.post-content {
+		margin-bottom:$row-height * 3;
+		h1, h2 {
+			margin: $row-height 0;
+			padding: 0;
 		}
-		.pagination {
-			margin-top:$row-height*2;
+		h1 {
+			font-size: $font-size-large;
+			margin-top: $row-height * 2; 
 		}
-		#content_main {
-			margin: $row-height * 2 0; 
-			border-bottom:$border-break;
-			padding-bottom:$row-height;
+		h2 {
+			font-size: $font-size-medium;
+			font-weight: $bold;
+		}
+		dd {
+			margin-left: $gutter-width; 
 		} 
+		.flush-left {
+			margin-left: -26.1%;
+		}
+		blockquote.large p {
+			font-size: $font-size-large; 
+		}
+		img.flush-left, video.flush-left {
+			max-width:126.1%;
+		} 
+
+		.alignright, .alignleft {
+			max-width:40%;
+		}
+
+		.alignright {
+			margin-left: 20px;
+		}
+
+		.alignleft {
+			margin-right: 20px;
+		}
 	}
-	#post_footer {
-		@extend .reset-dimensions;
+
+	.pagination {
+		margin-top:$row-height*2;
+	}
+	#content-main {
+		margin: $row-height * 2 0; 
 		border-bottom:$border-break;
 		padding-bottom:$row-height;
-		margin-bottom:$row-height * 2;
-		.widget:nth-child(4n) {
-			margin-right: $gutter-width;
-		}
-		.widget:nth-child(4n+1) {
-			clear:none;
-		}
-		.widget:nth-child(3n) {
-			margin-right:0; 
-		}
-		.widget:nth-child(3n+1) {
-			clear:left; 
-		}
+	} 
+}
+
+#post-tweet {
+	float:right;
+	margin:$row-height 0 $row-height*2 0;
+}
+
+#post-footer {
+	border-bottom:$border-break;
+	padding-bottom:$row-height;
+	margin: 0 0 $row-height * 2 0;
+	/* TODO: Try this pattern out :not(:last-child) */
+	.widget:nth-child(4n) {
+		margin-right: $gutter-width;
 	}
-	#post_tweet {
-		float:right;
-		margin:$row-height 0 $row-height*2 0;
-		margin:15px 0 30px 0;
+	.widget:nth-child(4n+1) {
+		clear:none;
+	}
+	.widget:nth-child(3n) {
+		margin-right:0; 
+	}
+	.widget:nth-child(3n+1) {
+		clear:left; 
 	}
 }
 	
 /*MOBILE*/
 @media only screen and  (max-width: 767px) {
-	
 	.post-info .previous {
 		a:before {
 			content:"Previous Post: ";

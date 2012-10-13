@@ -1,7 +1,6 @@
 <?php
 /**
- * @package WordPress
- * @subpackage Frank
+ * @package Frank
  */
 ?>
 <!DOCTYPE html>
@@ -10,44 +9,14 @@
 	<meta charset="<?php bloginfo('charset'); ?>" />
 	<meta name="generator" content="WordPress <?php bloginfo('version'); ?>" />
 	<meta name="viewport" content="width=device-width" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
 	
-	<title><?php if (function_exists('is_tag') && is_tag()) { echo 'Tag Archive for &quot;'.$tag.'&quot;&mdash;'; } elseif (is_archive()) { wp_title(''); echo ' Archive&mdash;'; } elseif (is_search()) { echo 'Search for &quot;'.wp_specialchars($s).'&quot;&mdash;'; } elseif (!(is_404()) && (is_single()) || (is_page())) { wp_title(''); echo '&mdash;'; } elseif (is_404()) { echo 'Not Found&mdash;'; } bloginfo('name'); ?></title>
+	<title>
+		<?php wp_title('&mdash;',true,'right'); ?>
+ 		<?php bloginfo('name'); ?>
+	</title>
 
-	<?php 
-	if(!frank_devmode()) {
-		wp_enqueue_style('frank_stylesheet', get_bloginfo( 'stylesheet_url' ), null, '0.1', 'all' );
-	}
-	else {
-		wp_enqueue_style('frank_stylesheet_reset', get_template_directory_uri().'/stylesheets/css/reset.css', null, '0.1', 'all' );
-		wp_enqueue_style('frank_stylesheet_grid', get_template_directory_uri().'/stylesheets/css/grid.css', null, '0.1', 'all' );
-		wp_enqueue_style('frank_stylesheet_global', get_template_directory_uri().'/stylesheets/css/global.css', null, '0.1', 'all' );
-		wp_enqueue_style('frank_stylesheet_forms', get_template_directory_uri().'/stylesheets/css/forms.css', null, '0.1', 'all' );
-		wp_enqueue_style('frank_stylesheet_widgets', get_template_directory_uri().'/stylesheets/css/widgets.css', null, '0.1', 'all' );
-		wp_enqueue_style('frank_stylesheet_sprites', get_template_directory_uri().'/stylesheets/css/sprites.css', null, '0.1', 'all' );
-		wp_enqueue_style('frank_stylesheet_transitions', get_template_directory_uri().'/stylesheets/css/transitions.css', null, '0.1', 'all' );
-		wp_enqueue_style('frank_stylesheet_header', get_template_directory_uri().'/stylesheets/css/header.css', null, '0.1', 'all' );
-		wp_enqueue_style('frank_stylesheet_index', get_template_directory_uri().'/stylesheets/css/index.css', null, '0.1', 'all' );
-		wp_enqueue_style('frank_stylesheet_single', get_template_directory_uri().'/stylesheets/css/single.css', null, '0.1', 'all' );
-		wp_enqueue_style('frank_stylesheet_archive', get_template_directory_uri().'/stylesheets/css/archive.css', null, '0.1', 'all' );
-		wp_enqueue_style('frank_stylesheet_fourohfour', get_template_directory_uri().'/stylesheets/css/fourohfour.css', null, '0.1', 'all' );
-		wp_enqueue_style('frank_stylesheet_sidebar', get_template_directory_uri().'/stylesheets/css/sidebar.css', null, '0.1', 'all' );
-		wp_enqueue_style('frank_stylesheet_comments', get_template_directory_uri().'/stylesheets/css/comments.css', null, '0.1', 'all' );
-		wp_enqueue_style('frank_stylesheet_footer', get_template_directory_uri().'/stylesheets/css/footer.css', null, '0.1', 'all' );
-		wp_enqueue_style('frank_stylesheet_colorbox', get_template_directory_uri().'/stylesheets/css/colorbox.css', null, '0.1', 'all' );
-		wp_enqueue_style('frank_stylesheet_hacks', get_template_directory_uri().'/stylesheets/css/hacks.css', null, '0.1', 'all' );
-		
-		wp_enqueue_style('frank_stylesheet_mobile', get_template_directory_uri().'/stylesheets/css/mobile.css', null, '0.1', 'all' );
-		wp_enqueue_style('frank_stylesheet_print', get_template_directory_uri().'/stylesheets/css/print.css', null, '0.1', 'print' );
-	}	
-	?>
-
-	
-	<!--[if IE]>
-	<?php wp_enqueue_style('frank_stylesheet_ie', get_template_directory_uri().'/stylesheets/css/ie.css', null, '0.1', 'all' ); ?>
-	<![endif]-->
-	<!--[if IE 7]>
-	<?php wp_enqueue_style('frank_stylesheet_ie7', get_template_directory_uri().'/stylesheets/css/ie7.css', null, '0.1', 'all' ); ?>
-	<![endif]-->
+	<?php frank_enqueue_styles(); ?>
 	
 	<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="<?php get_feed_link( 'rss2' ) ?>" />
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
@@ -62,28 +31,68 @@
 	<?php if ( is_singular() ) wp_enqueue_script( 'comment-reply' ); ?>
 	<?php wp_head(); ?>	
 </head>
-<body id="page" <?php body_class($class); ?>>
+<body id="page" <?php body_class(); ?>>
+	<!--[if lt IE 9]>
+		<div class="chromeframe">Your browser is out of date. Please <a href="http://browsehappy.com/">upgrade your browser </a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a>.</div>
+	<![endif]-->
 <div class="container">
-	<div class="row">
-	<header id="page_header">
-		<div class='row'>
-		<hgroup class='9 columns'>
-			<h1 id="title"><a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a></h1>
-			<h2 id="description"><?php bloginfo('description'); ?></h2>
+	<header id="page-header" class="row">
+		<hgroup id="site-title-description">
+			<h1 id="site-title"><a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a></h1>
+			<h2 id="site-description"><?php bloginfo('description'); ?></h2>
 		</hgroup>
-		</div>
-		<nav>
+
+
+		<?php
+			$header_image = get_header_image();
+			if ( $header_image ) :
+				if ( function_exists( 'get_custom_header' ) ) {
+					$header_image_width = get_theme_support( 'custom-header', 'width' );
+				} else {
+					$header_image_width = HEADER_IMAGE_WIDTH;
+				}
+				?>
+		<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
+			<?php
+				if ( is_singular() && has_post_thumbnail( $post->ID ) &&
+						( $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), array( $header_image_width, $header_image_width ) ) ) &&
+						$image[1] >= $header_image_width ) :
+					echo get_the_post_thumbnail( $post->ID, 'post-thumbnail' );
+				else :
+					if ( function_exists( 'get_custom_header' ) ) {
+						$header_image_width  = get_custom_header()->width;
+						$header_image_height = get_custom_header()->height;
+					} else {
+						$header_image_width  = HEADER_IMAGE_WIDTH;
+						$header_image_height = HEADER_IMAGE_HEIGHT;
+					}
+					?>
+				<img src="<?php header_image(); ?>" width="<?php echo $header_image_width; ?>" height="<?php echo $header_image_height; ?>" alt="" />
+			<?php endif; ?>
+		</a>
+		<?php endif; ?>
+
+		<?php
+				if ( 'blank' == get_header_textcolor() ) :
+			?>
+				<div class="only-search<?php if ( $header_image ) : ?> with-image<?php endif; ?>">
+				<?php get_search_form(); ?>
+				</div>
+			<?php
+				else :
+			?>
+				<?php get_search_form(); ?>
+			<?php endif; ?>
+
+		<nav id="site-nav">
 			<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Navigation") ) : ?>
-			<div class='menu clear'>
 				<?php wp_nav_menu( array('theme_location' => 'primary', 'container' => false ) ); ?>	
-			</div>
 			<?php endif; ?> 
 		</nav>
-	</header>
-	<?php if ( is_active_sidebar("widget-subheader") ) : ?>
+		<?php if ( is_active_sidebar("widget-subheader") ) : ?>
 		<div id='sub_header' class='row'>
 			<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Sub Header") ) : ?>
 			<?php endif; ?>
 		</div>
-	<?php endif; ?>
-	</div>
+		<?php endif; ?>
+	</header>

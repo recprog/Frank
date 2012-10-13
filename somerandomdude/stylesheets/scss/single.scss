@@ -1,18 +1,21 @@
-@import "variables";
-
+/* TODO: Break out heirarchy */
 #content.single {
-	article {
-		section {
-			ul {
-				list-style: none;
-				font-family: $serif;
-				li {
-					padding-left: 10px;
-					margin-bottom: $row-height; } }
-			img {
-				height: auto; } }
-		#excerpt {
-			border-bottom: 2px solid $color_light;
+	.post-content {
+		ul {
+			list-style: none;
+			font-family: $typeface-primary;
+		}
+		li {
+				margin:0 0 $row-height 10px;
+		} 
+		img {
+			height: auto; 
 		} 
 	}
+	#excerpt {
+		border-bottom: 2px solid $color-light;
+	}
+	#sidebar {
+		margin-top:$row-height*4;
+	} 
 }

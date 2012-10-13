@@ -1,15 +1,15 @@
-#page_bottom {
+#page-bottom {
   background: #5d504f; }
 
-#page_footer {
+#page-footer {
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.5);
   padding-top: 30px;
   padding-bottom: 30px;
   margin-top: 30px;
   color: #f0eceb; }
-  #page_footer a {
+  #page-footer a {
     color: #fffefe; }
-  #page_footer h3 {
+  #page-footer h3 {
     font-size: 17px;
     color: #f0eceb;
     text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.7); }

@@ -1,13 +1,19 @@
-@import "variables";
+.post-group.oneup.large {
+	.title:before {
+		content: 'Featured Article: ';
+		font-style: italic;
+	}
+	.post {
+		p {
+			font-style: italic;
+			font-size: $font-size-xxx-large; 
+		} 
+	}
+}
 
-#content.home {
-	.content-header { display:none; }
-	.content.oneup.large {
-		header h1:before {
-			font-style:italic;
-			color:$color-midtone;
-			margin-right:10px;
-			content:"Featured Article:";
-		}
+/*MOBILE*/
+@media only screen and  (max-width: 767px) {
+	.post-group.oneup.large .post p {
+		font-size: $font-size-x-large; 
 	}
 }
