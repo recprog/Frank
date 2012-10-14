@@ -52,6 +52,7 @@ function frank_build_settings_page() {
 
 	// SET DEFAULT DATA FOR FIRST RUN
 	$frank_defaults = array(
+		'header'						=> true,
 		'title'             => 'Section Title',
 		'caption'           => 'Section Caption',
 		'num_posts'         => 10
@@ -215,10 +216,9 @@ function frank_build_settings_page() {
 
 					// GET EXISTING SECTIONS, IF PRESENT
 					$frank_sections = get_option('_frank_options');
-
+					$frank_updated 	= false;
 					if (!empty($_POST) && wp_verify_nonce($_POST['frank_key'], 'frank_update_home_sections')) {
 
-						$frank_updated 	= false;
 						$sections 		= array();
 
 						foreach($_POST as $key => $value) {
@@ -345,7 +345,7 @@ function frank_build_settings_page() {
 									checked( $value, "section_header" ); 
 									?>
 									/>
-									<label class="section-title">Display section header</label>
+									<label class="section-title inline">Display section header</label>
 								</div>
 
 								<!-- // SECTION TITLE -->

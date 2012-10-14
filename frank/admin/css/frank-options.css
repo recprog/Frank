@@ -217,6 +217,10 @@ label.section-title {
 	font-weight: bold
 }
 
+label.inline {
+	display:inline;
+}
+
 .display-types select,
 .display-types select option {
 	max-width: 180px;

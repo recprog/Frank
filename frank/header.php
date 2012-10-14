@@ -4,7 +4,12 @@
  */
 ?>
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" <?php language_attributes(); ?>>
+<!--[if IE 7 | IE 8]>
+<html class="ie" lang="en-US">
+<![endif]-->
+<!--[if !(IE 7) | !(IE 8)  ]><!-->
+<html <?php language_attributes(); ?>>
+<!--<![endif]-->
 <head>
 	<meta charset="<?php bloginfo('charset'); ?>" />
 	<meta name="generator" content="WordPress <?php bloginfo('version'); ?>" />
