@@ -188,7 +188,7 @@ function frank_build_settings_page() {
 						<div style="clear:both;"></div>
 					</div>
 					<!-- TWEET THIS HANDLE -->
-					<div class="option-container">
+					<div class="option-container" id="frank-tweet-post-handle-container">
 						<label class="feature-title"><?php _e('Twitter Handle', 'frank'); ?></label>
 						<div class="feature">
 							<input type="text"

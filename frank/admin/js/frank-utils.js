@@ -3,6 +3,23 @@
 
 jQuery(document).ready(function(){
 
+    // HIDE TWITTER HANDLE INPUT IF TWEET BUTTON IS NOT ENABLED
+    if (!jQuery('input[name="frank-general-tweet-post-button"]').is(':checked')){
+        jQuery('#frank-tweet-post-handle-container').addClass('disabled');
+    }
+
+    // HIDE/SHOW TWITTER HANDLE INPUT WHEN TWEET BUTTON IS DIS-/ENABLED
+    jQuery('input[name="frank-general-tweet-post-button"]').click(function(){
+
+        var tweetHandleContainer = jQuery('#frank-tweet-post-handle-container');
+        if (jQuery(this).is(':checked')){
+            tweetHandleContainer.removeClass('disabled');
+        }else{
+            tweetHandleContainer.addClass('disabled');
+        }
+
+	});
+
     // SELECT & DESELECT FUNCTIONALITY
     jQuery('.display-categories ul.frank-group li a').live('click',function() {
 
@@ -10,7 +27,6 @@ jQuery(document).ready(function(){
 	    
 	    // SETUP A CONDITIONAL IN VARIABLE TO USE FOR CHECKBOXES
         if(jQuery(this).hasClass('frank-select')) { frank_value = true; } else { frank_value = false; }
-
         jQuery(this).parent().parent().parent().find('input').each(function(){
 
             jQuery(this).attr('checked', frank_value);
