@@ -1,35 +1,34 @@
 
 // LAST UPDATED ON NOVEMBER 13TH, 2012 (FH)
 
-function setContainerDisabledState(container, disabled){
-    container.css({ opacity: disabled ? 0.5 : 1.0 });
+function setContainerEnabledState(container, enabled) {
+    container.css({ opacity: enabled ? 1.0 : 0.5 });
     var formElems = container.find("input");
-    if (disabled){
-        formElems.attr("disabled", "disabled");
-    } else {
+    if (enabled){
         formElems.removeAttr("disabled");
+    } else {
+        formElems.attr("disabled", "disabled");
     }
+}
+
+function registerEnableStateCallback(container, checkboxSelector) {
+    jQuery(checkboxSelector).click(function(){
+        var checked = jQuery(this).is(':checked');
+        setContainerEnabledState(container, checked);
+    });
 }
 
 jQuery(document).ready(function(){
 
-    // HIDE TWITTER HANDLE INPUT IF TWEET BUTTON IS NOT ENABLED
-    if (!jQuery('input[name="frank-general-tweet-post-button"]').is(':checked')){
-        var container = jQuery('#frank-tweet-post-handle-container');
-        setContainerDisabledState(container, true);
-    }
-
-    // HIDE/SHOW TWITTER HANDLE INPUT WHEN TWEET BUTTON IS DIS-/ENABLED
-    jQuery('input[name="frank-general-tweet-post-button"]').click(function(){
-
-        var tweetHandleContainer = jQuery('#frank-tweet-post-handle-container');
-        if (jQuery(this).is(':checked')){
-            setContainerDisabledState(tweetHandleContainer, false);
-        }else{
-            setContainerDisabledState(tweetHandleContainer, true);
-        }
-
-	});
+    var optionalContainers = jQuery.find('.optional-container');
+    jQuery.each(optionalContainers, function(index, value) {
+        var container = jQuery(value);
+        var controllingCheckboxName = container.attr("controlling-checkbox")
+        var controllingCheckboxSelector = 'input[name=\"' + controllingCheckboxName + '\"]';
+        var checked = jQuery(controllingCheckboxSelector).is(':checked');
+        setContainerEnabledState(container, checked);
+        registerEnableStateCallback(container, controllingCheckboxSelector);
+    });
 
     // SELECT & DESELECT FUNCTIONALITY
     jQuery('.display-categories ul.frank-group li a').live('click',function() {
