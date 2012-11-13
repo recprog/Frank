@@ -331,13 +331,15 @@ function frank_build_settings_page() {
 
 							<div class="top-options-container">
 	
-								<?php $the_type = $frank_section['display_type']; ?>
-								
+								<?php
+								$the_type = $frank_section['display_type'];
+								$checkbox_name = "frank-section-header-" . isset($frank_section['default']) ? 'default' : $frank_section_id;
+								?>
 
 								<!-- // SECTION HEADER TOGGLE -->
 								<div class="display-headers">
 									<input type="checkbox"
-								   name="frank-section-header-<?php echo (isset($frank_section['default']) ? 'default' : $frank_section_id); ?>"
+								   name=$checkbox_name
 									class="checkbox"
 									value="section_header"
 									<?php 
@@ -349,7 +351,7 @@ function frank_build_settings_page() {
 								</div>
 
 								<!-- // SECTION TITLE -->
-								<div class="display-titles">
+								<div class="display-titles optional-container" controlling-checkbox=$checkbox_name>
 									<label class="section-title"><?php _e('Section Title:', 'frank'); ?></label>
 									<input type="text"
 										   class="text text-title"
@@ -387,7 +389,7 @@ function frank_build_settings_page() {
 							<div class="bottom-options-container">
 								
 								<!-- // SECTION CAPTIONS -->
-								<div class="display-captions">
+								<div class="display-captions optional-container" controlling-checkbox=$checkbox_name>
 									<label class="section-title"><?php _e('Section Caption:', 'frank'); ?></label>
 									<textarea name="frank-section-caption-<?php echo (isset($frank_section['default']) ? 'default' : $frank_section_id); ?>" class="textarea"><?php echo !isset($frank_section['default']) ? stripslashes($frank_section['caption']) : $frank_defaults['caption']; ?></textarea>
 								</div>
