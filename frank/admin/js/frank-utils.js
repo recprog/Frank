@@ -30,14 +30,11 @@ jQuery(document).ready(function(){
         registerEnableStateCallback(container, controllingCheckboxSelector);
     });
 
-    // SELECT & DESELECT FUNCTIONALITY
-    jQuery('.display-categories ul.frank-group li a').live('click',function() {
+    // SELECT ALL & DESELECT ALL (IN "Categories to display" BOX)
+    jQuery('.display-categories a.select-button').live('click',function() {
 
-	    var frank_value;
-	    
-	    // SETUP A CONDITIONAL IN VARIABLE TO USE FOR CHECKBOXES
-        if(jQuery(this).hasClass('frank-select')) { frank_value = true; } else { frank_value = false; }
-        jQuery(this).parent().parent().parent().find('input').each(function(){
+	    var frank_value = jQuery(this).hasClass('frank-select')
+        jQuery(this).closest(".categories-container").find('input').each(function(){
 
             jQuery(this).attr('checked', frank_value);
 
