@@ -31,7 +31,7 @@ jQuery(document).ready(function(){
     });
 
     // SELECT ALL & DESELECT ALL (IN "Categories to display" BOX)
-    jQuery('.display-categories a.select-button').live('click',function() {
+    jQuery('.display-categories a.select-button').click(function() {
 
 	    var frank_value = jQuery(this).hasClass('frank-select')
         jQuery(this).closest(".categories-container").find('input').each(function(){
@@ -110,7 +110,7 @@ jQuery(document).ready(function(){
     });
 
     // DELETE SECTION BY CLICKING ON 'X' IN THE UPPER RIGHT HAND CORNER OF BLOCK
-    jQuery('a.frank-content-section-delete').live('click',function(){
+    jQuery('a.frank-content-section-delete').click(function(){
 	    
 	    // CONFIRMATION MESSAGE & FUNCTIONALITY TO DELETE CONTENT SECTIONS
         if(confirm('Are you sure you want to delete this Content Section?')) {
