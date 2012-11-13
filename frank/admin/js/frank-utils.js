@@ -1,11 +1,22 @@
 
-// LAST UPDATED AT 3AM ON SEPTEMBER 25TH, 2012
+// LAST UPDATED ON NOVEMBER 13TH, 2012 (FH)
+
+function setContainerDisabledState(container, disabled){
+    container.css({ opacity: disabled ? 0.5 : 1.0 });
+    var formElems = container.find("input");
+    if (disabled){
+        formElems.attr("disabled", "disabled");
+    } else {
+        formElems.removeAttr("disabled");
+    }
+}
 
 jQuery(document).ready(function(){
 
     // HIDE TWITTER HANDLE INPUT IF TWEET BUTTON IS NOT ENABLED
     if (!jQuery('input[name="frank-general-tweet-post-button"]').is(':checked')){
-        jQuery('#frank-tweet-post-handle-container').addClass('disabled');
+        var container = jQuery('#frank-tweet-post-handle-container');
+        setContainerDisabledState(container, true);
     }
 
     // HIDE/SHOW TWITTER HANDLE INPUT WHEN TWEET BUTTON IS DIS-/ENABLED
@@ -13,9 +24,9 @@ jQuery(document).ready(function(){
 
         var tweetHandleContainer = jQuery('#frank-tweet-post-handle-container');
         if (jQuery(this).is(':checked')){
-            tweetHandleContainer.removeClass('disabled');
+            setContainerDisabledState(tweetHandleContainer, false);
         }else{
-            tweetHandleContainer.addClass('disabled');
+            setContainerDisabledState(tweetHandleContainer, true);
         }
 
 	});
