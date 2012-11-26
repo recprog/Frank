@@ -1,5 +1,4 @@
 body {
-	@extend .reset;
 	font: 62.5%/1.6 $typeface-primary;
 	background: $color-highlight;
 	color: $color-off-black;
@@ -18,18 +17,8 @@ img.noshadow { box-shadow: none !important; }
 
 /*Anchor tags*/
 a {
-
-	/*Reset*/
-	margin:0;
-  padding:0;
-  font-size:100%;
-  vertical-align:baseline;
-  background:transparent;
-
 	color: $color-accent;
 	text-decoration: none;
-	
-	img { border: none;  } 
 }
 a:hover { color: $color-accent-alt; }
 
@@ -148,8 +137,6 @@ pre { /*Merge with Blockquote?*/
 
 /*Tables*/
 table {
-	border-collapse: separate;
-	border-spacing: 0;
 	font-size: $font-size-small;
 	margin: $row-height 0; 
 }
@@ -166,7 +153,7 @@ th {
 
 /*Ordered & Unordered lists*/
 ul, ol {
-	@extend .reset;
+	padding:0;
 	list-style: disc;
 	margin: $row-height 0 $row-height $gutter-width;
 	
@@ -176,15 +163,14 @@ ol { list-style: decimal; }
 
 /*Definition lists*/
 dl {
-	margin: $row-height 0;
-	padding-top: 5px;
+	margin: $row-height+5 0;
+	padding:0;
 	font-family:$typeface-primary;
 }
 dt, dd {
 	font-size: $font-size-x-small;
 }
 dt {
-
 	font-weight: $bold;
 	margin-top: $row-height; 
 	&:first-child {
@@ -210,8 +196,6 @@ em { font-style: italic; }
     text-overflow: ellipsis;
     -o-text-overflow: ellipsis;
 }
-
-
 
 /*Wordpress Classes*/
 .alignleft, .alignright, .aligncenter {
@@ -250,12 +234,9 @@ em { font-style: italic; }
 	}
 }
 
-.gallery-caption {
-	text-rendering: optimizelegibility; 
-}
-
+/*TODO: Style sticky post*/
 .sticky {
-	text-rendering: optimizelegibility; 
+	
 }
 
 .bypostauthor {
@@ -273,20 +254,19 @@ em { font-style: italic; }
 		margin-right: $gutter-width;
 		@include column-based-width(2, -20); 
 	} 
-}
-
-.pagination.small {
-	font: $font-size-small $typeface-secondary;
-	.title {
-		font-weight:$bold;
-		margin-right:15px;
-	}
-	a {
-		margin:0;
-		border: 1px $color-light solid;
-		color:$color-midtone;
-		padding: 4px 6px;
-		border-radius:2px;
+	&.small {
+		font: $font-size-small $typeface-secondary;
+		.title {
+			font-weight:$bold;
+			margin-right:15px;
+		}
+		a {
+			margin:0;
+			border: 1px $color-light solid;
+			color:$color-midtone;
+			padding: 4px 6px;
+			border-radius:2px;
+		}
 	}
 }
 
@@ -319,6 +299,7 @@ ul.metadata.horizontal {
   	}
 	}
 }
+
 ul.metadata.vertical {
 	margin-top: 5px;
 	li {
@@ -329,6 +310,7 @@ ul.metadata.vertical {
 		margin-bottom: 15px; 
 	} 
 }
+
 dl.metadata {
 	@extend .reset;
 	text-align: right;
@@ -342,10 +324,30 @@ dl.metadata {
 	}
 }
 
-.post {
-	.post-title {
-		font-size: $font-size-large;
+
+
+.post-title {
+	font-size: $font-size-large;
+}
+
+.post-header { 
+	margin-bottom: $row-height; 
+}
+.post-content {
+	font: #{$font-size-medium}/1.6 #{$typeface-primary};
+	p, ul li, ol li, dt, dd, blockquote { 
+		font-size: $font-size-medium; 
 	}
+	code, small { 
+		font-size: $font-size-small; 
+	}
+	img {
+		max-width: 100%;
+		@include default-shadow(); 
+	}
+}
+
+.post, .page {
 	margin: $row-height * 4 0;
 	&:first-child { 
 		margin-top: 0; 
@@ -353,33 +355,18 @@ dl.metadata {
 	&:last-child { 
 		margin-bottom: 0;
 	}
-	.post-header { margin-bottom: $row-height; }
-	.post-content {
-		font: #{$font-size-medium}/1.6 #{$typeface-primary};
-		p, ul li, ol li, dt, dd, blockquote { 
-			font-size: $font-size-medium; 
+	&.leftaside {
+		.post-content {
+			@extend .clearfix; 
+			@extend .column;
+			width: $nine-columns;
+			@extend .push-three;
 		}
-		code, small { 
-			font-size: $font-size-small; 
+		.post-info {
+			@extend .column;
+			width: $three-columns;
+			@extend .pull-nine;
 		}
-		img {
-			max-width: 100%;
-			@include default-shadow(); 
-		}
-	}
-}
-
-.post.leftaside {
-	.post-content {
-		@extend .clearfix; 
-		@extend .column;
-		width: $nine-columns;
-		@extend .push-three;
-	}
-	.post-info {
-		@extend .column;
-		width: $three-columns;
-		@extend .pull-nine;
 	}
 }
 
@@ -396,38 +383,38 @@ dl.metadata {
 #content.page .post img { box-shadow: none !important; }
 		
 /*Buttons*/		
-button, .button, input[type=submit], a.button {
+button, .button, input[type=submit] {
 	display: inline-block;
 	background: $color-light;
 	color: $color-midtone;
 	padding: 8px 10px;
 	border-radius: 3px;
 	font: #{$bold} #{$font-size-small} #{$typeface-secondary};
-
 	text-align: center;
 	text-shadow:0px 1px 0px rgba(255,254,254,.3);
 	border: 1px solid rgba(18, 7, 6, 0.2);
 	box-shadow: inset 0px -1px 1px rgba(18, 7, 6, 0.1), inset 0px 1px 1px rgba(255, 253, 253, 0.4); 
-}
-button:hover, .button:hover, input[type=submit]:hover {
-	background: $color-midtone-light;
+	&:hover {
+		background: $color-midtone-light;
 	color: $color-highlight;
 	border: 1px solid rgba(18, 7, 6, 0.5);
 	text-shadow:0px -1px 0px rgba(5,0,0,.3);
 	box-shadow: inset 0px -1px 1px rgba(18, 7, 6, 0.1), inset 0px 1px 1px rgba(255, 253, 253, 0.2); 
+	}
 }
+
 button.alt, .button.alt, input[type=submit].alt {
 	background: $color-accent;
 	color: $color-highlight; 
 	text-shadow:0px -1px 0px rgba(5,0,0,.3);
-}
-button.alt:hover, .button.alt:hover, input[type=submit].alt:hover {
-	background: $color-accent-alt;
-	color: $color-highlight;
-	border: 1px solid rgba(18, 7, 6, 0.5); 
+	&:hover {
+		background: $color-accent-alt;
+		color: $color-highlight;
+		border: 1px solid rgba(18, 7, 6, 0.5); 
+	}
 }
 
-button.small, .button.small, a.button.small {
+button.small, .button.small {
 	font-size: $font-size-xx-small;
 	padding: 4px 8px;
 }
@@ -439,12 +426,6 @@ button.small, .button.small, a.button.small {
 	box-sizing:border-box; 
 	-moz-box-sizing:border-box;
 }
-
-/*404*/
-#content.fourohfour .main {
-	margin-bottom:$row-height*2;
-}
-
 	
 #search {
 	float: right;
@@ -455,11 +436,16 @@ button.small, .button.small, a.button.small {
 	} 
 }
 		
-		
-		
 /*MOBILE*/
 @media only screen and  (max-width: 767px) {
 	
+	button, .button, input[type=submit] {
+		display:block;
+		width:100% !important;
+		box-sizing:border-box;
+		margin:$row-height 0;
+	}
+
 	/*Typography*/
 	h1 { font-size: $font-size-x-large; }
 	h2 { font-size: $font-size-large; }
@@ -477,15 +463,15 @@ button.small, .button.small, a.button.small {
 			background: none;
 			margin-right: 15px; 
 			text-align:left;
-		}
-		li.last, li:last-child {
-			margin-right: 0; 
-		} 
-		li:first-child {
-			margin-left:0;
+			&.last, &:last-child {
+				margin-right: 0; 
+			} 
+			&:first-child {
+				margin-left:0;
+			}
 		}
 	}
-	#content.single article section {
+	#content.single .post {
 		.flush-left {
 			margin-left: 0% !important;
 		}

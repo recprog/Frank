@@ -4,4 +4,9 @@
 	<li class="categories"><?php the_category(', '); ?></li>
 	<li class="tags"><?php the_tags('', ' '); ?></li>
 	<li class="comments"><?php comments_popup_link('No comments', '1 comment', '% comments'); ?></li>	
+	<?php
+		if (strlen(get_the_title())==0) :
+	?>
+		<li class="permalink"><a href="<?php the_permalink() ?>">Permalink</a></li>
+	<?php endif; ?>
 </ul>

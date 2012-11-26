@@ -21,10 +21,17 @@ add_filter( 'style_loader_src', 'frank_remove_script_version', 15, 1 );
 
 register_nav_menus(array('primary' => __( 'Primary Navigation', 'frank-theme' )));
 
+if (!is_admin()) {  
+	add_action('init', 'frank_enqueue_styles');  
+} 
+
 add_action( 'init', 'frank_admin_assets' );
 add_action( 'admin_menu', 'frank_admin_menu' );
 add_action('wp_footer', 'frank_footer');
 add_action('wp_head', 'frank_header');
+add_action( 'widgets_init', 'frank_widgets');
+add_action('wp_head', 'frank_add_ie_js_fixes');
+
 add_editor_style();
 
 $custom_header_support = array(
@@ -37,7 +44,6 @@ $custom_header_support = array(
 	
 	add_theme_support( 'custom-header', $custom_header_support );
 
-if ( function_exists( 'add_theme_support' ) ) { 
   add_theme_support( 'automatic-feed-links' );
 	
   add_theme_support( 'post-thumbnails' ); 
@@ -50,9 +56,8 @@ if ( function_exists( 'add_theme_support' ) ) {
   add_image_size( 'four-up-thumbnail', 212, 100, true);
 
   add_theme_support('custom-background', array('default-color' => 'fffefe'));
-}
 
-if ( function_exists('register_sidebar') ) {
+function frank_widgets() {
 	register_sidebar(array(
 	'name' => 'Sub Header',
 	'id' => 'widget-subheader',
@@ -111,8 +116,7 @@ if ( function_exists('register_sidebar') ) {
 	'before_title' => '<h3 class="widget-title">',
 	'after_title' => '</h3>',
 	));
-	
-}	
+}
 
 function frank_remove_script_version( $src ){
 	$parts = explode( '?', $src );
@@ -360,17 +364,25 @@ if (!function_exists('frank_enqueue_styles')) {
 	function frank_enqueue_styles() {
 		global $wp_styles;
 		
-		wp_register_style('frank_stylesheet', get_stylesheet_directory_uri().'/style.css', null, '0.1', 'all' );
-		wp_register_style('frank_stylesheet_ie', get_stylesheet_directory_uri().'/ie.css', null, '0.1', 'all' );
-		wp_register_style('frank_stylesheet_ie7', get_stylesheet_directory_uri().'/ie7.css', null, '0.1', 'all' );
+		wp_register_style('frank_stylesheet', get_stylesheet_directory_uri().'/style.css', null, '0.9', 'all' );
+		wp_register_style('frank_stylesheet_ie', get_stylesheet_directory_uri().'/ie.css', null, '0.9', 'all' );
 	
 		$wp_styles->add_data('frank_stylesheet_ie', 'conditional', 'IE');
-		$wp_styles->add_data('frank_stylesheet_ie7', 'conditional', 'IE 7');
 	
 		wp_enqueue_style('frank_stylesheet');
 		wp_enqueue_style('frank_stylesheet_ie');
-		wp_enqueue_style('frank_stylesheet_ie7');
 	}
 }
+
+function frank_add_ie_js_fixes () {
+    echo '<!--[if lt IE 9]>';
+    echo '<script src="',  get_stylesheet_directory_uri(), '/js/html5.js"></script>';
+    echo '<![endif]-->';
+
+    echo '<!--[if lt IE 7]>';
+		echo '<script src="',  get_stylesheet_directory_uri(), '/js/ie7.js"></script>';
+		echo '<![endif]-->';
+}
+
 
 ?>

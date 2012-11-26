@@ -7,9 +7,6 @@
 		<?php the_content('Read On&hellip;'); ?>
 	</section>
 	<footer class="post-info">
-		<ul class='metadata horizontal clear'>
-			<li class='time'><time datetime="<?php the_time('Y-m-d'); ?>" itemprop="datePublished"><?php the_time(get_option('date_format')); ?></time></li>										
-			<li class='comments'><?php comments_popup_link('No comments', '1 comment', '% comments'); ?></li>
-		</ul>
+		<?php get_template_part('partials/post-metadata', 'horizontal'); ?>
 	</footer>
 </article>

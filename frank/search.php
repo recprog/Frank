@@ -19,16 +19,14 @@
 		<?php else : ?>
 		<div class="post">
 		
-			<h2>Page Not Found</h2>
+			<h2>No Results Were Found</h2>
 			
-			<p>Looks like the page you're looking for isn't here anymore. Try using the search box below.</p>
+			<p>There were no matches for your search. Please try a different search term.</p>
 			
-			<?php get_search_form(true); ?>		
 		</div>
 		<?php endif; ?>
 		</div>
 	</div>
-	<?php get_sidebar(); ?>
 	</div>
 </div>
 

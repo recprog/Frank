@@ -1,42 +1,4 @@
-<?php
-/**
- * @package Frank
- */
-?>
-
-<div id='comments-container'>
-	<?php if ( post_password_required() ) : ?>
-		<p class="nocomments">This post is password protected. Enter the password to view comments.</p> ?></p>
-	</div>
-	<?php
-			return;
-		endif;
-		$oddcomment = 'class="alt" ';
-	?>
-
-
-<?php if ( have_comments() ) : ?>
-	<header id="comments-header">
-		<h1 id="comments-title"><?php comments_number('No Comments', 'One Comment', '% Comments' );?></h1>
-	</header>
-	<ul id="comments">
-	<?php wp_list_comments( array( 'callback' => 'frank_comment' ) ); ?>		
-	</ul>
-	<?php paginate_comments_links(); ?>	
-
-	<?php
-		elseif ( ! comments_open() && ! is_page() && post_type_supports( get_post_type(), 'comments' ) ) :
-	?>
-		<p class="no_comments">Comments are closed.</p>
-	<?php elseif (comments_open()) : ?>
-		<p class="no_comments">Be the first to leave a comment. Don&rsquo;t be shy.</p>
-<?php endif; ?>
-
-
-<?php if ('open' == $post->comment_status) : ?>
-
-		
-		<?php if ( get_option('comment_registration') && !$user_ID ) : ?>
+<?php if ( get_option('comment_registration') && !$user_ID ) : ?>
 		<p>You must be <a href="<?php echo get_option('siteurl'); ?>/wp-login.php?redirect_to=<?php echo urlencode(get_permalink()); ?>">logged in</a> to post a comment.</p>
 
 		<?php else : ?>		
@@ -60,6 +22,4 @@
 		
 		comment_form(array('id_form' => 'comment-form', 'logged_in_as' => $logged_in_as, 'comment_notes_before' => '', 'comment_notes_after' => $comment_notes_after, 'title_reply' => 'Join the Discussion', 'fields' => $fields, 'comment_field' => $comment_field)); 
 		?>
-		
-	<?php endif; endif; ?>
-</div>
+<?php endif; ?>

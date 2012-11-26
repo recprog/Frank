@@ -8,7 +8,7 @@
 <div id="page-bottom">
 	<footer id='page-footer' class='container'>	
 		<div class="row">
-		<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Footer") ) : ?>
+		<?php if ( !dynamic_sidebar("Footer") ) : ?>
 			
 		<?php endif; ?>
 		</div>

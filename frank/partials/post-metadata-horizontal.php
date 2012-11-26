@@ -3,4 +3,9 @@
 	<li class='author'>By <?php the_author_link(); ?></li>	
 	<li>Filed Under <?php the_category(', '); ?></li>											
 	<li class='comments'><?php comments_popup_link('No comments', '1 comment', '% comments'); ?></li>
+	<?php
+		if (strlen(get_the_title())==0) :
+	?>
+		<li class="permalink"><a href="<?php the_permalink() ?>">Permalink</a></li>
+	<?php endif; ?>
 </ul>

@@ -19,7 +19,7 @@ Template Name: Full-spread Template With Footer
 			</section>
 			<footer>
 				<div id='post-footer' class='clear'>
-					<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Post Footer") ) : ?>
+					<?php if ( !dynamic_sidebar("Post Footer") ) : ?>
 					<?php endif; ?>
 				</div>
 			</footer>

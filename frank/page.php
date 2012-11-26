@@ -12,11 +12,12 @@
 			<header class="post-header">
 				<h1 class="post-title"><?php the_title(); ?></h1>
 			</header>
-			<section class="post-content">
+			<section class="post-content clearfix">
 				<?php the_content(); ?>
 			</section>
 		</article>
 		<?php endwhile; endif; ?>
+		<?php comments_template(); ?>
 	</div>
 	<?php get_sidebar(); ?>
 	</div>

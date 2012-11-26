@@ -10,25 +10,107 @@
 	font-size: $font-size-small;
 }
 #site-nav {
-	@extend .clearfix;
+	.menu {
+		@extend .clearfix;
+	}
+	
 	margin:$row-height auto $row-height * 2 auto; 
 	border-bottom:$border-break;
 	ul { 
-		margin-left: 0;
-		list-style: none; 
+		margin:0 0 $row-height 0;
+		list-style: none;
+		ul {
+			background:#fff; /* Adding a background makes the dropdown work properly in IE7+. Make this as close to your page's background as possible (i.e. white page == white background). */
+			background:rgba(255,255,255,0); /* But! Let's make the background fully transparent where we can, we don't actually want to see it if we can help it... */
+			list-style:none;
+			position:absolute;
+			z-index:999;
+			margin:0;
+			left:-9999px; /* Hide off-screen when not needed (this is more accessible than display:none;) */
+			
+			li {
+				 /* Introducing a padding between the li and the a give the illusion spaced items */
+				float:none;
+				margin:0;
+				border-bottom:1px solid $color-highlight;
+				&:first-child {
+					margin-top:10px;
+				}
+				&:last-child {
+					border-bottom:0;
+					margin-bottom:10px;
+				}
+			}
+			a {
+				padding:5px 10px;
+				white-space:nowrap; /* Stop text wrapping and creating multi-line dropdown items */
+			}
+			ul {
+				position:relative;
+				margin-top:0;
+				li:first-child {
+					margin-top:0;
+				}
+				li:last-child {
+					margin-bottom:0;
+				}
+				a {
+					padding:7px 30px 7px 30px;
+				}
+			}
+		}
 	}
-	ul ul { display: none; }
+	/*TODO: Make sub-nav work*/
+	/*ul ul { display: none; }*/
 	li {
 		@extend .reset;
-		margin: 0 20px $row-height 0px;
+		margin: 0 10px 0 0;
 		float: left;
+		position:relative;
+		&:hover {
+			border-top:1px solid $color-midtone;
+			margin-top:-1px;
+			ul {
+				left:0; /* Bring back on-screen when needed */
+
+				border-top:2px solid $color-dark;
+				border-bottom:1px solid $color-midtone;
+				background:lighten($color-light, 3%);
+				a:hover  {
+					background:darken($color-light, 5%);
+				}
+					
+				a {
+					padding:7px 30px 7px 10px;
+					white-space:nowrap; /* Stop text wrapping and creating multi-line dropdown items */
+				}
+				ul {
+					border:0;
+					a {
+						padding:7px 30px 7px 30px;
+					}
+				}
+			}
+			li {
+				margin-top:0;
+				border:none;
+			}
+
+		}
+
 	}
 	a {
+		padding:15px 10px;
 		display: block;
 		color: $color-off-black;
 		font: #{$bold} #{$font-size-x-small} #{$typeface-secondary};
+		&:hover { 
+			color: $color-midtone; 
+		} 	
 	}
-	a:hover { color: $color-midtone; } 	
+
+
+
 }
 #page-header {
 	position: relative;
@@ -56,5 +138,9 @@
 			border-bottom: 0;
 		}
 	}
-
+	#site-nav {
+		ul ul {
+			display:none;
+		}
+	}
 }

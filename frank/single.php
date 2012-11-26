@@ -16,7 +16,7 @@
 				<div id='excerpt'><?php the_excerpt(); ?></div>
 			<?php endif; ?>
 			<div id='content-main' class='row'>
-				<section class='post-content'>
+				<section class='post-content clearfix'>
 					<?php the_post_thumbnail( 'default-thumbnail' ); ?>
 					<?php the_content(); ?>
 					<?php wp_link_pages('before=<div class="pagination small"><span class="title">Pages:</span>&after=</div>'); ?>
@@ -29,14 +29,14 @@
 					<div id="previous-post" class="clearfix">
 						<?php previous_post_link('%link', '<nav><span class="arrow">%title</span></nav><p>%title</p>'); ?>
 					</div>
-					<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Post Left Aside') ) : ?>
+					<?php if ( !dynamic_sidebar('Post Left Aside') ) : ?>
 					<?php endif; ?>
 				</div>
 			</div>
 			<?php if (is_active_sidebar("widget-postfooter")) : ?>
 			<footer id="post-footer" class='row'>				
-					<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Post Footer') ) : ?>
-					<?php endif; ?>
+				<?php if ( !dynamic_sidebar('Post Footer') ) : ?>
+				<?php endif; ?>
 			</footer>
 			<?php endif; ?>	
 		</article>

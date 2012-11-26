@@ -20,19 +20,9 @@
 		<?php wp_title('&mdash;',true,'right'); ?>
  		<?php bloginfo('name'); ?>
 	</title>
-
-	<?php frank_enqueue_styles(); ?>
 	
-	<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="<?php get_feed_link( 'rss2' ) ?>" />
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 	
-	<!--[if lte IE 8]>
-	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
-	<![endif]-->
-	
-	<!--[if lt IE 7]>
-	<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE7.js"></script>
-	<![endif]-->
 	<?php if ( is_singular() ) wp_enqueue_script( 'comment-reply' ); ?>
 	<?php wp_head(); ?>	
 </head>
@@ -90,13 +80,13 @@
 			<?php endif; ?>
 
 		<nav id="site-nav">
-			<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Navigation") ) : ?>
+			<?php if ( !dynamic_sidebar("Navigation") ) : ?>
 				<?php wp_nav_menu( array('theme_location' => 'primary', 'container' => false ) ); ?>	
 			<?php endif; ?> 
 		</nav>
 		<?php if ( is_active_sidebar("widget-subheader") ) : ?>
 		<div id='sub_header' class='row'>
-			<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Sub Header") ) : ?>
+			<?php if ( !dynamic_sidebar("Sub Header") ) : ?>
 			<?php endif; ?>
 		</div>
 		<?php endif; ?>
