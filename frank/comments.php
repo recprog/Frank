@@ -22,10 +22,13 @@
 	<ul id="comments">
 	<?php wp_list_comments( array( 'callback' => 'frank_comment' ) ); ?>		
 	</ul>
+	
+	<?php if ((int) get_option('page_comments') === 1 && !is_null(paginate_comments_links(array('echo' => false))) ): ?>
 	<div class="pagination small">		
 		<span class="title">Comments:</span>
-		<?php paginate_comments_links(); ?>	
+		<?php paginate_comments_links('prev_text=Previous&next_text=Next'); ?>	
 	</div>
+	<?php endif; ?>
 	
 	<?php
 		elseif ( ! comments_open() && ! is_page() && post_type_supports( get_post_type(), 'comments' ) ) :
