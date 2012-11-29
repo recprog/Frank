@@ -2,6 +2,8 @@
 
 #comments-container {
 	margin-top: $row-height * 4;
+	.pagination {		margin-bottom:$row-height*2;
+	}
 }
 
 .no_comments, .comments_closed {
@@ -58,6 +60,9 @@
 	.comment:not(:first-child) {
 		margin:$row-height*4 0;
 	}
+	.comment:last-child {
+		margin-bottom:0;
+	}
 	.comment.bypostauthor  {
 		margin:$row-height*3 0;
 	}
@@ -77,6 +82,7 @@
 
 /*TODO reference IDs instead of tags*/
 #respond {
+	margin-top:$row-height*4;
 	label { display: none; }
 	input[type=text], textarea {
 		-moz-box-sizing: border-box;

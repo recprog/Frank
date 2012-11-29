@@ -3,7 +3,7 @@
  * @package Frank
  */
 /*
-Template Name: Full-spread Template With Footer
+Template Name: Full-spread Template With Post Footer
 */
 ?>
 <?php get_header(); ?>

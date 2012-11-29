@@ -1418,6 +1418,7 @@ button, .button, input[type=submit] {
   background: #e5dedc;
 }
 #site-nav li:hover ul a {
+  font-weight: 400;
   padding: 7px 30px 7px 10px;
   white-space: nowrap;
   /* Stop text wrapping and creating multi-line dropdown items */
@@ -1426,7 +1427,7 @@ button, .button, input[type=submit] {
   border: 0;
 }
 #site-nav li:hover ul ul a {
-  padding: 7px 30px 7px 30px;
+  padding: 7px 30px 7px 15px;
 }
 #site-nav li:hover li {
   margin-top: 0;
@@ -1712,6 +1713,9 @@ button, .button, input[type=submit] {
 #comments-container {
   margin-top: 60px;
 }
+#comments-container .pagination {
+  margin-bottom: 30px;
+}
 
 .no_comments, .comments_closed {
   margin: 30px 0;
@@ -1758,6 +1762,9 @@ button, .button, input[type=submit] {
 #comments .comment:not(:first-child) {
   margin: 60px 0;
 }
+#comments .comment:last-child {
+  margin-bottom: 0;
+}
 #comments .comment.bypostauthor {
   margin: 45px 0;
 }
@@ -1775,6 +1782,9 @@ button, .button, input[type=submit] {
 }
 
 /*TODO reference IDs instead of tags*/
+#respond {
+  margin-top: 60px;
+}
 #respond label {
   display: none;
 }

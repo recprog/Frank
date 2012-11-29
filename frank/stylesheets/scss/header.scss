@@ -71,6 +71,7 @@
 			border-top:1px solid $color-midtone;
 			margin-top:-1px;
 			ul {
+
 				left:0; /* Bring back on-screen when needed */
 
 				border-top:2px solid $color-dark;
@@ -81,13 +82,14 @@
 				}
 					
 				a {
+					font-weight: $normal;
 					padding:7px 30px 7px 10px;
 					white-space:nowrap; /* Stop text wrapping and creating multi-line dropdown items */
 				}
 				ul {
 					border:0;
 					a {
-						padding:7px 30px 7px 30px;
+						padding:7px 30px 7px 15px;
 					}
 				}
 			}
