@@ -374,14 +374,14 @@ table {
   min-width: 0;
 }
 
-.column, .post.leftaside .post-content, .page.leftaside .post-content, .post.leftaside .post-info, .page.leftaside .post-info, #content-primary, .columns {
+.column, .post.leftaside .post-content, .type-page.leftaside .post-content, .post.leftaside .post-info, .type-page.leftaside .post-info, #content-primary, .columns {
   margin-left: 4.4%;
   float: left;
   min-height: 1px;
   position: relative;
 }
 
-.column:first-child, .post.leftaside .post-content:first-child, .page.leftaside .post-content:first-child, .post.leftaside .post-info:first-child, .page.leftaside .post-info:first-child, #content-primary:first-child, .columns:first-child {
+.column:first-child, .post.leftaside .post-content:first-child, .type-page.leftaside .post-content:first-child, .post.leftaside .post-info:first-child, .type-page.leftaside .post-info:first-child, #content-primary:first-child, .columns:first-child {
   margin-left: 0;
 }
 
@@ -531,7 +531,7 @@ table {
   left: 17.4%;
 }
 
-.push-three, .post.leftaside .post-content, .page.leftaside .post-content {
+.push-three, .post.leftaside .post-content, .type-page.leftaside .post-content {
   left: 26.1%;
 }
 
@@ -591,7 +591,7 @@ table {
   right: 69.6%;
 }
 
-.pull-nine, .post.leftaside .post-info, .page.leftaside .post-info {
+.pull-nine, .post.leftaside .post-info, .type-page.leftaside .post-info {
   right: 78.3%;
 }
 
@@ -605,16 +605,16 @@ img, object, embed, video {
 }
 
 /* Nicolas Gallagher's micro clearfix */
-.row:before, .row:after, .clearfix:before, .post.leftaside .post-content:before, .page.leftaside .post-content:before, .clearfix:after, .post.leftaside .post-content:after, .page.leftaside .post-content:after {
+.row:before, .row:after, .clearfix:before, .post.leftaside .post-content:before, .type-page.leftaside .post-content:before, .clearfix:after, .post.leftaside .post-content:after, .type-page.leftaside .post-content:after {
   content: "";
   display: table;
 }
 
-.row:after, .clearfix:after, .post.leftaside .post-content:after, .page.leftaside .post-content:after {
+.row:after, .clearfix:after, .post.leftaside .post-content:after, .type-page.leftaside .post-content:after {
   clear: both;
 }
 
-.row, .clearfix, .post.leftaside .post-content, .page.leftaside .post-content {
+.row, .clearfix, .post.leftaside .post-content, .type-page.leftaside .post-content {
   zoom: 1;
 }
 
@@ -1125,19 +1125,19 @@ dl.metadata {
   box-shadow: 0px 0px 8px rgba(18, 7, 6, 0.3);
 }
 
-.post, .page {
+.post, .type-page {
   margin: 60px 0;
 }
-.post:first-child, .page:first-child {
+.post:first-child, .type-page:first-child {
   margin-top: 0;
 }
-.post:last-child, .page:last-child {
+.post:last-child, .type-page:last-child {
   margin-bottom: 0;
 }
-.post.leftaside .post-content, .page.leftaside .post-content {
+.post.leftaside .post-content, .type-page.leftaside .post-content {
   width: 73.9%;
 }
-.post.leftaside .post-info, .page.leftaside .post-info {
+.post.leftaside .post-info, .type-page.leftaside .post-info {
   width: 21.679%;
 }
 
