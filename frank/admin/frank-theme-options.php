@@ -37,6 +37,32 @@ function frank_admin_tabs($current = 'general') {
 }
 }
 
+// OPTIONS HELPER FUNCTIONS
+
+if(!function_exists('frank_post_value_or_default')) {
+  function frank_post_value_or_default($val_name, $default) {
+
+    $val = isset($_POST[$val_name]) ? $_POST[$val_name] : $default;
+    switch (gettype($default)) {
+      case "boolean":
+        if (is_string($val)) {
+          return $val != "";
+        }
+        return (bool)$val; // boolval() only exists in PHP >= 5.5.0
+      case "integer":
+        return intval($val);
+      case "string":
+        return strval($val);
+      case "double":
+        return doubleval($val);
+      case "array":
+        return is_array($val) ? $val : $default;
+    }
+    // We should never reach this point
+    return $val;
+  }
+}
+
 // BUILD THE CONTENT THAT DISPLAYS IN THEME SETTINGS
 if (!function_exists('frank_build_settings_page')) {
 function frank_build_settings_page() {
@@ -90,18 +116,17 @@ function frank_build_settings_page() {
 					$frank_general = get_option('_frank_options');
 
 					if (!empty($_POST) && wp_verify_nonce($_POST['frank_general_key'], 'frank_update_general')) {
-						$frank_general['header']					= (isset($_POST['frank-general-header'])) ? $_POST['frank-general-header'] : '';
-						$frank_general['footer']					= (isset($_POST['frank-general-footer'])) ? $_POST['frank-general-footer'] : '';
-						$frank_general['tweet_post_button']			= (isset($_POST['frank-general-tweet-post-button'])) ? $_POST['frank-general-tweet-post-button'] : false;
-						$frank_general['tweet_post_attribution']	= (isset($_POST['frank-general-tweet-post-attribution'])) ? $_POST['frank-general-tweet-post-attribution']: '';
+					  $frank_general['header'] = frank_post_value_or_default('frank-general-header', '');
+					  $frank_general['footer'] = frank_post_value_or_default('frank-general-footer', '');
+					  $frank_general['tweet_post_button'] = frank_post_value_or_default('frank-general-tweet-post-button', false);
+					  $frank_general['tweet_post_attribution'] = frank_post_value_or_default('frank-general-tweet-post-attribution', '');
 
 						update_option( '_frank_options', $frank_general );
-
 						$frank_updated = true;
 
 					}
 
-					// IF THERES NOTHING, SET DEFAULTS
+					// IF THERE'S NOTHING, SET DEFAULTS
 					if(empty($frank_general)) {
 
 						$frank_general = array(
@@ -173,7 +198,7 @@ function frank_build_settings_page() {
 								   name="frank-general-tweet-post-button"
 								   class="checkbox"
 								   value="tweet_post_button" 
-									<?php checked( $frank_general['tweet_post_button'], "tweet_post_button" ); ?>
+									<?php checked( $frank_general['tweet_post_button']); ?>
 								/>
 
 							<label for="frank-general-tweet-post-button">
@@ -245,12 +270,12 @@ function frank_build_settings_page() {
 
 								// ADD OUR DATA
 								$sections[] = array(
-									'display_type'      => (isset($_POST['frank-display-type-' . $frank_section_flag])) ? $_POST['frank-display-type-' . $frank_section_flag] : 'default_loop',
-									'header'             => (isset($_POST['frank-section-header-' . $frank_section_flag])) ? $_POST['frank-section-header-' . $frank_section_flag] : '',
-									'title'             => (isset($_POST['frank-section-title-' . $frank_section_flag])) ? $_POST['frank-section-title-' . $frank_section_flag] : '',
-									'caption'           => (isset($_POST['frank-section-caption-' . $frank_section_flag])) ? $_POST['frank-section-caption-' . $frank_section_flag] : '',
-									'num_posts'         => (isset($_POST['frank-section-num-posts-' . $frank_section_flag])) ? intval( $_POST['frank-section-num-posts-' . $frank_section_flag]) : 10,
-									'categories'        => (isset($_POST['post_category' . $frank_section_flag])) ? $_POST['post_category' . $frank_post_category_flag] : array()
+                  'display_type'      => frank_post_value_or_default('frank-display-type-' . $frank_section_flag, 'default_loop'),									'header'             => (isset($_POST['frank-section-header-' . $frank_section_flag])) ? $_POST['frank-section-header-' . $frank_section_flag] : '',
+                  'header'      => frank_post_value_or_default('frank-section-header-' . $frank_section_flag, false),
+                  'title'      => frank_post_value_or_default('frank-section-title-' . $frank_section_flag, ''),
+                  'caption'      => frank_post_value_or_default('frank-section-caption-' . $frank_section_flag, ''),
+                  'num_posts'      => intval(frank_post_value_or_default('frank-section-num-posts-' . $frank_section_flag, 10)),
+                  'categories'      => frank_post_value_or_default('post_category-' . $frank_section_flag, array()),
 								);
 
 							}
@@ -344,7 +369,7 @@ function frank_build_settings_page() {
 									value="section_header"
 									<?php 
 									$value = !isset($frank_section['default']) ? stripslashes($frank_section['header']) : $frank_defaults['header'];
-									checked( $value, "section_header" ); 
+									checked($value); 
 									?>
 									/>
 									<label class="section-title inline">Display section header</label>
