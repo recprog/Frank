@@ -104,7 +104,7 @@ function frank_build_settings_page() {
 					// IF THERES NOTHING, SET DEFAULTS
 					if(empty($frank_general)) {
 
-						$frank_general[] = array(
+						$frank_general = array(
 							'header'      					=> '',
 							'footer'            			=> '',
 							'tweet_post_button' 			=> false,
