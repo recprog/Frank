@@ -283,7 +283,7 @@ function frank_build_settings_page() {
                   'header'      => frank_post_value_or_default('frank-section-header-' . $frank_section_flag, false),
                   'title'      => frank_post_value_or_default('frank-section-title-' . $frank_section_flag, ''),
                   'caption'      => frank_post_value_or_default('frank-section-caption-' . $frank_section_flag, ''),
-                  'num_posts'      => intval(frank_post_value_or_default('frank-section-num-posts-' . $frank_section_flag, 10)),
+                  'num_posts'      => frank_post_value_or_default('frank-section-num-posts-' . $frank_section_flag, 10),
                   'categories'      => frank_post_value_or_default('post_category-' . $frank_section_flag, array()),
 								);
 
