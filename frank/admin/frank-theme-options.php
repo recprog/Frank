@@ -39,6 +39,14 @@ function frank_admin_tabs($current = 'general') {
 
 // OPTIONS HELPER FUNCTIONS
 
+if(!function_exists('frank_add_warning')) {
+  $frank_warnings = array();
+  function frank_add_warning($warning_message) {
+    global $frank_warnings;
+    $frank_warnings[] = $warning_message;
+  }
+}
+
 if(!function_exists('frank_post_value_or_default')) {
   function frank_post_value_or_default($val_name, $default) {
 
@@ -59,6 +67,7 @@ if(!function_exists('frank_post_value_or_default')) {
         return is_array($val) ? $val : $default;
     }
     // We should never reach this point
+    frank_add_warning("The type of option '" . $val_name . "' couldn't be determined.");
     return $val;
   }
 }
@@ -526,6 +535,17 @@ function frank_build_settings_page() {
 			</div><!-- // SETTINGS CONTAINER -->
 
 		</form><!-- // END FORM -->
+		
+    <?php
+      global $frank_warnings;
+      if (defined('WP_DEBUG')  && (WP_DEBUG == true)) {
+        if (isset($frank_warnings)) {
+          foreach ($frank_warnings as $warning) {
+            echo "<p><b>Warning from Frank:</b> " . $warning . "</p>";
+          }
+        }
+      }
+    ?>
 
 	</div><!-- // WRAP -->
 
