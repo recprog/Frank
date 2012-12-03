@@ -279,7 +279,7 @@ function frank_build_settings_page() {
 
 								// ADD OUR DATA
 								$sections[] = array(
-                  'display_type'      => frank_post_value_or_default('frank-display-type-' . $frank_section_flag, 'default_loop'),									'header'             => (isset($_POST['frank-section-header-' . $frank_section_flag])) ? $_POST['frank-section-header-' . $frank_section_flag] : '',
+                  'display_type'      => frank_post_value_or_default('frank-display-type-' . $frank_section_flag, 'default_loop'),
                   'header'      => frank_post_value_or_default('frank-section-header-' . $frank_section_flag, false),
                   'title'      => frank_post_value_or_default('frank-section-title-' . $frank_section_flag, ''),
                   'caption'      => frank_post_value_or_default('frank-section-caption-' . $frank_section_flag, ''),
