@@ -1,7 +1,6 @@
 <?php
 /**
- * @package WordPress
- * @subpackage Frank
+ * @package Frank for Some Random Dude
  */
 ?>
 <!DOCTYPE html>
@@ -16,14 +15,11 @@
 	<link href="data:image/x-icon;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAOBJREFUeNrkUbsKwkAQ3Fs0EbVTP05JpSD4iEUKBb9AO/ErDJJgI5bi72gv8e44Hc9Hk1Owdthib4eZG3ZFzfOISFgYY9Az89WCXBAQgJPGgC8XixidpYSBzwyLvOA+lUqtk2TQ75+yDDUMw1UcX5RyCgqYwvuw38+Xy9PxKJhni8VkNHrkdARDpEaphKbTamkpUe1mE08MQeWL30qYPTJorekL4FQhQgYI4N0NAjRRr1f58AnVfb9KtNtsxjY3MI2ibZpCACoveK3VLv65Vrsfz17GfYefD0e/4C8FNwEGAIXxbCAjm60LAAAAAElFTkSuQmCC" rel="icon" type="image/x-icon" />
 	<link rel="apple-touch-icon" href="/wp-content/themes/somerandomdude/images/apple-touch-icon.png"/>
 	
-	<title><?php if (function_exists('is_tag') && is_tag()) { echo 'Tag Archive for &quot;'.$tag.'&quot;&mdash;'; } elseif (is_archive()) { wp_title(''); echo ' Archive&mdash;'; } elseif (is_search()) { echo 'Search for &quot;'.wp_specialchars($s).'&quot;&mdash;'; } elseif (!(is_404()) && (is_single()) || (is_page())) { wp_title(''); echo '&mdash;'; } elseif (is_404()) { echo 'Not Found&mdash;'; } bloginfo('name'); ?></title>
+	<title>
+		<?php bloginfo('name'); ?> &mdash; <?php is_home() ? bloginfo('description') : wp_title(''); ?>
+	</title>
 	
-	<?php 
-	if(!frank_devmode()) { frank_enqueue_styles(); }
-	else { frank_enqueue_styles_dev(); }
-	?>
-	
-	<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://feeds.feedburner.com/somerandomdude" />
+	<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="/feed/" />
 	<link rel="pingback" href="/xmlrpc.php" />
 	
 	<?php wp_head(); ?>
@@ -59,8 +55,8 @@
 		<nav id="site-nav" class='nine columns'>
 			<ul id="menu-primary" class="menu"><li><a href="/work/">Work</a></li>
 			<li class="last"><a href="/hello/" rel="author">Hello</a></li>
-			<li class="rss"><a href="http://feeds.feedburner.com/somerandomdude">RSS</a></li>
-			<li class="twitter"><a href="http://twitter.com/somerandomdude">Twitter</a></li>
+			<li class="rss"><a href="/feed/">RSS</a></li>
+			<li class="twitter"><a href="http://twitter.com/somerandomdude" target="_blank">Twitter</a></li>
 			</ul>
 		</nav>
 	</header>

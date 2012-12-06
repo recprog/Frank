@@ -4,7 +4,7 @@ img { -ms-interpolation-mode: bicubic; }
 .chromeframe {
 	background: $color-light;
 	color: $color-off-black;
-	font: $bold $font-size-small $typeface-secondary;
+	font: $font-weight-bold $font-size-small $typeface-secondary;
 	padding: 5px 15px;
 	text-align: center;
 }

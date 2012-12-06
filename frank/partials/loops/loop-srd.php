@@ -1,9 +1,3 @@
-<?php
-/*
-	Template Name: Franklin Street Loop
-*/
-?>
-
 <?php 
 	if(is_home()&&!is_paged()) {
 		$sticky = get_option( 'sticky_posts' );

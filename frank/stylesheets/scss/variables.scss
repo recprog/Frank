@@ -8,26 +8,18 @@ $color-off-black: #050000;
 $color-midtone-light: #998482;
 $color-accent-alt: #ff1e00;
 
-@mixin background_color_off_black_alpha($alpha: 1) {
-background-color: rgba(5, 0, 0, $alpha);
-}
-
-@mixin column() {
-	margin-left: 4.4%; float: left; min-height: 1px; position: relative;
-}
-
 $typeface-secondary: Sans-Serif;
 $typeface-primary: Georgia, serif;
 
-$thin: 100;
-$extra-light: 200;
-$light: 300; 
-$normal: 400;
-$medium: 500;
-$demi-bold: 600;
-$bold: 700;
-$heavy: 800;
-$black: 900;
+$font-weight-thin: 100;
+$font-weight-extra-light: 200;
+$font-weight-light: 300; 
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-demi-bold: 600;
+$font-weight-bold: 700;
+$font-weight-heavy: 800;
+$font-weight-black: 900;
 
 $font-size-xxx-large: 38px;
 $font-size-xx-large: 28px;
@@ -52,18 +44,22 @@ $ten-columns: 82.6%;
 $eleven-columns: 91.3%;
 $twelve-columns: 100%;
 
-@mixin default-shadow() {
-box-shadow: 0px 0px 8px rgba(18, 7, 6, 0.3);
-}
-
 $row-height: 15px;
 $column-width: 45px;
 $gutter-width: 40px;
 
 $border-break: 2px solid $color-light;
 
-@mixin opacity($level: 1) {
-opacity: $level;
+@mixin background_color_off_black_alpha($alpha: 1) {
+background-color: rgba(5, 0, 0, $alpha);
+}
+
+@mixin default-shadow() {
+box-shadow: 0px 0px 8px rgba(18, 7, 6, 0.3);
+}
+
+@mixin column() {
+	margin-left: 4.4%; float: left; min-height: 1px; position: relative;
 }
 
 @mixin column-based-width($columns: 1, $modifier: 0) {

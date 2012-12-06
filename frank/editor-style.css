@@ -694,12 +694,17 @@ body {
   color: #050000;
   height: 100%;
   text-rendering: optimizelegibility;
-  -webkit-font-smoothing: antialiased;
 }
 
 .reset, ul.metadata, ul.metadata li, dl.metadata {
   margin: 0;
   padding: 0;
+}
+
+.ir {
+  font: 0/0 a;
+  text-shadow: none;
+  color: transparent;
 }
 
 /*Images*/
@@ -715,12 +720,6 @@ a {
 
 a:hover {
   color: #ff1e00;
-}
-
-.hide-text {
-  text-indent: 100%;
-  white-space: nowrap;
-  overflow: hidden;
 }
 
 /* Titles */

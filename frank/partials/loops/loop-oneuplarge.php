@@ -1,7 +1,4 @@
 <?php
-/*
-	Template Name: One Up (Large)
-*/
 global $frank_section_header;
 global $frank_section_title;
 global $frank_section_caption;

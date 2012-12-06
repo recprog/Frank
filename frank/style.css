@@ -695,12 +695,17 @@ body {
   color: #050000;
   height: 100%;
   text-rendering: optimizelegibility;
-  -webkit-font-smoothing: antialiased;
 }
 
 .reset, ul.metadata, ul.metadata li, dl.metadata, #site-nav li, #comments .comment {
   margin: 0;
   padding: 0;
+}
+
+.ir {
+  font: 0/0 a;
+  text-shadow: none;
+  color: transparent;
 }
 
 /*Images*/
@@ -716,12 +721,6 @@ a {
 
 a:hover {
   color: #ff1e00;
-}
-
-.hide-text {
-  text-indent: 100%;
-  white-space: nowrap;
-  overflow: hidden;
 }
 
 /* Titles */
@@ -1348,8 +1347,6 @@ button, .button, input[type=submit] {
 #site-nav {
   margin: 15px auto 30px auto;
   border-bottom: 2px solid #f0eceb;
-  /*TODO: Make sub-nav work*/
-  /*ul ul { display: none; }*/
 }
 #site-nav ul {
   margin: 0 0 15px 0;
@@ -1357,18 +1354,14 @@ button, .button, input[type=submit] {
 }
 #site-nav ul ul {
   background: #fff;
-  /* Adding a background makes the dropdown work properly in IE7+. Make this as close to your page's background as possible (i.e. white page == white background). */
   background: rgba(255, 255, 255, 0);
-  /* But! Let's make the background fully transparent where we can, we don't actually want to see it if we can help it... */
   list-style: none;
   position: absolute;
   z-index: 999;
   margin: 0;
   left: -9999px;
-  /* Hide off-screen when not needed (this is more accessible than display:none;) */
 }
 #site-nav ul ul li {
-  /* Introducing a padding between the li and the a give the illusion spaced items */
   float: none;
   margin: 0;
   border-bottom: 1px solid #fffefe;
@@ -1383,7 +1376,6 @@ button, .button, input[type=submit] {
 #site-nav ul ul a {
   padding: 5px 10px;
   white-space: nowrap;
-  /* Stop text wrapping and creating multi-line dropdown items */
 }
 #site-nav ul ul ul {
   position: relative;
@@ -1409,7 +1401,6 @@ button, .button, input[type=submit] {
 }
 #site-nav li:hover ul {
   left: 0;
-  /* Bring back on-screen when needed */
   border-top: 2px solid #3d302f;
   border-bottom: 1px solid #5d504f;
   background: #f7f4f4;
@@ -1421,7 +1412,6 @@ button, .button, input[type=submit] {
   font-weight: 400;
   padding: 7px 30px 7px 10px;
   white-space: nowrap;
-  /* Stop text wrapping and creating multi-line dropdown items */
 }
 #site-nav li:hover ul ul {
   border: 0;

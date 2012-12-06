@@ -4,48 +4,7 @@
 window.onload = ->
 	return if not document.querySelector
 
-	navClickHandler = (elem, navItems) ->
-		return () ->
-			a = elem.getAttribute('rel')
-			elem.className+=' active';
-			for item in navItems 
-				if item.className.match(new RegExp('(\\s|^)' + 'active' + '(\\s|$)'))
-					item.className = item.className.replace(new RegExp('(\\s|^)' + 'active' + '(\\s|$)'), '') 
 
-			projectItems = document.querySelectorAll('#projects_list li');
-			for projectItem in projectItems
-				projectItem.className = projectItem.className.replace(new RegExp('(\\s|^)' + 'deselected' + '(\\s|$)'), '') if projectItem.className.match(new RegExp('(\\s|^)' + 'deselected' + '(\\s|$)'))
-				if a != 'all' and !projectItem.className.match(new RegExp('(\\s|^)' + a + '(\\s|$)'))
-					if !projectItem.className.match(new RegExp('(\\s|^)' + 'deselected' + '(\\s|$)'))
-						projectItem.className += ' '+ 'deselected'
-			return
-
-	trackClickHandler = (elem, cat, action, label) ->
-		actn = if action then elem.querySelector(action).firstChild.nodeValue else elem.firstChild.nodeValue
-		return () ->
-			gaTrack(cat, actn, label)
-			#setTimeout('document.location = "' + elem.href + '"', 100);
-
-			if elem.getAttribute("target")
-				window.open(@href, @getAttribute("target"))
-			else 
-				setTimeout('document.location = "' + elem.href + '"', 100)
-			return false
-
-	
-	# Google Analytics event tracking
-	trackElems = (elems, cat, action, label) ->
-		return if not elems
-		for elem in elems
-			elem.onclick = trackClickHandler(elem, cat, action, label)
-		return false
-
-	gaTrack = (cat, action, label, val) ->
-		try
-			_gaq.push(['_trackEvent', cat, action, label, val])
-		catch error
-			print error
-		return
 
 	slideshows = document.querySelectorAll('#hero_slideshow .slideshow')
 	if slideshows.length
@@ -56,6 +15,24 @@ window.onload = ->
 	if lightboxes.length
 		for lightbox in lightboxes  
 			flb = new FLB(lightbox, {});
+
+	navClickHandler = (elem, navItems) ->
+		return () ->
+			a = elem.getAttribute('rel')
+			for item in navItems 
+				if item.className.match(new RegExp('(\\s|^)' + 'active' + '(\\s|$)'))
+					item.className = item.className.replace(new RegExp('(\\s|^)' + 'active' + '(\\s|$)'), '') 
+
+			projectItems = document.querySelectorAll('#projects_list li');
+			for projectItem in projectItems
+				projectItem.className = projectItem.className.replace(new RegExp('(\\s|^)' + 'deselected' + '(\\s|$)'), '') if projectItem.className.match(new RegExp('(\\s|^)' + 'deselected' + '(\\s|$)'))
+				if a != 'all' and !projectItem.className.match(new RegExp('(\\s|^)' + a + '(\\s|$)'))
+					if !projectItem.className.match(new RegExp('(\\s|^)' + 'deselected' + '(\\s|$)'))
+						projectItem.className += ' '+ 'deselected'
+
+			elem.className = ' '+'active'
+			
+			return
 
 	if document.querySelector('#p72')
 		navItems = document.querySelectorAll('#projects_navigation dd');
@@ -71,15 +48,41 @@ window.onload = ->
 			window.open(@href, @getAttribute("target"), 'width=550, height=470, location=0, left='+centerLeft+', top='+centerTop)
 			return false
 
+	# Google Analytics event tracking
+	trackElems = (elems, cat, action, label) ->
+		return if not elems
+		for elem in elems
+			elem.onclick = trackClickHandler(elem, cat, action, label)
+		return false
+
+	trackClickHandler = (elem, cat, action, label) ->
+		actn = if action then elem.querySelector(action).firstChild.nodeValue else elem.firstChild.nodeValue
+		return () ->
+			gaTrack(cat, actn, label)
+			if elem.getAttribute("target")
+				window.open(@href, @getAttribute("target"))
+			else 
+				setTimeout('document.location = "' + elem.href + '"', 150)
+			return false
+
+	gaTrack = (cat, action, label, val) ->
+		try
+			_gaq.push(['_trackEvent', cat, action, label, val])
+		catch error
+			print error
+		return false
+
 	#trackElems(document.querySelectorAll('#post-tweet'), 'Tweet Post', null, document.title);
-	trackElems(document.querySelectorAll('#menu-primary li a'), 'Top Nav', null, document.title);
+	trackElems(document.querySelectorAll('#menu-primary a'), 'Top Nav', null, document.title);
 	trackElems(document.querySelectorAll('#bio_pic'), 'Bio Pic', null, document.title);
-	trackElems(document.querySelectorAll('#previous_post a'), 'Previous Post', '.arrow', document.title);
+	trackElems(document.querySelectorAll('#previous-post a'), 'Previous Post', '.arrow', document.title);
 	trackElems(document.querySelectorAll('#download_follow a.twitter, #download_follow a.rss'), 'Projects Follow', null, document.title);
-	trackElems(document.querySelectorAll('#other_projects #projects_list li a'), 'Other Projects', 'small', document.title);
+	trackElems(document.querySelectorAll('#other_projects #projects_list a'), 'Other Projects', 'small', document.title);
 	trackElems(document.querySelectorAll('#footer_main_promo'), 'Footer Promo', '.header', document.title);
 	trackElems(document.querySelectorAll('#text-12 .recommended a'), 'Recommended', null, document.title);
 	trackElems(document.querySelectorAll('#page-footer #twitter-follow a.button'), 'Footer Twitter', null, document.title);
+
+	gaTrack('Document Load')
 
 	return
 

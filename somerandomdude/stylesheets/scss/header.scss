@@ -3,12 +3,12 @@
 	padding-bottom:$row-height;
 	margin:$row-height*2 auto $row-height * 2 auto; 
 }
-/* TODO: Break out heirarchy*/
+
 #site-title {
 	@extend .reset;
 	float: left; 
 	a { 
-		@extend .hide-text;
+		@extend .ir;
 		display:block;
 		background:inline-image('title.svg') no-repeat left bottom;
 		background-size:contain;
@@ -36,12 +36,12 @@
 			display: block;
 			height: $row-height;
 			color: $color-midtone;
-			font: #{$bold} #{$font-size-x-small} #{$typeface-secondary};
+			font: #{$font-weight-bold} #{$font-size-x-small} #{$typeface-secondary};
 			}
 		a:hover {
 			color: $color-off-black; 
 		} 
-		&:last-child { 
+		&:last-child, &.last { 
 			margin-right: 0; 
 		}
 	}
@@ -54,7 +54,7 @@
 			height:45px;
 			border-radius:22.5px;
 			display:block;
-			@extend .hide-text;
+			@extend .ir;
 			@include default-shadow();
 		}
 	}

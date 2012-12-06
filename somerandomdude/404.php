@@ -1,7 +1,6 @@
 <?php
 /**
- * @package WordPress
- * @subpackage Frank
+ * @package Frank for Some Random Dude
  */
 ?>
 <?php get_header(); ?>

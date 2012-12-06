@@ -1,6 +1,6 @@
 @media screen, projection {
 	label {
-		font: #{$bold} #{$font-size-small} #{$typeface-secondary};
+		font: #{$font-weight-bold} #{$font-size-small} #{$typeface-secondary};
 	}
 	input[type=text], textarea {	
 		border: 1px solid $color-midtone;

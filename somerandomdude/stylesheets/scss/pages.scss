@@ -45,7 +45,7 @@
 	/* TODO variables */
 	font-size: 9px !important;
 	line-height: 12px;
-	font-weight: $bold; }
+	font-weight: $font-weight-bold; }
 	
 #hero_slideshow {
 	margin-bottom:$row-height*2;
@@ -59,7 +59,7 @@
 
 #projects_navigation dt, #projects_navigation dd {
 	margin: 0;
-	font: #{$typeface-secondary} #{$font-size-x-small};
+	font: #{$font-size-x-small} #{$typeface-secondary};
 	margin-right: 20px;
 	float: left; }
 
@@ -74,7 +74,7 @@
 
 #content.page #projects_navigation dd.active {
 	background-position: 0 -18px;
-	font-weight: $bold; }
+	font-weight: $font-weight-bold; }
 
 
 #projects_list, #download_follow {
@@ -221,7 +221,7 @@
 }
 
 #p4537 #features .feature p {
-	font-size:$medium;
+	font-size:$font-weight-medium;
 }
 
 #p5215 object {

@@ -20,16 +20,15 @@
 		margin:0 0 $row-height 0;
 		list-style: none;
 		ul {
-			background:#fff; /* Adding a background makes the dropdown work properly in IE7+. Make this as close to your page's background as possible (i.e. white page == white background). */
-			background:rgba(255,255,255,0); /* But! Let's make the background fully transparent where we can, we don't actually want to see it if we can help it... */
+			background:#fff; 
+			background:rgba(255,255,255,0); 
 			list-style:none;
 			position:absolute;
 			z-index:999;
 			margin:0;
-			left:-9999px; /* Hide off-screen when not needed (this is more accessible than display:none;) */
+			left:-9999px; 
 			
 			li {
-				 /* Introducing a padding between the li and the a give the illusion spaced items */
 				float:none;
 				margin:0;
 				border-bottom:1px solid $color-highlight;
@@ -43,7 +42,7 @@
 			}
 			a {
 				padding:5px 10px;
-				white-space:nowrap; /* Stop text wrapping and creating multi-line dropdown items */
+				white-space:nowrap; 
 			}
 			ul {
 				position:relative;
@@ -60,8 +59,7 @@
 			}
 		}
 	}
-	/*TODO: Make sub-nav work*/
-	/*ul ul { display: none; }*/
+	
 	li {
 		@extend .reset;
 		margin: 0 10px 0 0;
@@ -72,7 +70,7 @@
 			margin-top:-1px;
 			ul {
 
-				left:0; /* Bring back on-screen when needed */
+				left:0; 
 
 				border-top:2px solid $color-dark;
 				border-bottom:1px solid $color-midtone;
@@ -82,9 +80,9 @@
 				}
 					
 				a {
-					font-weight: $normal;
+					font-weight: $font-weight-normal;
 					padding:7px 30px 7px 10px;
-					white-space:nowrap; /* Stop text wrapping and creating multi-line dropdown items */
+					white-space:nowrap; 
 				}
 				ul {
 					border:0;
@@ -105,7 +103,7 @@
 		padding:15px 10px;
 		display: block;
 		color: $color-off-black;
-		font: #{$bold} #{$font-size-x-small} #{$typeface-secondary};
+		font: #{$font-weight-bold} #{$font-size-x-small} #{$typeface-secondary};
 		&:hover { 
 			color: $color-midtone; 
 		} 	
