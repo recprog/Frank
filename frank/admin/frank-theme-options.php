@@ -104,7 +104,7 @@ function frank_build_settings_page() {
 					// IF THERES NOTHING, SET DEFAULTS
 					if(empty($frank_general)) {
 
-						$frank_general[] = array(
+						$frank_general = array(
 							'header'      					=> '',
 							'footer'            			=> '',
 							'tweet_post_button' 			=> false,
@@ -141,7 +141,7 @@ function frank_build_settings_page() {
 					<div id="first-option" class="option-container">
 						<label class="feature-title"><?php _e('Custom Header Code', 'frank'); ?></label>
 						<div class="feature">
-							<textarea name="frank-general-header" class="textarea"><?php echo stripslashes($frank_general['header']); ?></textarea>
+							<textarea name="frank-general-header" class="textarea"><?php echo esc_html(stripslashes($frank_general['header'])); ?></textarea>
 						</div>
 						<div class="feature-desc">
 							This features allows you to write or copy & paste your own code straight
@@ -156,7 +156,7 @@ function frank_build_settings_page() {
 					<div class="option-container">
 						<label class="feature-title"><?php _e('Custom Footer Code', 'frank'); ?></label>
 						<div class="feature">
-							<textarea name="frank-general-footer" class="textarea"><?php echo stripslashes($frank_general['footer']); ?></textarea>
+							<textarea name="frank-general-footer" class="textarea"><?php echo esc_html(stripslashes($frank_general['footer'])); ?></textarea>
 						</div>
 						<div class="feature-desc">
 							This feature allows you to write or copy & paste your own code directly
@@ -194,7 +194,7 @@ function frank_build_settings_page() {
 							<input type="text"
 								   name="frank-general-tweet-post-attribution"
 								   class="text"
-								   value="<?php echo stripslashes($frank_general['tweet_post_attribution']); ?>" />
+								   value="<?php echo esc_attr(stripslashes($frank_general['tweet_post_attribution'])); ?>" />
 						</div>
 						<div class="feature-desc">
 							By entering your handle once right here, you can easily reference
@@ -333,13 +333,13 @@ function frank_build_settings_page() {
 	
 								<?php
 								$the_type = $frank_section['display_type'];
-								$checkbox_name = "frank-section-header-" . isset($frank_section['default']) ? 'default' : $frank_section_id;
+								$checkbox_name = "frank-section-header-" . (isset($frank_section['default']) ? 'default' : $frank_section_id);
 								?>
 
 								<!-- // SECTION HEADER TOGGLE -->
 								<div class="display-headers">
 									<input type="checkbox"
-								   name=$checkbox_name
+								   name=<?php echo $checkbox_name ?>
 									class="checkbox"
 									value="section_header"
 									<?php 
@@ -351,12 +351,16 @@ function frank_build_settings_page() {
 								</div>
 
 								<!-- // SECTION TITLE -->
-								<div class="display-titles optional-container" controlling-checkbox=$checkbox_name>
+								<div class="display-titles optional-container" controlling-checkbox=<?php echo $checkbox_name ?> >
 									<label class="section-title"><?php _e('Section Title:', 'frank'); ?></label>
 									<input type="text"
 										   class="text text-title"
 										   name="frank-section-title-<?php echo (isset($frank_section['default']) ? 'default' : $frank_section_id); ?>"
-										   value="<?php echo !isset($frank_section['default']) ? stripslashes($frank_section['title']) : $frank_defaults['title']; ?>" />
+										   <?php
+                        $val_str = isset($frank_section['default']) ?  $frank_defaults['title'] : stripslashes($frank_section['title']);
+                        echo 'value="' . esc_attr($val_str) . '"';
+										   ?>
+									/>
 								</div>
 								
 								<!-- // POSTS TO DISPLAY -->
@@ -365,7 +369,11 @@ function frank_build_settings_page() {
 									<input type="text"
 										   class="text"
 										   name="frank-section-num-posts-<?php echo (isset($frank_section['default']) ? 'default' : $frank_section_id); ?>"
-										   value="<?php echo !isset($frank_section['default']) ? stripslashes($frank_section['num_posts']) : $frank_defaults['num_posts']; ?>" />
+										   <?php
+                        $val_str = isset($frank_section['default']) ?  $frank_defaults['num_posts'] : stripslashes($frank_section['num_posts']);
+                        echo 'value="' . esc_attr($val_str) . '"';
+										   ?>
+     						  />
 								</div>
 								
 								<!-- // DISPLAY TYPES -->
@@ -389,9 +397,14 @@ function frank_build_settings_page() {
 							<div class="bottom-options-container">
 								
 								<!-- // SECTION CAPTIONS -->
-								<div class="display-captions optional-container" controlling-checkbox=$checkbox_name>
+								<div class="display-captions optional-container" controlling-checkbox=<?php echo $checkbox_name ?> >
 									<label class="section-title"><?php _e('Section Caption:', 'frank'); ?></label>
-									<textarea name="frank-section-caption-<?php echo (isset($frank_section['default']) ? 'default' : $frank_section_id); ?>" class="textarea"><?php echo !isset($frank_section['default']) ? stripslashes($frank_section['caption']) : $frank_defaults['caption']; ?></textarea>
+									<textarea name="frank-section-caption-<?php echo (isset($frank_section['default']) ? 'default' : $frank_section_id); ?>"
+									  <?php
+									    $caption_txt = isset($frank_section['default']) ? $frank_defaults['caption'] : stripslashes($frank_section['caption']);
+									    echo 'class="textarea">' . esc_textarea($caption_txt);
+									  ?>
+									</textarea>
 								</div>
 								
 								
