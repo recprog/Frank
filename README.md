@@ -64,7 +64,7 @@ A new content section can be added by clicking the *Add New Section* button. Thi
 #####Removing Content Sections
 Any section can be deleted by clicking the × button on the top right corner of the section pane. The section will not be removed from your home page until you save the settings.
 
-#####Changing the Order ot Content Sections
+#####Changing the Order of Content Sections
 Sections can be dragged into the desired order by dragging the handle on the top left corner of any settings pane. The order will not be changed on your home page until you save the settings.
 
 #####Display Section Header
@@ -102,10 +102,10 @@ If you only want to show specific categories in a section, you can choose which 
 
 <a name="using-frank-theme-modification"></a>
 ###Theme Modification
-The Frank theme was always intended to be built upon. All CSS and Javascript are compiled from pre-processor langauges ([SCSS](http://sass-lang.com/) &amp; [CoffeeScript](http://coffeescript.org/)). For those with less experience using pre-processor langauges (especially how to compile them through the command line), I highly suggest using [CodeKit](http://incident57.com/codekit/) for managing your Frank project. It is also highly suggested that any significant modifications are built out as a [child theme](http://codex.wordpress.org/Child_Themes).
+The Frank theme was always intended to be built upon. All CSS and Javascript are compiled from pre-processor languages ([SCSS](http://sass-lang.com/) &amp; [CoffeeScript](http://coffeescript.org/)). For those with less experience using pre-processor languages (especially how to compile them through the command line), I highly suggest using [CodeKit](http://incident57.com/codekit/) for managing your Frank project. It is also highly suggested that any significant modifications are built out as a [child theme](http://codex.wordpress.org/Child_Themes).
 
 ####Compass
-Frank uses [Compass](http://compass-style.org/) for SCSS compliation and takes advantage of its mixins and functions. [Installing Compass](http://compass-style.org/install/) is nessecary to successfully compile the theme's SCSS, but it's quite easy. The theme includes the Compass config file to make life a little easier. 
+Frank uses [Compass](http://compass-style.org/) for SCSS compilation and takes advantage of its mixins and functions. [Installing Compass](http://compass-style.org/install/) is necessary to successfully compile the theme's SCSS, but it's quite easy. The theme includes the Compass config file to make life a little easier. 
  
 ####SCSS Structure
 The styles for Frank are broken up by subject matter. The *style.scss* file is the only file you should compile. It takes all the SCSS files and builds it into the theme's *style.css*. All colors, typefaces, font sizes and other visual attributes can be altered in the *variables.scss* file. Site-wide styles can be found in the *global.scss* file. All template-specific styles are found in the SCSS file with its matching name. 
@@ -121,7 +121,7 @@ Frank does not depend on Javascript, but it does include some small Javascript c
 The Frank theme 
 
 ####Minify style.css
-By default, the *style.css* file is not minified for legibility. **Minifying your stylesheet should be the first thing you do.** The easiet way to accomplish this is to change the Compass SCSS complilation setting. To do this, open the *config.rb* file and change the `output_style` variable from *:expanded* to *:compressed*.
+By default, the *style.css* file is not minified for legibility. **Minifying your stylesheet should be the first thing you do.** The easiest way to accomplish this is to change the Compass SCSS compilation setting. To do this, open the *config.rb* file and change the `output_style` variable from *:expanded* to *:compressed*.
 
 ####Use Widgets Wisely
 Frank has various widget spaces for you to customize your theme. Used correctly, widgets can theoretically improve performance. The *Navigation* widget is one way to lower the amount of database queries WordPress makes (6 -7 queries in my experience). By using a text widget in the *Navigation* widget section and adding an unordered list like the example below, you can save quite a few database queries. 
@@ -133,14 +133,14 @@ Frank has various widget spaces for you to customize your theme. Used correctly,
 	</ul> 
 
 ####Install Alternative PHP Cache (APC)
-[APC](http://php.net/manual/en/book.apc.php) will provide significan performance increases if used correctly. There are plenty of guides for installing APC on [Google](https://www.google.com/search?q=Install+Alternative+PHP+Cache&aq=f&oq=Install+Alternative+PHP+Cache&aqs=chrome.0.57j0l3j62l2.1033&sugexp=chrome,mod=6&sourceid=chrome&ie=UTF-8#hl=en&tbo=d&sclient=psy-ab&q=Install+APC+for+PHP&oq=Install+APC+for+PHP&gs_l=serp.3..0l3j0i30.11068.14252.0.14581.16.11.5.0.0.0.200.1813.0j10j1.11.0.les%3Bepsugrpq1high.1.0.0...1.1.cOdurfjGwd0&pbx=1&bav=on.2,or.r_gc.r_pw.r_cp.r_qf.&fp=1ad8c242e1bf948a&bpcl=39967673&biw=1436&bih=783).
+[APC](http://php.net/manual/en/book.apc.php) will provide significant performance increases if used correctly. There are plenty of guides for installing APC on [Google](https://www.google.com/search?q=Install+Alternative+PHP+Cache&aq=f&oq=Install+Alternative+PHP+Cache&aqs=chrome.0.57j0l3j62l2.1033&sugexp=chrome,mod=6&sourceid=chrome&ie=UTF-8#hl=en&tbo=d&sclient=psy-ab&q=Install+APC+for+PHP&oq=Install+APC+for+PHP&gs_l=serp.3..0l3j0i30.11068.14252.0.14581.16.11.5.0.0.0.200.1813.0j10j1.11.0.les%3Bepsugrpq1high.1.0.0...1.1.cOdurfjGwd0&pbx=1&bav=on.2,or.r_gc.r_pw.r_cp.r_qf.&fp=1ad8c242e1bf948a&bpcl=39967673&biw=1436&bih=783).
 
 ####Install W3 Total Cache (W3TC)
 [W3TC](http://wordpress.org/extend/plugins/w3-total-cache/) is the easiest way to take full advantage of APC. W3TC has a wide range of features, but if you build your theme correctly, 
 
 #####W3 Total Cache Tips
 * Manually combine and minify your CSS/JS files. Relying on W3 Total Cache for this process will require extra CPU cycles.
-* W3TC offers the option to connect to content delivery networks (CDNs). CDNs are great, but if you keep your site small, they become unnecessesary. If your site is getting serious traffic or contains a large amount of images or video, a CDN may make sense, but for the rest of you, save your time and money.
+* W3TC offers the option to connect to content delivery networks (CDNs). CDNs are great, but if you keep your site small, they become unnecessary. If your site is getting serious traffic or contains a large amount of images or video, a CDN may make sense, but for the rest of you, save your time and money.
 
 <a name="browser-compatibility"></a>
 ##Browser Compatibility
@@ -152,5 +152,5 @@ Frank was built and tested on WordPress 3.4.3. Any future development of the the
 
 <a name="credits"></a>
 ##Credits
-This theme was built with siginificant help of some great folks. My sincere thanks to [Felix Holmgren](http://twitter.com/felixhgren), [Jon Christopher](http://twitter.com/jchristopher) and [Josh McDonald](https://twitter.com/onestepcreative) for their tremendous contributions.
+This theme was built with significant help of some great folks. My sincere thanks to [Felix Holmgren](http://twitter.com/felixhgren), [Jon Christopher](http://twitter.com/jchristopher) and [Josh McDonald](https://twitter.com/onestepcreative) for their tremendous contributions.
 
