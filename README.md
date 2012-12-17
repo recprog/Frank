@@ -13,7 +13,7 @@
 <a name="about-frank"></a>
 ##About Frank
 
-This theme has been the personal project of [P.J. Onori](http://somerandomdude.com) with the gracious help of [Jon Christopher](http://mondaybynoon.com). The theme was designed to provide a lightweight theme focused on the reading experience. Frank consists of the parent theme (/frank) and a child theme (/somerandomdude) which is what I use at [somerandomdude.com](http://somerandomdude.com)
+This theme has been the personal project of [P.J. Onori](http://somerandomdude.com) with the gracious [help of many](#credits). The theme was designed to provide a lightweight theme focused on the reading experience. Frank consists of the parent theme (/frank) and a child theme (/somerandomdude) which is what I use at [somerandomdude.com](http://somerandomdude.com)
 
 ###Frank is fast
 
