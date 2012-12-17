@@ -1,4 +1,4 @@
-#Frank is an open source Wordpress theme designed for speed
+#Frank is an open source WordPress theme designed for speed
 
 ##README Contents
 * [About Frank](#about-frank)
