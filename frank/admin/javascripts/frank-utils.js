@@ -44,6 +44,17 @@ jQuery(document).ready(function(){
 
     });
 
+	jQuery('.option-display-type').change(function() {
+		var section = jQuery(this).parents('.frank-content-sections');
+		if(jQuery(this).find("option:selected").val()=="default_loop") {
+			jQuery(section).find('.display-categories').hide();
+			jQuery(section).find('.display-posts').hide();
+		} else {
+			jQuery(section).find('.display-categories').show();
+			jQuery(section).find('.display-posts').show();
+		}
+	})
+
     // APPEND NEW SECTION TO THE LIST
     jQuery('#frank-add-content-section a').click(function() {
 
@@ -145,7 +156,16 @@ jQuery(document).ready(function(){
 
     // IF WE'RE LOADING SAVED SECTIONS, THE CATEGORY ID'S / NAMES AREN'T GOING TO WORK SOO...
     jQuery('.frank-content-sections').each(function(){
-
+		
+		if(jQuery(this).find(".option-display-type option:selected").val()=="default_loop") {
+			jQuery(this).find('.display-categories').hide();
+			jQuery(this).find('.display-posts').hide();
+		} else {
+			jQuery(this).find('.display-categories').show();
+			jQuery(this).find('.display-posts').show();
+		}
+		
+		
         if(jQuery(this).attr('id') != 'default' && !jQuery(this).hasClass('frank-content-section-default')) {
 
             frankhash = jQuery(this).attr('id').replace('frank-street-section-','');
@@ -168,8 +188,7 @@ jQuery(document).ready(function(){
     	jQuery('.frank-handle:first').after('<p class="dragdrop">&larr; (Drag & Drop Content Sections to Re-Order)</p>');
 
 	    jQuery(function() {
-
-		   jQuery('#settings-container').sortable({
+		   jQuery('#frank-content-sections').sortable({
 	            axis: 'y',
 	            containment: 'parent',
 	            forceHelperSize: true,
@@ -177,7 +196,7 @@ jQuery(document).ready(function(){
 	            opacity: 0.6
 	        });
 
-	        jQuery('#settings-container').disableSelection();
+	        jQuery('#frank-content-sections').disableSelection();
 
 	    });
 

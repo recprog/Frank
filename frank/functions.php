@@ -19,18 +19,20 @@ add_filter('dynamic_sidebar_params','frank_widget_first_last_classes');
 add_filter( 'script_loader_src', 'frank_remove_script_version', 15, 1 );
 add_filter( 'style_loader_src', 'frank_remove_script_version', 15, 1 );
 
-register_nav_menus(array('primary' => __( 'Primary Navigation', 'frank-theme' )));
 
 if (!is_admin()) {  
 	add_action('init', 'frank_enqueue_styles');  
 } 
+if( is_admin() ) {
+	add_action( 'init', 'frank_admin_assets' );
+}
 
-add_action( 'init', 'frank_admin_assets' );
 add_action( 'admin_menu', 'frank_admin_menu' );
 add_action('wp_footer', 'frank_footer');
 add_action('wp_head', 'frank_header');
 add_action( 'widgets_init', 'frank_widgets');
 add_action('wp_head', 'frank_add_ie_js_fixes');
+add_action( 'after_setup_theme', 'frank_register_menu' );
 
 add_editor_style();
 
@@ -56,6 +58,10 @@ $custom_header_support = array(
   add_image_size( 'four-up-thumbnail', 212, 100, true);
 
   add_theme_support('custom-background', array('default-color' => 'fffefe'));
+
+function frank_register_menu() {
+  register_nav_menu( 'frank_primary_navigation', 'Primary Navigation' );
+}
 
 function frank_widgets() {
 	register_sidebar(array(
@@ -306,14 +312,10 @@ function frank_admin_menu() {
 	add_theme_page( 'Frank', 'Frank Theme Options', 'manage_options', 'frank-settings', 'frank_theme_options' );
 }
 
-
-
 function frank_admin_assets() {
-	if( is_admin() ) {
-		wp_enqueue_script('jquery-ui-sortable' );
-		wp_enqueue_style('frank-admin', get_template_directory_uri() . '/admin/css/frank-options.css', NULL, NULL, NULL);
-		wp_enqueue_script('frank-admin', get_template_directory_uri() . '/admin/js/frank-utils.js', 'jquery', NULL, true);
-	}
+		wp_enqueue_style('frank-admin', get_template_directory_uri() . '/admin/stylesheets/frank-options.css', NULL, NULL, NULL);
+		wp_enqueue_script('jquery-ui-sortable');
+		wp_enqueue_script('frank-admin', get_template_directory_uri() . '/admin/javascripts/frank-utils.js', 'jquery', NULL, true);
 } 
 
 function frank_footer() {	
@@ -376,11 +378,11 @@ if (!function_exists('frank_enqueue_styles')) {
 
 function frank_add_ie_js_fixes () {
     echo '<!--[if lt IE 9]>';
-    echo '<script src="',  get_stylesheet_directory_uri(), '/js/html5.js"></script>';
+    echo '<script src="',  get_stylesheet_directory_uri(), '/javascripts/html5.js"></script>';
     echo '<![endif]-->';
 
     echo '<!--[if lt IE 7]>';
-		echo '<script src="',  get_stylesheet_directory_uri(), '/js/ie7.js"></script>';
+		echo '<script src="',  get_stylesheet_directory_uri(), '/javascripts/ie7.js"></script>';
 		echo '<![endif]-->';
 }
 

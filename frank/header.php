@@ -81,7 +81,7 @@
 
 		<nav id="site-nav">
 			<?php if ( !dynamic_sidebar("Navigation") ) : ?>
-				<?php wp_nav_menu( array('theme_location' => 'primary', 'container' => false ) ); ?>	
+				<?php wp_nav_menu( array('theme_location' => 'frank_primary_navigation', 'container' => false ) ); ?>	
 			<?php endif; ?> 
 		</nav>
 		<?php if ( is_active_sidebar("widget-subheader") ) : ?>

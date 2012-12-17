@@ -1,20 +1,5 @@
 <?php
 
-// LAST UPDATED AT 3AM ON SEPTEMBER 25TH, 2012
-
-//add_action( 'admin_menu', 'frankSettingsPageInit' );
-
-// REGISTER NEW SETTINGS PAGE WITH WORDPRESS
-/*
-function frankSettingsPageInit() {
-
-	$frankSettings = add_menu_page( 'Theme Settings', 'Theme Settings', 'edit_theme_options', 'frank-settings', 'frank_build_settings_page' );
-
-	add_action( "load-{$frankSettings}", 'frankLoadSettingsPage' );
-
-}
-*/
-
 // CREATE THE SETTINGS TABS IN WP ADMIN
 if (!function_exists('frank_admin_tabs')) {
 function frank_admin_tabs($current = 'general') {
@@ -348,7 +333,7 @@ function frank_build_settings_page() {
 
 					<div style="clear:both;"></div>
 
-											
+					<div id="frank-content-sections">						
 					<?php
 
 					foreach($frank_sections as $frank_section_id => $frank_section) : ?>
@@ -358,17 +343,34 @@ function frank_build_settings_page() {
 						<h3 class="content-titles">
 							<?php _e('Content Section', 'frank'); ?>
 							<span class="frank-handle"></span>
-							<a class="frank-content-section-delete" href="#">X</a>
+							<a class="frank-content-section-delete" href="#">&times;</a>
 						</h3>
 
 						<div class="content-group">
-
+							<?php
+							$the_type = $frank_section['display_type'];
+							$checkbox_name = "frank-section-header-" . (isset($frank_section['default']) ? 'default' : $frank_section_id);
+							?>
+							<div class="main-options-container">
+								<!-- // DISPLAY TYPES -->
+								<div class="display-types">
+									<label class="section-title"><?php _e('Display Type:', 'frank'); ?></label>
+									<select name="frank-display-type-<?php echo (isset($frank_section['default']) ? 'default' : $frank_section_id); ?>" class="dropmenu option-display-type">
+										<option<?php if($the_type == 'default_loop') { ?> selected="selected"<?php } ?> value="default_loop"><?php _e('Default Loop', 'frank'); ?></option>
+										<option<?php if($the_type == 'one_up_reg' ) { ?> selected="selected"<?php } ?> value="one_up_reg"><?php _e('One Up (Regular)', 'frank'); ?></option>
+										<option<?php if($the_type == 'one_up_lg' ) { ?> selected="selected"<?php } ?> value="one_up_lg"><?php _e('One Up (Large)', 'frank'); ?></option>
+										<option<?php if($the_type == 'two_up' ) { ?> selected="selected"<?php } ?> value="two_up"><?php _e('Two Up', 'frank'); ?></option>
+										<option<?php if($the_type == 'three_up' ) { ?> selected="selected"<?php } ?> value="three_up"><?php _e('Three Up', 'frank'); ?></option>
+										<option<?php if($the_type == 'four_up' ) { ?> selected="selected"<?php } ?> value="four_up"><?php _e('Four Up', 'frank'); ?></option>
+										<option<?php if($the_type == 'srd_loop' ) { ?> selected="selected"<?php } ?> value="srd_loop"><?php _e('Some Random Dude Loop', 'frank'); ?></option>
+									</select>
+								</div>
+								<div style="clear:both;"></div>
+							</div>
+							
 							<div class="top-options-container">
 	
-								<?php
-								$the_type = $frank_section['display_type'];
-								$checkbox_name = "frank-section-header-" . (isset($frank_section['default']) ? 'default' : $frank_section_id);
-								?>
+								
 
 								<!-- // SECTION HEADER TOGGLE -->
 								<div class="display-headers">
@@ -409,23 +411,9 @@ function frank_build_settings_page() {
 										   ?>
      						  />
 								</div>
-								
-								<!-- // DISPLAY TYPES -->
-								<div class="display-types">
-									<label class="section-title"><?php _e('Display Type:', 'frank'); ?></label>
-									<select name="frank-display-type-<?php echo (isset($frank_section['default']) ? 'default' : $frank_section_id); ?>" class="dropmenu">
-										<option<?php if($the_type == 'default_loop') { ?> selected="selected"<?php } ?> value="default_loop"><?php _e('Default Loop', 'frank'); ?></option>
-										<option<?php if($the_type == 'one_up_reg' ) { ?> selected="selected"<?php } ?> value="one_up_reg"><?php _e('One Up (Regular)', 'frank'); ?></option>
-										<option<?php if($the_type == 'one_up_lg' ) { ?> selected="selected"<?php } ?> value="one_up_lg"><?php _e('One Up (Large)', 'frank'); ?></option>
-										<option<?php if($the_type == 'two_up' ) { ?> selected="selected"<?php } ?> value="two_up"><?php _e('Two Up', 'frank'); ?></option>
-										<option<?php if($the_type == 'three_up' ) { ?> selected="selected"<?php } ?> value="three_up"><?php _e('Three Up', 'frank'); ?></option>
-										<option<?php if($the_type == 'four_up' ) { ?> selected="selected"<?php } ?> value="four_up"><?php _e('Four Up', 'frank'); ?></option>
-										<option<?php if($the_type == 'srd_loop' ) { ?> selected="selected"<?php } ?> value="srd_loop"><?php _e('Some Random Dude Loop', 'frank'); ?></option>
-									</select>
-								</div>
 
 							</div><!-- // END TOP OPTIONS CONTAINER -->
-	
+							</div>
 							<div style="clear:both;"></div>
 	
 							<div class="bottom-options-container">
@@ -490,14 +478,14 @@ function frank_build_settings_page() {
 	
 							<div style="clear:both;"></div>
 	
-						</div>
+						
 	
 						<div style="clear:both;"></div>
 	
 					</div><!-- // FRANK CONTENT SECTIONS --> <?php 
 					
 					endforeach; ?>
-
+				</div>
 					<div id="frank-add-content-section">
 						<a href="#"><?php _e('+ Add New Section +', 'frank'); ?></a>
 					</div> <?php 
