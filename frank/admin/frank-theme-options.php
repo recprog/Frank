@@ -134,7 +134,7 @@ function frank_build_settings_page() {
 
 					<div class="button-container">
 
-						<input type="submit" name="submit"  class="save-settings" value="<?php _e('Update Settings', 'frank'); ?>" />
+						<input type="submit" name="submit"  class="save-settings" value="<?php _e('Update Settings', 'frank_theme'); ?>" />
 
 						<?php
 
@@ -158,7 +158,7 @@ function frank_build_settings_page() {
 
 					<!-- CUSTOM HEADER CODE -->
 					<div id="first-option" class="option-container">
-						<label class="feature-title"><?php _e('Custom Header Code', 'frank'); ?></label>
+						<label class="feature-title"><?php _e('Custom Header Code', 'frank_theme'); ?></label>
 						<div class="feature">
 							<textarea name="frank-general-header" class="textarea"><?php echo esc_html(stripslashes($frank_general['header'])); ?></textarea>
 						</div>
@@ -173,7 +173,7 @@ function frank_build_settings_page() {
 
 					<!-- CUSTOM FOOTER CODE -->
 					<div class="option-container">
-						<label class="feature-title"><?php _e('Custom Footer Code', 'frank'); ?></label>
+						<label class="feature-title"><?php _e('Custom Footer Code', 'frank_theme'); ?></label>
 						<div class="feature">
 							<textarea name="frank-general-footer" class="textarea"><?php echo esc_html(stripslashes($frank_general['footer'])); ?></textarea>
 						</div>
@@ -186,7 +186,7 @@ function frank_build_settings_page() {
 					</div>
 					<!-- TWEET THIS OPTION -->
 					<div class="option-container">
-						<label class="feature-title"><?php _e('Tweet This', 'frank'); ?></label>
+						<label class="feature-title"><?php _e('Tweet This', 'frank_theme'); ?></label>
 						<div class="feature">
 							<input type="checkbox"
 								   name="frank-general-tweet-post-button"
@@ -196,7 +196,7 @@ function frank_build_settings_page() {
 								/>
 
 							<label for="frank-general-tweet-post-button">
-								<?php _e('Add a "Tweet This Post" Button to Post Templates.', 'frank'); ?>
+								<?php _e('Add a "Tweet This Post" Button to Post Templates.', 'frank_theme'); ?>
 							</label>
 						</div>
 						<div class="feature-desc">
@@ -208,7 +208,7 @@ function frank_build_settings_page() {
 					</div>
 					<!-- TWEET THIS HANDLE -->
 					<div class="option-container optional-container" controlling-checkbox="frank-general-tweet-post-button">
-						<label class="feature-title"><?php _e('Twitter Handle', 'frank'); ?></label>
+						<label class="feature-title"><?php _e('Twitter Handle', 'frank_theme'); ?></label>
 						<div class="feature">
 							<input type="text"
 								   name="frank-general-tweet-post-attribution"
@@ -301,7 +301,7 @@ function frank_build_settings_page() {
 
 					<div class="button-container">
 
-						<input type="submit" name="submit"  class="save-settings" value="<?php _e('Update Settings', 'frank'); ?>" />
+						<input type="submit" name="submit"  class="save-settings" value="<?php _e('Update Settings', 'frank_theme'); ?>" />
 
 						<?php
 
@@ -341,7 +341,7 @@ function frank_build_settings_page() {
 					<div class="frank-content-sections" id="frank-street-section-<?php echo $frank_section_id; ?>">
 
 						<h3 class="content-titles">
-							<?php _e('Content Section', 'frank'); ?>
+							<?php _e('Content Section', 'frank_theme'); ?>
 							<span class="frank-handle"></span>
 							<a class="frank-content-section-delete" href="#">&times;</a>
 						</h3>
@@ -354,15 +354,15 @@ function frank_build_settings_page() {
 							<div class="main-options-container">
 								<!-- // DISPLAY TYPES -->
 								<div class="display-types">
-									<label class="section-title"><?php _e('Display Type:', 'frank'); ?></label>
+									<label class="section-title"><?php _e('Display Type:', 'frank_theme'); ?></label>
 									<select name="frank-display-type-<?php echo (isset($frank_section['default']) ? 'default' : $frank_section_id); ?>" class="dropmenu option-display-type">
-										<option<?php if($the_type == 'default_loop') { ?> selected="selected"<?php } ?> value="default_loop"><?php _e('Default Loop', 'frank'); ?></option>
-										<option<?php if($the_type == 'one_up_reg' ) { ?> selected="selected"<?php } ?> value="one_up_reg"><?php _e('One Up (Regular)', 'frank'); ?></option>
-										<option<?php if($the_type == 'one_up_lg' ) { ?> selected="selected"<?php } ?> value="one_up_lg"><?php _e('One Up (Large)', 'frank'); ?></option>
-										<option<?php if($the_type == 'two_up' ) { ?> selected="selected"<?php } ?> value="two_up"><?php _e('Two Up', 'frank'); ?></option>
-										<option<?php if($the_type == 'three_up' ) { ?> selected="selected"<?php } ?> value="three_up"><?php _e('Three Up', 'frank'); ?></option>
-										<option<?php if($the_type == 'four_up' ) { ?> selected="selected"<?php } ?> value="four_up"><?php _e('Four Up', 'frank'); ?></option>
-										<option<?php if($the_type == 'srd_loop' ) { ?> selected="selected"<?php } ?> value="srd_loop"><?php _e('Some Random Dude Loop', 'frank'); ?></option>
+										<option<?php if($the_type == 'default_loop') { ?> selected="selected"<?php } ?> value="default_loop"><?php _e('Default Loop', 'frank_theme'); ?></option>
+										<option<?php if($the_type == 'one_up_reg' ) { ?> selected="selected"<?php } ?> value="one_up_reg"><?php _e('One Up (Regular)', 'frank_theme'); ?></option>
+										<option<?php if($the_type == 'one_up_lg' ) { ?> selected="selected"<?php } ?> value="one_up_lg"><?php _e('One Up (Large)', 'frank_theme'); ?></option>
+										<option<?php if($the_type == 'two_up' ) { ?> selected="selected"<?php } ?> value="two_up"><?php _e('Two Up', 'frank_theme'); ?></option>
+										<option<?php if($the_type == 'three_up' ) { ?> selected="selected"<?php } ?> value="three_up"><?php _e('Three Up', 'frank_theme'); ?></option>
+										<option<?php if($the_type == 'four_up' ) { ?> selected="selected"<?php } ?> value="four_up"><?php _e('Four Up', 'frank_theme'); ?></option>
+										<option<?php if($the_type == 'srd_loop' ) { ?> selected="selected"<?php } ?> value="srd_loop"><?php _e('Some Random Dude Loop', 'frank_theme'); ?></option>
 									</select>
 								</div>
 								<div style="clear:both;"></div>
@@ -388,7 +388,7 @@ function frank_build_settings_page() {
 
 								<!-- // SECTION TITLE -->
 								<div class="display-titles optional-container" controlling-checkbox=<?php echo $checkbox_name ?> >
-									<label class="section-title"><?php _e('Section Title:', 'frank'); ?></label>
+									<label class="section-title"><?php _e('Section Title:', 'frank_theme'); ?></label>
 									<input type="text"
 										   class="text text-title"
 										   name="frank-section-title-<?php echo (isset($frank_section['default']) ? 'default' : $frank_section_id); ?>"
@@ -401,7 +401,7 @@ function frank_build_settings_page() {
 								
 								<!-- // POSTS TO DISPLAY -->
 								<div class="display-posts">
-									<label class="section-title"><?php _e('Number of Posts:', 'frank'); ?></label>
+									<label class="section-title"><?php _e('Number of Posts:', 'frank_theme'); ?></label>
 									<input type="text"
 										   class="text"
 										   name="frank-section-num-posts-<?php echo (isset($frank_section['default']) ? 'default' : $frank_section_id); ?>"
@@ -420,7 +420,7 @@ function frank_build_settings_page() {
 								
 								<!-- // SECTION CAPTIONS -->
 								<div class="display-captions optional-container" controlling-checkbox=<?php echo $checkbox_name ?> >
-									<label class="section-title"><?php _e('Section Caption:', 'frank'); ?></label>
+									<label class="section-title"><?php _e('Section Caption:', 'frank_theme'); ?></label>
 									<textarea name="frank-section-caption-<?php echo (isset($frank_section['default']) ? 'default' : $frank_section_id); ?>"
 									  <?php
 									    $caption_txt = isset($frank_section['default']) ? $frank_defaults['caption'] : stripslashes($frank_section['caption']);
@@ -432,7 +432,7 @@ function frank_build_settings_page() {
 								
 								<!-- // CATEGORIES TO DISPLAY -->
 								<div class="display-categories">
-									<label class="section-title"><?php _e('Categories to Display', 'frank'); ?></label>
+									<label class="section-title"><?php _e('Categories to Display', 'frank_theme'); ?></label>
 									<div class="categories-container">
 										<ul class="categorychecklist">
 											<?php wp_terms_checklist(); ?>
@@ -441,8 +441,8 @@ function frank_build_settings_page() {
 										<div style="clear:both;"></div>
 										
 										<ul class="frank-group">
-											<li><a class="select-button frank-select" href="#"><?php _e('Select All', 'frank'); ?></a></li>
-											<li><a class="select-button frank-deselect" href="#"><?php _e('Deselect All', 'frank'); ?></a></li>
+											<li><a class="select-button frank-select" href="#"><?php _e('Select All', 'frank_theme'); ?></a></li>
+											<li><a class="select-button frank-deselect" href="#"><?php _e('Deselect All', 'frank_theme'); ?></a></li>
 										</ul>
 										<div style="clear:both;"></div>
 									</div>
@@ -487,7 +487,7 @@ function frank_build_settings_page() {
 					endforeach; ?>
 				</div>
 					<div id="frank-add-content-section">
-						<a href="#"><?php _e('+ Add New Section +', 'frank'); ?></a>
+						<a href="#"><?php _e('+ Add New Section +', 'frank_theme'); ?></a>
 					</div> <?php 
 					
 					break;
@@ -498,7 +498,7 @@ function frank_build_settings_page() {
 
 				<div class="button-container bottom">
 
-					<input type="submit" name="submit"  class="save-settings" value="<?php _e('Update Settings', 'frank'); ?>" />
+					<input type="submit" name="submit"  class="save-settings" value="<?php _e('Update Settings', 'frank_theme'); ?>" />
 
 					<?php
 

@@ -3,7 +3,7 @@ require_once('admin/frank-theme-options.php');
 
 add_action('after_setup_theme', 'frank_theme_setup');
 function frank_theme_setup(){
-    load_theme_textdomain('frank-theme', get_template_directory() . '/languages');
+    load_theme_textdomain('frank_theme', get_template_directory() . '/languages');
 }
 
 if ( ! isset( $content_width ) ) $content_width = 980;
