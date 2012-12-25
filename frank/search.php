@@ -9,7 +9,15 @@
 	<div id="content-primary">
 	<?php if(have_posts()) : ?>
 	<header>
-		<h1 class="page-title">Search Results for &#8216;<?php the_search_query(); ?>&#8217;</h1>
+		<h1 class="page-title">
+		<?php
+		  _e('Search Results for', 'frank_theme');
+		  echo ' ';
+		  echo '&#8216';  // left single quotation mark
+		  echo the_search_query();
+		  echo '&#8217';  // right single quotation mark
+		?>
+		</h1>
 	</header>
 	<div class="posts">
 		<?php while(have_posts()) : the_post(); ?>
@@ -18,11 +26,12 @@
 		<?php get_template_part( 'partials/post-pagination'); ?>
 		<?php else : ?>
 		<div class="post">
-		
-			<h2>No Results Were Found</h2>
-			
-			<p>There were no matches for your search. Please try a different search term.</p>
-			
+			<h2>
+			  <?php _e('No Results Were Found', 'frank_theme'); ?>
+			</h2>
+			<p>
+			  <?php _e('There were no matches for your search. Please try a different search term.', 'frank_theme'); ?>
+			</p>
 		</div>
 		<?php endif; ?>
 		</div>
