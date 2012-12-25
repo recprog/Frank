@@ -57,6 +57,24 @@ if(!function_exists('frank_post_value_or_default')) {
   }
 }
 
+if(!function_exists('frank_update_settings_button')) {
+  function frank_update_settings_button($updated) {
+		if ($updated) {
+    	echo '<h4 class="saved-success">';
+    	  echo '<img src="/wp-content/themes/frank/admin/images/success.png" />';
+    	  _e('Frank\'s Settings Have Been Updated.', 'frank_theme');
+    	echo '</h4>';
+
+    } else {
+
+    	echo '<h4 class="info">';
+    	  _e('Make Changes And Use The Update Settings Button To Save!', 'frank_theme');
+    	  echo ' &rarr;';
+    	echo '</h4>';
+    }
+  }
+}
+
 // BUILD THE CONTENT THAT DISPLAYS IN THEME SETTINGS
 if (!function_exists('frank_build_settings_page')) {
 function frank_build_settings_page() {
@@ -82,7 +100,9 @@ function frank_build_settings_page() {
 
 	<div class="wrap">
 
-		<h2>Frank Theme Settings</h2>
+		<h2>
+		  <?php _e('Frank Theme Settings', 'frank_theme'); ?>
+		</h2>
 
 		<?php if (isset($_GET['tab'])) { frank_admin_tabs($_GET['tab']); } else { frank_admin_tabs('general'); } ?>
 
@@ -100,7 +120,7 @@ function frank_build_settings_page() {
 					// SETUP OPTIONS FOR GENERAL TAB
 					case 'general' : ?>
 
-					<h3 class="type-title">General Settings</h3>
+					<h3 class="type-title"><?php _e('General Settings', 'frank_theme'); ?></h3>
 
 					<?php
 
@@ -136,23 +156,7 @@ function frank_build_settings_page() {
 
 						<input type="submit" name="submit"  class="save-settings" value="<?php _e('Update Settings', 'frank_theme'); ?>" />
 
-						<?php
-
-						if ($frank_updated) {
-
-							echo '<h4 class="saved-success">';
-							echo '<img src="/wp-content/themes/frank/admin/images/success.png" /> Frank&rsquo;s Settings Have Been Updated.';
-							echo '</h4>';
-
-						} else {
-
-							echo '<h4 class="info">';
-							echo 'Make Changes And Use The Update Settings Button To Save! &rarr;';
-							echo '</h4>';
-
-						}
-
-						?>
+						<?php frank_update_settings_button($frank_updated); ?>
 
 					</div><!-- // BUTTON CONTAINER -->
 
@@ -163,9 +167,9 @@ function frank_build_settings_page() {
 							<textarea name="frank-general-header" class="textarea"><?php echo esc_html(stripslashes($frank_general['header'])); ?></textarea>
 						</div>
 						<div class="feature-desc">
-							This features allows you to write or copy & paste your own code straight
-							into the header. Many people use this feature to include their Google Analytics
-							code, or other small bits of Javascript. Feel free to use this as you wish!
+							<?php
+							  _e('This features allows you to write or copy and paste your own code straight into the header. Many people use this feature to include their Google Analytics code, or other small bits of Javascript. Feel free to use this as you wish!', 'frank_theme');
+							?>
 						</div>
 						<div style="clear:both;"></div>
 					</div>
@@ -178,9 +182,9 @@ function frank_build_settings_page() {
 							<textarea name="frank-general-footer" class="textarea"><?php echo esc_html(stripslashes($frank_general['footer'])); ?></textarea>
 						</div>
 						<div class="feature-desc">
-							This feature allows you to write or copy & paste your own code directly
-							to the footer. A lot of people use this feature to include external & internal
-							Javascript files, for plugins and things of the sort. Use it as you wish!
+						<?php
+							_e('This feature allows you to write or copy and paste your own code directly to the footer. A lot of people use this feature to include external and internal Javascript files, for plugins and things of the sort. Use it as you wish!', 'frank_theme');
+						?>
 						</div>
 						<div style="clear:both;"></div>
 					</div>
@@ -200,9 +204,9 @@ function frank_build_settings_page() {
 							</label>
 						</div>
 						<div class="feature-desc">
-							This feature gives you the option to integrate a little bit of social
-							networking directly into your posts. By turning this feature on, we'll automatically
-							create a "Tweet" Button people can use to share your content!
+						  <?php
+							  _e('This feature gives you the option to integrate a little bit of social networking directly into your posts. By turning this feature on, we\'ll automatically create a "Tweet" Button people can use to share your content!', 'frank_theme');
+							?>
 						</div>
 						<div style="clear:both;"></div>
 					</div>
@@ -216,9 +220,11 @@ function frank_build_settings_page() {
 								   value="<?php echo esc_attr(stripslashes($frank_general['tweet_post_attribution'])); ?>" />
 						</div>
 						<div class="feature-desc">
-							By entering your handle once right here, you can easily reference
+							<?php
+							  _e('By entering your handle once right here, you can easily reference
 							this setting throughout the theme and change it later with ease, if needed.
-							Refrain from using the '@' sign. An example handle: 'somerandomdude'
+							Refrain from using the \'@\' sign. An example handle: \'somerandomdude\'', 'frank_theme');
+							?>
 						</div>
 						<div style="clear:both;"></div>
 					</div>			
@@ -229,7 +235,10 @@ function frank_build_settings_page() {
 
 					case 'home' : ?>
 
-					<h3 class="type-title">Home Page Settings</h3> <?php
+					<h3 class="type-title">
+					  <?php _e('Home Page Settings', 'frank_theme'); ?>
+					</h3>
+					<?php
 
 					wp_nonce_field('frank_update_home_sections', 'frank_key');
 
@@ -303,31 +312,15 @@ function frank_build_settings_page() {
 
 						<input type="submit" name="submit"  class="save-settings" value="<?php _e('Update Settings', 'frank_theme'); ?>" />
 
-						<?php
-
-						if (isset($frank_updated)&&$frank_updated) {
-
-							echo '<h4 class="saved-success">';
-							echo '<img src="/wp-content/themes/frank/admin/images/success.png" /> Frank&rsquo;s Settings Have Been Updated.';
-							echo '</h4>';
-
-						} else {
-
-							echo '<h4 class="info">';
-							echo 'Make Changes And Use The Update Settings Button To Save! &rarr;';
-							echo '</h4>';
-
-						}
-
-						?>
+					<?php frank_update_settings_button($frank_updated); ?>
 
 					</div><!-- // BUTTON CONTAINER --> 
 					
 					<div class="helper-container">
 						<p class="section-helper">
-							Content Sections give you the opportunity to create a dynamic homepage 
-							for you to keep your readers engaged. With a vast variety of different layouts,
-							you have the choice to select a look that works best for you.
+						  <?php
+							  _e('Content Sections give you the opportunity to create a dynamic homepage for you to keep your readers engaged. With a vast variety of different layouts, you have the choice to select a look that works best for you.', 'frank_theme');
+							?>
 						</p>
 					</div>
 
@@ -383,7 +376,11 @@ function frank_build_settings_page() {
 									checked($value); 
 									?>
 									/>
-									<label class="section-title inline">Display section header</label>
+									<label class="section-title inline">
+									<?php
+									  _e('Display section header', 'frank_theme');
+									?>
+									</label>
 								</div>
 
 								<!-- // SECTION TITLE -->
@@ -500,23 +497,7 @@ function frank_build_settings_page() {
 
 					<input type="submit" name="submit"  class="save-settings" value="<?php _e('Update Settings', 'frank_theme'); ?>" />
 
-					<?php
-
-					if ($frank_updated) {
-
-						echo '<h4 class="saved-success">';
-						echo '<img src="/wp-content/themes/frank/admin/images/success.png" /> Frank&rsquo;s Settings Have Been Updated.';
-						echo '</h4>';
-
-					} else {
-
-						echo '<h4 class="info">';
-						echo 'Make Changes And Use The Update Settings Button To Save! &rarr;';
-						echo '</h4>';
-
-					}
-
-					?>
+				<?php frank_update_settings_button($frank_updated); ?>
 
 				</div><!-- // BUTTON CONTAINER -->
 
