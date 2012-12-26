@@ -309,7 +309,7 @@ if (!function_exists('frank_theme_options')) {
 
 // add our menus
 function frank_admin_menu() {
-	add_theme_page( 'Frank', 'Frank Theme Options', 'manage_options', 'frank-settings', 'frank_theme_options' );
+	add_theme_page( 'Frank', __('Frank Theme Options', 'frank_theme'), 'manage_options', 'frank-settings', 'frank_theme_options' );
 }
 
 function frank_admin_assets() {
