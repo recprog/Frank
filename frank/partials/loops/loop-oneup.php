@@ -7,7 +7,10 @@ global $frank_section_caption;
 	<?php if(isset($frank_section_header)&&$frank_section_header) : ?>
 	<div class='nav post-group-header'>
 		<span class='label'><?php print($frank_section_title); ?></span>
-		<span class='caption'><?php print($frank_section_caption) ?></span> <span class='more'><?php next_posts_link('View more&hellip;'); ?></span> 
+		<?php $view_more_label = __('View more', 'frank_theme'); ?>
+		<span class='caption'><?php print($frank_section_caption) ?></span> <span class='more'>
+		  <?php next_posts_link($view_more_label . '&hellip;'); ?>
+		</span>
 	</div>
 	<?php endif; ?>
 	<div class='contents'>
