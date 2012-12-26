@@ -222,9 +222,7 @@ function frank_build_settings_page() {
 						</div>
 						<div class="feature-desc">
 							<?php
-							  _e('By entering your handle once right here, you can easily reference
-							this setting throughout the theme and change it later with ease, if needed.
-							Refrain from using the \'@\' sign. An example handle: \'somerandomdude\'', 'frank_theme');
+							  _e('By entering your handle once right here, you can easily reference this setting throughout the theme and change it later with ease, if needed. Refrain from using the \'@\' sign. An example handle: \'somerandomdude\'.', 'frank_theme');
 							?>
 						</div>
 						<div style="clear:both;"></div>
