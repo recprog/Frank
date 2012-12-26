@@ -4,7 +4,8 @@
 if (!function_exists('frank_admin_tabs')) {
 function frank_admin_tabs($current = 'general') {
 
-	$tabs = array( 'general' => 'General Settings', 'home' => 'Home Page Settings');
+	$tabs = array( 'general' => __('General Settings', 'frank_theme'),
+	                'home' => __('Home Page Settings', 'frank_theme'));
 
 	echo '<div id="icon-themes" class="icon32"><br></div>';
 	echo '<h2 class="nav-tab-wrapper">';
