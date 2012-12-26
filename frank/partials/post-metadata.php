@@ -3,7 +3,13 @@
 	<li class="author">By <?php the_author_link(); ?></li>
 	<li class="categories"><?php the_category(', '); ?></li>
 	<li class="tags"><?php the_tags('', ' '); ?></li>
-	<li class="comments"><?php comments_popup_link('No comments', '1 comment', '% comments'); ?></li>	
+	<li class="comments">
+  <?php
+  	comments_number(__('No Comments', 'frank_theme'),
+  	                __('One Comment', 'frank_theme'),
+  		              __('% Comments', 'frank_theme'));
+  ?>
+  </li>	
 	<?php
 		if (strlen(get_the_title())==0) :
 	?>
