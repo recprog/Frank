@@ -169,7 +169,7 @@ function frank_build_settings_page() {
 						</div>
 						<div class="feature-desc">
 							<?php
-							  _e('This features allows you to write or copy and paste your own code straight into the header. Many people use this feature to include their Google Analytics code, or other small bits of Javascript. Feel free to use this as you wish!', 'frank_theme');
+							  _e('This feature allows you to write or copy and paste your own code straight into the header. Many people use this feature to include their Google Analytics code, or other small bits of Javascript. Feel free to use this as you wish!', 'frank_theme');
 							?>
 						</div>
 						<div style="clear:both;"></div>
