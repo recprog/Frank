@@ -316,6 +316,10 @@ function frank_admin_assets() {
 		wp_enqueue_style('frank-admin', get_template_directory_uri() . '/admin/stylesheets/frank-options.css', NULL, NULL, NULL);
 		wp_enqueue_script('jquery-ui-sortable');
 		wp_enqueue_script('frank-admin', get_template_directory_uri() . '/admin/javascripts/frank-utils.js', 'jquery', NULL, true);
+		$translation_array = array();
+		$translation_array['delete_section_alert'] = __('Are you sure you want to delete this Content Section?', 'frank_theme');
+		$translation_array['drag_section_instruction'] = '&larr; ' . __('(Drag & Drop Content Sections to Re-Order)', 'frank_theme');
+		wp_localize_script('frank-admin', 'admin_strings', $translation_array);
 } 
 
 function frank_footer() {	

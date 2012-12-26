@@ -107,7 +107,7 @@ jQuery(document).ready(function(){
         if(jQuery('.frank-content-sections').length > 1) {
 
             jQuery('.frank-handle').show();
-            jQuery('.frank-handle:first').after('<p class="dragdrop">&larr; (Drag & Drop Content Sections to Re-Order)</p>');
+            jQuery('.frank-handle:first').after('<p class="dragdrop">' + admin_strings.drag_section_instruction + '</p>');
             jQuery('#frank-content-sections').sortable('refresh');
 
         } else {
@@ -124,7 +124,7 @@ jQuery(document).ready(function(){
     jQuery('a.frank-content-section-delete').click(function(){
 	    
 	    // CONFIRMATION MESSAGE & FUNCTIONALITY TO DELETE CONTENT SECTIONS
-        if(confirm('Are you sure you want to delete this Content Section?')) {
+        if(confirm(admin_strings.delete_section_alert)) {
 
         	var frank_section;
 
@@ -137,7 +137,7 @@ jQuery(document).ready(function(){
                 if(jQuery('.frank-content-sections').length > 1){
 
                     jQuery('.frank-handle').show();
-                    jQuery('.frank-handle:first').after('<p class="dragdrop">&larr; (Drag & Drop Content Sections to Re-Order)</p>');
+                    jQuery('.frank-handle:first').after('<p class="dragdrop">' + admin_strings.drag_section_instruction + '</p>');
                     jQuery('#frank-content-sections').sortable('refresh');
 
                 } else {
@@ -185,7 +185,7 @@ jQuery(document).ready(function(){
     // ACTIVATE HELPER TEXT & JQUERY SORTABLE IF THERE IS MORE THAN ONE CONTENT SECTION
     if(jQuery('.frank-content-sections').length > 1) {
 
-    	jQuery('.frank-handle:first').after('<p class="dragdrop">&larr; (Drag & Drop Content Sections to Re-Order)</p>');
+    	jQuery('.frank-handle:first').after('<p class="dragdrop">' + admin_strings.drag_section_instruction + '</p>');
 
 	    jQuery(function() {
 		   jQuery('#frank-content-sections').sortable({
