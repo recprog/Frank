@@ -1,4 +1,4 @@
-<article itemscope itemtype="http://schema.org/BlogPosting" class='post post-<?php echo($wp_query->current_post+1); ?>'>
+<article itemscope itemtype="http://schema.org/BlogPosting" <?php post_class('post-'.$wp_query->current_post+1); ?>>
 	<header>
 		<h1 class="truncate"><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h1>
 	</header>

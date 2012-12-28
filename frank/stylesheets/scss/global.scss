@@ -235,7 +235,9 @@ em { font-style: italic; }
 
 /*TODO: Style sticky post*/
 .sticky {
-	
+	.post-title:before {
+		content:"Sticky: ";
+	}
 }
 
 .bypostauthor {
