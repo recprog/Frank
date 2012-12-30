@@ -329,8 +329,13 @@ if (!function_exists('frank_comment')) {
 		<li id="li-comment-<?php comment_ID() ?>" class="comment">
 			<div class="row">
 				<div class="comment-content">
-					<?php if ($comment->comment_approved == '0') : echo "<span class='comment-moderation'>Your comment is awaiting moderation.</span>"; endif; ?>
-					<?php comment_text() ?>	
+					<?php
+					  if ($comment->comment_approved == '0') {
+					    $moderation_pending = __('Your comment is awaiting moderation', 'frank_theme');
+					    echo "<span class='comment-moderation'>" . $moderation_pending . "</span>";
+				    }
+					  comment_text();
+					?>
 					<div class="comment-reply">
 				    <?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
 				  </div>
@@ -338,8 +343,15 @@ if (!function_exists('frank_comment')) {
 				<div class="comment-info">
 					<ul class='metadata vertical'>
 						<li class="date"><time datetime="<?php the_time('Y-m-d'); ?>"><span class="date-date"><?php comment_date('F d, Y'); ?></span> <span class="date-time"><?php comment_date('g:i A'); ?></span></time></li>
-						<li class='author' id="vcard-<?php comment_ID() ?>">By <a class="url fn" href="<?php comment_author_url(); ?>"><?php comment_author(); ?></a></li>
-						<li><?php edit_comment_link('edit'); ?></li>
+						<li class='author' id="vcard-<?php comment_ID() ?>">
+						  <?php
+						    echo _x('By', 'comment_author_attribution', 'frank_theme');
+						    echo ' ';
+						    ?>
+                <a class="url fn" href="<?php comment_author_url(); ?>"><?php comment_author(); ?></a></li>
+						<li>
+						  <?php edit_comment_link(_x('edit', 'edit-comment', 'frank_theme')); ?>
+						</li>
 					</ul>
 				</div>
 			</div>
