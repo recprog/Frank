@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Frank 1.0\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tags/frank\n"
-"POT-Creation-Date: 2012-12-26 15:42:51+00:00\n"
-"PO-Revision-Date: 2012-12-26 16:56+0100\n"
+"POT-Creation-Date: 2012-12-30 12:15:56+00:00\n"
+"PO-Revision-Date: 2012-12-30 13:17+0100\n"
 "Last-Translator: Felix Holmgren <felix@sunnyzebra.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -286,6 +286,20 @@ msgstr "Är du säker på att du vill radera den här sektionen?"
 #: functions.php:321
 msgid "(Drag & Drop Content Sections to Re-Order)"
 msgstr "(Dra och släpp sektioner för att ändra ordning)"
+
+#: functions.php:354
+msgid "Your comment is awaiting moderation"
+msgstr "Din kommentar väntar på att bli godkänd av en administratör."
+
+#: functions.php:368
+msgctxt "comment_author_attribution"
+msgid "By"
+msgstr "Av"
+
+#: functions.php:373
+msgctxt "edit-comment"
+msgid "edit"
+msgstr "redigera"
 
 #: partials/loops/loop-fourup.php:10 partials/loops/loop-oneup.php:10
 #: partials/loops/loop-oneuplarge.php:10 partials/loops/loop-threeup.php:10
