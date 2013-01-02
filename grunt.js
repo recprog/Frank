@@ -5,7 +5,10 @@ module.exports = function(grunt) {
 
   grunt.initConfig({
     pkg: '<json:package.json>',
-
+    watch: {
+      files: [ 'frank/stylesheets/scss/*.scss', 'somerandomdude/stylesheets/scss/*.scss' ],
+      tasks: [ 'compass:dev', 'compass:prod' ]
+    },
     recess: {
       dist: {
           src: [
@@ -26,11 +29,42 @@ module.exports = function(grunt) {
             zeroUnits: true
           }
       }
+    },
+    compass: {
+      dev: {
+          src: 'frank/stylesheets/scss',
+          dest: 'frank',
+          linecomments: true,
+          forcecompile: true,
+          require: [
+            'animate-sass',
+            'mylib'
+          ],
+          debugsass: true,
+          images: '/path/to/images',
+          relativeassets: true
+      },
+      prod: {
+          src: 'frank/stylesheets/scss',
+          dest: 'assets/prod/css',
+          outputstyle: 'compressed',
+          linecomments: false,
+          forcecompile: true,
+          require: [
+            'animate-sass',
+            'mylib'
+          ],
+          debugsass: false,
+          images: '/path/to/images',
+          relativeassets: true
+      }
     }
   });
 
   // Load tasks from NPM
+  grunt.loadNpmTasks('grunt-compass');
   grunt.loadNpmTasks('grunt-recess');
+  grunt.loadNpmTasks('grunt-coffee');
 
   // Default task.
   grunt.registerTask('default', 'recess');
