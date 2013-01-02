@@ -1,0 +1,9 @@
+{
+  "name": "Frank",
+  "author": "P.J. Onori",
+  "version": "0.9.1",
+  "homepage": "http://somerandomdude.com/work/frank",
+  "devDependencies": {
+    "grunt-recess":           "~0.1.4"
+  }
+}
