@@ -18,7 +18,8 @@ function frank_devmode() {
 }
 
 function frank_meta_keywords() {
-
+	global $post;
+	
 	$keywords = array();
 	$tags = get_the_tags();
 	if($tags) {
@@ -34,7 +35,6 @@ function frank_meta_keywords() {
 		}
 	}
 	
-	$author = get_the_author($post->ID);
 	print(get_the_author());
 	$meta = '<meta name="keywords" content="';
 	$meta .= implode(',', $keywords);
