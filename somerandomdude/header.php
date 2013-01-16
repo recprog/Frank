@@ -48,7 +48,7 @@
 		})();
 	</script>
 </head>
-<body id="page" <?php body_class($class); ?>>
+<body id="page" <?php body_class(); ?>>
 <div class='container'>
 	<header id="page-header" class="row">
 		<h1 id="site-title" class='three columns'><a href="/">Some Random Dude</a></h1>
