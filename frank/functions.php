@@ -227,26 +227,6 @@ function frank_admin_header_image() { ?>
 <?php }
 endif; 
 
-if ( ! function_exists( 'frank_admin_header_image' ) ) :
-function frank_admin_header_image() { ?>
-	<div id="headimg">
-		<?php
-		$color = get_header_textcolor();
-		$image = get_header_image();
-		if ( $color && $color != 'blank' )
-			$style = ' style="color:#' . $color . '"';
-		else
-			$style = ' style="display:none"';
-		?>
-		<h1><a id="name"<?php echo $style; ?> onclick="return false;" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a></h1>
-		<div id="desc"<?php echo $style; ?>><?php bloginfo( 'description' ); ?></div>
-		<?php if ( $image ) : ?>
-			<img src="<?php echo esc_url( $image ); ?>" alt="" />
-		<?php endif; ?>
-	</div>
-<?php }
-endif; 
-
 
 // Remove rel attribute from the category list - thanks Joseph (http://josephleedy.me/blog/make-wordpress-category-list-valid-by-removing-rel-attribute/)! 
 function frank_remove_category_list_rel($output) {
