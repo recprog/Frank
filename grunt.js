@@ -1,6 +1,13 @@
 /*global module:false*/
 'use strict';
 
+/*
+watch tasks (Compass & Coffee/SCSS files)
+test tasks (CSS Linting, Coffee Lintint, JS Linting)
+optimize tasks (JS, CSS, SVG, images)
+deploy tasks (documentation, styleguide, contributors)
+*/
+
 module.exports = function(grunt) {
 
   grunt.initConfig({
