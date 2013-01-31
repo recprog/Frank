@@ -1,0 +1,49 @@
+/*Wordpress Classes*/
+.alignleft, .alignright, .aligncenter {
+	margin:10px 0 $row-height 0;
+}
+.alignleft { float: left !important; margin-right:15px; }
+.alignright { float: right !important; margin-left:15px; }
+.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto; 
+}
+
+.wp-caption {
+	text-align: center;
+	margin-top:10px 0 $row-height 0;
+	img {
+		margin: 0;
+		padding: 0;
+		border: 0 none; 
+	}
+}
+
+.wp-caption-text {
+	font-size: $font-size-small !important;
+	color:$color-midtone;
+	margin-top:10px;
+}
+
+.gallery {
+	.gallery-caption {
+		margin-left: 0 !important;
+
+		font: $font-size-x-small $typeface-secondary !important;
+		line-height:1.45;
+	}
+}
+
+.sticky {
+	.post-title:before {
+		content:"Sticky: ";
+	}
+}
+
+.bypostauthor {
+	border:2px solid $color-midtone;
+	padding:$row-height 0;
+	border-left:0;
+	border-right:0;
+}

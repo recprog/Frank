@@ -1,0 +1,46 @@
+/*Metadata content*/
+.metadata {
+	a { color: $color-midtone; }
+	a:hover { color: $color-off-black;  }
+	font: #{$font-size-x-small} #{$typeface-secondary};
+}
+
+ul.metadata {
+	@extend .reset;
+	list-style: none;
+	li {
+		@extend .reset;
+	}
+	li.date {
+		font-weight: $font-weight-bold;
+	} 
+}
+
+ul.metadata.horizontal {
+	margin-top: $row-height;
+	display: inline-block;
+	li {
+		float: left;
+		background: none;
+		&:not(:last-of-type) {
+    	margin-right: 15px;
+  	}
+	}
+}
+
+ul.metadata.vertical {
+	margin-top: 5px;
+	li {
+		text-align: right;
+		margin-bottom: 7px; 
+	}
+	li.date {
+		margin-bottom: 15px; 
+	} 
+}
+
+dl.metadata {
+	@extend .reset;
+	text-align: right;
+	margin-bottom: $row-height; 
+}
