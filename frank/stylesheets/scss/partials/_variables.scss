@@ -1,0 +1,71 @@
+$color-accent: #ea0000;
+$color-highlight: #fffefe;
+$color-light: #f0eceb;
+$color-midtone: #5d504f;
+$color-dark: #3d302f;
+$color-off-black: #050000;
+
+$color-midtone-light: #998482;
+$color-accent-alt: #ff1e00;
+
+$typeface-secondary: Sans-Serif;
+$typeface-primary: Georgia, serif;
+
+$font-weight-thin: 100;
+$font-weight-extra-light: 200;
+$font-weight-light: 300; 
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-demi-bold: 600;
+$font-weight-bold: 700;
+$font-weight-heavy: 800;
+$font-weight-black: 900;
+
+$font-size-xxx-large: 38px;
+$font-size-xx-large: 28px;
+$font-size-x-large: 24px;
+$font-size-large: 20px;
+$font-size-medium: 17px;
+$font-size-small: 13px;
+$font-size-x-small: 11px;
+$font-size-xx-small: 10px;
+$font-size-xxx-small: 9px;
+
+$one-column: 4.3%;
+$two-columns: 13%;
+$three-columns: 21.679%;
+$four-columns: 30.37%;
+$five-columns: 39.1%; 
+$six-columns: 47.8%;
+$seven-columns: 56.5%;
+$eight-columns: 65.2%;
+$nine-columns: 73.9%;
+$ten-columns: 82.6%; 
+$eleven-columns: 91.3%;
+$twelve-columns: 100%;
+
+$row-height: 15px;
+$column-width: 45px;
+$gutter-width: 40px;
+
+$border-break: 2px solid $color-light;
+
+@mixin background_color_off_black_alpha($alpha: 1) {
+background-color: rgba(5, 0, 0, $alpha);
+}
+
+@mixin default-shadow() {
+box-shadow: 0px 0px 8px rgba(18, 7, 6, 0.3);
+}
+
+@mixin column() {
+	margin-left: 4.4%; float: left; min-height: 1px; position: relative;
+}
+
+@mixin column-based-width($columns: 1, $modifier: 0) {
+width: $columns * $column-width + ($columns - 1) * $gutter-width + $modifier;
+}
+
+@mixin inset-shadow($x: 0px, $y: 0px, $blur: 3px, $color: black) {
+box-shadow: inset $x $y $blur $color;
+}

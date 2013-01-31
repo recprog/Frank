@@ -1,4 +1,3 @@
-/*Break out hierarchy*/
 #previous-post {
 	margin-top: $row-height * 4;
 	margin-bottom: $row-height * 2;
@@ -18,9 +17,11 @@
 		width: 45px;
 		height: 45px;
 		border-radius: 22.5px;
+		/*TODO: extend .ir*/
 		text-indent: 100%;
 		white-space: nowrap;
 		overflow: hidden;
+		/*TODO: Use compass to create data URI*/
 		background: $color-midtone url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAQCAYAAADESFVDAAAAWElEQVR42qXSzQkAIAgF4EZolEZqhDZqpEZwBM8dovSUYD9YwuNdPgIlt5tWa6AA9wkgpXPfACeagaeAAGkFigDZACbKAoAC+5f+od7Oesh/iC+/QC/DPQAIxvkuqJQtLgAAAABJRU5ErkJggg==') no-repeat 16px 15px;
 	}
 	a:hover {

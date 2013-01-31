@@ -8,6 +8,9 @@ img { -ms-interpolation-mode: bicubic; }
 	padding: 5px 15px;
 	text-align: center;
 }
+label {
+	font: #{$font-weight-bold} #{$font-size-small} #{$typeface-secondary};
+}
 
 #top_bar {
 	background: $color-off-black; }
@@ -27,14 +30,30 @@ img { -ms-interpolation-mode: bicubic; }
 }
 
 .post-group.twoup {
-	.post-3, .post-5, .post-7, .post-9, .post-11, .post-13, .post-15, .post-17, .post-19 {
+	.post-3, 
+	.post-5, 
+	.post-7, 
+	.post-9, 
+	.post-11, 
+	.post-13, 
+	.post-15, 
+	.post-17, 
+	.post-19 {
 		clear:left !important;
 		margin-left:0 !important;
 	}
 }
 
 .post-group.threeup {
-	.post-4, .post-7, .post-10, .post-13, .post-16, .post-19, .post-22, .post-25, .post-28 {
+	.post-4, 
+	.post-7, 
+	.post-10, 
+	.post-13, 
+	.post-16, 
+	.post-19, 
+	.post-22, 
+	.post-25, 
+	.post-28 {
 		clear:left !important;
 		margin-left:0 !important;
 	}
