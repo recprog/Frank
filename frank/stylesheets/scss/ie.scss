@@ -1,4 +1,6 @@
-@import "variables";
+@import "partials/_variables";
+@import "partials/_mixins";
+
 img { -ms-interpolation-mode: bicubic; }
 
 .chromeframe {
@@ -80,7 +82,7 @@ label {
 	}
 }
 
-#comments-container #commentform {
+#respond {
 	label {
 		display: block; }
 	#comment-form-info {

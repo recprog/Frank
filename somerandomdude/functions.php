@@ -55,46 +55,9 @@ function frank_enqueue_scripts() {
 	wp_enqueue_script('somerandomdude');
 	
 	$frank_general = get_option( '_frank_options' );
-	if($frank_general['inject_js']) {
-		add_action('wp_print_scripts', 'frank_remove_all_scripts', 100);
-		add_action('wp_footer', 'frank_print_scripts');
-	}
-	
 }
 
-function frank_remove_all_scripts() {
-    global $wp_scripts;
-    global $frank_scripts;
-    $scripts = $wp_scripts->queue;
-    $frank_scripts = array();
 
-    for($i=0; $i<count($scripts); $i++) {
-			array_push($frank_scripts, $wp_scripts->registered[$scripts[$i]]->src);
-		}
-    
-    $wp_scripts->queue = array();
-}
-
-function frank_print_scripts() {
-	global $frank_scripts;
-
-	global $wp_scripts;
-	$scripts = $frank_scripts;
-	echo '<script>';
-	for($i=0; $i<count($scripts); $i++) {
-		$url = parse_url($scripts[$i]);
-
-		if($url['host']=='') {
-			$url=site_url().$url['path'];
-		} else {
-			$url = $scripts[$i];
-		}
-		$js = wp_remote_get($url, array('timeout'=>300));
-		$js_body = wp_remote_retrieve_body($js);
-		echo $js_body;
-	}
-	echo '</script>';
-}
 
 function frank_enqueue_styles() {
 	

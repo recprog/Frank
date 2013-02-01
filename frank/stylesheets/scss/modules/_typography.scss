@@ -88,3 +88,15 @@ pre { /*Merge with Blockquote?*/
 small { font-size: $font-size-small; }
 strong { font-weight: $font-weight-bold; }
 em { font-style: italic; }
+
+/*MOBILE*/
+@media only screen and  (max-width: 767px) {
+
+	/*Typography*/
+	h1 { font-size: $font-size-x-large; }
+	h2 { font-size: $font-size-large; }
+	h3 { font-size: $font-size-medium; }
+	h4 { font-size: $font-size-small; }
+	h5 { font-size: $font-size-x-small; }
+	h6 { font-size: $font-size-xx-small; }
+}

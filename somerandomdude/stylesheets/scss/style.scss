@@ -7,31 +7,39 @@ Author URI:     http://somerandomdude.com/hello/
 Template:       frank
 Version:        0.1.0
 */
-@import "../../../frank/stylesheets/scss/variables";
-@import "variables";
+@import "../../../frank/stylesheets/scss/partials/_variables";
+@import "../../../frank/stylesheets/scss/partials/_mixins";
 
-@import "../../../frank/stylesheets/scss/reset";
-@import "../../../frank/stylesheets/scss/grid";
-@import "../../../frank/stylesheets/scss/global";
-@import "../../../frank/stylesheets/scss/forms";
-@import "../../../frank/stylesheets/scss/transitions";
-@import "../../../frank/stylesheets/scss/single";
-@import "../../../frank/stylesheets/scss/page";
-@import "../../../frank/stylesheets/scss/archive";
-@import "../../../frank/stylesheets/scss/fourohfour";
-@import "../../../frank/stylesheets/scss/sidebar";
-@import "../../../frank/stylesheets/scss/comments";
-@import "../../../frank/stylesheets/scss/footer";
+@import "partials/_variables";
 
-@import "global";
-@import "transitions";
-@import "header";
-@import "index";
-@import "single";
-@import "sidebar";
-@import "footer";
-@import "pages";
-@import "colorbox";
+@import "../../../frank/stylesheets/scss/partials/_reset";
+@import "../../../frank/stylesheets/scss/partials/_grid";
+@import "../../../frank/stylesheets/scss/partials/_global";
 
-@import "../../../frank/stylesheets/scss/mobile";
-@import "../../../frank/stylesheets/scss/print";
+@import "../../../frank/stylesheets/scss/modules/_typography";
+@import "../../../frank/stylesheets/scss/modules/_buttons";
+@import "../../../frank/stylesheets/scss/modules/_metadata";
+@import "../../../frank/stylesheets/scss/modules/_posts";
+@import "../../../frank/stylesheets/scss/modules/_wordpress";
+@import "../../../frank/stylesheets/scss/modules/_widgets";
+@import "../../../frank/stylesheets/scss/modules/_forms";
+
+@import "../../../frank/stylesheets/scss/partials/_transitions";
+@import "../../../frank/stylesheets/scss/partials/_single";
+@import "../../../frank/stylesheets/scss/partials/_page";
+@import "../../../frank/stylesheets/scss/partials/_archive";
+@import "../../../frank/stylesheets/scss/partials/_fourohfour";
+@import "../../../frank/stylesheets/scss/partials/_sidebar";
+@import "../../../frank/stylesheets/scss/partials/_comments";
+@import "../../../frank/stylesheets/scss/partials/_footer";
+
+
+@import "partials/_global";
+@import "partials/_transitions";
+@import "partials/_header";
+@import "partials/_index";
+@import "partials/_single";
+@import "partials/_sidebar";
+@import "partials/_footer";
+@import "partials/_pages";
+@import "partials/_colorbox";

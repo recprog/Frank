@@ -154,39 +154,7 @@ dd {
 		
 /*MOBILE*/
 @media only screen and  (max-width: 767px) {
-	
-	button, .button, input[type=submit] {
-		display:block;
-		width:100% !important;
-		box-sizing:border-box;
-		margin:$row-height 0;
-	}
 
-	/*Typography*/
-	h1 { font-size: $font-size-x-large; }
-	h2 { font-size: $font-size-large; }
-	h3 { font-size: $font-size-medium; }
-	h4 { font-size: $font-size-small; }
-	h5 { font-size: $font-size-x-small; }
-	h6 { font-size: $font-size-xx-small; }
-	
-	/*Metadata content*/
-	ul.metadata.vertical {
-		margin-top: $row-height *2;
-		display: inline-block;
-		li {
-			float: left;
-			background: none;
-			margin-right: 15px; 
-			text-align:left;
-			&.last, &:last-child {
-				margin-right: 0; 
-			} 
-			&:first-child {
-				margin-left:0;
-			}
-		}
-	}
 	#content.single .post {
 		.flush-left {
 			margin-left: 0% !important;
