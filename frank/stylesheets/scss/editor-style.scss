@@ -3,9 +3,9 @@ Theme Name: Frank
 Description: Styles for the TinyMCE editor.
 */
 
-@import "variables";
-@import "reset";
-@import "grid";
+@import "partials/_variables";
+@import "partials/_reset";
+@import "partials/_grid";
 
 html .mceContentBody {
 	max-width: 535px;
@@ -13,7 +13,7 @@ html .mceContentBody {
 	margin:10px;
 }
 
-@import "global";
+@import "partials/_global";
 
 img.mceWPmore {
 	box-shadow:none;
