@@ -39,3 +39,14 @@ button.small,
 	font-size: $font-size-xx-small;
 	padding: 4px 8px;
 }
+
+/*MOBILE*/
+@media only screen and  (max-width: 767px) {
+	
+	button, .button, input[type=submit] {
+		display:block;
+		width:100% !important;
+		box-sizing:border-box;
+		margin:$row-height 0;
+	}
+}

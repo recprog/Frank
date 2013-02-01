@@ -44,3 +44,24 @@ dl.metadata {
 	text-align: right;
 	margin-bottom: $row-height; 
 }
+
+@media only screen and  (max-width: 767px) {
+		
+	/*Metadata content*/
+	ul.metadata.vertical {
+		margin-top: $row-height *2;
+		display: inline-block;
+		li {
+			float: left;
+			background: none;
+			margin-right: 15px; 
+			text-align:left;
+			&.last, &:last-child {
+				margin-right: 0; 
+			} 
+			&:first-child {
+				margin-left:0;
+			}
+		}
+	}
+}

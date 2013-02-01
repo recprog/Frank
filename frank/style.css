@@ -955,56 +955,6 @@ dd {
 
 /*MOBILE*/
 @media only screen and (max-width: 767px) {
-  button, .button, input[type=submit] {
-    display: block;
-    width: 100% !important;
-    box-sizing: border-box;
-    margin: 15px 0;
-  }
-
-  /*Typography*/
-  h1 {
-    font-size: 24px;
-  }
-
-  h2 {
-    font-size: 20px;
-  }
-
-  h3 {
-    font-size: 17px;
-  }
-
-  h4 {
-    font-size: 13px;
-  }
-
-  h5 {
-    font-size: 11px;
-  }
-
-  h6 {
-    font-size: 10px;
-  }
-
-  /*Metadata content*/
-  ul.metadata.vertical {
-    margin-top: 30px;
-    display: inline-block;
-  }
-  ul.metadata.vertical li {
-    float: left;
-    background: none;
-    margin-right: 15px;
-    text-align: left;
-  }
-  ul.metadata.vertical li.last, ul.metadata.vertical li:last-child {
-    margin-right: 0;
-  }
-  ul.metadata.vertical li:first-child {
-    margin-left: 0;
-  }
-
   #content.single .post .flush-left {
     margin-left: 0% !important;
   }
@@ -1166,6 +1116,33 @@ em {
   font-style: italic;
 }
 
+/*MOBILE*/
+@media only screen and (max-width: 767px) {
+  /*Typography*/
+  h1 {
+    font-size: 24px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  h3 {
+    font-size: 17px;
+  }
+
+  h4 {
+    font-size: 13px;
+  }
+
+  h5 {
+    font-size: 11px;
+  }
+
+  h6 {
+    font-size: 10px;
+  }
+}
 /*Buttons*/
 button,
 .button,
@@ -1212,6 +1189,15 @@ button.small,
   padding: 4px 8px;
 }
 
+/*MOBILE*/
+@media only screen and (max-width: 767px) {
+  button, .button, input[type=submit] {
+    display: block;
+    width: 100% !important;
+    box-sizing: border-box;
+    margin: 15px 0;
+  }
+}
 /*Metadata content*/
 .metadata {
   font: 11px Sans-Serif;
@@ -1258,6 +1244,25 @@ dl.metadata {
   margin-bottom: 15px;
 }
 
+@media only screen and (max-width: 767px) {
+  /*Metadata content*/
+  ul.metadata.vertical {
+    margin-top: 30px;
+    display: inline-block;
+  }
+  ul.metadata.vertical li {
+    float: left;
+    background: none;
+    margin-right: 15px;
+    text-align: left;
+  }
+  ul.metadata.vertical li.last, ul.metadata.vertical li:last-child {
+    margin-right: 0;
+  }
+  ul.metadata.vertical li:first-child {
+    margin-left: 0;
+  }
+}
 .post-group {
   margin-top: 0;
 }
@@ -1877,6 +1882,7 @@ button, .button, input[type=submit] {
   display: none;
 }
 #respond input[type=text], #respond textarea {
+  /*TODO: Streamline*/
   -moz-box-sizing: border-box;
   -ms-box-sizing: border-box;
   -webkit-box-sizing: border-box;

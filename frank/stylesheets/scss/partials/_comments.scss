@@ -89,6 +89,7 @@
 	margin-top:$row-height*4;
 	label { display: none; }
 	input[type=text], textarea {
+		/*TODO: Streamline*/
 		-moz-box-sizing: border-box;
 		-ms-box-sizing: border-box;
 		-webkit-box-sizing: border-box;
