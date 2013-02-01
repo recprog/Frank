@@ -33,7 +33,6 @@ Version:        0.1.0
 @import "../../../frank/stylesheets/scss/partials/_comments";
 @import "../../../frank/stylesheets/scss/partials/_footer";
 
-
 @import "partials/_global";
 @import "partials/_transitions";
 @import "partials/_header";
@@ -42,4 +41,5 @@ Version:        0.1.0
 @import "partials/_sidebar";
 @import "partials/_footer";
 @import "partials/_pages";
-@import "partials/_colorbox";
+@import "partials/_lightbox";
+@import "partials/_slideshow";
