@@ -9,20 +9,26 @@ License:		GPL 3.0
 License URI:	http://www.gnu.org/copyleft/gpl.html 
 Tags: brown, red, white, two-columns, fixed-width, sticky-post, custom-menu
 */
-@import "variables";
-@import "reset";
-@import "grid";
-@import "global";
-@import "forms";
-@import "widgets";
-@import "transitions";
-@import "header";
-@import "index";
-@import "single";
-@import "page";
-@import "archive";
-@import "fourohfour";
-@import "sidebar";
-@import "comments";
-@import "footer";
-@import "mobile";
+@import "partials/_variables";
+@import "partials/_mixins";
+@import "partials/_reset";
+@import "partials/_grid";
+@import "partials/_global";
+
+@import "modules/_typography";
+@import "modules/_buttons";
+@import "modules/_metadata";
+@import "modules/_posts";
+@import "modules/_wordpress";
+@import "modules/_widgets";
+@import "modules/_forms";
+
+@import "partials/_transitions";
+@import "partials/_header";
+@import "partials/_single";
+@import "partials/_page";
+@import "partials/_archive";
+@import "partials/_fourohfour";
+@import "partials/_sidebar";
+@import "partials/_comments";
+@import "partials/_footer";
