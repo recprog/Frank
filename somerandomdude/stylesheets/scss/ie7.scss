@@ -1,4 +1,6 @@
-@import "variables";
+@import "../../../frank/stylesheets/scss/partials/_variables";
+@import "../../../frank/stylesheets/scss/partials/_mixins";
+@import "partials/_variables";
 
 #content, #sub_header, #content *, #sub_header * {
 	z-index: -1 !important; 
