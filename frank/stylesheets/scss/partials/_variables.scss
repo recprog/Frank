@@ -49,23 +49,3 @@ $column-width: 45px;
 $gutter-width: 40px;
 
 $border-break: 2px solid $color-light;
-
-@mixin background_color_off_black_alpha($alpha: 1) {
-background-color: rgba(5, 0, 0, $alpha);
-}
-
-@mixin default-shadow() {
-box-shadow: 0px 0px 8px rgba(18, 7, 6, 0.3);
-}
-
-@mixin column() {
-	margin-left: 4.4%; float: left; min-height: 1px; position: relative;
-}
-
-@mixin column-based-width($columns: 1, $modifier: 0) {
-width: $columns * $column-width + ($columns - 1) * $gutter-width + $modifier;
-}
-
-@mixin inset-shadow($x: 0px, $y: 0px, $blur: 3px, $color: black) {
-box-shadow: inset $x $y $blur $color;
-}
