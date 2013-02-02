@@ -57,7 +57,8 @@
 #projects_navigation dt {
 	color: $color-midtone; }
 
-#projects_navigation dt, #projects_navigation dd {
+#projects_navigation dt, 
+#projects_navigation dd {
 	margin: 0;
 	font: #{$font-size-x-small} #{$typeface-secondary};
 	margin-right: 20px;
@@ -193,16 +194,20 @@
 	}
 }
 
-#p11465 .slideshow .slide-a, #p11465 .slideshow .slide-b {
+#p11465 .slideshow .slide-a, 
+#p11465 .slideshow .slide-b {
 	background-image: url("/wp-content/images/pages/cue/cue_sprite.png"); }
 
-#p5734 .slideshow .slide-a, #p5734 .slideshow .slide-b {
+#p5734 .slideshow .slide-a, 
+#p5734 .slideshow .slide-b {
 	background-image: url("/wp-content/images/pages/bitcons/bitcons_sprite.png"); }
 
-#p5641 .slideshow .slide-a, #p5641 .slideshow .slide-b {
+#p5641 .slideshow .slide-a, 
+#p5641 .slideshow .slide-b {
 	background-image: url("/wp-content/images/pages/sanscons/sanscons_sprite.png"); }
 
-#p6975 .slideshow .slide-a, #p6975 .slideshow .slide-b {
+#p6975 .slideshow .slide-a, 
+#p6975 .slideshow .slide-b {
 	background-image: url("/wp-content/images/pages/off_franklin/off_franklin_sprite.jpg"); }
 	
 /*Frank*/
