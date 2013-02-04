@@ -4,13 +4,11 @@
  */
 ?>
 <?php get_header(); ?>
-<div id="content" class="home">
+<main id="content" class="home" role="main">
 	<?php
 	$frank_sections = get_option( '_frank_options' );
 	$frank_sections = $frank_sections['sections'];
 	global $frank_section_type, $frank_section_header, $frank_section_title, $frank_section_caption, $frank_section_num_posts, $frank_section_categories;
-	global $foo;
-	$foo = "FOO!";
 	if($frank_sections) {
 		foreach($frank_sections as $section) {
 			$frank_section_type=$section['display_type'];
@@ -57,5 +55,5 @@
 	}
 	?>
 	<?php get_template_part('partials/post-pagination'); ?>
-</div>
+</main>
 <?php get_footer(); ?>
