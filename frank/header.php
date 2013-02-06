@@ -7,7 +7,7 @@
 <!--[if IE 7 | IE 8]>
 <html class="ie" lang="en-US">
 <![endif]-->
-<!--[if !(IE 7) | !(IE 8)  ]><!-->
+<!--[if (gte IE 9) | !(IE)]><!-->
 <html <?php language_attributes(); ?>>
 <!--<![endif]-->
 <head>
@@ -30,7 +30,7 @@
 		<div class="chromeframe">Your browser is out of date. Please <a href="http://browsehappy.com/">upgrade your browser </a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a>.</div>
 	<![endif]-->
 <div class="container">
-	<header id="page-header" class="row" role="banner">
+	<header id="page-header" class="row">
 		<hgroup id="site-title-description">
 			<h1 id="site-title"><a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a></h1>
 			<h2 id="site-description"><?php bloginfo('description'); ?></h2>
@@ -66,25 +66,13 @@
 		</a>
 		<?php endif; ?>
 
-		<?php
-				if ( 'blank' == get_header_textcolor() ) :
-			?>
-				<div class="only-search<?php if ( $header_image ) : ?> with-image<?php endif; ?>">
-				<?php get_search_form(); ?>
-				</div>
-			<?php
-				else :
-			?>
-				<?php get_search_form(); ?>
-			<?php endif; ?>
-
-		<nav id="site-nav" role="navigation">
+		<nav id="site-nav">
 			<?php if ( !dynamic_sidebar("Navigation") ) : ?>
 				<?php wp_nav_menu( array('theme_location' => 'frank_primary_navigation', 'container' => false ) ); ?>	
 			<?php endif; ?> 
 		</nav>
 		<?php if ( is_active_sidebar("widget-subheader") ) : ?>
-		<div id='sub_header' class='row'>
+		<div id='sub-header' class='row'>
 			<?php if ( !dynamic_sidebar("Sub Header") ) : ?>
 			<?php endif; ?>
 		</div>
