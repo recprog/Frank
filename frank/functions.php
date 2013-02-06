@@ -7,24 +7,62 @@ function frank_theme_setup(){
     load_theme_textdomain( 'frank_theme', get_template_directory() . '/languages' );
 }
 
+if ( ! function_exists('frank_get_option') ) {
+	function frank_get_option( $key ) {
+
+		$frank_options = get_option( '_frank_options' );
+
+		/* Define the array of defaults */
+		$defaults = array(
+			'header' => '',
+			'footer' => '',
+			'tweet_post_button' => false,
+			'tweet_post_attribution' => '',
+			'sections' => array(
+				'display_type' => 'default_loop',
+				'header' => false,
+				'title' => '',
+				'caption' => '',
+				'num_posts' => 10,
+				'categories' => array(),
+				'default' => true
+			)
+		);
+
+		$frank_options = wp_parse_args( $frank_options, $defaults );
+
+		if( isset( $frank_options[ $key ] ) )
+			return $frank_options[ $key ];
+
+		return false;
+	}
+}
+
 if ( ! isset( $content_width ) ) $content_width = 980;
 
 define( 'HEADER_TEXTCOLOR', '3D302F' );
-define( 'HEADER_IMAGE', '%s/images/default_header.jpg' ); 
+define( 'HEADER_IMAGE', '%s/images/default_header.jpg' );
 define( 'HEADER_IMAGE_WIDTH', 980 );
 define( 'HEADER_IMAGE_HEIGHT', 225 );
 
 add_filter( 'wp_list_categories', 'frank_remove_category_list_rel' );
 add_filter( 'the_category', 'frank_remove_category_list_rel' );
 add_filter( 'dynamic_sidebar_params','frank_widget_first_last_classes' );
-add_filter( 'script_loader_src', 'frank_remove_script_version', 15, 1 );
-add_filter( 'style_loader_src', 'frank_remove_script_version', 15, 1 );
-add_filter( 'the_generator', 'frank_remove_generator' );
 
-if ( ! is_admin() ) {  
-	add_action( 'init', 'frank_enqueue_styles' );  
-} 
-if( is_admin() ) {
+if ( frank_get_option( 'remove_script_version' ) ){
+	add_filter( 'script_loader_src', 'frank_remove_version_url_parameter', 15, 1 );
+}
+if ( frank_get_option( 'remove_style_version' ) ){
+	add_filter( 'style_loader_src', 'frank_remove_version_url_parameter', 15, 1 );
+}
+if ( frank_get_option( 'remove_wordpress_version' ) ){
+	add_filter( 'the_generator', 'frank_wp_generator' );
+}
+
+if ( ! is_admin() ) {
+	add_action( 'init', 'frank_enqueue_styles' );
+}
+if ( is_admin() ) {
 	add_action( 'init', 'frank_admin_assets' );
 }
 
@@ -34,6 +72,7 @@ add_action( 'wp_head', 'frank_header' );
 add_action( 'widgets_init', 'frank_widgets' );
 add_action( 'wp_head', 'frank_add_ie_js_fixes' );
 add_action( 'after_setup_theme', 'frank_register_menu' );
+add_action( 'after_switch_theme', 'frank_set_missing_widget_options' );
 
 add_editor_style();
 
@@ -44,7 +83,7 @@ $custom_header_support = array(
 	'admin-head-callback' 		=> 'frank_admin_header_style',
 	'admin-preview-callback'	=> 'frank_admin_header_image',
 );
-	
+
 add_theme_support( 'custom-header', $custom_header_support );
 add_theme_support( 'automatic-feed-links' );
 add_theme_support( 'post-thumbnails' ); 
@@ -71,7 +110,7 @@ function frank_widgets() {
 		'before_title' 	=> '<h3 class="widget-title">',
 		'after_title' 	=> '</h3>',
 	) );
-	
+
 	register_sidebar( array(
 		'name' 			=> 'Navigation',
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
@@ -79,7 +118,7 @@ function frank_widgets() {
 		'before_title' 	=> '<h3 class="widget-title">',
 		'after_title' 	=> '</h3>',
 	) );
-	
+
 	register_sidebar( array(
 		'name' 			=> 'Index Right Aside',
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
@@ -87,7 +126,7 @@ function frank_widgets() {
 		'before_title' 	=> '<h3 class="widget-title">',
 		'after_title' 	=> '</h3>',
 	) );
-	
+
 	register_sidebar( array(
 		'name' 			=> 'Post Left Aside',
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
@@ -95,7 +134,7 @@ function frank_widgets() {
 		'before_title' 	=> '<h3 class="widget-title">',
 		'after_title' 	=> '</h3>',
 	) );
-	
+
 	register_sidebar( array(
 		'name' 			=> 'Post Right Aside',
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
@@ -103,7 +142,7 @@ function frank_widgets() {
 		'before_title' 	=> '<h3 class="widget-title">',
 		'after_title' 	=> '</h3>',
 	) );
-	
+
 	register_sidebar( array(
 		'name' 			=> 'Post Footer',
 		'id' 			=> 'widget-postfooter',
@@ -112,7 +151,7 @@ function frank_widgets() {
 		'before_title' 	=> '<h3 class="widget-title">',
 		'after_title' 	=> '</h3>',
 	) );
-	
+
 	register_sidebar( array(
 		'name' 			=> 'Footer',
 		'id' 			=> 'widget-footer',
@@ -128,9 +167,6 @@ Clean up widget settings that weren't set at installation
 If never used in a sidebar, their lack of default options will
 trigger queries every page load
 */
-
-add_action( 'after_switch_theme', 'frank_set_missing_widget_options' );
-
 function frank_set_missing_widget_options( ){
 	add_option( 'widget_pages', array ( '_multiwidget'     => 1 ) );
 	add_option( 'widget_calendar', array ( '_multiwidget'  => 1 ) );
@@ -138,9 +174,13 @@ function frank_set_missing_widget_options( ){
 	add_option( 'widget_nav_menu', array ( '_multiwidget'  => 1 ) );
 }
 
-function frank_remove_script_version( $src ){
+function frank_remove_version_url_parameter( $src ) {
 	$parts = explode( '?', $src );
 	return $parts[0];
+}
+
+function frank_wp_generator() {
+		echo '<meta name="generator" content="WordPress ', bloginfo('version'), '" />';
 }
 
 if ( ! function_exists( 'frank_header_style' ) ) :
@@ -170,14 +210,7 @@ if ( ! function_exists( 'frank_header_style' ) ) :
 		</style>
 		<?php
 	}
-endif; 
-
-function frank_remove_generator() {
-	$frank_options = get_option( '_frank_options' );
-	if ( ! isset( $frank_options['generator_disabled'] ) or ! $frank_options['generator_disabled'] ){
-		echo '<meta name="generator" content="WordPress ', bloginfo( 'version' ), '" />';
-	}
-}
+endif;
 
 if ( ! function_exists( 'frank_admin_header_style' ) ) :
 	function frank_admin_header_style() {
@@ -243,10 +276,10 @@ if ( ! function_exists( 'frank_admin_header_image' ) ) :
 			<?php endif; ?>
 		</div>
 	<?php }
-endif; 
+endif;
 
-/* Remove rel attribute from the category list - thanks Joseph 
-(http://josephleedy.me/blog/make-wordpress-category-list-valid-by-removing-rel-attribute/)! 
+/* Remove rel attribute from the category list - thanks Joseph
+(http://josephleedy.me/blog/make-wordpress-category-list-valid-by-removing-rel-attribute/)!
 */
 
 function frank_remove_category_list_rel( $output ) {
@@ -255,14 +288,14 @@ function frank_remove_category_list_rel( $output ) {
 }
 
 /*
-Add "first" and "last" CSS classes to dynamic sidebar widgets. Also adds numeric index class for each widget (widget-1, widget-2, etc.) 
+Add "first" and "last" CSS classes to dynamic sidebar widgets. Also adds numeric index class for each widget (widget-1, widget-2, etc.)
 via http://wordpress.org/support/topic/how-to-first-and-last-css-classes-for-sidebar-widgets
  */
 
-function frank_widget_first_last_classes( $params ) {	
+function frank_widget_first_last_classes( $params ) {
 	global $my_widget_num; // Global a counter array
 	$this_id = $params[0]['id']; // Get the id for the current sidebar we're processing
-	$arr_registered_widgets = wp_get_sidebars_widgets(); // Get an array of ALL registered widgets	
+	$arr_registered_widgets = wp_get_sidebars_widgets(); // Get an array of ALL registered widgets
 
 	if( ! $my_widget_num ) {// If the counter array doesn't exist, create it
 		$my_widget_num = array();
@@ -314,33 +347,29 @@ function frank_admin_assets() {
 	$translation_array['delete_section_alert'] = __( 'Are you sure you want to delete this Content Section?', 'frank_theme' );
 	$translation_array['drag_section_instruction'] = '&larr; ' . __('(Drag & Drop Content Sections to Re-Order)', 'frank_theme' );
 	wp_localize_script( 'frank-admin', 'admin_strings', $translation_array );
-} 
+}
 
-function frank_footer() {	
-	$frank_general = get_option( '_frank_options' );
-    if( $frank_general&&isset( $frank_general['footer'] ) ) echo stripslashes( $frank_general['footer'] );
+function frank_footer() {
+	echo stripslashes( frank_get_option( 'footer' ) );
 }
 
 function frank_header() {
-	$frank_general = get_option( '_frank_options' );
-    if( $frank_general&&isset( $frank_general['header'] ) ) echo stripslashes( $frank_general['header'] );
+	echo stripslashes( frank_get_option( 'header' ) );
 }
 
 function frank_tweet_post_button() {
-	$frank_general = get_option( '_frank_options' );
-    if( $frank_general&&$frank_general['tweet_post_button'] ) return true;
+	if ( frank_get_option( 'tweet_post_button' ) ) return true;
 }
 
 function frank_tweet_post_attribution() {
-	$frank_general = get_option( '_frank_options' );
-    if( $frank_general ) return $frank_general['tweet_post_attribution'];
+	return frank_get_option( 'tweet_post_attribution' );
 }
 
 if ( ! function_exists( 'frank_comment' ) ) {
 	function frank_comment( $comment, $args, $depth ) {
 	   $GLOBALS['comment'] = $comment; ?>
 
-		<li id="li-comment-<?php comment_ID() ?>" class="comment">
+		<li id="comment-<?php comment_ID() ?>" class="comment">
 			<div class="row">
 				<div class="comment-content">
 					<?php
@@ -376,7 +405,7 @@ if ( ! function_exists( 'frank_comment' ) ) {
 if ( ! function_exists( 'frank_enqueue_styles' ) ) {
 	function frank_enqueue_styles() {
 		global $wp_styles;
-		
+
 		wp_register_style( 'frank_stylesheet', get_stylesheet_directory_uri().'/style.css', null, '0.9', 'all' );
 		wp_register_style( 'frank_stylesheet_ie', get_stylesheet_directory_uri().'/ie.css', null, '0.9', 'all' );
 		$wp_styles->add_data( 'frank_stylesheet_ie', 'conditional', 'IE' );
@@ -386,12 +415,8 @@ if ( ! function_exists( 'frank_enqueue_styles' ) ) {
 }
 
 function frank_add_ie_js_fixes () {
-    echo '<!--[if lt IE 9]>';
-    echo '<script src="',  get_stylesheet_directory_uri(), '/javascripts/html5.js"></script>';
-    echo '<![endif]-->';
+  echo '<!--[if lt IE 9]><script src="',  get_stylesheet_directory_uri(), '/javascripts/html5.js"></script><![endif]-->';
 
-    echo '<!--[if lt IE 7]>';
-	echo '<script src="',  get_stylesheet_directory_uri(), '/javascripts/ie7.js"></script>';
-	echo '<![endif]-->';
+  echo '<!--[if lt IE 7]><script src="',  get_stylesheet_directory_uri(), '/javascripts/ie7.js"></script><![endif]-->';
 }
 ?>

@@ -18,13 +18,14 @@ Tags: 					brown, red, white, two-columns, fixed-width, sticky-post, custom-menu
 @import "modules/_typography";
 @import "modules/_buttons";
 @import "modules/_metadata";
-@import "modules/_posts";
 @import "modules/_wordpress";
 @import "modules/_widgets";
 @import "modules/_forms";
 
 @import "partials/_transitions";
 @import "partials/_header";
+@import "partials/_posts";
+@import "partials/_post-groups";
 @import "partials/_single";
 @import "partials/_page";
 @import "partials/_attachment";
