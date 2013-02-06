@@ -613,16 +613,16 @@ img, object, embed, video {
 }
 
 /* Nicolas Gallagher's micro clearfix */
-.row:before, .row:after, .clearfix:before, .post.leftaside .post-content:before, .type-page.leftaside .post-content:before, #site-nav .menu:before, .comment-content:before, .clearfix:after, .post.leftaside .post-content:after, .type-page.leftaside .post-content:after, #site-nav .menu:after, .comment-content:after {
+.row:before, .row:after, .clearfix:before, #site-nav .menu:before, .post.leftaside .post-content:before, .type-page.leftaside .post-content:before, .comment-content:before, .clearfix:after, #site-nav .menu:after, .post.leftaside .post-content:after, .type-page.leftaside .post-content:after, .comment-content:after {
   content: "";
   display: table;
 }
 
-.row:after, .clearfix:after, .post.leftaside .post-content:after, .type-page.leftaside .post-content:after, #site-nav .menu:after, .comment-content:after {
+.row:after, .clearfix:after, #site-nav .menu:after, .post.leftaside .post-content:after, .type-page.leftaside .post-content:after, .comment-content:after {
   clear: both;
 }
 
-.row, .clearfix, .post.leftaside .post-content, .type-page.leftaside .post-content, #site-nav .menu, .comment-content {
+.row, .clearfix, #site-nav .menu, .post.leftaside .post-content, .type-page.leftaside .post-content, .comment-content {
   zoom: 1;
 }
 
@@ -1264,136 +1264,6 @@ dl.metadata {
     margin-left: 0;
   }
 }
-.post-group {
-  margin-top: 0;
-}
-.post-group ~ .post-group {
-  margin: 60px auto;
-}
-
-.post-title {
-  font-size: 20px;
-}
-
-.post-header {
-  margin-bottom: 15px;
-}
-
-.post-content {
-  font: 17px/1.6 Georgia, serif;
-}
-.post-content p, .post-content ul li, .post-content ol li, .post-content dt, .post-content dd, .post-content blockquote {
-  font-size: 17px;
-}
-.post-content code, .post-content small {
-  font-size: 13px;
-}
-.post-content img {
-  max-width: 100%;
-  box-shadow: 0px 0px 8px rgba(18, 7, 6, 0.3);
-}
-
-.post, .type-page {
-  margin: 60px 0;
-}
-.post:first-child, .type-page:first-child {
-  margin-top: 0;
-}
-.post:last-child, .type-page:last-child {
-  margin-bottom: 0;
-}
-.post.leftaside .post-content, .type-page.leftaside .post-content {
-  width: 73.9%;
-}
-.post.leftaside .post-info, .type-page.leftaside .post-info {
-  width: 21.679%;
-}
-
-.post-group-header {
-  margin-bottom: 30px;
-  padding-bottom: 5px;
-  border-bottom: 1px #f0eceb solid;
-  font: 13px Sans-Serif;
-}
-.post-group-header .label {
-  font-weight: 700;
-}
-.post-group-header .caption {
-  font-style: italic;
-  color: #5d504f;
-  margin: 0 10px;
-}
-.post-group-header .more {
-  font-family: Georgia, serif;
-}
-
-.post-group {
-  margin-bottom: 60px;
-}
-.post-group .read-more {
-  margin-top: 15px;
-}
-.post-group .read-more .more {
-  font-size: 11px;
-}
-
-.post-group.oneup.large section {
-  margin: 0 0 15px 0;
-}
-.post-group.oneup.large section p {
-  font-style: italic;
-  font-size: 38px;
-}
-
-.post-group.twoup .post, .post-group.threeup .post, .post-group.fourup .post {
-  margin-top: 15px;
-  float: left !important;
-}
-.post-group.twoup header h1, .post-group.threeup header h1, .post-group.fourup header h1 {
-  font-size: 13px;
-  font-weight: 700;
-}
-.post-group.twoup section p, .post-group.threeup section p, .post-group.fourup section p {
-  font-size: 13px;
-}
-.post-group.twoup .metadata li, .post-group.threeup .metadata li, .post-group.fourup .metadata li {
-  font-size: 11px;
-}
-
-.post-group.twoup .post {
-  width: 47.8%;
-}
-
-.post-group.threeup .post {
-  width: 30.37%;
-}
-
-.post-group.fourup .post {
-  width: 21.679%;
-}
-
-/* TODO: Try this pattern out :not(:last-child) */
-.post-group.twoup .post:nth-child(2n+1), .post-group.threeup .post:nth-child(3n+1), .post-group.fourup .post:nth-child(4n+1) {
-  margin-left: 0;
-  clear: left;
-}
-
-.post-group.twoup .post:nth-child(2n), .post-group.threeup .post:nth-child(3n), .post-group.fourup .post:nth-child(4n) {
-  margin-right: 0;
-  float: right;
-}
-
-.post-group.twoup .post:nth-child(n+3), .post-group.threeup .post:nth-child(n+4), .post-group.fourup .post:nth-child(n+5) {
-  margin-bottom: 0;
-  margin-top: 45px;
-}
-
-/*MOBILE*/
-@media only screen and (max-width: 767px) {
-  #content.home .post-group.oneup.large .post-content p {
-    font-size: 24px;
-  }
-}
 /*Wordpress Classes*/
 .alignleft, .alignright, .aligncenter {
   margin: 10px 0 15px 0;
@@ -1642,6 +1512,136 @@ button, .button, input[type=submit] {
     display: none;
   }
 }
+.post-title {
+  font-size: 20px;
+}
+
+.post-header {
+  margin-bottom: 15px;
+}
+
+.post-content {
+  font: 17px/1.6 Georgia, serif;
+}
+.post-content p, .post-content ul li, .post-content ol li, .post-content dt, .post-content dd, .post-content blockquote {
+  font-size: 17px;
+}
+.post-content code, .post-content small {
+  font-size: 13px;
+}
+.post-content img {
+  max-width: 100%;
+  box-shadow: 0px 0px 8px rgba(18, 7, 6, 0.3);
+}
+
+.post, .type-page {
+  margin: 60px 0;
+}
+.post:first-child, .type-page:first-child {
+  margin-top: 0;
+}
+.post:last-child, .type-page:last-child {
+  margin-bottom: 0;
+}
+.post.leftaside .post-content, .type-page.leftaside .post-content {
+  width: 73.9%;
+}
+.post.leftaside .post-info, .type-page.leftaside .post-info {
+  width: 21.679%;
+}
+
+/*MOBILE*/
+@media only screen and (max-width: 767px) {
+  #content.home .post-group.oneup.large .post-content p {
+    font-size: 24px;
+  }
+}
+.post-group {
+  margin-top: 0;
+}
+.post-group ~ .post-group {
+  margin: 60px auto;
+}
+
+.post-group-header {
+  margin-bottom: 30px;
+  padding-bottom: 5px;
+  border-bottom: 1px #f0eceb solid;
+  font: 13px Sans-Serif;
+}
+.post-group-header .label {
+  font-weight: 700;
+}
+.post-group-header .caption {
+  font-style: italic;
+  color: #5d504f;
+  margin: 0 10px;
+}
+.post-group-header .more {
+  font-family: Georgia, serif;
+}
+
+.post-group {
+  margin-bottom: 60px;
+}
+.post-group .read-more {
+  margin-top: 15px;
+}
+.post-group .read-more .more {
+  font-size: 11px;
+}
+
+.post-group.oneup.large section {
+  margin: 0 0 15px 0;
+}
+.post-group.oneup.large section p {
+  font-style: italic;
+  font-size: 38px;
+}
+
+.post-group.twoup .post, .post-group.threeup .post, .post-group.fourup .post {
+  margin-top: 15px;
+  float: left !important;
+}
+.post-group.twoup header h1, .post-group.threeup header h1, .post-group.fourup header h1 {
+  font-size: 13px;
+  font-weight: 700;
+}
+.post-group.twoup section p, .post-group.threeup section p, .post-group.fourup section p {
+  font-size: 13px;
+}
+.post-group.twoup .metadata li, .post-group.threeup .metadata li, .post-group.fourup .metadata li {
+  font-size: 11px;
+}
+
+.post-group.twoup .post {
+  width: 47.8%;
+}
+
+.post-group.threeup .post {
+  width: 30.37%;
+}
+
+.post-group.fourup .post {
+  width: 21.679%;
+}
+
+/* TODO: Try this pattern out :not(:last-child) */
+.post-group.twoup .post:nth-child(2n+1), .post-group.threeup .post:nth-child(3n+1), .post-group.fourup .post:nth-child(4n+1) {
+  margin-left: 0;
+  clear: left;
+}
+
+.post-group.twoup .post:nth-child(2n), .post-group.threeup .post:nth-child(3n), .post-group.fourup .post:nth-child(4n) {
+  margin-right: 0;
+  float: right;
+}
+
+.post-group.twoup .post:nth-child(n+3), .post-group.threeup .post:nth-child(n+4), .post-group.fourup .post:nth-child(n+5) {
+  margin-bottom: 0;
+  margin-top: 45px;
+}
+
 #previous-post {
   margin-top: 60px;
   margin-bottom: 30px;

@@ -4,17 +4,18 @@
  */
 ?>
 <?php get_header(); ?>
-<div id="content" class="fullspread fourohfour">
-	<div id="content-primary">
+<main id="content" class="fourohfour" role="main">
+	<div class="row">
 		<header>
 			<h1>
 			  <?php _e('Page Not Found', 'frank_theme'); ?>
 			</h1>
 		</header>
-		<div class='container'>
-			<div class='row'>
-				<div class="six columns">
-					<p class='large'>
+	</div>
+	<div class="row">
+		<div id="content-primary">
+			<div class="six columns">
+					<p class="large">
 					<?php
 					  $home_link = sprintf('<a href="%s" title="%s">%s</a>',
 					                      home_url(),
@@ -25,15 +26,14 @@
 					</p>
 				</div>
 				<div class="six columns search">
-					<p class='large'>
+					<p class="large">
 					<?php
 					  _e('If you believe this page exists, please try searching for the page in the search input below.', 'frank_theme');
 					?>
 					</p>
 					<?php get_search_form(); ?>
 				</div>
-			</div>
 		</div>
 	</div>
-</div>
+</main>
 <?php get_footer(); ?>

@@ -18,8 +18,6 @@
 			$frank_section_num_posts=$section['num_posts'];
 			$frank_section_categories=$section['categories'];
 
-
-
 			/* TODO: Clean this up */
 			switch($frank_section_type) {
 				case 'srd_loop':
