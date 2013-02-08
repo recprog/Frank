@@ -126,6 +126,8 @@ function frank_widgets() {
 
 
 // Clean up widget settings that weren't set at installation
+// If never used in a sidebar, their lack of default options will
+// trigger queries every page load
 add_action( 'after_switch_theme', 'frank_set_missing_widget_options' );
 function frank_set_missing_widget_options( ){
 	add_option( 'widget_pages', array ( '_multiwidget' => 1 ) );
