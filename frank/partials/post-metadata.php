@@ -11,9 +11,11 @@
 	<li class="tags"><?php the_tags('', ' '); ?></li>
 	<li class="comments">
   <?php
+  
   	comments_number(__('No Comments', 'frank_theme'),
   	                __('One Comment', 'frank_theme'),
   		              __('% Comments', 'frank_theme'));
+  		              
   ?>
   </li>	
 	<?php
