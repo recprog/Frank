@@ -124,6 +124,17 @@ function frank_widgets() {
 	));
 }
 
+
+// Clean up widget settings that weren't set at installation
+add_action( 'after_switch_theme', 'frank_set_missing_widget_options' );
+function frank_set_missing_widget_options( ){
+	add_option( 'widget_pages', array ( '_multiwidget' => 1 ) );
+	add_option( 'widget_calendar', array ( '_multiwidget' => 1 ) );
+	add_option( 'widget_tag_cloud', array ( '_multiwidget' => 1 ) );
+	add_option( 'widget_nav_menu', array ( '_multiwidget' => 1 ) );
+}
+
+
 function frank_remove_script_version( $src ){
 	$parts = explode( '?', $src );
 	return $parts[0];
