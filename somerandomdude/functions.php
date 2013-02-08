@@ -26,7 +26,15 @@ function frank_enqueue_scripts() {
 	$frank_general = get_option( '_frank_options' );
 }
 
+// Remove unneeded widgets that have undesirable query overhead
 
+add_action( 'widgets_init', 'remove_unneeded_widgets' );
+function remove_unneeded_widgets() {
+    unregister_widget('WP_Widget_Pages');
+    unregister_widget('WP_Widget_Calendar');
+    unregister_widget('WP_Widget_Tag_Cloud');
+    unregister_widget('WP_Nav_Menu_Widget');
+}
 
 function frank_enqueue_styles() {
 	

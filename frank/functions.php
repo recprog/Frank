@@ -71,7 +71,7 @@ function frank_widgets() {
 	'before_title' => '<h3 class="widget-title">',
 	'after_title' => '</h3>',
 	));
-	
+
 	register_sidebar(array(
 	'name' => 'Sub Header',
 	'id' => 'widget-subheader',
