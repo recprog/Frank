@@ -9,28 +9,28 @@ License:				GPL 3.0
 License URI:		http://www.gnu.org/copyleft/gpl.html 
 Tags: 					brown, red, white, two-columns, fixed-width, sticky-post, custom-menu
 */
-@import "partials/_variables";
-@import "partials/_mixins";
-@import "partials/_reset";
-@import "partials/_grid";
-@import "partials/_global";
+@import "partials/variables";
+@import "partials/mixins";
+@import "partials/reset";
+@import "partials/grid";
+@import "partials/global";
 
-@import "modules/_typography";
-@import "modules/_buttons";
-@import "modules/_metadata";
-@import "modules/_wordpress";
-@import "modules/_widgets";
-@import "modules/_forms";
+@import "modules/typography";
+@import "modules/buttons";
+@import "modules/metadata";
+@import "modules/wordpress";
+@import "modules/widgets";
+@import "modules/forms";
 
-@import "partials/_transitions";
-@import "partials/_header";
-@import "partials/_posts";
-@import "partials/_post-groups";
-@import "partials/_single";
-@import "partials/_page";
-@import "partials/_attachment";
-@import "partials/_archive";
-@import "partials/_fourohfour";
-@import "partials/_sidebar";
-@import "partials/_comments";
-@import "partials/_footer";
+@import "partials/transitions";
+@import "partials/header";
+@import "partials/posts";
+@import "partials/post-groups";
+@import "partials/single";
+@import "partials/page";
+@import "partials/attachment";
+@import "partials/archive";
+@import "partials/fourohfour";
+@import "partials/sidebar";
+@import "partials/comments";
+@import "partials/footer";
