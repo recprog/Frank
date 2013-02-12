@@ -73,7 +73,7 @@
 			<?php endif; ?> 
 		</nav>
 		<?php if ( is_active_sidebar("widget-subheader") ) : ?>
-		<div id='sub_header' class='row'>
+		<div id='sub-header' class='row'>
 			<?php if ( !dynamic_sidebar("Sub Header") ) : ?>
 			<?php endif; ?>
 		</div>

@@ -28,7 +28,7 @@
 						<?php _e('Tweet this Post', 'frank_theme'); ?>
 						</a>
 						<?php endif; ?>
-						<div id="previous-post" class="clearfix">
+						<div id="prev-post" class="clearfix">
 							<?php previous_post_link('%link', '<nav><span class="arrow">%title</span></nav><p>%title</p>'); ?>
 						</div>
 						<?php if ( !dynamic_sidebar('Post Left Aside') ) : ?>

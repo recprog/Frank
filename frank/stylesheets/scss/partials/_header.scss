@@ -10,24 +10,21 @@
 	font-size: $font-size-small;
 }
 #site-nav {
-	.menu {
-		@extend .clearfix;
-	}
-	
 	margin:$row-height auto $row-height * 2 auto; 
 	border-bottom:$border-break;
+}
+
+.menu {
+		@extend .clearfix;
 	ul { 
 		margin:0 0 $row-height 0;
 		list-style: none;
 		ul {
-			background:#fff; 
-			background:rgba(255,255,255,0); 
 			list-style:none;
 			position:absolute;
 			z-index:999;
 			margin:0;
 			left:-9999px; 
-			
 			li {
 				float:none;
 				margin:0;
@@ -54,14 +51,14 @@
 					margin-bottom:0;
 				}
 				a {
-					padding:7px 30px 7px 30px;
+					padding:7px 30px;
 				}
 			}
 		}
 	}
 	
 	li {
-		@extend .reset;
+		@extend %reset;
 		margin: 0 10px 0 0;
 		float: left;
 		position:relative;
@@ -69,20 +66,17 @@
 			border-top:1px solid $color-midtone;
 			margin-top:-1px;
 			ul {
-
 				left:0; 
-
 				border-top:2px solid $color-dark;
 				border-bottom:1px solid $color-midtone;
 				background:lighten($color-light, 3%);
-				a:hover  {
-					background:darken($color-light, 5%);
-				}
-					
 				a {
 					font-weight: $font-weight-normal;
 					padding:7px 30px 7px 10px;
 					white-space:nowrap; 
+					&:hover  {
+						background:darken($color-light, 5%);
+					}
 				}
 				ul {
 					border:0;
@@ -95,9 +89,7 @@
 				margin-top:0;
 				border:none;
 			}
-
 		}
-
 	}
 	a {
 		padding:15px 10px;
@@ -108,15 +100,13 @@
 			color: $color-midtone; 
 		} 	
 	}
-
-
-
 }
+
 #page-header {
 	position: relative;
 }
 
-#sub_header {
+#sub-header {
 	border-bottom:$border-break;
 	padding-bottom:$row-height;
 	margin-bottom:$row-height * 2;
@@ -132,7 +122,7 @@
 		border-bottom:1px solid $color-light;
 		a {
 			font-size: $font-size-small;
-			padding: 15px 0;
+			padding: $row-height 0;
 		}
 		&:last-child {
 			border-bottom: 0;

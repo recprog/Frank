@@ -1,12 +1,11 @@
 #page-bottom { 
 	background: $color-midtone;
 	color: $color-light; 
-	text-shadow:0 -1px 0 rgba(0,0,0,.5);
+	@extend %text-emboss;
 }
 
 #page-footer {
-	padding-top:$row-height *2;
-	padding-bottom:$row-height *2;
+	padding:$row-height *2 0;
 	margin-top: $row-height * 2;
 	
 	a { color: $color-highlight; }

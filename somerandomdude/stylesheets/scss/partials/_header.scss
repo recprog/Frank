@@ -1,14 +1,14 @@
 #page-header {
 	border-bottom:$border-break;
 	padding-bottom:$row-height;
-	margin:$row-height*2 auto $row-height * 2 auto; 
+	margin:$row-height*2 auto; 
 }
 
 #site-title {
-	@extend .reset;
+	@extend %reset;
 	float: left; 
 	a { 
-		@extend .ir;
+		@extend %image-replace;
 		display:block;
 		background:inline-image('title.svg') no-repeat left bottom;
 		background-size:contain;
@@ -22,25 +22,26 @@
 	position: relative;
 }
 	
+/*TODO: Shorten name*/	
 #menu-primary {
 	float: right;
 	list-style: none;
-	@extend .reset;
+	@extend %reset;
 	display: block;
 	position: relative;
 	li {
-		@extend .reset;
+		@extend %reset;
 		margin-right:$gutter-width;
 		float: left;
 		a {
 			display: block;
 			height: $row-height;
-			color: $color-midtone;
 			font: #{$font-weight-bold} #{$font-size-x-small} #{$typeface-secondary};
+			color:$color-midtone;
+			&:hover {
+				color:$color-off-black;
 			}
-		a:hover {
-			color: $color-off-black; 
-		} 
+		}
 		&:last-child, &.last { 
 			margin-right: 0; 
 		}
@@ -54,8 +55,8 @@
 			height:45px;
 			border-radius:22.5px;
 			display:block;
-			@extend .ir;
-			@include default-shadow();
+			@extend %image-replace;
+			@extend %default-shadow;
 		}
 	}
 	.rss {
@@ -65,7 +66,6 @@
 			background-size:50%;
 		}
 	}
-	
 	.twitter {
 		margin-top:50px;
 		a { 
@@ -73,7 +73,6 @@
 			background-size:60%;
 		}
 	}
-
 	.rss a:hover, .twitter a:hover {
 		background-color:$color-accent-alt;
 	}

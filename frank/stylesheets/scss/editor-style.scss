@@ -3,10 +3,11 @@ Theme Name: Frank
 Description: Styles for the TinyMCE editor.
 */
 
-@import "partials/_variables";
-@import "partials/_mixins";
-@import "partials/_reset";
-@import "partials/_grid";
+@import "partials/variables";
+@import "partials/mixins";
+@import "partials/extensions";
+@import "partials/reset";
+@import "partials/grid";
 
 html .mceContentBody {
 	max-width: 535px;
@@ -14,7 +15,7 @@ html .mceContentBody {
 	margin:10px;
 }
 
-@import "partials/_global";
+@import "partials/global";
 
 img.mceWPmore {
 	box-shadow:none;
@@ -28,7 +29,7 @@ code, small {
 }
 img {
 	max-width: 100%;
-	@include default-shadow(); 
+	@extend %default-shadow; 
 }
 
 h1, h2 {

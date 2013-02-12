@@ -1,15 +1,9 @@
-.post-group { 
-	margin-top:0;
-	& ~ .post-group {
-		margin: $row-height*4 auto;
-	}
-}
 
 .post-group-header {
 	margin-bottom:$row-height*2;
 	padding-bottom:5px;
 	border-bottom: 1px $color-light solid;
-	font: #{$font-size-small} #{$typeface-secondary};
+	@extend %small-label;
 	.label {
 		font-weight: $font-weight-bold;
 	}
@@ -22,7 +16,11 @@
 		font-family: $typeface-primary; } 
 	}
 .post-group {
+	margin-top:0;
 	margin-bottom:$row-height*4;
+	& ~ .post-group {
+		margin: $row-height*4 auto;
+	}
 	.read-more { 
 		margin-top: $row-height;
 		.more { 
