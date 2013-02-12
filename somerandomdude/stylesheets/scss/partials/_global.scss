@@ -1,11 +1,11 @@
-
 body {
 	border-top:3px solid $color-off-black;
 }
+
 #webbynode_promo {
 	margin-top: $row-height;
 	small {
-		font: #{$font-size-xx-small} #{$typeface-secondary};
+		@extend %small-label;
 		display: block;
 		margin-bottom: 2px; 
 	}	 
@@ -16,7 +16,7 @@ body {
 	width: 100px;
 	height: 20px;
 	background:inline-image('webbynode.png') no-repeat;
-	@extend .ir;
+	@extend %image-replace;
 }
 
 .post-info {
@@ -31,10 +31,7 @@ body {
 	}
 }
 
-
-	
-/*MOBILE*/	
-	
+/*MOBILE*/		
 @media only screen and  (max-width: 767px) {
 	
 }	

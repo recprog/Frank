@@ -1,4 +1,4 @@
-#previous-post {
+#prev-post {
 	margin-top: $row-height * 4;
 	margin-bottom: $row-height * 2;
 	font-style: italic;
@@ -6,34 +6,34 @@
 	a {
 		font-size: $font-size-small;
 		display: block;
-		text-align: center; }
+		text-align: center; 
+		&:hover {
+			color: $color-accent-alt;
+			.arrow {
+				background-color: $color-dark; 
+			} 
+		}
+	}
 	nav {
 		padding-bottom: $row-height;
 		border-bottom: 1px solid $color-light;
-		margin: $row-height 0; }
+		margin: $row-height 0; 
+	}
 	.arrow {
 		display: block;
-		@include default-shadow();
+		@extend %default-shadow;
 		width: 45px;
 		height: 45px;
 		border-radius: 22.5px;
-		/*TODO: extend .ir*/
-		text-indent: 100%;
-		white-space: nowrap;
-		overflow: hidden;
+		@extend %image-replace;
 		/*TODO: Use compass to create data URI*/
 		background: $color-midtone url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAQCAYAAADESFVDAAAAWElEQVR42qXSzQkAIAgF4EZolEZqhDZqpEZwBM8dovSUYD9YwuNdPgIlt5tWa6AA9wkgpXPfACeagaeAAGkFigDZACbKAoAC+5f+od7Oesh/iC+/QC/DPQAIxvkuqJQtLgAAAABJRU5ErkJggg==') no-repeat 16px 15px;
 	}
-	a:hover {
-		color: $color-accent-alt;
-		.arrow {
-			background-color: $color-dark; 
-		} 
-	} 
+	 
 }
 
 /* TODO: Remove heirarchy & general cleanup */
-#content.single {
+.single {
 	position: relative;
 	.post-title {
 		color: $color-dark; 
@@ -45,6 +45,14 @@
 			padding-top: 0;
 			font: italic #{$font-size-xx-large}/1.55 #{$typeface-primary};
 		} 
+	}
+	.pagination {
+		margin-top:$row-height*2;
+	}
+	#content-main {
+		margin: $row-height * 2 0; 
+		border-bottom:$border-break;
+		padding-bottom:$row-height;
 	}
 	.post-content {
 		margin-bottom:$row-height * 3;
@@ -66,9 +74,6 @@
 		.flush-left {
 			margin-left: -26.1%;
 		}
-		blockquote.large p {
-			font-size: $font-size-large; 
-		}
 		img.flush-left, video.flush-left {
 			max-width:126.1%;
 		} 
@@ -84,17 +89,10 @@
 		.alignleft {
 			margin-right: 20px;
 		}
-	}
-
-	.pagination {
-		margin-top:$row-height*2;
-	}
-	#content-main {
-		margin: $row-height * 2 0; 
-		border-bottom:$border-break;
-		padding-bottom:$row-height;
 	} 
 }
+
+
 
 #post-tweet {
 	float:right;

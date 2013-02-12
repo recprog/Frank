@@ -2,6 +2,10 @@
    HTML5 display definitions
    ========================================================================== */
 
+* {
+  box-sizing: border-box;
+}
+
 /*
  * Corrects `block` display not defined in IE 8/9.
  */
@@ -307,13 +311,11 @@ input[disabled] {
 }
 
 /*
- * 1. Addresses box sizing set to `content-box` in IE 8/9.
  * 2. Removes excess padding in IE 8/9.
  */
 
 input[type="checkbox"],
 input[type="radio"] {
-    box-sizing: border-box; /* 1 */
     padding: 0; /* 2 */
 }
 

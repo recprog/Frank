@@ -9,13 +9,12 @@
 
 #page_title {
 	font-size: $font-size-xx-large;
-	color: $color-midtone 
-}
-
-#page_title .title {
-	color: $color-off-black;
-	font-size: inherit;
-	font-style: italic; 
+	color: $color-midtone;
+	.title {
+		color: $color-off-black;
+		font-size: inherit;
+		font-style: italic; 
+	}
 }
 
 #content.page #info, #content.page #other_projects {
@@ -45,37 +44,44 @@
 	/* TODO variables */
 	font-size: 9px !important;
 	line-height: 12px;
-	font-weight: $font-weight-bold; }
+	font-weight: $font-weight-bold;
+}
 	
 #hero_slideshow {
 	margin-bottom:$row-height*2;
 }
 
-#projects_navigation {
-	margin: 15px 0; }
+#projects-nav {
+	margin: 15px 0; 
+}
 
-#projects_navigation dt {
-	color: $color-midtone; }
+#projects-nav dt {
+	color: $color-midtone; 
+}
 
-#projects_navigation dt, 
-#projects_navigation dd {
+#projects-nav dt, 
+#projects-nav dd {
 	margin: 0;
-	font: #{$font-size-x-small} #{$typeface-secondary};
+	@extend %small-label;
 	margin-right: 20px;
-	float: left; }
+	float: left; 
+}
 
-#projects_navigation dd:last-child {
-	margin-right: 0; }
+#projects-nav dd:last-child {
+	margin-right: 0; 
+}
 
-#content.page #projects_navigation dd {
+#content.page #projects-nav dd {
 	
 	background: $checkbox-sprite 0 2px no-repeat;
 	cursor: pointer;
-	padding-left: 15px; }
+	padding-left: 15px; 
+}
 
-#content.page #projects_navigation dd.active {
+#content.page #projects-nav dd.active {
 	background-position: 0 -18px;
-	font-weight: $font-weight-bold; }
+	font-weight: $font-weight-bold; 
+}
 
 
 #projects_list, #download_follow {
@@ -97,7 +103,7 @@
 }
 
 #projects_list div {
-	@include default-shadow();
+	@extend %default-shadow;
 }
 
 #projects_list div:hover {
@@ -113,8 +119,7 @@
 #projects_list a {
 	display: block;
 	line-height: 0;
-	margin: 0 !important;
-	padding: 0 !important;
+	@extend %reset;
 	border: 0 !important;
 	text-decoration: none;
 	width:100%;
@@ -128,35 +133,35 @@
 		background-position: 0 0; 
 	}
 	#projects_sanscons {
-		background-position: 0 -120px; 
+		background-position-y: -120px; 
 	}
 	#projects_photography {
-		background-position: 0 -240px; 
+		background-position-y: -240px; 
 	}
 	#projects_offfranklin {
-		background-position: 0 -360px; 
+		background-position-y: -360px; 
 	}
 	#projects_iconic {
-		background-position: 0 -480px; 
+		background-position-y: -480px; 
 	}
 	#projects_iconic {
-		background-position: 0 -480px; 
+		background-position-y: -480px; 
 	}
 	#projects_coffeesleeve {
-		background-position: 0 -600px; 
+		background-position-y: -600px; 
 	}
 	#projects_coordy {
-		background-position: 0 -720px; 
+		background-position-y: -720px; 
 	}
 	#cue {
-		background-position: 0 -840px; 
+		background-position-y: -840px; 
 	}
 	#projects_frank {
-		background-position: 0 -960px; 
+		background-position-y: -960px; 
 	}
 	h3 {
 		position: relative;
-		@extend .reset; 
+		@extend %reset; 
 		small {
 			text-indent:6px;
 			padding:6px 0;
@@ -168,7 +173,7 @@
 			width:100%; 
 			color: $color-highlight;
 			font-size: 13px;
-			line-height: 13px ;
+			line-height: 13px;
 		}
 	}
 }
@@ -236,7 +241,7 @@
 	
 @media only screen and  (max-width: 767px) {
 	
-	#content.page #projects_navigation {
+	#content.page #projects-nav {
 		display:none;
 	}
 	
@@ -252,9 +257,7 @@
 	#projects_list p {
 		display: block;
 		margin-top:5px;
-		/* TODO shorthand */
-		font-size:$font-size-medium !important; 
-		font-family:$typeface-primary !important; 
+		font:$font-size-medium $typeface-primary !important; 
 	}
 	
 	#projects_list a {

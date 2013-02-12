@@ -14,8 +14,7 @@
 	text-align: center;
 	margin-top:10px 0 $row-height 0;
 	img {
-		margin: 0;
-		padding: 0;
+		@extend %reset;
 		border: 0 none; 
 	}
 }
@@ -26,13 +25,10 @@
 	margin-top:10px;
 }
 
-.gallery {
-	.gallery-caption {
-		margin-left: 0 !important;
 
-		font: $font-size-x-small $typeface-secondary !important;
-		line-height:1.45;
-	}
+.gallery-caption {
+	margin-left: 0 !important;
+	font: #{$font-size-x-small}/1.45 #{$typeface-secondary} !important;
 }
 
 .sticky {
@@ -42,8 +38,5 @@
 }
 
 .bypostauthor {
-	border:2px solid $color-midtone;
-	padding:$row-height 0;
-	border-left:0;
-	border-right:0;
+	@extend %vertical-border-break;
 }

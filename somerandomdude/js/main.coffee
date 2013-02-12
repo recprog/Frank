@@ -35,7 +35,7 @@ window.onload = ->
 			return
 
 	if document.querySelector('#p72')
-		navItems = document.querySelectorAll('#projects_navigation dd');
+		navItems = document.querySelectorAll('#projects-nav dd');
 		for navItem in navItems
 			navItem.onclick = navClickHandler(navItem, navItems)
 
@@ -75,7 +75,7 @@ window.onload = ->
 	#trackElems(document.querySelectorAll('#post-tweet'), 'Tweet Post', null, document.title);
 	trackElems(document.querySelectorAll('#menu-primary a'), 'Top Nav', null, document.title);
 	trackElems(document.querySelectorAll('#bio_pic'), 'Bio Pic', null, document.title);
-	trackElems(document.querySelectorAll('#previous-post a'), 'Previous Post', '.arrow', document.title);
+	trackElems(document.querySelectorAll('#prev-post a'), 'Previous Post', '.arrow', document.title);
 	trackElems(document.querySelectorAll('#download_follow a.twitter, #download_follow a.rss'), 'Projects Follow', null, document.title);
 	trackElems(document.querySelectorAll('#other_projects #projects_list a'), 'Other Projects', 'small', document.title);
 	trackElems(document.querySelectorAll('#footer_main_promo'), 'Footer Promo', '.header', document.title);

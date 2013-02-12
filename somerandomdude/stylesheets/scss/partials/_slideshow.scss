@@ -6,7 +6,7 @@
 }
 
 .fss .slide-container {
-	@include default-shadow();
+	@extend %default-shadow;
 	line-height: 0; }
 
 .slideshow .captions li {
@@ -17,7 +17,6 @@
 .slideshow .captions li.active {
 	display:block;
 }
-
 
 .slideshow .slide-a, .slideshow .slide-b {
 	position:absolute;
@@ -40,7 +39,8 @@
 	z-index: 1000;
 	list-style: none;
 	padding: 10px;
-	margin: 0; }
+	margin: 0; 
+}
 
 .fss-nav.active { display: block; }
 
@@ -49,6 +49,7 @@
 	display: block !important;
 	padding: 0;
 	margin: 0 10px 0 0;
+	/*TODO: Make the colors below variables*/
 	background: #ded3d1;
 	color: #3d302f;
 	cursor: pointer;
@@ -58,8 +59,11 @@
 	height: 20px; }
 
 .fss-nav li:last-child {
-	margin-right: 0; }
+	margin-right: 0; 
+}
 
 .fss-nav li.active {
+	/*TODO: Make the colors below variables*/
 	background: #fefafa;
-	color: #050000; }
+	color: #050000; 
+}

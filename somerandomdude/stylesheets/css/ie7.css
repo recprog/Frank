@@ -1,5 +1,5 @@
-#content, #sub_header, #content *, #sub_header * {
+#content, #sub-header, #content *, #sub-header * {
   z-index: -1 !important; }
 
-#projects_navigation {
+#projects-nav {
   display: none; }
