@@ -5,7 +5,7 @@
 ?>
 <?php get_header(); ?>
 <div id="content" class="fullspread fourohfour">
-	<main id="content-primary">
+	<main id="content-primary" role="main">
 		<header>
 			<h1>
 			  <?php _e('Page Not Found', 'frank_theme'); ?>
