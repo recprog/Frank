@@ -6,7 +6,7 @@
 <?php get_header(); ?>
 <div id="content" class="archive">
 	<div class="row">
-	<div id="content-primary">
+	<main id="content-primary" role="main">
 	<?php if(have_posts()) : ?>
 	<header>
 		<h1 class="page-title">
@@ -35,7 +35,7 @@
 		</div>
 		<?php endif; ?>
 		</div>
-	</div>
+	</main>
 	</div>
 </div>
 
