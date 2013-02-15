@@ -8,7 +8,7 @@ Template Name: Full-spread Template With Post Footer
 ?>
 <?php get_header(); ?>
 <div id="content" class="page fullspread clear">
-	<div id="content-primary">
+	<main id="content-primary">
 		<?php if(have_posts()) : while(have_posts()) : the_post(); ?>		
 		<article class="post" id="p<?php the_ID(); ?>">
 			<header>
@@ -25,6 +25,6 @@ Template Name: Full-spread Template With Post Footer
 			</footer>
 		</article>
 		<?php endwhile; endif; ?>
-	</div>
+	</main>
 </div>
 <?php get_footer(); ?>

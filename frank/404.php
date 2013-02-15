@@ -5,7 +5,7 @@
 ?>
 <?php get_header(); ?>
 <div id="content" class="fullspread fourohfour">
-	<div id="content-primary">
+	<main id="content-primary">
 		<header>
 			<h1>
 			  <?php _e('Page Not Found', 'frank_theme'); ?>
@@ -34,6 +34,6 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</main>
 </div>
 <?php get_footer(); ?>

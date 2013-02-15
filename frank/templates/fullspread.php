@@ -9,7 +9,7 @@ Template Name: Full-spread Template
 <?php get_header(); ?>
 <div id="content" class="page fullspread">
 	<div class="row">
-	<div id="content-primary">
+	<main id="content-primary">
 		<?php if(have_posts()) : while(have_posts()) : the_post(); ?>		
 		<article class="post" id="p<?php the_ID(); ?>">
 			<header class="post-header">
@@ -20,7 +20,7 @@ Template Name: Full-spread Template
 			</section>
 		</article>
 		<?php endwhile; endif; ?>
-	</div>
+	</main>
 	</div>
 </div>
 <?php get_footer(); ?>

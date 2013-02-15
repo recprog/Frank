@@ -6,7 +6,7 @@
 <?php get_header(); ?>
 <div id="content" class="page">
 	<div class="row">
-	<div id="content-primary">
+	<main id="content-primary">
 		<?php if(have_posts()) : while(have_posts()) : the_post(); ?>
 		<article class="post clear" id="p<?php the_ID(); ?>">
 			<header class="post-header">
@@ -18,7 +18,7 @@
 		</article>
 		<?php endwhile; endif; ?>
 		<?php comments_template(); ?>
-	</div>
+	</main>
 	<?php get_sidebar(); ?>
 	</div>
 </div>
