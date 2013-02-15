@@ -6,7 +6,7 @@
 <?php get_header(); ?>
 <div id="content" class="archive">
 	<div class="row">
-	<div id="content-primary">
+	<main id="content-primary" role="main">
 	<?php if(have_posts()) : ?>
 	<header>
 	<?php $post = $posts[0]; // Hack. Set $post so that the_date() works. ?>
@@ -43,6 +43,7 @@
 		<?php endif; ?>
 	</div>
 	<?php get_template_part('partials/sidebars/sidebar', 'archive'); ?>
+	</main>
 	</div>
 </div>
 <?php get_footer(); ?>

@@ -31,7 +31,7 @@
 		<div class="chromeframe">Your browser is out of date. Please <a href="http://browsehappy.com/">upgrade your browser </a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a>.</div>
 	<![endif]-->
 <div class="container">
-	<header id="page-header" class="row">
+	<header id="page-header" class="row" role="banner">
 		<hgroup id="site-title-description">
 			<h1 id="site-title"><a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a></h1>
 			<h2 id="site-description"><?php bloginfo('description'); ?></h2>
@@ -79,7 +79,7 @@
 				<?php get_search_form(); ?>
 			<?php endif; ?>
 
-		<nav id="site-nav">
+		<nav id="site-nav" role="navigation">
 			<?php if ( !dynamic_sidebar("Navigation") ) : ?>
 				<?php wp_nav_menu( array('theme_location' => 'frank_primary_navigation', 'container' => false ) ); ?>	
 			<?php endif; ?> 

@@ -6,7 +6,7 @@
 <?php get_header(); ?>
 <div id='content' class='single'>
 	<div class="row">
-	<div id='content-primary'>
+	<main id="content-primary" role="main">
 		<?php while(have_posts()) : the_post(); ?>
 		<article itemscope itemtype="http://schema.org/BlogPosting" class="post leftaside">
 			<header class="post-header">
@@ -44,7 +44,7 @@
 		</article>
 		<?php endwhile; ?>
 		<?php comments_template(); ?>
-	</div>
+	</main>
 	<?php get_template_part('partials/sidebars/sidebar', 'single'); ?>
 	</div>
 </div>
