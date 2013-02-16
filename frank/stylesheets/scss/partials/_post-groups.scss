@@ -70,6 +70,21 @@
 	}
 }
 
+.post-group.threeup, .post-group.fourup {
+	h2, h3 {
+		font-size: $font-size-small;
+	}
+	h4, h5, h6 {
+		font-size: $font-size-x-small
+	}
+	h2, h4 {
+		font-weight: $font-weight-bold;
+	}
+	li, dl, code, blockquote, blockquote p {
+		font-size: $font-size-small;
+	}
+}
+
 /* TODO: Try this pattern out :not(:last-child) */
 .post-group.twoup .post:nth-child(2n+1), .post-group.threeup .post:nth-child(3n+1), .post-group.fourup .post:nth-child(4n+1) {
 	margin-left:0;

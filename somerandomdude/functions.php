@@ -54,4 +54,35 @@ function frank_enqueue_styles() {
 	
 }
 
+function frank_get_option($key) {
+	$frank_options = get_option( '_frank_options' );
+
+     /* Define the array of defaults */ 
+    $defaults = array(
+        'header'     									=> '',
+        'footer'     									=> '',
+        'devmode'											=> false,
+        'inject_js'										=> false,
+        'tweet_post_button'   				=> false,
+        'tweet_post_attribution'     	=> '',
+				'sections'      							=> array(
+																					'display_type'      => 'default_loop',
+																					'header'             => false,
+																					'title'             => '',
+																					'caption'           => '',
+																					'num_posts'         => 10,
+																					'categories'        => array(),
+																					'default'           => true
+																				)
+
+    );
+
+    $frank_options = wp_parse_args( $frank_options, $defaults );
+
+    if( isset($frank_options[$key]) )
+         return $frank_options[$key];
+
+    return false;
+}
+
 ?>

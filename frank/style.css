@@ -651,16 +651,16 @@ img, object, embed, video {
 }
 
 /* Nicolas Gallagher's micro clearfix */
-.row:before, .row:after, .clearfix:before, .menu:before, .post.leftaside .post-content:before, .type-page.leftaside .post-content:before, .comment-content:before, .clearfix:after, .menu:after, .post.leftaside .post-content:after, .type-page.leftaside .post-content:after, .comment-content:after {
+.row:before, .row:after, .clearfix:before, .menu:before, .post.leftaside .post-content:before, .type-page.leftaside .post-content:before, .single .post-content p:before, .comment-content:before, .clearfix:after, .menu:after, .post.leftaside .post-content:after, .type-page.leftaside .post-content:after, .single .post-content p:after, .comment-content:after {
   content: "";
   display: table;
 }
 
-.row:after, .clearfix:after, .menu:after, .post.leftaside .post-content:after, .type-page.leftaside .post-content:after, .comment-content:after {
+.row:after, .clearfix:after, .menu:after, .post.leftaside .post-content:after, .type-page.leftaside .post-content:after, .single .post-content p:after, .comment-content:after {
   clear: both;
 }
 
-.row, .clearfix, .menu, .post.leftaside .post-content, .type-page.leftaside .post-content, .comment-content {
+.row, .clearfix, .menu, .post.leftaside .post-content, .type-page.leftaside .post-content, .single .post-content p, .comment-content {
   zoom: 1;
 }
 
@@ -1556,6 +1556,19 @@ button, .button, input[type=submit] {
 
 .post-group.fourup .post {
   width: 21.679%;
+}
+
+.post-group.threeup h2, .post-group.threeup h3, .post-group.fourup h2, .post-group.fourup h3 {
+  font-size: 13px;
+}
+.post-group.threeup h4, .post-group.threeup h5, .post-group.threeup h6, .post-group.fourup h4, .post-group.fourup h5, .post-group.fourup h6 {
+  font-size: 11px;
+}
+.post-group.threeup h2, .post-group.threeup h4, .post-group.fourup h2, .post-group.fourup h4 {
+  font-weight: 700;
+}
+.post-group.threeup li, .post-group.threeup dl, .post-group.threeup code, .post-group.threeup blockquote, .post-group.threeup blockquote p, .post-group.fourup li, .post-group.fourup dl, .post-group.fourup code, .post-group.fourup blockquote, .post-group.fourup blockquote p {
+  font-size: 13px;
 }
 
 /* TODO: Try this pattern out :not(:last-child) */

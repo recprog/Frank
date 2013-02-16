@@ -293,34 +293,35 @@ function frank_widget_first_last_classes($params) {
 
 }
 
+if (!function_exists('frank_get_option')) {
+	function frank_get_option($key) {
+		$frank_options = get_option( '_frank_options' );
 
-function frank_get_option($key) {
-	$frank_options = get_option( '_frank_options' );
+	     /* Define the array of defaults */ 
+	    $defaults = array(
+	        'header'     									=> '',
+	        'footer'     									=> '',
+	        'tweet_post_button'   				=> false,
+	        'tweet_post_attribution'     	=> '',
+					'sections'      							=> array(
+																						'display_type'      => 'default_loop',
+																						'header'             => false,
+																						'title'             => '',
+																						'caption'           => '',
+																						'num_posts'         => 10,
+																						'categories'        => array(),
+																						'default'           => true
+																					)
 
-     /* Define the array of defaults */ 
-    $defaults = array(
-        'header'     									=> '',
-        'footer'     									=> '',
-        'tweet_post_button'   				=> false,
-        'tweet_post_attribution'     	=> '',
-				'sections'      							=> array(
-																					'display_type'      => 'default_loop',
-																					'header'             => false,
-																					'title'             => '',
-																					'caption'           => '',
-																					'num_posts'         => 10,
-																					'categories'        => array(),
-																					'default'           => true
-																				)
+	    );
 
-    );
+	    $frank_options = wp_parse_args( $frank_options, $defaults );
 
-    $frank_options = wp_parse_args( $frank_options, $defaults );
+	    if( isset($frank_options[$key]) )
+	         return $frank_options[$key];
 
-    if( isset($frank_options[$key]) )
-         return $frank_options[$key];
-
-    return false;
+	    return false;
+	}
 }
 
 // ======================
