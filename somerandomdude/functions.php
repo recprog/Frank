@@ -84,5 +84,4 @@ function frank_enqueue_styles() {
 	wp_enqueue_style('frank_srd_stylesheet_ie7');
 	
 }
-
 ?>

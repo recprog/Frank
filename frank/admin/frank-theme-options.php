@@ -167,7 +167,7 @@ function frank_build_settings_page() {
 					<div id="first-option" class="option-container">
 						<label class="feature-title"><?php _e('Custom Header Code', 'frank_theme'); ?></label>
 						<div class="feature">
-							<textarea name="frank-general-header" class="textarea"><?php echo esc_html(stripslashes($frank_general['header'])); ?></textarea>
+							<textarea name="frank-general-header" class="textarea"><?php echo esc_html(stripslashes(frank_get_option('header'))); ?></textarea>
 						</div>
 						<div class="feature-desc">
 							<?php
@@ -182,7 +182,7 @@ function frank_build_settings_page() {
 					<div class="option-container">
 						<label class="feature-title"><?php _e('Custom Footer Code', 'frank_theme'); ?></label>
 						<div class="feature">
-							<textarea name="frank-general-footer" class="textarea"><?php echo esc_html(stripslashes($frank_general['footer'])); ?></textarea>
+							<textarea name="frank-general-footer" class="textarea"><?php echo esc_html(stripslashes(frank_get_option('footer'))); ?></textarea>
 						</div>
 						<div class="feature-desc">
 						<?php
@@ -199,7 +199,7 @@ function frank_build_settings_page() {
 								   name="frank-general-tweet-post-button"
 								   class="checkbox"
 								   value="tweet_post_button" 
-									<?php checked( $frank_general['tweet_post_button']); ?>
+									<?php checked( frank_get_option('tweet_post_button')); ?>
 								/>
 
 							<label for="frank-general-tweet-post-button">
@@ -220,7 +220,7 @@ function frank_build_settings_page() {
 							<input type="text"
 								   name="frank-general-tweet-post-attribution"
 								   class="text"
-								   value="<?php echo esc_attr(stripslashes($frank_general['tweet_post_attribution'])); ?>" />
+								   value="<?php echo esc_attr(stripslashes(frank_get_option('tweet_post_attribution'))); ?>" />
 						</div>
 						<div class="feature-desc">
 							<?php

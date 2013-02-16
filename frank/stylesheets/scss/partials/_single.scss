@@ -89,6 +89,9 @@
 		.alignleft {
 			margin-right: 20px;
 		}
+		p {
+			@extend .clearfix;
+		}
 	} 
 }
 

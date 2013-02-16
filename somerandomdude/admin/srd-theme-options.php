@@ -87,12 +87,12 @@ function frank_build_settings_page() {
 
 					if (!empty($_POST) && wp_verify_nonce($_POST['frank_general_key'], 'frank_update_general')) {
 
-						$frank_general['header']					= $_POST['frank-general-header'];
-						$frank_general['footer']					= $_POST['frank-general-footer'];
-						$frank_general['devmode']					= $_POST['frank-general-devmode'];
-						$frank_general['inject_js']					= $_POST['frank-general-inject-js'];
-						$frank_general['tweet_post_button']			= $_POST['frank-general-tweet-post-button'];
-						$frank_general['tweet_post_attribution']	= $_POST['frank-general-tweet-post-attribution'];
+						$frank_general['header']					= frank_post_value_or_default('frank-general-header', '');
+						$frank_general['footer']					= frank_post_value_or_default('frank-general-footer', '');
+						$frank_general['devmode']					= frank_post_value_or_default('frank-general-devmode', false);
+						$frank_general['inject_js']					= frank_post_value_or_default('frank-general-inject-js', false);
+						$frank_general['tweet_post_button']			= frank_post_value_or_default('frank-general-tweet-post-button', false);
+						$frank_general['tweet_post_attribution']	= frank_post_value_or_default('frank-general-tweet-post-attribution', '');
 
 						update_option( '_frank_options', $frank_general );
 
