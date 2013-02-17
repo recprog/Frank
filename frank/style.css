@@ -1119,7 +1119,7 @@ pre {
   }
 }
 /*Buttons*/
-.button {
+.button, input[type=submit] {
   display: inline-block;
   background: #f0eceb;
   color: #5d504f;
@@ -1129,7 +1129,7 @@ pre {
   text-align: center;
   border: 1px solid rgba(18, 7, 6, 0.2);
 }
-.button:hover {
+.button:hover, input[type=submit]:hover {
   background: #998482;
   color: #fffefe;
   border: 1px solid rgba(18, 7, 6, 0.5);
