@@ -1,5 +1,5 @@
 /*Buttons*/		
-.button {
+.button, input[type=submit] {
 	display: inline-block;
 	background: $color-light;
 	color: $color-midtone;
