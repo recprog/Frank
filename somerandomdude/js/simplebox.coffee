@@ -1,16 +1,5 @@
 class FLB
 
-	#@sbLoaderSide=null
-	#@resizeImage=null
-	#@imgDisplayDelay=null
-	#@sbOverlayId=null
-	#@element=null
-	#@options=null
-	#@image=null
-	#@container=null
-	#@overlay=null
-	#@imgContainer=null
-
 	constructor: (el, o) ->
 		@element=el
 		if Object.prototype.toString.call(o) is '[object Object]'
@@ -87,7 +76,7 @@ class FLB
 		return
 
 	clickHandler = (e, closure) ->
-		closure.createOverlay(e.target.getAttribute('href'))
+		closure.createOverlay(e.currentTarget.getAttribute('href'))
 		e.cancelBubble=true
 		e.stopPropagation()
 		return false
