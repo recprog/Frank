@@ -20,17 +20,14 @@ class FLB
 		context=@
 		@overlay = document.createElement('div');
 		@overlay.setAttribute('id', 'flb-overlay')
-		@overlay.innerHTML = '<div id="flb-container"><a href="#" title="Close" class="closingElement">&nbsp;</a></div><div id="flb-content"><a id="flb-image" class="closingElement" href="#" title="Close"></a><a id="flb-close" class="closingElement" href="#" title="Close">&nbsp;</a></div>';
+		@overlay.innerHTML = '<div id="flb-container"><a href="#" title="Close" class="closingElement">&nbsp;</a></div><div id="flb-content"><a id="flb-image" class="closingElement" href="#" title="Close"></a><a id="flb-close" class="closingElement" href="#" title="Close">&times;</a></div>';
 
 		document.getElementsByTagName("body")[0].appendChild(@overlay);
 
 		# container div
 		@container = document.getElementById('flb-content')
-		@container.style.width = '100px'
-		@container.style.height = '100px'
-		@container.style.margin = '-50px 0 0 -50px'
+		
 		@container.onclick = @overlay.onclick = (e) -> closeClickHandler(e, context)
-
 
 		# define the popup image
 		@imgContainer = document.getElementById('flb-image');
@@ -59,8 +56,6 @@ class FLB
 				imgWidth = Math.round(resizeHeight*closure.image.width/closure.image.height);
 				closure.image.height = imgHeight;
 				closure.image.width = imgWidth;
-	
-		# Hide the loading icon
 	 
 		# provide new dimensions for the container
 		delay = -> sizeContainer(closure.container, imgWidth, imgHeight)
