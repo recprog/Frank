@@ -7,7 +7,6 @@ test tasks (CSS Linting, Coffee Lintint, JS Linting)
 optimize tasks (JS, CSS, SVG, images)
 deploy tasks (documentation, styleguide, contributors)
 */
-
 module.exports = function(grunt) {
 
   grunt.initConfig({
@@ -15,6 +14,28 @@ module.exports = function(grunt) {
     watch: {
       files: [ 'frank/stylesheets/scss/*.scss', 'somerandomdude/stylesheets/scss/*.scss' ],
       tasks: [ 'compass:dev', 'compass:prod' ]
+    },
+    phpcs: {
+      application: {
+          dir: 'frank/partials'
+      },
+      options: {
+          /*bin: 'vendor/bin/phpcs',
+          standard: 'Zend'*/
+      }
+    },
+    coffeelint: {
+      app: ['frank/javascripts/coffeescripts/*.coffee', 'somerandomdude/javascripts/coffeescripts/*.coffee'],
+      tests: {
+        files: {
+          src: ['tests/*.coffee']
+        },
+        options: {
+          'no_trailing_whitespace': {
+            'level': 'error'
+          }
+        }
+      }
     },
     recess: {
       dist: {
@@ -72,7 +93,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-compass');
   grunt.loadNpmTasks('grunt-recess');
   grunt.loadNpmTasks('grunt-coffee');
+  grunt.loadNpmTasks('grunt-phpcs');
 
   // Default task.
-  grunt.registerTask('default', 'recess');
+  grunt.registerTask('default', 'phpcs');
 };

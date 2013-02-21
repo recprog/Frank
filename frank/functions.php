@@ -16,6 +16,8 @@ define('HEADER_IMAGE_HEIGHT', 225);
 add_filter('wp_list_categories', 'frank_remove_category_list_rel');
 add_filter('the_category', 'frank_remove_category_list_rel');
 add_filter('dynamic_sidebar_params','frank_widget_first_last_classes');
+
+/*TODO: Make this an option to turn on/off */
 add_filter( 'script_loader_src', 'frank_remove_script_version', 15, 1 );
 add_filter( 'style_loader_src', 'frank_remove_script_version', 15, 1 );
 
@@ -124,6 +126,7 @@ function frank_widgets() {
 	));
 }
 
+/*TODO:  Make this an option to turn on/off  */
 function frank_remove_script_version( $src ){
 	$parts = explode( '?', $src );
 	return $parts[0];
