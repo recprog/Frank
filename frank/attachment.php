@@ -12,7 +12,7 @@
 				<h1 class="post-title"><?php the_title(); ?></h1>
 			</header>
 			<section class="post-content clearfix">
-				<?php echo wp_get_attachment_image( $post->ID); ?>
+				<?php echo wp_get_attachment_image( $post->ID, 'full'); ?>
 			</section>
 		</article>
 		<?php endwhile; endif; ?>
