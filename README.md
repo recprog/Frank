@@ -157,3 +157,6 @@ Frank was built and tested on WordPress 3.4.3. Any future development of the the
 ##Credits
 This theme was built with significant help of some great folks. My sincere thanks to [Felix Holmgren](http://twitter.com/felixhgren), [Jon Christopher](http://twitter.com/jchristopher) and [Josh McDonald](https://twitter.com/onestepcreative) for their tremendous contributions.
 
+<a name"Other Choices"></a>
+http://demo.s5themes.com/?theme=veecard
+http://themehorse.com/preview/clean-retina/
