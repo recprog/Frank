@@ -135,6 +135,7 @@ function frank_build_settings_page() {
 					  $frank_general['footer'] = frank_post_value_or_default('frank-general-footer', '');
 					  $frank_general['tweet_post_button'] = frank_post_value_or_default('frank-general-tweet-post-button', false);
 					  $frank_general['tweet_post_attribution'] = frank_post_value_or_default('frank-general-tweet-post-attribution', '');
+					  $frank_general['generator_disabled'] = frank_post_value_or_default('frank-generator-disabled', false);
 
 						update_option( '_frank_options', $frank_general );
 						$frank_updated = true;
@@ -149,6 +150,7 @@ function frank_build_settings_page() {
 							'footer'            			=> '',
 							'tweet_post_button' 			=> false,
 							'tweet_post_attribution' 		=> '',
+							'generator_disabled'                    => false,
 						);
 
 					} ?>
@@ -226,7 +228,25 @@ function frank_build_settings_page() {
 							?>
 						</div>
 						<div style="clear:both;"></div>
-					</div>			
+					</div>
+					<!-- Whether to include wp_generator or not -->
+					<div class="option-container">
+						<label class="feature-title"><?php _e('Remove WordPress Version number from head', 'frank_theme'); ?></label>
+						<div class="feature">
+							<input type="checkbox"
+							       name="frank-generator-disabled"
+							       class="checkbox"
+							       value="generator_disabled"
+							       <?php checked( $frank_general['generator_disabled'] ); ?>
+							/>
+						</div>
+						<div class="feature-desc">
+							<?php
+							      _e("Whether to include the version of WordPress used to generate the site in the head. This can be a security risk if you aren't running the most updated version", 'frank_theme')
+							?>
+						</div>
+						<div style="clear:both;"></div>
+					</div>
 
 					 <?php
 						
