@@ -18,6 +18,7 @@ add_filter('the_category', 'frank_remove_category_list_rel');
 add_filter('dynamic_sidebar_params','frank_widget_first_last_classes');
 add_filter( 'script_loader_src', 'frank_remove_script_version', 15, 1 );
 add_filter( 'style_loader_src', 'frank_remove_script_version', 15, 1 );
+add_filter( 'the_generator', 'frank_remove_generator' );
 
 
 if (!is_admin()) {  
@@ -172,6 +173,13 @@ function frank_header_style() {
 	<?php
 }
 endif; 
+
+function frank_remove_generator() {
+	$frank_options = get_option('_frank_options');
+	if ( ! isset( $frank_options['generator_disabled'] ) or ! $frank_options['generator_disabled'] ){
+		echo '<meta name="generator" content="WordPress ', bloginfo('version'), '" />';
+	}
+}
 
 if ( ! function_exists( 'frank_admin_header_style' ) ) :
 function frank_admin_header_style() {
