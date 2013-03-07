@@ -645,7 +645,7 @@ table {
   right: 87%;
 }
 
-img, object, embed, video {
+img, video {
   max-width: 100%;
   height: auto;
 }
@@ -1449,6 +1449,10 @@ button, .button, input[type=submit] {
     display: none;
   }
 }
+.posts {
+  margin: 60px auto;
+}
+
 .post-title {
   font-size: 20px;
 }

@@ -25,6 +25,14 @@ body {
 	}
 }
 
+.post-group {
+	margin-top:0;
+	margin-bottom:$row-height*4;
+	& ~ .post-group {
+		margin: $row-height*4 auto;
+	}
+}
+
 .metadata  {
 	.tags {
 		display:none;
