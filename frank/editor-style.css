@@ -605,7 +605,7 @@ table {
   right: 87%;
 }
 
-img, object, embed, video {
+img, video {
   max-width: 100%;
   height: auto;
 }
