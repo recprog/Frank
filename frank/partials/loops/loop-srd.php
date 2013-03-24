@@ -13,7 +13,7 @@ if ( is_home() && !is_paged() ) {
 $queryObject = new WP_Query( $args );
 ?>
 
-<?php if ( $sticky[0] ) : ?>
+<?php if ( !empty( $sticky[0] ) ) : ?>
 	<div class='row post-group oneup large'>
 		<?php
 		get_template_part('partials/posts/post', 'oneuplarge');
