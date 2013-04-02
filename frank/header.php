@@ -7,7 +7,7 @@
 <!--[if IE 7 | IE 8]>
 <html class="ie" lang="en-US">
 <![endif]-->
-<!--[if !(IE 7) | !(IE 8)  ]><!-->
+<!--[if (gte IE 9) | !(IE)]><!-->
 <html <?php language_attributes(); ?>>
 <!--<![endif]-->
 <head>
