@@ -12,7 +12,6 @@
 <!--<![endif]-->
 <head>
 	<meta charset="<?php bloginfo('charset'); ?>" />
-	<meta name="generator" content="WordPress <?php bloginfo('version'); ?>" />
 	<meta name="viewport" content="width=device-width" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
 	

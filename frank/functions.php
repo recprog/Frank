@@ -13,13 +13,51 @@ define( 'HEADER_IMAGE', '%s/images/default_header.jpg' );
 define( 'HEADER_IMAGE_WIDTH', 980 );
 define( 'HEADER_IMAGE_HEIGHT', 225 );
 
+
+if ( ! function_exists('frank_get_option') ) {
+	function frank_get_option( $key ) {
+
+		$frank_options = get_option( '_frank_options' );
+
+		/* Define the array of defaults */
+		$defaults = array(
+			'header' => '',
+			'footer' => '',
+			'tweet_post_button' => false,
+			'tweet_post_attribution' => '',
+			'sections' => array(
+				'display_type' => 'default_loop',
+				'header' => false,
+				'title' => '',
+				'caption' => '',
+				'num_posts' => 10,
+				'categories' => array(),
+				'default' => true
+			)
+		);
+
+		$frank_options = wp_parse_args( $frank_options, $defaults );
+
+		if( isset( $frank_options[ $key ] ) )
+			return $frank_options[ $key ];
+
+		return false;
+	}
+}
+
 add_filter( 'wp_list_categories', 'frank_remove_category_list_rel' );
 add_filter( 'the_category', 'frank_remove_category_list_rel' );
 add_filter( 'dynamic_sidebar_params','frank_widget_first_last_classes' );
 
-/*TODO: Make this an option to turn on/off */
-add_filter( 'script_loader_src', 'frank_remove_script_version', 15, 1 );
-add_filter( 'style_loader_src', 'frank_remove_script_version', 15, 1 );
+if ( frank_get_option( 'remove_script_version' ) ){
+	add_filter( 'script_loader_src', 'frank_remove_version_url_parameter', 15, 1 );
+}
+if ( frank_get_option( 'remove_style_version' ) ){
+	add_filter( 'style_loader_src', 'frank_remove_version_url_parameter', 15, 1 );
+}
+if ( frank_get_option( 'remove_wordpress_version' ) ){
+	add_filter( 'the_generator', 'frank_wp_generator' );
+}
 
 
 if ( ! is_admin() ) {
@@ -125,10 +163,13 @@ function frank_widgets() {
 	) );
 }
 
-/*TODO:  Make this an option to turn on/off  */
-function frank_remove_script_version( $src ) {
+function frank_remove_version_url_parameter( $src ) {
 	$parts = explode( '?', $src );
 	return $parts[0];
+}
+
+function frank_wp_generator() {
+		echo '<meta name="generator" content="WordPress ', bloginfo('version'), '" />';
 }
 
 
@@ -296,38 +337,6 @@ function frank_widget_first_last_classes( $params ) {
 
 	return $params;
 }
-
-if ( ! function_exists('frank_get_option') ) {
-	function frank_get_option( $key ) {
-
-		$frank_options = get_option( '_frank_options' );
-
-		/* Define the array of defaults */
-		$defaults = array(
-			'header' => '',
-			'footer' => '',
-			'tweet_post_button' => false,
-			'tweet_post_attribution' => '',
-			'sections' => array(
-				'display_type' => 'default_loop',
-				'header' => false,
-				'title' => '',
-				'caption' => '',
-				'num_posts' => 10,
-				'categories' => array(),
-				'default' => true
-			)
-		);
-
-		$frank_options = wp_parse_args( $frank_options, $defaults );
-
-		if( isset( $frank_options[ $key ] ) )
-			return $frank_options[ $key ];
-
-		return false;
-	}
-}
-
 
 // ======================
 // = HOME PAGE SECTIONS =

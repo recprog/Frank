@@ -63,7 +63,7 @@ if(!function_exists('frank_update_settings_button')) {
   function frank_update_settings_button($updated) {
 		if ($updated) {
     	echo '<h4 class="saved-success">';
-    	  echo '<img src="/wp-content/themes/frank/admin/images/success.png" />';
+    	  echo '<img src="'.get_template_directory_uri().'/admin/images/success.png" />';
     	  _e('Frank\'s Settings Have Been Updated.', 'frank_theme');
     	echo '</h4>';
 
@@ -111,7 +111,7 @@ function frank_build_settings_page() {
 		<form method="post" action="">
 
 			<div id="settings-container"> <?php
-			wp_nonce_field( 'frank_update_general', 'frank_general_key' );
+			
 			
 			if ($pagenow == 'themes.php' && $_GET['page'] == 'frank-settings') {
 

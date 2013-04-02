@@ -2,6 +2,7 @@
 
 					<?php
 
+					wp_nonce_field( 'frank_update_general', 'frank_general_key' );
 					$frank_updated = false;
 
 					// PULL EXISTING SECTIONS, IF PRESENT
