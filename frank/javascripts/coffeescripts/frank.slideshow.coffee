@@ -49,11 +49,11 @@ class FSS
 		a = @element.parentNode.querySelector(".visible");
 
 		if a and a is @slideA
-			@slideB.style.backgroundPosition='0px '+String(@options.height*(index)*-1)+'px';
+			@slideB.style.backgroundPosition = '0px '+String(@options.height*(index)*-1)+'px';
 			@slideA.className=@slideA.className.replace(new RegExp('(\\s|^)'+'visible'+'(\\s|$)'),'');
 			@slideB.className+=' visible';
 		else
-			@slideA.style.backgroundPosition='0px '+String(@options.height*(index)*-1)+'px';
+			@slideA.style.backgroundPosition = '0px '+String(@options.height*(index)*-1)+'px';
 			@slideB.className=@slideB.className.replace(new RegExp('(\\s|^)'+'visible'+'(\\s|$)'),'');
 			@slideA.className+=' visible';
 
@@ -61,7 +61,7 @@ class FSS
 		a.removeAttribute('class') if a
 
 		a = document.createAttribute('class');
-		a.nodeValue='active';
+		a.nodeValue = 'active';
 		@navigation.childNodes.item(index).setAttributeNode(a);
 	
 		m = if @currentIndex is -1 then 0 else @currentIndex
