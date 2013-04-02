@@ -2,14 +2,16 @@
 
 					<?php
 
+					wp_nonce_field( 'frank_update_performance', 'frank_performance_key' );
 					$frank_updated = false;
 
 					// PULL EXISTING SECTIONS, IF PRESENT
 					$frank_performance = get_option('_frank_options');
 
 					if (!empty($_POST) && wp_verify_nonce($_POST['frank_performance_key'], 'frank_update_performance')) {
-					  $frank_performance['remove_script_version'] = frank_post_value_or_default('frank-performance-remove-script-version', '');
-					  $frank_performance['remove_wordpress_version'] = frank_post_value_or_default('frank-performance-remove-wordpress-version', '');
+					  $frank_performance['remove_script_version'] = frank_post_value_or_default('frank-performance-remove-script-version', false);
+					  $frank_performance['remove_style_version'] = frank_post_value_or_default('frank-performance-remove-style-version', false);
+					  $frank_performance['remove_wordpress_version'] = frank_post_value_or_default('frank-performance-remove-wordpress-version', false);
 					  
 
 						update_option( '_frank_options', $frank_performance );
@@ -22,6 +24,7 @@
 
 						$frank_performance = array(
 							'remove_script_version'      					=> false,
+							'remove_style_version'      					=> false,
 							'remove_wordpress_version'            => false
 						);
 
@@ -52,7 +55,7 @@
 						</div>
 						<div class="feature-desc">
 						  <?php
-							  _e('This feature gives you the option to integrate a little bit of social networking directly into your posts. By turning this feature on, we\'ll automatically create a "Tweet" Button people can use to share your content!', 'frank_theme');
+							  _e('There are potential security risks associated with exposing your version of WordPress. Removing this meta tag will also shave a few bytes off of the generated HTML.', 'frank_theme');
 							?>
 						</div>
 						<div style="clear:both;"></div>
@@ -73,7 +76,28 @@
 						</div>
 						<div class="feature-desc">
 							<?php
-							  _e('By entering your handle once right here, you can easily reference this setting throughout the theme and change it later with ease, if needed. Refrain from using the \'@\' sign. An example handle: \'somerandomdude\'.', 'frank_theme');
+							  _e('The version URL parameter can prevent files from caching in certain browsers. If you want more reliable caching of your scripts, turn this feature on.', 'frank_theme');
+							?>
+						</div>
+						<div style="clear:both;"></div>
+					</div>
+					<!-- REMOVE SCRIPT VERSION -->
+					<div class="option-container">
+						<div class="feature">
+							<input type="checkbox"
+								   name="frank-performance-remove-style-version"
+								   class="checkbox"
+								   value="remove_style_version" 
+									<?php checked( frank_get_option('remove_style_version')); ?>
+								/>
+
+							<label for="frank-performance-remove-style-version">
+								<?php _e('Remove version URL parameter from stylesheets.', 'frank_theme'); ?>
+							</label>
+						</div>
+						<div class="feature-desc">
+							<?php
+							  _e('The version URL parameter can prevent files from caching in certain browsers. If you want more reliable caching of your stylesheets, turn this feature on.', 'frank_theme');
 							?>
 						</div>
 						<div style="clear:both;"></div>
