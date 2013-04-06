@@ -51,7 +51,7 @@ function frank_enqueue_scripts() {
 	
 	global $wp_scripts;
 	
-	wp_register_script('somerandomdude', (get_stylesheet_directory_uri().'/js/somerandomdude.js'), false, '1.0', true);
+	wp_register_script('somerandomdude', (get_stylesheet_directory_uri().'/javascripts/somerandomdude.js'), false, '1.0', true);
 	wp_enqueue_script('somerandomdude');
 	
 	$frank_general = get_option( '_frank_options' );
