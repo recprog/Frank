@@ -10,13 +10,15 @@
 	<li class="categories"><?php the_category(', '); ?></li>
 	<li class="tags"><?php the_tags('', ' '); ?></li>
 	<li class="comments">
-  <?php
-  
-  	comments_number(__('No Comments', 'frank_theme'),
-  	                __('One Comment', 'frank_theme'),
-  		              __('% Comments', 'frank_theme'));
-  		              
-  ?>
+		<a href="<?php comments_link(); ?>">
+		  <?php
+		  
+		  	comments_number(__('No Comments', 'frank_theme'),
+		  	                __('One Comment', 'frank_theme'),
+		  		              __('% Comments', 'frank_theme'));
+		  		              
+		  ?>
+  	</a>
   </li>	
 	<?php
 		if (strlen(get_the_title())==0) :

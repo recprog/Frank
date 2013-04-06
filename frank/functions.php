@@ -385,7 +385,7 @@ if ( ! function_exists( 'frank_comment' ) ) {
 		$GLOBALS['comment'] = $comment;
 		?>
 
-		<li id="li-comment-<?php comment_ID() ?>" class="comment">
+		<li id="comment-<?php comment_ID() ?>" class="comment">
 			<div class="row">
 
 				<div class="comment-content">

@@ -39,9 +39,9 @@
 	<?php
 		elseif ( ! comments_open() && ! is_page() && post_type_supports( get_post_type(), 'comments' ) ) :
 	?>
-		<p class="no_comments">Comments are closed.</p>
+		<p id="comments" class="no_comments">Comments are closed.</p>
 	<?php elseif (comments_open()) : ?>
-		<p class="no_comments">
+		<p id="comments" class="no_comments">
 		  <?php _e('Be the first to leave a comment. Don&rsquo;t be shy.', 'frank_theme'); ?>
 		</p>
 <?php endif; ?>
