@@ -406,8 +406,14 @@ if ( ! function_exists( 'frank_enqueue_styles' ) ) {
 	function frank_enqueue_styles() {
 		global $wp_styles;
 
+<<<<<<< HEAD
 		wp_register_style( 'frank_stylesheet', get_stylesheet_directory_uri().'/style.css', null, '0.9', 'all' );
 		wp_register_style( 'frank_stylesheet_ie', get_stylesheet_directory_uri().'/ie.css', null, '0.9', 'all' );
+=======
+		wp_register_style( 'frank_stylesheet', get_stylesheet_directory_uri() . '/style.css', null, '0.9', 'all' );
+		wp_register_style( 'frank_stylesheet_ie', get_stylesheet_directory_uri() . '/ie.css', null, '0.9', 'all' );
+
+>>>>>>> Fixed wp_register_style and updated Swedish language pack
 		$wp_styles->add_data( 'frank_stylesheet_ie', 'conditional', 'IE' );
 		wp_enqueue_style( 'frank_stylesheet' );
 		wp_enqueue_style( 'frank_stylesheet_ie' );
