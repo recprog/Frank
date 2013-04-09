@@ -1,0 +1,401 @@
+# Copyright (C) 2012 P.J. Onori
+# This file is distributed under the GPL 3.0.
+msgid ""
+msgstr ""
+"Project-Id-Version: Frank 0.9.1\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tags/frank\n"
+"POT-Creation-Date: 2012-12-30 12:15:56+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2013-04-09 21:08+0100\n"
+"Last-Translator: Chris Bujok <chris.bujok@gmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"X-Generator: Poedit 1.5.5\n"
+
+#: 404.php:11
+msgid "Page Not Found"
+msgstr "Strony nie odnaleziono"
+
+#: 404.php:22
+msgctxt "home_link_text"
+msgid "home"
+msgstr "strona główna"
+
+#: 404.php:23
+#, fuzzy
+msgid ""
+"Unfortunately, the page you are looking for no longer exists or never "
+"existed in the first place. If you reached this page in error, you can go %s "
+"and start over."
+msgstr ""
+"Strona, której szukasz niestety już nie istnieje lub nigdy nie istniała. "
+"Jeśli trafiłeś na tę stronę w wyniku błędu, możesz przejść do %s i zacząć od "
+"nowa."
+
+#: 404.php:30
+msgid ""
+"If you believe this page exists, please try searching for the page in the "
+"search input below."
+msgstr ""
+"Jeśli jesteś pewien, że ta strona istnieje, spróbuj wyszukać tę stronę w "
+"polu wyszukiwarki poniżej."
+
+#: admin/frank-theme-options.php:7 admin/frank-theme-options.php:124
+msgid "General Settings"
+msgstr "Ustawienia główne"
+
+#: admin/frank-theme-options.php:8 admin/frank-theme-options.php:238
+msgid "Home Page Settings"
+msgstr "Ustawienia strony głównej"
+
+#: admin/frank-theme-options.php:66
+msgid "Frank's Settings Have Been Updated."
+msgstr "Ustawienia szablonu Frank zostały zaktualizowane."
+
+#: admin/frank-theme-options.php:72
+msgid "Make Changes And Use The Update Settings Button To Save!"
+msgstr "Wprowadź swoje zmiany i kliknij przycisk \"Zapisz\"."
+
+#: admin/frank-theme-options.php:105
+msgid "Frank Theme Settings"
+msgstr "Ustawienia szablonu Frank"
+
+#: admin/frank-theme-options.php:158 admin/frank-theme-options.php:312
+#: admin/frank-theme-options.php:497
+msgid "Update Settings"
+msgstr "Zapisz ustawienia"
+
+#: admin/frank-theme-options.php:166
+msgid "Custom Header Code"
+msgstr "Kod własnego nagłówka"
+
+#: admin/frank-theme-options.php:172
+msgid ""
+"This feature allows you to write or copy and paste your own code straight "
+"into the header. Many people use this feature to include their Google "
+"Analytics code, or other small bits of Javascript. Feel free to use this as "
+"you wish!"
+msgstr ""
+"Możesz tutaj wstawić swój własny kod do nagłówka. Wielu ludzi używa tego aby "
+"dołączyć swój kod Google Analytics lub inne małe kawałki kodu JavaScript. "
+"Możesz wstawić tutaj co tylko chcesz!"
+
+#: admin/frank-theme-options.php:181
+msgid "Custom Footer Code"
+msgstr "Kod własnej stopki"
+
+#: admin/frank-theme-options.php:187
+msgid ""
+"This feature allows you to write or copy and paste your own code directly to "
+"the footer. A lot of people use this feature to include external and "
+"internal Javascript files, for plugins and things of the sort. Use it as you "
+"wish!"
+msgstr ""
+"Możesz tutaj wstawić swój własny kod do stopki. Wielu ludzi używa tego aby "
+"dołączyć zewnętrze lub wewnętrzne pliki JavaScript pluginów i tym podobnych "
+"rzeczy."
+
+#: admin/frank-theme-options.php:194
+msgid "Tweet This"
+msgstr "Tweetowanie"
+
+#: admin/frank-theme-options.php:204
+msgid "Add a \"Tweet This Post\" Button to Post Templates."
+msgstr "Dodawaj przycisk \"Tweetnij ten post\" do szablonów postów."
+
+#: admin/frank-theme-options.php:209
+msgid ""
+"This feature gives you the option to integrate a little bit of social "
+"networking directly into your posts. By turning this feature on, we'll "
+"automatically create a \"Tweet\" Button people can use to share your content!"
+msgstr ""
+"Ta funkcja daje Ci możliwość integrowania Twoich postów bezpośrednio z "
+"sieciami społecznościowymi. Włączając tę funkcję, zostanie automatycznie "
+"utworzony przycisk \"Tweetnij\", którego użytkownicy mogą używać do "
+"udostępniania Twoich treści w siecie."
+
+#: admin/frank-theme-options.php:216
+msgid "Twitter Handle"
+msgstr "Nazwa użytkownika Twitter"
+
+#: admin/frank-theme-options.php:225
+msgid ""
+"By entering your handle once right here, you can easily reference this "
+"setting throughout the theme and change it later with ease, if needed. "
+"Refrain from using the '@' sign. An example handle: 'somerandomdude'."
+msgstr ""
+"Wprowadzając tutaj swoją nazwę użytkownika, możesz z łatwością odwoływać się "
+"do tego ustawienia z poziomu szablony i zmieniać go później w miarę potrzeb. "
+"Pamiętaj o pomijaniu znaku \"@\". Przykład: 'somerandomdude'."
+
+#: admin/frank-theme-options.php:321
+msgid ""
+"Content Sections give you the opportunity to create a dynamic homepage for "
+"you to keep your readers engaged. With a vast variety of different layouts, "
+"you have the choice to select a look that works best for you."
+msgstr ""
+"Sekcje treści dają Ci możliwość tworzenia dynamicznej strony głównej, która "
+"zatrzyma Twoich czytelników. Dzięki ogromnej różnorodności układów, masz "
+"możliwość wyboru najbardziej odpowiadającego Ci wyglądu."
+
+#: admin/frank-theme-options.php:336
+msgid "Content Section"
+msgstr "Sekcja treści"
+
+#: admin/frank-theme-options.php:349
+msgid "Display Type:"
+msgstr "Sposób wyświetlania"
+
+#: admin/frank-theme-options.php:351
+msgid "Default Loop"
+msgstr "Domyślna pętla"
+
+#: admin/frank-theme-options.php:352
+msgid "One Up (Regular)"
+msgstr "Jedna kolumna (normalny)"
+
+#: admin/frank-theme-options.php:353
+msgid "One Up (Large)"
+msgstr "Jedna kolumna (duży)"
+
+#: admin/frank-theme-options.php:354
+msgid "Two Up"
+msgstr "Dwie kolumny"
+
+#: admin/frank-theme-options.php:355
+msgid "Three Up"
+msgstr "Trzy kolumny"
+
+#: admin/frank-theme-options.php:356
+msgid "Four Up"
+msgstr "Cztery kolumny"
+
+#: admin/frank-theme-options.php:357
+msgid "Some Random Dude Loop"
+msgstr "Pętla Some Random Dude"
+
+#: admin/frank-theme-options.php:380
+msgid "Display section header"
+msgstr "Wyświetlaj nagłówek sekcji"
+
+#: admin/frank-theme-options.php:387
+msgid "Section Title:"
+msgstr "Tytuł sekcji:"
+
+#: admin/frank-theme-options.php:400
+msgid "Number of Posts:"
+msgstr "Ilość postów:"
+
+#: admin/frank-theme-options.php:419
+msgid "Section Caption:"
+msgstr "Nagłówek sekcji:"
+
+#: admin/frank-theme-options.php:431
+msgid "Categories to Display"
+msgstr "Wyświetlane kategorie"
+
+#: admin/frank-theme-options.php:440
+msgid "Select All"
+msgstr "Zaznacz wszystkie"
+
+#: admin/frank-theme-options.php:441
+msgid "Deselect All"
+msgstr "Odznacz wszystkie"
+
+#: admin/frank-theme-options.php:486
+msgid "+ Add New Section +"
+msgstr "Dodaj nową sekcję"
+
+#: comments.php:22 partials/post-metadata-horizontal.php:13
+#: partials/post-metadata.php:14
+msgid "No Comments"
+msgstr "Brak komentarzy"
+
+#: comments.php:23 partials/post-metadata-horizontal.php:14
+#: partials/post-metadata.php:15
+msgid "One Comment"
+msgstr "Jeden komentarz"
+
+#: comments.php:24 partials/post-metadata-horizontal.php:15
+#: partials/post-metadata.php:16
+msgid "% Comments"
+msgstr "% komentarzy"
+
+#: comments.php:45
+msgid "Be the first to leave a comment. Don&rsquo;t be shy."
+msgstr "Bądź pierwszy i zostaw swój komentarz. Nie bądź nieśmiały."
+
+#: comments.php:61
+msgid "Name (required)"
+msgstr "Imię (wymagane)"
+
+#: comments.php:62
+msgid "Email (required)"
+msgstr "Email (wymagane)"
+
+#: comments.php:63 comments.php:71
+msgid "Website"
+msgstr "Strona WWW"
+
+#: comments.php:67
+msgid "Name"
+msgstr "Imię"
+
+#: comments.php:69
+msgid "Email"
+msgstr "Email"
+
+#: comments.php:75
+msgid "Your Comment"
+msgstr "Twój komentarz"
+
+#: comments.php:76
+msgctxt "noun"
+msgid "Comment"
+msgstr "Skomentuj"
+
+#: comments.php:78
+msgid "Logged in as"
+msgstr "Zalogowany jako"
+
+#: comments.php:79
+msgid "Log out?"
+msgstr "Wylogować?"
+
+#: comments.php:80
+msgid "Log out of this account"
+msgstr "Wyloguj się z tego konta"
+
+#: comments.php:88
+msgid "You may use these %1$s tags and attributes:"
+msgstr "Możesz używać %1$s tagów i atrybutów:"
+
+#: comments.php:91
+msgid "Join the Discussion"
+msgstr "Dołącz do dyskusji"
+
+#: functions.php:312
+msgid "Frank Theme Options"
+msgstr "Ustawienia szablonu Frank"
+
+#: functions.php:320
+msgid "Are you sure you want to delete this Content Section?"
+msgstr "Jesteś pewien, że chcesz usunąć tę sekcję?"
+
+#: functions.php:321
+msgid "(Drag & Drop Content Sections to Re-Order)"
+msgstr "(Przeciągnij i upuść sekcje aby zmienić kolejność)"
+
+#: functions.php:354
+msgid "Your comment is awaiting moderation"
+msgstr "Twój komentarz oczekuje na akceptację"
+
+#: functions.php:368
+msgctxt "comment_author_attribution"
+msgid "By"
+msgstr "przez"
+
+#: functions.php:373
+msgctxt "edit-comment"
+msgid "edit"
+msgstr "edytuj"
+
+#: partials/loops/loop-fourup.php:10 partials/loops/loop-oneup.php:10
+#: partials/loops/loop-oneuplarge.php:10 partials/loops/loop-threeup.php:10
+#: partials/loops/loop-twoup.php:10
+msgid "View more"
+msgstr "Zobacz więcej"
+
+#: partials/post-metadata-horizontal.php:5 partials/post-metadata.php:5
+msgctxt "post_author_attribution"
+msgid "By"
+msgstr "przez"
+
+#: partials/post-pagination.php:8
+msgid "Older Entries"
+msgstr "Starsze wpisy"
+
+#: partials/post-pagination.php:11
+msgid "Newer Entries"
+msgstr "Nowsze wpisy"
+
+#: partials/sidebars/sidebar-archive.php:9
+#: partials/sidebars/sidebar-index.php:9
+#: partials/sidebars/sidebar-single.php:9 sidebar.php:9
+msgid "About This Site"
+msgstr "O strone"
+
+#: partials/sidebars/sidebar-archive.php:13
+#: partials/sidebars/sidebar-index.php:13
+#: partials/sidebars/sidebar-single.php:13 sidebar.php:13
+msgid "Search"
+msgstr "Szukaj"
+
+#: search.php:14
+msgid "Search Results for"
+msgstr "Wyniki wyszukiwania dla"
+
+#: search.php:30
+msgid "No Results Were Found"
+msgstr "Nie znaleziono żadnych wyników"
+
+#: search.php:33
+msgid ""
+"There were no matches for your search. Please try a different search term."
+msgstr ""
+"Nie znaleziono nic pasującego do szukanej frazy. Spróbuj ponownie z inną "
+"frazą."
+
+#: searchform.php:7
+msgid "Type your query, hit enter"
+msgstr "Wpisz swoje zapytanie, nacisnij enter"
+
+#: single.php:28
+msgid "Tweet this Post"
+msgstr "Tweetnij ten post"
+
+#. Theme Name of the plugin/theme
+msgid "Frank"
+msgstr "Frank"
+
+#. Theme URI of the plugin/theme
+msgid "http://somerandomdude.com/work/frank"
+msgstr "http://somerandomdude.com/work/frank"
+
+#. Description of the plugin/theme
+#, fuzzy
+msgid "The next step of the Franklin Street theme."
+msgstr "Następca szablonu Franklin Street."
+
+#. Author of the plugin/theme
+msgid "P.J. Onori"
+msgstr "P.J. Onori"
+
+#. Author URI of the plugin/theme
+msgid "http://somerandomdude.com/hello/"
+msgstr "http://somerandomdude.com/hello/"
+
+#. Template Name of the plugin/theme
+#, fuzzy
+msgid "Full-spread Template"
+msgstr "Pełne rozciągnięcie"
+
+#. Template Name of the plugin/theme
+#, fuzzy
+msgid "Full-spread Template With Post Footer"
+msgstr "Pełne rozciągnięcie ze stopką posta"
+
+#: frank-theme-options.php:234
+msgid "Remove WordPress Version number from head"
+msgstr "Usuń informację o wersji WordPressa ze znacznika head"
+
+#: frank-theme-options.php:245
+msgid ""
+"Whether to include the version of WordPress used to generate the site in the "
+"head. This can be a security risk if you aren't running the most updated "
+"version"
+msgstr ""
+"Czy dołączać w nagłówku HTML numer wersji WordPressa używanego do "
+"generowania strony. Może to być zagrożeniem bezpieczeństwa, jeśli nie "
+"korzystasz z najnowszej wersji."
