@@ -8,7 +8,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2013-04-09 20:36+0100\n"
+"PO-Revision-Date: 2013-04-09 21:08+0100\n"
 "Last-Translator: Chris Bujok <chris.bujok@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "X-Generator: Poedit 1.5.5\n"
@@ -153,23 +153,23 @@ msgstr "Domyślna pętla"
 
 #: admin/frank-theme-options.php:352
 msgid "One Up (Regular)"
-msgstr "Jeden na górze (normalny)"
+msgstr "Jedna kolumna (normalny)"
 
 #: admin/frank-theme-options.php:353
 msgid "One Up (Large)"
-msgstr "Jeden na górze (duży)"
+msgstr "Jedna kolumna (duży)"
 
 #: admin/frank-theme-options.php:354
 msgid "Two Up"
-msgstr "Dwa na górze"
+msgstr "Dwie kolumny"
 
 #: admin/frank-theme-options.php:355
 msgid "Three Up"
-msgstr "Trzy na górze"
+msgstr "Trzy kolumny"
 
 #: admin/frank-theme-options.php:356
 msgid "Four Up"
-msgstr "Cztery na górze"
+msgstr "Cztery kolumny"
 
 #: admin/frank-theme-options.php:357
 msgid "Some Random Dude Loop"
@@ -386,11 +386,11 @@ msgstr "Pełne rozciągnięcie"
 msgid "Full-spread Template With Post Footer"
 msgstr "Pełne rozciągnięcie ze stopką posta"
 
-#. frank-theme-options.php:234
+#: frank-theme-options.php:234
 msgid "Remove WordPress Version number from head"
 msgstr "Usuń informację o wersji WordPressa ze znacznika head"
 
-#. frank-theme-options.php:245
+#: frank-theme-options.php:245
 msgid ""
 "Whether to include the version of WordPress used to generate the site in the "
 "head. This can be a security risk if you aren't running the most updated "
