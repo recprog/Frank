@@ -13,7 +13,7 @@
 <a name="about-frank"></a>
 ##About Frank
 
-This theme has been the personal project of [P.J. Onori](http://somerandomdude.com) with the gracious [help of many](#credits). The theme was designed to provide a lightweight theme focused on the reading experience. Frank consists of the parent theme (/frank) and a child theme (/somerandomdude) which is what I use at [somerandomdude.com](http://somerandomdude.com)
+This theme has been the personal project of [P.J. Onori](http://somerandomdude.com) with the gracious [help of many](#credits). The theme was designed to provide a lightweight theme focused on the reading experience. Frank is the parent theme of [Frank of Some Random Dude](https://github.com/somerandomdude/Frank-somerandomdude), the theme I use on somerandomdude.com
 
 ###Frank is fast
 
@@ -33,7 +33,7 @@ Frank uses a subset of [Foundation](http://foundation.zurb.com/) to provide a re
 
 ###Frank is for you
 
-This theme is 100% open source and developer friendly. The parent theme (/frank) is under the [GNU Public License](http://www.gnu.org/copyleft/gpl.html) and the child theme (/somerandomdude) directory is under the [Creative Commons Attribution-ShareAlike 3.0 Unported License](http://creativecommons.org/licenses/by-sa/3.0/). 
+This theme is 100% open source and developer friendly. The parent theme (/frank) is under the [GNU Public License](http://www.gnu.org/copyleft/gpl.html). 
 
 ###Frank ain't finished
 
@@ -90,8 +90,6 @@ Frank has various loop types for the home page, depending on your needs.
 * **Three Up**: The Three Up loop two posts per column with with no sidebar.
 
 * **Four Up**: The Four Up loop two posts per column with with no sidebar.
-
-* **Some Random Dude Loop**: This is the custom loop used on somerandomdude.com. It's a combination of the One Up (Large) and Default Loop.
 
 #####Number of Posts
 This setting allows you to define how many posts you want displayed in the loop. **Note:** This setting does not work for the Default Loop as it will use the number of posts defined in by the *Blog pages show at most* setting in Settings > Reading.
