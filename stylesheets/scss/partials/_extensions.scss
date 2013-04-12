@@ -19,15 +19,13 @@
 
 %vertical-border-break {
 	border:2px solid $color-midtone;
-	border-left:0;
-	border-right:0;
+	border-width:2px 0;
 	padding:$row-height 0;
 }
 
 %vertical-border-break-dark {
 	border:2px solid $color-off-black;
-	border-left:0;
-	border-right:0;
+	border-width:2px 0;
 	padding:$row-height 0;
 }
 

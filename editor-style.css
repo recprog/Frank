@@ -693,28 +693,22 @@ img, video {
 	-------------------------------------------------- */
 /* Mobile */
 @media only screen and (max-width: 767px) {
+  body, .container, .row {
+    min-width: 0;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
   body {
     -webkit-text-size-adjust: none;
     -ms-text-size-adjust: none;
     width: 100%;
-    min-width: 0;
-    margin-left: 0;
-    margin-right: 0;
     padding-left: 0;
     padding-right: 0;
   }
 
-  .container {
-    min-width: 0;
-    margin-left: 0;
-    margin-right: 0;
-  }
-
   .row {
     width: 100%;
-    min-width: 0;
-    margin-left: 0;
-    margin-right: 0;
   }
 
   .row .row .column, .row .row #content-primary, .row .row .columns {

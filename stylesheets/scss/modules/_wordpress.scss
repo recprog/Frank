@@ -38,5 +38,6 @@
 }
 
 .bypostauthor {
-	@extend %vertical-border-break;
+	@extend %vertical-border-break-dark;
+	border-color: $color-midtone;
 }
