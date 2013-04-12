@@ -11,8 +11,11 @@
 }
 .post-content {
 	font: #{$font-size-medium}/1.6 #{$typeface-primary};
-	p, ul li, ol li, dt, dd, blockquote { 
+	p, li, dt, dd, blockquote { 
 		font-size: $font-size-medium; 
+	}
+	li {
+		margin:10px 0;
 	}
 	code, small { 
 		font-size: $font-size-small; 
