@@ -1,8 +1,6 @@
 #prev-post {
-	margin-top: $row-height * 4;
-	margin-bottom: $row-height * 2;
-	font-style: italic;
-	font-family: $typeface-primary;
+	margin: $row-height * 4 0 $row-height * 2;
+	font: italic 1em #{$typeface-primary};
 	a {
 		font-size: $font-size-small;
 		display: block;
