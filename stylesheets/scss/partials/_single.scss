@@ -26,8 +26,8 @@
 		height: 45px;
 		border-radius: 22.5px;
 		@extend %image-replace;
-		/*TODO: Use compass to create data URI*/
-		background: $color-midtone url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAQCAYAAADESFVDAAAAWElEQVR42qXSzQkAIAgF4EZolEZqhDZqpEZwBM8dovSUYD9YwuNdPgIlt5tWa6AA9wkgpXPfACeagaeAAGkFigDZACbKAoAC+5f+od7Oesh/iC+/QC/DPQAIxvkuqJQtLgAAAABJRU5ErkJggg==') no-repeat 16px 15px;
+		background: $color-midtone inline-image('arrow-left.svg') no-repeat 47% 50%;
+		background-size: 33%;
 	}
 	 
 }

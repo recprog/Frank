@@ -27,6 +27,14 @@ label {
 	}
 }
 
+#prev-post {
+	
+	.arrow {
+		background: $color-midtone inline-image('arrow-left.png') no-repeat 16px 15px;
+	}
+	 
+}
+
 .post-group {
 	position: relative;
 }
