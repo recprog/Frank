@@ -19,13 +19,13 @@ if ( ! function_exists('frank_get_option') ) {
 			'tweet_post_button' => false,
 			'tweet_post_attribution' => '',
 			'sections' => array(
-			'display_type' => 'default_loop',
-			'header' => false,
-			'title' => '',
-			'caption' => '',
-			'num_posts' => 10,
-			'categories' => array(),
-			'default' => true
+				'display_type' => 'default_loop',
+				'header' => false,
+				'title' => '',
+				'caption' => '',
+				'num_posts' => 10,
+				'categories' => array(),
+				'default' => true
 			)
 		);
 
