@@ -1,0 +1,388 @@
+# Copyright (C) 2012 P.J. Onori
+# This file is distributed under the GPL 3.0.
+msgid ""
+msgstr ""
+"Project-Id-Version: Frank 0.9.1\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tags/frank\n"
+"POT-Creation-Date: 2012-12-30 12:15:56+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2013-05-01 23:08+0100\n"
+"Last-Translator: Giuliano Polverari <info@whiletrue.it>\n"
+"Language-Team: WhileTrue <info@whiletrue.it>\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"Language: it_IT\n"
+"X-Generator: Poedit 1.5.5\n"
+
+#: 404.php:11
+msgid "Page Not Found"
+msgstr "Pagina non trovata"
+
+#: 404.php:22
+msgctxt "home_link_text"
+msgid "home"
+msgstr "home"
+
+#: 404.php:23
+msgid ""
+"Unfortunately, the page you are looking for no longer exists or never "
+"existed in the first place. If you reached this page in error, you can go %s "
+"and start over."
+msgstr ""
+"Purtroppo, la pagina che cercavi non esiste più o non è mai esistita. Se sei "
+"arrivato qui per errore, puoi ripartire da %s."
+
+#: 404.php:30
+msgid ""
+"If you believe this page exists, please try searching for the page in the "
+"search input below."
+msgstr ""
+"Se pensi che questa pagina esista, prova a cercarla tramite il pulsante di "
+"ricerca qui sotto."
+
+#: admin/frank-theme-options.php:7 admin/frank-theme-options.php:124
+msgid "General Settings"
+msgstr "Impostazioni Generali"
+
+#: admin/frank-theme-options.php:8 admin/frank-theme-options.php:238
+msgid "Home Page Settings"
+msgstr "Impostazioni Home Page"
+
+#: admin/frank-theme-options.php:66
+msgid "Frank's Settings Have Been Updated."
+msgstr "Le Impostazioni di Frank sono state aggiornate."
+
+#: admin/frank-theme-options.php:72
+msgid "Make Changes And Use The Update Settings Button To Save!"
+msgstr ""
+"Terminate le modifiche, usa il pusante Aggiorna le Impostazioni per salvarle!"
+
+#: admin/frank-theme-options.php:105
+msgid "Frank Theme Settings"
+msgstr "Impostazioni del Tema Frank"
+
+#: admin/frank-theme-options.php:158 admin/frank-theme-options.php:312
+#: admin/frank-theme-options.php:497
+msgid "Update Settings"
+msgstr "Aggiorna le Impostazioni"
+
+#: admin/frank-theme-options.php:166
+msgid "Custom Header Code"
+msgstr "Codice personalizzato Intestazione"
+
+#: admin/frank-theme-options.php:172
+msgid ""
+"This feature allows you to write or copy and paste your own code straight "
+"into the header. Many people use this feature to include their Google "
+"Analytics code, or other small bits of Javascript. Feel free to use this as "
+"you wish!"
+msgstr ""
+"Questa funzionalità ti permette di scrivere o copiare e incollare il tuo "
+"codice direttamente nell'intestazione. In molti usano questa funzionalità "
+"per includere il proprio codice Google Analytics o codice Javascript. Usalo "
+"come desideri!"
+
+#: admin/frank-theme-options.php:181
+msgid "Custom Footer Code"
+msgstr "Codice personalizzato Piè di pagina"
+
+#: admin/frank-theme-options.php:187
+msgid ""
+"This feature allows you to write or copy and paste your own code directly to "
+"the footer. A lot of people use this feature to include external and "
+"internal Javascript files, for plugins and things of the sort. Use it as you "
+"wish!"
+msgstr ""
+"Questa funzionalità ti permette di scrivere o copiare e incollare il tuo "
+"codice direttamente nel Piè di pagina. In molti usano questa funzionalità "
+"per includere file Javascript interni ed esterni, per plugin e altri "
+"utilizzi simili. Usalo a tuo piacimento!"
+
+#: admin/frank-theme-options.php:194
+msgid "Tweet This"
+msgstr "Twittalo"
+
+#: admin/frank-theme-options.php:204
+msgid "Add a \"Tweet This Post\" Button to Post Templates."
+msgstr ""
+"Aggiungi un pulsante \"Twitta questo Articolo\" al Template degli Articoli."
+
+#: admin/frank-theme-options.php:209
+msgid ""
+"This feature gives you the option to integrate a little bit of social "
+"networking directly into your posts. By turning this feature on, we'll "
+"automatically create a \"Tweet\" Button people can use to share your content!"
+msgstr ""
+"Questa funzionalità ti permette di integrare Twitter direttamente nei tuoi "
+"articoli. Attivandola, sarà generato automaticamente un pulsante \"Tweet\" "
+"che i visitatori possono usare per condividere i tuoi contenuti!"
+
+#: admin/frank-theme-options.php:216
+msgid "Twitter Handle"
+msgstr "Twitter Handle"
+
+#: admin/frank-theme-options.php:225
+msgid ""
+"By entering your handle once right here, you can easily reference this "
+"setting throughout the theme and change it later with ease, if needed. "
+"Refrain from using the '@' sign. An example handle: 'somerandomdude'."
+msgstr ""
+"Inserendo qui il tuo Handle, puoi farci riferimento semplicemente per tutto "
+"il Tema e modificarlo successivamente senza difficoltà, se necessario. Evita "
+"di usare il simbolo '@'. Ad esempio: 'somerandomdude'."
+
+#: admin/frank-theme-options.php:321
+msgid ""
+"Content Sections give you the opportunity to create a dynamic homepage for "
+"you to keep your readers engaged. With a vast variety of different layouts, "
+"you have the choice to select a look that works best for you."
+msgstr ""
+"Le Sezioni di Contenuto ti danno la possibilità di creare una homepage "
+"dinamica per mantenere i tuoi lettori occupati. Con una varietà di "
+"differenti layout, hai la possibilità di selezionare il look che ti si "
+"addice di più."
+
+#: admin/frank-theme-options.php:336
+msgid "Content Section"
+msgstr "Sezione di Contenuto"
+
+#: admin/frank-theme-options.php:349
+msgid "Display Type:"
+msgstr "Tipo di Display:"
+
+#: admin/frank-theme-options.php:351
+msgid "Default Loop"
+msgstr "Loop di default"
+
+#: admin/frank-theme-options.php:352
+msgid "One Up (Regular)"
+msgstr "Da uno in su (normale)"
+
+#: admin/frank-theme-options.php:353
+msgid "One Up (Large)"
+msgstr "Da uno in su (largo)"
+
+#: admin/frank-theme-options.php:354
+msgid "Two Up"
+msgstr "Da due in su"
+
+#: admin/frank-theme-options.php:355
+msgid "Three Up"
+msgstr "Da tre in su"
+
+#: admin/frank-theme-options.php:356
+msgid "Four Up"
+msgstr "Da quattro in su"
+
+#: admin/frank-theme-options.php:357
+msgid "Some Random Dude Loop"
+msgstr "Loop"
+
+#: admin/frank-theme-options.php:380
+msgid "Display section header"
+msgstr "Intestazione della sezione Display"
+
+#: admin/frank-theme-options.php:387
+msgid "Section Title:"
+msgstr "Titolo della Sezione:"
+
+#: admin/frank-theme-options.php:400
+msgid "Number of Posts:"
+msgstr "Numero di articoli:"
+
+#: admin/frank-theme-options.php:419
+msgid "Section Caption:"
+msgstr "Didascalia della Sezione:"
+
+#: admin/frank-theme-options.php:431
+msgid "Categories to Display"
+msgstr "Categorie da mostrare"
+
+#: admin/frank-theme-options.php:440
+msgid "Select All"
+msgstr "Seleziona Tutto"
+
+#: admin/frank-theme-options.php:441
+msgid "Deselect All"
+msgstr "Deseleziona Tutto"
+
+#: admin/frank-theme-options.php:486
+msgid "+ Add New Section +"
+msgstr "+ Aggiungi  una nuova Sezione +"
+
+#: comments.php:22 partials/post-metadata-horizontal.php:13
+#: partials/post-metadata.php:14
+msgid "No Comments"
+msgstr "Nessun Commento"
+
+#: comments.php:23 partials/post-metadata-horizontal.php:14
+#: partials/post-metadata.php:15
+msgid "One Comment"
+msgstr "Un Commento"
+
+#: comments.php:24 partials/post-metadata-horizontal.php:15
+#: partials/post-metadata.php:16
+msgid "% Comments"
+msgstr "% Commenti"
+
+#: comments.php:45
+msgid "Be the first to leave a comment. Don&rsquo;t be shy."
+msgstr "Sii il primo a lasciare un commento. Non essere timido!"
+
+#: comments.php:61
+msgid "Name (required)"
+msgstr "Nome (richiesto)"
+
+#: comments.php:62
+msgid "Email (required)"
+msgstr "Email (richiesto)"
+
+#: comments.php:63 comments.php:71
+msgid "Website"
+msgstr "Sito web"
+
+#: comments.php:67
+msgid "Name"
+msgstr "Nome"
+
+#: comments.php:69
+msgid "Email"
+msgstr "Email"
+
+#: comments.php:75
+msgid "Your Comment"
+msgstr "Il tuo Commento"
+
+#: comments.php:76
+msgctxt "noun"
+msgid "Comment"
+msgstr "Commento"
+
+#: comments.php:78
+msgid "Logged in as"
+msgstr "Connesso come "
+
+#: comments.php:79
+msgid "Log out?"
+msgstr "Vuoi uscire?"
+
+#: comments.php:80
+msgid "Log out of this account"
+msgstr "Esci"
+
+#: comments.php:88
+msgid "You may use these %1$s tags and attributes:"
+msgstr "Puoi usare i seguenti %1$s tag e attributi:"
+
+#: comments.php:91
+msgid "Join the Discussion"
+msgstr "Partecipa alla Discussione"
+
+#: functions.php:312
+msgid "Frank Theme Options"
+msgstr "Opzioni del Tema Frank"
+
+#: functions.php:320
+msgid "Are you sure you want to delete this Content Section?"
+msgstr "Sei sicuro di voler cancellare questa Sezione di Contenuto?"
+
+#: functions.php:321
+msgid "(Drag & Drop Content Sections to Re-Order)"
+msgstr "(Trascina le Sezioni di Contenuto per riordinarle)"
+
+#: functions.php:354
+msgid "Your comment is awaiting moderation"
+msgstr "Il tuo commento è in attesa di approvazione"
+
+#: functions.php:368
+msgctxt "comment_author_attribution"
+msgid "By"
+msgstr "Da"
+
+#: functions.php:373
+msgctxt "edit-comment"
+msgid "edit"
+msgstr "modifica"
+
+#: partials/loops/loop-fourup.php:10 partials/loops/loop-oneup.php:10
+#: partials/loops/loop-oneuplarge.php:10 partials/loops/loop-threeup.php:10
+#: partials/loops/loop-twoup.php:10
+msgid "View more"
+msgstr "Leggi tutto"
+
+#: partials/post-metadata-horizontal.php:5 partials/post-metadata.php:5
+msgctxt "post_author_attribution"
+msgid "By"
+msgstr "Da"
+
+#: partials/post-pagination.php:8
+msgid "Older Entries"
+msgstr "Articoli meno recenti"
+
+#: partials/post-pagination.php:11
+msgid "Newer Entries"
+msgstr "Articoli più recenti"
+
+#: partials/sidebars/sidebar-archive.php:9
+#: partials/sidebars/sidebar-index.php:9
+#: partials/sidebars/sidebar-single.php:9 sidebar.php:9
+msgid "About This Site"
+msgstr "Chi siamo"
+
+#: partials/sidebars/sidebar-archive.php:13
+#: partials/sidebars/sidebar-index.php:13
+#: partials/sidebars/sidebar-single.php:13 sidebar.php:13
+msgid "Search"
+msgstr "Ricerca"
+
+#: search.php:14
+msgid "Search Results for"
+msgstr "Risultati di ricerca per"
+
+#: search.php:30
+msgid "No Results Were Found"
+msgstr "Nessun risultato trovato"
+
+#: search.php:33
+msgid ""
+"There were no matches for your search. Please try a different search term."
+msgstr ""
+"La ricerca non ha restituito risultati. Prova con differenti termini di "
+"ricerca."
+
+#: searchform.php:7
+msgid "Type your query, hit enter"
+msgstr "Inserisci i termini di ricerca, poi premi invio"
+
+#: single.php:28
+msgid "Tweet this Post"
+msgstr "Twitta questo articolo"
+
+#. Theme Name of the plugin/theme
+msgid "Frank"
+msgstr "Frank"
+
+#. Theme URI of the plugin/theme
+msgid "http://somerandomdude.com/work/frank"
+msgstr "http://somerandomdude.com/work/frank"
+
+#. Description of the plugin/theme
+msgid "The next step of the Franklin Street theme."
+msgstr "Il prossimo passo del tema Franklin Street."
+
+#. Author of the plugin/theme
+msgid "P.J. Onori"
+msgstr "P.J. Onori"
+
+#. Author URI of the plugin/theme
+msgid "http://somerandomdude.com/hello/"
+msgstr "http://somerandomedude.com/hello/"
+
+#. Template Name of the plugin/theme
+msgid "Full-spread Template"
+msgstr "Template a larghezza intera"
+
+#. Template Name of the plugin/theme
+msgid "Full-spread Template With Post Footer"
+msgstr "Template a larghezza intera con Post Footer"
