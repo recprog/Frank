@@ -8,12 +8,12 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2013-05-01 22:48+0100\n"
+"PO-Revision-Date: 2013-05-01 23:08+0100\n"
 "Last-Translator: Giuliano Polverari <info@whiletrue.it>\n"
 "Language-Team: WhileTrue <info@whiletrue.it>\n"
-"X-Poedit-Language: Italian\n"
-"X-Poedit-Country: ITALY\n"
-"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"Language: it_IT\n"
+"X-Generator: Poedit 1.5.5\n"
 
 #: 404.php:11
 msgid "Page Not Found"
@@ -25,20 +25,27 @@ msgid "home"
 msgstr "home"
 
 #: 404.php:23
-msgid "Unfortunately, the page you are looking for no longer exists or never existed in the first place. If you reached this page in error, you can go %s and start over."
-msgstr "Purtroppo, la pagina che cercavi non esiste più o non è mai esistita. Se sei arrivato qui per errore, puoi ripartire da %s."
+msgid ""
+"Unfortunately, the page you are looking for no longer exists or never "
+"existed in the first place. If you reached this page in error, you can go %s "
+"and start over."
+msgstr ""
+"Purtroppo, la pagina che cercavi non esiste più o non è mai esistita. Se sei "
+"arrivato qui per errore, puoi ripartire da %s."
 
 #: 404.php:30
-msgid "If you believe this page exists, please try searching for the page in the search input below."
-msgstr "Se pensi che questa pagina esista, prova a cercarla tramite il pulsante di ricerca qui sotto."
+msgid ""
+"If you believe this page exists, please try searching for the page in the "
+"search input below."
+msgstr ""
+"Se pensi che questa pagina esista, prova a cercarla tramite il pulsante di "
+"ricerca qui sotto."
 
-#: admin/frank-theme-options.php:7
-#: admin/frank-theme-options.php:124
+#: admin/frank-theme-options.php:7 admin/frank-theme-options.php:124
 msgid "General Settings"
 msgstr "Impostazioni Generali"
 
-#: admin/frank-theme-options.php:8
-#: admin/frank-theme-options.php:238
+#: admin/frank-theme-options.php:8 admin/frank-theme-options.php:238
 msgid "Home Page Settings"
 msgstr "Impostazioni Home Page"
 
@@ -48,14 +55,14 @@ msgstr "Le Impostazioni di Frank sono state aggiornate."
 
 #: admin/frank-theme-options.php:72
 msgid "Make Changes And Use The Update Settings Button To Save!"
-msgstr "Terminate le modifiche, usa il pusante Aggiorna le Impostazioni per salvarle!"
+msgstr ""
+"Terminate le modifiche, usa il pusante Aggiorna le Impostazioni per salvarle!"
 
 #: admin/frank-theme-options.php:105
 msgid "Frank Theme Settings"
 msgstr "Impostazioni del Tema Frank"
 
-#: admin/frank-theme-options.php:158
-#: admin/frank-theme-options.php:312
+#: admin/frank-theme-options.php:158 admin/frank-theme-options.php:312
 #: admin/frank-theme-options.php:497
 msgid "Update Settings"
 msgstr "Aggiorna le Impostazioni"
@@ -65,16 +72,32 @@ msgid "Custom Header Code"
 msgstr "Codice personalizzato Intestazione"
 
 #: admin/frank-theme-options.php:172
-msgid "This feature allows you to write or copy and paste your own code straight into the header. Many people use this feature to include their Google Analytics code, or other small bits of Javascript. Feel free to use this as you wish!"
-msgstr "Questa funzionalità ti permette di scrivere o copiare e incollare il tuo codice direttamente nell'intestazione. In molti usano questa funzionalità per includere il proprio codice Google Analytics o codice Javascript. Usalo come desideri!"
+msgid ""
+"This feature allows you to write or copy and paste your own code straight "
+"into the header. Many people use this feature to include their Google "
+"Analytics code, or other small bits of Javascript. Feel free to use this as "
+"you wish!"
+msgstr ""
+"Questa funzionalità ti permette di scrivere o copiare e incollare il tuo "
+"codice direttamente nell'intestazione. In molti usano questa funzionalità "
+"per includere il proprio codice Google Analytics o codice Javascript. Usalo "
+"come desideri!"
 
 #: admin/frank-theme-options.php:181
 msgid "Custom Footer Code"
 msgstr "Codice personalizzato Piè di pagina"
 
 #: admin/frank-theme-options.php:187
-msgid "This feature allows you to write or copy and paste your own code directly to the footer. A lot of people use this feature to include external and internal Javascript files, for plugins and things of the sort. Use it as you wish!"
-msgstr "Questa funzionalità ti permette di scrivere o copiare e incollare il tuo codice direttamente nel Piè di pagina. In molti usano questa funzionalità per includere file Javascript interni ed esterni, per plugin e altri utilizzi simili. Usalo a tuo piacimento!"
+msgid ""
+"This feature allows you to write or copy and paste your own code directly to "
+"the footer. A lot of people use this feature to include external and "
+"internal Javascript files, for plugins and things of the sort. Use it as you "
+"wish!"
+msgstr ""
+"Questa funzionalità ti permette di scrivere o copiare e incollare il tuo "
+"codice direttamente nel Piè di pagina. In molti usano questa funzionalità "
+"per includere file Javascript interni ed esterni, per plugin e altri "
+"utilizzi simili. Usalo a tuo piacimento!"
 
 #: admin/frank-theme-options.php:194
 msgid "Tweet This"
@@ -82,23 +105,43 @@ msgstr "Twittalo"
 
 #: admin/frank-theme-options.php:204
 msgid "Add a \"Tweet This Post\" Button to Post Templates."
-msgstr "Aggiungi un pulsante \"Twitta questo Articolo\" al Template degli Articoli."
+msgstr ""
+"Aggiungi un pulsante \"Twitta questo Articolo\" al Template degli Articoli."
 
 #: admin/frank-theme-options.php:209
-msgid "This feature gives you the option to integrate a little bit of social networking directly into your posts. By turning this feature on, we'll automatically create a \"Tweet\" Button people can use to share your content!"
-msgstr "Questa funzionalità ti permette di integrare Twitter direttamente nei tuoi articoli. Attivandola, sarà generato automaticamente un pulsante \"Tweet\" che i visitatori possono usare per condividere i tuoi contenuti!"
+msgid ""
+"This feature gives you the option to integrate a little bit of social "
+"networking directly into your posts. By turning this feature on, we'll "
+"automatically create a \"Tweet\" Button people can use to share your content!"
+msgstr ""
+"Questa funzionalità ti permette di integrare Twitter direttamente nei tuoi "
+"articoli. Attivandola, sarà generato automaticamente un pulsante \"Tweet\" "
+"che i visitatori possono usare per condividere i tuoi contenuti!"
 
 #: admin/frank-theme-options.php:216
 msgid "Twitter Handle"
 msgstr "Twitter Handle"
 
 #: admin/frank-theme-options.php:225
-msgid "By entering your handle once right here, you can easily reference this setting throughout the theme and change it later with ease, if needed. Refrain from using the '@' sign. An example handle: 'somerandomdude'."
-msgstr "Inserendo qui il tuo Handle, puoi farci riferimento semplicemente per tutto il Tema e modificarlo successivamente senza difficoltà, se necessario. Evita di usare il simbolo '@'. Ad esempio: 'somerandomdude'."
+msgid ""
+"By entering your handle once right here, you can easily reference this "
+"setting throughout the theme and change it later with ease, if needed. "
+"Refrain from using the '@' sign. An example handle: 'somerandomdude'."
+msgstr ""
+"Inserendo qui il tuo Handle, puoi farci riferimento semplicemente per tutto "
+"il Tema e modificarlo successivamente senza difficoltà, se necessario. Evita "
+"di usare il simbolo '@'. Ad esempio: 'somerandomdude'."
 
 #: admin/frank-theme-options.php:321
-msgid "Content Sections give you the opportunity to create a dynamic homepage for you to keep your readers engaged. With a vast variety of different layouts, you have the choice to select a look that works best for you."
-msgstr "Le Sezioni di Contenuto ti danno la possibilità di creare una homepage dinamica per mantenere i tuoi lettori occupati. Con una varietà di differenti layout, hai la possibilità di selezionare il look che ti si addice di più."
+msgid ""
+"Content Sections give you the opportunity to create a dynamic homepage for "
+"you to keep your readers engaged. With a vast variety of different layouts, "
+"you have the choice to select a look that works best for you."
+msgstr ""
+"Le Sezioni di Contenuto ti danno la possibilità di creare una homepage "
+"dinamica per mantenere i tuoi lettori occupati. Con una varietà di "
+"differenti layout, hai la possibilità di selezionare il look che ti si "
+"addice di più."
 
 #: admin/frank-theme-options.php:336
 msgid "Content Section"
@@ -168,20 +211,17 @@ msgstr "Deseleziona Tutto"
 msgid "+ Add New Section +"
 msgstr "+ Aggiungi  una nuova Sezione +"
 
-#: comments.php:22
-#: partials/post-metadata-horizontal.php:13
+#: comments.php:22 partials/post-metadata-horizontal.php:13
 #: partials/post-metadata.php:14
 msgid "No Comments"
 msgstr "Nessun Commento"
 
-#: comments.php:23
-#: partials/post-metadata-horizontal.php:14
+#: comments.php:23 partials/post-metadata-horizontal.php:14
 #: partials/post-metadata.php:15
 msgid "One Comment"
 msgstr "Un Commento"
 
-#: comments.php:24
-#: partials/post-metadata-horizontal.php:15
+#: comments.php:24 partials/post-metadata-horizontal.php:15
 #: partials/post-metadata.php:16
 msgid "% Comments"
 msgstr "% Commenti"
@@ -198,8 +238,7 @@ msgstr "Nome (richiesto)"
 msgid "Email (required)"
 msgstr "Email (richiesto)"
 
-#: comments.php:63
-#: comments.php:71
+#: comments.php:63 comments.php:71
 msgid "Website"
 msgstr "Sito web"
 
@@ -266,16 +305,13 @@ msgctxt "edit-comment"
 msgid "edit"
 msgstr "modifica"
 
-#: partials/loops/loop-fourup.php:10
-#: partials/loops/loop-oneup.php:10
-#: partials/loops/loop-oneuplarge.php:10
-#: partials/loops/loop-threeup.php:10
+#: partials/loops/loop-fourup.php:10 partials/loops/loop-oneup.php:10
+#: partials/loops/loop-oneuplarge.php:10 partials/loops/loop-threeup.php:10
 #: partials/loops/loop-twoup.php:10
 msgid "View more"
 msgstr "Leggi tutto"
 
-#: partials/post-metadata-horizontal.php:5
-#: partials/post-metadata.php:5
+#: partials/post-metadata-horizontal.php:5 partials/post-metadata.php:5
 msgctxt "post_author_attribution"
 msgid "By"
 msgstr "Da"
@@ -290,15 +326,13 @@ msgstr "Articoli più recenti"
 
 #: partials/sidebars/sidebar-archive.php:9
 #: partials/sidebars/sidebar-index.php:9
-#: partials/sidebars/sidebar-single.php:9
-#: sidebar.php:9
+#: partials/sidebars/sidebar-single.php:9 sidebar.php:9
 msgid "About This Site"
 msgstr "Chi siamo"
 
 #: partials/sidebars/sidebar-archive.php:13
 #: partials/sidebars/sidebar-index.php:13
-#: partials/sidebars/sidebar-single.php:13
-#: sidebar.php:13
+#: partials/sidebars/sidebar-single.php:13 sidebar.php:13
 msgid "Search"
 msgstr "Ricerca"
 
@@ -311,8 +345,11 @@ msgid "No Results Were Found"
 msgstr "Nessun risultato trovato"
 
 #: search.php:33
-msgid "There were no matches for your search. Please try a different search term."
-msgstr "La ricerca non ha restituito risultati. Prova con differenti termini di ricerca."
+msgid ""
+"There were no matches for your search. Please try a different search term."
+msgstr ""
+"La ricerca non ha restituito risultati. Prova con differenti termini di "
+"ricerca."
 
 #: searchform.php:7
 msgid "Type your query, hit enter"
@@ -349,4 +386,3 @@ msgstr "Template a larghezza intera"
 #. Template Name of the plugin/theme
 msgid "Full-spread Template With Post Footer"
 msgstr "Template a larghezza intera con Post Footer"
-
