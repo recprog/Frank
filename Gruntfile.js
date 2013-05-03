@@ -86,6 +86,19 @@ module.exports = function(grunt) {
           }
         },
 
+        /**
+         * Uses CSSCSS to analyse any redundancies in the CSS files.
+         * - http://zmoazeni.github.io/csscss/
+         */
+        csscss: {
+            options: {
+                verbose: true
+            },
+            dist: {
+                src: ['editor-style.css', 'ie.css', 'print.css', 'style.css']
+            }
+        },
+
         watch: {
             sass: {
                 files: 'stylesheets/**/*.scss',
@@ -104,7 +117,13 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-csso');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-webp');
+    grunt.loadNpmTasks('grunt-csscss');
 
     grunt.registerTask('default', ['coffee', 'sass:dev', 'svgo', /*'csso'*/, 'webp']);
+
+    /**
+     * Grunt tasks that help improve code quality.
+     */
+    grunt.registerTask('quality', 'sass:dev', 'csscss');
 
 };
