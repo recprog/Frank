@@ -12,6 +12,27 @@ module.exports = function(grunt) {
           }
         },
 
+        /**
+         * This task requires Sass & Compass to be installed on your machine.
+         *
+         * - http://compass-style.org/install/
+         * - http://sass-lang.com/download.html
+         */
+        sass: {
+          dev: {
+            options: {
+                compass: true,
+                style: 'expanded'
+            },
+            files: {
+                'style.css': 'stylesheets/scss/style.scss',
+                'ie.css': 'stylesheets/scss/ie.scss',
+                'editor-style.css': 'stylesheets/scss/editor-style.scss',
+                'print.css': 'stylesheets/scss/print.scss',
+            }
+          }
+        },
+
         svgo: {
             optimize: {
                 files: 'images/*.svg'
@@ -67,10 +88,11 @@ module.exports = function(grunt) {
     });
 
     grunt.loadNpmTasks('grunt-contrib-coffee');
+    grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('svgo-grunt');
     grunt.loadNpmTasks('grunt-csso');
     grunt.loadNpmTasks('grunt-webp');
 
-    grunt.registerTask('default', ['coffee', 'svgo', /*'csso'*/, 'webp']);
+    grunt.registerTask('default', ['coffee', 'sass:dev', 'svgo', /*'csso'*/, 'webp']);
 
 };
