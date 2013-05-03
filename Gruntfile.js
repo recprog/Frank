@@ -84,6 +84,17 @@ module.exports = function(grunt) {
               'style.min3.css': ['style.min2.css']
             }
           }
+        },
+
+        watch: {
+            sass: {
+                files: 'stylesheets/**/*.scss',
+                tasks: ['sass:dev']
+            },
+            coffee: {
+                files: 'javascripts/**/*.coffee',
+                tasks: ['coffee:compile']
+            }
         }
     });
 
@@ -91,6 +102,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('svgo-grunt');
     grunt.loadNpmTasks('grunt-csso');
+    grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-webp');
 
     grunt.registerTask('default', ['coffee', 'sass:dev', 'svgo', /*'csso'*/, 'webp']);
