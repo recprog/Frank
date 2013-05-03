@@ -1,6 +1,17 @@
 module.exports = function(grunt) {
 
     grunt.initConfig({
+
+        coffee: {
+          compile: {
+            files: {
+              'javascripts/defer-image-load.js': 'javascripts/coffeescripts/defer-image-load.coffee',
+              'javascripts/frank.slideshow.js': 'javascripts/coffeescripts/frank.slideshow.coffee',
+              'javascripts/simplebox.js': 'javascripts/coffeescripts/simplebox.coffee'
+            }
+          }
+        },
+
         svgo: {
             optimize: {
                 files: 'images/*.svg'
@@ -55,10 +66,11 @@ module.exports = function(grunt) {
         }
     });
 
+    grunt.loadNpmTasks('grunt-contrib-coffee');
     grunt.loadNpmTasks('svgo-grunt');
     grunt.loadNpmTasks('grunt-csso');
     grunt.loadNpmTasks('grunt-webp');
 
-    grunt.registerTask('default', ['svgo', /*'csso',*/ 'webp']);
+    grunt.registerTask('default', ['coffee', 'svgo', /*'csso'*/, 'webp']);
 
 };
