@@ -5,9 +5,12 @@ module.exports = function(grunt) {
           dist: ['frank']
         },
         copy: {
+          opt: {
+            'images/src/*.svg' : 'images'  //svgo doesn't support dest:src optimization, so we copy SVG files over manually
+          },
           dist: {
             files: {
-              'frank/': ['./**', '!./node_modules/**', '!./stylesheets/**', '!./javascripts/coffeescripts/**', '!./docs/**',  '!./.git/**', '!./Gruntfile.js', '!./package.json', '!./config.rb', '!./README.md', '!./HISTORY.md']
+              'frank/': ['./**',  '!./images/src/**', '!./node_modules/**', '!./stylesheets/**', '!./javascripts/coffeescripts/**', '!./docs/**',  '!./.git/**', '!./Gruntfile.js', '!./package.json', '!./config.rb', '!./README.md', '!./HISTORY.md']
             }
           }
         },
@@ -51,16 +54,28 @@ module.exports = function(grunt) {
             }
           }
         },
-
         svgo: {
             optimize: {
-                files: 'images/*.svg'
+              files: 'images/*.svg'
             }
         },
+        imagemin: {
+          dist: {
+            options: {
+              optimizationLevel: 3
+            },
+            files: [{
+                    expand: true,
+                    cwd: 'images/src',
+                    src: '*.{png,jpg,jpeg}',
+                    dest: 'images'
+                }]
+          }
+        },
         webp: {
-          foo:{
-            src: ['images/*.jpg', 'images/*.png'],
-            dest: 'webp/',
+          optPNG:{
+            src: ['images/*.png'],
+            dest: 'images/',
             options: {
                 preset: 'photo',
                 verbose: true,
@@ -81,6 +96,32 @@ module.exports = function(grunt) {
                 alphaFilter: 'best',
                 alphaCleanup: true,
                 noAlpha: false,
+                lossless: true
+              }
+          },
+          optJPG:{
+            src: ['images/*.jpeg', 'images/*.jpg'],
+            dest: 'images/',
+            options: {
+                preset: 'photo',
+                verbose: true,
+                quality: 70,
+                alphaQuality: 80,
+                compressionMethod: 6,
+                segments: 4,
+                psnr: 42,
+                sns: 50,
+                filterStrength: 40,
+                filterSharpness: 3,
+                simpleFilter: true,
+                partitionLimit: 50,
+                analysisPass: 6,
+                multiThreading: true,
+                lowMemory: false,
+                alphaMethod: 0,
+                alphaFilter: 'best',
+                alphaCleanup: true,
+                noAlpha: true,
                 lossless: false
               }
           }
@@ -138,10 +179,12 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-compress');
-    //grunt.loadNpmTasks('grunt-webp');
+    grunt.loadNpmTasks('grunt-contrib-imagemin');
+    grunt.loadNpmTasks('grunt-webp');
     grunt.loadNpmTasks('grunt-csscss');
+    grunt.loadNpmTasks('svgo-grunt');
 
-    grunt.registerTask('default', ['coffee', 'sass:dev', 'svgo', /*'csso'*/, /*'webp'*/]);
+    grunt.registerTask('default', ['coffee', 'sass:dev']);
 
     /**
      * Grunt tasks that help improve code quality.
@@ -152,5 +195,6 @@ module.exports = function(grunt) {
     * Grunt tasks which build a clean theme for deployment
     */
     grunt.registerTask('dist', ['clean:dist', 'copy:dist', 'compress:dist', 'clean:dist']);
+    grunt.registerTask('opt', ['copy:opt', 'svgo', 'imagemin', 'webp:optPNG', 'webp:optJPG']);
 
 };
