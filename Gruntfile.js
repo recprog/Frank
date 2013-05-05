@@ -1,7 +1,26 @@
 module.exports = function(grunt) {
 
     grunt.initConfig({
-
+        clean: {
+          dist: ['frank']
+        },
+        copy: {
+          dist: {
+            files: {
+              'frank/': ['./**', '!./node_modules/**', '!./stylesheets/**', '!./javascripts/coffeescripts/**', '!./docs/**',  '!./.git/**', '!./Gruntfile.js', '!./package.json', '!./config.rb', '!./README.md', '!./HISTORY.md']
+            }
+          }
+        },
+        compress: {
+          dist: {
+            options: {
+              archive: '../frank-dist.zip'
+            },
+            files: [
+              {src: './frank/**', dest: './../'}
+            ]
+          }
+        },
         coffee: {
           compile: {
             files: {
@@ -116,14 +135,22 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('svgo-grunt');
     grunt.loadNpmTasks('grunt-csso');
     grunt.loadNpmTasks('grunt-contrib-watch');
-    grunt.loadNpmTasks('grunt-webp');
+    grunt.loadNpmTasks('grunt-contrib-copy');
+    grunt.loadNpmTasks('grunt-contrib-clean');
+    grunt.loadNpmTasks('grunt-contrib-compress');
+    //grunt.loadNpmTasks('grunt-webp');
     grunt.loadNpmTasks('grunt-csscss');
 
-    grunt.registerTask('default', ['coffee', 'sass:dev', 'svgo', /*'csso'*/, 'webp']);
+    grunt.registerTask('default', ['coffee', 'sass:dev', 'svgo', /*'csso'*/, /*'webp'*/]);
 
     /**
      * Grunt tasks that help improve code quality.
      */
     grunt.registerTask('quality', 'sass:dev', 'csscss');
+
+    /*
+    * Grunt tasks which build a clean theme for deployment
+    */
+    grunt.registerTask('dist', ['clean:dist', 'copy:dist', 'compress:dist', 'clean:dist']);
 
 };
