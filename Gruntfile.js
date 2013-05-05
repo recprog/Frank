@@ -10,7 +10,7 @@ module.exports = function(grunt) {
           },
           dist: {
             files: {
-              'frank/': ['./**',  '!./images/src/**', '!./node_modules/**', '!./stylesheets/**', '!./javascripts/coffeescripts/**', '!./docs/**',  '!./.git/**', '!./Gruntfile.js', '!./package.json', '!./config.rb', '!./README.md', '!./HISTORY.md']
+              'frank/': ['./**',  '!./images/src/**', '!./node_modules/**', '!./stylesheets/**', '!./javascripts/coffeescripts/**', '!./docs/**',  '!./.git/**', '!./Gruntfile.js', '!./package.json', '!./config.rb', '!./*.md']
             }
           }
         },
@@ -168,6 +168,27 @@ module.exports = function(grunt) {
                 files: 'javascripts/**/*.coffee',
                 tasks: ['coffee:compile']
             }
+        },
+        markdown: {
+          docs: {
+            files: ['*.md'],
+            dest: './',
+            options: {
+              gfm: true,
+              highlight: 'manual',
+              codeLines: {
+                before: '<span>',
+                after: '</span>'
+              }
+            }
+          }
+        },
+        contributors: {
+          master: {
+            path: 'CONTRIBUTORS.md',
+            branch: 'master',
+            chronologically: true
+          }
         }
     });
 
@@ -183,6 +204,8 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-webp');
     grunt.loadNpmTasks('grunt-csscss');
     grunt.loadNpmTasks('svgo-grunt');
+    grunt.loadNpmTasks('grunt-markdown');
+    grunt.loadNpmTasks('grunt-git-contributors');
 
     grunt.registerTask('default', ['coffee', 'sass:dev']);
 
@@ -196,5 +219,6 @@ module.exports = function(grunt) {
     */
     grunt.registerTask('dist', ['clean:dist', 'copy:dist', 'compress:dist', 'clean:dist']);
     grunt.registerTask('opt', ['copy:opt', 'svgo', 'imagemin', 'webp:optPNG', 'webp:optJPG']);
+    grunt.registerTask('docs', ['contributors', 'markdown']);
 
 };
