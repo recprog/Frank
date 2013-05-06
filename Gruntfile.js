@@ -75,7 +75,7 @@ module.exports = function(grunt) {
         webp: {
           optPNG:{
             src: ['images/*.png'],
-            dest: 'images/',
+            dest: 'images',
             options: {
                 preset: 'photo',
                 verbose: true,
@@ -101,7 +101,7 @@ module.exports = function(grunt) {
           },
           optJPG:{
             src: ['images/*.jpeg', 'images/*.jpg'],
-            dest: 'images/',
+            dest: 'images',
             options: {
                 preset: 'photo',
                 verbose: true,
