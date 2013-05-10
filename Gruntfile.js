@@ -189,6 +189,15 @@ module.exports = function(grunt) {
             branch: 'master',
             chronologically: true
           }
+        },
+        phpcs: {
+          application: {
+              dir: './**.php'
+          },
+          options: {
+              bin: 'vendor/bin/phpcs',
+              standard: 'Zend'
+          }
         }
     });
 
@@ -206,6 +215,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('svgo-grunt');
     grunt.loadNpmTasks('grunt-markdown');
     grunt.loadNpmTasks('grunt-git-contributors');
+    grunt.loadNpmTasks('grunt-phpcs');
 
     grunt.registerTask('default', ['coffee', 'sass:dev']);
 
@@ -220,5 +230,6 @@ module.exports = function(grunt) {
     grunt.registerTask('dist', ['clean:dist', 'copy:dist', 'compress:dist', 'clean:dist']);
     grunt.registerTask('opt', ['copy:opt', 'svgo', 'imagemin', 'webp:optPNG', 'webp:optJPG']);
     grunt.registerTask('docs', ['contributors', 'markdown']);
+    grunt.registerTask('test', ['phpcs']);
 
 };
