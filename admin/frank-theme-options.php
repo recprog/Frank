@@ -4,16 +4,16 @@
 if (!function_exists('frank_admin_tabs')) {
 function frank_admin_tabs($current = 'general') {
 
-	$tabs = array( 'general' => __('General Settings', 'frank_theme'),
-	                'home' => __('Home Page Settings', 'frank_theme'),
-	                'performance' => __('Performance Settings', 'frank_theme'));
+  $tabs = array( 'general' => __('General Settings', 'frank_theme'),
+                  'home' => __('Home Page Settings', 'frank_theme'),
+                  'performance' => __('Performance Settings', 'frank_theme'));
 
-	echo '<div id="icon-themes" class="icon32"><br></div>';
-	echo '<h2 class="nav-tab-wrapper">';
+  echo '<div id="icon-themes" class="icon32"><br></div>';
+  echo '<h2 class="nav-tab-wrapper">';
 
-	foreach($tabs as $tab => $name) {
+  foreach($tabs as $tab => $name) {
 
-		$class = ($tab == $current) ? ' nav-tab-active' : '';
+    $class = ($tab == $current) ? ' nav-tab-active' : '';
 
         echo "<a class='nav-tab$class' href='?page=frank-settings&tab=$tab'>$name</a>";
 
@@ -61,18 +61,18 @@ if(!function_exists('frank_post_value_or_default')) {
 
 if(!function_exists('frank_update_settings_button')) {
   function frank_update_settings_button($updated) {
-		if ($updated) {
-    	echo '<h4 class="saved-success">';
-    	  echo '<img src="'.get_template_directory_uri().'/admin/images/success.png" />';
-    	  _e('Frank\'s Settings Have Been Updated.', 'frank_theme');
-    	echo '</h4>';
+    if ($updated) {
+      echo '<h4 class="saved-success">';
+        echo '<img src="'.get_template_directory_uri().'/admin/images/success.png" />';
+        _e('Frank\'s Settings Have Been Updated.', 'frank_theme');
+      echo '</h4>';
 
     } else {
 
-    	echo '<h4 class="info">';
-    	  _e('Make Changes And Use The Update Settings Button To Save!', 'frank_theme');
-    	  echo ' &rarr;';
-    	echo '</h4>';
+      echo '<h4 class="info">';
+        _e('Make Changes And Use The Update Settings Button To Save!', 'frank_theme');
+        echo ' &rarr;';
+      echo '</h4>';
     }
   }
 }
@@ -80,74 +80,74 @@ if(!function_exists('frank_update_settings_button')) {
 // BUILD THE CONTENT THAT DISPLAYS IN THEME SETTINGS
 if (!function_exists('frank_build_settings_page')) {
 function frank_build_settings_page() {
-	global $pagenow;
+  global $pagenow;
 
-	// SET FILE DIRECTORY
-	$file_dir = get_template_directory_uri();
-	
-	// SETUP NEEDED STYLES & SCRIPTS FOR OPTIONS PAGE
-	//wp_enqueue_script('jquery-ui-sortable' );
-	//wp_enqueue_script('frank-admin', $file_dir . '/admin/js/frank-utils.js', 'jquery', NULL, TRUE);
-	//wp_enqueue_style('frank-admin', $file_dir . '/admin/css/frank-options.css', NULL, NULL, NULL);
+  // SET FILE DIRECTORY
+  $file_dir = get_template_directory_uri();
+  
+  // SETUP NEEDED STYLES & SCRIPTS FOR OPTIONS PAGE
+  //wp_enqueue_script('jquery-ui-sortable' );
+  //wp_enqueue_script('frank-admin', $file_dir . '/admin/js/frank-utils.js', 'jquery', NULL, TRUE);
+  //wp_enqueue_style('frank-admin', $file_dir . '/admin/css/frank-options.css', NULL, NULL, NULL);
 
-	// SET DEFAULT DATA FOR FIRST RUN
-	$frank_defaults = array(
-		'header'						=> true,
-		'title'             => 'Section Title',
-		'caption'           => 'Section Caption',
-		'num_posts'         => 10
-	);
+  // SET DEFAULT DATA FOR FIRST RUN
+  $frank_defaults = array(
+    'header'            => true,
+    'title'             => 'Section Title',
+    'caption'           => 'Section Caption',
+    'num_posts'         => 10
+  );
 
-	?>
+  ?>
 
-	<div class="wrap">
+  <div class="wrap">
 
-		<h2>
-		  <?php _e('Frank Theme Settings', 'frank_theme'); ?>
-		</h2>
+    <h2>
+      <?php _e('Frank Theme Settings', 'frank_theme'); ?>
+    </h2>
 
-		<?php if (isset($_GET['tab'])) { frank_admin_tabs($_GET['tab']); } else { frank_admin_tabs('general'); } ?>
+    <?php if (isset($_GET['tab'])) { frank_admin_tabs($_GET['tab']); } else { frank_admin_tabs('general'); } ?>
 
-		<form method="post" action="">
+    <form method="post" action="">
 
-			<div id="settings-container"> <?php
-			
-			
-			if ($pagenow == 'themes.php' && $_GET['page'] == 'frank-settings') {
+      <div id="settings-container"> <?php
+      
+      
+      if ($pagenow == 'themes.php' && $_GET['page'] == 'frank-settings') {
 
-				if (isset($_GET['tab'])) { $tab = $_GET['tab']; } else { $tab = 'general'; }
+        if (isset($_GET['tab'])) { $tab = $_GET['tab']; } else { $tab = 'general'; }
 
-				switch ($tab) {
+        switch ($tab) {
 
-					// SETUP OPTIONS FOR GENERAL TAB
-					case 'general' : 
-						require_once 'frank-theme-options-general.php';
-						break;
+          // SETUP OPTIONS FOR GENERAL TAB
+          case 'general' : 
+            require_once 'frank-theme-options-general.php';
+            break;
 
-					case 'home' :
-						require_once 'frank-theme-options-home.php';
-						break; // END CASE "HOME"
+          case 'home' :
+            require_once 'frank-theme-options-home.php';
+            break; // END CASE "HOME"
 
-					case 'performance' : 
-						require_once 'frank-theme-options-performance.php';
-						break;
+          case 'performance' : 
+            require_once 'frank-theme-options-performance.php';
+            break;
 
-					} // END CASE "PERFORMANCE"
+          } // END CASE "PERFORMANCE"
 
-				} /* END SWITCH STATEMENT */ ?>
+        } /* END SWITCH STATEMENT */ ?>
 
-				<div class="button-container bottom">
+        <div class="button-container bottom">
 
-					<input type="submit" name="submit"  class="save-settings" value="<?php _e('Update Settings', 'frank_theme'); ?>" />
+          <input type="submit" name="submit"  class="save-settings" value="<?php _e('Update Settings', 'frank_theme'); ?>" />
 
-				<?php frank_update_settings_button($frank_updated); ?>
+        <?php frank_update_settings_button($frank_updated); ?>
 
-				</div><!-- // BUTTON CONTAINER -->
+        </div><!-- // BUTTON CONTAINER -->
 
-			</div><!-- // SETTINGS CONTAINER -->
+      </div><!-- // SETTINGS CONTAINER -->
 
-		</form><!-- // END FORM -->
-		
+    </form><!-- // END FORM -->
+    
     <?php
       global $frank_warnings;
       if (defined('WP_DEBUG')  && (WP_DEBUG == true)) {
@@ -159,6 +159,6 @@ function frank_build_settings_page() {
       }
     ?>
 
-	</div><!-- // WRAP -->
+  </div><!-- // WRAP -->
 
 <?php } } ?>

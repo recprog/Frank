@@ -196,7 +196,7 @@ module.exports = function(grunt) {
           },
           options: {
               bin: 'vendor/bin/phpcs',
-              standard: 'Zend'
+              standard: 'PSR2'
           }
         }
     });
