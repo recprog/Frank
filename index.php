@@ -24,7 +24,7 @@
 					get_template_part('partials/loops/loop', 'srd');
 					break;
 				case 'one_up_reg':
-					$wp_query = new WP_Query(array('posts_per_page' => $frank_section_num_posts, 'cat' => implode(",",array_filter($frank_section_categories))));
+					$wp_query = new WP_Query( array( 'posts_per_page' => $frank_section_num_posts, 'cat' => implode( ",",array_filter( $frank_section_categories) ) ) );
 					get_template_part('partials/loops/loop', 'oneup');
 					break;
 				case 'one_up_lg':
@@ -33,25 +33,25 @@
 					break;
 				case 'two_up':
 					$wp_query = new WP_Query(array('posts_per_page' => $frank_section_num_posts, 'cat' => implode(",",array_filter($frank_section_categories))));
-					get_template_part('partials/loops/loop', 'twoup');
+					get_template_part( 'partials/loops/loop', 'twoup' );
 					break;
 				case 'three_up':
 					$wp_query = new WP_Query(array('posts_per_page' => $frank_section_num_posts, 'cat' => implode(",",array_filter($frank_section_categories))));
-					get_template_part('partials/loops/loop', 'threeup');
+					get_template_part( 'partials/loops/loop', 'threeup' );
 					break;
 				case 'four_up':
 					$wp_query = new WP_Query(array('posts_per_page' => $frank_section_num_posts, 'cat' => implode(",",array_filter($frank_section_categories))));
-					get_template_part('partials/loops/loop', 'fourup');
+					get_template_part( 'partials/loops/loop', 'fourup' );
 					break;
 				default :
-					get_template_part('partials/loops/loop');
+					get_template_part( 'partials/loops/loop' );
 			}   
 		}
 	} else {
 		//Insert default loop
-		get_template_part('partials/loops/loop');
+		get_template_part( 'partials/loops/loop' );
 	}
 	?>
-	<?php get_template_part('partials/post-pagination'); ?>
+	<?php get_template_part( 'partials/post-pagination' ); ?>
 </main>
 <?php get_footer(); ?>
