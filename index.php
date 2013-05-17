@@ -17,6 +17,7 @@
 			$frank_section_caption=$section['caption'];
 			$frank_section_num_posts=$section['num_posts'];
 			$frank_section_categories=$section['categories'];
+			$frank_paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 
 			/* TODO: Clean this up */
 			switch($frank_section_type) {
@@ -24,23 +25,23 @@
 					get_template_part('partials/loops/loop', 'srd');
 					break;
 				case 'one_up_reg':
-					$wp_query = new WP_Query( array( 'posts_per_page' => $frank_section_num_posts, 'cat' => implode( ",",array_filter( $frank_section_categories) ) ) );
+					$wp_query = new WP_Query( array( 'posts_per_page' => $frank_section_num_posts, 'cat' => implode( ",",array_filter( $frank_section_categories) ), 'paged' => $paged ) );
 					get_template_part('partials/loops/loop', 'oneup');
 					break;
 				case 'one_up_lg':
-					$wp_query = new WP_Query(array('posts_per_page' => $frank_section_num_posts, 'cat' => implode(",",array_filter($frank_section_categories))));
+					$wp_query = new WP_Query( array ( 'posts_per_page' => $frank_section_num_posts, 'cat' => implode(",",array_filter($frank_section_categories) ), 'paged' => $paged ) );
 					get_template_part('partials/loops/loop', 'oneuplarge');
 					break;
 				case 'two_up':
-					$wp_query = new WP_Query(array('posts_per_page' => $frank_section_num_posts, 'cat' => implode(",",array_filter($frank_section_categories))));
+					$wp_query = new WP_Query( array( 'posts_per_page' => $frank_section_num_posts, 'cat' => implode(",",array_filter($frank_section_categories) ), 'paged' => $paged ) );
 					get_template_part( 'partials/loops/loop', 'twoup' );
 					break;
 				case 'three_up':
-					$wp_query = new WP_Query(array('posts_per_page' => $frank_section_num_posts, 'cat' => implode(",",array_filter($frank_section_categories))));
+					$wp_query = new WP_Query( array( 'posts_per_page' => $frank_section_num_posts, 'cat' => implode(",",array_filter($frank_section_categories) ), 'paged' => $paged ) );
 					get_template_part( 'partials/loops/loop', 'threeup' );
 					break;
 				case 'four_up':
-					$wp_query = new WP_Query(array('posts_per_page' => $frank_section_num_posts, 'cat' => implode(",",array_filter($frank_section_categories))));
+					$wp_query = new WP_Query( array( 'posts_per_page' => $frank_section_num_posts, 'cat' => implode(",",array_filter($frank_section_categories) ), 'paged' => $paged ) );
 					get_template_part( 'partials/loops/loop', 'fourup' );
 					break;
 				default :
