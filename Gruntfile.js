@@ -14,6 +14,23 @@ module.exports = function(grunt) {
             }
           }
         },
+        concat: {
+          dist: {
+            src: ['javascripts/defer-image-load.js', 'javascripts/frank.slideshow.js', 'javascripts/simplebox.js'],
+            dest: 'javascripts/frank.js'
+          }
+        },
+        jshint: {
+          beforeconcat: ['javascripts/defer-image-load.js', 'javascripts/frank.slideshow.js', 'javascripts/simplebox.js'],
+          afterconcat: ['javascripts/frank.js']
+        },
+        uglify: {
+          dist: {
+            files: {
+              'javascripts/frank.js': ['javascripts/frank.js']
+            }
+          }
+        },
         compress: {
           dist: {
             options: {
@@ -50,7 +67,7 @@ module.exports = function(grunt) {
                 'style.css': 'stylesheets/scss/style.scss',
                 'ie.css': 'stylesheets/scss/ie.scss',
                 'editor-style.css': 'stylesheets/scss/editor-style.scss',
-                'print.css': 'stylesheets/scss/print.scss',
+                'print.css': 'stylesheets/scss/print.scss'
             }
           }
         },
@@ -132,7 +149,7 @@ module.exports = function(grunt) {
               report: 'gzip'
             },
             files: {
-              'style.min2.css': ['style.min.css']
+              'style.min.css': ['style.css']
             }
           },
           restructure: {
@@ -141,11 +158,15 @@ module.exports = function(grunt) {
               report: 'gzip'
             },
             files: {
-              'style.min3.css': ['style.min2.css']
+              'style.min.css': ['style.css']
             }
           }
         },
-
+        csslint: {
+          dist: {
+            src: ['style.css']
+          }
+        },
         /**
          * Uses CSSCSS to analyse any redundancies in the CSS files.
          * - http://zmoazeni.github.io/csscss/
@@ -158,7 +179,6 @@ module.exports = function(grunt) {
                 src: ['editor-style.css', 'ie.css', 'print.css', 'style.css']
             }
         },
-
         watch: {
             sass: {
                 files: 'stylesheets/**/*.scss',
@@ -167,6 +187,10 @@ module.exports = function(grunt) {
             coffee: {
                 files: 'javascripts/**/*.coffee',
                 tasks: ['coffee:compile']
+            },
+            concat: {
+              files: ['javascripts/defer-image-load.js', 'javascripts/frank.slideshow.js', 'javascripts/simplebox.js'],
+              tasks: ['concat:dist']
             }
         },
         markdown: {
@@ -195,7 +219,7 @@ module.exports = function(grunt) {
               dir: './**.php'
           },
           options: {
-              bin: 'vendor/bin/phpcs',
+              bin: 'vendor/squizlabs/php_codesniffer/scripts/phpcs',
               standard: 'WordPress'
           }
         }
@@ -206,10 +230,14 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('svgo-grunt');
     grunt.loadNpmTasks('grunt-csso');
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-compress');
+    grunt.loadNpmTasks('grunt-contrib-csslint');
     grunt.loadNpmTasks('grunt-contrib-imagemin');
+    grunt.loadNpmTasks('grunt-contrib-jshint');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-webp');
     grunt.loadNpmTasks('grunt-csscss');
     grunt.loadNpmTasks('svgo-grunt');
@@ -217,19 +245,18 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-git-contributors');
     grunt.loadNpmTasks('grunt-phpcs');
 
-    grunt.registerTask('default', ['coffee', 'sass:dev']);
+    grunt.registerTask('default', ['coffee', 'concat', 'sass:dev', 'watch']);
 
     /**
      * Grunt tasks that help improve code quality.
      */
-    grunt.registerTask('quality', 'sass:dev', 'csscss');
+    grunt.registerTask('quality', ['phpcs', 'sass:dev', 'csscss:dist', 'csslint:dist', 'jshint:beforeconcat']);
 
     /*
     * Grunt tasks which build a clean theme for deployment
     */
     grunt.registerTask('dist', ['clean:dist', 'copy:dist', 'compress:dist', 'clean:dist']);
-    grunt.registerTask('opt', ['copy:opt', 'svgo', 'imagemin', 'webp:optPNG', 'webp:optJPG']);
+    grunt.registerTask('opt', ['copy:opt', 'svgo', 'imagemin', 'webp:optPNG', 'webp:optJPG', 'uglify:dist', 'sass:dev', 'csso:restructure']);
     grunt.registerTask('docs', ['contributors', 'markdown']);
-    grunt.registerTask('test', ['phpcs']);
 
 };

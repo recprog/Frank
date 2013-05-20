@@ -102,3 +102,80 @@
 						</div>
 						<div style="clear:both;"></div>
 					</div>
+
+
+
+
+					<!--
+					<div class="wrap">
+<div id="icon-options-general" class="icon32"><br></div><h2>Permalink Settings</h2><div id="message" class="updated"><p>You should update your .htaccess now.</p></div>
+
+<form name="form" action="options-permalink.php" method="post">
+<input type="hidden" id="_wpnonce" name="_wpnonce" value="88a9389a02"><input type="hidden" name="_wp_http_referer" value="/wp-admin/options-permalink.php">
+  <p>By default WordPress uses web <abbr title="Universal Resource Locator">URL</abbr>s which have question marks and lots of numbers in them, however WordPress offers you the ability to create a custom URL structure for your permalinks and archives. This can improve the aesthetics, usability, and forward-compatibility of your links. A <a href="http://codex.wordpress.org/Using_Permalinks">number of tags are available</a>, and here are some examples to get you started.</p>
+
+<h3>Common Settings</h3>
+<table class="form-table permalink-structure">
+	<tbody><tr>
+		<th><label><input name="selection" type="radio" value=""> Default</label></th>
+		<td><code>http://frank.local/?p=123</code></td>
+	</tr>
+	<tr>
+		<th><label><input name="selection" type="radio" value="/%year%/%monthnum%/%day%/%postname%/" checked="checked"> Day and name</label></th>
+		<td><code>http://frank.local/2013/05/17/sample-post/</code></td>
+	</tr>
+	<tr>
+		<th><label><input name="selection" type="radio" value="/%year%/%monthnum%/%postname%/"> Month and name</label></th>
+		<td><code>http://frank.local/2013/05/sample-post/</code></td>
+	</tr>
+	<tr>
+		<th><label><input name="selection" type="radio" value="/archives/%post_id%"> Numeric</label></th>
+		<td><code>http://frank.local/archives/123</code></td>
+	</tr>
+	<tr>
+		<th><label><input name="selection" type="radio" value="/%postname%/"> Post name</label></th>
+		<td><code>http://frank.local/sample-post/</code></td>
+	</tr>
+	<tr>
+		<th>
+			<label><input name="selection" id="custom_selection" type="radio" value="custom">
+			Custom Structure			</label>
+		</th>
+		<td>
+			<code>http://frank.local</code>
+			<input name="permalink_structure" id="permalink_structure" type="text" value="/%year%/%monthnum%/%day%/%postname%/" class="regular-text code">
+		</td>
+	</tr>
+</tbody></table>
+
+<h3>Optional</h3>
+<p>If you like, you may enter custom structures for your category and tag <abbr title="Universal Resource Locator">URL</abbr>s here. For example, using <code>topics</code> as your category base would make your category links like <code>http://example.org/topics/uncategorized/</code>. If you leave these blank the defaults will be used.</p>
+
+<table class="form-table">
+	<tbody><tr>
+		<th><label for="category_base">Category base</label></th>
+		<td> <input name="category_base" id="category_base" type="text" value="" class="regular-text code"></td>
+	</tr>
+	<tr>
+		<th><label for="tag_base">Tag base</label></th>
+		<td> <input name="tag_base" id="tag_base" type="text" value="" class="regular-text code"></td>
+	</tr>
+	</tbody></table>
+
+
+<p class="submit"><input type="submit" name="submit" id="submit" class="button button-primary" value="Save Changes"></p>  </form>
+<p>If your <code>.htaccess</code> file were <a href="http://codex.wordpress.org/Changing_File_Permissions">writable</a>, we could do this automatically, but it isn’t so these are the mod_rewrite rules you should have in your <code>.htaccess</code> file. Click in the field and press <kbd>CTRL + a</kbd> to select all.</p>
+<form action="options-permalink.php" method="post">
+<input type="hidden" id="_wpnonce" name="_wpnonce" value="88a9389a02"><input type="hidden" name="_wp_http_referer" value="/wp-admin/options-permalink.php">	<p><textarea rows="6" class="large-text readonly" name="rules" id="rules" readonly="readonly">&lt;IfModule mod_rewrite.c&gt;
+RewriteEngine On
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+&lt;/IfModule&gt;
+</textarea></p>
+</form>
+	
+</div>
+-->
