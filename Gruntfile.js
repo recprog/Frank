@@ -94,7 +94,6 @@ module.exports = function(grunt) {
             src: ['images/*.png'],
             dest: 'images',
             options: {
-                preset: 'photo',
                 verbose: true,
                 quality: 80,
                 alphaQuality: 80,
