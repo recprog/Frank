@@ -7,31 +7,31 @@ function frank_theme_setup(){
 		load_theme_textdomain( 'frank_theme', get_template_directory() . '/languages' );
 }
 
-if ( ! function_exists('frank_get_option') ) {
+if ( ! function_exists( 'frank_get_option' ) ) {
 	function frank_get_option( $key ) {
 
 		$frank_options = get_option( '_frank_options' );
 
 		/* Define the array of defaults */
 		$defaults = array(
-			'header' => '',
-			'footer' => '',
-			'tweet_post_button' => false,
-			'tweet_post_attribution' => '',
-			'sections' => array(
+				'header' => '',
+				'footer' => '',
+				'tweet_post_button' => false,
+				'tweet_post_attribution' => '',
+				'sections' => array(
 				'display_type' => 'default_loop',
 				'header' => false,
 				'title' => '',
 				'caption' => '',
 				'num_posts' => 10,
 				'categories' => array(),
-				'default' => true
+				'default' => true,
 			)
 		);
 
 		$frank_options = wp_parse_args( $frank_options, $defaults );
 
-		if( isset( $frank_options[ $key ] ) )
+		if ( isset( $frank_options[ $key ] ) )
 			return $frank_options[ $key ];
 
 		return false;
@@ -102,64 +102,78 @@ function frank_register_menu() {
 }
 
 function frank_widgets() {
-	register_sidebar( array(
-		'name'      => 'Sub Header',
-		'id'      => 'widget-subheader',
-		'before_widget' => '<div id="%1$s" class="widget %2$s four columns">',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h3 class="widget-title">',
-		'after_title'   => '</h3>',
-	) );
+	register_sidebar(
+		array(
+			'name'      		=> 'Sub Header',
+			'id'      			=> 'widget-subheader',
+			'before_widget' => '<div id="%1$s" class="widget %2$s four columns">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h3 class="widget-title">',
+			'after_title'   => '</h3>',
+		)
+	);
 
-	register_sidebar( array(
-		'name'      => 'Navigation',
-		'before_widget' => '<div id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h3 class="widget-title">',
-		'after_title'   => '</h3>',
-	) );
+	register_sidebar(
+		array(
+			'name'      		=> 'Navigation',
+			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h3 class="widget-title">',
+			'after_title'   => '</h3>',
+		)
+	);
 
-	register_sidebar( array(
-		'name'      => 'Index Right Aside',
-		'before_widget' => '<div id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h3 class="widget-title">',
-		'after_title'   => '</h3>',
-	) );
+	register_sidebar(
+		array(
+			'name'      		=> 'Index Right Aside',
+			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h3 class="widget-title">',
+			'after_title'   => '</h3>',
+		)
+	);
 
-	register_sidebar( array(
-		'name'      => 'Post Left Aside',
-		'before_widget' => '<div id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h3 class="widget-title">',
-		'after_title'   => '</h3>',
-	) );
+	register_sidebar(
+		array(
+			'name'      		=> 'Post Left Aside',
+			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h3 class="widget-title">',
+			'after_title'   => '</h3>',
+		)
+	);
 
-	register_sidebar( array(
-		'name'      => 'Post Right Aside',
-		'before_widget' => '<div id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h3 class="widget-title">',
-		'after_title'   => '</h3>',
-	) );
+	register_sidebar(
+		array(
+			'name'      		=> 'Post Right Aside',
+			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h3 class="widget-title">',
+			'after_title'   => '</h3>',
+		)
+	);
 
-	register_sidebar( array(
-		'name'      => 'Post Footer',
-		'id'      => 'widget-postfooter',
-		'before_widget' => '<div id="%1$s" class="widget %2$s four columns">',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h3 class="widget-title">',
-		'after_title'   => '</h3>',
-	) );
+	register_sidebar(
+		array(
+			'name'      		=> 'Post Footer',
+			'id'      			=> 'widget-postfooter',
+			'before_widget' => '<div id="%1$s" class="widget %2$s four columns">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h3 class="widget-title">',
+			'after_title'   => '</h3>',
+		)
+	);
 
-	register_sidebar( array(
-		'name'      => 'Footer',
-		'id'      => 'widget-footer',
-		'before_widget' => '<div id="%1$s" class="widget %2$s six columns">',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h3 class="widget-title">',
-		'after_title'   => '</h3>',
-		) );
+	register_sidebar(
+		array(
+			'name'      		=> 'Footer',
+			'id'     	 			=> 'widget-footer',
+			'before_widget' => '<div id="%1$s" class="widget %2$s six columns">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h3 class="widget-title">',
+			'after_title'   => '</h3>',
+			)
+	);
 }
 
 /*
@@ -168,10 +182,10 @@ If never used in a sidebar, their lack of default options will
 trigger queries every page load
 */
 function frank_set_missing_widget_options( ){
-	add_option( 'widget_pages', array ( '_multiwidget'     => 1 ) );
-	add_option( 'widget_calendar', array ( '_multiwidget'  => 1 ) );
-	add_option( 'widget_tag_cloud', array ( '_multiwidget' => 1 ) );
-	add_option( 'widget_nav_menu', array ( '_multiwidget'  => 1 ) );
+	add_option( 'widget_pages', array( '_multiwidget' => 1 ) );
+	add_option( 'widget_calendar', array( '_multiwidget' => 1 ) );
+	add_option( 'widget_tag_cloud', array( '_multiwidget' => 1 ) );
+	add_option( 'widget_nav_menu', array( '_multiwidget' => 1 ) );
 }
 
 function frank_remove_version_url_parameter( $src ) {
@@ -180,7 +194,7 @@ function frank_remove_version_url_parameter( $src ) {
 }
 
 function frank_wp_generator() {
-		echo '<meta name="generator" content="WordPress ', bloginfo('version'), '" />';
+		echo '<meta name="generator" content="WordPress ', bloginfo( 'version' ), '" />';
 }
 
 if ( ! function_exists( 'frank_header_style' ) ) :
@@ -296,30 +310,37 @@ function frank_widget_first_last_classes( $params ) {
 	global $my_widget_num; // Global a counter array
 	$this_id = $params[0]['id']; // Get the id for the current sidebar we're processing
 	$arr_registered_widgets = wp_get_sidebars_widgets(); // Get an array of ALL registered widgets
-
-	if( ! $my_widget_num ) {// If the counter array doesn't exist, create it
+	// If the counter array doesn't exist, create it
+	if ( ! $my_widget_num ) {
 		$my_widget_num = array();
 	}
-
-	if( ! isset( $arr_registered_widgets[$this_id] ) || ! is_array( $arr_registered_widgets[$this_id] ) ) { // Check if the current sidebar has no widgets
-		return $params; // No widgets in this sidebar... bail early.
+	// Check if the current sidebar has no widgets
+	if ( ! isset( $arr_registered_widgets[$this_id] ) || ! is_array( $arr_registered_widgets[$this_id] ) ) {
+		// No widgets in this sidebar... bail early.
+		return $params;
 	}
-
-	if( isset( $my_widget_num[$this_id] ) ) { // See if the counter array has an entry for this sidebar
+	// See if the counter array has an entry for this sidebar
+	if ( isset( $my_widget_num[$this_id] ) ) {
 		$my_widget_num[$this_id] ++;
-	} else { // If not, create it starting with 1
+	}
+	// If not, create it starting with 1
+	else {
 		$my_widget_num[$this_id] = 1;
 	}
+	// Add a widget number class for additional styling options
+	$class = 'class="widget-' . $my_widget_num[$this_id] . ' ';
 
-	$class = 'class="widget-' . $my_widget_num[$this_id] . ' '; // Add a widget number class for additional styling options
-
-	if( $my_widget_num[$this_id] == 1 ) { // If this is the first widget
+	// If this is the first widget
+	if ( $my_widget_num[$this_id] == 1 ) {
 		$class .= 'widget-first ';
-	} elseif( $my_widget_num[$this_id] == count( $arr_registered_widgets[$this_id] ) ) { // If this is the last widget
+	}
+	// If this is the last widget
+	elseif ( $my_widget_num[$this_id] == count( $arr_registered_widgets[$this_id] ) ) {
 		$class .= 'widget-last ';
 	}
 
-	$params[0]['before_widget'] = str_replace( 'class="', $class, $params[0]['before_widget'] ); // Insert our new classes into "before widget"
+	// Insert our new classes into "before widget"
+	$params[0]['before_widget'] = str_replace( 'class="', $class, $params[0]['before_widget'] );
 
 return $params;
 }
@@ -340,11 +361,11 @@ function frank_admin_menu() {
 }
 
 function frank_admin_assets() {
-	wp_enqueue_style(' frank-admin', get_template_directory_uri() . '/admin/stylesheets/frank-options.css', NULL, NULL, NULL );
-	wp_enqueue_script( 'jquery-ui-sortable');
+	wp_enqueue_style( 'frank-admin', get_template_directory_uri() . '/admin/stylesheets/frank-options.css', NULL, NULL, NULL );
+	wp_enqueue_script( 'jquery-ui-sortable' );
 	wp_enqueue_script( 'frank-admin', get_template_directory_uri() . '/admin/javascripts/frank-utils.js', 'jquery', NULL, true );
 	$translation_array = array();
-	$translation_array['delete_section_alert'] = __( 'Are you sure you want to delete this Content Section?', 'frank_theme' );
+	$translation_array['delete_section_alert']     = __( 'Are you sure you want to delete this Content Section?', 'frank_theme' );
 	$translation_array['drag_section_instruction'] = '&larr; ' . __('(Drag & Drop Content Sections to Re-Order)', 'frank_theme' );
 	wp_localize_script( 'frank-admin', 'admin_strings', $translation_array );
 }
@@ -367,7 +388,7 @@ function frank_tweet_post_attribution() {
 
 if ( ! function_exists( 'frank_comment' ) ) {
 	function frank_comment( $comment, $args, $depth ) {
-		 $GLOBALS['comment'] = $comment; ?>
+		$GLOBALS['comment'] = $comment; ?>
 
 		<li id="comment-<?php comment_ID() ?>" class="comment">
 			<div class="row">
@@ -375,7 +396,7 @@ if ( ! function_exists( 'frank_comment' ) ) {
 					<?php
 						if ( $comment->comment_approved == '0' ) {
 							$moderation_pending = __( 'Your comment is awaiting moderation', 'frank_theme' );
-							echo "<span class='comment-moderation'>" . $moderation_pending . "</span>";
+							echo '<span class="comment-moderation">' . $moderation_pending . '</span>';
 						}
 						comment_text();
 					?>
@@ -385,10 +406,10 @@ if ( ! function_exists( 'frank_comment' ) ) {
 				</div>
 				<div class="comment-info">
 					<ul class='metadata vertical'>
-						<li class="date"><time datetime="<?php the_time('Y-m-d'); ?>"><span class="date-date"><?php comment_date( 'F d, Y' ); ?></span> <span class="date-time"><?php comment_date('g:i A'); ?></span></time></li>
+						<li class="date"><time datetime="<?php the_time( 'Y-m-d' ); ?>"><span class="date-date"><?php comment_date( 'F d, Y' ); ?></span> <span class="date-time"><?php comment_date( 'g:i A' ); ?></span></time></li>
 						<li class='author' id="vcard-<?php comment_ID() ?>">
 							<?php
-								echo _x('By', 'comment_author_attribution', 'frank_theme');
+								echo _x( 'By', 'comment_author_attribution', 'frank_theme' );
 								echo ' ';
 								?>
 								<a class="url fn" href="<?php comment_author_url(); ?>"><?php comment_author(); ?></a></li>
@@ -414,7 +435,7 @@ if ( ! function_exists( 'frank_enqueue_styles' ) ) {
 	}
 }
 
-function frank_add_ie_js_fixes () {
+function frank_add_ie_js_fixes() {
 	echo '<!--[if lt IE 9]><script src="',  get_stylesheet_directory_uri(), '/javascripts/html5.js"></script><![endif]-->';
 
 	echo '<!--[if lt IE 7]><script src="',  get_stylesheet_directory_uri(), '/javascripts/ie7.js"></script><![endif]-->';

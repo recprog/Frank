@@ -12,7 +12,7 @@
 		<?php $post = $posts[0]; // Hack. Set $post so that the_date() works. ?>
 		<?php /* If this is a category archive */ if ( is_category() ) { ?>
 		<h1 class="page-title">Archive for the &#8216;<?php single_cat_title(); ?>&#8217; Category</h1>
-		<?php /* If this is a tag archive */ } elseif( is_tag() ) { ?>
+		<?php /* If this is a tag archive */ } elseif ( is_tag() ) { ?>
 		<h1 class="page-title">Posts Tagged &#8216;<?php single_tag_title(); ?>&#8217;</h1>
 		<?php /* If this is a daily archive */ } elseif ( is_day() ) { ?>
 		<h1 class="page-title">Archive for <?php the_time( 'F jS, Y' ); ?></h1>
@@ -27,7 +27,7 @@
 		<?php } ?>
 		</header>
 		<div class="posts">
-			<?php while( have_posts() ) : the_post(); ?>
+			<?php while ( have_posts() ) : the_post(); ?>
 				<?php get_template_part( 'partials/posts/post' ); ?>
 			<?php endwhile; ?>
 			</div>
@@ -37,12 +37,12 @@
 				<header><h1>Page Not Found</h1></header>
 				<section>
 				<p>Looks like the page you're looking for isn't here anymore. Try using the search box below.</p>
-				<?php get_search_form(true); ?>
+				<?php get_search_form( true ); ?>
 				</section>
 			</div>
 			<?php endif; ?>
 		</main>
-		<?php get_template_part('partials/sidebars/sidebar', 'archive'); ?>
+		<?php get_template_part( 'partials/sidebars/sidebar', 'archive' ); ?>
 	</div>
 </div>
 <?php get_footer(); ?>

@@ -215,7 +215,7 @@ module.exports = function(grunt) {
         },
         phpcs: {
           application: {
-              dir: './**.php'
+              dir: './*.php'
           },
           options: {
               bin: 'vendor/squizlabs/php_codesniffer/scripts/phpcs',
@@ -224,25 +224,24 @@ module.exports = function(grunt) {
         }
     });
 
-    grunt.loadNpmTasks('grunt-contrib-coffee');
-    grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('svgo-grunt');
     grunt.loadNpmTasks('grunt-csso');
-    grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-csscss');
+    grunt.loadNpmTasks('grunt-contrib-clean');
+    grunt.loadNpmTasks('grunt-contrib-coffee');
+    grunt.loadNpmTasks('grunt-contrib-compress');
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-copy');
-    grunt.loadNpmTasks('grunt-contrib-clean');
-    grunt.loadNpmTasks('grunt-contrib-compress');
     grunt.loadNpmTasks('grunt-contrib-csslint');
     grunt.loadNpmTasks('grunt-contrib-imagemin');
     grunt.loadNpmTasks('grunt-contrib-jshint');
+    grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-uglify');
-    grunt.loadNpmTasks('grunt-webp');
-    grunt.loadNpmTasks('grunt-csscss');
-    grunt.loadNpmTasks('svgo-grunt');
-    grunt.loadNpmTasks('grunt-markdown');
+    grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-git-contributors');
+    grunt.loadNpmTasks('grunt-markdown');
     grunt.loadNpmTasks('grunt-phpcs');
+    grunt.loadNpmTasks('grunt-webp');
 
     grunt.registerTask('default', ['coffee', 'concat', 'sass:dev', 'watch']);
 
