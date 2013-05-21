@@ -225,8 +225,6 @@ module.exports = function(grunt) {
     });
 
     grunt.loadNpmTasks('svgo-grunt');
-    grunt.loadNpmTasks('grunt-csso');
-    grunt.loadNpmTasks('grunt-csscss');
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-coffee');
     grunt.loadNpmTasks('grunt-contrib-compress');
@@ -238,6 +236,8 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-csso');
+    grunt.loadNpmTasks('grunt-csscss');
     grunt.loadNpmTasks('grunt-git-contributors');
     grunt.loadNpmTasks('grunt-markdown');
     grunt.loadNpmTasks('grunt-phpcs');
@@ -248,7 +248,7 @@ module.exports = function(grunt) {
     /**
      * Grunt tasks that help improve code quality.
      */
-    grunt.registerTask('quality', ['phpcs', 'sass:dev', 'csscss:dist', 'csslint:dist', 'jshint:beforeconcat']);
+    grunt.registerTask('test', ['phpcs', 'sass:dev', 'csscss:dist', 'csslint:dist', 'jshint:beforeconcat']);
 
     /*
     * Grunt tasks which build a clean theme for deployment

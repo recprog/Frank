@@ -1,7 +1,7 @@
 {
-  "name": "Frank",
+  "name": "frank",
   "author": "P.J. Onori",
-  "version": "0.9.2",
+  "version": "0.9.3",
   "homepage": "http://somerandomdude.com/work/frank",
   "devDependencies": {
     "grunt": "~0.4.0",
