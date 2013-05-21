@@ -6,10 +6,10 @@
 	</header>
 	<div class='row'>
 		<section class='post-content'>
-			<?php the_content('Read On&hellip;'); ?>
+			<?php the_content( 'Read On&hellip;' ); ?>
 		</section>
-		<footer class='post-info'>  
-			<?php get_template_part('partials/post-metadata'); ?>
+		<footer class='post-info'>
+			<?php get_template_part( 'partials/post-metadata' ); ?>
 		</footer>
 	</div>
 </article>

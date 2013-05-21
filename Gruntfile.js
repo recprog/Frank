@@ -215,7 +215,7 @@ module.exports = function(grunt) {
         },
         phpcs: {
           application: {
-              dir: './*.php'
+              dir: './**.php'
           },
           options: {
               bin: 'vendor/squizlabs/php_codesniffer/scripts/phpcs',

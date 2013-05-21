@@ -10,7 +10,7 @@ Template Name: Frank Full-spread Template
 <div id="content" class="page fullspread">
 	<div class="row">
 	<main id="content-primary" role="main">
-		<?php if(have_posts()) : while(have_posts()) : the_post(); ?>		
+		<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 		<article class="post" id="p<?php the_ID(); ?>">
 			<header class="post-header">
 				<h1 class="post-title"><?php the_title(); ?></h1>

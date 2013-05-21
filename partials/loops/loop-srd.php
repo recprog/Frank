@@ -6,15 +6,15 @@ if ( is_home() && !is_paged() ) {
 		'post__in'  => $sticky,
 		'orderby' => 'date',
 		'order' => 'DESC',
-		'ignore_sticky_posts' => 1
+		'ignore_sticky_posts' => 1,
 	);
 	$queryObject = new WP_Query( $args );
-	if ( !empty( $sticky[0] ) ) :
+	if ( ! empty( $sticky[0] ) ) :
 	?>
 	<div class='row post-group oneup large'>
 		<?php
 		$queryObject->the_post();
-		get_template_part('partials/posts/post', 'oneuplarge');
+		get_template_part( 'partials/posts/post', 'oneuplarge' );
 		wp_reset_postdata();
 		?>
 	</div>
@@ -30,5 +30,5 @@ if ( is_home() && !is_paged() ) {
 			<?php get_template_part( 'partials/posts/post' ); ?>
 		<?php endwhile; endif; ?>
 	</div>
-	<?php get_template_part('partials/sidebars/sidebar', 'index'); ?>
+	<?php get_template_part( 'partials/sidebars/sidebar', 'index' ); ?>
 </div>
