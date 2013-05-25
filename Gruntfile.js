@@ -5,22 +5,35 @@ module.exports = function(grunt) {
         javascripts: 'javascripts',
         coffeescripts: 'javascripts/coffeescripts',
         stylesheets: 'stylesheets',
-        scss: 'stylesheets/scss'
+        scss: 'stylesheets/scss',
+        images: 'images',
+        dist: 'dist'
     };
 
     grunt.initConfig({
         frank: frankConfig,
         clean: {
-          dist: ['frank']
+          dist: '<%= frank.dist %>'
         },
         copy: {
           opt: {
             'images/src/*.svg' : 'images'  //svgo doesn't support dest:src optimization, so we copy SVG files over manually
           },
           dist: {
-            files: {
-              'frank/': ['./**',  '!./images/src/**', '!./node_modules/**', '!./stylesheets/**', '!./javascripts/coffeescripts/**', '!./docs/**',  '!./.git/**', '!./Gruntfile.js', '!./package.json', '!./config.rb', '!./*.md']
-            }
+            src: [
+              './**',
+              '!<%= frank.images %>/src/**',
+              '!<%= frank.stylesheets %>',
+              '!<%= frank.coffeescripts %>',
+              '!node_modules',
+              '!docs',
+              '!.git',
+              '!Gruntfile.js',
+              '!package.json',
+              '!config.rb',
+              '!*.md'
+            ],
+            dest: '<%= frank.dist %>/frank/'
           }
         },
         jshint: {
@@ -36,10 +49,10 @@ module.exports = function(grunt) {
         compress: {
           dist: {
             options: {
-              archive: '../frank-dist.zip'
+              archive: '<%= frank.dist %>/frank-dist.zip'
             },
             files: [
-              {src: './frank/**', dest: './../'}
+              { src: '<%= frank.dist %>/frank/**', dest: '<%= frank.dist %>' }
             ]
           }
         },
@@ -227,17 +240,17 @@ module.exports = function(grunt) {
     /**
      * Grunt tasks for development.
      */
-    grunt.registerTask('default', ['coffee', 'sass', 'watch']);
+    grunt.registerTask('default', ['coffee', 'sass']);
 
     /**
      * Grunt tasks that help improve code quality.
      */
-    grunt.registerTask('test', ['phpcs', 'sass', 'csscss', 'csslint', 'coffee', 'jshint']);
+    grunt.registerTask('test', ['default', 'phpcs', 'csscss', 'csslint', 'jshint']);
 
     /*
     * Grunt tasks which build a clean theme for deployment
     */
-    grunt.registerTask('dist', ['clean:dist', 'copy:dist', 'compress:dist', 'clean:dist']);
+    grunt.registerTask('release', ['default', 'clean', 'copy:dist', 'compress']);
     grunt.registerTask('opt', ['copy:opt', 'svgo', 'imagemin', 'webp:optPNG', 'webp:optJPG', 'uglify:dist', 'sass', 'csso:restructure']);
     grunt.registerTask('docs', ['contributors', 'markdown']);
 
