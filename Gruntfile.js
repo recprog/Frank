@@ -24,8 +24,7 @@ module.exports = function(grunt) {
           }
         },
         jshint: {
-          beforeconcat: ['javascripts/defer-image-load.js', 'javascripts/frank.slideshow.js', 'javascripts/simplebox.js'],
-          afterconcat: ['javascripts/frank.js']
+          files: ['javascripts/frank.js']
         },
         uglify: {
           dist: {
@@ -233,7 +232,7 @@ module.exports = function(grunt) {
     /**
      * Grunt tasks that help improve code quality.
      */
-    grunt.registerTask('test', ['phpcs', 'sass', 'csscss', 'csslint', 'jshint:beforeconcat']);
+    grunt.registerTask('test', ['phpcs', 'sass', 'csscss', 'csslint', 'coffee', 'jshint']);
 
     /*
     * Grunt tasks which build a clean theme for deployment
