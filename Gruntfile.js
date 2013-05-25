@@ -1,6 +1,13 @@
 module.exports = function(grunt) {
 
+    // configurable paths
+    var frankConfig = {
+        javascripts: 'javascripts',
+        coffeescripts: 'javascripts/coffeescripts'
+    };
+
     grunt.initConfig({
+        frank: frankConfig,
         clean: {
           dist: ['frank']
         },
@@ -43,10 +50,13 @@ module.exports = function(grunt) {
         },
         coffee: {
           compile: {
-            files: {
-              'javascripts/defer-image-load.js': 'javascripts/coffeescripts/defer-image-load.coffee',
-              'javascripts/frank.slideshow.js': 'javascripts/coffeescripts/frank.slideshow.coffee',
-              'javascripts/simplebox.js': 'javascripts/coffeescripts/simplebox.coffee'
+            expand: true,
+            flatten: true,
+            cwd: '<%= frank.coffeescripts %>',
+            src: '*.coffee',
+            dest: '<%= frank.javascripts %>',
+            rename: function(dest, src) {
+              return [dest, src.replace('.coffee', '.js')].join('/');
             }
           }
         },
