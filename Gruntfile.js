@@ -21,12 +21,6 @@ module.exports = function(grunt) {
             }
           }
         },
-        concat: {
-          dist: {
-            src: ['javascripts/defer-image-load.js', 'javascripts/frank.slideshow.js', 'javascripts/simplebox.js'],
-            dest: 'javascripts/frank.js'
-          }
-        },
         jshint: {
           beforeconcat: ['javascripts/defer-image-load.js', 'javascripts/frank.slideshow.js', 'javascripts/simplebox.js'],
           afterconcat: ['javascripts/frank.js']
@@ -50,14 +44,8 @@ module.exports = function(grunt) {
         },
         coffee: {
           compile: {
-            expand: true,
-            flatten: true,
-            cwd: '<%= frank.coffeescripts %>',
-            src: '*.coffee',
-            dest: '<%= frank.javascripts %>',
-            rename: function(dest, src) {
-              return [dest, src.replace('.coffee', '.js')].join('/');
-            }
+            src:  '<%= frank.coffeescripts %>/*.coffee',
+            dest: '<%= frank.javascripts %>/frank.js'
           }
         },
 
@@ -196,10 +184,6 @@ module.exports = function(grunt) {
             coffee: {
                 files: 'javascripts/**/*.coffee',
                 tasks: ['coffee:compile']
-            },
-            concat: {
-              files: ['javascripts/defer-image-load.js', 'javascripts/frank.slideshow.js', 'javascripts/simplebox.js'],
-              tasks: ['concat:dist']
             }
         },
         markdown: {
@@ -241,7 +225,7 @@ module.exports = function(grunt) {
     /**
      * Grunt tasks for development.
      */
-    grunt.registerTask('default', ['coffee', 'concat', 'sass:dev', 'watch']);
+    grunt.registerTask('default', ['coffee', 'sass:dev', 'watch']);
 
     /**
      * Grunt tasks that help improve code quality.
