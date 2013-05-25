@@ -3,5 +3,6 @@
     "squizlabs/php_codesniffer": "dev-phpcs-fixer",
     "phpmd/phpmd": "dev-master",
     "scrutinizer/php-analyzer": "dev-master"
-  }
+  },
+  "minimum-stability": "dev"
 }
