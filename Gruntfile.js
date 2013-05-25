@@ -162,7 +162,7 @@ module.exports = function(grunt) {
           }
         },
         csslint: {
-          dist: {
+          files: {
             src: ['style.css']
           }
         },
@@ -233,7 +233,7 @@ module.exports = function(grunt) {
     /**
      * Grunt tasks that help improve code quality.
      */
-    grunt.registerTask('test', ['phpcs', 'sass', 'csscss', 'csslint:dist', 'jshint:beforeconcat']);
+    grunt.registerTask('test', ['phpcs', 'sass', 'csscss', 'csslint', 'jshint:beforeconcat']);
 
     /*
     * Grunt tasks which build a clean theme for deployment
