@@ -169,12 +169,13 @@ module.exports = function(grunt) {
         /**
          * Uses CSSCSS to analyse any redundancies in the CSS files.
          * - http://zmoazeni.github.io/csscss/
+         * - $ gem install csscss
          */
         csscss: {
           options: {
             verbose: true
           },
-          dist: {
+          files: {
             src: ['editor-style.css', 'ie.css', 'print.css', 'style.css']
           }
         },
@@ -232,7 +233,7 @@ module.exports = function(grunt) {
     /**
      * Grunt tasks that help improve code quality.
      */
-    grunt.registerTask('test', ['phpcs', 'sass', 'csscss:dist', 'csslint:dist', 'jshint:beforeconcat']);
+    grunt.registerTask('test', ['phpcs', 'sass', 'csscss', 'csslint:dist', 'jshint:beforeconcat']);
 
     /*
     * Grunt tasks which build a clean theme for deployment
