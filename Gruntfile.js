@@ -1,6 +1,13 @@
 module.exports = function(grunt) {
 
+    // configurable paths
+    var frankConfig = {
+        javascripts: 'javascripts',
+        coffeescripts: 'javascripts/coffeescripts'
+    };
+
     grunt.initConfig({
+        frank: frankConfig,
         clean: {
           dist: ['frank']
         },
@@ -43,10 +50,13 @@ module.exports = function(grunt) {
         },
         coffee: {
           compile: {
-            files: {
-              'javascripts/defer-image-load.js': 'javascripts/coffeescripts/defer-image-load.coffee',
-              'javascripts/frank.slideshow.js': 'javascripts/coffeescripts/frank.slideshow.coffee',
-              'javascripts/simplebox.js': 'javascripts/coffeescripts/simplebox.coffee'
+            expand: true,
+            flatten: true,
+            cwd: '<%= frank.coffeescripts %>',
+            src: '*.coffee',
+            dest: '<%= frank.javascripts %>',
+            rename: function(dest, src) {
+              return [dest, src.replace('.coffee', '.js')].join('/');
             }
           }
         },
@@ -224,25 +234,13 @@ module.exports = function(grunt) {
         }
     });
 
+    // load all grunt tasks
+    require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
     grunt.loadNpmTasks('svgo-grunt');
-    grunt.loadNpmTasks('grunt-contrib-clean');
-    grunt.loadNpmTasks('grunt-contrib-coffee');
-    grunt.loadNpmTasks('grunt-contrib-compress');
-    grunt.loadNpmTasks('grunt-contrib-concat');
-    grunt.loadNpmTasks('grunt-contrib-copy');
-    grunt.loadNpmTasks('grunt-contrib-csslint');
-    grunt.loadNpmTasks('grunt-contrib-imagemin');
-    grunt.loadNpmTasks('grunt-contrib-jshint');
-    grunt.loadNpmTasks('grunt-contrib-sass');
-    grunt.loadNpmTasks('grunt-contrib-uglify');
-    grunt.loadNpmTasks('grunt-contrib-watch');
-    grunt.loadNpmTasks('grunt-csso');
-    grunt.loadNpmTasks('grunt-csscss');
-    grunt.loadNpmTasks('grunt-git-contributors');
-    grunt.loadNpmTasks('grunt-markdown');
-    grunt.loadNpmTasks('grunt-phpcs');
-    grunt.loadNpmTasks('grunt-webp');
 
+    /**
+     * Grunt tasks for development.
+     */
     grunt.registerTask('default', ['coffee', 'concat', 'sass:dev', 'watch']);
 
     /**
