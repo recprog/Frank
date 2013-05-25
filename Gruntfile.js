@@ -3,7 +3,9 @@ module.exports = function(grunt) {
     // configurable paths
     var frankConfig = {
         javascripts: 'javascripts',
-        coffeescripts: 'javascripts/coffeescripts'
+        coffeescripts: 'javascripts/coffeescripts',
+        stylesheets: 'stylesheets',
+        scss: 'stylesheets/scss'
     };
 
     grunt.initConfig({
@@ -56,17 +58,17 @@ module.exports = function(grunt) {
          * - http://sass-lang.com/download.html
          */
         sass: {
-          dev: {
+          compile: {
             options: {
-                compass: true,
-                style: 'expanded'
+              compass: true,
+              style: 'expanded'
             },
-            files: {
-                'style.css': 'stylesheets/scss/style.scss',
-                'ie.css': 'stylesheets/scss/ie.scss',
-                'editor-style.css': 'stylesheets/scss/editor-style.scss',
-                'print.css': 'stylesheets/scss/print.scss'
-            }
+            expand: true,
+            flatten: true,
+            cwd: '<%= frank.scss %>',
+            src: ['*.scss', '!ie7.scss'],
+            dest: '.',
+            ext: '.css'
           }
         },
         svgo: {
@@ -169,22 +171,22 @@ module.exports = function(grunt) {
          * - http://zmoazeni.github.io/csscss/
          */
         csscss: {
-            options: {
-                verbose: true
-            },
-            dist: {
-                src: ['editor-style.css', 'ie.css', 'print.css', 'style.css']
-            }
+          options: {
+            verbose: true
+          },
+          dist: {
+            src: ['editor-style.css', 'ie.css', 'print.css', 'style.css']
+          }
         },
         watch: {
-            sass: {
-                files: 'stylesheets/**/*.scss',
-                tasks: ['sass:dev']
-            },
-            coffee: {
-                files: 'javascripts/**/*.coffee',
-                tasks: ['coffee:compile']
-            }
+          sass: {
+            files: '<%= frank.scss %>/*.scss',
+            tasks: ['sass']
+          },
+          coffee: {
+            files: '<%= frank.coffeescripts %>/*.coffee',
+            tasks: ['coffee']
+          }
         },
         markdown: {
           docs: {
@@ -225,18 +227,18 @@ module.exports = function(grunt) {
     /**
      * Grunt tasks for development.
      */
-    grunt.registerTask('default', ['coffee', 'sass:dev', 'watch']);
+    grunt.registerTask('default', ['coffee', 'sass', 'watch']);
 
     /**
      * Grunt tasks that help improve code quality.
      */
-    grunt.registerTask('test', ['phpcs', 'sass:dev', 'csscss:dist', 'csslint:dist', 'jshint:beforeconcat']);
+    grunt.registerTask('test', ['phpcs', 'sass', 'csscss:dist', 'csslint:dist', 'jshint:beforeconcat']);
 
     /*
     * Grunt tasks which build a clean theme for deployment
     */
     grunt.registerTask('dist', ['clean:dist', 'copy:dist', 'compress:dist', 'clean:dist']);
-    grunt.registerTask('opt', ['copy:opt', 'svgo', 'imagemin', 'webp:optPNG', 'webp:optJPG', 'uglify:dist', 'sass:dev', 'csso:restructure']);
+    grunt.registerTask('opt', ['copy:opt', 'svgo', 'imagemin', 'webp:optPNG', 'webp:optJPG', 'uglify:dist', 'sass', 'csso:restructure']);
     grunt.registerTask('docs', ['contributors', 'markdown']);
 
 };
