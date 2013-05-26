@@ -4,7 +4,7 @@
 	</header>
 	<section class="post-content">
 		<?php the_post_thumbnail( 'small-thumbnail' ); ?>
-		<?php the_content('Read On&hellip;'); ?>
+		<?php the_content(__('Read On&hellip;', 'frank_theme')); ?>
 	</section>
 	<footer class="post-info">
 		<?php get_template_part('partials/post-metadata', 'horizontal'); ?>
