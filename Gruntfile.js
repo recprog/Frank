@@ -2,60 +2,73 @@ module.exports = function(grunt) {
 
     // configurable paths
     var frankConfig = {
-        javascripts: 'javascripts',
-        coffeescripts: 'javascripts/coffeescripts',
-        stylesheets: 'stylesheets',
-        scss: 'stylesheets/scss',
-        images: 'images',
-        dist: 'dist'
+        javascripts: './javascripts',
+        coffeescripts: './javascripts/coffeescripts',
+        stylesheets: './stylesheets',
+        scss: './stylesheets/scss',
+        images: './images',
+        dist: './dist'
     };
 
     grunt.initConfig({
+        // create frank and pkg templates
         frank: frankConfig,
+        pkg: grunt.file.readJSON('package.json'),
+
         clean: {
           dist: '<%= frank.dist %>'
         },
+
         copy: {
+          //svgo doesn't support dest:src optimization, so we copy SVG files over manually
           opt: {
-            'images/src/*.svg' : 'images'  //svgo doesn't support dest:src optimization, so we copy SVG files over manually
+            expand: true,
+            flatten: true,
+            src: '<%= frank.images %>/src/*.svg',
+            dest: '<%= frank.images %>'
           },
           dist: {
+            expand: true,
             src: [
               './**',
               '!<%= frank.images %>/src/**',
-              '!<%= frank.stylesheets %>',
-              '!<%= frank.coffeescripts %>',
-              '!node_modules',
-              '!docs',
-              '!.git',
-              '!Gruntfile.js',
-              '!package.json',
-              '!config.rb',
-              '!*.md'
+              '!<%= frank.stylesheets %>/**',
+              '!<%= frank.coffeescripts %>/**',
+              '!./node_modules/**',
+              '!./docs/**',
+              '!./.git/**',
+              '!./Gruntfile.js',
+              '!./package.json',
+              '!./config.rb',
+              '!./*.md'
             ],
             dest: '<%= frank.dist %>/frank/'
           }
         },
+
         jshint: {
-          files: ['javascripts/frank.js']
-        },
-        uglify: {
-          dist: {
-            files: {
-              'javascripts/frank.js': ['javascripts/frank.js']
-            }
+          test: {
+            src: '<%= frank.javascripts %>/frank.js'
           }
         },
+
+        uglify: {
+          opt: {
+            src: '<%= frank.javascripts %>/frank.js',
+            dest: '<%= frank.javascripts %>/frank.min.js'
+          }
+        },
+
         compress: {
           dist: {
             options: {
-              archive: '<%= frank.dist %>/frank-dist.zip'
+              archive: '<%= frank.dist %>/frank-<%= pkg.version %>.zip'
             },
-            files: [
-              { src: '<%= frank.dist %>/frank/**', dest: '<%= frank.dist %>' }
-            ]
+            src: '<%= frank.dist %>/frank/**',
+            dest: '<%= frank.dist %>'
           }
         },
+
         coffee: {
           compile: {
             src:  '<%= frank.coffeescripts %>/*.coffee',
@@ -83,28 +96,29 @@ module.exports = function(grunt) {
             ext: '.css'
           }
         },
+
         svgo: {
-            optimize: {
-              files: 'images/*.svg'
-            }
+          opt: {
+            files: '<%= frank.images %>/*.svg'
+          }
         },
+
         imagemin: {
-          dist: {
+          opt: {
             options: {
               optimizationLevel: 3
             },
-            files: [{
-                    expand: true,
-                    cwd: 'images/src',
-                    src: '*.{png,jpg,jpeg}',
-                    dest: 'images'
-                }]
+            expand: true,
+            cwd: '<%= frank.images %>/src',
+            src: '*.{png,jpg,jpeg}',
+            dest: '<%= frank.images %>'
           }
         },
+
         webp: {
           optPNG:{
-            src: ['images/*.png'],
-            dest: 'images',
+            src: '<%= frank.images %>/*.png',
+            dest: '<%= frank.images %>',
             options: {
                 verbose: true,
                 quality: 80,
@@ -128,8 +142,8 @@ module.exports = function(grunt) {
               }
           },
           optJPG:{
-            src: ['images/*.jpeg', 'images/*.jpg'],
-            dest: 'images',
+            src: '<%= frank.images %>/*.{jpeg,jpg}',
+            dest: '<%= frank.images %>',
             options: {
                 preset: 'photo',
                 verbose: true,
@@ -154,43 +168,45 @@ module.exports = function(grunt) {
               }
           }
         },
+
         csso: {
           compress: {
             options: {
               report: 'gzip'
             },
-            files: {
-              'style.min.css': ['style.css']
-            }
+            src: 'style.css',
+            dest: 'style.min.css'
           },
           restructure: {
             options: {
               restructure: true,
               report: 'gzip'
             },
-            files: {
-              'style.min.css': ['style.css']
-            }
+            src: 'style.css',
+            dest: 'style.min.css'
           }
         },
+
         csslint: {
-          files: {
-            src: ['style.css']
+          test: {
+            src: 'style.css'
           }
         },
+
         /**
          * Uses CSSCSS to analyse any redundancies in the CSS files.
          * - http://zmoazeni.github.io/csscss/
          * - $ gem install csscss
          */
         csscss: {
-          options: {
-            verbose: true
-          },
-          files: {
+          test: {
+            options: {
+              verbose: true
+            },
             src: ['editor-style.css', 'ie.css', 'print.css', 'style.css']
           }
         },
+
         watch: {
           sass: {
             files: '<%= frank.scss %>/*.scss',
@@ -201,10 +217,9 @@ module.exports = function(grunt) {
             tasks: ['coffee']
           }
         },
+
         markdown: {
           docs: {
-            files: ['*.md'],
-            dest: './',
             options: {
               gfm: true,
               highlight: 'manual',
@@ -212,23 +227,27 @@ module.exports = function(grunt) {
                 before: '<span>',
                 after: '</span>'
               }
-            }
+            },
+            files: ['*.md'],
+            dest: './',
           }
         },
+
         contributors: {
-          master: {
+          docs: {
             path: 'CONTRIBUTORS.md',
             branch: 'master',
             chronologically: true
           }
         },
+
         phpcs: {
-          application: {
-              dir: './**.php'
-          },
-          options: {
+          test: {
+            options: {
               bin: 'vendor/squizlabs/php_codesniffer/scripts/phpcs',
               standard: 'WordPress'
+            },
+            dir: './**.php'
           }
         }
     });
@@ -251,7 +270,11 @@ module.exports = function(grunt) {
     * Grunt tasks which build a clean theme for deployment
     */
     grunt.registerTask('release', ['default', 'clean', 'copy:dist', 'compress']);
-    grunt.registerTask('opt', ['copy:opt', 'svgo', 'imagemin', 'webp:optPNG', 'webp:optJPG', 'uglify:dist', 'sass', 'csso:restructure']);
+    grunt.registerTask('opt', ['copy:opt', 'svgo', 'imagemin', 'webp', 'uglify', 'sass', 'csso:restructure']);
+
+    /*
+    * Grunt tasks for documentation
+    */
     grunt.registerTask('docs', ['contributors', 'markdown']);
 
 };
