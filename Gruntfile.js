@@ -15,6 +15,34 @@ module.exports = function(grunt) {
         frank: frankConfig,
         pkg: grunt.file.readJSON('package.json'),
 
+        coffee: {
+          compile: {
+            src:  '<%= frank.coffeescripts %>/*.coffee',
+            dest: '<%= frank.javascripts %>/frank.js'
+          }
+        },
+
+        /**
+         * This task requires Sass & Compass to be installed on your machine.
+         *
+         * - http://compass-style.org/install/
+         * - http://sass-lang.com/download.html
+         */
+        sass: {
+          compile: {
+            options: {
+              compass: true,
+              style: 'expanded'
+            },
+            expand: true,
+            flatten: true,
+            cwd: '<%= frank.scss %>',
+            src: ['*.scss', '!ie7.scss'],
+            dest: '.',
+            ext: '.css'
+          }
+        },
+
         clean: {
           dist: '<%= frank.dist %>'
         },
@@ -46,6 +74,16 @@ module.exports = function(grunt) {
           }
         },
 
+        compress: {
+          dist: {
+            options: {
+              archive: '<%= frank.dist %>/frank-<%= pkg.version %>.zip'
+            },
+            src: '<%= frank.dist %>/frank/**',
+            dest: '<%= frank.dist %>'
+          }
+        },
+
         jshint: {
           test: {
             src: '<%= frank.javascripts %>/frank.js'
@@ -59,47 +97,51 @@ module.exports = function(grunt) {
           }
         },
 
-        compress: {
-          dist: {
+        csso: {
+          compress: {
             options: {
-              archive: '<%= frank.dist %>/frank-<%= pkg.version %>.zip'
+              report: 'gzip'
             },
-            src: '<%= frank.dist %>/frank/**',
-            dest: '<%= frank.dist %>'
+            src: 'style.css',
+            dest: 'style.min.css'
+          },
+          restructure: {
+            options: {
+              restructure: true,
+              report: 'gzip'
+            },
+            src: 'style.css',
+            dest: 'style.min.css'
           }
         },
 
-        coffee: {
-          compile: {
-            src:  '<%= frank.coffeescripts %>/*.coffee',
-            dest: '<%= frank.javascripts %>/frank.js'
+        csslint: {
+          test: {
+            src: 'style.css'
           }
         },
 
         /**
-         * This task requires Sass & Compass to be installed on your machine.
-         *
-         * - http://compass-style.org/install/
-         * - http://sass-lang.com/download.html
+         * Uses CSSCSS to analyse any redundancies in the CSS files.
+         * - http://zmoazeni.github.io/csscss/
+         * - $ gem install csscss
          */
-        sass: {
-          compile: {
+        csscss: {
+          test: {
             options: {
-              compass: true,
-              style: 'expanded'
+              verbose: true
             },
-            expand: true,
-            flatten: true,
-            cwd: '<%= frank.scss %>',
-            src: ['*.scss', '!ie7.scss'],
-            dest: '.',
-            ext: '.css'
+            src: ['editor-style.css', 'ie.css', 'print.css', 'style.css']
           }
         },
 
-        svgo: {
-          opt: {
-            files: '<%= frank.images %>/*.svg'
+        phpcs: {
+          test: {
+            options: {
+              bin: 'vendor/squizlabs/php_codesniffer/scripts/phpcs',
+              standard: 'WordPress'
+            },
+            dir: './**.php'
           }
         },
 
@@ -112,6 +154,12 @@ module.exports = function(grunt) {
             cwd: '<%= frank.images %>/src',
             src: '*.{png,jpg,jpeg}',
             dest: '<%= frank.images %>'
+          }
+        },
+
+        svgo: {
+          opt: {
+            files: '<%= frank.images %>/*.svg'
           }
         },
 
@@ -169,55 +217,6 @@ module.exports = function(grunt) {
           }
         },
 
-        csso: {
-          compress: {
-            options: {
-              report: 'gzip'
-            },
-            src: 'style.css',
-            dest: 'style.min.css'
-          },
-          restructure: {
-            options: {
-              restructure: true,
-              report: 'gzip'
-            },
-            src: 'style.css',
-            dest: 'style.min.css'
-          }
-        },
-
-        csslint: {
-          test: {
-            src: 'style.css'
-          }
-        },
-
-        /**
-         * Uses CSSCSS to analyse any redundancies in the CSS files.
-         * - http://zmoazeni.github.io/csscss/
-         * - $ gem install csscss
-         */
-        csscss: {
-          test: {
-            options: {
-              verbose: true
-            },
-            src: ['editor-style.css', 'ie.css', 'print.css', 'style.css']
-          }
-        },
-
-        watch: {
-          sass: {
-            files: '<%= frank.scss %>/*.scss',
-            tasks: ['sass']
-          },
-          coffee: {
-            files: '<%= frank.coffeescripts %>/*.coffee',
-            tasks: ['coffee']
-          }
-        },
-
         markdown: {
           docs: {
             options: {
@@ -241,15 +240,16 @@ module.exports = function(grunt) {
           }
         },
 
-        phpcs: {
-          test: {
-            options: {
-              bin: 'vendor/squizlabs/php_codesniffer/scripts/phpcs',
-              standard: 'WordPress'
-            },
-            dir: './**.php'
+        watch: {
+          sass: {
+            files: '<%= frank.scss %>/*.scss',
+            tasks: ['sass']
+          },
+          coffee: {
+            files: '<%= frank.coffeescripts %>/*.coffee',
+            tasks: ['coffee']
           }
-        }
+        },
     });
 
     // load all grunt tasks
@@ -261,16 +261,16 @@ module.exports = function(grunt) {
      */
     grunt.registerTask('default', ['coffee', 'sass']);
 
-    /**
-     * Grunt tasks that help improve code quality.
-     */
-    grunt.registerTask('test', ['default', 'phpcs', 'csscss', 'csslint', 'jshint']);
-
     /*
     * Grunt tasks which build a clean theme for deployment
     */
-    grunt.registerTask('release', ['default', 'clean', 'copy:dist', 'compress']);
-    grunt.registerTask('opt', ['copy:opt', 'svgo', 'imagemin', 'webp', 'uglify', 'sass', 'csso:restructure']);
+    grunt.registerTask('dist', ['clean', 'default', 'copy:dist', 'compress']);
+    grunt.registerTask('opt', ['copy:opt', 'imagemin', 'svgo', 'webp', 'uglify', 'sass', 'csso:restructure']);
+
+    /**
+     * Grunt tasks that help improve code quality.
+     */
+    grunt.registerTask('test', ['default', 'jshint', 'phpcs', 'csscss', 'csslint']);
 
     /*
     * Grunt tasks for documentation
