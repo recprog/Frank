@@ -893,7 +893,7 @@ dd {
 }
 .pagination a {
   margin-right: 40px;
-  width: 110px;
+  min-width: 110px;
 }
 .pagination.small {
   font: 13px Sans-Serif;
