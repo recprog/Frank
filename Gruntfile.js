@@ -117,7 +117,7 @@ module.exports = function(grunt) {
 
         csslint: {
           test: {
-            src: 'style.css'
+            src: ['style.css', 'rtl.css', 'ie.css', 'print.css', 'editor-style.css']
           }
         },
 

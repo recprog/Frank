@@ -71,3 +71,33 @@ Open up a terminal window, `cd` into the Frank theme folder and run the followin
 
 
 
+
+
+
+I put together a pretty big list of questions while working through all of this. I'll paste them in here so I don't lose 'em but they could maybe be broken out into their own doc/discussion.
+
+To use the current grunt tasks you have to manually install the following items:
+composer
+WP Standards for Code Sniffer for phpcs task
+csscss gem
+ruby/sass
+cwebp
+
+Just want to make sure all of that is documented. Perhaps we could package some of these up somehow?
+
+csscss
+This spits out some verbose output into STDOUT but I'm not sure what to do with it?
+
+csslint
+CSSLint runs but it fails and it only runs against style.css. Should it run against the other stylesheets?
+
+docs
+Should docs folder be compiled with docs task? Right now it only seems to compile contributors.md, readme.md and history.md.
+
+opt/dist
+Do you want all that image optimization stuff to happen as part of the dist task? Basically running opt as a step in dist.
+
+Should uglify and csso be part of dist?
+
+general
+Should all generated files be in .gitignore? minified css/js, markdown/contrib/readme.html? optimized images?
