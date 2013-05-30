@@ -340,7 +340,7 @@ function frank_admin_menu() {
 }
 
 function frank_admin_assets() {
-	wp_enqueue_style(' frank-admin', get_template_directory_uri() . '/admin/stylesheets/frank-options.css', NULL, NULL, NULL );
+	wp_enqueue_style('frank-admin', get_template_directory_uri() . '/admin/stylesheets/frank-options.css', NULL, NULL, NULL );
 	wp_enqueue_script( 'jquery-ui-sortable');
 	wp_enqueue_script( 'frank-admin', get_template_directory_uri() . '/admin/javascripts/frank-utils.js', 'jquery', NULL, true );
 	$translation_array = array();
