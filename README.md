@@ -1,5 +1,7 @@
 #Frank is an open source WordPress theme designed for speed
 
+[![Build Status](https://travis-ci.org/somerandomdude/Frank.png)](https://travis-ci.org/somerandomdude/Frank)
+
 ##README Contents
 * [About Frank](#about-frank)
 * [Using Frank](#using-frank)
