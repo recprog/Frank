@@ -270,7 +270,7 @@ module.exports = function(grunt) {
     /**
      * Grunt tasks that help improve code quality.
      */
-    grunt.registerTask('test', ['default', 'jshint', 'phpcs', 'csscss', 'csslint']);
+    grunt.registerTask('test', ['default', 'jshint']);
 
     /*
     * Grunt tasks for documentation
