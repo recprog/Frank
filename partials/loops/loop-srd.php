@@ -6,28 +6,29 @@ if ( is_home() && !is_paged() ) {
 		'post__in'  => $sticky,
 		'orderby' => 'date',
 		'order' => 'DESC',
-		'ignore_sticky_posts' => 1
+		'ignore_sticky_posts' => 1,
 	);
-}
-
-$queryObject = new WP_Query( $args );
-?>
-
-<?php if ( !empty( $sticky[0] ) ) : ?>
+	$queryObject = new WP_Query( $args );
+	if ( ! empty( $sticky[0] ) ) :
+	?>
 	<div class='row post-group oneup large'>
 		<?php
-		get_template_part('partials/posts/post', 'oneuplarge');
+		$queryObject->the_post();
+		get_template_part( 'partials/posts/post', 'oneuplarge' );
 		wp_reset_postdata();
 		?>
 	</div>
-<?php endif; ?>
+	<?php
+	endif;
+}
+?>
 
 <div class='row post-group halfandhalf'>
 	<div class='nine columns post-group-contents'>
-		<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+		<?php if ( $wp_query->have_posts() ) : while ( $wp_query->have_posts() ) : $wp_query->the_post(); ?>
 			<?php if ( is_sticky( $post->ID ) ) continue; ?>
 			<?php get_template_part( 'partials/posts/post' ); ?>
 		<?php endwhile; endif; ?>
 	</div>
-	<?php get_template_part('partials/sidebars/sidebar', 'index'); ?>
+	<?php get_template_part( 'partials/sidebars/sidebar', 'index' ); ?>
 </div>

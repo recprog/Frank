@@ -7,7 +7,9 @@
 <div id="content" class="page">
 	<div class="row">
 		<main id="content-primary" role="main">
-			<?php if(have_posts()) : while(have_posts()) : the_post(); ?>
+			<?php if ( have_posts() ) : ?>
+			<?php while ( have_posts() ) : ?>
+			<?php the_post(); ?>
 			<article class="post clear" id="p<?php the_ID(); ?>">
 				<header class="post-header">
 					<h1 class="post-title"><?php the_title(); ?></h1>

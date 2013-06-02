@@ -1,13 +1,13 @@
-/* 
+/*
 Theme Name:     Frank
-Theme URI:      http://somerandomdude.com/work/frank 
-Description:    The next step of the Franklin Street theme.  
-Author:         P.J. Onori 
-Author URI:     http://somerandomdude.com/hello/  
-Version:        0.9.1.1
-License:        GPL 3.0
-License URI:    http://www.gnu.org/copyleft/gpl.html 
-Tags:           brown, red, white, two-columns, fixed-width, sticky-post, custom-menu
+Theme URI:      http://somerandomdude.com/work/frank
+Description:    The next step of the Franklin Street theme.
+Author:         P.J. Onori
+Author URI:     http://somerandomdude.com/hello/
+Version:        0.9.2
+License:				GPL 3.0
+License URI:		http://www.gnu.org/copyleft/gpl.html
+Tags: 					brown, red, white, two-columns, fixed-width, sticky-post, custom-menu
 */
 .metadata, .metadata li, .wp-caption img, .menu-item, .sub-menu, #comments .comment {
   margin: 0;
@@ -59,7 +59,8 @@ hgroup,
 main,
 nav,
 section,
-summary {
+summary,
+main {
   display: block;
 }
 
@@ -390,12 +391,12 @@ table {
 
 /* Artfully Masterminded by ZURB */
 /* --------------------------------------------------
-  :: Grid
-  
-  This is the mobile-friendly, responsive grid that
-  lets Foundation work much of its magic.
-  
-  -------------------------------------------------- */
+	:: Grid
+	
+	This is the mobile-friendly, responsive grid that
+	lets Foundation work much of its magic.
+	
+	-------------------------------------------------- */
 .container {
   padding: 0 20px;
 }
@@ -656,19 +657,19 @@ img, video {
   zoom: 1;
 }
 
-/*  --------------------------------------------------
-  :: Block grids
-  
-  These are 2-up, 3-up, 4-up and 5-up ULs, suited
-  for repeating blocks of content. Add 'mobile' to
-  them to switch them just like the layout grid
-  (one item per line) on phones
-  
-  For IE7/8 compatibility block-grid items need to be
-  the same height. You can optionally uncomment the
-  lines below to support arbitrary height, but know
-  that IE7/8 do not support :nth-child.
-  -------------------------------------------------- */
+/*	--------------------------------------------------
+	:: Block grids
+	
+	These are 2-up, 3-up, 4-up and 5-up ULs, suited
+	for repeating blocks of content. Add 'mobile' to
+	them to switch them just like the layout grid
+	(one item per line) on phones
+	
+	For IE7/8 compatibility block-grid items need to be
+	the same height. You can optionally uncomment the
+	lines below to support arbitrary height, but know
+	that IE7/8 do not support :nth-child.
+	-------------------------------------------------- */
 .block-grid {
   display: block;
   overflow: hidden;
@@ -689,7 +690,7 @@ img, video {
   width: 46%;
 }
 
-/*  .block-grid.two-up>li:nth-child(2n+1) {clear: left;} */
+/* 	.block-grid.two-up>li:nth-child(2n+1) {clear: left;} */
 .block-grid.three-up {
   margin-left: -2%;
 }
@@ -699,7 +700,7 @@ img, video {
   width: 31.3%;
 }
 
-/*  .block-grid.three-up>li:nth-child(3n+1) {clear: left;} */
+/* 	.block-grid.three-up>li:nth-child(3n+1) {clear: left;} */
 .block-grid.four-up {
   margin-left: -2%;
 }
@@ -709,7 +710,7 @@ img, video {
   width: 23%;
 }
 
-/*  .block-grid.four-up>li:nth-child(4n+1) {clear: left;} */
+/* 	.block-grid.four-up>li:nth-child(4n+1) {clear: left;} */
 .block-grid.five-up {
   margin-left: -1.5%;
 }
@@ -719,10 +720,10 @@ img, video {
   width: 18.5%;
 }
 
-/*  .block-grid.five-up>li:nth-child(5n+1) {clear: left;} */
+/* 	.block-grid.five-up>li:nth-child(5n+1) {clear: left;} */
 /* --------------------------------------------------
-  :: Grid
-  -------------------------------------------------- */
+	:: Grid
+	-------------------------------------------------- */
 /* Mobile */
 @media only screen and (max-width: 767px) {
   body, .container, .row {
@@ -785,8 +786,8 @@ img, video {
   }
 }
 /* --------------------------------------------------
-  :: Block Grids
-  -------------------------------------------------- */
+	:: Block Grids
+	-------------------------------------------------- */
 @media only screen and (max-width: 767px) {
   .block-grid.mobile {
     margin-left: 0;
@@ -1590,7 +1591,7 @@ button, .button, input[type=submit] {
   width: 45px;
   height: 45px;
   border-radius: 22.5px;
-  background: #5d504f url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCFET0NUWVBFIHN2ZyBQVUJMSUMgIi0vL1czQy8vRFREIFNWRyAxLjEvL0VOIiAiaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkIj4NCjxzdmcgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCINCgkgd2lkdGg9IjMwcHgiIGhlaWdodD0iNDcuMzAxcHgiIHZpZXdCb3g9IjAgMCAzMCA0Ny4zMDEiPg0KPHBvbHlnb24gZmlsbD0iI2ZmZiIgcG9pbnRzPSIyMy42NSw0Ny4zMDEgMCwyMy42NTEgMjMuNjUsMCAzMCw2LjM1IDEyLjY5OSwyMy42NTEgMzAsNDAuOTUxICIvPg0KPC9zdmc+DQo=') no-repeat 47% 50%;
+  background: #5d504f url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMCIgaGVpZ2h0PSI0Ny4zMDEiPjxwb2x5Z29uIGZpbGw9IiNmZmYiIHBvaW50cz0iMjMuNjUsNDcuMzAxIDAsMjMuNjUxIDIzLjY1LDAgMzAsNi4zNSAxMi42OTksMjMuNjUxIDMwLDQwLjk1MSIvPjwvc3ZnPg==') no-repeat 47% 50%;
   background-size: 33%;
 }
 
@@ -1852,6 +1853,9 @@ button, .button, input[type=submit] {
 #page-footer {
   padding: 30px 0;
   margin-top: 30px;
+}
+#page-footer h3 {
+  color: #fffefe;
 }
 #page-footer a {
   color: #fffefe;
