@@ -2,6 +2,7 @@
 .scssc
 .sass-cache
 node_modules
+components
 vendor
 dist
 composer.phar

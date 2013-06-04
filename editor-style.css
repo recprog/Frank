@@ -2,8 +2,17 @@
 Theme Name: Frank
 Description: Styles for the TinyMCE editor.
 */
+body {
+  margin: 0;
+  padding: 0;
+}
+
 img {
   box-shadow: 0px 0px 8px rgba(18, 7, 6, 0.3);
+}
+
+table {
+  margin: 15px 0;
 }
 
 /* ==========================================================================
@@ -11,6 +20,9 @@ img {
    ========================================================================== */
 * {
   box-sizing: border-box;
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
 }
 
 /*
@@ -77,10 +89,6 @@ html {
 /*
  * Removes default margin.
  */
-body {
-  margin: 0;
-}
-
 /* ==========================================================================
    Links
    ========================================================================== */
@@ -360,10 +368,8 @@ table {
 /* Artfully Masterminded by ZURB */
 /* --------------------------------------------------
 	:: Grid
-	
 	This is the mobile-friendly, responsive grid that
 	lets Foundation work much of its magic.
-	
 	-------------------------------------------------- */
 .container {
   padding: 0 20px;
@@ -627,12 +633,11 @@ img, video {
 
 /*	--------------------------------------------------
 	:: Block grids
-	
 	These are 2-up, 3-up, 4-up and 5-up ULs, suited
 	for repeating blocks of content. Add 'mobile' to
 	them to switch them just like the layout grid
 	(one item per line) on phones
-	
+
 	For IE7/8 compatibility block-grid items need to be
 	the same height. You can optionally uncomment the
 	lines below to support arbitrary height, but know
@@ -817,7 +822,6 @@ a:hover {
 /*Tables*/
 table {
   font-size: 13px;
-  margin: 15px 0;
 }
 
 table, td, th {
