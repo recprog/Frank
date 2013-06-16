@@ -27,7 +27,7 @@
 		?>
 		</h1>
 	</header>
-	<ul class="comments">
+	<ul class="comments-list">
 	<?php wp_list_comments( array( 'callback' => 'frank_comment' ) ); ?>
 	</ul>
 
@@ -89,7 +89,7 @@
 		) . '</p></div>';
 
 		$html_explanation    = sprintf( __( 'You may use these %1$s tags and attributes:', 'frank_theme' ), '<abbr title="HyperText Markup Language">HTML</abbr>' );
-		$comment_notes_after = '<div class="row"><div id="comment-form-allowed-tags"><p>' . $html_explanation . ' ' . '<code>' . allowed_tags() . '</code>' . '</p></div></div>';
+		$comment_notes_after = '<div id="comment-form-allowed-tags"><p>' . $html_explanation . ' ' . '<code>' . allowed_tags() . '</code>' . '</p></div>';
 
 		$reply_title = __( 'Join the Discussion', 'frank_theme' );
 

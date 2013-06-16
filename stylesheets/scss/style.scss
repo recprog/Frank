@@ -13,8 +13,7 @@ Tags: 					brown, red, white, fixed-width, sticky-post, custom-menu
 @import "partials/mixins";
 @import "partials/extensions";
 @import "partials/reset";
-//@import "partials/grid";
-@import "partials/grid-new5";
+@import "partials/grid";
 @import "partials/global";
 
 @import "modules/typography";
@@ -35,3 +34,8 @@ Tags: 					brown, red, white, fixed-width, sticky-post, custom-menu
 @import "partials/sidebar";
 @import "partials/comments";
 @import "partials/footer";
+
+@import "gallery/gallery.build.scss";
+@import "gallery/gallery.theme.scss";
+
+@import "modal/modal.scss";

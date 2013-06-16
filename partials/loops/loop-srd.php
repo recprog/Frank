@@ -25,7 +25,7 @@ if ( is_home() && !is_paged() ) {
 
 <div class='row post-group halfandhalf'>
 	<div class='nine columns post-group-contents'>
-		<?php if ( $wp_query->have_posts() ) : while ( $wp_query->have_posts() ) : $wp_query->the_post(); ?>
+			<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 			<?php if ( is_sticky( $post->ID ) ) continue; ?>
 			<?php get_template_part( 'partials/posts/post' ); ?>
 		<?php endwhile; endif; ?>

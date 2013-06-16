@@ -15,6 +15,7 @@
 	</footer>
 </div>
 <?php endif; ?>
+<?php get_template_part( 'partials/scripts/defer-image-load' ); ?>
 <?php wp_footer(); ?>
 </body>
 </html>
