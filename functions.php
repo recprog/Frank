@@ -106,7 +106,7 @@ function frank_widgets() {
 		array(
 			'name'      		=> 'Sub Header',
 			'id'      			=> 'widget-subheader',
-			'before_widget' => '<div id="%1$s" class="widget %2$s four columns">',
+			'before_widget' => '<div id="%1$s" class="widget %2$s span4">',
 			'after_widget'  => '</div>',
 			'before_title'  => '<h3 class="widget-title">',
 			'after_title'   => '</h3>',
@@ -157,7 +157,7 @@ function frank_widgets() {
 		array(
 			'name'      		=> 'Post Footer',
 			'id'      			=> 'widget-postfooter',
-			'before_widget' => '<div id="%1$s" class="widget %2$s four columns">',
+			'before_widget' => '<div id="%1$s" class="widget %2$s span4">',
 			'after_widget'  => '</div>',
 			'before_title'  => '<h3 class="widget-title">',
 			'after_title'   => '</h3>',
@@ -168,7 +168,7 @@ function frank_widgets() {
 		array(
 			'name'      		=> 'Footer',
 			'id'     	 			=> 'widget-footer',
-			'before_widget' => '<div id="%1$s" class="widget %2$s six columns">',
+			'before_widget' => '<div id="%1$s" class="widget %2$s span6">',
 			'after_widget'  => '</div>',
 			'before_title'  => '<h3 class="widget-title">',
 			'after_title'   => '</h3>',
@@ -390,7 +390,7 @@ if ( ! function_exists( 'frank_comment' ) ) {
 	function frank_comment( $comment, $args, $depth ) {
 		$GLOBALS['comment'] = $comment; ?>
 
-		<li id="comment-<?php comment_ID() ?>" class="comment">
+		<li id="comment-<?php comment_ID() ?>" <?php comment_class(empty( $args['has_children'] ) ? '' : 'parent') ?>>
 			<div class="row">
 				<div class="comment-content">
 					<?php

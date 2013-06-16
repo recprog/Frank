@@ -1,12 +1,12 @@
 /*Metadata content*/
 .metadata {
+	font: $font-size-x-small $typeface-secondary;
 	a {
 		color: $color-midtone;
 		&:hover {
 			color: $color-off-black;
 		}
 	}
-	font: $font-size-x-small $typeface-secondary;
 }
 
 .metadata {

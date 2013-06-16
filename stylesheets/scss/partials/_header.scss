@@ -2,12 +2,12 @@
 	margin-top: $row-height;
 }
 #site-title {
-	font-size: $font-size-x-large;
+	font-size: $font-size-medium;
 	margin-bottom: 5px;
 }
 #site-description {
 	margin-top:0;
-	font-size: $font-size-small;
+	font-size: $font-size-x-small;
 }
 #site-nav {
 	margin:$row-height 0 $row-height * 2 0;
@@ -55,7 +55,7 @@
 		padding:7px 30px 7px 10px;
 		display: block;
 		color: $color-off-black;
-		font: #{$font-weight-bold} #{$font-size-x-small} #{$typeface-secondary};
+		font: #{$font-weight-bold} #{$font-size-xx-small} #{$typeface-secondary};
 		&:hover {
 			color: $color-midtone;
 		}

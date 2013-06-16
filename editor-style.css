@@ -12,7 +12,7 @@ img {
 }
 
 table {
-  margin: 15px 0;
+  margin: 1.5rem 0;
 }
 
 /* ==========================================================================
@@ -387,14 +387,14 @@ table {
   min-width: 0;
 }
 
-.column, #content-primary, .columns {
+.column, .columns {
   margin-left: 4.4%;
   float: left;
   min-height: 1px;
   position: relative;
 }
 
-.column:first-child, #content-primary:first-child, .columns:first-child {
+.column:first-child, .columns:first-child {
   margin-left: 0;
 }
 
@@ -717,18 +717,18 @@ img, video {
     width: 100%;
   }
 
-  .row .row .column, .row .row #content-primary, .row .row .columns {
+  .row .row .column, .row .row .columns {
     padding: 0;
   }
 
-  .column, #content-primary, .columns {
+  .column, .columns {
     width: auto !important;
     float: none;
     margin-left: 0;
     margin-right: 0;
   }
 
-  .column:last-child, #content-primary:last-child, .columns:last-child {
+  .column:last-child, .columns:last-child {
     margin-right: 0;
     float: none;
   }
@@ -774,16 +774,17 @@ img, video {
 }
 html .mceContentBody {
   max-width: 535px;
-  font: 17px/1.6 Georgia, serif;
+  font: 2.1rem/1.6 Georgia, serif;
   margin: 10px;
 }
 
 body {
-  font: 62.5%/1.6 Georgia, serif;
+  font: 10px/1.6 Georgia, serif;
   background: #fffefe;
   color: #050000;
   height: 100%;
   text-rendering: optimizelegibility;
+  -webkit-font-smoothing: antialiased;
 }
 
 /*Images*/
@@ -802,7 +803,8 @@ a:hover {
 
 /* Titles */
 .title, .widget-title {
-  font: 400 17px/1.3 Sans-Serif;
+  font-family: Sans-Serif;
+  font-weight: 400;
 }
 .title a, .widget-title a {
   color: #5d504f;
@@ -811,17 +813,9 @@ a:hover {
   color: #3d302f;
 }
 
-.title.large {
-  font-size: 20px;
-}
-
-.title.small {
-  font: 700 13px/1.25 Sans-Serif;
-}
-
 /*Tables*/
 table {
-  font-size: 13px;
+  font-size: 1.8rem;
 }
 
 table, td, th {
@@ -842,7 +836,7 @@ th {
 /*Ordered & Unordered lists*/
 ul, ol {
   padding: 0;
-  margin: 15px 0 15px 40px;
+  margin: 1.5rem 0 1.5rem 4rem;
 }
 
 ul {
@@ -851,18 +845,14 @@ ul {
 
 /*Definition lists*/
 dl {
-  margin: 20px 0;
+  margin: 6.5rem 0;
   padding: 0;
   font-family: Georgia, serif;
 }
 
-dt, dd {
-  font-size: 11px;
-}
-
 dt {
   font-weight: 700;
-  margin-top: 15px;
+  margin-top: 1.5rem;
 }
 dt:first-child {
   margin: 0;
@@ -894,14 +884,14 @@ dd {
 
 /*Pagination links*/
 .pagination {
-  font-size: font-size-small;
+  font-size: 1.8rem;
 }
 .pagination a {
-  margin-right: 40px;
-  width: 110px;
+  margin-right: 4rem;
+  width: -7rem;
 }
 .pagination.small {
-  font: 13px Sans-Serif;
+  font: 1.8rem Sans-Serif;
 }
 .pagination.small .title {
   font-weight: 700;
@@ -915,16 +905,12 @@ dd {
   border-radius: 2px;
 }
 
-#content {
-  margin: 0 0 60px 0;
+.content {
+  margin: 0 0 6rem 0;
   position: relative;
 }
 
-#content-primary {
-  width: 73.9%;
-}
-
-#content.page .post img {
+.content.page .post img {
   box-shadow: none !important;
 }
 
@@ -940,15 +926,15 @@ dd {
   display: none;
 }
 #search #search_form input {
-  font-size: 11px;
+  font-size: 1.3rem;
 }
 
 /*MOBILE*/
 @media only screen and (max-width: 767px) {
-  #content.single .post .flush-left {
+  .content.single .post .flush-left {
     margin-left: 0% !important;
   }
-  #content.single .post img.flush-left {
+  .content.single .post img.flush-left {
     max-width: 100% !important;
   }
 }
@@ -957,11 +943,11 @@ img.mceWPmore {
 }
 
 p, ul li, ol li, dt, dd, blockquote {
-  font-size: 17px;
+  font-size: 2.1rem;
 }
 
 code, small {
-  font-size: 13px;
+  font-size: 1.8rem;
 }
 
 img {
@@ -969,22 +955,22 @@ img {
 }
 
 h1, h2 {
-  margin: 15px 0;
+  margin: 1.5rem 0;
   padding: 0;
 }
 
 h1 {
-  font-size: 20px;
-  margin-top: 30px;
+  font-size: 2.4rem;
+  margin-top: 3rem;
 }
 
 h2 {
-  font-size: 17px;
+  font-size: 2.1rem;
   font-weight: 700;
 }
 
 dd {
-  margin-left: 40px;
+  margin-left: 4rem;
 }
 
 .flush-left {
@@ -992,7 +978,7 @@ dd {
 }
 
 blockquote.large p {
-  font-size: 20px;
+  font-size: 2.4rem;
 }
 
 img.flush-left, video.flush-left {
@@ -1012,11 +998,11 @@ img.flush-left, video.flush-left {
 }
 
 .pagination {
-  margin-top: 30px;
+  margin-top: 3rem;
 }
 
 #content-main {
-  margin: 30px 0;
+  margin: 3rem 0;
   border-bottom: 2px solid #f0eceb;
-  padding-bottom: 15px;
+  padding-bottom: 1.5rem;
 }

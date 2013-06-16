@@ -10,24 +10,20 @@
 h1, h2, h3, h4, h5, h6 {
 	@extend .title;
 	padding-top: 0px;
-	margin-bottom: $row-height;
+	margin-bottom: 1em;
 	&:first-child {
 		margin-top: 0;
 	}
 }
-h1 { @extend .font-size-x-large; }
-h2 { @extend .font-size-large; }
-h3 { @extend .font-size-medium; }
-h4 { @extend .font-size-small; }
-h5 { @extend .font-size-x-small; }
-h6 { @extend .font-size-xx-small; }
+h1 { font-size:1.6em; }
+h2 { font-size:1.5em; }
+h3 { font-size:1.3em; }
+h4 { font-size:1.1em; }
+h5 { font-size:1em; }
+h6 { font-size:.9em; }
 
-/*Paragraph*/
 p {
-	margin: $row-height 0;
-	@extend .font-size-small;
-	&:first-child { margin-top: 0; }
-	&:last-child { margin-bottom: 0; }
+	margin: 0 0 1.6em;
 }
 
 /*Blockquote*/
@@ -81,6 +77,18 @@ pre { /*Merge with Blockquote?*/
 }
 
 small { @extend .font-size-small; }
+
+.text-left {
+  text-align: left !important; }
+
+.text-right {
+  text-align: right !important; }
+
+.text-center {
+  text-align: center !important; }
+
+.text-justify {
+  text-align: justify !important; }
 
 /*MOBILE*/
 @media only screen and  (max-width: 767px) {

@@ -2,20 +2,13 @@
 	margin: $row-height*4 auto;
 }
 
-.post-title {
-	font-size: $font-size-large;
+.post {
+	font: #{$font-size-small}/1.6 #{$typeface-primary};
 }
 
-.post-header {
-	margin-bottom: $row-height;
-}
 .post-content {
-	font: #{$font-size-medium}/1.6 #{$typeface-primary};
 	p, li, dt, dd, blockquote {
-		font-size: $font-size-medium;
-	}
-	li {
-		margin:10px 0;
+		font-size: 1em;
 	}
 	code, small {
 		font-size: $font-size-small;
@@ -23,6 +16,9 @@
 	img {
 		max-width: 100%;
 		@extend %default-shadow;
+	}
+	p {
+		@extend .clearfix;
 	}
 }
 
@@ -34,20 +30,61 @@
 	&:last-child {
 		margin-bottom: 0;
 	}
-	&.leftaside {
-		.post-content {
-			@extend .clearfix;
-			@extend .column;
-			@extend .span9;
-			@extend .push3;
-		}
-		.post-info {
-			@extend .column;
-			@extend .span3;
-			@extend .pull9;
+	.post-content {
+		@extend .column;
+		@extend .span8;
+		@extend .push2;
+	}
+	.post-info {
+		opacity:.33;
+		@extend .column;
+		@extend .span2;
+		@extend .pull8;
+	}
+}
+
+
+
+.post-group-header {
+	margin-bottom:$row-height*2;
+	padding-bottom:5px;
+	border-bottom: 1px $color-light solid;
+	@extend %small-label;
+	.label {
+		font-weight: $font-weight-bold;
+	}
+	.caption {
+		font-style: italic;
+		color:$color-midtone;
+		margin:0 10px;
+	}
+	.more {
+		font-family: $typeface-primary; }
+	}
+.post-group {
+	margin-top:0;
+	margin-bottom:$row-height*4;
+	& ~ .post-group {
+		margin: $row-height*4 auto;
+	}
+	.read-more {
+		margin-top: $row-height;
+		.more {
+			font-size: $font-size-x-small;
 		}
 	}
 }
+.post-group.oneup.large {
+	section {
+		margin: 0 0 $row-height 0;
+		p {
+			font-style: italic;
+			font-size: $font-size-xxx-large;
+		}
+	}
+}
+
+
 
 /*MOBILE*/
 @media only screen and  (max-width: 767px) {

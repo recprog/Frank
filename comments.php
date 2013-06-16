@@ -4,7 +4,7 @@
  */
 ?>
 
-<div id='comments-container'>
+<div class="comments-container row">
 	<?php if ( post_password_required() ) : ?>
 		<p class="nocomments">This post is password protected. Enter the password to view comments.</p> ?></p>
 	</div>
@@ -16,8 +16,8 @@
 
 
 <?php if ( have_comments() ) : ?>
-	<header id="comments-header">
-		<h1 id="comments-title">
+	<header class="comments-header">
+		<h1 class="comments-title">
 		<?php
 			comments_number(
 				__( 'No Comments', 'frank_theme' ),
@@ -27,7 +27,7 @@
 		?>
 		</h1>
 	</header>
-	<ul id="comments">
+	<ul class="comments">
 	<?php wp_list_comments( array( 'callback' => 'frank_comment' ) ); ?>
 	</ul>
 

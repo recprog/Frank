@@ -13,7 +13,7 @@ $typeface-primary: Georgia, serif;
 
 $font-weight-thin: 100;
 $font-weight-extra-light: 200;
-$font-weight-light: 300; 
+$font-weight-light: 300;
 $font-weight-normal: 400;
 $font-weight-medium: 500;
 $font-weight-demi-bold: 600;
@@ -21,31 +21,18 @@ $font-weight-bold: 700;
 $font-weight-heavy: 800;
 $font-weight-black: 900;
 
-$font-size-xxx-large: 38px;
-$font-size-xx-large: 28px;
-$font-size-x-large: 24px;
-$font-size-large: 20px;
-$font-size-medium: 17px;
-$font-size-small: 13px;
-$font-size-x-small: 11px;
-$font-size-xx-small: 10px;
-$font-size-xxx-small: 9px;
+$font-size-xxx-large: 4.8rem;
+$font-size-xx-large: 3.8rem;
+$font-size-x-large: 2.8rem;
+$font-size-large: 2.4rem;
+$font-size-medium: 2.1rem;
+$font-size-small: 1.8rem;
+$font-size-x-small: 1.3rem;
+$font-size-xx-small: 1.1rem;
+$font-size-xxx-small: .9rem;
 
-$one-column: 4.3%;
-$two-columns: 13%;
-$three-columns: 21.679%;
-$four-columns: 30.37%;
-$five-columns: 39.1%; 
-$six-columns: 47.8%;
-$seven-columns: 56.5%;
-$eight-columns: 65.2%;
-$nine-columns: 73.9%;
-$ten-columns: 82.6%; 
-$eleven-columns: 91.3%;
-$twelve-columns: 100%;
-
-$row-height: 15px;
-$column-width: 45px;
-$gutter-width: 40px;
+$row-height: 1.5rem;
+$column-width: 4.5rem;
+$gutter-width: 4.0rem;
 
 $border-break: 2px solid $color-light;

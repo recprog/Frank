@@ -66,7 +66,7 @@
 			<?php endif; ?>
 		</a>
 		<?php endif; ?>
-		<nav id="site-nav">
+		<nav id="site-nav" class="row">
 			<?php if ( !dynamic_sidebar( 'Navigation' ) ) : ?>
 				<?php wp_nav_menu( array( 'theme_location' => 'frank_primary_navigation', 'container' => false ) ); ?>
 			<?php endif; ?>

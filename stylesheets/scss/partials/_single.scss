@@ -1,52 +1,26 @@
-#prev-post {
-	margin: $row-height * 4 0 $row-height * 2;
-	font: italic 1em #{$typeface-primary};
-	a {
-		font-size: $font-size-small;
-		display: block;
-		text-align: center;
-		&:hover {
-			color: $color-accent-alt;
-			.arrow {
-				background-color: $color-dark;
-			}
-		}
-	}
-	nav {
-		padding-bottom: $row-height;
-		@extend %border-bottom-light;
-		margin: $row-height 0;
-	}
-	.arrow {
-		display: block;
-		@extend %default-shadow;
-		width: 45px;
-		height: 45px;
-		border-radius: 22.5px;
-		@extend %image-replace;
-		background: $color-midtone inline-image('arrow-left.svg') no-repeat 47% 50%;
-		background-size: 33%;
-	}
-}
-
 /* TODO: Remove heirarchy & general cleanup */
 .single {
+	.post {
+		font-size: $font-size-medium;
+	}
 	.post-title {
 		color: $color-dark;
+		font-weight: 300;
 	}
-	#excerpt {
+	.post-excerpt {
 		padding-bottom: $row-height * 2;
 		color: $color-midtone;
 		p {
 			padding-top: 0;
-			font: italic #{$font-size-xx-large}/1.55 #{$typeface-primary};
+			font: italic #{$font-size-x-large}/1.55 #{$typeface-primary};
 		}
 	}
 	.pagination {
 		margin-top:$row-height*2;
 	}
-	#content-main {
-		margin: $row-height * 2 0;
+	/*TODO: Better class name for this */
+	.content-main {
+		margin-top: $row-height * 2 auto;
 		@extend %border-bottom-light;
 		padding-bottom:$row-height;
 	}
@@ -68,10 +42,10 @@
 			margin-left: $gutter-width;
 		}
 		.flush-left {
-			margin-left: -26.1%;
+			margin-left: -26.1%; /*TODO: FIX THIS*/
 		}
 		img.flush-left, video.flush-left {
-			max-width:126.1%;
+			max-width:126.1%; /*TODO: FIX THIS*/
 		}
 
 		.alignright, .alignleft {
@@ -85,9 +59,6 @@
 		.alignleft {
 			margin-right: 20px;
 		}
-		p {
-			@extend .clearfix;
-		}
 	}
 }
 
@@ -96,23 +67,9 @@
 	margin:$row-height 0 $row-height*2 0;
 }
 
-#post-footer {
+.post-footer {
 	border-bottom:$border-break;
 	padding-bottom:$row-height;
-	margin: 0 0 $row-height * 2 0;
-	/* TODO: Try this pattern out :not(:last-child) */
-	.widget:nth-child(4n) {
-		margin-right: $gutter-width;
-	}
-	.widget:nth-child(4n+1) {
-		clear:none;
-	}
-	.widget:nth-child(3n) {
-		margin-right:0;
-	}
-	.widget:nth-child(3n+1) {
-		clear:left;
-	}
 }
 /*MOBILE*/
 @media only screen and  (max-width: 767px) {

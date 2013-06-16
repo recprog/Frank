@@ -118,8 +118,7 @@ dd {
 }
 
 #content-primary {
-	@extend .column;
-	width: $nine-columns;
+	@extend .span9;
 }
 
 #content.page .post img {

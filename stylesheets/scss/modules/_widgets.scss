@@ -1,25 +1,16 @@
 .widget {
 	font-size: $font-size-x-small;
 	margin-bottom:$row-height;
-	p {
-		font-size: $font-size-x-small;
-	}
 }
 
 .widget-title {
-	font-size: $font-size-small;
 	@extend .truncate;
 }
 
-.widget.six.columns, .widget.three.columns, .widget.four.columns {
+.widget.span3, .widget.span4, .widget.span6 {
 	float:left !important;
 }
 
-.widget.six.columns:nth-child(2n+1), .widget.three.columns:nth-child(4n+1), .widget.four.columns:nth-child(3n+1) {
-	margin-left:0;
-	clear: left;
-}
-.widget.six.columns:nth-child(2n), .widget.three.columns:nth-child(4n), .widget.four.columns:nth-child(3n)  {
-	margin-right: 0;
-	float:right;
+.widget.span3:nth-child(n+5), .widget.span4:nth-child(n+4), .widget.span6:nth-child(n+3) {
+	display:none;
 }

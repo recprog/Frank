@@ -1,4 +1,5 @@
-#comments-container {
+.comments-container {
+	font-size:$font-size-small;
 	margin-top: $row-height * 4;
 	.pagination {
 		margin-bottom:$row-height*2;
@@ -13,19 +14,19 @@
 
 #comment-form-logged-in-as, #comment-form-info {
 	@extend .column;
-	width: $three-columns;
+	@extend .span2;
 }
 
 #comment-form-content {
 	@extend .column;
-	width: $nine-columns;
+	@extend .span8;
 }
 
 .comment-content {
 	@extend .clearfix;
 	@extend .column;
-	width: $nine-columns;
-	@extend .offset3;
+	@extend .span8;
+	@extend .push2;
 	font-family: $typeface-primary;
 	blockquote, blockquote p {
 		font-size: $font-size-small;
@@ -38,26 +39,31 @@
 
 .comment-info {
 	@extend .column;
-	width: $three-columns;
-	@extend .pull9;
+	@extend .span2;
+	@extend .pull8;
 }
 
 #comment-form-allowed-tags {
 	@extend .column;
-	width: $nine-columns;
-	@extend .push3;
+	@extend .span8;
+	@extend .push2;
 }
 
-#comments {
+.comments {
 	list-style: none;
 	padding-left: 0;
 	margin-left: 0;
 	.comment {
 		@extend %reset;
 	}
-	.date-time {
-		display:block;
-		margin-top:3px;
+	.comment.parent {
+		/*TODO: Figure out a visual style for this*/
+	}
+	.metadata {
+		font-size:$font-size-xx-small;
+		.date {
+			@extend .truncate;
+		}
 	}
 	.comment:not(:first-child) {
 		@extend %vertical-margin-x4;
@@ -66,16 +72,16 @@
 		margin-bottom:0;
 	}
 	.comment.bypostauthor  {
-		@extend %vertical-margin-x3;
+		padding:$row-height*2 0;
 	}
 	.comment-edit-link {
 		font-weight: $font-weight-bold;
 		color:$color-accent;
 	}
 	.children {
-		list-style: none;
-		margin-left: 40px;
-		margin-top:0;
+		/*TODO: Figure out a visual style for this*/
+		margin-left:0;
+		list-style:none;
 		.comment {
 			@extend %vertical-margin-x2;
 		}
@@ -101,7 +107,7 @@
 	#submit {
 		margin-top: $row-height;
 		/*TODO: Extend .push-three?*/
-		@extend .offset3;
+		@extend .push3;
 	}
 	.loggedin { font-style: italic; }
 }
