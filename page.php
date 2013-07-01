@@ -21,7 +21,6 @@
 			<?php endwhile; endif; ?>
 			<?php comments_template(); ?>
 		</main>
-		<?php get_sidebar(); ?>
 	</div>
 </div>
 <?php get_footer(); ?>

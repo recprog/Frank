@@ -81,4 +81,13 @@
 			display:none !important;
 		}
 	}
+
+	.content.single .post {
+		.flush-left {
+			margin-left: 0% !important;
+		}
+		img.flush-left {
+			max-width:100% !important;
+		}
+	}
 }

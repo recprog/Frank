@@ -37,7 +37,6 @@
 			</div>
 			<?php endif; ?>
 		</main>
-		<?php get_template_part( 'partials/sidebars/sidebar', 'archive' ); ?>
 	</div>
 </div>
 

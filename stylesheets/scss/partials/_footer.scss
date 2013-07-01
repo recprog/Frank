@@ -1,11 +1,12 @@
-#page-bottom {
+.page-bottom {
 	background: $color-midtone;
 	color: $color-light;
 	@extend %text-emboss;
 }
 
-#page-footer {
-	padding:$row-height *2 0;
+.page-footer {
+	padding-top:$row-height *2;
+	padding-bottom:$row-height *2;
 	margin-top: $row-height * 2;
 	h3 { color: $color-highlight; }
 	a { color: $color-highlight; }

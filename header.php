@@ -32,10 +32,10 @@
 		<div class="chromeframe">Your browser is out of date. Please <a href="http://browsehappy.com/">upgrade your browser </a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a>.</div>
 	<![endif]-->
 <div class="container">
-	<header id="page-header" class="row">
-		<hgroup id="site-title-description">
-			<h1 id="site-title"><a href="<?php echo home_url(); ?>"><?php bloginfo( 'name' ); ?></a></h1>
-			<h2 id="site-description"><?php bloginfo( 'description' ); ?></h2>
+	<header class="page-header row">
+		<hgroup class="site-title-description">
+			<h1 class="site-title"><a href="<?php echo home_url(); ?>"><?php bloginfo( 'name' ); ?></a></h1>
+			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
 		</hgroup>
 
 		<?php
@@ -66,15 +66,9 @@
 			<?php endif; ?>
 		</a>
 		<?php endif; ?>
-		<nav id="site-nav" class="row">
+		<nav class="site-nav" class="row">
 			<?php if ( !dynamic_sidebar( 'Navigation' ) ) : ?>
 				<?php wp_nav_menu( array( 'theme_location' => 'frank_primary_navigation', 'container' => false ) ); ?>
 			<?php endif; ?>
 		</nav>
-		<?php if ( is_active_sidebar( 'widget-subheader' ) ) : ?>
-		<div id='sub-header' class='row'>
-			<?php if ( !dynamic_sidebar( 'Sub Header' ) ) : ?>
-			<?php endif; ?>
-		</div>
-		<?php endif; ?>
-	</header>
+</header>

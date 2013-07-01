@@ -12,6 +12,7 @@
 
 .wp-caption {
 	text-align: center;
+	max-width: 100%;
 	@extend %vertical-margin-x1;
 	img {
 		@extend %reset;
@@ -20,7 +21,7 @@
 }
 
 .wp-caption-text {
-	font-size: $font-size-small !important;
+	font-size: $font-size-x-small !important;
 	color:$color-midtone;
 	margin-top:10px;
 }

@@ -7,46 +7,33 @@ html,
 body {
   font-size: 10px; }
 
-img,
-object,
-embed {
-  max-width: 100%;
-  height: auto; }
-
-object,
-embed {
-  height: 100%; }
 
 img {
+  max-width: 100%;
+  height: auto;
   display: inline-block;
   vertical-align: middle; }
 
-.clearfix:before, .clearfix:after { content:""; display:table; }
-.clearfix:after { clear: both; }
-.clearfix { zoom: 1; }
+@media only screen and (max-width: 768px) {
 
-/* Grid HTML Classes */
+object,
+iframe,
+embed {
+  max-width: 100%;
+  height: auto; }
+}
+
 .row {
   width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 0;
-  margin-bottom: 0;
+  margin: 0 auto;
   max-width: 98rem;
-  *zoom: 1; }
-  .row:before, .row:after {
+ } //TODO: Remove IE-specific rules
+
+ .row:before, .row:after {
     content: " ";
     display: table; }
   .row:after {
     clear: both; }
-  .row .row {
-    width: auto;
-    margin-left: 2rem;
-    margin-right: -2rem;
-    margin-top: 0;
-    margin-bottom: 0;
-    max-width: none;
-    *zoom: 1; }
     .row .row:before, .row .row:after {
       content: " ";
       display: table; }
@@ -54,7 +41,30 @@ img {
       clear: both; }
 
 
-.column {
+.clearfix:before, .clearfix:after { content:""; display:table; }
+.clearfix:after { clear: both; }
+.clearfix { zoom: 1; }
+
+.container {
+  padding: 0 20px;
+}
+
+.column, .row [class*="span"], .span1, .span2, .span3, .span4, .span5, .span6, .span7, .span8, .span9, .span10, .span11, .span12 {
+  width:100%;
+}
+
+
+
+@media only screen and (min-width: 768px) {
+/* Grid HTML Classes */
+
+.row .row {
+  width: auto;
+  margin: 0 -2rem 0 2rem;
+  max-width: none;
+}
+
+.column, .row [class*="span"] {
   @extend %column;
 }
 
@@ -62,12 +72,7 @@ img {
   position: relative;
   padding-left: 2rem;
   padding-right: 2rem;
-  /*width: 100%;*/  //TODO: Figure out if this is needed
   float: left; }
-
-.row [class*="span"] {
-  @extend .column;
-}
 
 %relative {
   position: relative;
@@ -206,6 +211,7 @@ img {
 .pull11 {
   @extend %pull;
   right: 91.66667%; }
+}
 
 .column-centered {
   position: relative;

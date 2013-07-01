@@ -109,10 +109,6 @@ dd {
 	position: relative;
 }
 
-.content.page .post img {
-	box-shadow: none !important;
-}
-
 /*Search - not implemented*/
 #searchform input {
 	width:100%;
@@ -124,18 +120,5 @@ dd {
 		display: none; }
 	#search_form input {
 		font-size: $font-size-x-small;
-	}
-}
-
-/*MOBILE*/
-@media only screen and  (max-width: 767px) {
-
-	.content.single .post {
-		.flush-left {
-			margin-left: 0% !important;
-		}
-		img.flush-left {
-			max-width:100% !important;
-		}
 	}
 }
