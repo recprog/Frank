@@ -74,7 +74,13 @@ embed {
   position: relative;
   padding-left: 2rem;
   padding-right: 2rem;
-  float: left; }
+  float: left;
+}
+
+.column-full {
+  @extend %column;
+  width: 100%;
+}
 
 %relative {
   position: relative;

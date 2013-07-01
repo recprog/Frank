@@ -83,8 +83,7 @@ dd {
 
 /*Pagination links*/
 .pagination {
-	@extend .column;
-	@extend .span12;
+	@extend .column-full;
 	font-size: $font-size-small;
 	a {
 		margin-right: $gutter-width;

@@ -433,7 +433,7 @@ img {
 }
 
 @media only screen and (max-width: 768px) {
-  .column, .pagination, .row [class*="span"], .span1, .span2, .span3, .span4, .span5, .span6, .span7, .span8, .span9, .span10, .span11, .span12, .pagination {
+  .column, .row [class*="span"], .span1, .span2, .span3, .span4, .span5, .span6, .span7, .span8, .span9, .span10, .span11, .span12 {
     width: 100%;
     padding-left: 2rem;
     padding-right: 2rem;
@@ -447,11 +447,15 @@ img {
     max-width: none;
   }
 
-  .column, .pagination, .row [class*="span"] {
+  .column, .row [class*="span"], .column-full, .pagination {
     position: relative;
     padding-left: 2rem;
     padding-right: 2rem;
     float: left;
+  }
+
+  .column-full, .pagination {
+    width: 100%;
   }
 
   .push1, .push2, .push3, .push4, .push5, .push6, .push7, .push8, .push9, .push10, .push11 {
@@ -508,7 +512,7 @@ img {
     width: 91.66667%;
   }
 
-  .span12, .pagination {
+  .span12 {
     width: 100%;
   }
 

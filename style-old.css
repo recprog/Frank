@@ -462,7 +462,7 @@ img {
 }
 
 @media only screen and (max-width: 768px) {
-  .column, .pagination, .site-title-description, .site-banner, .site-nav, .post:not(.post-large) .post-title, .type-page .post-title, .post:not(.post-large) .post-content, .type-page .post-content, .post:not(.post-large) .post-info, .type-page .post-info, .post-large .post-info, .post-large .post-content, .post-large .post-header, #comment-form-logged-in-as, #comment-form-info, #comment-form-content, .comment-content, .comment-info, #comment-form-allowed-tags, .row [class*="span"], .span1, .span2, .post:not(.post-large) .post-info, .type-page .post-info, #comment-form-logged-in-as, #comment-form-info, .comment-info, .span3, .span4, .span5, .span6, .span7, .span8, .post:not(.post-large) .post-content, .type-page .post-content, #comment-form-content, .comment-content, #comment-form-allowed-tags, .span9, .span10, .span11, .span12, .pagination, .site-title-description, .site-banner, .site-nav, .post:not(.post-large) .post-title, .type-page .post-title, .post-large .post-info, .post-large .post-content, .post-large .post-header {
+  .column, .post:not(.post-large) .post-content, .type-page .post-content, .post:not(.post-large) .post-info, .type-page .post-info, #comment-form-logged-in-as, #comment-form-info, #comment-form-content, .comment-content, .comment-info, #comment-form-allowed-tags, .row [class*="span"], .span1, .span2, .post:not(.post-large) .post-info, .type-page .post-info, #comment-form-logged-in-as, #comment-form-info, .comment-info, .span3, .span4, .span5, .span6, .span7, .span8, .post:not(.post-large) .post-content, .type-page .post-content, #comment-form-content, .comment-content, #comment-form-allowed-tags, .span9, .span10, .span11, .span12 {
     width: 100%;
     padding-left: 2rem;
     padding-right: 2rem;
@@ -476,11 +476,15 @@ img {
     max-width: none;
   }
 
-  .column, .pagination, .site-title-description, .site-banner, .site-nav, .post:not(.post-large) .post-title, .type-page .post-title, .post:not(.post-large) .post-content, .type-page .post-content, .post:not(.post-large) .post-info, .type-page .post-info, .post-large .post-info, .post-large .post-content, .post-large .post-header, #comment-form-logged-in-as, #comment-form-info, #comment-form-content, .comment-content, .comment-info, #comment-form-allowed-tags, .row [class*="span"] {
+  .column, .post:not(.post-large) .post-content, .type-page .post-content, .post:not(.post-large) .post-info, .type-page .post-info, #comment-form-logged-in-as, #comment-form-info, #comment-form-content, .comment-content, .comment-info, #comment-form-allowed-tags, .row [class*="span"], .column-full, .pagination, .site-title-description, .site-banner, .site-nav, .post:not(.post-large) .post-title, .type-page .post-title, .post-large .post-info, .post-large .post-content, .post-large .post-header {
     position: relative;
     padding-left: 2rem;
     padding-right: 2rem;
     float: left;
+  }
+
+  .column-full, .pagination, .site-title-description, .site-banner, .site-nav, .post:not(.post-large) .post-title, .type-page .post-title, .post-large .post-info, .post-large .post-content, .post-large .post-header {
+    width: 100%;
   }
 
   .push1, .push2, .post:not(.post-large) .post-content, .type-page .post-content, .comment-content, #comment-form-allowed-tags, .push3, #respond #submit, .push4, .push5, .push6, .push7, .push8, .push9, .push10, .push11 {
@@ -537,7 +541,7 @@ img {
     width: 91.66667%;
   }
 
-  .span12, .pagination, .site-title-description, .site-banner, .site-nav, .post:not(.post-large) .post-title, .type-page .post-title, .post-large .post-info, .post-large .post-content, .post-large .post-header {
+  .span12 {
     width: 100%;
   }
 

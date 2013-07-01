@@ -33,8 +33,7 @@
 .post:not(.post-large), .type-page {
 
 	.post-title {
-		@extend .column;
-		@extend .span12;
+		@extend .column-full;
 	}
 
 	.post-content {
@@ -51,13 +50,11 @@
 
 .post-large {
 	.post-info {
-		@extend .column;
-		@extend .span12;
+		@extend .column-full;
 	}
 
 	.post-content {
-		@extend .column;
-		@extend .span12;
+		@extend .column-full;
 		margin-bottom: $row-height;
 	}
 	p {
@@ -66,8 +63,7 @@
 		margin: 0 0 $row-height;
 	}
 	.post-header {
-		@extend .column;
-		@extend .span12;
+		@extend .column-full;
 	}
 }
 
