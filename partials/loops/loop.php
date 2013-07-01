@@ -1,4 +1,4 @@
-<div class='row'>
+
 <?php
 if ( is_home() && !is_paged() ) {
 	$sticky = get_option( 'sticky_posts' );
@@ -26,4 +26,3 @@ if ( is_home() && !is_paged() ) {
 			<?php if ( is_sticky( $post->ID ) ) continue; ?>
 			<?php get_template_part( 'partials/posts/post' ); ?>
 		<?php endwhile; endif; ?>
-</div>

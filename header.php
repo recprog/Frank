@@ -27,7 +27,7 @@
 	<?php if ( is_singular() ) wp_enqueue_script( 'comment-reply' ); ?>
 	<?php wp_head(); ?>
 </head>
-<body id="page" <?php body_class(); ?>>
+<body <?php body_class( 'body' ); ?>>
 	<!--[if lt IE 9]>
 		<div class="chromeframe">Your browser is out of date. Please <a href="http://browsehappy.com/">upgrade your browser </a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a>.</div>
 	<![endif]-->
@@ -47,7 +47,7 @@
 					$header_image_width = HEADER_IMAGE_WIDTH;
 				}
 				?>
-		<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
+		<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="site-banner">
 			<?php
 				if ( is_singular() && has_post_thumbnail( $post->ID ) &&
 						( $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), array( $header_image_width, $header_image_width ) ) ) &&
@@ -66,7 +66,7 @@
 			<?php endif; ?>
 		</a>
 		<?php endif; ?>
-		<nav class="site-nav" class="row">
+		<nav class="site-nav">
 			<?php if ( !dynamic_sidebar( 'Navigation' ) ) : ?>
 				<?php wp_nav_menu( array( 'theme_location' => 'frank_primary_navigation', 'container' => false ) ); ?>
 			<?php endif; ?>

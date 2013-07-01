@@ -1,5 +1,7 @@
 .site-title-description {
 	margin-top: $row-height;
+	@extend .column;
+	@extend .span12;
 }
 
 .site-title {
@@ -12,8 +14,17 @@
 	font-size: $font-size-x-small;
 }
 
+.site-banner {
+	@extend .column;
+	@extend .span12;
+	display:block;
+}
+
 .site-nav {
-	margin:$row-height 0 $row-height * 2 0;
+	@extend .column;
+	@extend .span12;
+	margin-top:$row-height;
+	margin-bottom: $row-height;
 	border-bottom:$border-break;
 }
 

@@ -4,10 +4,11 @@
  */
 ?>
 
-<div class="comments-container row">
+
 	<?php if ( post_password_required() ) : ?>
-		<p class="nocomments">This post is password protected. Enter the password to view comments.</p> ?></p>
-	</div>
+		<div class="comments-container row">
+			<p class="nocomments">This post is password protected. Enter the password to view comments.</p>
+		</div>
 	<?php
 			return;
 		endif;
@@ -16,6 +17,7 @@
 
 
 <?php if ( have_comments() ) : ?>
+<div class="comments-container row">
 	<header class="comments-header">
 		<h1 class="comments-title">
 		<?php
@@ -108,6 +110,8 @@
 
 	<?php
 	endif;
+	?>
+	</div>
+<?php
 endif;
 ?>
-</div>

@@ -7,9 +7,9 @@ Template Name: Frank Full-spread Template
 */
 ?>
 <?php get_header(); ?>
-<div id="content" class="page fullspread">
+<div class="content fullspread">
 	<div class="row">
-	<main id="content-primary" role="main">
+	<main class="content-primary" role="main">
 		<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 		<article class="post" id="p<?php the_ID(); ?>">
 			<header class="post-header">

@@ -4,7 +4,7 @@
  */
 ?>
 <?php get_header(); ?>
-<div id="content" class="attachement">
+<div class="content">
 	<div class="row">
 		<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 		<article class="post clear" id="p<?php the_ID(); ?>">

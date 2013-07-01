@@ -7,7 +7,8 @@
 }
 
 .post + .post, .type-page + .type-page {
-	@extend %vertical-margin-x4;
+	margin-top: $row-height *4;
+	margin-bottom: $row-height *4;
 }
 
 .post-content {
@@ -30,6 +31,12 @@
 }
 
 .post:not(.post-large), .type-page {
+
+	.post-title {
+		@extend .column;
+		@extend .span12;
+	}
+
 	.post-content {
 		@extend .column;
 		@extend .span8;
@@ -43,13 +50,24 @@
 }
 
 .post-large {
+	.post-info {
+		@extend .column;
+		@extend .span12;
+	}
+
 	.post-content {
-		margin: 0 0 $row-height 0;
+		@extend .column;
+		@extend .span12;
+		margin-bottom: $row-height;
 	}
 	p {
 		font-style: italic;
 		font-size: $font-size-xx-large;
 		margin: 0 0 $row-height;
+	}
+	.post-header {
+		@extend .column;
+		@extend .span12;
 	}
 }
 
