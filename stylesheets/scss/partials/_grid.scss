@@ -50,7 +50,7 @@ embed {
 }
 
 @media only screen and (max-width: 768px) {
-  .column, .row [class*="span"], .span1, .span2, .span3, .span4, .span5, .span6, .span7, .span8, .span9, .span10, .span11, .span12 {
+  .column, .column-full, .row [class*="span"], .span1, .span2, .span3, .span4, .span5, .span6, .span7, .span8, .span9, .span10, .span11, .span12 {
     width:100%;
     padding-left: 2rem;
     padding-right: 2rem;

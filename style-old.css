@@ -462,7 +462,7 @@ img {
 }
 
 @media only screen and (max-width: 768px) {
-  .column, .post:not(.post-large) .post-content, .type-page .post-content, .post:not(.post-large) .post-info, .type-page .post-info, #comment-form-logged-in-as, #comment-form-info, #comment-form-content, .comment-content, .comment-info, #comment-form-allowed-tags, .row [class*="span"], .span1, .span2, .post:not(.post-large) .post-info, .type-page .post-info, #comment-form-logged-in-as, #comment-form-info, .comment-info, .span3, .span4, .span5, .span6, .span7, .span8, .post:not(.post-large) .post-content, .type-page .post-content, #comment-form-content, .comment-content, #comment-form-allowed-tags, .span9, .span10, .span11, .span12 {
+  .column, .post:not(.post-large) .post-content, .type-page .post-content, .post:not(.post-large) .post-info, .type-page .post-info, #comment-form-logged-in-as, #comment-form-info, #comment-form-content, .comment-content, .comment-info, #comment-form-allowed-tags, .column-full, .pagination, .site-title-description, .site-banner, .site-nav, .post:not(.post-large) .post-title, .type-page .post-title, .post-large .post-info, .post-large .post-content, .post-large .post-header, .row [class*="span"], .span1, .span2, .post:not(.post-large) .post-info, .type-page .post-info, #comment-form-logged-in-as, #comment-form-info, .comment-info, .span3, .span4, .span5, .span6, .span7, .span8, .post:not(.post-large) .post-content, .type-page .post-content, #comment-form-content, .comment-content, #comment-form-allowed-tags, .span9, .span10, .span11, .span12 {
     width: 100%;
     padding-left: 2rem;
     padding-right: 2rem;
