@@ -1,11 +1,11 @@
 input[type=text],
 textarea {
-	border: 2px solid $color-midtone;
-	font: #{$font-size-small} #{$typeface-secondary};
+	border: 2px solid $color-light;
+	font: #{$font-size-x-small} #{$typeface-secondary};
 	color: $color-midtone;
 	padding: 3px 4px;
 	border-radius: 2px;
 	&:focus {
-		border: 2px solid $color-off-black;
+		border: 2px solid lighten($color-midtone, 25%);
 	}
 }

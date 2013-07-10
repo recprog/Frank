@@ -18,11 +18,14 @@ table {
 /* ==========================================================================
    HTML5 display definitions
    ========================================================================== */
-* {
+*,
+*:before,
+*:after {
   box-sizing: border-box;
-  -webkit-transform: translate3d(0, 0, 0);
-  -moz-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0);
+}
+
+*:focus {
+  outline: none;
 }
 
 /*
@@ -363,12 +366,6 @@ textarea {
 table {
   border-collapse: collapse;
   border-spacing: 0;
-}
-
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
 }
 
 html,
@@ -747,6 +744,11 @@ dd {
 .content {
   margin: 0 0 6rem 0;
   position: relative;
+}
+
+.page-title {
+  font-size: 3.4rem;
+  font-weight: 300;
 }
 
 /*Search - not implemented*/

@@ -4,14 +4,14 @@
 		font-size: $font-size-medium;
 	}
 	.post-title {
-		color: $color-dark;
 		font-weight: 300;
 	}
 	.post-excerpt {
 		padding-bottom: $row-height * 2;
 		color: $color-midtone;
 		p {
-			padding-top: 0;
+			@extend .column-full;
+			margin-bottom: 0;
 			font: italic #{$font-size-x-large}/1.55 #{$typeface-primary};
 		}
 	}
@@ -20,7 +20,8 @@
 	}
 	/*TODO: Better class name for this */
 	.content-main {
-		margin-top: $row-height * 2 auto;
+		margin-top: $row-height * 2;
+		margin-bottom: $row-height * 2;
 		@extend %border-bottom-light;
 		padding-bottom:$row-height;
 	}

@@ -6,15 +6,32 @@
 	}
 }
 
-.no_comments, .comments_closed {
-		@extend %vertical-margin-x2;
-		font: italic #{$font-size-xx-large}/1.25 #{$typeface-primary};
-		color: $color-midtone;
+.comments-header {
+	@extend .column-full;
+}
+
+.no-comments, .comments-closed {
+	@extend .column-full;
+	@extend %vertical-margin-x2;
+	font: italic #{$font-size-xx-large}/1.25 #{$typeface-primary};
+	color: $color-midtone;
 }
 
 #comment-form-logged-in-as, #comment-form-info {
 	@extend .column;
 	@extend .span2;
+}
+
+.form-submit {
+	clear:both;
+	margin-top: $row-height;
+	@extend .column;
+	@extend .span8;
+	@extend .push2;
+}
+
+#comment-form {
+	@extend .row;
 }
 
 #comment-form-content {
@@ -43,16 +60,23 @@
 	@extend .pull8;
 }
 
+
+
 #comment-form-allowed-tags {
 	@extend .column;
 	@extend .span8;
 	@extend .push2;
 }
 
+.html-explanation {
+	font-size: 1.2rem;
+	margin-top: $row-height;
+}
+
 .comments-list {
+	@extend %reset;
+	@extend .column-full;
 	list-style: none;
-	padding-left: 0;
-	margin-left: 0;
 	.comment {
 		@extend %reset;
 	}
@@ -90,6 +114,7 @@
 
 /*TODO reference IDs instead of tags*/
 #respond {
+	@extend .column-full;
 	margin-top:$row-height*4;
 	label { display: none; }
 	input[type=text], textarea {
@@ -98,16 +123,13 @@
 	input[type=text] {
 		margin-bottom: $row-height;
 		text-align: right;
+		&:last-child {
+			margin-bottom: 0;
+		}
 	}
 	textarea {
 		margin: 0;
 		height: 118px;
-		&:focus { height: $row-height * 25; }
-	}
-	#submit {
-		margin-top: $row-height;
-		/*TODO: Extend .push-three?*/
-		@extend .push3;
 	}
 	.loggedin { font-style: italic; }
 }

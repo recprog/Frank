@@ -1,13 +1,13 @@
 /* ==========================================================================
    HTML5 display definitions
    ========================================================================== */
-
-* {
+*,
+*:before,
+*:after {
   box-sizing: border-box;
-  -webkit-transform: translate3d(0, 0, 0);
-  -moz-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0);
 }
+
+*:focus {outline: none;}
 
 /*
  * Corrects `block` display not defined in IE 8/9.

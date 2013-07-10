@@ -43,11 +43,15 @@
 	<?php
 		elseif ( ! comments_open() && ! is_page() && post_type_supports( get_post_type(), 'comments' ) ) :
 	?>
-		<p id="comments" class="no_comments">Comments are closed.</p>
+		<div class="row">
+			<p id="comments" class="no-comments">Comments are closed.</p>
+		</div>
 	<?php elseif (comments_open()) : ?>
-		<p id="comments" class="no_comments">
-			<?php _e( 'Be the first to leave a comment. Don&rsquo;t be shy.', 'frank_theme' ); ?>
-		</p>
+		<div class="row">
+			<p id="comments" class="no-comments">
+				<?php _e( 'Be the first to leave a comment. Don&rsquo;t be shy.', 'frank_theme' ); ?>
+			</p>
+		</div>
 <?php endif; ?>
 
 
@@ -91,7 +95,7 @@
 		) . '</p></div>';
 
 		$html_explanation    = sprintf( __( 'You may use these %1$s tags and attributes:', 'frank_theme' ), '<abbr title="HyperText Markup Language">HTML</abbr>' );
-		$comment_notes_after = '<div id="comment-form-allowed-tags"><p>' . $html_explanation . ' ' . '<code>' . allowed_tags() . '</code>' . '</p></div>';
+		$comment_notes_after = '<div id="comment-form-allowed-tags" class="html-explanation"><p>' . $html_explanation . ' ' . '<code>' . allowed_tags() . '</code>' . '</p></div>';
 
 		$reply_title = __( 'Join the Discussion', 'frank_theme' );
 

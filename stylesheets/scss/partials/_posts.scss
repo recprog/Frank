@@ -2,16 +2,18 @@
 	margin: $row-height*4 auto;
 }
 
-.post {
+.type-page, .type-post {
 	font: #{$font-size-small}/1.6 #{$typeface-primary};
 }
 
-.post + .post, .type-page + .type-page {
+.type-post + .type-post, .type-page + .type-page {
 	margin-top: $row-height *4;
 	margin-bottom: $row-height *4;
 }
 
 .post-content {
+	@extend .column-full;
+	margin-bottom: $row-height;
 	p, li, dt, dd, blockquote {
 		font-size: 1em;
 	}
@@ -30,12 +32,15 @@
 	opacity:.33;
 }
 
-.post:not(.post-large), .type-page {
+.post-title {
+	@extend .column-full;
+}
 
-	.post-title {
-		@extend .column-full;
-	}
+.post-info {
+	@extend .column-full;
+}
 
+.type-post:not(.post-large) {
 	.post-content {
 		@extend .column;
 		@extend .span8;
@@ -49,21 +54,10 @@
 }
 
 .post-large {
-	.post-info {
-		@extend .column-full;
-	}
-
-	.post-content {
-		@extend .column-full;
-		margin-bottom: $row-height;
-	}
 	p {
 		font-style: italic;
 		font-size: $font-size-xx-large;
 		margin: 0 0 $row-height;
-	}
-	.post-header {
-		@extend .column-full;
 	}
 }
 

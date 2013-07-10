@@ -40,5 +40,5 @@
 
 .bypostauthor {
 	@extend %vertical-border-break-dark;
-	border-color: $color-midtone;
+	border-color: lighten($color-midtone, 50%);
 }
