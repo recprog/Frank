@@ -130,7 +130,7 @@ function frank_build_settings_page() {
 
 					case 'performance' :
 						require_once 'frank-theme-options-performance.php';
-						break;
+						break; // END CASE "PERFORMANCE"
 
 				} /* END SWITCH STATMENT */
 
