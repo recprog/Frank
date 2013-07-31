@@ -84,7 +84,7 @@ function frank_build_settings_page() {
 
 	// SET FILE DIRECTORY
 	$file_dir = get_template_directory_uri();
-	
+
 	// SETUP NEEDED STYLES & SCRIPTS FOR OPTIONS PAGE
 	//wp_enqueue_script('jquery-ui-sortable' );
 	//wp_enqueue_script('frank-admin', $file_dir . '/admin/js/frank-utils.js', 'jquery', NULL, TRUE);
@@ -111,8 +111,8 @@ function frank_build_settings_page() {
 		<form method="post" action="">
 
 			<div id="settings-container"> <?php
-			
-			
+
+
 			if ($pagenow == 'themes.php' && $_GET['page'] == 'frank-settings') {
 
 				if (isset($_GET['tab'])) { $tab = $_GET['tab']; } else { $tab = 'general'; }
@@ -120,7 +120,7 @@ function frank_build_settings_page() {
 				switch ($tab) {
 
 					// SETUP OPTIONS FOR GENERAL TAB
-					case 'general' : 
+					case 'general' :
 						require_once 'frank-theme-options-general.php';
 						break;
 
@@ -128,13 +128,13 @@ function frank_build_settings_page() {
 						require_once 'frank-theme-options-home.php';
 						break; // END CASE "HOME"
 
-					case 'performance' : 
+					case 'performance' :
 						require_once 'frank-theme-options-performance.php';
 						break;
 
-					} // END CASE "PERFORMANCE"
+				} /* END SWITCH STATMENT */
 
-				} /* END SWITCH STATEMENT */ ?>
+			} /* ENDIF */ ?>
 
 				<div class="button-container bottom">
 
@@ -147,7 +147,7 @@ function frank_build_settings_page() {
 			</div><!-- // SETTINGS CONTAINER -->
 
 		</form><!-- // END FORM -->
-		
+
 		<?php
 			global $frank_warnings;
 			if (defined('WP_DEBUG')  && (WP_DEBUG == true)) {
