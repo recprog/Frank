@@ -97,6 +97,11 @@ add_image_size( 'two-up-thumbnail', 468, 200, true );
 add_image_size( 'three-up-thumbnail', 297, 150, true );
 add_image_size( 'four-up-thumbnail', 212, 100, true );
 
+add_image_size( 'large',  640, 640, true );
+add_image_size( 'medium', 300, 300, true );
+add_image_size( 'small',  150, 150, true );
+
+
 function frank_register_menu() {
 	register_nav_menu( 'frank_primary_navigation', 'Primary Navigation' );
 }
