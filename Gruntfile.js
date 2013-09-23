@@ -65,6 +65,7 @@ module.exports = function(grunt) {
               '!./node_modules/**',
               '!./docs/**',
               '!./.git/**',
+              '!./vendor/**',
               '!./Gruntfile.js',
               '!./package.json',
               '!./config.rb',
@@ -249,7 +250,7 @@ module.exports = function(grunt) {
             files: '<%= frank.coffeescripts %>/*.coffee',
             tasks: ['coffee']
           }
-        },
+        }
     });
 
     // load all grunt tasks
