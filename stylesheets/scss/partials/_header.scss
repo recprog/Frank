@@ -86,7 +86,7 @@
 }
 
 #page-header {
-    border-bottom: 2px solid $color-light;
+    border-bottom: 3px solid $color-accent;
     margin: $row-height * 2 auto $row-height * 2 auto;
 }
 
@@ -171,4 +171,13 @@
 
 #menu-primary .twitter {
     margin-top: 50px;
+}
+
+#bio_pic {
+    background: inline-image('christophe_head_shot_small.png') no-repeat center center;
+    max-width: 100%;
+    height: 142px;
+    display: block;
+    margin-bottom: 15px;
+    box-shadow: 0px 0px 8px rgba(18,7,6,0.3);
 }
