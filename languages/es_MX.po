@@ -1,0 +1,411 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tags/frank\n"
+"POT-Creation-Date: 2012-12-30 12:15:56+00:00\n"
+"PO-Revision-Date: 2014-03-23 23:17-0600\n"
+"Last-Translator: Emmanuel Ayala Mexicano <emmanuelayalamexicano@gmail.com>\n"
+"Language-Team: \n"
+"Language: es_MX\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.4\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: 404.php:11
+msgid "Page Not Found"
+msgstr "Página no encontrada"
+
+#: 404.php:24
+#, php-format
+msgid ""
+"Unfortunately, the page you are looking for no longer exists or never "
+"existed in the first place. If you reached this page in error, you can go %s "
+"and start over."
+msgstr ""
+"Desafortunadamente, la página que estás buscando no existe o no existió. Si "
+"llegaste a esta página por error, puedes ir a %s y comenzar de nuevo."
+
+#: 404.php:31
+msgid ""
+"If you believe this page exists, please try searching for the page in the "
+"search input below."
+msgstr ""
+"Si crees que esta página existe, por favor intenta buscar la página en el "
+"campo de búsqueda abajo. "
+
+#: comments.php:22 partials/post-metadata-horizontal.php:14
+#: partials/post-metadata.php:16
+msgid "No Comments"
+msgstr "Sin comentarios"
+
+#: comments.php:23 partials/post-metadata-horizontal.php:15
+#: partials/post-metadata.php:17
+msgid "One Comment"
+msgstr "Un comentario"
+
+#: comments.php:24 partials/post-metadata-horizontal.php:16
+#: partials/post-metadata.php:18
+msgid "% Comments"
+msgstr "% Comentarios"
+
+#: comments.php:45
+msgid "Be the first to leave a comment. Don&rsquo;t be shy."
+msgstr "Se el primero en dejar un comentario. No seas tímido. "
+
+#: comments.php:61
+msgid "Name (required)"
+msgstr "Nombre (necesario)"
+
+#: comments.php:62
+msgid "Email (required)"
+msgstr "Correo electrónico (necesario)"
+
+#: comments.php:63 comments.php:71 partials/comments/commentform.php:15
+msgid "Website"
+msgstr "Sitio Web"
+
+#: comments.php:67 partials/comments/commentform.php:11
+msgid "Name"
+msgstr "Nombre"
+
+#: comments.php:69 partials/comments/commentform.php:13
+msgid "Email"
+msgstr "Correo electrónico"
+
+#: comments.php:75
+msgid "Your Comment"
+msgstr "Tu comentario"
+
+#: comments.php:78
+msgid "Logged in as"
+msgstr "Es sesión como"
+
+#: comments.php:79
+msgid "Log out?"
+msgstr "¿Cerrar sesión?"
+
+#: comments.php:80
+msgid "Log out of this account"
+msgstr "Cerrar sesión para esta cuenta"
+
+#: comments.php:88
+#, php-format
+msgid "You may use these %1$s tags and attributes:"
+msgstr "Puedes utilizar estas %1$s etiquetas y atributos:"
+
+#: comments.php:91
+msgid "Join the Discussion"
+msgstr "Únete al debate"
+
+#: functions.php:339
+msgid "Frank Theme Options"
+msgstr "Opciones del tema de Frank"
+
+#: functions.php:347
+msgid "Are you sure you want to delete this Content Section?"
+msgstr "¿Estás seguro de que quieres eliminar esta sección de contenido?"
+
+#: functions.php:348
+msgid "(Drag & Drop Content Sections to Re-Order)"
+msgstr "(Arrastra y suelta la sección de contenidos para reorganizar)"
+
+#: functions.php:377
+msgid "Your comment is awaiting moderation"
+msgstr "Tu comentario está pendiente de moderación"
+
+#: search.php:14
+msgid "Search Results for"
+msgstr "Resultados de búsqueda para"
+
+#: search.php:30
+msgid "No Results Were Found"
+msgstr "No se encontraron resultados"
+
+#: search.php:33
+msgid ""
+"There were no matches for your search. Please try a different search term."
+msgstr ""
+"No hubo resultados para tu búsqueda. Por favor intenta con un término "
+"distinto. "
+
+#: searchform.php:7
+msgid "Type your query, hit enter"
+msgstr "Escribe tu consulta, presiona enter"
+
+#: sidebar.php:9 partials/sidebars/sidebar-archive.php:9
+#: partials/sidebars/sidebar-index.php:9
+#: partials/sidebars/sidebar-single.php:9
+msgid "About This Site"
+msgstr "Acerca de este sitio"
+
+#: sidebar.php:13 partials/sidebars/sidebar-archive.php:13
+#: partials/sidebars/sidebar-index.php:13
+#: partials/sidebars/sidebar-single.php:13
+msgid "Search"
+msgstr "Buscar"
+
+#: single.php:28
+msgid "Tweet this Post"
+msgstr "Tuitea esta publicación"
+
+#: admin/frank-theme-options-general.php:1 admin/frank-theme-options.php:7
+msgid "General Settings"
+msgstr "Configuración general"
+
+#: admin/frank-theme-options-general.php:36
+#: admin/frank-theme-options-home.php:76
+#: admin/frank-theme-options-performance.php:35
+#: admin/frank-theme-options.php:141
+msgid "Update Settings"
+msgstr "Ajustes de actualización"
+
+#: admin/frank-theme-options-general.php:44
+msgid "Custom Header Code"
+msgstr "Código de encabezado personalizado"
+
+#: admin/frank-theme-options-general.php:50
+msgid ""
+"This feature allows you to write or copy and paste your own code straight "
+"into the header. Many people use this feature to include their Google "
+"Analytics code, or other small bits of Javascript. Feel free to use this as "
+"you wish!"
+msgstr ""
+"Esta característica te permite escribir o copiar y pegar tu propio código "
+"directamente en el encabezado. Mucha gente utiliza esta función para incluir "
+"su código de Google Analytics, u otros pequeños fragmentos de Javascript. "
+"¡Siéntete libre de utilizar esto como deseas!"
+
+#: admin/frank-theme-options-general.php:59
+msgid "Custom Footer Code"
+msgstr "Código personalizado del pie de página"
+
+#: admin/frank-theme-options-general.php:65
+msgid ""
+"This feature allows you to write or copy and paste your own code directly to "
+"the footer. A lot of people use this feature to include external and "
+"internal Javascript files, for plugins and things of the sort. Use it as you "
+"wish!"
+msgstr ""
+"Esta característica te permite escribir o copiar y pegar tu propio código "
+"directamente en el pie de página. Mucha gente utiliza esta característica "
+"para incluir archivos de javascript (internos y externos) para plugins y "
+"características similares. ¡Utilízalo como desees!"
+
+#: admin/frank-theme-options-general.php:72
+msgid "Tweet This"
+msgstr "Tuitea esto"
+
+#: admin/frank-theme-options-general.php:82
+msgid "Add a \"Tweet This Post\" Button to Post Templates."
+msgstr ""
+"Agreaga un botón \" Tuitea esta publicación \" a las pantillas de las "
+"publicaciones."
+
+#: admin/frank-theme-options-general.php:87
+msgid ""
+"This feature gives you the option to integrate a little bit of social "
+"networking directly into your posts. By turning this feature on, we'll "
+"automatically create a \"Tweet\" Button people can use to share your content!"
+msgstr ""
+"Esta característica te da la opción de integrar un poco de las redes "
+"sociales directamente en tus publicaciones. Al encender esta característica, "
+"se va a crear de manera automática un botón \"Tweet\" para que la gente "
+"pueda compartir tu contenido."
+
+#: admin/frank-theme-options-general.php:94
+msgid "Twitter Handle"
+msgstr "Administrador de twitter"
+
+#: admin/frank-theme-options-general.php:103
+msgid ""
+"By entering your handle once right here, you can easily reference this "
+"setting throughout the theme and change it later with ease, if needed. "
+"Refrain from using the '@' sign. An example handle: 'somerandomdude'."
+msgstr ""
+"Al introducir tu manejador una vez correctamente aquí, puedes de manera "
+"fácil hacer referencia a esta propiedad a través de todo el tema y después "
+"ajustarla con facilidad, si es necesario. Abstente de utilizar el signo '@'. "
+"Un ejemplo de un manejador: 'somerandomdude'"
+
+#: admin/frank-theme-options-home.php:2 admin/frank-theme-options.php:8
+msgid "Home Page Settings"
+msgstr "Ajustes de la página principal"
+
+#: admin/frank-theme-options-home.php:85
+msgid ""
+"Content Sections give you the opportunity to create a dynamic homepage for "
+"you to keep your readers engaged. With a vast variety of different layouts, "
+"you have the choice to select a look that works best for you."
+msgstr ""
+"La sección de contenidos te da la oportunidad de crear una página principal "
+"dinámica para que mantengas a tus lectores interesados. Con una vasta "
+"variedad de despliegues diferentes, tienes la opción de seleccionar una "
+"apariencia que funcione mejor para ti. "
+
+#: admin/frank-theme-options-home.php:100
+msgid "Content Section"
+msgstr "Sección de contenido"
+
+#: admin/frank-theme-options-home.php:113
+msgid "Display Type:"
+msgstr "Tipo de visualización:"
+
+#: admin/frank-theme-options-home.php:115
+msgid "Default Loop"
+msgstr "Ciclo predeterminado"
+
+#: admin/frank-theme-options-home.php:116
+msgid "One Up (Regular)"
+msgstr "Uno arriba (regular)"
+
+#: admin/frank-theme-options-home.php:117
+msgid "One Up (Large)"
+msgstr "Uno arriba (grande)"
+
+#: admin/frank-theme-options-home.php:118
+msgid "Two Up"
+msgstr "Dos arriba"
+
+#: admin/frank-theme-options-home.php:119
+msgid "Three Up"
+msgstr "Tres arriba"
+
+#: admin/frank-theme-options-home.php:120
+msgid "Four Up"
+msgstr "Cuatro arriba"
+
+#: admin/frank-theme-options-home.php:121
+msgid "Some Random Dude Loop"
+msgstr "Ciclo de Some Random Dude"
+
+#: admin/frank-theme-options-home.php:144
+msgid "Display section header"
+msgstr "Visualizar el encabezado de la sección"
+
+#: admin/frank-theme-options-home.php:151
+msgid "Section Title:"
+msgstr "Título de la sección:"
+
+#: admin/frank-theme-options-home.php:164
+msgid "Number of Posts:"
+msgstr "Número de publicaciones:"
+
+#: admin/frank-theme-options-home.php:183
+msgid "Section Caption:"
+msgstr "Subtítulo de la sección:"
+
+#: admin/frank-theme-options-home.php:195
+msgid "Categories to Display"
+msgstr "Categorías para mostrar"
+
+#: admin/frank-theme-options-home.php:204
+msgid "Select All"
+msgstr "Seleccionar todo"
+
+#: admin/frank-theme-options-home.php:205
+msgid "Deselect All"
+msgstr "Quitar la selección de todo"
+
+#: admin/frank-theme-options-home.php:250
+msgid "+ Add New Section +"
+msgstr "+ Agregar nueva sección +"
+
+#: admin/frank-theme-options-performance.php:1 admin/frank-theme-options.php:9
+msgid "Performance Settings"
+msgstr "Ajustes de rendimiento"
+
+#: admin/frank-theme-options-performance.php:53
+msgid "Remove WordPress version meta tag."
+msgstr "Quitar la meta etiqueta de WordPress"
+
+#: admin/frank-theme-options-performance.php:58
+msgid ""
+"There are potential security risks associated with exposing your version of "
+"WordPress. Removing this meta tag will also shave a few bytes off of the "
+"generated HTML."
+msgstr ""
+"Hay posibles riesgos de seguridad asociados con la exposición de tu versión "
+"de WordPress. La eliminación de esta etiqueta meta también permite ahorrar "
+"unos pocos bytes del código HTML generado."
+
+#: admin/frank-theme-options-performance.php:74
+msgid "Remove version URL parameter from scripts."
+msgstr "Eliminar el parámetro de la versión en el URL de los scripts."
+
+#: admin/frank-theme-options-performance.php:79
+msgid ""
+"The version URL parameter can prevent files from caching in certain "
+"browsers. If you want more reliable caching of your scripts, turn this "
+"feature on."
+msgstr ""
+"El parámetro de versión en el URL puede prevenir que archivos utilicen el "
+"caché en ciertos navegadores. Si quieres que el cache de tus scripts sea más "
+"fiable, activa esta función."
+
+#: admin/frank-theme-options-performance.php:95
+msgid "Remove version URL parameter from stylesheets."
+msgstr "Eliminar el parámetro de la versión en el URL de las hojas de estilo."
+
+#: admin/frank-theme-options-performance.php:100
+msgid ""
+"The version URL parameter can prevent files from caching in certain "
+"browsers. If you want more reliable caching of your stylesheets, turn this "
+"feature on."
+msgstr ""
+"El parámetro de versión en el URL puede prevenir que archivos utilicen el "
+"caché en ciertos navegadores. Si quieres que el cache de tus hojas de estilo "
+"sea más fiable, activa esta función."
+
+#: admin/frank-theme-options.php:67
+msgid "Frank's Settings Have Been Updated."
+msgstr "Los ajustes de Frank fueron actualizados"
+
+#: admin/frank-theme-options.php:73
+msgid "Make Changes And Use The Update Settings Button To Save!"
+msgstr ""
+"¡Realiza los cambios y utiliza el botón de actualizar los ajustes para "
+"guardar!"
+
+#: admin/frank-theme-options.php:106
+msgid "Frank Theme Settings"
+msgstr "Ajustes del tema de Frank"
+
+#: partials/post-pagination.php:8
+msgid "Older Entries"
+msgstr "Entradas más antigüas"
+
+#: partials/post-pagination.php:11
+msgid "Newer Entries"
+msgstr "Entradas más recientes"
+
+#: partials/comments/commentform.php:20
+#, php-format
+msgid ""
+"Logged in as <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\"Log out of "
+"this account\">Log out?</a>"
+msgstr ""
+"Es sesión como <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\"Cerrar "
+"sesión para esta cuenta\">¿Cerrar sesión?</a>"
+
+#: partials/comments/commentform.php:21
+#, php-format
+msgid ""
+"You may use these <abbr title=\"HyperText Markup Language\">HTML</abbr> tags "
+"and attributes: %s"
+msgstr ""
+"Puedes utilizar estas etiquetas y atributos de <abbr title=\"HyperText "
+"Markup Language\">HTML</abbr>: %s"
+
+#: partials/loops/loop-fourup.php:10 partials/loops/loop-oneup.php:10
+#: partials/loops/loop-oneuplarge.php:10 partials/loops/loop-threeup.php:10
+#: partials/loops/loop-twoup.php:10
+msgid "View more"
+msgstr "Ver más"
+
+#: partials/posts/post-medium.php:7 partials/posts/post-small.php:7
+#: partials/posts/post-srd.php:9 partials/posts/post.php:10
+msgid "Read On&hellip;"
+msgstr "Continúa Leyendo&hellip;"
