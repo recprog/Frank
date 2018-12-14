@@ -11,7 +11,7 @@
     "grunt-contrib-cssmin": "~3.0.0",
     "grunt-contrib-copy": "~1.0.0",
     "grunt-contrib-clean": "~2.0.0",
-    "svgo-grunt": "0.0.3",
+    "grunt-svgo": "0.1.0",
     "grunt-git-contributors": "~0.1.5",
     "grunt-coffeelint": "0.0.16",
     "grunt-phpcs": "~0.4.0",
