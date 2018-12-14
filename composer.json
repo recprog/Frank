@@ -1,8 +1,7 @@
 {
   "require": {
-    "squizlabs/php_codesniffer": "dev-phpcs-fixer",
-    "phpmd/phpmd": "dev-master",
-    "scrutinizer/php-analyzer": "dev-master"
+    "squizlabs/php_codesniffer": "3.*",
+    "phpmd/phpmd": "dev-master"
   },
   "minimum-stability": "dev"
 }
