@@ -1,0 +1,14 @@
+html .mceContentBody { max-width:650px; }
+body { font:16px/1.5 sans-serif; color:#333; }
+h1, h2, h3, h4, h5, h6 { color:#222; margin-top:1.5em; font-size:1.25em; margin-bottom:0.75em; line-height:1.3; }
+h2 { font-size:1.5em; }
+h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover { text-decoration:underline; }
+p, pre, address, ul, ol, table { margin:0 0 1.25em 0; }
+pre, code { font-size:inherit; }
+li ul, li ol { margin-top:0.25em; margin-bottom:auto; }
+h1 { font-size:2em; margin-top:0; }
+a { color:#386FA5; text-decoration:none; }
+a:hover { text-decoration:underline; }
+a img { border:none; }
+hr { background-color: #ccc; border: 0; height: 1px; margin-bottom: 1.25em; }
+img { max-width:100%; height:auto; }
