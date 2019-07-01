@@ -3,8 +3,6 @@ An open source WordPress theme designed for speed
 
 
 ![Screenshot](https://raw.githubusercontent.com/arnabwahid/Frank/master/screenshot.png)
-
-_Theme Screenshot_
 ---
 
 **Frank is super fast & light.** It was built from scratch using only the WordPress best practices, standard APIs and features. It is as fast as it gets.
