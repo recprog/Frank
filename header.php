@@ -91,12 +91,6 @@
 
 		<?php do_action( 'header_after' ); ?>
 
-		<div class="index-header">
-			<div class="index-description">
-				<h1>I build websites, software products<br>and electronic devices.</h1>
-				<p><a>Read my blog</a>, view my <a>projects</a>, follow me <a>@frank</a> and on <a>GitHub</a>.</p>
-			</div>
-		</div>
 	</div>
 </div>
 
