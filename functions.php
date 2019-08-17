@@ -123,19 +123,21 @@ function frank_get_default_header_image() {
 add_action( 'wp_enqueue_scripts', 'frank_base_css' );
 
 function frank_base_css() {
-	wp_enqueue_style( 'frank-css', get_template_directory_uri() . '/style.css', null, 149 );
+	wp_enqueue_style( 'frank-css', get_template_directory_uri() . '/style.css', array(), '149' );
 
 	if ( is_singular() && comments_open() ) 
 		wp_enqueue_script( 'comment-reply' );
 }
 
+add_action( 'init' , 'frank_init_theme' );
 
-// Theme elements, post meta data, pagination
-include get_template_directory() . '/inc/theme-parts.php';
+function frank_init_theme() {
+    // Theme elements, post meta data, pagination
+    include get_template_directory() . '/inc/theme-parts.php';
 
-// Nice to have
-include get_template_directory() . '/inc/theme-features.php';
+    // Nice to have
+    include get_template_directory() . '/inc/theme-features.php';
 
-// Theme options
-include get_template_directory() . '/inc/theme-customizer.php';
-
+    // Theme options
+    include get_template_directory() . '/inc/theme-customizer.php';
+}

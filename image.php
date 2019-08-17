@@ -23,11 +23,11 @@ if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 		</div>
 
 		<?php
-			if ( $post->post_parent ) {
+			if ( wp_get_post_parent_id( 0 ) ) {
 				echo '<p class="attachment-nav">';
-					previous_image_link( false, __( '&larr; Previous', 'frank' ) );
-					next_image_link( false, __( 'Next &rarr;', 'frank' ) );
-				echo '</p>'; 
+					previous_image_link( 'none', __( '&larr; Previous', 'frank' ) );
+					next_image_link( 'none', __( 'Next &rarr;', 'frank' ) );
+				echo '</p>';
 			}
 		?>
 
@@ -35,7 +35,7 @@ if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 		<?php 
 			printf( 
 				'<p class="attachment-wrap">%s</p>', 
-				wp_get_attachment_image( $post->ID, 'large' ) 
+				wp_get_attachment_image( get_the_ID(), 'large' ) 
 			);
 		?>
 		</div>
@@ -55,7 +55,7 @@ if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
 	<?php do_action( 'post_after' ); ?>
 
-	<?php comments_template( false, true ); ?>
+	<?php comments_template( '', true ); ?>
 
 	<?php do_action( 'comments_after' ); ?>
 

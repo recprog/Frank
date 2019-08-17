@@ -140,7 +140,7 @@ function frank_breadcrumb() {
 		$path[] = sprintf( 
 				'<a href="%s">%s</a>', 
 				get_category_link( get_queried_object_id() ), 
-				single_cat_title( false, false ) 
+				single_cat_title( '', false ) 
 			);
 
 	if ( is_attachment() && $object->post_parent )
@@ -189,7 +189,7 @@ function frank_index_header() {
 		$author = get_user_by( 'login', get_query_var('author_name') );
 
 	if ( is_tax() || is_category() || is_tag() )
-		$heading = single_term_title( null, false );
+		$heading = single_term_title( '', false );
 	elseif ( is_day() )
 		$heading = get_the_date();
 	elseif ( is_month() )

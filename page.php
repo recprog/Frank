@@ -28,7 +28,7 @@ if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
 	<?php do_action( 'post_after' ); ?>
 
-	<?php comments_template( false, true ); ?>
+	<?php comments_template( '', true ); ?>
 
 	<?php do_action( 'comments_after' ); ?>
 

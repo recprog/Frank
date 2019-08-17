@@ -1,8 +1,8 @@
-<?php 
+<?php
 
 get_header();
 
-if ( ( is_archive() || is_home() ) && $paged )
+if ( ( is_archive() || is_home() ) && is_paged() )
 	do_action( 'post_pagination_links', 'header' );
 
 if ( have_posts() ) : 

@@ -348,7 +348,7 @@ class FrankThemeCustomizer {
 		// Custom fonts
 		foreach ( $this->options['fonts'] as $font => $font_settings ) {
 
-			$mod_value = get_theme_mod( $font, null );
+			$mod_value = get_theme_mod( $font, false );
 
 			if ( empty( $mod_value ) )
 				continue;
@@ -383,7 +383,7 @@ class FrankThemeCustomizer {
 		// CSS styles for google fonts
 		foreach ( $this->options['fonts'] as $font => $font_settings ) {
 
-			$mod_value = get_theme_mod( $font, null );
+			$mod_value = get_theme_mod( $font, false );
 
 			if ( empty( $mod_value ) || ! in_array( $mod_value, $this->fonts_google ) )
 				continue;
