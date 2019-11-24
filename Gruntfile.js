@@ -65,6 +65,7 @@ module.exports = function(grunt) {
               '!./node_modules/**',
               '!./docs/**',
               '!./.git/**',
+              '!./vendor/**',
               '!./Gruntfile.js',
               '!./package.json',
               '!./config.rb',
@@ -157,8 +158,8 @@ module.exports = function(grunt) {
           }
         },
 
-        svgo: {
-          opt: {
+        svgmin: {
+          dist: {
             files: '<%= frank.images %>/*.svg'
           }
         },
@@ -249,12 +250,12 @@ module.exports = function(grunt) {
             files: '<%= frank.coffeescripts %>/*.coffee',
             tasks: ['coffee']
           }
-        },
+        }
     });
 
     // load all grunt tasks
     require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
-    grunt.loadNpmTasks('svgo-grunt');
+    grunt.loadNpmTasks('grunt-svgmin');
 
     /**
      * Grunt tasks for development.
