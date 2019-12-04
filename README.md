@@ -236,7 +236,7 @@ Frank uses [CSSCSS](https://github.com/zmoazeni/csscss) to check for CSS rule re
 `$ gem update --system && gem install csscss`
 
 #####Install Composer
-Frank also uses the PHP package manager [http://getcomposer.org/]Composer for a couple of tasks. Refer to [Composer's installation documentation](http://getcomposer.org/doc/00-intro.md#downloading-the-composer-executable) for a detailed breakdown of all options.
+Frank also uses the PHP package manager [Composer](http://getcomposer.org/) for a couple of tasks. Refer to [Composer's installation documentation](http://getcomposer.org/doc/00-intro.md#downloading-the-composer-executable) for a detailed breakdown of all options.
 
 #####Install WebP binary
 The [grunt-webp](https://github.com/somerandomdude/grunt-webp) plugin depends on Google's [WebP](https://developers.google.com/speed/webp/) binary. You'll need to [download the cwebp binary](https://developers.google.com/speed/webp/download) and install it locally.
