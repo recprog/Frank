@@ -1,0 +1,27 @@
+#$ composer require --dev phpstan/phpstan-shim szepeviktor/phpstan-wordpress
+#$ vendor/bin/phpstan analyse
+
+includes:
+    - phar://phpstan.phar/conf/bleedingEdge.neon
+    - vendor/szepeviktor/phpstan-wordpress/extension.neon
+parameters:
+#    level: max
+    level: 5
+    inferPrivatePropertyTypeFromConstructor: true
+    paths:
+        - %currentWorkingDirectory%/
+    excludes_analyse:
+        - %currentWorkingDirectory%/vendor/
+        - %currentWorkingDirectory%/tests/
+    autoload_files:
+        - %currentWorkingDirectory%/tests/bootstrap.php
+        - %currentWorkingDirectory%/functions.php
+        - %currentWorkingDirectory%/inc/theme-parts.php
+        - %currentWorkingDirectory%/inc/theme-features.php
+        - %currentWorkingDirectory%/inc/theme-customizer.php
+    ignoreErrors:
+        # Uses func_get_args()
+        - '#^Function add_theme_support invoked with [2345] parameters, 1 required\.$#'
+        - '#^Function add_query_arg invoked with [123] parameters?, 0 required\.$#'
+        # Conditional $author definition
+        - '#^Variable \$author might not be defined\.$#'

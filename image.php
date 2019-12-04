@@ -23,19 +23,21 @@ if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 		</div>
 
 		<?php
-			// Featured image
-			if ( has_post_thumbnail() && get_theme_mod( 'frank_featured_image_header_single', true ) ) {
-				printf( 
-					'<div class="post-featured-header">
-						%s
-					</div>',
-					get_the_post_thumbnail( null, 'featured-header' ) 
-				);
+			if ( wp_get_post_parent_id( 0 ) ) {
+				echo '<p class="attachment-nav">';
+					previous_image_link( 'none', __( '&larr; Previous', 'frank' ) );
+					next_image_link( 'none', __( 'Next &rarr;', 'frank' ) );
+				echo '</p>';
 			}
 		?>
 
 		<div class="entry-content">
-			<?php get_template_part( 'content', get_post_format() );  ?>
+		<?php 
+			printf( 
+				'<p class="attachment-wrap">%s</p>', 
+				wp_get_attachment_image( get_the_ID(), 'large' ) 
+			);
+		?>
 		</div>
 		
 		<?php

@@ -1,44 +1,48 @@
-<?php
-/**
- * @package Frank
- */
-?>
-<?php get_header(); ?>
-<div id="content" class="archive">
-	<div class="row">
-		<main id="content-primary" role="main">
-			<?php if ( have_posts() ) : ?>
-			<header>
-				<h1 class="page-title">
-				<?php
-					_e( 'Search Results for', 'frank_theme' );
-					echo ' ';
-					echo '&#8216';  // left single quotation mark
-					echo the_search_query();
-					echo '&#8217';  // right single quotation mark
-				?>
-				</h1>
-			</header>
-			<div class="posts">
-				<?php while ( have_posts() ): ?>
-					<?php the_post(); ?>
-					<?php get_template_part( 'partials/posts/post' ); ?>
-				<?php endwhile; ?>
-				<?php get_template_part( 'partials/post-pagination' ); ?>
-				<?php else : ?>
-				<div class="post">
-					<h2>
-						<?php _e( 'No Results Were Found', 'frank_theme' ); ?>
-					</h2>
-					<p>
-						<?php _e( 'There were no matches for your search. Please try a different search term.', 'frank_theme' ); ?>
-					</p>
-				</div>
-			</div>
-			<?php endif; ?>
-		</main>
-		<?php get_template_part( 'partials/sidebars/sidebar', 'archive' ); ?>
-	</div>
-</div>
+<?php 
 
-<?php get_footer(); ?>
+get_header();
+
+?>
+
+<?php do_action( 'post_before' ); ?>
+
+<article <?php post_class(); ?>>
+	
+	<?php do_action( 'post_header' ); ?>
+
+	<h1 class="entry-title" role="heading">
+		<?php _e( 'Search Results', 'frank' ) ?>		
+	</h1>
+
+	<?php do_action( 'post_title_after' ); ?>
+
+	<div class="entry-content">
+	<?php 
+		get_search_form();
+
+		if ( have_posts() ) : 
+			$results = array();
+
+			while ( have_posts() ) : 
+				the_post(); 
+				$results[] = sprintf( '<li><h1><a href="%s">%s</a></h1></li>', get_permalink(), esc_html( get_the_title() ) );
+			endwhile;
+
+			printf( '<ul class="search-results">%s</ul>', implode( '', $results ) );
+		else:
+			printf( '<p>%s</p>', __( 'Sorry, but nothing matched your search criteria.', 'frank' ) );
+		endif;
+
+		do_action( 'post_pagination_links', 'footer' );
+	?>
+	</div>
+
+	<?php do_action( 'post_footer' ); ?>
+
+</article>
+
+<?php do_action( 'post_after' ); ?>
+
+<?php 
+
+get_footer();

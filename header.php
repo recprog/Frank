@@ -1,80 +1,103 @@
-<?php
-/**
- * @package Frank
- */
-?>
 <!DOCTYPE html>
-<!--[if IE 7 | IE 8]>
-<html class="ie" lang="en-US">
-<![endif]-->
-<!--[if (gte IE 9) | !(IE)]><!-->
 <html <?php language_attributes(); ?>>
-<!--<![endif]-->
 <head>
-	<meta charset="<?php bloginfo( 'charset' ); ?>" />
-	<meta name="viewport" content="width=device-width" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-
-	<title>
-		<?php
-		wp_title( '&mdash;', true, 'right' );
-		bloginfo( 'name' );
-		?>
-	</title>
-
-	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-
-	<?php if ( is_singular() ) wp_enqueue_script( 'comment-reply' ); ?>
+	<meta charset="<?php bloginfo('charset'); ?>" />
+	<title><?php wp_title( '&mdash;', true, 'right' ); ?></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<?php wp_head(); ?>
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 </head>
-<body id="page" <?php body_class(); ?>>
-	<!--[if lt IE 9]>
-		<div class="chromeframe">Your browser is out of date. Please <a href="http://browsehappy.com/">upgrade your browser </a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a>.</div>
-	<![endif]-->
-<div class="container">
-	<header id="page-header" class="row">
-		<hgroup id="site-title-description">
-			<h1 id="site-title"><a href="<?php echo home_url(); ?>"><?php bloginfo( 'name' ); ?></a></h1>
-			<h2 id="site-description"><?php bloginfo( 'description' ); ?></h2>
-		</hgroup>
+<body <?php body_class(); ?>>
 
-		<?php
-			$header_image = get_header_image();
-			if ( $header_image ) :
-				if ( function_exists( 'get_custom_header' ) ) {
-					$header_image_width = get_theme_support( 'custom-header', 'width' );
-				} else {
-					$header_image_width = HEADER_IMAGE_WIDTH;
-				}
-				?>
-		<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
-			<?php
-				if ( is_singular() && has_post_thumbnail( $post->ID ) &&
-						( $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), array( $header_image_width, $header_image_width ) ) ) &&
-						$image[1] >= $header_image_width ) :
-					echo get_the_post_thumbnail( $post->ID, 'post-thumbnail' );
-				else :
-					if ( function_exists( 'get_custom_header' ) ) {
-						$header_image_width  = get_custom_header()->width;
-						$header_image_height = get_custom_header()->height;
-					} else {
-						$header_image_width  = HEADER_IMAGE_WIDTH;
-						$header_image_height = HEADER_IMAGE_HEIGHT;
-					}
+<div class="wrap wrap-header">
+	<div class="wrap-section-in">
+
+		<?php do_action( 'header_before' ); ?>
+
+		<nav id="header" role="navigation">
+
+			<p id="logo" role="banner">
+				<a href="<?php echo home_url() ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+					<?php 
+					$header_image = get_header_image();
+
+					if ( ! empty( $header_image ) )
+						printf(
+							'<img src="%s" width="%d" heigth="%d" alt="%s" title="%s" class="custom-logo" />',
+							$header_image,
+							get_custom_header()->width,
+							get_custom_header()->height,
+							esc_attr( get_bloginfo( 'name' ) ),
+							esc_attr( get_bloginfo( 'name' ) )
+						);
 					?>
-				<img src="<?php header_image(); ?>" width="<?php echo $header_image_width; ?>" height="<?php echo $header_image_height; ?>" alt="" />
-			<?php endif; ?>
-		</a>
-		<?php endif; ?>
-		<nav id="site-nav">
-			<?php if ( !dynamic_sidebar( 'Navigation' ) ) : ?>
-				<?php wp_nav_menu( array( 'theme_location' => 'frank_primary_navigation', 'container' => false ) ); ?>
-			<?php endif; ?>
+					<strong><?php bloginfo('name'); ?></strong>
+				</a>
+				<em><?php bloginfo('description'); ?></em>
+			</p>
+			
+			<?php
+				if ( has_nav_menu( 'main_menu' ) ) {
+
+					$menu = wp_nav_menu( array( 
+						'theme_location' => 'main_menu',
+						'container_id' => 'nav-main',
+						'fallback_cb' => null,
+						'depth' => 2,
+						'echo' => false
+					) );
+
+					printf(
+						'<a id="nav-main-toggle" href="#nav-main" title="%s"></a>
+						%s',
+						__( 'Menu', 'frank' ),
+						$menu
+					);
+
+				}
+
+				if ( has_nav_menu( 'blog_menu' ) && ( is_home() || is_archive() || is_single() ) ) {
+
+					$menu_locations = get_nav_menu_locations();
+					$blog_menu_meta = wp_get_nav_menu_object( $menu_locations[ 'blog_menu' ] );
+
+					$blog_menu = wp_nav_menu( array( 
+							'theme_location' => 'blog_menu',
+							'container_id' => 'nav-blog-header',
+							'fallback_cb' => null,
+							'depth' => 1,
+							'echo' => false
+						) );
+
+					printf(
+						'<div class="nav-blog nav-blog-header">
+							<h2>%s</h2>
+							%s
+						</div>',
+						esc_html( $blog_menu_meta->name ),
+						$blog_menu
+					);
+
+				} elseif ( is_user_logged_in() && isset( $_POST['wp_customize'] ) ) {
+					$message = __( 'Note: This area could display a blog related menu. Add them as menu items to the "Blog menu" area.', 'frank' );
+
+					printf( 
+						'<p class="preview-notice">%s</p>', 
+						esc_html( $message )
+					);
+				}
+			?>
 		</nav>
-		<?php if ( is_active_sidebar( 'widget-subheader' ) ) : ?>
-		<div id='sub-header' class='row'>
-			<?php if ( !dynamic_sidebar( 'Sub Header' ) ) : ?>
-			<?php endif; ?>
-		</div>
-		<?php endif; ?>
-	</header>
+
+		<?php do_action( 'header_after' ); ?>
+
+	</div>
+</div>
+
+<div class="wrap wrap-content-main">
+	<div class="wrap-section-in">
+
+		<div id="content-main" class="hfeed" role="main">
+
+		<?php do_action( 'content_before' ); ?>
+
