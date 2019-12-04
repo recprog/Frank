@@ -19,7 +19,7 @@
 <a name="about-frank"></a>
 ##About Frank
 
-This theme has been the personal project of [P.J. Onori](http://somerandomdude.com) with the gracious [help of many](#credits). The theme was designed to provide a lightweight theme focused on the reading experience. Frank is the parent theme of [Frank of Some Random Dude](https://github.com/somerandomdude/Frank-somerandomdude), the theme I use on somerandomdude.com
+This theme has been the personal project of [P.J. Onori](http://somerandomdude.com) with the gracious [help of many](#credits). The theme was designed to provide a lightweight theme focused on the reading experience. Frank is the parent theme of [Frank of Some Random Dude](https://github.com/somerandomdude/Frank-somerandomdude), the theme I use on [my blog](http://somerandomdude.com)
 
 ###Frank is fast
 
